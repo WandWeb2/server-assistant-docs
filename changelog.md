@@ -13,6 +13,13 @@ The latest patches are also posted to **#bot-feedback** in the [support server](
 
 ---
 
+## [3.2.6] — 2026-05-10
+
+### Fixed
+- **Directory stats sync** switched from threaded urllib to native aiohttp — eliminates a thread spawn every 30 minutes that some hosts associated with a brief cmd-window flash.
+
+---
+
 ## [3.2.5] — 2026-05-10
 
 ### Added
