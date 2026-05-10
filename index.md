@@ -21,10 +21,22 @@ image: /server-assistant-docs/assets/banner.jpeg
 
 A multi-tenant Discord moderation and automation bot. Each server gets its own isolated configuration — warnings, notes, AutoMod rules, and settings stay scoped to that guild. Built around three principles: **safety** (dangerous actions require Owner approval), **transparency** (every action logged with full audit trail), and **extensibility** (server owners customise everything from embed colours to punishment ladders without code).
 
-## Documents
+## Quick links
 
-- [Privacy Policy](privacy/)
-- [Terms of Service](terms/)
+<table>
+<tr>
+<td>🚀 <a href="{{ site.url }}{{ site.baseurl }}/setup/"><b>Setup Guide</b></a><br>Add the bot in 60 seconds</td>
+<td>📚 <a href="{{ site.url }}{{ site.baseurl }}/commands/"><b>Commands</b></a><br>Full reference</td>
+</tr>
+<tr>
+<td>✨ <a href="{{ site.url }}{{ site.baseurl }}/features/"><b>Features</b></a><br>AutoMod, AI, verification, more</td>
+<td>❓ <a href="{{ site.url }}{{ site.baseurl }}/faq/"><b>FAQ</b></a><br>Common questions</td>
+</tr>
+<tr>
+<td>💬 <a href="{{ site.url }}{{ site.baseurl }}/support/"><b>Get Help</b></a><br>Support server, bug reports</td>
+<td>🔐 <a href="{{ site.url }}{{ site.baseurl }}/privacy/"><b>Privacy</b></a> · <a href="{{ site.url }}{{ site.baseurl }}/terms/"><b>Terms</b></a></td>
+</tr>
+</table>
 
 ## Add to your Discord server
 

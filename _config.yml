@@ -20,6 +20,17 @@ minima:
 # Header logo for the theme
 logo: /assets/logo.png
 
+# Pages that should appear in the top header navigation, in this order.
+# (Minima reads this list and renders the nav.)
+header_pages:
+  - setup.md
+  - commands.md
+  - features.md
+  - faq.md
+  - support.md
+  - privacy.md
+  - terms.md
+
 # Pretty URLs: /privacy/ instead of /privacy.html
 permalink: /:title/
 
