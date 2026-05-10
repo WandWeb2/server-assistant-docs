@@ -10,7 +10,7 @@ description: >-
   Free for everyone.
 url: https://wandweb2.github.io
 baseurl: /server-assistant-docs
-lang: en_GB
+lang: en-GB
 
 # Hero / social-share image (used by Open Graph and Twitter Cards)
 image: /server-assistant-docs/assets/banner.jpeg
