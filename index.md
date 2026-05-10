@@ -34,7 +34,10 @@ A multi-tenant Discord moderation and automation bot. Each server gets its own i
 </tr>
 <tr>
 <td>💬 <a href="{{ site.url }}{{ site.baseurl }}/support/"><b>Get Help</b></a><br>Support server, bug reports</td>
-<td>🔐 <a href="{{ site.url }}{{ site.baseurl }}/privacy/"><b>Privacy</b></a> · <a href="{{ site.url }}{{ site.baseurl }}/terms/"><b>Terms</b></a></td>
+<td>📋 <a href="{{ site.url }}{{ site.baseurl }}/changelog/"><b>Changelog</b></a><br>Release history and patch notes</td>
+</tr>
+<tr>
+<td colspan="2">🔐 <a href="{{ site.url }}{{ site.baseurl }}/privacy/"><b>Privacy</b></a> · <a href="{{ site.url }}{{ site.baseurl }}/terms/"><b>Terms</b></a></td>
 </tr>
 </table>
 
