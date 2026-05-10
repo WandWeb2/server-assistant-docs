@@ -6,8 +6,19 @@ description: Smart moderation, AI assistance, and customisation for any Discord 
 url: https://wandweb2.github.io
 baseurl: /server-assistant-docs
 
+# Hero / social-share image (used by Open Graph and Twitter Cards)
+image: /assets/banner.jpeg
+
 # Use the bundled "minima" theme — looks clean out of the box, no custom CSS needed.
 theme: minima
+
+minima:
+  social_links:
+    github: WandWeb2/server-assistant
+  show_excerpts: false
+
+# Header logo for the theme
+logo: /assets/logo.png
 
 # Pretty URLs: /privacy/ instead of /privacy.html
 permalink: /:title/
