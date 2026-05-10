@@ -13,6 +13,13 @@ The latest patches are also posted to **#bot-feedback** in the [support server](
 
 ---
 
+## [3.2.5] — 2026-05-10
+
+### Added
+- **Bot directory stats sync** — pushes live server count to discordbotlist.com and top.gg every 30 minutes. Listings now show live counts instead of "Servers: unknown."
+
+---
+
 ## [3.2.4] — 2026-05-10
 
 ### Security
