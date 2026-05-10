@@ -13,6 +13,14 @@ The latest patches are also posted to **#bot-feedback** in the [support server](
 
 ---
 
+## [3.2.2] — 2026-05-10
+
+### Added
+- **AI usage tracking** — chat completions now record input/output tokens per provider/model; image generations record per-provider call counts. Stored locally in `telemetry.json`, never transmitted.
+- **"AI Usage…" tray menu item** — opens a window with per-provider totals and an estimated USD cost. Covers xAI Grok, OpenAI chat + DALL·E 3, Stability SDXL, and Pollinations.
+
+---
+
 ## [3.2.1] — 2026-05-10
 
 ### Added
