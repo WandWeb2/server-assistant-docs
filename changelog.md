@@ -13,6 +13,20 @@ The latest patches are also posted to **#bot-feedback** in the [support server](
 
 ---
 
+## [3.2.1] — 2026-05-10
+
+### Added
+- **Public Changelog page** at `/changelog/` on the docs site, mirrored from the bot's internal `CHANGELOG.md`.
+- **`announce.py`** — helper that posts release notes to the public `#bot-feedback` channel.
+
+### Changed
+- Public docs nav: `Privacy` and `Terms` are now correctly capitalised.
+
+### Removed
+- Legacy files no longer used by the bot.
+
+---
+
 ## [3.2.0] — 2026-05-10
 
 ### Added
