@@ -13,6 +13,19 @@ The latest patches are also posted to **#bot-feedback** in the [support server](
 
 ---
 
+## [3.2.4] — 2026-05-10
+
+### Security
+- **AutoMod custom regex ReDoS guard** — admin-supplied filter patterns with nested quantifiers, alternation-in-repeat, or optional-in-repeat are rejected at add-time. Stops a single bad pattern from locking the message-handling event loop.
+
+### Performance
+- **Parallel channel scan in user-history search** — staff `history` now scans channels concurrently instead of sequentially.
+
+### Added
+- `tests/` with pytest covering announce, telemetry, and the ReDoS heuristic. CI runs the suite on every push.
+
+---
+
 ## [3.2.3] — 2026-05-10
 
 ### Fixed
