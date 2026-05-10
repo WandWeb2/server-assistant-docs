@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Server Assistant
-description: Smart moderation, AI assistance, and customisation for any Discord server.
+title: Server Assistant — Discord moderation bot with AI-assisted reports and customisable AutoMod
+description: Multi-tenant Discord moderation bot with AI-assisted reports, customisable AutoMod, anti-raid detection, DM verification gate, AI image generation, and a 60-second setup wizard. Free for everyone.
 image: /server-assistant-docs/assets/banner.jpeg
 ---
 
@@ -10,16 +10,38 @@ image: /server-assistant-docs/assets/banner.jpeg
 
   <h1>Server Assistant</h1>
 
-  <p><strong>Smart moderation, AI assistance, and customisation for any Discord server.</strong></p>
+  <p><strong>Smart Discord moderation, AI-assisted reports, and customisation for any community.</strong></p>
 
-  <img src="{{ '/assets/banner.jpeg' | relative_url }}" alt="Server Assistant banner" style="max-width: 100%; border-radius: 8px;">
+  <img src="{{ '/assets/banner.jpeg' | relative_url }}" alt="Server Assistant banner — Discord moderation and AI bot" style="max-width: 100%; border-radius: 8px;">
 </div>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Server Assistant",
+  "applicationCategory": "Discord Bot",
+  "operatingSystem": "Discord",
+  "description": "Multi-tenant Discord moderation and automation bot with AI-assisted moderation reports, customisable AutoMod with custom regex and ReDoS guard, anti-raid detection, DM-button verification gate, and AI image generation.",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "url": "https://wandweb2.github.io/server-assistant-docs/",
+  "image": "https://wandweb2.github.io/server-assistant-docs/assets/banner.jpeg",
+  "author": {
+    "@type": "Organization",
+    "name": "WandWeb2"
+  }
+}
+</script>
 
 ---
 
-## What it does
+## What is Server Assistant?
 
-A multi-tenant Discord moderation and automation bot. Each server gets its own isolated configuration — warnings, notes, AutoMod rules, and settings stay scoped to that guild. Built around three principles: **safety** (dangerous actions require Owner approval), **transparency** (every action logged with full audit trail), and **extensibility** (server owners customise everything from embed colours to punishment ladders without code).
+**Server Assistant** is a **multi-tenant Discord moderation and automation bot**. Each server gets its own isolated configuration — warnings, notes, AutoMod rules, and settings stay scoped to that guild. Built around three principles: **safety** (dangerous actions require Owner approval), **transparency** (every action logged with full audit trail), and **extensibility** (server owners customise everything from embed colours to punishment ladders without code).
 
 ## Quick links
 

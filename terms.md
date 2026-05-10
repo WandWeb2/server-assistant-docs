@@ -1,7 +1,8 @@
 ---
 layout: default
-title: Terms
+title: Terms of Service
 permalink: /terms/
+description: Server Assistant terms of use, including server-owner responsibility for moderation decisions and no-warranty clause.
 ---
 # Terms of Service — Server Assistant
 

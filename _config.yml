@@ -2,12 +2,25 @@
 # Hosted on GitHub Pages — https://wandweb2.github.io/server-assistant-docs/
 
 title: Server Assistant
-description: Smart moderation, AI assistance, and customisation for any Discord server.
+tagline: Smart moderation, AI assistance, and customisation for any Discord server.
+description: >-
+  Multi-tenant Discord moderation bot with AI-assisted reports, customisable
+  AutoMod with custom regex and ReDoS guard, anti-raid detection, DM-button
+  verification gate, AI image generation, and a 60-second setup wizard.
+  Free for everyone.
 url: https://wandweb2.github.io
 baseurl: /server-assistant-docs
+lang: en_GB
 
 # Hero / social-share image (used by Open Graph and Twitter Cards)
-image: /assets/banner.jpeg
+image: /server-assistant-docs/assets/banner.jpeg
+
+# Author / social — used by jekyll-seo-tag for og:author and Twitter cards.
+author:
+  name: WandWeb2
+
+# Repository — used by jekyll-seo-tag to populate "see source" link metadata.
+repository: WandWeb2/server-assistant-docs
 
 # Use the bundled "minima" theme — looks clean out of the box, no custom CSS needed.
 theme: minima
@@ -16,6 +29,12 @@ minima:
   social_links:
     github: WandWeb2/server-assistant
   show_excerpts: false
+
+# GitHub Pages whitelist plugins — auto-enabled in the GH Pages build.
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
 
 # Header logo for the theme
 logo: /assets/logo.png
@@ -39,6 +58,15 @@ permalink: /:title/
 markdown: kramdown
 kramdown:
   syntax_highlighter: rouge
+
+# Default front-matter values applied to every page (jekyll-seo-tag picks these up).
+defaults:
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: default
+      image: /server-assistant-docs/assets/banner.jpeg
 
 # Don't include drafts or other Jekyll noise in the build
 exclude:

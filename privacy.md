@@ -1,7 +1,8 @@
 ---
 layout: default
-title: Privacy
+title: Privacy Policy
 permalink: /privacy/
+description: How Server Assistant handles your Discord server's data, including encrypted storage, per-guild isolation, and the AI provider data flow.
 ---
 # Privacy Policy — Server Assistant
 
