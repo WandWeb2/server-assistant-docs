@@ -13,7 +13,13 @@ Adding **Server Assistant** to your Discord server takes about 60 seconds. The w
 
 ## Step 1 — Invite the bot
 
-Click the invite link from your bot listing (Top.gg, Discord Bots List, or wherever you found it). The OAuth flow asks Discord for the permissions the bot needs — **don't uncheck any of them**, or features like ban/kick/auto-role will fail later.
+<p align="center">
+  <a href="https://discord.com/api/oauth2/authorize?client_id=1278486617375510570&permissions=1376267689287&scope=bot+applications.commands"><strong>➕ Invite Server Assistant to your server</strong></a>
+</p>
+
+You'll need **Manage Server** permission on the target guild. The OAuth flow asks Discord for the permissions the bot needs — **don't uncheck any of them**, or features like ban/kick/auto-role will fail later.
+
+*Pre-verification direct invite — once Server Assistant clears Discord verification (75-server threshold) it'll also be available via [Top.gg](https://top.gg), Discord Bots List, and the [Discord App Directory](https://discord.com/application-directory).*
 
 After authorising, the bot appears offline-then-online in your server's member list. Slash commands take **up to 1 hour** to globally propagate the very first time you add the bot — so if `/setup` doesn't show up immediately, give it a few minutes.
 
