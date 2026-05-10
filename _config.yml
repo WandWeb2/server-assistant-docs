@@ -1,0 +1,25 @@
+# Jekyll configuration for the Server Assistant documentation site.
+# Hosted on GitHub Pages — https://wandweb2.github.io/server-assistant-docs/
+
+title: Server Assistant
+description: Smart moderation, AI assistance, and customisation for any Discord server.
+url: https://wandweb2.github.io
+baseurl: /server-assistant-docs
+
+# Use the bundled "minima" theme — looks clean out of the box, no custom CSS needed.
+theme: minima
+
+# Pretty URLs: /privacy/ instead of /privacy.html
+permalink: /:title/
+
+# Markdown rendering
+markdown: kramdown
+kramdown:
+  syntax_highlighter: rouge
+
+# Don't include drafts or other Jekyll noise in the build
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - .gitignore
