@@ -13,6 +13,23 @@ The latest patches are also posted to **#bot-feedback** in the [support server](
 
 ---
 
+## [3.2.3] — 2026-05-10
+
+### Fixed
+- **Scheduled tasks not firing** — a stub defined later in the module was silently overwriting the real `process_scheduled_tasks()` implementation. `/schedule` reminders now actually execute. Thanks to Jules for catching this.
+
+### Security
+- Vault key file and vault save now use atomic `O_CREAT | O_EXCL` with mode `0o600`, closing the race where freshly written secrets briefly had umask permissions before `chmod`.
+
+### Changed
+- `yt_notify.py` state file writes are now atomic (temp + rename), surviving interrupted writes.
+- Staff `actions` / `audit` command no longer blocks the event loop when the log file is large.
+
+### Repo housekeeping
+- Dependency floors bumped via Dependabot.
+
+---
+
 ## [3.2.2] — 2026-05-10
 
 ### Added
