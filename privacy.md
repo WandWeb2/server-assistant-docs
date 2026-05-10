@@ -1,6 +1,6 @@
 ---
 layout: default
-title: privacy
+title: Privacy
 permalink: /privacy/
 ---
 # Privacy Policy — Server Assistant

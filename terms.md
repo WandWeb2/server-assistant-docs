@@ -1,6 +1,6 @@
 ---
 layout: default
-title: terms
+title: Terms
 permalink: /terms/
 ---
 # Terms of Service — Server Assistant
