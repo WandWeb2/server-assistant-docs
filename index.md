@@ -8,17 +8,12 @@ image: /server-assistant-docs/assets/banner.jpeg
 <div align="center">
   <picture>
     <source srcset="{{ '/assets/logo.webp' | relative_url }}" type="image/webp">
-    <img src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant logo" width="240" height="231">
+    <img src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant logo" width="240" height="231" fetchpriority="high">
   </picture>
 
   <h1>Server Assistant</h1>
 
   <p><strong>Smart Discord moderation, AI-assisted reports, and customisation for any community.</strong></p>
-
-  <picture>
-    <source srcset="{{ '/assets/banner.webp' | relative_url }}" type="image/webp">
-    <img src="{{ '/assets/banner.jpeg' | relative_url }}" alt="Server Assistant banner — Discord moderation and AI bot" width="1336" height="752" fetchpriority="high" style="max-width: 100%; height: auto; border-radius: 8px;">
-  </picture>
 </div>
 
 <script type="application/ld+json">
