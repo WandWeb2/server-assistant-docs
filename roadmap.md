@@ -19,6 +19,14 @@ description: Server Assistant's product roadmap — what's in development, what'
 }
 .roadmap-hero p { margin: .3rem 0; }
 
+.roadmap-hint {
+  font-size: 0.82rem;
+  color: #888;
+  text-align: center;
+  margin: 0.8rem 0 0.5rem;
+  font-style: italic;
+}
+
 /* ── Top kanban: In Development + Planned, side by side ───────────────────── */
 .roadmap-top {
   display: grid;
@@ -30,7 +38,7 @@ description: Server Assistant's product roadmap — what's in development, what'
   .roadmap-top { grid-template-columns: 1fr; }
 }
 
-/* ── Section banner (Premium and Long-term get a wide single section) ─────── */
+/* ── Section banner ───────────────────────────────────────────────────────── */
 .roadmap-section {
   margin: 2.5rem 0 1rem;
   padding: 0.75rem 1rem;
@@ -69,7 +77,7 @@ description: Server Assistant's product roadmap — what's in development, what'
   padding: 0.75rem;
   display: flex;
   flex-direction: column;
-  gap: 0.55rem;
+  gap: 0.5rem;
 }
 
 /* ── Long-term: 3-column gallery ──────────────────────────────────────────── */
@@ -89,7 +97,7 @@ description: Server Assistant's product roadmap — what's in development, what'
   padding: 1rem;
   display: flex;
   flex-direction: column;
-  gap: 0.65rem;
+  gap: 0.5rem;
 }
 .lane-now      { border-color: #2ecc71; }
 .lane-planned  { border-color: #3498db; }
@@ -119,35 +127,66 @@ description: Server Assistant's product roadmap — what's in development, what'
   padding-bottom: 0.25rem;
 }
 
-/* ── Cards (used in all lanes) ────────────────────────────────────────────── */
-.card {
+/* ── Cards: <details> elements, collapsed by default ──────────────────────── */
+details.card {
   background: #fff;
   border: 1px solid #eee;
   border-radius: 5px;
-  padding: 0.7rem 0.85rem;
+  padding: 0;
   box-shadow: 0 1px 2px rgba(0,0,0,0.04);
   transition: box-shadow 0.15s ease, transform 0.15s ease;
+  overflow: hidden;
 }
-.card:hover {
-  box-shadow: 0 3px 8px rgba(0,0,0,0.08);
-  transform: translateY(-1px);
+details.card:hover { box-shadow: 0 3px 8px rgba(0,0,0,0.08); }
+details.card[open] {
+  background: #fdfdfd;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
 }
-.card .title {
-  display: block;
+
+details.card > summary {
+  list-style: none;          /* hide Firefox/Chrome marker */
+  cursor: pointer;
+  padding: 0.7rem 2.1rem 0.7rem 0.85rem;
+  position: relative;
   font-weight: 600;
   font-size: 0.95rem;
   color: #222;
-  margin-bottom: 0.25rem;
+  user-select: none;
 }
-.card .desc {
-  display: block;
-  font-size: 0.85rem;
+details.card > summary::-webkit-details-marker { display: none; } /* hide Safari marker */
+details.card > summary:hover { color: #2c7ad6; }
+
+details.card > summary::after {
+  content: "›";
+  position: absolute;
+  right: 0.85rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #bbb;
+  font-size: 1.2rem;
+  font-weight: 400;
+  transition: transform 0.15s ease, color 0.15s ease;
+  line-height: 1;
+}
+details.card[open] > summary::after {
+  transform: translateY(-50%) rotate(90deg);
   color: #555;
-  line-height: 1.45;
 }
 
+details.card .desc {
+  display: block;
+  padding: 0 0.85rem 0.75rem;
+  font-size: 0.85rem;
+  color: #555;
+  line-height: 1.5;
+  border-top: 1px solid #f0f0f0;
+  padding-top: 0.6rem;
+  margin-top: 0;
+}
+
+/* Safeguards nested details (for Threat Score) */
 details.safeguards {
-  margin-top: 0.5rem;
+  margin: 0.4rem 0.85rem 0.75rem;
   font-size: 0.82rem;
   color: #555;
 }
@@ -162,6 +201,28 @@ details.safeguards ul {
   line-height: 1.5;
 }
 details.safeguards li { margin-bottom: 0.2rem; }
+
+/* Expand/Collapse all helper buttons */
+.expand-all-bar {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 0.5rem 0 1.5rem;
+}
+.expand-all-bar button {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 0.35rem 0.85rem;
+  font-size: 0.8rem;
+  color: #555;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.expand-all-bar button:hover {
+  border-color: #2c7ad6;
+  color: #2c7ad6;
+}
 </style>
 
 # 🗺️ Roadmap
@@ -173,6 +234,13 @@ Where Server Assistant is heading. Priorities shift based on what server owners 
   <p>💚 <strong>Every current feature stays free forever.</strong> The Premium-tier section below adds <em>new</em> capabilities. Servers that joined during the free phase are grandfathered into premium access at no cost.</p>
 </div>
 
+<p class="roadmap-hint">Click any item to expand it · or use the buttons below</p>
+
+<div class="expand-all-bar">
+  <button onclick="document.querySelectorAll('details.card').forEach(d=>d.open=true)">Expand all</button>
+  <button onclick="document.querySelectorAll('details.card').forEach(d=>d.open=false)">Collapse all</button>
+</div>
+
 <!-- ════════════════════════════════════════════════════════════════════════
      TOP KANBAN — In Development + Planned
      ════════════════════════════════════════════════════════════════════════ -->
@@ -182,23 +250,23 @@ Where Server Assistant is heading. Priorities shift based on what server owners 
   <div class="lane lane-now">
     <h3>🟢 In Development<small>v4.0 — the AI-moderation update</small></h3>
 
-    <div class="card">
-      <span class="title">Pulse</span>
+    <details class="card">
+      <summary>Pulse</summary>
       <span class="desc">Always-on AI server-health analyst. Daily digests, leading-indicator flags, channel-tone shifts. Never auto-actions — just gives staff x-ray vision.</span>
-    </div>
+    </details>
 
-    <div class="card">
-      <span class="title">Self-trained AutoMod</span>
+    <details class="card">
+      <summary>Self-trained AutoMod</summary>
       <span class="desc">Bot watches your staff's manual decisions for 2–4 weeks, clusters the patterns, then proposes server-specific AutoMod rules for owner approval.</span>
-    </div>
+    </details>
 
-    <div class="card">
-      <span class="title">Bot health insurance</span>
+    <details class="card">
+      <summary>Bot health insurance</summary>
       <span class="desc">Bot watches its own impact in each server and proactively suggests tuning when it's becoming too noisy. Stops Server Assistant from quietly becoming the bot every server eventually mutes.</span>
-    </div>
+    </details>
 
-    <div class="card">
-      <span class="title">Threat Score</span>
+    <details class="card">
+      <summary>Threat Score</summary>
       <span class="desc">Risk-based moderation that replaces fixed punishment ladders. Actions fit the actual threat — context-aware, opt-in, with extensive safeguards against punishing legitimate users.</span>
       <details class="safeguards">
         <summary>Safeguards against false positives</summary>
@@ -212,56 +280,56 @@ Where Server Assistant is heading. Priorities shift based on what server owners 
           <li>Server-defined thresholds; fallback to fixed-ladder mode supported</li>
         </ul>
       </details>
-    </div>
+    </details>
   </div>
 
   <div class="lane lane-planned">
     <h3>🔵 Planned<small>Free-tier features after v4.0</small></h3>
 
-    <div class="card">
-      <span class="title">AutoMod confidence scoring</span>
+    <details class="card">
+      <summary>AutoMod confidence scoring</summary>
       <span class="desc">Every AI-flagged action shows its confidence level. Staff set thresholds for auto-action vs review-required.</span>
-    </div>
+    </details>
 
-    <div class="card">
-      <span class="title">Repeat-offender detection</span>
+    <details class="card">
+      <summary>Repeat-offender detection</summary>
       <span class="desc">Fingerprint behaviour to recognise users coming back on alt accounts after a ban.</span>
-    </div>
+    </details>
 
-    <div class="card">
-      <span class="title">AI rule explainer</span>
+    <details class="card">
+      <summary>AI rule explainer</summary>
       <span class="desc">AutoMod DMs the user not just which filter matched, but why this rule exists, in plain language.</span>
-    </div>
+    </details>
 
-    <div class="card">
-      <span class="title">Smart purge</span>
+    <details class="card">
+      <summary>Smart purge</summary>
       <span class="desc"><code>purge ai 50</code> deletes the genuinely problematic messages and archives constructive ones to a thread, instead of nuke-everything.</span>
-    </div>
+    </details>
 
-    <div class="card">
-      <span class="title">Mod team retrospectives</span>
+    <details class="card">
+      <summary>Mod team retrospectives</summary>
       <span class="desc">Weekly auto-generated retro embed: case counts, resolution times, notable patterns, items worth discussing.</span>
-    </div>
+    </details>
 
-    <div class="card">
-      <span class="title">Cross-server reputation</span>
+    <details class="card">
+      <summary>Cross-server reputation</summary>
       <span class="desc">Opt-in positive reputation that follows trusted users between partner servers. The inverse of federated banlists.</span>
-    </div>
+    </details>
 
-    <div class="card">
-      <span class="title">Community-of-practice sharing</span>
+    <details class="card">
+      <summary>Community-of-practice sharing</summary>
       <span class="desc"><em>"Servers like yours configure X this way"</em> recommendations based on similar community profiles.</span>
-    </div>
+    </details>
 
-    <div class="card">
-      <span class="title">Staff coverage map</span>
+    <details class="card">
+      <summary>Staff coverage map</summary>
       <span class="desc">Time-zone-aware visualisation of when each mod is typically active; flags coverage gaps for raid-prone hours.</span>
-    </div>
+    </details>
 
-    <div class="card">
-      <span class="title">Bot-on-bot detection</span>
+    <details class="card">
+      <summary>Bot-on-bot detection</summary>
       <span class="desc">Flag suspicious automation pretending to be human — relevant for mass-marketing raids that evade text filters.</span>
-    </div>
+    </details>
   </div>
 
 </div>
@@ -280,81 +348,36 @@ Where Server Assistant is heading. Priorities shift based on what server owners 
   <div class="premium-tier-col">
     <h4>Tier A — ship first</h4>
 
-    <div class="card">
-      <span class="title">Reaction roles</span>
-      <span class="desc">Button-based self-service role panels in any channel.</span>
-    </div>
-    <div class="card">
-      <span class="title">Custom slash commands</span>
-      <span class="desc">Server owners define their own <code>/foo</code> returning a configured embed or text snippet.</span>
-    </div>
-    <div class="card">
-      <span class="title">Daily AI channel summaries</span>
-      <span class="desc">Once-a-day digest of activity in a chosen channel, posted to a configured destination.</span>
-    </div>
-    <div class="card">
-      <span class="title">Mediator</span>
-      <span class="desc">When a conversation is escalating, bot DMs both parties, collects each side privately, and produces a neutral summary for staff.</span>
-    </div>
-    <div class="card">
-      <span class="title">Decision explainer + appeals</span>
-      <span class="desc">Users can DM <em>"why was I warned?"</em> for a plain-language answer. Banned users start structured appeals through a guided AI flow.</span>
-    </div>
+    <details class="card"><summary>Reaction roles</summary><span class="desc">Button-based self-service role panels in any channel.</span></details>
+    <details class="card"><summary>Custom slash commands</summary><span class="desc">Server owners define their own <code>/foo</code> returning a configured embed or text snippet.</span></details>
+    <details class="card"><summary>Daily AI channel summaries</summary><span class="desc">Once-a-day digest of activity in a chosen channel, posted to a configured destination.</span></details>
+    <details class="card"><summary>Mediator</summary><span class="desc">When a conversation is escalating, bot DMs both parties, collects each side privately, and produces a neutral summary for staff.</span></details>
+    <details class="card"><summary>Decision explainer + appeals</summary><span class="desc">Users can DM <em>"why was I warned?"</em> for a plain-language answer. Banned users start structured appeals through a guided AI flow.</span></details>
   </div>
 
   <div class="premium-tier-col">
     <h4>Tier B — solid additions</h4>
 
-    <div class="card">
-      <span class="title">Leveling / XP</span>
-      <span class="desc">Server-wide XP with level-up roles and a leaderboard. Opt-in per server, opt-out per user.</span>
-    </div>
-    <div class="card">
-      <span class="title">Polls</span>
-      <span class="desc"><code>/poll</code> with button-based voting and live tally.</span>
-    </div>
-    <div class="card">
-      <span class="title">Embed builder</span>
-      <span class="desc">Interactive wizard for crafting rich announcements with fields, images, and buttons.</span>
-    </div>
+    <details class="card"><summary>Leveling / XP</summary><span class="desc">Server-wide XP with level-up roles and a leaderboard. Opt-in per server, opt-out per user.</span></details>
+    <details class="card"><summary>Polls</summary><span class="desc"><code>/poll</code> with button-based voting and live tally.</span></details>
+    <details class="card"><summary>Embed builder</summary><span class="desc">Interactive wizard for crafting rich announcements with fields, images, and buttons.</span></details>
   </div>
 
   <div class="premium-tier-col">
     <h4>Tier C — nice-to-have</h4>
 
-    <div class="card">
-      <span class="title">Birthday tracker</span>
-      <span class="desc">Opt-in birthdays with auto-DM and channel post on the day.</span>
-    </div>
-    <div class="card">
-      <span class="title">Welcome card images</span>
-      <span class="desc">Auto-generated PNG welcome for each new joiner.</span>
-    </div>
-    <div class="card">
-      <span class="title">AI Q&amp;A from server FAQ</span>
-      <span class="desc">Bot answers questions based on FAQ snippets the owner has provided.</span>
-    </div>
-    <div class="card">
-      <span class="title">Auto-translate</span>
-      <span class="desc">On-demand or automatic translation for configured channels.</span>
-    </div>
+    <details class="card"><summary>Birthday tracker</summary><span class="desc">Opt-in birthdays with auto-DM and channel post on the day.</span></details>
+    <details class="card"><summary>Welcome card images</summary><span class="desc">Auto-generated PNG welcome for each new joiner.</span></details>
+    <details class="card"><summary>AI Q&amp;A from server FAQ</summary><span class="desc">Bot answers questions based on FAQ snippets the owner has provided.</span></details>
+    <details class="card"><summary>Auto-translate</summary><span class="desc">On-demand or automatic translation for configured channels.</span></details>
   </div>
 
   <div class="premium-tier-col">
     <h4>Tier D — power users</h4>
 
-    <div class="card">
-      <span class="title">REST / webhook API</span>
-      <span class="desc">Read-only endpoints for your guild's bot data (warnings, audit log, activity stats).</span>
-    </div>
-    <div class="card">
-      <span class="title">White-label branding</span>
-      <span class="desc">Fully replace the bot's identity per-server — your name, your avatar, your colour scheme.</span>
-    </div>
-    <div class="card">
-      <span class="title">Unlimited <code>/imagine</code></span>
-      <span class="desc">Premium removes the 30-second per-guild rate limit.</span>
-    </div>
+    <details class="card"><summary>REST / webhook API</summary><span class="desc">Read-only endpoints for your guild's bot data (warnings, audit log, activity stats).</span></details>
+    <details class="card"><summary>White-label branding</summary><span class="desc">Fully replace the bot's identity per-server — your name, your avatar, your colour scheme.</span></details>
+    <details class="card"><summary>Unlimited <code>/imagine</code></summary><span class="desc">Premium removes the 30-second per-guild rate limit.</span></details>
   </div>
 
 </div>
@@ -370,80 +393,35 @@ Where Server Assistant is heading. Priorities shift based on what server owners 
 
 <div class="longterm-grid">
 
-  <div class="card">
-    <span class="title">Voice-channel moderation</span>
-    <span class="desc">Real-time transcription + AutoMod / threat-score logic applied to voice channels. The industry's biggest moderation blind spot — no major bot touches voice.</span>
-  </div>
+  <details class="card"><summary>Voice-channel moderation</summary><span class="desc">Real-time transcription + AutoMod / threat-score logic applied to voice channels. The industry's biggest moderation blind spot — no major bot touches voice.</span></details>
 
-  <div class="card">
-    <span class="title">Federated moderation network</span>
-    <span class="desc">Opt-in cross-server ban / warn data sharing for trusted communities. Solves cross-server raid coordination.</span>
-  </div>
+  <details class="card"><summary>Federated moderation network</summary><span class="desc">Opt-in cross-server ban / warn data sharing for trusted communities. Solves cross-server raid coordination.</span></details>
 
-  <div class="card">
-    <span class="title">AI-drafted server policy</span>
-    <span class="desc">Bot reads your channels for two weeks, drafts a rules document tailored to your community's actual norms, posts it for owner approval.</span>
-  </div>
+  <details class="card"><summary>AI-drafted server policy</summary><span class="desc">Bot reads your channels for two weeks, drafts a rules document tailored to your community's actual norms, posts it for owner approval.</span></details>
 
-  <div class="card">
-    <span class="title">Conversational onboarding</span>
-    <span class="desc">Replace the static welcome DM with a short AI conversation that auto-assigns roles based on answers and filters bad-faith joiners before their first message.</span>
-  </div>
+  <details class="card"><summary>Conversational onboarding</summary><span class="desc">Replace the static welcome DM with a short AI conversation that auto-assigns roles based on answers and filters bad-faith joiners before their first message.</span></details>
 
-  <div class="card">
-    <span class="title">Drift detection</span>
-    <span class="desc">Track server tone and behaviour over weeks. Alert the Owner when material drift is detected so culture can be maintained before it erodes invisibly.</span>
-  </div>
+  <details class="card"><summary>Drift detection</summary><span class="desc">Track server tone and behaviour over weeks. Alert the Owner when material drift is detected so culture can be maintained before it erodes invisibly.</span></details>
 
-  <div class="card">
-    <span class="title">Community DNA fingerprint</span>
-    <span class="desc">Per-server embedding capturing community character. Powers new-member matching, cross-server compatibility, and rule recommendations.</span>
-  </div>
+  <details class="card"><summary>Community DNA fingerprint</summary><span class="desc">Per-server embedding capturing community character. Powers new-member matching, cross-server compatibility, and rule recommendations.</span></details>
 
-  <div class="card">
-    <span class="title">Predictive mod scheduling</span>
-    <span class="desc">Operational intelligence: <em>"Sunday evenings see 3× your average AutoMod hits — adjust on-call rotation?"</em></span>
-  </div>
+  <details class="card"><summary>Predictive mod scheduling</summary><span class="desc">Operational intelligence: <em>"Sunday evenings see 3× your average AutoMod hits — adjust on-call rotation?"</em></span></details>
 
-  <div class="card">
-    <span class="title">Mod-team coaching / bias audit</span>
-    <span class="desc">Compares each mod's decision patterns against the team average; surfaces outliers for self-reflection, never public shaming.</span>
-  </div>
+  <details class="card"><summary>Mod-team coaching / bias audit</summary><span class="desc">Compares each mod's decision patterns against the team average; surfaces outliers for self-reflection, never public shaming.</span></details>
 
-  <div class="card">
-    <span class="title">Persona / role-based moderation</span>
-    <span class="desc">Different filter aggressiveness per role tier. Community norms scale with trust — verified members get more latitude, unverified get less.</span>
-  </div>
+  <details class="card"><summary>Persona / role-based moderation</summary><span class="desc">Different filter aggressiveness per role tier. Community norms scale with trust — verified members get more latitude, unverified get less.</span></details>
 
-  <div class="card">
-    <span class="title">Channel-specific tone tuning</span>
-    <span class="desc">Per-channel policy — vent channels soft, family-friendly strict, debate channels allow heat but flag personal attacks.</span>
-  </div>
+  <details class="card"><summary>Channel-specific tone tuning</summary><span class="desc">Per-channel policy — vent channels soft, family-friendly strict, debate channels allow heat but flag personal attacks.</span></details>
 
-  <div class="card">
-    <span class="title">Misinformation flagging</span>
-    <span class="desc">Fact-checkable claims get a 💡 reaction linking to a verified source. Never auto-removes; treats the user as an adult.</span>
-  </div>
+  <details class="card"><summary>Misinformation flagging</summary><span class="desc">Fact-checkable claims get a 💡 reaction linking to a verified source. Never auto-removes; treats the user as an adult.</span></details>
 
-  <div class="card">
-    <span class="title">Reverse moderation</span>
-    <span class="desc">When a conversation derails, the bot suggests a constructive question or topic shift — soft-touch alternative to message deletion.</span>
-  </div>
+  <details class="card"><summary>Reverse moderation</summary><span class="desc">When a conversation derails, the bot suggests a constructive question or topic shift — soft-touch alternative to message deletion.</span></details>
 
-  <div class="card">
-    <span class="title">Cross-modal moderation</span>
-    <span class="desc">Unified text + image NSFW + link safety + voice analysis. Closes the gap where bad actors flip between modalities to evade single-mode filters.</span>
-  </div>
+  <details class="card"><summary>Cross-modal moderation</summary><span class="desc">Unified text + image NSFW + link safety + voice analysis. Closes the gap where bad actors flip between modalities to evade single-mode filters.</span></details>
 
-  <div class="card">
-    <span class="title">AI-generated mod training</span>
-    <span class="desc">Auto-generated new-mod onboarding doc based on actual cases your team has handled and house style they've established.</span>
-  </div>
+  <details class="card"><summary>AI-generated mod training</summary><span class="desc">Auto-generated new-mod onboarding doc based on actual cases your team has handled and house style they've established.</span></details>
 
-  <div class="card">
-    <span class="title">AI thread management</span>
-    <span class="desc">Off-topic conversations get auto-threaded with a soft DM to participants — <em>"moved this fascinating tangent to its own space."</em></span>
-  </div>
+  <details class="card"><summary>AI thread management</summary><span class="desc">Off-topic conversations get auto-threaded with a soft DM to participants — <em>"moved this fascinating tangent to its own space."</em></span></details>
 
 </div>
 
