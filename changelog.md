@@ -13,6 +13,13 @@ The latest patches are also posted to **#bot-feedback** in the [support server](
 
 ---
 
+## [3.3.4] — 2026-05-20
+
+### Changed
+- Tray tooltip now reads "(4 servers, 1 configured)" instead of the ambiguous "1/4 guilds".
+
+---
+
 ## [3.3.3] — 2026-05-20
 
 ### Fixed
