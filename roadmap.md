@@ -205,6 +205,23 @@ details.card .vote-link:hover {
   text-decoration: none;
 }
 
+/* Vote count badge shown next to each card title (always visible) */
+.vote-count-badge {
+  display: inline-block;
+  margin-left: 0.5em;
+  padding: 0.05em 0.5em;
+  background: #f0f7ff;
+  border: 1px solid #c8dcf2;
+  border-radius: 999px;
+  color: #2c7ad6;
+  font-size: 0.7em;
+  font-weight: 600;
+  vertical-align: middle;
+  transition: opacity 0.2s;
+}
+.vote-count-badge.zero { color: #aaa; background: #f5f5f5; border-color: #e8e8e8; }
+.vote-count-badge.loading { opacity: 0; }
+
 /* Safeguards nested details (for Threat Score) */
 details.safeguards {
   margin: 0.4rem 0.85rem 0.75rem;
@@ -274,22 +291,22 @@ Where Server Assistant is heading. Priorities shift based on what server owners 
 
     <details class="card">
       <summary>Pulse</summary>
-      <span class="desc">Always-on AI server-health analyst. Daily digests, leading-indicator flags, channel-tone shifts. Never auto-actions — just gives staff x-ray vision.</span><a class="vote-link" href="https://github.com/WandWeb2/server-assistant/discussions/24" target="_blank" rel="noopener">👍 Vote on this idea ›</a>
+      <span class="desc">Always-on AI server-health analyst. Daily digests, leading-indicator flags, channel-tone shifts. Never auto-actions — just gives staff x-ray vision.</span><a class="vote-link" href="https://github.com/WandWeb2/server-assistant-docs/discussions/1" target="_blank" rel="noopener">👍 Vote on this idea ›</a>
     </details>
 
     <details class="card">
       <summary>Self-trained AutoMod</summary>
-      <span class="desc">Bot watches your staff's manual decisions for 2–4 weeks, clusters the patterns, then proposes server-specific AutoMod rules for owner approval.</span><a class="vote-link" href="https://github.com/WandWeb2/server-assistant/discussions/25" target="_blank" rel="noopener">👍 Vote on this idea ›</a>
+      <span class="desc">Bot watches your staff's manual decisions for 2–4 weeks, clusters the patterns, then proposes server-specific AutoMod rules for owner approval.</span><a class="vote-link" href="https://github.com/WandWeb2/server-assistant-docs/discussions/2" target="_blank" rel="noopener">👍 Vote on this idea ›</a>
     </details>
 
     <details class="card">
       <summary>Bot health insurance</summary>
-      <span class="desc">Bot watches its own impact in each server and proactively suggests tuning when it's becoming too noisy. Stops Server Assistant from quietly becoming the bot every server eventually mutes.</span><a class="vote-link" href="https://github.com/WandWeb2/server-assistant/discussions/26" target="_blank" rel="noopener">👍 Vote on this idea ›</a>
+      <span class="desc">Bot watches its own impact in each server and proactively suggests tuning when it's becoming too noisy. Stops Server Assistant from quietly becoming the bot every server eventually mutes.</span><a class="vote-link" href="https://github.com/WandWeb2/server-assistant-docs/discussions/3" target="_blank" rel="noopener">👍 Vote on this idea ›</a>
     </details>
 
     <details class="card">
       <summary>Threat Score</summary>
-      <span class="desc">Risk-based moderation that replaces fixed punishment ladders. Actions fit the actual threat — context-aware, opt-in, with extensive safeguards against punishing legitimate users.</span><a class="vote-link" href="https://github.com/WandWeb2/server-assistant/discussions/27" target="_blank" rel="noopener">👍 Vote on this idea ›</a>
+      <span class="desc">Risk-based moderation that replaces fixed punishment ladders. Actions fit the actual threat — context-aware, opt-in, with extensive safeguards against punishing legitimate users.</span><a class="vote-link" href="https://github.com/WandWeb2/server-assistant-docs/discussions/4" target="_blank" rel="noopener">👍 Vote on this idea ›</a>
       <details class="safeguards">
         <summary>Safeguards against false positives</summary>
         <ul>
@@ -310,47 +327,47 @@ Where Server Assistant is heading. Priorities shift based on what server owners 
 
     <details class="card">
       <summary>AutoMod confidence scoring</summary>
-      <span class="desc">Every AI-flagged action shows its confidence level. Staff set thresholds for auto-action vs review-required.</span><a class="vote-link" href="https://github.com/WandWeb2/server-assistant/discussions/28" target="_blank" rel="noopener">👍 Vote on this idea ›</a>
+      <span class="desc">Every AI-flagged action shows its confidence level. Staff set thresholds for auto-action vs review-required.</span><a class="vote-link" href="https://github.com/WandWeb2/server-assistant-docs/discussions/5" target="_blank" rel="noopener">👍 Vote on this idea ›</a>
     </details>
 
     <details class="card">
       <summary>Repeat-offender detection</summary>
-      <span class="desc">Fingerprint behaviour to recognise users coming back on alt accounts after a ban.</span><a class="vote-link" href="https://github.com/WandWeb2/server-assistant/discussions/29" target="_blank" rel="noopener">👍 Vote on this idea ›</a>
+      <span class="desc">Fingerprint behaviour to recognise users coming back on alt accounts after a ban.</span><a class="vote-link" href="https://github.com/WandWeb2/server-assistant-docs/discussions/6" target="_blank" rel="noopener">👍 Vote on this idea ›</a>
     </details>
 
     <details class="card">
       <summary>AI rule explainer</summary>
-      <span class="desc">AutoMod DMs the user not just which filter matched, but why this rule exists, in plain language.</span><a class="vote-link" href="https://github.com/WandWeb2/server-assistant/discussions/30" target="_blank" rel="noopener">👍 Vote on this idea ›</a>
+      <span class="desc">AutoMod DMs the user not just which filter matched, but why this rule exists, in plain language.</span><a class="vote-link" href="https://github.com/WandWeb2/server-assistant-docs/discussions/7" target="_blank" rel="noopener">👍 Vote on this idea ›</a>
     </details>
 
     <details class="card">
       <summary>Smart purge</summary>
-      <span class="desc"><code>purge ai 50</code> deletes the genuinely problematic messages and archives constructive ones to a thread, instead of nuke-everything.</span><a class="vote-link" href="https://github.com/WandWeb2/server-assistant/discussions/31" target="_blank" rel="noopener">👍 Vote on this idea ›</a>
+      <span class="desc"><code>purge ai 50</code> deletes the genuinely problematic messages and archives constructive ones to a thread, instead of nuke-everything.</span><a class="vote-link" href="https://github.com/WandWeb2/server-assistant-docs/discussions/8" target="_blank" rel="noopener">👍 Vote on this idea ›</a>
     </details>
 
     <details class="card">
       <summary>Mod team retrospectives</summary>
-      <span class="desc">Weekly auto-generated retro embed: case counts, resolution times, notable patterns, items worth discussing.</span><a class="vote-link" href="https://github.com/WandWeb2/server-assistant/discussions/32" target="_blank" rel="noopener">👍 Vote on this idea ›</a>
+      <span class="desc">Weekly auto-generated retro embed: case counts, resolution times, notable patterns, items worth discussing.</span><a class="vote-link" href="https://github.com/WandWeb2/server-assistant-docs/discussions/9" target="_blank" rel="noopener">👍 Vote on this idea ›</a>
     </details>
 
     <details class="card">
       <summary>Cross-server reputation</summary>
-      <span class="desc">Opt-in positive reputation that follows trusted users between partner servers. The inverse of federated banlists.</span><a class="vote-link" href="https://github.com/WandWeb2/server-assistant/discussions/33" target="_blank" rel="noopener">👍 Vote on this idea ›</a>
+      <span class="desc">Opt-in positive reputation that follows trusted users between partner servers. The inverse of federated banlists.</span><a class="vote-link" href="https://github.com/WandWeb2/server-assistant-docs/discussions/10" target="_blank" rel="noopener">👍 Vote on this idea ›</a>
     </details>
 
     <details class="card">
       <summary>Community-of-practice sharing</summary>
-      <span class="desc"><em>"Servers like yours configure X this way"</em> recommendations based on similar community profiles.</span><a class="vote-link" href="https://github.com/WandWeb2/server-assistant/discussions/34" target="_blank" rel="noopener">👍 Vote on this idea ›</a>
+      <span class="desc"><em>"Servers like yours configure X this way"</em> recommendations based on similar community profiles.</span><a class="vote-link" href="https://github.com/WandWeb2/server-assistant-docs/discussions/11" target="_blank" rel="noopener">👍 Vote on this idea ›</a>
     </details>
 
     <details class="card">
       <summary>Staff coverage map</summary>
-      <span class="desc">Time-zone-aware visualisation of when each mod is typically active; flags coverage gaps for raid-prone hours.</span><a class="vote-link" href="https://github.com/WandWeb2/server-assistant/discussions/35" target="_blank" rel="noopener">👍 Vote on this idea ›</a>
+      <span class="desc">Time-zone-aware visualisation of when each mod is typically active; flags coverage gaps for raid-prone hours.</span><a class="vote-link" href="https://github.com/WandWeb2/server-assistant-docs/discussions/12" target="_blank" rel="noopener">👍 Vote on this idea ›</a>
     </details>
 
     <details class="card">
       <summary>Bot-on-bot detection</summary>
-      <span class="desc">Flag suspicious automation pretending to be human — relevant for mass-marketing raids that evade text filters.</span><a class="vote-link" href="https://github.com/WandWeb2/server-assistant/discussions/36" target="_blank" rel="noopener">👍 Vote on this idea ›</a>
+      <span class="desc">Flag suspicious automation pretending to be human — relevant for mass-marketing raids that evade text filters.</span><a class="vote-link" href="https://github.com/WandWeb2/server-assistant-docs/discussions/13" target="_blank" rel="noopener">👍 Vote on this idea ›</a>
     </details>
   </div>
 
@@ -370,36 +387,36 @@ Where Server Assistant is heading. Priorities shift based on what server owners 
   <div class="premium-tier-col">
     <h4>Tier A — ship first</h4>
 
-    <details class="card"><summary>Reaction roles</summary><span class="desc">Button-based self-service role panels in any channel.</span><a class="vote-link" href="https://github.com/WandWeb2/server-assistant/discussions/37" target="_blank" rel="noopener">👍 Vote on this idea ›</a></details>
-    <details class="card"><summary>Custom slash commands</summary><span class="desc">Server owners define their own <code>/foo</code> returning a configured embed or text snippet.</span><a class="vote-link" href="https://github.com/WandWeb2/server-assistant/discussions/38" target="_blank" rel="noopener">👍 Vote on this idea ›</a></details>
-    <details class="card"><summary>Daily AI channel summaries</summary><span class="desc">Once-a-day digest of activity in a chosen channel, posted to a configured destination.</span><a class="vote-link" href="https://github.com/WandWeb2/server-assistant/discussions/39" target="_blank" rel="noopener">👍 Vote on this idea ›</a></details>
-    <details class="card"><summary>Mediator</summary><span class="desc">When a conversation is escalating, bot DMs both parties, collects each side privately, and produces a neutral summary for staff.</span><a class="vote-link" href="https://github.com/WandWeb2/server-assistant/discussions/40" target="_blank" rel="noopener">👍 Vote on this idea ›</a></details>
-    <details class="card"><summary>Decision explainer + appeals</summary><span class="desc">Users can DM <em>"why was I warned?"</em> for a plain-language answer. Banned users start structured appeals through a guided AI flow.</span><a class="vote-link" href="https://github.com/WandWeb2/server-assistant/discussions/41" target="_blank" rel="noopener">👍 Vote on this idea ›</a></details>
+    <details class="card"><summary>Reaction roles</summary><span class="desc">Button-based self-service role panels in any channel.</span><a class="vote-link" href="https://github.com/WandWeb2/server-assistant-docs/discussions/14" target="_blank" rel="noopener">👍 Vote on this idea ›</a></details>
+    <details class="card"><summary>Custom slash commands</summary><span class="desc">Server owners define their own <code>/foo</code> returning a configured embed or text snippet.</span><a class="vote-link" href="https://github.com/WandWeb2/server-assistant-docs/discussions/15" target="_blank" rel="noopener">👍 Vote on this idea ›</a></details>
+    <details class="card"><summary>Daily AI channel summaries</summary><span class="desc">Once-a-day digest of activity in a chosen channel, posted to a configured destination.</span><a class="vote-link" href="https://github.com/WandWeb2/server-assistant-docs/discussions/16" target="_blank" rel="noopener">👍 Vote on this idea ›</a></details>
+    <details class="card"><summary>Mediator</summary><span class="desc">When a conversation is escalating, bot DMs both parties, collects each side privately, and produces a neutral summary for staff.</span><a class="vote-link" href="https://github.com/WandWeb2/server-assistant-docs/discussions/17" target="_blank" rel="noopener">👍 Vote on this idea ›</a></details>
+    <details class="card"><summary>Decision explainer + appeals</summary><span class="desc">Users can DM <em>"why was I warned?"</em> for a plain-language answer. Banned users start structured appeals through a guided AI flow.</span><a class="vote-link" href="https://github.com/WandWeb2/server-assistant-docs/discussions/18" target="_blank" rel="noopener">👍 Vote on this idea ›</a></details>
   </div>
 
   <div class="premium-tier-col">
     <h4>Tier B — solid additions</h4>
 
-    <details class="card"><summary>Leveling / XP</summary><span class="desc">Server-wide XP with level-up roles and a leaderboard. Opt-in per server, opt-out per user.</span><a class="vote-link" href="https://github.com/WandWeb2/server-assistant/discussions/42" target="_blank" rel="noopener">👍 Vote on this idea ›</a></details>
-    <details class="card"><summary>Polls</summary><span class="desc"><code>/poll</code> with button-based voting and live tally.</span><a class="vote-link" href="https://github.com/WandWeb2/server-assistant/discussions/43" target="_blank" rel="noopener">👍 Vote on this idea ›</a></details>
-    <details class="card"><summary>Embed builder</summary><span class="desc">Interactive wizard for crafting rich announcements with fields, images, and buttons.</span><a class="vote-link" href="https://github.com/WandWeb2/server-assistant/discussions/44" target="_blank" rel="noopener">👍 Vote on this idea ›</a></details>
+    <details class="card"><summary>Leveling / XP</summary><span class="desc">Server-wide XP with level-up roles and a leaderboard. Opt-in per server, opt-out per user.</span><a class="vote-link" href="https://github.com/WandWeb2/server-assistant-docs/discussions/19" target="_blank" rel="noopener">👍 Vote on this idea ›</a></details>
+    <details class="card"><summary>Polls</summary><span class="desc"><code>/poll</code> with button-based voting and live tally.</span><a class="vote-link" href="https://github.com/WandWeb2/server-assistant-docs/discussions/20" target="_blank" rel="noopener">👍 Vote on this idea ›</a></details>
+    <details class="card"><summary>Embed builder</summary><span class="desc">Interactive wizard for crafting rich announcements with fields, images, and buttons.</span><a class="vote-link" href="https://github.com/WandWeb2/server-assistant-docs/discussions/21" target="_blank" rel="noopener">👍 Vote on this idea ›</a></details>
   </div>
 
   <div class="premium-tier-col">
     <h4>Tier C — nice-to-have</h4>
 
-    <details class="card"><summary>Birthday tracker</summary><span class="desc">Opt-in birthdays with auto-DM and channel post on the day.</span><a class="vote-link" href="https://github.com/WandWeb2/server-assistant/discussions/45" target="_blank" rel="noopener">👍 Vote on this idea ›</a></details>
-    <details class="card"><summary>Welcome card images</summary><span class="desc">Auto-generated PNG welcome for each new joiner.</span><a class="vote-link" href="https://github.com/WandWeb2/server-assistant/discussions/46" target="_blank" rel="noopener">👍 Vote on this idea ›</a></details>
-    <details class="card"><summary>AI Q&amp;A from server FAQ</summary><span class="desc">Bot answers questions based on FAQ snippets the owner has provided.</span><a class="vote-link" href="https://github.com/WandWeb2/server-assistant/discussions/47" target="_blank" rel="noopener">👍 Vote on this idea ›</a></details>
-    <details class="card"><summary>Auto-translate</summary><span class="desc">On-demand or automatic translation for configured channels.</span><a class="vote-link" href="https://github.com/WandWeb2/server-assistant/discussions/48" target="_blank" rel="noopener">👍 Vote on this idea ›</a></details>
+    <details class="card"><summary>Birthday tracker</summary><span class="desc">Opt-in birthdays with auto-DM and channel post on the day.</span><a class="vote-link" href="https://github.com/WandWeb2/server-assistant-docs/discussions/22" target="_blank" rel="noopener">👍 Vote on this idea ›</a></details>
+    <details class="card"><summary>Welcome card images</summary><span class="desc">Auto-generated PNG welcome for each new joiner.</span><a class="vote-link" href="https://github.com/WandWeb2/server-assistant-docs/discussions/23" target="_blank" rel="noopener">👍 Vote on this idea ›</a></details>
+    <details class="card"><summary>AI Q&amp;A from server FAQ</summary><span class="desc">Bot answers questions based on FAQ snippets the owner has provided.</span><a class="vote-link" href="https://github.com/WandWeb2/server-assistant-docs/discussions/24" target="_blank" rel="noopener">👍 Vote on this idea ›</a></details>
+    <details class="card"><summary>Auto-translate</summary><span class="desc">On-demand or automatic translation for configured channels.</span><a class="vote-link" href="https://github.com/WandWeb2/server-assistant-docs/discussions/25" target="_blank" rel="noopener">👍 Vote on this idea ›</a></details>
   </div>
 
   <div class="premium-tier-col">
     <h4>Tier D — power users</h4>
 
-    <details class="card"><summary>REST / webhook API</summary><span class="desc">Read-only endpoints for your guild's bot data (warnings, audit log, activity stats).</span><a class="vote-link" href="https://github.com/WandWeb2/server-assistant/discussions/49" target="_blank" rel="noopener">👍 Vote on this idea ›</a></details>
-    <details class="card"><summary>White-label branding</summary><span class="desc">Fully replace the bot's identity per-server — your name, your avatar, your colour scheme.</span><a class="vote-link" href="https://github.com/WandWeb2/server-assistant/discussions/50" target="_blank" rel="noopener">👍 Vote on this idea ›</a></details>
-    <details class="card"><summary>Unlimited <code>/imagine</code></summary><span class="desc">Premium removes the 30-second per-guild rate limit.</span><a class="vote-link" href="https://github.com/WandWeb2/server-assistant/discussions/51" target="_blank" rel="noopener">👍 Vote on this idea ›</a></details>
+    <details class="card"><summary>REST / webhook API</summary><span class="desc">Read-only endpoints for your guild's bot data (warnings, audit log, activity stats).</span><a class="vote-link" href="https://github.com/WandWeb2/server-assistant-docs/discussions/26" target="_blank" rel="noopener">👍 Vote on this idea ›</a></details>
+    <details class="card"><summary>White-label branding</summary><span class="desc">Fully replace the bot's identity per-server — your name, your avatar, your colour scheme.</span><a class="vote-link" href="https://github.com/WandWeb2/server-assistant-docs/discussions/27" target="_blank" rel="noopener">👍 Vote on this idea ›</a></details>
+    <details class="card"><summary>Unlimited <code>/imagine</code></summary><span class="desc">Premium removes the 30-second per-guild rate limit.</span><a class="vote-link" href="https://github.com/WandWeb2/server-assistant-docs/discussions/28" target="_blank" rel="noopener">👍 Vote on this idea ›</a></details>
   </div>
 
 </div>
@@ -415,35 +432,35 @@ Where Server Assistant is heading. Priorities shift based on what server owners 
 
 <div class="longterm-grid">
 
-  <details class="card"><summary>Voice-channel moderation</summary><span class="desc">Real-time transcription + AutoMod / threat-score logic applied to voice channels. The industry's biggest moderation blind spot — no major bot touches voice.</span><a class="vote-link" href="https://github.com/WandWeb2/server-assistant/discussions/52" target="_blank" rel="noopener">👍 Vote on this idea ›</a></details>
+  <details class="card"><summary>Voice-channel moderation</summary><span class="desc">Real-time transcription + AutoMod / threat-score logic applied to voice channels. The industry's biggest moderation blind spot — no major bot touches voice.</span><a class="vote-link" href="https://github.com/WandWeb2/server-assistant-docs/discussions/29" target="_blank" rel="noopener">👍 Vote on this idea ›</a></details>
 
-  <details class="card"><summary>Federated moderation network</summary><span class="desc">Opt-in cross-server ban / warn data sharing for trusted communities. Solves cross-server raid coordination.</span><a class="vote-link" href="https://github.com/WandWeb2/server-assistant/discussions/53" target="_blank" rel="noopener">👍 Vote on this idea ›</a></details>
+  <details class="card"><summary>Federated moderation network</summary><span class="desc">Opt-in cross-server ban / warn data sharing for trusted communities. Solves cross-server raid coordination.</span><a class="vote-link" href="https://github.com/WandWeb2/server-assistant-docs/discussions/30" target="_blank" rel="noopener">👍 Vote on this idea ›</a></details>
 
-  <details class="card"><summary>AI-drafted server policy</summary><span class="desc">Bot reads your channels for two weeks, drafts a rules document tailored to your community's actual norms, posts it for owner approval.</span><a class="vote-link" href="https://github.com/WandWeb2/server-assistant/discussions/54" target="_blank" rel="noopener">👍 Vote on this idea ›</a></details>
+  <details class="card"><summary>AI-drafted server policy</summary><span class="desc">Bot reads your channels for two weeks, drafts a rules document tailored to your community's actual norms, posts it for owner approval.</span><a class="vote-link" href="https://github.com/WandWeb2/server-assistant-docs/discussions/31" target="_blank" rel="noopener">👍 Vote on this idea ›</a></details>
 
-  <details class="card"><summary>Conversational onboarding</summary><span class="desc">Replace the static welcome DM with a short AI conversation that auto-assigns roles based on answers and filters bad-faith joiners before their first message.</span><a class="vote-link" href="https://github.com/WandWeb2/server-assistant/discussions/55" target="_blank" rel="noopener">👍 Vote on this idea ›</a></details>
+  <details class="card"><summary>Conversational onboarding</summary><span class="desc">Replace the static welcome DM with a short AI conversation that auto-assigns roles based on answers and filters bad-faith joiners before their first message.</span><a class="vote-link" href="https://github.com/WandWeb2/server-assistant-docs/discussions/32" target="_blank" rel="noopener">👍 Vote on this idea ›</a></details>
 
-  <details class="card"><summary>Drift detection</summary><span class="desc">Track server tone and behaviour over weeks. Alert the Owner when material drift is detected so culture can be maintained before it erodes invisibly.</span><a class="vote-link" href="https://github.com/WandWeb2/server-assistant/discussions/56" target="_blank" rel="noopener">👍 Vote on this idea ›</a></details>
+  <details class="card"><summary>Drift detection</summary><span class="desc">Track server tone and behaviour over weeks. Alert the Owner when material drift is detected so culture can be maintained before it erodes invisibly.</span><a class="vote-link" href="https://github.com/WandWeb2/server-assistant-docs/discussions/33" target="_blank" rel="noopener">👍 Vote on this idea ›</a></details>
 
-  <details class="card"><summary>Community DNA fingerprint</summary><span class="desc">Per-server embedding capturing community character. Powers new-member matching, cross-server compatibility, and rule recommendations.</span><a class="vote-link" href="https://github.com/WandWeb2/server-assistant/discussions/57" target="_blank" rel="noopener">👍 Vote on this idea ›</a></details>
+  <details class="card"><summary>Community DNA fingerprint</summary><span class="desc">Per-server embedding capturing community character. Powers new-member matching, cross-server compatibility, and rule recommendations.</span><a class="vote-link" href="https://github.com/WandWeb2/server-assistant-docs/discussions/34" target="_blank" rel="noopener">👍 Vote on this idea ›</a></details>
 
-  <details class="card"><summary>Predictive mod scheduling</summary><span class="desc">Operational intelligence: <em>"Sunday evenings see 3× your average AutoMod hits — adjust on-call rotation?"</em></span><a class="vote-link" href="https://github.com/WandWeb2/server-assistant/discussions/58" target="_blank" rel="noopener">👍 Vote on this idea ›</a></details>
+  <details class="card"><summary>Predictive mod scheduling</summary><span class="desc">Operational intelligence: <em>"Sunday evenings see 3× your average AutoMod hits — adjust on-call rotation?"</em></span><a class="vote-link" href="https://github.com/WandWeb2/server-assistant-docs/discussions/35" target="_blank" rel="noopener">👍 Vote on this idea ›</a></details>
 
-  <details class="card"><summary>Mod-team coaching / bias audit</summary><span class="desc">Compares each mod's decision patterns against the team average; surfaces outliers for self-reflection, never public shaming.</span><a class="vote-link" href="https://github.com/WandWeb2/server-assistant/discussions/59" target="_blank" rel="noopener">👍 Vote on this idea ›</a></details>
+  <details class="card"><summary>Mod-team coaching / bias audit</summary><span class="desc">Compares each mod's decision patterns against the team average; surfaces outliers for self-reflection, never public shaming.</span><a class="vote-link" href="https://github.com/WandWeb2/server-assistant-docs/discussions/36" target="_blank" rel="noopener">👍 Vote on this idea ›</a></details>
 
-  <details class="card"><summary>Persona / role-based moderation</summary><span class="desc">Different filter aggressiveness per role tier. Community norms scale with trust — verified members get more latitude, unverified get less.</span><a class="vote-link" href="https://github.com/WandWeb2/server-assistant/discussions/60" target="_blank" rel="noopener">👍 Vote on this idea ›</a></details>
+  <details class="card"><summary>Persona / role-based moderation</summary><span class="desc">Different filter aggressiveness per role tier. Community norms scale with trust — verified members get more latitude, unverified get less.</span><a class="vote-link" href="https://github.com/WandWeb2/server-assistant-docs/discussions/37" target="_blank" rel="noopener">👍 Vote on this idea ›</a></details>
 
-  <details class="card"><summary>Channel-specific tone tuning</summary><span class="desc">Per-channel policy — vent channels soft, family-friendly strict, debate channels allow heat but flag personal attacks.</span><a class="vote-link" href="https://github.com/WandWeb2/server-assistant/discussions/61" target="_blank" rel="noopener">👍 Vote on this idea ›</a></details>
+  <details class="card"><summary>Channel-specific tone tuning</summary><span class="desc">Per-channel policy — vent channels soft, family-friendly strict, debate channels allow heat but flag personal attacks.</span><a class="vote-link" href="https://github.com/WandWeb2/server-assistant-docs/discussions/38" target="_blank" rel="noopener">👍 Vote on this idea ›</a></details>
 
-  <details class="card"><summary>Misinformation flagging</summary><span class="desc">Fact-checkable claims get a 💡 reaction linking to a verified source. Never auto-removes; treats the user as an adult.</span><a class="vote-link" href="https://github.com/WandWeb2/server-assistant/discussions/62" target="_blank" rel="noopener">👍 Vote on this idea ›</a></details>
+  <details class="card"><summary>Misinformation flagging</summary><span class="desc">Fact-checkable claims get a 💡 reaction linking to a verified source. Never auto-removes; treats the user as an adult.</span><a class="vote-link" href="https://github.com/WandWeb2/server-assistant-docs/discussions/39" target="_blank" rel="noopener">👍 Vote on this idea ›</a></details>
 
-  <details class="card"><summary>Reverse moderation</summary><span class="desc">When a conversation derails, the bot suggests a constructive question or topic shift — soft-touch alternative to message deletion.</span><a class="vote-link" href="https://github.com/WandWeb2/server-assistant/discussions/63" target="_blank" rel="noopener">👍 Vote on this idea ›</a></details>
+  <details class="card"><summary>Reverse moderation</summary><span class="desc">When a conversation derails, the bot suggests a constructive question or topic shift — soft-touch alternative to message deletion.</span><a class="vote-link" href="https://github.com/WandWeb2/server-assistant-docs/discussions/40" target="_blank" rel="noopener">👍 Vote on this idea ›</a></details>
 
-  <details class="card"><summary>Cross-modal moderation</summary><span class="desc">Unified text + image NSFW + link safety + voice analysis. Closes the gap where bad actors flip between modalities to evade single-mode filters.</span><a class="vote-link" href="https://github.com/WandWeb2/server-assistant/discussions/64" target="_blank" rel="noopener">👍 Vote on this idea ›</a></details>
+  <details class="card"><summary>Cross-modal moderation</summary><span class="desc">Unified text + image NSFW + link safety + voice analysis. Closes the gap where bad actors flip between modalities to evade single-mode filters.</span><a class="vote-link" href="https://github.com/WandWeb2/server-assistant-docs/discussions/41" target="_blank" rel="noopener">👍 Vote on this idea ›</a></details>
 
-  <details class="card"><summary>AI-generated mod training</summary><span class="desc">Auto-generated new-mod onboarding doc based on actual cases your team has handled and house style they've established.</span><a class="vote-link" href="https://github.com/WandWeb2/server-assistant/discussions/65" target="_blank" rel="noopener">👍 Vote on this idea ›</a></details>
+  <details class="card"><summary>AI-generated mod training</summary><span class="desc">Auto-generated new-mod onboarding doc based on actual cases your team has handled and house style they've established.</span><a class="vote-link" href="https://github.com/WandWeb2/server-assistant-docs/discussions/42" target="_blank" rel="noopener">👍 Vote on this idea ›</a></details>
 
-  <details class="card"><summary>AI thread management</summary><span class="desc">Off-topic conversations get auto-threaded with a soft DM to participants — <em>"moved this fascinating tangent to its own space."</em></span><a class="vote-link" href="https://github.com/WandWeb2/server-assistant/discussions/66" target="_blank" rel="noopener">👍 Vote on this idea ›</a></details>
+  <details class="card"><summary>AI thread management</summary><span class="desc">Off-topic conversations get auto-threaded with a soft DM to participants — <em>"moved this fascinating tangent to its own space."</em></span><a class="vote-link" href="https://github.com/WandWeb2/server-assistant-docs/discussions/43" target="_blank" rel="noopener">👍 Vote on this idea ›</a></details>
 
 </div>
 
@@ -466,3 +483,85 @@ What ships is what gets requested most clearly. Vague *"add more features"* feed
 - [Setup]({{ site.url }}{{ site.baseurl }}/setup/) if you haven't installed yet
 - [Changelog]({{ site.url }}{{ site.baseurl }}/changelog/) for what's already shipped
 - [Support]({{ site.url }}{{ site.baseurl }}/support/) to ask questions or request features
+
+<script>
+// Live vote counts for each roadmap card — fetched from the public GitHub
+// Discussions API for the docs repo. Cached in localStorage for 5 minutes
+// to stay well under the 60 req/hour unauthenticated rate limit.
+(function () {
+  const API_URL = 'https://api.github.com/repos/WandWeb2/server-assistant-docs/discussions?category=Ideas&per_page=100';
+  const CACHE_KEY = 'sa_vote_counts_v2';
+  const CACHE_TTL_MS = 5 * 60 * 1000;
+
+  function applyCounts(counts) {
+    document.querySelectorAll('a.vote-link').forEach(function (a) {
+      const m = a.href.match(/discussions\/(\d+)/);
+      if (!m) return;
+      const num = parseInt(m[1], 10);
+      const count = counts[num] || 0;
+
+      // Update the button text with the count
+      a.textContent = count > 0
+        ? '👍 ' + count + ' · Vote on this idea ›'
+        : '👍 Vote on this idea ›';
+
+      // Inject (or update) a small badge next to the summary title
+      const details = a.closest('details.card');
+      if (!details) return;
+      const summary = details.querySelector(':scope > summary');
+      if (!summary) return;
+      let badge = summary.querySelector('.vote-count-badge');
+      if (!badge) {
+        badge = document.createElement('span');
+        badge.className = 'vote-count-badge';
+        summary.appendChild(badge);
+      }
+      badge.textContent = '👍 ' + count;
+      badge.classList.toggle('zero', count === 0);
+      badge.classList.remove('loading');
+    });
+  }
+
+  // Pre-render badges in a loading state so layout doesn't shift later
+  document.querySelectorAll('a.vote-link').forEach(function (a) {
+    const details = a.closest('details.card');
+    if (!details) return;
+    const summary = details.querySelector(':scope > summary');
+    if (!summary) return;
+    if (!summary.querySelector('.vote-count-badge')) {
+      const badge = document.createElement('span');
+      badge.className = 'vote-count-badge loading';
+      badge.textContent = '👍 0';
+      summary.appendChild(badge);
+    }
+  });
+
+  // Try cache first
+  try {
+    const cached = JSON.parse(localStorage.getItem(CACHE_KEY) || 'null');
+    if (cached && (Date.now() - cached.ts) < CACHE_TTL_MS) {
+      applyCounts(cached.counts);
+      return;
+    }
+  } catch (e) { /* localStorage unavailable; fall through */ }
+
+  // Fetch fresh
+  fetch(API_URL)
+    .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+    .then(function (discussions) {
+      const counts = {};
+      discussions.forEach(function (d) {
+        counts[d.number] = (d.reactions && d.reactions['+1']) || 0;
+      });
+      applyCounts(counts);
+      try {
+        localStorage.setItem(CACHE_KEY, JSON.stringify({ ts: Date.now(), counts: counts }));
+      } catch (e) {}
+    })
+    .catch(function (err) {
+      console.warn('[roadmap] vote counts unavailable:', err);
+      // Remove loading badges so they don't sit at 0 forever
+      document.querySelectorAll('.vote-count-badge.loading').forEach(function (b) { b.remove(); });
+    });
+})();
+</script>
