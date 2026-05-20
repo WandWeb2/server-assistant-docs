@@ -13,6 +13,13 @@ The latest patches are also posted to **#bot-feedback** in the [support server](
 
 ---
 
+## [3.2.9] — 2026-05-20
+
+### Added
+- **"Servers…" tray menu item** — opens a window showing every connected guild and its activity counters. No terminal needed.
+
+---
+
 ## [3.2.8] — 2026-05-20
 
 ### Fixed
