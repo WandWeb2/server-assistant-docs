@@ -13,6 +13,13 @@ The latest patches are also posted to **#bot-feedback** in the [support server](
 
 ---
 
+## [3.2.7] — 2026-05-20
+
+### Removed
+- Legacy OpenClaw Gateway entry from the tray app — was causing a perpetual red status icon.
+
+---
+
 ## [3.2.6] — 2026-05-10
 
 ### Fixed
