@@ -42,7 +42,7 @@ image: /server-assistant-docs/assets/banner.jpeg
 
 ## What is Server Assistant?
 
-**Server Assistant** is a **multi-tenant Discord moderation and automation bot**. Each server gets its own isolated configuration — warnings, notes, AutoMod rules, and settings stay scoped to that guild. Built around three principles: **safety** (dangerous actions require Owner approval), **transparency** (every action logged with full audit trail), and **extensibility** (server owners customise everything from embed colours to punishment ladders without code).
+**Server Assistant** is a Discord moderation and automation bot built around three principles: **safety** (dangerous actions require Owner approval), **transparency** (every action logged with a full audit trail), and **extensibility** (server owners customise everything from embed colours to punishment ladders without code).
 
 ## Quick links
 

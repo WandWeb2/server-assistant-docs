@@ -13,6 +13,13 @@ The latest patches are also posted to **#bot-feedback** in the [support server](
 
 ---
 
+## [3.4.1] — 2026-05-20
+
+### Changed
+- Marketing copy across docs, README, BRANDING, and the welcome DM no longer leads with "multi-tenant / isolated configuration" — per-guild isolation is a baseline, not a feature.
+
+---
+
 ## [3.4.0] — 2026-05-20
 
 ### Added
