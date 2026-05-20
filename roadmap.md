@@ -2,134 +2,376 @@
 layout: default
 title: Roadmap
 permalink: /roadmap/
-description: What Server Assistant is building next — the AI-moderation update, premium-tier features, and longer-term explorations.
+description: Server Assistant's product roadmap — what's in development, what's next, and where we're exploring.
 ---
+
+<style>
+.roadmap-hero {
+  margin: 1.5rem 0 2rem;
+  padding: 1.25rem 1.5rem;
+  border-left: 4px solid #2ecc71;
+  background: #f4f8f5;
+  border-radius: 6px;
+  color: #333;
+}
+.roadmap-hero p { margin: .3rem 0; }
+
+.roadmap-board {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 2rem 0;
+}
+@media (max-width: 1100px) {
+  .roadmap-board { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 640px) {
+  .roadmap-board { grid-template-columns: 1fr; }
+}
+
+.lane {
+  background: #fafafa;
+  border-top: 4px solid;
+  border-radius: 6px;
+  padding: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+.lane-now      { border-color: #2ecc71; }
+.lane-planned  { border-color: #3498db; }
+.lane-premium  { border-color: #f1c40f; }
+.lane-future   { border-color: #9b59b6; }
+
+.lane h3 {
+  margin: 0 0 0.25rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #555;
+}
+.lane h4 {
+  margin: 0.5rem 0 0.1rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #888;
+  border-bottom: 1px dotted #ddd;
+  padding-bottom: 0.15rem;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  padding: 0.55rem 0.7rem;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+.card:hover {
+  box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+  transform: translateY(-1px);
+}
+.card .title {
+  display: block;
+  font-weight: 600;
+  font-size: 0.88rem;
+  color: #222;
+  margin-bottom: 0.15rem;
+}
+.card .desc {
+  display: block;
+  font-size: 0.78rem;
+  color: #666;
+  line-height: 1.35;
+}
+
+details.safeguards {
+  margin-top: 0.4rem;
+  font-size: 0.75rem;
+  color: #555;
+}
+details.safeguards summary {
+  cursor: pointer;
+  color: #2980b9;
+  font-weight: 500;
+}
+details.safeguards ul {
+  margin: 0.35rem 0 0 0.9rem;
+  padding: 0;
+  line-height: 1.4;
+}
+details.safeguards li { margin-bottom: 0.15rem; }
+</style>
 
 # 🗺️ Roadmap
 
-Where Server Assistant is headed. Priorities shift based on what server owners actually ask for — [join the support server]({{ site.url }}{{ site.baseurl }}/support/) if you want to weigh in.
+Where Server Assistant is heading. The board below is the at-a-glance view; priorities shift based on what server owners actually request — [join the support server]({{ site.url }}{{ site.baseurl }}/support/) if you want to influence the order.
 
-> Dates are deliberately omitted. Things land when they're ready.
->
-> **Every current feature stays free forever.** The premium-tier items below add *new* capabilities. Servers that joined during the free phase are grandfathered into premium access at no cost.
+<div class="roadmap-hero">
+  <p>📌 <strong>Dates are deliberately omitted.</strong> Things land when they're ready.</p>
+  <p>💚 <strong>Every current feature stays free forever.</strong> The Premium-tier column adds <em>new</em> capabilities. Servers that joined during the free phase are grandfathered into premium access at no cost.</p>
+</div>
 
----
+<div class="roadmap-board">
 
-## 🟢 In active development — v4.0, the AI-moderation update
+  <!-- ════════ NOW ════════ -->
+  <div class="lane lane-now">
+    <h3>🟢 In Development<br>(v4.0 — AI Moderation)</h3>
 
-The next major release is a deliberate swing at category-defining moderation tooling. Three deeply-coupled features ship together:
+    <div class="card">
+      <span class="title">Pulse</span>
+      <span class="desc">Always-on AI server-health analyst. Daily digests, leading-indicator flags, channel-tone shifts. Never auto-actions — just gives staff x-ray vision.</span>
+    </div>
 
-### Pulse — AI server-health analyst
+    <div class="card">
+      <span class="title">Self-trained AutoMod</span>
+      <span class="desc">Bot watches your staff's manual decisions for 2-4 weeks, clusters the patterns, then proposes server-specific AutoMod rules for owner approval.</span>
+    </div>
 
-An opt-in background pass that reads recent activity and produces daily staff digests with **insight**, not just counts: which conversations are heating up, which users are showing leading indicators of escalation, which channels are shifting in tone, where moderator attention would land best. Never auto-actions; only informs. Per-guild opt-in, AI provider already configured, no user IDs ever leave your guild's data scope.
+    <div class="card">
+      <span class="title">Bot health insurance</span>
+      <span class="desc">Bot watches its own impact in each server and proactively suggests tuning when it's becoming too noisy. Stops Server Assistant from quietly becoming the bot every server eventually mutes.</span>
+    </div>
 
-### Self-trained AutoMod
+    <div class="card">
+      <span class="title">Threat Score</span>
+      <span class="desc">Risk-based moderation that replaces fixed punishment ladders. Actions fit the actual threat — context-aware, opt-in, with extensive safeguards against punishing legitimate users.</span>
+      <details class="safeguards">
+        <summary>Safeguards against false positives</summary>
+        <ul>
+          <li>Sentiment + content paired with velocity (eager new members score down, not up)</li>
+          <li>First-week grace period for genuinely new users</li>
+          <li>Moderate scores trigger a friendly check-in DM, not an action</li>
+          <li>Score decay over sustained good behaviour</li>
+          <li>No silent kicks or bans — high-score events ping staff for review</li>
+          <li>Full transparency: every action shows its score breakdown to user + staff</li>
+          <li>Server-defined thresholds; fallback to fixed-ladder mode supported</li>
+        </ul>
+      </details>
+    </div>
+  </div>
 
-The bot watches what your moderators actually warn / delete / ban over a 2–4 week window, clusters the patterns, then **proposes server-specific AutoMod rules** for the Owner to approve. Instead of generic regex packs that don't fit your community, the filter set adapts to *your* server's norms. Refines over time as staff accept or reject suggestions.
+  <!-- ════════ PLANNED ════════ -->
+  <div class="lane lane-planned">
+    <h3>🔵 Planned<br>(Upcoming Releases)</h3>
 
-### Bot health insurance
+    <div class="card">
+      <span class="title">AutoMod confidence scoring</span>
+      <span class="desc">Every AI-flagged action shows its confidence level. Staff set thresholds for auto-action vs review-required.</span>
+    </div>
 
-The bot watches its *own* impact on each server — auto-action volume, mod-channel signal-to-noise, repeated low-confidence escalations — and proactively suggests tuning. *"You're seeing 47 AutoMod hits per day in a 200-member server; the Strict preset may be too aggressive for this community. Want to switch to Standard?"* Keeps Server Assistant from quietly becoming the noisy bot every server eventually mutes.
+    <div class="card">
+      <span class="title">Repeat-offender detection</span>
+      <span class="desc">Fingerprint behaviour to recognise users coming back on alt accounts after a ban.</span>
+    </div>
 
-### Threat Score — risk-based moderation
+    <div class="card">
+      <span class="title">AI rule explainer</span>
+      <span class="desc">AutoMod DMs the user not just which filter matched, but why this rule exists, in plain language.</span>
+    </div>
 
-Replaces fixed punishment ladders with a per-infraction risk score that weighs context: account age, posting velocity, content sentiment, message similarity to past offenders, time-of-day clustering, prior history. Actions fit the actual threat instead of the warning count.
+    <div class="card">
+      <span class="title">Smart purge</span>
+      <span class="desc"><code>purge ai 50</code> deletes the genuinely problematic messages and archives constructive ones to a thread, instead of nuke-everything.</span>
+    </div>
 
-**Built-in safeguards** — because punishment systems that don't account for false positives become reputation killers. Every safeguard below is on by default:
+    <div class="card">
+      <span class="title">Mod team retrospectives</span>
+      <span class="desc">Weekly auto-generated retro embed: case counts, resolution times, notable patterns, items worth discussing.</span>
+    </div>
 
-- **Sentiment + content paired with velocity.** High velocity alone isn't a flag — high velocity *with* hostile or raid-style content is. An excited new member posting 12 messages/min about how cool the server is gets scored down, not up.
-- **First-week grace period.** Score weights are reduced for users in their first week. New, eager joiners aren't punished for engagement.
-- **Soft-touch first response.** Moderate scores trigger a friendly DM check-in ("hey, just confirming — are you new to Discord?"), not an action. Real raiders ignore it; legitimate users validate. The DM is the filter.
-- **Score decay over good behaviour.** Sustained positive activity reduces a user's score automatically. A single bad day doesn't follow you forever.
-- **No silent kicks or bans.** Above a configurable threshold, high-score events ping staff for human review rather than auto-actioning. Owner always retains the final call.
-- **Full transparency.** Every score-based action shows the user (in DM) and staff (in the audit log) exactly *why* it fired: "Score 65 because: account 2 days old (+25), 12 messages/min (+30), prior warning (+10)." Appealable, never opaque.
-- **Server-defined thresholds.** Each community sets its own score boundaries — what's "high risk" in a public RP server is normal traffic in a brand-new gaming community.
-- **Fallback to ladder mode.** Server owners who prefer the existing fixed-ladder behaviour can keep it. Threat Score is opt-in.
+    <div class="card">
+      <span class="title">Cross-server reputation</span>
+      <span class="desc">Opt-in positive reputation that follows trusted users between partner servers. The inverse of federated banlists.</span>
+    </div>
 
----
+    <div class="card">
+      <span class="title">Community-of-practice sharing</span>
+      <span class="desc"><em>"Servers like yours configure X this way"</em> recommendations based on similar community profiles.</span>
+    </div>
 
-## 🔵 Planned for upcoming releases
+    <div class="card">
+      <span class="title">Staff coverage map</span>
+      <span class="desc">Time-zone-aware visualisation of when each mod is typically active; flags coverage gaps for raid-prone hours.</span>
+    </div>
 
-Free-tier features queued for releases after v4.0, before the premium launch. Order is rough and shifts based on demand.
+    <div class="card">
+      <span class="title">Bot-on-bot detection</span>
+      <span class="desc">Flag suspicious automation pretending to be human — relevant for mass-marketing raids that evade text filters.</span>
+    </div>
+  </div>
 
-- **AutoMod confidence scoring.** Every AI-flagged action shows how confident the model was. Staff can configure auto-action vs review-required thresholds.
-- **"Repeat offender" pattern detection.** Fingerprint behaviour to recognise users returning on alt accounts after a ban.
-- **AI rule explainer.** When AutoMod removes a message, the DM also explains *why this rule exists* in plain language, not just which filter matched.
-- **Smart purge.** `purge ai 50` deletes the genuinely problematic messages and archives the constructive ones to a thread, instead of bulk-deleting everything.
-- **Mod team retrospectives.** Weekly auto-generated retro embed for the mod-chat: case counts, resolution times, notable patterns, items worth discussing as a team.
-- **Cross-server reputation.** Opt-in positive reputation that follows trusted users between partner servers. *"This user has 18 months of clean standing in 4 partner servers."*
-- **Community-of-practice rule sharing.** See *"servers like yours configure X this way"* recommendations based on similar community profiles.
-- **Time-zone aware staff coverage map.** Visualisation of when each mod is typically active; flags coverage gaps for raid-prone hours.
-- **Bot-on-bot detection.** Flag suspicious automation that's pretending to be human — rare in well-run servers, but a real issue in mass-marketing raids.
+  <!-- ════════ PREMIUM ════════ -->
+  <div class="lane lane-premium">
+    <h3>🟡 Premium-tier<br>(Post-verification)</h3>
 
----
+    <h4>Tier A — ship first</h4>
 
-## 🟡 Premium-tier feature backlog
+    <div class="card">
+      <span class="title">Reaction roles</span>
+      <span class="desc">Button-based self-service role panels in any channel.</span>
+    </div>
 
-Slotted in after the v4.0 AI-moderation update lands, with priority based on community demand.
+    <div class="card">
+      <span class="title">Custom slash commands</span>
+      <span class="desc">Server owners define their own <code>/foo</code> returning a configured embed or text snippet.</span>
+    </div>
 
-### Tier A — high impact, ship first
+    <div class="card">
+      <span class="title">Daily AI channel summaries</span>
+      <span class="desc">Once-a-day digest of activity in a chosen channel, posted to a configured destination.</span>
+    </div>
 
-- **Reaction roles.** Button-based self-service role panels in any channel.
-- **Custom server-defined slash commands.** Server owners define their own `/foo` that returns a configured embed or text snippet.
-- **Daily AI channel summaries.** Once-a-day digest of activity in a chosen channel, posted to a configured destination.
-- **Mediator.** Proactively DMs both parties when a conversation is escalating, collects each side privately, and produces a neutral summary for staff. Defuses conflict before staff has to wade through hundreds of messages.
-- **Decision explainer + AI-guided appeals.** Users can DM the bot to ask why any action was taken (with a plain-language explanation of the rule, why it exists, and how to resolve it). Banned users can start a structured appeal — the bot walks them through 3–4 questions and produces a clean appeal embed for staff review.
+    <div class="card">
+      <span class="title">Mediator</span>
+      <span class="desc">When a conversation is escalating, bot DMs both parties, collects each side privately, and produces a neutral summary for staff.</span>
+    </div>
 
-### Tier B — solid additions
+    <div class="card">
+      <span class="title">Decision explainer + appeals</span>
+      <span class="desc">Users can DM <em>"why was I warned?"</em> for a plain-language answer. Banned users start structured appeals through a guided AI flow.</span>
+    </div>
 
-- **Leveling / XP system.** Server-wide XP with level-up roles and a leaderboard. Opt-in per server, opt-out per user.
-- **Polls.** `/poll` with button-based voting and live tally.
-- **Embed builder.** Interactive wizard for crafting rich announcements with fields, images, and buttons.
+    <h4>Tier B</h4>
 
-### Tier C — nice-to-have
+    <div class="card">
+      <span class="title">Leveling / XP</span>
+      <span class="desc">Server-wide XP with level-up roles and a leaderboard. Opt-in per server, opt-out per user.</span>
+    </div>
 
-- **Birthday tracker.** Opt-in birthdays with auto-DM and channel post on the day.
-- **Welcome card images.** Graphical welcome PNG generated for each new joiner.
-- **AI Q&A from server FAQ.** Bot answers questions based on FAQ snippets the server owner has provided.
-- **Auto-translate.** Message translation on demand or automatically for configured channels.
+    <div class="card">
+      <span class="title">Polls</span>
+      <span class="desc"><code>/poll</code> with button-based voting and live tally.</span>
+    </div>
 
-### Tier D — power users
+    <div class="card">
+      <span class="title">Embed builder</span>
+      <span class="desc">Interactive wizard for crafting rich announcements with fields, images, and buttons.</span>
+    </div>
 
-- **REST / webhook API.** Read-only endpoints for your guild's bot data.
-- **White-label branding.** Fully replace the bot's identity per-server.
-- **Unlimited `/imagine` quota.** Free tier has a 30-second per-guild rate limit; premium removes it.
+    <h4>Tier C</h4>
 
----
+    <div class="card">
+      <span class="title">Birthday tracker</span>
+      <span class="desc">Opt-in birthdays with auto-DM and channel post on the day.</span>
+    </div>
 
-## 🔮 Longer-term explorations
+    <div class="card">
+      <span class="title">Welcome card images</span>
+      <span class="desc">Auto-generated PNG welcome for each new joiner.</span>
+    </div>
 
-Bigger conceptual swings — interesting if v4.0 validates the AI-moderation direction.
+    <div class="card">
+      <span class="title">AI Q&amp;A from server FAQ</span>
+      <span class="desc">Bot answers questions based on FAQ snippets the owner has provided.</span>
+    </div>
 
-**Voice-channel moderation.** Real-time transcription + AutoMod / threat-score logic applied to voice channels. Currently the industry's biggest moderation blind spot — no major bot touches voice. Visible "bot listening" indicators, transcript auto-purge, audit log of voice actions.
+    <div class="card">
+      <span class="title">Auto-translate</span>
+      <span class="desc">On-demand or automatic translation for configured channels.</span>
+    </div>
 
-**Federated moderation network.** Opt-in cross-server ban / warn data sharing for trusted communities. *"This user was banned in 5 partner servers for the same behaviour."* Solves cross-server raid coordination. Trust and governance model needs careful design.
+    <h4>Tier D — power users</h4>
 
-**AI-drafted server policy.** Bot reads your channels for two weeks, drafts a rules document tailored to your community's actual norms, posts it for owner approval. Useful for new servers that don't know which rules they need until something goes wrong.
+    <div class="card">
+      <span class="title">REST / webhook API</span>
+      <span class="desc">Read-only endpoints for your guild's bot data (warnings, audit log, activity stats).</span>
+    </div>
 
-**Conversational onboarding agent.** Replace the static welcome DM with a short AI conversation that asks new joiners what brought them and auto-assigns roles based on the answers. Filters bad-faith joiners *before* their first message.
+    <div class="card">
+      <span class="title">White-label branding</span>
+      <span class="desc">Fully replace the bot's identity per-server — your name, your avatar, your colour scheme.</span>
+    </div>
 
-**Server "drift" detection.** Track tone, topics, and behaviour patterns over weeks. Alert the Owner when material drift is detected — *"this server has become noticeably more heated over the last 60 days"* — so culture can be maintained before it erodes invisibly.
+    <div class="card">
+      <span class="title">Unlimited <code>/imagine</code></span>
+      <span class="desc">Premium removes the 30-second per-guild rate limit.</span>
+    </div>
+  </div>
 
-**Community DNA fingerprint.** Learn a per-server embedding that captures what kind of community this is. Powers new-member matching, cross-server compatibility scoring, and recommendations for rules that work well in similar communities. Real ML, not just LLM-as-API.
+  <!-- ════════ LONG-TERM ════════ -->
+  <div class="lane lane-future">
+    <h3>🔮 Long-term<br>Explorations</h3>
 
-**Predictive mod scheduling.** Operational intelligence for mod teams. *"Sunday evenings UTC see 3× your average AutoMod hits — recommend adjusting on-call rotation."* Useful for volunteer-staffed servers running on best-effort coverage.
+    <div class="card">
+      <span class="title">Voice-channel moderation</span>
+      <span class="desc">Real-time transcription + AutoMod / threat-score logic applied to voice channels. Industry's biggest moderation blind spot.</span>
+    </div>
 
-**Mod-team coaching / bias audit.** Compares each mod's decision patterns against the team's average; gently surfaces outliers (*"you're significantly stricter on profanity than the rest of the team — worth a chat?"*) for self-reflection, never public shaming.
+    <div class="card">
+      <span class="title">Federated moderation network</span>
+      <span class="desc">Opt-in cross-server ban / warn data sharing for trusted communities.</span>
+    </div>
 
-**Persona / role-based moderation.** Different filter aggressiveness per role tier — verified members get more latitude, unverified get less, paid subscribers get yet another set. Lets community norms scale with trust.
+    <div class="card">
+      <span class="title">AI-drafted server policy</span>
+      <span class="desc">Bot reads your channels for two weeks, drafts a rules document tailored to your community's actual norms.</span>
+    </div>
 
-**Channel-specific tone tuning.** Per-channel policy — vent channels have softer thresholds, family-friendly channels strict, debate channels allow heat but flag personal attacks.
+    <div class="card">
+      <span class="title">Conversational onboarding</span>
+      <span class="desc">Replace static welcome DM with a short AI conversation that auto-assigns roles based on answers and filters bad-faith joiners.</span>
+    </div>
 
-**Real-time misinformation flagging.** Fact-checkable claims get a 💡 reaction with a link to a verified fact-check source. Never auto-removes; treats the user as an adult.
+    <div class="card">
+      <span class="title">Drift detection</span>
+      <span class="desc">Track server tone and behaviour over weeks. Alert the Owner when material drift is detected.</span>
+    </div>
 
-**Reverse moderation.** When a conversation is derailing, the bot can suggest a constructive question or topic shift to staff (or post one directly with mod approval). Soft-touch alternative to message deletion.
+    <div class="card">
+      <span class="title">Community DNA fingerprint</span>
+      <span class="desc">Per-server embedding capturing community character. Powers new-member matching, cross-server compatibility, rule recommendations.</span>
+    </div>
 
-**Cross-modal moderation.** Unified text + image NSFW classification + link safety + voice analysis. Closes the gap where bad actors flip between modalities to evade single-mode filters.
+    <div class="card">
+      <span class="title">Predictive mod scheduling</span>
+      <span class="desc">Operational intelligence: <em>"Sunday evenings see 3× your average AutoMod hits — adjust on-call rotation?"</em></span>
+    </div>
 
-**AI-generated mod training material.** Based on actual cases your team has handled, produce a *"new mod onboarding doc"* tailored to this server's patterns and house style.
+    <div class="card">
+      <span class="title">Mod-team coaching / bias audit</span>
+      <span class="desc">Surfaces outliers in each mod's decision patterns vs the team average — for self-reflection, never public shaming.</span>
+    </div>
 
-**AI-curated thread management.** When a conversation is clearly going off-topic, the bot auto-creates a thread and softly nudges participants — *"this discussion seems fascinating but probably deserves its own space; moved it to a thread."*
+    <div class="card">
+      <span class="title">Persona / role-based moderation</span>
+      <span class="desc">Different filter aggressiveness per role tier. Community norms scale with trust.</span>
+    </div>
+
+    <div class="card">
+      <span class="title">Channel-specific tone tuning</span>
+      <span class="desc">Per-channel policy — vent channels soft, family-friendly strict, debate channels allow heat but flag personal attacks.</span>
+    </div>
+
+    <div class="card">
+      <span class="title">Misinformation flagging</span>
+      <span class="desc">Fact-checkable claims get a 💡 reaction linking to a verified source. Never auto-removes.</span>
+    </div>
+
+    <div class="card">
+      <span class="title">Reverse moderation</span>
+      <span class="desc">When a conversation derails, the bot suggests a constructive question or topic shift — soft alternative to deletion.</span>
+    </div>
+
+    <div class="card">
+      <span class="title">Cross-modal moderation</span>
+      <span class="desc">Unified text + image NSFW + link safety + voice. Closes the gap where bad actors flip between modalities.</span>
+    </div>
+
+    <div class="card">
+      <span class="title">AI-generated mod training</span>
+      <span class="desc">Auto-generated new-mod onboarding doc based on actual cases your team has handled.</span>
+    </div>
+
+    <div class="card">
+      <span class="title">AI thread management</span>
+      <span class="desc">Off-topic conversations get auto-threaded with a soft DM to participants explaining the move.</span>
+    </div>
+  </div>
+</div>
 
 ---
 
@@ -137,11 +379,11 @@ Bigger conceptual swings — interesting if v4.0 validates the AI-moderation dir
 
 The fastest way to move something up the list:
 
-1. **Post in `#bot-feedback`** on the [support server]({{ site.url }}{{ site.baseurl }}/support/) describing the use case — not just "add feature X" but *what you'd do with it*.
+1. **Post in `#bot-feedback`** on the [support server]({{ site.url }}{{ site.baseurl }}/support/) describing the use case — not just *"add feature X"* but *what you'd do with it*.
 2. **File a feature request issue** on GitHub if you want formal tracking.
-3. **+1 existing issues** so we can see which ideas have multiple supporters.
+3. **+1 existing issues** so the team can see which ideas have multiple supporters.
 
-What ships is what gets requested most clearly. Vague "add more features" feedback is unactionable; "I run a 2,000-member RP server and we need X because Y" gets prioritised.
+What ships is what gets requested most clearly. Vague *"add more features"* feedback is unactionable; *"I run a 2,000-member RP server and we need X because Y"* gets prioritised.
 
 ---
 
