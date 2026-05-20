@@ -11,6 +11,13 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 
 ---
 
+## 2026-05-21 — v3.4.2
+
+### Changed
+- **Beta-period perk made explicit across the site.** Servers that add Server Assistant *before* the premium tier launches receive **12 months of free premium access** from launch day. The welcome DM new owners receive now mentions this too — invite the bot now, lock in a year of premium for free.
+
+---
+
 ## 2026-05-20 — v3.4
 
 ### Added
