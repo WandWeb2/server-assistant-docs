@@ -27,6 +27,10 @@ An opt-in background pass that reads recent activity and produces daily staff di
 
 The bot watches what your moderators actually warn / delete / ban over a 2–4 week window, clusters the patterns, then **proposes server-specific AutoMod rules** for the Owner to approve. Instead of generic regex packs that don't fit your community, the filter set adapts to *your* server's norms. Refines over time as staff accept or reject suggestions.
 
+### Bot health insurance
+
+The bot watches its *own* impact on each server — auto-action volume, mod-channel signal-to-noise, repeated low-confidence escalations — and proactively suggests tuning. *"You're seeing 47 AutoMod hits per day in a 200-member server; the Strict preset may be too aggressive for this community. Want to switch to Standard?"* Keeps Server Assistant from quietly becoming the noisy bot every server eventually mutes.
+
 ### Threat Score — risk-based moderation
 
 Replaces fixed punishment ladders with a per-infraction risk score that weighs context: account age, posting velocity, content sentiment, message similarity to past offenders, time-of-day clustering, prior history. Actions fit the actual threat instead of the warning count.
@@ -41,6 +45,22 @@ Replaces fixed punishment ladders with a per-infraction risk score that weighs c
 - **Full transparency.** Every score-based action shows the user (in DM) and staff (in the audit log) exactly *why* it fired: "Score 65 because: account 2 days old (+25), 12 messages/min (+30), prior warning (+10)." Appealable, never opaque.
 - **Server-defined thresholds.** Each community sets its own score boundaries — what's "high risk" in a public RP server is normal traffic in a brand-new gaming community.
 - **Fallback to ladder mode.** Server owners who prefer the existing fixed-ladder behaviour can keep it. Threat Score is opt-in.
+
+---
+
+## 🔵 Planned for upcoming releases
+
+Free-tier features queued for releases after v4.0, before the premium launch. Order is rough and shifts based on demand.
+
+- **AutoMod confidence scoring.** Every AI-flagged action shows how confident the model was. Staff can configure auto-action vs review-required thresholds.
+- **"Repeat offender" pattern detection.** Fingerprint behaviour to recognise users returning on alt accounts after a ban.
+- **AI rule explainer.** When AutoMod removes a message, the DM also explains *why this rule exists* in plain language, not just which filter matched.
+- **Smart purge.** `purge ai 50` deletes the genuinely problematic messages and archives the constructive ones to a thread, instead of bulk-deleting everything.
+- **Mod team retrospectives.** Weekly auto-generated retro embed for the mod-chat: case counts, resolution times, notable patterns, items worth discussing as a team.
+- **Cross-server reputation.** Opt-in positive reputation that follows trusted users between partner servers. *"This user has 18 months of clean standing in 4 partner servers."*
+- **Community-of-practice rule sharing.** See *"servers like yours configure X this way"* recommendations based on similar community profiles.
+- **Time-zone aware staff coverage map.** Visualisation of when each mod is typically active; flags coverage gaps for raid-prone hours.
+- **Bot-on-bot detection.** Flag suspicious automation that's pretending to be human — rare in well-run servers, but a real issue in mass-marketing raids.
 
 ---
 
@@ -94,6 +114,22 @@ Bigger conceptual swings — interesting if v4.0 validates the AI-moderation dir
 **Community DNA fingerprint.** Learn a per-server embedding that captures what kind of community this is. Powers new-member matching, cross-server compatibility scoring, and recommendations for rules that work well in similar communities. Real ML, not just LLM-as-API.
 
 **Predictive mod scheduling.** Operational intelligence for mod teams. *"Sunday evenings UTC see 3× your average AutoMod hits — recommend adjusting on-call rotation."* Useful for volunteer-staffed servers running on best-effort coverage.
+
+**Mod-team coaching / bias audit.** Compares each mod's decision patterns against the team's average; gently surfaces outliers (*"you're significantly stricter on profanity than the rest of the team — worth a chat?"*) for self-reflection, never public shaming.
+
+**Persona / role-based moderation.** Different filter aggressiveness per role tier — verified members get more latitude, unverified get less, paid subscribers get yet another set. Lets community norms scale with trust.
+
+**Channel-specific tone tuning.** Per-channel policy — vent channels have softer thresholds, family-friendly channels strict, debate channels allow heat but flag personal attacks.
+
+**Real-time misinformation flagging.** Fact-checkable claims get a 💡 reaction with a link to a verified fact-check source. Never auto-removes; treats the user as an adult.
+
+**Reverse moderation.** When a conversation is derailing, the bot can suggest a constructive question or topic shift to staff (or post one directly with mod approval). Soft-touch alternative to message deletion.
+
+**Cross-modal moderation.** Unified text + image NSFW classification + link safety + voice analysis. Closes the gap where bad actors flip between modalities to evade single-mode filters.
+
+**AI-generated mod training material.** Based on actual cases your team has handled, produce a *"new mod onboarding doc"* tailored to this server's patterns and house style.
+
+**AI-curated thread management.** When a conversation is clearly going off-topic, the bot auto-creates a thread and softly nudges participants — *"this discussion seems fascinating but probably deserves its own space; moved it to a thread."*
 
 ---
 
