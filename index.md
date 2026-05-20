@@ -76,6 +76,10 @@ You'll need **Manage Server** permission. Authorise the requested permissions, t
 
 *Now listed on [Top.gg](https://top.gg/bot/1278486617375510570) and [discordbotlist.com](https://discordbotlist.com/bots/server-assistant). Discord App Directory listing follows once the bot reaches Discord's 75-server verification threshold.*
 
+<div style="margin: 1.5rem 0; padding: 1rem 1.25rem; background: #fff7e6; border-left: 4px solid #f1c40f; border-radius: 6px;">
+  <strong>🎁 Beta-period perk:</strong> servers that add Server Assistant <em>before the premium tier launches</em> receive <strong>12 months of free premium access</strong> from launch day. Use the bot now → keep premium free for a year. No card, no claim form — if you're a beta server, you're in automatically. See the <a href="{{ site.url }}{{ site.baseurl }}/roadmap/">Roadmap</a> for what's coming.
+</div>
+
 ## Features at a glance
 
 ### 🛡️ Moderation

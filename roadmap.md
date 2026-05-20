@@ -233,16 +233,18 @@ details.safeguards li { margin-bottom: 0.2rem; }
 .expand-all-bar button {
   background: #fff;
   border: 1px solid #ddd;
-  border-radius: 4px;
-  padding: 0.35rem 0.85rem;
-  font-size: 0.8rem;
+  border-radius: 999px;
+  padding: 0.4rem 1.1rem;
+  font-size: 0.82rem;
+  font-weight: 500;
   color: #555;
   cursor: pointer;
   transition: all 0.15s;
 }
 .expand-all-bar button:hover {
+  background: #2c7ad6;
   border-color: #2c7ad6;
-  color: #2c7ad6;
+  color: #fff;
 }
 </style>
 
@@ -252,10 +254,9 @@ Where Server Assistant is heading. Priorities shift based on what server owners 
 
 <div class="roadmap-hero">
   <p>📌 <strong>Dates are deliberately omitted.</strong> Things land when they're ready.</p>
-  <p>💚 <strong>Every current feature stays free forever.</strong> The Premium-tier section below adds <em>new</em> capabilities. Servers that joined during the free phase are grandfathered into premium access at no cost.</p>
+  <p>💚 <strong>Every current feature stays free forever.</strong> The Premium-tier section below adds <em>new</em> capabilities.</p>
+  <p>🎁 <strong>Beta-period perk:</strong> servers that add Server Assistant <em>before the premium tier launches</em> receive <strong>12 months of free premium access</strong> from launch day. Use the bot now → keep premium free for a year. No card, no claim form.</p>
 </div>
-
-<p class="roadmap-hint">Click any item to expand it. Each card has a 👍 vote button — votes go to the matching <a href="https://github.com/WandWeb2/server-assistant/discussions/categories/ideas" target="_blank" rel="noopener">GitHub Discussion</a> where the highest-voted items get prioritised.</p>
 
 <div class="expand-all-bar">
   <button onclick="document.querySelectorAll('details.card').forEach(d=>d.open=true)">Expand all</button>
@@ -361,7 +362,7 @@ Where Server Assistant is heading. Priorities shift based on what server owners 
 
 <div class="roadmap-section premium">
   🟡 Premium-tier feature backlog
-  <span class="sub">Launches alongside Discord App Directory verification. Current features stay free; early servers grandfathered.</span>
+  <span class="sub">Launches alongside Discord App Directory verification. Current features stay free forever. Beta-period servers (those using Server Assistant before launch) get 12 months of free premium access on launch.</span>
 </div>
 
 <div class="premium-grid">

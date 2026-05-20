@@ -11,7 +11,9 @@ description: Frequently asked questions about Server Assistant.
 
 ### Is the bot free?
 
-**Yes — free for everyone, no card required.** A future premium tier will add *new* features on top of what exists today. Everything currently available stays free, and servers that join during the free phase will be grandfathered in when premium launches.
+**Yes — free for everyone, no card required.** A future premium tier will add *new* features on top of what exists today. Everything currently available stays free forever.
+
+**Beta-period perk:** servers that add Server Assistant *before* the premium tier launches receive **12 months of free premium access** from launch day. There's no claim form or signup — if your server is using the bot before premium goes live, you're in automatically. Adding the bot now is the cheapest way to lock in a year of premium for free.
 
 ### How do I add the bot to my server?
 
