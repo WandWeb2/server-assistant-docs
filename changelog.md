@@ -13,6 +13,13 @@ The latest patches are also posted to **#bot-feedback** in the [support server](
 
 ---
 
+## [3.4.0] — 2026-05-20
+
+### Added
+- **Notification Roles** — new `/settings → 🔔 Notifications` sub-wizard. Pick which staff roles get @-pinged on three event types: anti-raid alerts, dangerous-action approval requests, and AutoMod escalations (timeout/kick/ban). Up to 10 roles per event; empty = silent.
+
+---
+
 ## [3.3.4] — 2026-05-20
 
 ### Changed
