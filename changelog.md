@@ -13,6 +13,13 @@ The latest patches are also posted to **#bot-feedback** in the [support server](
 
 ---
 
+## [3.3.2] — 2026-05-20
+
+### Fixed
+- Single-instance guard from v3.3.1 was blocking legitimate restarts. Now also verifies the previous bot's PID is still alive before refusing to start.
+
+---
+
 ## [3.3.1] — 2026-05-20
 
 ### Fixed
