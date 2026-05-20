@@ -13,6 +13,13 @@ The latest patches are also posted to **#bot-feedback** in the [support server](
 
 ---
 
+## [3.3.1] — 2026-05-20
+
+### Fixed
+- **Duplicate response bug** where two bot processes could both connect to Discord and respond to every staff message. Added a single-instance guard on startup that aborts cleanly if a fresh heartbeat from another instance is detected.
+
+---
+
 ## [3.3.0] — 2026-05-20
 
 ### Added
