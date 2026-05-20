@@ -13,6 +13,13 @@ The latest patches are also posted to **#bot-feedback** in the [support server](
 
 ---
 
+## [3.3.3] — 2026-05-20
+
+### Fixed
+- **AutoMod now sends the user a DM** when their message is removed by a filter. Previously the message vanished silently — staff saw the audit log but the user had no idea what happened.
+
+---
+
 ## [3.3.2] — 2026-05-20
 
 ### Fixed
