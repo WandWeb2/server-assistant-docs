@@ -68,11 +68,13 @@ image: /server-assistant-docs/assets/banner.jpeg
 
 <p align="center">
   <a href="https://discord.com/api/oauth2/authorize?client_id=1278486617375510570&permissions=1376267689287&scope=bot+applications.commands"><strong>➕ Invite Server Assistant to your server</strong></a>
+  &nbsp;·&nbsp;
+  <a href="https://top.gg/bot/1278486617375510570"><strong>👍 Vote on Top.gg</strong></a>
 </p>
 
 You'll need **Manage Server** permission. Authorise the requested permissions, then run `/setup` as the server owner — full walkthrough in the [Setup Guide]({{ site.url }}{{ site.baseurl }}/setup/).
 
-*Pre-verification direct invite — Server Assistant is awaiting Discord's bot verification (75-server threshold) before it can list on the [Discord App Directory](https://discord.com/application-directory) and major bot directories.*
+*Now listed on [Top.gg](https://top.gg/bot/1278486617375510570) and [discordbotlist.com](https://discordbotlist.com/bots/server-assistant). Discord App Directory listing follows once the bot reaches Discord's 75-server verification threshold.*
 
 ## Features at a glance
 
