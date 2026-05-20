@@ -113,6 +113,59 @@ All API keys and tokens stored **encrypted at rest** (Fernet / AES-128). Per-gui
 
 ---
 
+## 📸 See it in action
+
+<style>
+.sa-shots figure { margin: 0 0 2rem; }
+.sa-shots img    { display: block; max-width: 100%; height: auto; border-radius: 6px; box-shadow: 0 4px 12px rgba(0,0,0,.15); margin: 0 auto; }
+.sa-shots figcaption { color: #828282; font-size: .9rem; text-align: center; margin-top: .4rem; }
+.sa-shots .pair { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
+.sa-shots .pair figure { flex: 1 1 360px; max-width: 480px; }
+</style>
+
+<div class="sa-shots" markdown="0">
+
+<figure>
+  <img src="{{ '/assets/screenshots/setup-wizard.webp' | relative_url }}" alt="The /setup wizard prompting for staff chat and log channel" loading="lazy">
+  <figcaption><strong>60-second <code>/setup</code> wizard</strong> — pick channels, pick roles, pick AI provider.</figcaption>
+</figure>
+
+<figure>
+  <img src="{{ '/assets/screenshots/settings-hub.webp' | relative_url }}" alt="The /settings hub showing seven sub-wizards" loading="lazy">
+  <figcaption><strong>Customisation Hub</strong> — 7 sub-wizards covering branding, presets, behaviour, new-member, verification, channel allowlist, and role tiers.</figcaption>
+</figure>
+
+<figure>
+  <img src="{{ '/assets/screenshots/imagine-example.webp' | relative_url }}" alt="AI-generated image of a cat in a hat fishing, output of /imagine" loading="lazy">
+  <figcaption><strong>AI image generation with <code>/imagine</code></strong> — DALL·E 3, Stable Diffusion, or the free Pollinations.ai fallback (no API key required).</figcaption>
+</figure>
+
+<div class="pair">
+  <figure>
+    <img src="{{ '/assets/screenshots/report-menu.webp' | relative_url }}" alt="Discord right-click context menu showing Apps → Server Assistant → Report Message" loading="lazy">
+    <figcaption><strong>Right-click any message</strong> → <strong>Apps ▸ Server Assistant ▸ Report Message</strong>.</figcaption>
+  </figure>
+  <figure>
+    <img src="{{ '/assets/screenshots/report-result.webp' | relative_url }}" alt="AI Moderation Report embed summarising tone and recommended action" loading="lazy">
+    <figcaption><strong>The bot replies with an AI Moderation Report</strong> — objective tone, rule-breaking call-outs, recommended action.</figcaption>
+  </figure>
+</div>
+
+<div class="pair">
+  <figure>
+    <img src="{{ '/assets/screenshots/automod-log.webp' | relative_url }}" alt="AutoMod staff log embed showing a removed message and user warning count" loading="lazy">
+    <figcaption><strong>AutoMod is transparent</strong> — every action posts a structured embed to your staff log channel.</figcaption>
+  </figure>
+  <figure>
+    <img src="{{ '/assets/screenshots/automod-user-dm.webp' | relative_url }}" alt="DM that AutoMod sends the user explaining which rule fired" loading="lazy">
+    <figcaption><strong>Users always know why</strong> — the bot DMs them with the rule name, warning count, and escalation policy.</figcaption>
+  </figure>
+</div>
+
+</div>
+
+---
+
 ## Three ways to use the bot
 
 1. **Type commands** in your staff-chat channel — `warn @user`, `mute @user 30 min`, `purge since 1pm`...
