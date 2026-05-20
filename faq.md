@@ -11,19 +11,19 @@ description: Frequently asked questions about Server Assistant.
 
 ### Is the bot free?
 
-The current build is **free for everyone**. A future premium tier will lock advanced features behind the Discord App Directory subscription model (~$4.99/mo per server) once the bot is verified by Discord. **All current features will remain free** — premium will only add new ones. Servers that join during the free phase will be grandfathered in.
+**Yes — free for everyone, no card required.** A future premium tier will add *new* features on top of what exists today. Everything currently available stays free, and servers that join during the free phase will be grandfathered in when premium launches.
 
 ### How do I add the bot to my server?
 
-You'll need **Manage Server** permission. Click the invite link from the bot's directory listing, pick your server, and authorise the requested permissions. After that, run `/setup` as the server owner.
+You'll need **Manage Server** permission. Use the [invite link]({{ site.url }}{{ site.baseurl }}/setup/#step-1--invite-the-bot) or find Server Assistant on [Top.gg](https://top.gg/bot/1278486617375510570) or [discordbotlist.com](https://discordbotlist.com/bots/server-assistant). After authorising, run `/setup` as the server owner.
 
 ### Why does only the server owner get to run `/setup`?
 
-`/setup` maps your moderation roles to the bot's permission tiers. Letting an admin do this would let admins escalate themselves to "Owner" tier and bypass the approval workflow. Treating it as owner-only is a hard safety check.
+`/setup` maps your moderation roles to the bot's permission tiers. If admins could run it, they'd be able to escalate themselves to "Owner" tier and bypass the approval workflow on dangerous actions. Owner-only is a hard safety check.
 
 ### How long does setup take?
 
-About 60 seconds. The wizard has 3 steps: pick channels, pick roles, pick AI provider. There's a 4-step optional customisation pass (`/settings`) afterwards.
+About 60 seconds. The wizard has 3 steps: pick channels, pick roles, pick AI provider. Afterwards, run `/settings` to fine-tune anything from embed colours to the AutoMod ladder — there are 8 customisation panels but none of them are required.
 
 ---
 
@@ -61,7 +61,7 @@ When AutoMod is enabled, repeated violations escalate automatically:
 
 Only **AutoMod-issued** warnings count toward escalation. Manual staff-issued warnings are tracked separately and don't auto-escalate.
 
-You can change the ladder via `/settings → Quick Presets → Punishment Ladder`. Three presets: Gentle (5/10/20), Standard (3/5/10), Strict (2/3/5).
+Change the ladder via `/settings → Quick Presets → Punishment Ladder`. Three presets: Gentle (5/10/20), Standard (3/5/10), Strict (2/3/5).
 
 ---
 
@@ -69,21 +69,25 @@ You can change the ladder via `/settings → Quick Presets → Punishment Ladder
 
 ### Will AutoMod break legitimate conversation?
 
-The shipped filter packs use **word boundaries** (`\b`) to avoid the [Scunthorpe problem](https://en.wikipedia.org/wiki/Scunthorpe_problem) — words like `assassin`, `classic`, `Scunthorpe` won't trigger an "ass" or other partial filter. The default "Scams + slurs (gaming)" preset specifically **does not** filter casual profanity (fuck/shit/damn/etc.) since gaming culture tolerates them.
+The shipped filter packs use **word boundaries** to avoid the [Scunthorpe problem](https://en.wikipedia.org/wiki/Scunthorpe_problem) — words like `assassin`, `classic`, `Scunthorpe` won't trigger an "ass" or other partial filter. The default "Scams + slurs (gaming)" preset specifically **does not** filter casual profanity (fuck/shit/damn/etc.) since gaming culture tolerates them.
 
-Strict mode adds those, with high false-positive risk — only use it for child-friendly servers.
+Strict mode adds those, with higher false-positive risk — only use it for child-friendly servers.
 
 ### Can I add my own filters?
 
-Yes. Run `/automod` → **Add Filter** to add custom regex. Each pattern is validated before saving. You can also add link blocklist domains (e.g. known phishing sites).
+Yes. Run `/automod` → **Add Filter** to add custom regex. Each pattern is validated before saving, and obviously-risky patterns (catastrophic-backtracking constructs) are rejected automatically. You can also add link blocklist domains for known phishing sites.
 
 ### Does AutoMod scan staff messages?
 
-**No.** Staff are completely exempt regardless of their role tier. The bot identifies staff by checking if they have any role mapped to a permission tier in `/settings → Role Tiers`.
+**No.** Staff are completely exempt regardless of their role tier. The bot identifies staff by whether they hold any role mapped to a permission tier via `/setup` or `/settings → Role Tiers`.
 
 ### What's the difference between an AutoMod warning and a manual warning?
 
-Both go on the user's record, but only AutoMod warnings count toward escalation thresholds. The audit log distinguishes them with an `auto: true` flag.
+Both go on the user's record. Only **AutoMod warnings count toward escalation thresholds** (the punishment ladder). The audit log distinguishes them so you can tell the source at a glance.
+
+### Does the bot tell the user when AutoMod removes their message?
+
+Yes — the user gets a DM explaining which rule fired and how their warning count is tracking toward escalation. If the user has DMs from server members disabled, the bot logs the skip but the message removal and warning still go through.
 
 ---
 
@@ -103,15 +107,29 @@ Currently it's a fixed message ("Welcome to {server}! Click Verify to access the
 
 ---
 
+## 🔔 Notifications
+
+### How do I get pinged when AutoMod or anti-raid fires?
+
+Run `/settings → 🔔 Notifications` and pick which staff roles should be @-pinged for each event type:
+
+- **Anti-raid alerts** — fires when mass-join detection trips
+- **Dangerous-action approval requests** — fires when a non-Owner staff member needs sign-off
+- **AutoMod escalations** — fires when a user crosses a punishment threshold (timeout / kick / ban)
+
+Up to 10 roles per event. Empty = silent. Routine AutoMod single-message blocks don't ping; only escalations do, so the log channel doesn't get spammy.
+
+---
+
 ## 🎨 AI features
 
 ### Are AI features free?
 
-It depends on the host. The free hosted bot uses a shared rate-limited xAI Grok key. Self-hosters or servers that want unlimited AI usage can paste their own xAI or OpenAI key during `/setup` (encrypted in the bot's vault).
+Yes for the hosted bot using its shared rate-limited xAI Grok key. If you want unlimited AI usage or your own model preference, paste your own xAI or OpenAI key during `/setup` (`/ai-config` later to change).
 
 ### What data is sent to the AI provider?
 
-Only the data needed for the request. For `/report`, that's about 20 messages of context around the flagged message. For `/imagine`, just your prompt text. **No user metadata, IDs, or persistent identifiers are transmitted.** See the [Privacy Policy]({{ site.url }}{{ site.baseurl }}/privacy/) for the full picture.
+Only the data needed for the request. For the right-click **Report Message** context menu, that's ~20 messages of context around the flagged message. For `/imagine`, just your prompt text. **No user metadata, IDs, or persistent identifiers are transmitted.** See the [Privacy Policy]({{ site.url }}{{ site.baseurl }}/privacy/) for details.
 
 ### What models are used?
 
@@ -129,19 +147,19 @@ Yes. Run `/ai-config` and choose **Skip AI**. `/imagine` and AI-assisted reports
 
 ### Where is data stored?
 
-All on the bot host's machine, encrypted where applicable. The encryption uses Fernet (AES-128) for credentials. Data is per-guild isolated — your warnings can't leak to other servers.
+On the host's infrastructure, encrypted at rest. Your server's data is isolated from every other server's data. Full details in the [Privacy Policy]({{ site.url }}{{ site.baseurl }}/privacy/).
 
 ### What happens to my data when the bot is removed from my server?
 
-Encrypted secrets (BYO API keys) are wiped immediately on `on_guild_remove`. Other data (warnings, notes, audit log) is **retained** in case the bot is re-added — many servers kick and re-invite during testing. To request manual deletion, contact the operator via the support server.
+Sensitive credentials you provided (like your own AI keys) are wiped immediately when the bot leaves the server. Operational data (warnings, notes, audit log) is retained briefly in case the bot is re-added — many servers kick and re-invite during testing. To request full manual deletion, contact the support team via the [support server]({{ site.url }}{{ site.baseurl }}/support/).
 
 ### Is there a public API?
 
-Not yet. A premium-tier REST API for guild data is on the roadmap.
+Not yet. A premium-tier read-only API for your own server's data is on the roadmap.
 
 ### Can I export my server's data?
 
-Manually, yes — the bot operator can provide a JSON dump on request. A `/export-server-data` command is on the roadmap.
+A one-shot export is available on request via the support server. A `/export-server-data` slash command is on the roadmap.
 
 ---
 
@@ -149,23 +167,23 @@ Manually, yes — the bot operator can provide a JSON dump on request. A `/expor
 
 ### Slash commands don't appear
 
-Discord global slash commands take **up to 1 hour** to propagate after the very first time the bot is added. After that, command updates also take up to an hour for global sync. If they're still missing after 90 minutes, hard-refresh Discord (Ctrl+R) to flush the local cache.
+Discord propagates slash commands within seconds of an update for most use cases, but the very first time a bot is added to a server it can take **up to 1 hour** before commands show up. If they're still missing after that, hard-refresh Discord (Ctrl+R) to flush the local cache.
 
-### Right-click context menus don't show "View Info" or "Report Message"
+### Right-click context menus aren't showing what I expect
 
-Same as above — global propagation. After waiting, hard-refresh Discord (Ctrl+R). Right-click → **Apps ▸ Server Assistant** is where they live, not at the top level of the right-click menu.
+Three things to check:
+
+1. **You're right-clicking the right thing.** **View Info** and **View Warnings** appear when you right-click a **user** (their name in the member list, their avatar, or their message author name). **Report Message** appears when you right-click a **message body**. They live under **Apps ▸ Server Assistant** in the right-click menu.
+2. **Discord's local cache may be stale** — hard-refresh with Ctrl+R.
+3. **The bot only just joined** — first-time global propagation can take up to 1 hour.
 
 ### The bot is offline
 
-Check the bot's status via the support server, or via your tray app if you self-host. The bot is designed to auto-reconnect on transient Discord outages, but a host crash needs manual intervention.
+Most outages are transient — the bot auto-reconnects on its own. If it's been offline for more than 5 minutes, post in the [support server]({{ site.url }}{{ site.baseurl }}/support/).
 
 ### `/setup` isn't responding
 
-The bot may be globally rate-limited if it's connected to many servers. Wait 60 seconds and try again. If still unresponsive, post in the support server.
-
-### "I understand my bot needs to be online" — what does Top.gg mean?
-
-Top.gg's review process probes the bot during business hours. If the bot is offline during the probe, the listing is rejected. Make sure the bot is up 24/7 during the review window.
+If Discord is having a bad day the bot may be globally rate-limited. Wait 60 seconds and try again. If still unresponsive, post in the support server.
 
 ---
 
@@ -173,21 +191,22 @@ Top.gg's review process probes the bot during business hours. If the bot is offl
 
 ### Where can I get help?
 
-[Support server]({{ site.url }}{{ site.baseurl }}/support/) — fastest. The maintainer and other operators are usually around.
+[Support server]({{ site.url }}{{ site.baseurl }}/support/) — fastest path to a real person.
 
 ### How do I request a feature?
 
 Two channels:
-- **GitHub Issues:** [Issues page]({{ site.url }}{{ site.baseurl }}/support/) — formal tracking
-- **Support server `#bot-feedback` channel** — informal discussion
+
+- **Support server `#bot-feedback`** — informal discussion, real-time chat
+- **GitHub Issues** — formal tracking, see the [Support page]({{ site.url }}{{ site.baseurl }}/support/) for the template
 
 ### Is the source code open?
 
-The main bot code is currently in a **private repository** while the project stabilises. The public-facing docs (this site) and a non-source documentation set are open. A future release will move the source to public open-source under MIT.
+The main bot code is currently in a private repository while the project stabilises. The public-facing documentation, privacy policy, and changelog are open source. A future release will move the bot source to public open-source under MIT.
 
 ### Can I self-host?
 
-Self-hosting requires source access, which currently means contacting the maintainer. Once the source goes public, self-hosting will follow standard "clone, set DISCORD_TOKEN env var, run" deployment.
+Once the bot source is public, yes. For now, contact the maintainer via the support server if you need self-hosting access urgently.
 
 ---
 

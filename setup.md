@@ -19,7 +19,7 @@ Adding **Server Assistant** to your Discord server takes about 60 seconds. The w
 
 You'll need **Manage Server** permission on the target guild. The OAuth flow asks Discord for the permissions the bot needs — **don't uncheck any of them**, or features like ban/kick/auto-role will fail later.
 
-*Pre-verification direct invite — once Server Assistant clears Discord verification (75-server threshold) it'll also be available via [Top.gg](https://top.gg), Discord Bots List, and the [Discord App Directory](https://discord.com/application-directory).*
+*Listed on [Top.gg](https://top.gg/bot/1278486617375510570) and [discordbotlist.com](https://discordbotlist.com/bots/server-assistant). Discord App Directory listing follows once the bot reaches Discord's 75-server verification threshold.*
 
 After authorising, the bot appears offline-then-online in your server's member list. Slash commands take **up to 1 hour** to globally propagate the very first time you add the bot — so if `/setup` doesn't show up immediately, give it a few minutes.
 
@@ -57,8 +57,8 @@ You can add more custom tiers later via `/settings → Role Tiers → Add Tier`.
 AI features power `/imagine`, AI-assisted moderation reports, and natural language understanding in staff-chat. Three options:
 
 - **🆓 Use the host's shared key** — convenient, rate-limited (default for the public hosted bot)
-- **🔑 Use my own key** — paste your xAI Grok or OpenAI API key. Encrypted in the bot's vault. No shared rate limits.
-- **⏭️ Skip AI** — disables `/imagine`, `/report`, AI context menu. Can re-enable later via `/ai-config`.
+- **🔑 Use my own key** — paste your xAI Grok or OpenAI API key. Stored encrypted, never logged. No shared rate limits.
+- **⏭️ Skip AI** — disables `/imagine` and the AI **Report Message** right-click action. Can re-enable later via `/ai-config`.
 
 You can change AI mode anytime by re-running `/ai-config`.
 
@@ -70,7 +70,7 @@ The bot saves your config and posts a confirmation embed. Right after, it auto-p
 
 ## Step 3 — Customise (optional, but recommended)
 
-Run `/settings` to open the **Customisation Hub** — 7 sub-wizards covering:
+Run `/settings` to open the **Customisation Hub** — 8 sub-wizards covering:
 
 | Section | What you can change |
 |--------|---------------------|
@@ -81,6 +81,7 @@ Run `/settings` to open the **Customisation Hub** — 7 sub-wizards covering:
 | 🔐 **Verification Gate** | Optional DM-button verification for raid protection |
 | 📍 **Channel Allowlist** | Restrict where the bot responds to @-mentions |
 | 🛂 **Role Tiers** | Add custom tiers like "Helper" or "Trial Mod" |
+| 🔔 **Notifications** | Pick which staff roles get @-pinged on anti-raid alerts, dangerous-action approval, and AutoMod escalations |
 
 All changes save instantly with no "apply" button.
 
@@ -94,7 +95,7 @@ After setup, do these in any order:
 2. **`/automod`** → enable the **Scams + slurs (gaming)** preset for sensible auto-moderation
 3. **`/timezone`** — set your personal timezone (used by `/schedule` and time-based commands like `purge since 1pm`)
 4. **Tell your staff** to type `help` in your staff-chat to see what they can do
-5. **Right-click a user** → hover **Apps ▸** to see context-menu commands
+5. **Right-click a user** → hover **Apps ▸ Server Assistant** for **View Info** and **View Warnings**. Right-click a **message** → **Apps ▸ Server Assistant** for **Report Message** (AI context summary).
 
 ---
 

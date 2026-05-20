@@ -102,8 +102,8 @@ No data is sold or shared with advertising networks, analytics services, or thir
 
 ## Data retention
 
-- **Configuration and settings:** retained until the Bot is removed from a server, at which point it is wiped on the next event handler call.
-- **Encrypted secrets:** wiped immediately when the Bot is removed from a server (`on_guild_remove`).
+- **Configuration and settings:** retained until the Bot is removed from a server, at which point they are wiped shortly afterward.
+- **Encrypted secrets** (such as any AI keys you supply): wiped immediately when the Bot is removed from a server.
 - **Warnings and notes:** retained indefinitely until manually removed by staff. A future `/wipe-server-data` command will streamline this.
 - **Audit log:** rolling window of 500 entries; older entries are automatically purged.
 - **Scheduled tasks:** deleted when fired or cancelled.
@@ -111,7 +111,7 @@ No data is sold or shared with advertising networks, analytics services, or thir
 ## Right to erasure
 
 Server owners can request deletion of all data associated with their guild by:
-1. Removing the Bot from their server (this wipes the encrypted secrets vault entries automatically).
+1. Removing the Bot from their server (this wipes any encrypted credentials they supplied automatically).
 2. Contacting the Operator via the support server to request manual deletion of warnings, notes, and audit log entries scoped to that guild.
 
 Individual users wishing to have their personal moderation history erased should contact the server owner first; if the server owner is unresponsive, contact the Operator directly.

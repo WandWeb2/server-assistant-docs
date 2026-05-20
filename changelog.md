@@ -2,192 +2,87 @@
 layout: default
 title: Changelog
 permalink: /changelog/
-description: Release history and patch notes for Server Assistant.
+description: Release history for Server Assistant — major features, fixes, and announcements.
 ---
 
 # 📋 Changelog
 
-All notable changes to Server Assistant. Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
-
-The latest patches are also posted to **#bot-feedback** in the [support server]({{ site.url }}{{ site.baseurl }}/support/).
+What's new in Server Assistant. Internal-only updates (CI, dependency bumps, host-side tooling) aren't listed here — see the [support server]({{ site.url }}{{ site.baseurl }}/support/) `#bot-feedback` channel for full release notes.
 
 ---
 
-## [3.4.1] — 2026-05-20
-
-### Changed
-- Marketing copy across docs, README, BRANDING, and the welcome DM no longer leads with "multi-tenant / isolated configuration" — per-guild isolation is a baseline, not a feature.
-
----
-
-## [3.4.0] — 2026-05-20
+## 2026-05-20 — v3.4
 
 ### Added
-- **Notification Roles** — new `/settings → 🔔 Notifications` sub-wizard. Pick which staff roles get @-pinged on three event types: anti-raid alerts, dangerous-action approval requests, and AutoMod escalations (timeout/kick/ban). Up to 10 roles per event; empty = silent.
+- **🔔 Notification Roles** (`/settings → Notifications`). Pick which staff roles get @-pinged on three high-signal events:
+  - Anti-raid alerts (mass-join detection)
+  - Dangerous-action approval requests
+  - AutoMod escalations (timeout / kick / ban)
 
----
-
-## [3.3.4] — 2026-05-20
-
-### Changed
-- Tray tooltip now reads "(4 servers, 1 configured)" instead of the ambiguous "1/4 guilds".
-
----
-
-## [3.3.3] — 2026-05-20
+  Up to 10 roles per event type. Leaving a selector empty makes that event silent — existing behaviour preserved for anyone who doesn't change anything. AutoMod single-message blocks intentionally don't ping, to avoid channel noise.
 
 ### Fixed
-- **AutoMod now sends the user a DM** when their message is removed by a filter. Previously the message vanished silently — staff saw the audit log but the user had no idea what happened.
+- **AutoMod now DMs the user when their message is removed.** Previously the message vanished silently with no explanation. The DM names which rule fired, shows the user's current warning count, and warns about escalation.
+- **Duplicate response bug** where the bot occasionally replied twice to the same staff message.
 
 ---
 
-## [3.3.2] — 2026-05-20
-
-### Fixed
-- Single-instance guard from v3.3.1 was blocking legitimate restarts. Now also verifies the previous bot's PID is still alive before refusing to start.
-
----
-
-## [3.3.1] — 2026-05-20
-
-### Fixed
-- **Duplicate response bug** where two bot processes could both connect to Discord and respond to every staff message. Added a single-instance guard on startup that aborts cleanly if a fresh heartbeat from another instance is detected.
-
----
-
-## [3.3.0] — 2026-05-20
+## 2026-05-10 — v3.3
 
 ### Added
-- **Weekly setup reminder for unconfigured servers** — if `/setup` hasn't been completed yet, the bot now DMs the server owner once every 7 days with a link to the setup guide. Falls back to the server's system channel if the owner's DMs are closed. Stops automatically once setup is complete.
+- **Weekly setup reminder** — if `/setup` hasn't been completed in your server, the bot DMs the server owner once every 7 days with a link to the setup guide. Falls back to the server's system channel if owner DMs are closed. Stops automatically once setup is complete.
 
 ---
 
-## [3.2.9] — 2026-05-20
+## 2026-05-10 — v3.2
 
 ### Added
-- **"Servers…" tray menu item** — opens a window showing every connected guild and its activity counters. No terminal needed.
-
----
-
-## [3.2.8] — 2026-05-20
-
-### Fixed
-- Tray menu status indicators replaced colour-emoji dots with `[+]`/`[-]` markers and explicit `running`/`stopped` text — Windows' native menus don't render colour emoji.
-
----
-
-## [3.2.7] — 2026-05-20
-
-### Removed
-- Legacy OpenClaw Gateway entry from the tray app — was causing a perpetual red status icon.
-
----
-
-## [3.2.6] — 2026-05-10
-
-### Fixed
-- **Directory stats sync** switched from threaded urllib to native aiohttp — eliminates a thread spawn every 30 minutes that some hosts associated with a brief cmd-window flash.
-
----
-
-## [3.2.5] — 2026-05-10
-
-### Added
-- **Bot directory stats sync** — pushes live server count to discordbotlist.com and top.gg every 30 minutes. Listings now show live counts instead of "Servers: unknown."
-
----
-
-## [3.2.4] — 2026-05-10
+- **Bot directory stats sync** — pushes live server count to [discordbotlist.com](https://discordbotlist.com/bots/server-assistant) and [Top.gg](https://top.gg/bot/1278486617375510570) every 30 minutes.
 
 ### Security
-- **AutoMod custom regex ReDoS guard** — admin-supplied filter patterns with nested quantifiers, alternation-in-repeat, or optional-in-repeat are rejected at add-time. Stops a single bad pattern from locking the message-handling event loop.
+- **AutoMod custom-regex safety net** — admin-supplied filter patterns are now rejected at add-time if they contain catastrophic-backtracking constructs (nested quantifiers, alternation-in-repeat, optional-in-repeat). Stops a single bad pattern from impacting the bot's responsiveness.
 
 ### Performance
-- **Parallel channel scan in user-history search** — staff `history` now scans channels concurrently instead of sequentially.
-
-### Added
-- `tests/` with pytest covering announce, telemetry, and the ReDoS heuristic. CI runs the suite on every push.
-
----
-
-## [3.2.3] — 2026-05-10
+- Faster user-history search across multi-channel allowlists (channels scanned in parallel).
 
 ### Fixed
-- **Scheduled tasks not firing** — a stub defined later in the module was silently overwriting the real `process_scheduled_tasks()` implementation. `/schedule` reminders now actually execute. Thanks to Jules for catching this.
-
-### Security
-- Vault key file and vault save now use atomic `O_CREAT | O_EXCL` with mode `0o600`, closing the race where freshly written secrets briefly had umask permissions before `chmod`.
-
-### Changed
-- `yt_notify.py` state file writes are now atomic (temp + rename), surviving interrupted writes.
-- Staff `actions` / `audit` command no longer blocks the event loop when the log file is large.
-
-### Repo housekeeping
-- Dependency floors bumped via Dependabot.
+- **`/schedule` reminders now actually fire.** A bug introduced in an earlier release silently prevented scheduled tasks from running. The user-facing commands (`schedule in 2 hours: ...`, `remind at 9am: ...`) and slash-command equivalents work as intended.
 
 ---
 
-## [3.2.2] — 2026-05-10
+## 2026-05-10 — v3.2 launch
 
 ### Added
-- **AI usage tracking** — chat completions now record input/output tokens per provider/model; image generations record per-provider call counts. Stored locally in `telemetry.json`, never transmitted.
-- **"AI Usage…" tray menu item** — opens a window with per-provider totals and an estimated USD cost. Covers xAI Grok, OpenAI chat + DALL·E 3, Stability SDXL, and Pollinations.
-
----
-
-## [3.2.1] — 2026-05-10
-
-### Added
-- **Public Changelog page** at `/changelog/` on the docs site, mirrored from the bot's internal `CHANGELOG.md`.
-- **`announce.py`** — helper that posts release notes to the public `#bot-feedback` channel.
-
-### Changed
-- Public docs nav: `Privacy` and `Terms` are now correctly capitalised.
-
-### Removed
-- Legacy files no longer used by the bot.
-
----
-
-## [3.2.0] — 2026-05-10
-
-### Added
-- **First-steps guide** — after `/setup` completes, the bot auto-posts a 5-message walkthrough to the configured staff-chat channel covering core commands, slash commands, right-click menus, and `/settings`.
-- **Right-click discoverability** — `/help`, the text `help` command, and the `on_guild_join` welcome DM all now surface the **Apps ▸ Server Assistant** context menus (View Info, View Warnings, Report Message).
-- **`/vote` slash command** — links to the bot's directory listings for users who want to support the project.
-- **Public documentation site** — full Setup, Commands, Features, FAQ, Support, Privacy, and Terms pages.
+- **First-steps guide** — after `/setup` completes, the bot auto-posts a 5-message walkthrough to your staff-chat covering core commands, slash commands, right-click menus, and `/settings`.
+- **Right-click discoverability** — `/help`, the text `help` command, and the welcome DM now all surface the **Apps ▸ Server Assistant** context menus (View Info, View Warnings, Report Message).
+- **`/vote`** — quick link to vote for the bot on Top.gg.
+- **Public documentation site** — full Setup, Commands, Features, FAQ, Support, Privacy, Terms, and this Changelog page.
 
 ### Fixed
-- **Duplicate context-menu entries** — View Info / View Warnings / Report Message were appearing twice in the Apps submenu. Startup now clears stale guild-scoped commands and re-syncs cleanly.
-- **`detect_action()` keyword priority** — the parser now matches the earliest-position keyword within each priority tier instead of relying on Python set-iteration order. Fixes cases like `schedule in 3 days: check ...` being mis-routed to the `check` action.
+- **Duplicate context-menu entries** in the Apps submenu.
+- Natural-language command parsing — phrasings like `schedule in 3 days: check ...` now route correctly.
 
 ### Changed
-- Slash commands sync to all configured guilds on startup for instant propagation (no more 1-hour wait after restarts).
+- Slash commands propagate to your server within seconds of an update, not the previous up-to-1-hour delay.
 
 ---
 
-## [3.1.0] — 2026-05-09
+## 2026-05-09 — v3.1
 
 ### Added
-- **Premium architecture stub** — every guild gets full access during the growth phase; pricing flips on post-launch.
-- **Privacy-respecting telemetry** — anonymous local counters for AutoMod blocks, images generated, warnings issued, etc. Never transmitted off the host.
-- **Privacy + Terms documents** — required for Discord verification.
-- **GitHub repository** with CI workflow, Dependabot, issue and PR templates.
-
-### Changed
-- Bot version bumped to 3.1.0.
+- **Privacy Policy** and **Terms of Service** documents — required for Discord verification submissions.
 
 ---
 
-## [3.0.0] — 2026-05-01
+## 2026-05-01 — v3.0
+
+The major rewrite. Server Assistant became a Discord bot for any community, not just one specific server.
 
 ### Added
-- **Multi-tenant architecture** — bot can be invited to any server; each server gets isolated configuration, warnings, notes, AutoMod rules, and settings.
-- **`/setup` wizard** — interactive 3-step config (channels, roles, AI provider) for new server owners.
-- **`/settings` Customisation Hub** — 7 sub-wizards for branding, presets, behaviour, new-member features, verification, channel allowlist, and role tiers.
-- **Encrypted secrets vault** — Fernet-encrypted on-disk storage for all credentials.
+- **`/setup` wizard** — interactive 3-step config (channels, roles, AI provider).
+- **`/settings` Customisation Hub** — 8 sub-wizards for branding, presets, behaviour, new-member features, verification, channel allowlist, role tiers, and notifications.
 - **AI image generation** (`/imagine`) — supports DALL·E 3, Stable Diffusion, and Pollinations.ai (free fallback).
-- **Per-server custom branding** — embed colour, bot nickname, default timezone.
+- **Per-server branding** — embed colour, bot nickname, default timezone.
 - **Punishment ladder presets** — Gentle / Standard / Strict.
 - **AutoMod filter packs** — Off / Scams only / Scams + slurs / Strict.
 - **Anti-raid sensitivity presets** — Off / Normal / Strict.
@@ -198,7 +93,7 @@ The latest patches are also posted to **#bot-feedback** in the [support server](
 
 ---
 
-## [2.2.0] — 2026-04-30
+## 2026-04-30 — v2.2
 
 ### Added
 - AutoMod engine with curated regex packs.
@@ -208,27 +103,27 @@ The latest patches are also posted to **#bot-feedback** in the [support server](
 - AI-assisted reports via right-click on messages.
 
 ### Changed
-- Bot reactions now indicate processing state: 👀 (saw it), ⏳ (working), ✅ (done), ❌ (error).
+- Visible reaction states on bot responses: 👀 (saw it), ⏳ (working), ✅ (done), ❌ (error).
 
 ---
 
-## [2.0.0] — 2026-04-30
+## 2026-04-30 — v2.0
 
 ### Added
 - Persistent warning system with DM notifications and full per-guild history.
 - Private staff notes invisible to users.
-- Auto-onboarding with placeholder substitution.
+- Auto-onboarding DMs.
 - Undo system reversing bans, mutes, channel deletions, and nickname changes within 24h.
 - Bulk operations via role mention.
 - Audit log channel integration.
 
 ---
 
-## [1.0.0] — 2026-04-30
+## 2026-04-30 — v1.0
 
 Initial release.
 
 - Role-based moderation (Owner / Admin / Moderator).
 - Slash command `/setup` (early version).
-- Basic ban / kick / mute / warn / info / stats commands.
+- Core ban / kick / mute / warn / info / stats commands.
 - Owner approval workflow for dangerous actions.

@@ -149,13 +149,17 @@ Configurable escalation when a non-staff user accumulates auto-warnings. Default
 
 Built-in detection for **5+ duplicate messages within 5 seconds**. Triggers a delete + auto-warning. No configuration needed — always on when AutoMod is enabled.
 
+### User gets a DM
+
+When AutoMod removes a message, the user is DMed with which rule fired, their current warning count, and a heads-up about escalation. If their DMs are closed, the bot logs the skip but the message removal and warning still go through. Staff always have the full picture via the log-channel embed.
+
 ---
 
 ## 🚨 Anti-Raid Detection
 
 Tracks join rate per guild. If the configured threshold is exceeded:
 
-- Pings the Owner with a raid alert
+- Pings the Owner — and any staff roles configured via `/settings → 🔔 Notifications` — with a raid alert
 - Suspends onboarding DMs (so raiders don't get a custom welcome)
 - Logs the event to your log channel
 
@@ -199,7 +203,7 @@ Run `/imagine <prompt>` in any channel. The bot returns a 1024×1024 image as an
 
 ### Rate limit
 
-30 seconds per guild between requests. Configurable in code if self-hosting.
+30 seconds per guild between requests.
 
 ### Costs (for BYO providers)
 
@@ -342,7 +346,7 @@ Every Monday at 9am (configurable day via `/settings → Behavior`), a digest po
 
 ## 🎨 Customisation Hub (`/settings`)
 
-Seven sub-wizards. All changes save instantly.
+Eight sub-wizards. All changes save instantly.
 
 | Section | What it covers |
 |--------|---------------|
@@ -353,14 +357,15 @@ Seven sub-wizards. All changes save instantly.
 | 🔐 **Verification Gate** | Toggle on/off, set verified role |
 | 📍 **Channel Allowlist** | Restrict where the bot responds to mentions |
 | 🛂 **Role Tiers** | Add custom tiers beyond Owner/Admin/Moderator |
+| 🔔 **Notifications** | Pick staff roles to @-ping on anti-raid alerts, dangerous-action approval requests, and AutoMod escalations |
 
 ---
 
-## 🔐 Encrypted Secrets Vault
+## 🔐 Privacy & Security
 
-All credentials (Discord token, AI keys, YouTube key) are encrypted at rest using **Fernet (AES-128)**. Master key lives in `.vault_key` with restrictive filesystem permissions.
+All credentials (your bot's Discord token, any AI keys you bring) are **encrypted at rest** using strong symmetric encryption (Fernet / AES-128). Your server's data is fully isolated from every other server's data.
 
-When the bot is **removed from your server**, your guild's encrypted secrets are wiped immediately via the `on_guild_remove` event. Other data (warnings, notes, audit log) is retained until manually deleted — see the [Privacy Policy]({{ site.url }}{{ site.baseurl }}/privacy/) for details.
+When the bot is **removed from your server**, your guild's encrypted secrets are wiped immediately. Operational data (warnings, notes, audit log) is retained briefly in case you re-add the bot — see the [Privacy Policy]({{ site.url }}{{ site.baseurl }}/privacy/) for retention specifics.
 
 ---
 

@@ -34,9 +34,9 @@ Open a [GitHub issue](https://github.com/WandWeb2/server-assistant/issues/new/ch
 
 - What happened vs what you expected
 - Steps to reproduce
-- Bot version (from startup logs or the tray icon)
-- Hosting context (Windows / Linux VPS / Docker)
-- Relevant log output
+- The command or interaction that triggered it
+- Any error message the bot replied with
+- The bot version, which you can find by running `/info` or `/help` in your server
 
 Issues filed via GitHub get tracked through the milestone system, so progress is visible.
 
@@ -60,7 +60,7 @@ The more concrete the use case, the more likely it is to get built. "As a modera
 - **Email or DM** the maintainer directly via the support server
 - See the [SECURITY.md](https://github.com/WandWeb2/server-assistant/blob/main/SECURITY.md) for full disclosure policy
 
-In-scope: bypasses of role-based permission, vault decryption defects, privilege escalation, injection vulnerabilities, AutoMod evasion that affects host security.
+In-scope: bypasses of role-based permission, decryption of stored credentials, privilege escalation, injection vulnerabilities, and AutoMod evasion that affects host security.
 
 The maintainer commits to:
 
@@ -94,13 +94,7 @@ A future release will move the source to public open-source under MIT. If you wa
 
 ## 🤝 Contributing
 
-Once the source is public:
-
-1. Fork the repo
-2. Create a feature branch
-3. Open a PR using the template
-4. CI runs syntax + smoke import checks
-5. Maintainer reviews
+Once the source is public, contributions via standard fork-and-PR are welcome.
 
 For now, the highest-leverage contribution is **filing detailed bug reports and feature requests** — that directly shapes what gets built next.
 
