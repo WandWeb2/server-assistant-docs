@@ -45,11 +45,10 @@ header_pages:
   - setup.md
   - commands.md
   - features.md
+  - roadmap.md
+  - changelog.md
   - faq.md
   - support.md
-  - changelog.md
-  - privacy.md
-  - terms.md
 
 # Pretty URLs: /privacy/ instead of /privacy.html
 permalink: /:title/
