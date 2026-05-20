@@ -1,0 +1,47 @@
+{%- comment -%}
+  Custom footer overriding the Minima theme default. Shows the Server Assistant
+  logo, description, and quick-links instead of Minima's three-column author/
+  social/excerpt block (which rendered the `author:` YAML hash as raw Ruby).
+{%- endcomment -%}
+
+<footer class="site-footer h-card">
+  <data class="u-url" href="{{ "/" | relative_url }}"></data>
+
+  <div class="wrapper" style="display: flex; flex-wrap: wrap; align-items: center; gap: 2rem;">
+
+    <a href="{{ "/" | relative_url }}" style="flex-shrink: 0;">
+      <picture>
+        <source srcset="{{ '/assets/logo.webp' | relative_url }}" type="image/webp">
+        <img src="{{ '/assets/logo.png' | relative_url }}"
+             alt="Server Assistant logo"
+             width="80"
+             height="77"
+             style="display: block;">
+      </picture>
+    </a>
+
+    <div style="flex: 1; min-width: 240px;">
+      <h2 class="footer-heading" style="margin: 0 0 .25rem;">{{ site.title | escape }}</h2>
+      <p style="margin: 0 0 .5rem; color: #828282; font-size: .9rem;">
+        {{ site.tagline | default: site.description | escape }}
+      </p>
+      <p style="margin: 0; font-size: .85rem;">
+        <a href="{{ '/setup/'      | relative_url }}">Setup</a> ·
+        <a href="{{ '/commands/'   | relative_url }}">Commands</a> ·
+        <a href="{{ '/features/'   | relative_url }}">Features</a> ·
+        <a href="{{ '/changelog/'  | relative_url }}">Changelog</a> ·
+        <a href="{{ '/support/'    | relative_url }}">Support</a> ·
+        <a href="{{ '/privacy/'    | relative_url }}">Privacy</a> ·
+        <a href="{{ '/terms/'      | relative_url }}">Terms</a>
+      </p>
+    </div>
+
+    <div style="font-size: .8rem; color: #828282; text-align: right; min-width: 180px;">
+      <a href="https://github.com/{{ site.minima.social_links.github }}"
+         style="color: #828282;">GitHub</a><br>
+      © {{ "now" | date: "%Y" }} {{ site.author | escape }}<br>
+      Built with <a href="https://jekyllrb.com/" style="color: #828282;">Jekyll</a>.
+    </div>
+
+  </div>
+</footer>
