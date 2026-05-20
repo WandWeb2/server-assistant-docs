@@ -53,6 +53,8 @@ Slotted in after the v4.0 AI-moderation update lands, with priority based on com
 - **Reaction roles.** Button-based self-service role panels in any channel.
 - **Custom server-defined slash commands.** Server owners define their own `/foo` that returns a configured embed or text snippet.
 - **Daily AI channel summaries.** Once-a-day digest of activity in a chosen channel, posted to a configured destination.
+- **Mediator.** Proactively DMs both parties when a conversation is escalating, collects each side privately, and produces a neutral summary for staff. Defuses conflict before staff has to wade through hundreds of messages.
+- **Decision explainer + AI-guided appeals.** Users can DM the bot to ask why any action was taken (with a plain-language explanation of the rule, why it exists, and how to resolve it). Banned users can start a structured appeal — the bot walks them through 3–4 questions and produces a clean appeal embed for staff review.
 
 ### Tier B — solid additions
 
@@ -79,11 +81,19 @@ Slotted in after the v4.0 AI-moderation update lands, with priority based on com
 
 Bigger conceptual swings — interesting if v4.0 validates the AI-moderation direction.
 
+**Voice-channel moderation.** Real-time transcription + AutoMod / threat-score logic applied to voice channels. Currently the industry's biggest moderation blind spot — no major bot touches voice. Visible "bot listening" indicators, transcript auto-purge, audit log of voice actions.
+
 **Federated moderation network.** Opt-in cross-server ban / warn data sharing for trusted communities. *"This user was banned in 5 partner servers for the same behaviour."* Solves cross-server raid coordination. Trust and governance model needs careful design.
 
 **AI-drafted server policy.** Bot reads your channels for two weeks, drafts a rules document tailored to your community's actual norms, posts it for owner approval. Useful for new servers that don't know which rules they need until something goes wrong.
 
 **Conversational onboarding agent.** Replace the static welcome DM with a short AI conversation that asks new joiners what brought them and auto-assigns roles based on the answers. Filters bad-faith joiners *before* their first message.
+
+**Server "drift" detection.** Track tone, topics, and behaviour patterns over weeks. Alert the Owner when material drift is detected — *"this server has become noticeably more heated over the last 60 days"* — so culture can be maintained before it erodes invisibly.
+
+**Community DNA fingerprint.** Learn a per-server embedding that captures what kind of community this is. Powers new-member matching, cross-server compatibility scoring, and recommendations for rules that work well in similar communities. Real ML, not just LLM-as-API.
+
+**Predictive mod scheduling.** Operational intelligence for mod teams. *"Sunday evenings UTC see 3× your average AutoMod hits — recommend adjusting on-call rotation."* Useful for volunteer-staffed servers running on best-effort coverage.
 
 ---
 
