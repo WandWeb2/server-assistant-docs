@@ -13,6 +13,13 @@ The latest patches are also posted to **#bot-feedback** in the [support server](
 
 ---
 
+## [3.2.8] — 2026-05-20
+
+### Fixed
+- Tray menu status indicators replaced colour-emoji dots with `[+]`/`[-]` markers and explicit `running`/`stopped` text — Windows' native menus don't render colour emoji.
+
+---
+
 ## [3.2.7] — 2026-05-20
 
 ### Removed
