@@ -13,6 +13,13 @@ The latest patches are also posted to **#bot-feedback** in the [support server](
 
 ---
 
+## [3.3.0] — 2026-05-20
+
+### Added
+- **Weekly setup reminder for unconfigured servers** — if `/setup` hasn't been completed yet, the bot now DMs the server owner once every 7 days with a link to the setup guide. Falls back to the server's system channel if the owner's DMs are closed. Stops automatically once setup is complete.
+
+---
+
 ## [3.2.9] — 2026-05-20
 
 ### Added
