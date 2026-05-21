@@ -46,7 +46,20 @@ jobs:
           git add assets/data/votes.json
           if git diff --cached --quiet; then
             echo "no vote-count changes to commit"
-          else
-            git commit -m "chore: refresh vote counts [skip ci]"
-            git push
+            exit 0
           fi
+          git commit -m "chore: refresh vote counts [skip ci]"
+          # Retry-on-push: if another commit landed between checkout and push,
+          # rebase onto the new tip and try again. Bounded to 5 attempts.
+          for i in 1 2 3 4 5; do
+            if git push; then
+              echo "pushed on attempt $i"
+              exit 0
+            fi
+            echo "push rejected (attempt $i), pulling --rebase and retrying"
+            git fetch origin main
+            git rebase origin/main || { git rebase --abort; exit 1; }
+            sleep $((RANDOM % 4 + 1))
+          done
+          echo "::error::could not push after 5 attempts"
+          exit 1
