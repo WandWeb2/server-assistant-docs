@@ -483,8 +483,12 @@ What ships is what gets requested most clearly. Vague *"add more features"* feed
 // Discussions API for the docs repo. Cached in localStorage for 5 minutes
 // to stay well under the 60 req/hour unauthenticated rate limit.
 (function () {
-  const API_URL = 'https://api.github.com/repos/WandWeb2/server-assistant-docs/discussions?category=Ideas&per_page=100';
-  const CACHE_KEY = 'sa_vote_counts_v2';
+  // Counts are produced by a scheduled GitHub Action (every 15 min) that
+  // queries the GraphQL upvoteCount of each Ideas-category discussion and
+  // commits the result to assets/data/votes.json. Fetching the static file
+  // means: no client-side auth, no rate limit, instant page load.
+  const API_URL = '{{ "/assets/data/votes.json" | relative_url }}?ts=' + Math.floor(Date.now() / 60000);
+  const CACHE_KEY = 'sa_vote_counts_v3';
   const CACHE_TTL_MS = 5 * 60 * 1000;
 
   function applyCounts(counts) {
@@ -512,14 +516,14 @@ What ships is what gets requested most clearly. Vague *"add more features"* feed
     }
   } catch (e) { /* localStorage unavailable; fall through */ }
 
-  // Fetch fresh
+  // Fetch fresh from the static JSON file (kept up-to-date by GitHub Actions)
   fetch(API_URL)
     .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
-    .then(function (discussions) {
+    .then(function (data) {
+      // votes.json shape: { updated_at: "...", counts: { "1": 5, "2": 0, ... } }
       const counts = {};
-      discussions.forEach(function (d) {
-        counts[d.number] = (d.reactions && d.reactions['+1']) || 0;
-      });
+      const raw = (data && data.counts) || {};
+      Object.keys(raw).forEach(function (k) { counts[parseInt(k, 10)] = raw[k]; });
       applyCounts(counts);
       try {
         localStorage.setItem(CACHE_KEY, JSON.stringify({ ts: Date.now(), counts: counts }));
@@ -527,8 +531,8 @@ What ships is what gets requested most clearly. Vague *"add more features"* feed
     })
     .catch(function (err) {
       console.warn('[roadmap] vote counts unavailable:', err);
-      // Remove loading badges so they don't sit at 0 forever
-      document.querySelectorAll('.vote-count-badge.loading').forEach(function (b) { b.remove(); });
+      // Drop loading state so arrows show as zero rather than perpetually fading
+      document.querySelectorAll('a.vote-arrow').forEach(function (a) { a.classList.remove('loading'); });
     });
 })();
 </script>
