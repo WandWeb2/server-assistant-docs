@@ -168,6 +168,19 @@ details.card .desc {
 }
 
 /* Vote-arrow: green up-arrow + count, positioned where the chevron used to be */
+.shipped-pill {
+  display: inline-block;
+  margin-left: 0.4rem;
+  padding: 0.12rem 0.5rem;
+  background: #c8e6c9;
+  border: 1px solid #66bb6a;
+  border-radius: 999px;
+  color: #1b5e20;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  vertical-align: middle;
+}
 .vote-arrow {
   position: absolute;
   right: 0.55rem;
@@ -284,8 +297,8 @@ Where Server Assistant is heading. Priorities shift based on what server owners 
     <h3>🟢 In Development<small>v4.0 — the AI-moderation update</small></h3>
 
     <details class="card">
-      <summary>Pulse<a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/1" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary>
-      <span class="desc">Always-on AI server-health analyst. Daily digests, leading-indicator flags, channel-tone shifts. Never auto-actions — just gives staff x-ray vision.</span>
+      <summary>Pulse <span class="shipped-pill">✅ Shipped v3.5</span><a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/1" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary>
+      <span class="desc">Always-on AI server-health analyst. Daily digests, leading-indicator flags, channel-tone shifts. Never auto-actions — just gives staff x-ray vision. <strong>v1 shipped 2026-05-28</strong> — 24-hour summary, week-over-week deltas, two leading-indicator flags (AutoMod-rate spike, sub-raid join spike). Channel-tone analysis lands in a later iteration.</span>
     </details>
 
     <details class="card">

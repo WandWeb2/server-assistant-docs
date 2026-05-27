@@ -11,6 +11,17 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 
 ---
 
+## 2026-05-28 — v3.5.0
+
+### Added
+- **🩺 Pulse — daily server-health digest** (`/settings → 🩺 Pulse`). Once a day at a time you choose, Pulse posts a one-embed summary to your staff chat:
+  - 24-hour activity (messages, joins/leaves, AutoMod blocks, warnings) with **week-over-week deltas** vs your 7-day baseline
+  - **Leading-indicator flags** when something's notable — *AutoMod activity is 2× the 7-day average*, or *join spike above the baseline but below the raid threshold*
+  - **Read-only.** Pulse never auto-actions. Just gives staff x-ray vision so they decide what to do.
+  - **Opt-in.** Off by default. Toggle on/off, pick a destination channel, choose the hour, send a sample digest — all from `/settings`.
+
+---
+
 ## 2026-05-21 — v3.4.2
 
 ### Changed
