@@ -87,6 +87,10 @@ You'll need **Manage Server** permission. Authorise the requested permissions, t
 - **Leading-indicator flags** — catches an AutoMod spike or a sub-raid "quiet flood" join pattern before it becomes a problem
 - **Read-only** — Pulse never auto-actions; it just gives your team x-ray vision. *No other moderation bot does this.*
 
+<img src="{{ '/assets/screenshots/pulse-digest.webp' | relative_url }}" alt="Pulse daily server-health digest" style="max-width: 540px; width: 100%; border-radius: 8px; margin: 0.5rem 0;">
+
+<p style="font-size: 0.85rem; color: #888; margin-top: -0.25rem;"><em>Example digest — illustrative figures.</em></p>
+
 ### 🛡️ Moderation
 - **Role-based actions** — Owner / Admin / Moderator tiers with optional custom roles
 - **Persistent warnings** with DM notifications and full history
