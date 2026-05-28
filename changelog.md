@@ -11,6 +11,13 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 
 ---
 
+## 2026-05-28 — v3.5.2
+
+### Fixed
+- **`/vote` now links to the correct directories.** The "Discord Bot List" link previously pointed at the support server by mistake; it now goes to the actual listing, with dedicated upvote buttons for both Top.gg and Discord Bot List. The newly-approved discord.bots.gg listing is included too.
+
+---
+
 ## 2026-05-28 — v3.5.1
 
 ### Changed
