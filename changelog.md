@@ -11,6 +11,13 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 
 ---
 
+## 2026-05-29 — v3.7.0
+
+### Added
+- **🩹 Bot Health Insurance.** The bot now watches its *own* footprint so it never quietly becomes the bot a server mutes. If its AutoMod activity looks heavy-handed over a week, it posts a single gentle check-in to staff chat with concrete ways to dial it back (gentler filter pack, softer ladder, trimming custom filters). **Read-only — it never changes settings on its own**, and it's self-limiting to at most once every 14 days. On by default; toggle under `/settings → Behavior`.
+
+---
+
 ## 2026-05-28 — v3.6.0
 
 ### Added
