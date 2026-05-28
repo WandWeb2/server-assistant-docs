@@ -312,8 +312,8 @@ Where Server Assistant is heading. Priorities shift based on what server owners 
     </details>
 
     <details class="card">
-      <summary>Threat Score<a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/4" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary>
-      <span class="desc">Risk-based moderation that replaces fixed punishment ladders. Actions fit the actual threat — context-aware, opt-in, with extensive safeguards against punishing legitimate users.</span>
+      <summary>Threat Score <span class="shipped-pill">✅ v1 (advisory) shipped v3.8</span><a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/4" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary>
+      <span class="desc">Risk-based moderation that replaces fixed punishment ladders. Actions fit the actual threat — context-aware, opt-in, with extensive safeguards against punishing legitimate users. <strong>v1 (advisory) shipped 2026-05-29</strong> — each user gets an explainable, time-decayed risk score shown to staff in their profile. <strong>It never auto-actions</strong>; it's pure visibility. The active, score-driven phase (with the safeguards below) comes only after the advisory version proves accurate in real servers.</span>
       <details class="safeguards">
         <summary>Safeguards against false positives<a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/5" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary>
         <ul>

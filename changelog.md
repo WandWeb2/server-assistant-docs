@@ -11,6 +11,13 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 
 ---
 
+## 2026-05-29 — v3.8.0
+
+### Added
+- **🛡️ Threat Score (advisory).** Each user now gets an at-a-glance risk score — 🟢 Low / 🟠 Elevated / 🔴 High — shown in their profile (`/info` and the right-click **View Info** menu). It's transparent and explainable: a time-decayed weighted view of a user's infraction history (manual warnings count more than AutoMod hits; serious categories like scams/raids/slurs count more; old infractions fade), with a one-line summary of what's driving it. **Advisory only — it never takes any action.** It just helps staff *see* who's trending risky and decide. Score-driven moderation (with grace periods, soft-touch DM check-ins, server-defined thresholds) is a separate, later phase. Opt-in (slated premium), off by default — enable under `/settings → Behavior`.
+
+---
+
 ## 2026-05-29 — v3.7.0
 
 ### Added
