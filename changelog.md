@@ -18,7 +18,7 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
   - 24-hour activity (messages, joins/leaves, AutoMod blocks, warnings) with **week-over-week deltas** vs your 7-day baseline
   - **Leading-indicator flags** when something's notable — *AutoMod activity is 2× the 7-day average*, or *join spike above the baseline but below the raid threshold*
   - **Read-only.** Pulse never auto-actions. Just gives staff x-ray vision so they decide what to do.
-  - **Opt-in.** Off by default. Toggle on/off, pick a destination channel, choose the hour, send a sample digest — all from `/settings`.
+  - **On by default** for configured servers — posts to your staff chat at 09:00 server-local time. Toggle off, change the destination channel, or pick a different hour anytime in `/settings → 🩺 Pulse`.
 
 ---
 
