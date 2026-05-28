@@ -11,6 +11,13 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 
 ---
 
+## 2026-05-28 — v3.5.1
+
+### Changed
+- **Pulse digests carry an occasional gentle vote reminder** — at most once a week, the daily digest adds a single line noting that a quick `/vote` helps other communities discover Server Assistant. No extra posts, no nagging.
+
+---
+
 ## 2026-05-28 — v3.5.0
 
 ### Added
