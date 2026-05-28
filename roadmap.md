@@ -302,8 +302,8 @@ Where Server Assistant is heading. Priorities shift based on what server owners 
     </details>
 
     <details class="card">
-      <summary>Self-trained AutoMod<a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/2" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary>
-      <span class="desc">Bot watches your staff's manual decisions for 2–4 weeks, clusters the patterns, then proposes server-specific AutoMod rules for owner approval.</span>
+      <summary>Self-trained AutoMod <span class="shipped-pill">✅ Shipped v3.6</span><a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/2" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary>
+      <span class="desc">Bot watches your staff's manual decisions (deletes + reported messages), clusters the patterns, then proposes server-specific AutoMod rules for owner approval. <strong>v1 shipped 2026-05-28</strong> — opt-in observation, on-demand AI rule suggestions, accept/skip review. Nothing is ever auto-enforced.</span>
     </details>
 
     <details class="card">

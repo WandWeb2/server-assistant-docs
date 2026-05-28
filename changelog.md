@@ -11,6 +11,17 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 
 ---
 
+## 2026-05-28 — v3.6.0
+
+### Added
+- **🧠 Self-trained AutoMod** (`/automod → Self-training`). The bot learns from *your* moderators, not just preset filters:
+  - **Watches** the content of messages your staff delete or flag via Report Message (opt-in, stored locally for 30 days — message text only, no identities, nothing leaves the host)
+  - **Learns** on demand — once it has enough samples, the AI clusters the patterns and proposes server-specific AutoMod rules, each with a rationale and the examples it would catch
+  - **You approve** each rule one at a time; accepted rules run through the same backtracking-safety guard as hand-written filters. **Nothing is ever auto-enforced** — they're suggestions until you accept them
+  - Off by default; toggle on and clear the learning log any time
+
+---
+
 ## 2026-05-28 — v3.5.2
 
 ### Fixed
