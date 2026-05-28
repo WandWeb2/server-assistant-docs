@@ -11,6 +11,25 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 
 ---
 
+## 2026-05-29 — v4.0.0 — The AI-Moderation Update 🚀
+
+The milestone. Server Assistant's four flagship AI-moderation features are all live, and a **premium tier** arrives.
+
+### Added
+- **Premium tier (per-server).** A real free/premium split — and the free tier stays genuinely generous: all core moderation, AutoMod, anti-raid, 🩺 Pulse, 🧠 Self-trained AutoMod, 🩹 Bot Health Insurance, AI reports, and `/imagine`. Premium adds 🛡️ Threat Score, higher AI usage limits, and more to come.
+- **`/premium`** — see your server's status and the full free-vs-premium breakdown.
+- **Your beta perk, now concrete:** during the beta, premium is **free for every server** — and servers using the bot during the beta lock in **12 months of free premium** automatically when the paid tier launches. No card, no claim form.
+
+### The v4.0 AI-moderation suite (read-only / advisory by design)
+- **🩺 Pulse** — daily server-health digest with trends + leading-indicator flags
+- **🧠 Self-trained AutoMod** — learns from your moderators, proposes server-specific rules
+- **🩹 Bot Health Insurance** — the bot watches its own footprint and suggests tuning before it gets noisy
+- **🛡️ Threat Score** — explainable per-user risk visibility for staff
+
+Every one gives your team x-ray vision and leaves the decisions to you.
+
+---
+
 ## 2026-05-29 — v3.8.0
 
 ### Added

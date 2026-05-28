@@ -294,7 +294,7 @@ Where Server Assistant is heading. Priorities shift based on what server owners 
 <div class="roadmap-top">
 
   <div class="lane lane-now">
-    <h3>🟢 In Development<small>v4.0 — the AI-moderation update</small></h3>
+    <h3>✅ Shipped<small>v4.0 — the AI-moderation update is live 🚀</small></h3>
 
     <details class="card">
       <summary>Pulse <span class="shipped-pill">✅ Shipped v3.5</span><a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/1" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary>
