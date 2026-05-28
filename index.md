@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Server Assistant — Discord moderation bot with AI-assisted reports and customisable AutoMod
-description: Multi-tenant Discord moderation bot with AI-assisted reports, customisable AutoMod, anti-raid detection, DM verification gate, AI image generation, and a 60-second setup wizard. Free for everyone.
+title: Server Assistant — AI Discord moderation bot with daily server-health digests
+description: AI Discord moderation bot with Pulse daily server-health digests, smart AutoMod, anti-raid detection, AI-assisted reports, DM verification gate, image generation, and a 60-second setup wizard. Free for everyone.
 image: /server-assistant-docs/assets/banner.jpeg
 ---
 
@@ -13,7 +13,7 @@ image: /server-assistant-docs/assets/banner.jpeg
 
   <h1>Server Assistant</h1>
 
-  <p><strong>Smart Discord moderation, AI-assisted reports, and customisation for any community.</strong></p>
+  <p><strong>AI moderation that gives your staff x-ray vision into server health.</strong></p>
 </div>
 
 <script type="application/ld+json">
@@ -23,7 +23,7 @@ image: /server-assistant-docs/assets/banner.jpeg
   "name": "Server Assistant",
   "applicationCategory": "Discord Bot",
   "operatingSystem": "Discord",
-  "description": "Multi-tenant Discord moderation and automation bot with AI-assisted moderation reports, customisable AutoMod with custom regex and ReDoS guard, anti-raid detection, DM-button verification gate, and AI image generation.",
+  "description": "AI Discord moderation and automation bot with Pulse daily server-health digests, AI-assisted moderation reports, customisable AutoMod with custom regex and ReDoS guard, anti-raid detection, DM-button verification gate, and AI image generation.",
   "offers": {
     "@type": "Offer",
     "price": "0",
@@ -81,6 +81,11 @@ You'll need **Manage Server** permission. Authorise the requested permissions, t
 </div>
 
 ## Features at a glance
+
+### 🩺 Pulse — daily server-health analyst
+- **Once-a-day health digest** posted to your staff chat: messages, joins/leaves, AutoMod blocks, warnings — each with a **week-over-week delta** vs your 7-day baseline
+- **Leading-indicator flags** — catches an AutoMod spike or a sub-raid "quiet flood" join pattern before it becomes a problem
+- **Read-only** — Pulse never auto-actions; it just gives your team x-ray vision. *No other moderation bot does this.*
 
 ### 🛡️ Moderation
 - **Role-based actions** — Owner / Admin / Moderator tiers with optional custom roles
