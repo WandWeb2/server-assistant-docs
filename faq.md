@@ -200,15 +200,15 @@ If Discord is having a bad day the bot may be globally rate-limited. Wait 60 sec
 Two channels:
 
 - **Support server `#bot-feedback`** — informal discussion, real-time chat
-- **GitHub Issues** — formal tracking, see the [Support page]({{ site.url }}{{ site.baseurl }}/support/) for the template
+- **GitHub Issues** — formal tracking on the [docs repo](https://github.com/WandWeb2/server-assistant-docs/issues/new/choose); see the [Support page]({{ site.url }}{{ site.baseurl }}/support/)
 
 ### Is the source code open?
 
-The main bot code is currently in a private repository while the project stabilises. The public-facing documentation, privacy policy, and changelog are open source. A future release will move the bot source to public open-source under MIT.
+No — the bot's source is closed. What *is* public lives in the [documentation repository](https://github.com/WandWeb2/server-assistant-docs): the docs site, privacy policy, terms, changelog, roadmap, and the issues/discussions where you can report bugs and request features.
 
 ### Can I self-host?
 
-Once the bot source is public, yes. For now, contact the maintainer via the support server if you need self-hosting access urgently.
+No — Server Assistant is a **fully managed, hosted bot**. You invite it and configure everything in Discord; there's nothing to install, host, or maintain on your end.
 
 ---
 

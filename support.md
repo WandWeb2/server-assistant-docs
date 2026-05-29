@@ -30,7 +30,7 @@ Redact tokens, API keys, or sensitive user IDs before posting.
 
 ## 🐛 Filing bug reports formally
 
-Open a [GitHub issue](https://github.com/WandWeb2/server-assistant/issues/new/choose) using the **Bug Report** template. The template prompts you for:
+Open a [GitHub issue](https://github.com/WandWeb2/server-assistant-docs/issues/new/choose) using the **Bug Report** template. The template prompts you for:
 
 - What happened vs what you expected
 - Steps to reproduce
@@ -46,7 +46,7 @@ Issues filed via GitHub get tracked through the milestone system, so progress is
 
 Either channel works:
 
-- **GitHub:** [Feature Request issue template](https://github.com/WandWeb2/server-assistant/issues/new/choose) for things you want formally tracked
+- **GitHub:** [Feature Request issue template](https://github.com/WandWeb2/server-assistant-docs/issues/new/choose) for things you want formally tracked
 - **Support server `#bot-feedback`:** for informal discussion or ideas you're not sure about yet
 
 The more concrete the use case, the more likely it is to get built. "As a moderator, I want to..." style descriptions land best.
@@ -58,7 +58,7 @@ The more concrete the use case, the more likely it is to get built. "As a modera
 **Do NOT open a public issue** for security vulnerabilities. Instead:
 
 - **Email or DM** the maintainer directly via the support server
-- See the [SECURITY.md](https://github.com/WandWeb2/server-assistant/blob/main/SECURITY.md) for full disclosure policy
+- See the [SECURITY.md](https://github.com/WandWeb2/server-assistant-docs/blob/main/SECURITY.md) for full disclosure policy
 
 In-scope: bypasses of role-based permission, decryption of stored credentials, privilege escalation, injection vulnerabilities, and AutoMod evasion that affects host security.
 
@@ -81,22 +81,18 @@ The maintainer commits to:
 
 ---
 
-## 🛠️ Self-hosting / development
+## 🛠️ Public project hub
 
-The main bot source code is currently in a private repository while the project stabilises. Public assets:
+Server Assistant is a **fully managed, hosted bot** — you invite it and configure it in Discord; there's nothing to install or run yourself. The bot's source is closed.
 
-- This documentation site: [WandWeb2/server-assistant-docs](https://github.com/WandWeb2/server-assistant-docs)
-- Issues, releases, and roadmap: [main repo issues](https://github.com/WandWeb2/server-assistant/issues)
+Everything public lives in one place — the **[server-assistant-docs](https://github.com/WandWeb2/server-assistant-docs)** repository:
 
-A future release will move the source to public open-source under MIT. If you want self-hosting access in the meantime, contact the maintainer via the support server with a brief explanation of your use case.
+- **This documentation site**
+- **[Issues](https://github.com/WandWeb2/server-assistant-docs/issues)** — bug reports and feature requests
+- **[Discussions](https://github.com/WandWeb2/server-assistant-docs/discussions)** — roadmap voting and ideas
+- **[Roadmap]({{ site.url }}{{ site.baseurl }}/roadmap/)** and **[Changelog]({{ site.url }}{{ site.baseurl }}/changelog/)**
 
----
-
-## 🤝 Contributing
-
-Once the source is public, contributions via standard fork-and-PR are welcome.
-
-For now, the highest-leverage contribution is **filing detailed bug reports and feature requests** — that directly shapes what gets built next.
+The most valuable way to shape the bot is **filing detailed bug reports and feature requests** and **voting on the roadmap** — that directly steers what gets built next.
 
 ---
 

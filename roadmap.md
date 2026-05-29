@@ -477,9 +477,9 @@ Where Server Assistant is heading. Priorities shift based on what server owners 
 
 The fastest way to move something up the list:
 
-1. **Post in `#bot-feedback`** on the [support server]({{ site.url }}{{ site.baseurl }}/support/) describing the use case — not just *"add feature X"* but *what you'd do with it*.
-2. **File a feature request issue** on GitHub if you want formal tracking.
-3. **+1 existing issues** so the team can see which ideas have multiple supporters.
+1. **Vote on the cards above** — the highest-voted ideas get prioritised.
+2. **Post in `#bot-feedback`** on the [support server]({{ site.url }}{{ site.baseurl }}/support/) describing the use case — not just *"add feature X"* but *what you'd do with it*.
+3. **[File a feature request](https://github.com/WandWeb2/server-assistant-docs/issues/new/choose)** on the docs repo if you want formal tracking.
 
 What ships is what gets requested most clearly. Vague *"add more features"* feedback is unactionable; *"I run a 2,000-member RP server and we need X because Y"* gets prioritised.
 

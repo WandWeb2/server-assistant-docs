@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 💬 Support server (fastest help)
+    url: https://discord.gg/egzwNJJcKm
+    about: For quick questions, setup help, and informal discussion.
+  - name: 🗳️ Roadmap & feature voting
+    url: https://wandweb2.github.io/server-assistant-docs/roadmap/
+    about: Vote on what gets built next.
+  - name: 🔒 Report a security vulnerability
+    url: https://github.com/WandWeb2/server-assistant-docs/security/advisories/new
+    about: Privately report a security issue — do not open a public issue.
