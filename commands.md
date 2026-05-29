@@ -9,11 +9,11 @@ description: Full reference of every command Server Assistant supports.
 
 Server Assistant supports **three interaction modes**. Most commands are available in all three:
 
-1. **Text commands** in the configured staff-chat (`warn @user`)
-2. **Slash commands** anywhere (`/warn`)
-3. **Right-click context menus** on users and messages
+1. **Slash commands — anywhere.** Every moderation action (`/warn`, `/mute`, `/kick`, `/ban`, `/purge`, …) works as a slash command in **any channel**, so you never have to switch to staff-chat to act.
+2. **Text commands — in staff-chat** (`warn @user`, `purge 50`). A convenience for working inside your staff channel; not available in other channels.
+3. **Right-click context menus** on users and messages.
 
-> Most commands are role-gated. If a command isn't listed for your tier, you don't have permission. Run `help` (text) or `/help` (slash) to see what's available to you specifically.
+> Commands are role-gated, and some actions may require approval from a higher tier — see **[Permissions & approval](#-permissions--approval)** below. Run `/help` to see what's available to you specifically.
 
 ---
 
@@ -196,8 +196,18 @@ Type `/` anywhere to see autocomplete:
 | `/snippets` | Manage canned responses |
 | `/ai-config` | Configure AI provider |
 | `/imagine <prompt>` | AI image generation |
-| `/info <user>` | User profile |
-| `/warn <user> <reason>` | Quick warn |
+| `/info <user>` | User profile (incl. Threat Score if enabled) |
+| `/warn <user> <reason>` | Issue a warning |
+| `/mute <user> <minutes> [reason]` | Time out a user |
+| `/unmute <user>` | Remove a timeout |
+| `/kick <user> [reason]` | Kick a user *(may need approval)* |
+| `/ban <user> [reason] [delete_days]` | Ban a user *(may need approval)* |
+| `/unban <user_id> [reason]` | Unban by ID *(may need approval)* |
+| `/softban <user> [reason]` | Ban + unban to clear messages *(may need approval)* |
+| `/purge <count> [user]` | Bulk-delete messages here *(may need approval)* |
+| `/slowmode <seconds> [channel]` | Set channel slowmode |
+| `/lock [channel]` / `/unlock [channel]` | Lock / unlock a channel |
+| `/nick <user> [nickname]` | Change / reset a nickname |
 | `/warnings <user>` | View warnings |
 | `/note <user> <text>` | Add note |
 | `/notes <user>` | View notes |
@@ -212,6 +222,35 @@ Type `/` anywhere to see autocomplete:
 | `/invite` | Get the bot's invite URL |
 
 Most slash command responses are **ephemeral** by default (only you see them) for sensitive operations.
+
+---
+
+## 🔑 Permissions & approval
+
+Server Assistant uses **role tiers** you define in `/settings → Role Tiers`. The defaults are **Owner → Admin → Moderator**, but you can map any of your server's roles and create custom tiers. Each tier has:
+
+- **Capabilities** — which actions that tier can use (e.g. a Moderator might have warn/mute/kick but not ban).
+- **A level** — its rank in the hierarchy (Owner is always the top).
+- **Approval authority** — whether that tier can perform *dangerous* actions directly, and approve others' requests.
+
+### Two kinds of action
+
+| Type | Actions | Behaviour |
+|------|---------|-----------|
+| **Standard** | warn, mute, unmute, slowmode, lock, unlock, nick, notes, info… | Execute immediately if your role has the capability. |
+| **Dangerous** | **kick, ban, unban, softban, purge** | Execute immediately *if your role has approval authority* — otherwise they route for approval. |
+
+### How approval routes — it goes *up* a tier
+
+If someone triggers a dangerous action they can't self-approve, the bot posts an approval request (✅ / ❌) to staff-chat, and **the tier above signs off**:
+
+- A **Moderator's** request can be approved by an **Admin** (or the Owner).
+- An **Admin's** request can be approved by the **Owner**.
+- The **Owner** can approve anything, and the Owner (plus any tier you grant approval authority) performs dangerous actions directly with no approval step.
+
+Requests expire after a configurable timeout (`/settings → Behavior → Approval timeout`). Every action — and who approved it — is written to your audit-log channel.
+
+> In short: **each team can act within its level; anything above their level gets a quick sign-off from the team above.** Nothing dangerous happens silently.
 
 ---
 
