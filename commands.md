@@ -200,10 +200,10 @@ Type `/` anywhere to see autocomplete:
 | `/warn <user> <reason>` | Issue a warning |
 | `/mute <user> <minutes> [reason]` | Time out a user |
 | `/unmute <user>` | Remove a timeout |
-| `/kick <user> [reason]` | Kick a user *(may need approval)* |
-| `/ban <user> [reason] [delete_days]` | Ban a user *(may need approval)* |
-| `/unban <user_id> [reason]` | Unban by ID *(may need approval)* |
-| `/softban <user> [reason]` | Ban + unban to clear messages *(may need approval)* |
+| `/kick <user> [reason]` | Kick a user |
+| `/ban <user> [reason] [delete_days]` | Ban a user |
+| `/unban <user_id> [reason]` | Unban by ID |
+| `/softban <user> [reason]` | Ban + unban to clear messages |
 | `/purge <count> [user]` | Bulk-delete messages here *(may need approval)* |
 | `/slowmode <seconds> [channel]` | Set channel slowmode |
 | `/lock [channel]` / `/unlock [channel]` | Lock / unlock a channel |
@@ -227,30 +227,77 @@ Most slash command responses are **ephemeral** by default (only you see them) fo
 
 ## 🔑 Permissions & approval
 
-Server Assistant uses **role tiers** you define in `/settings → Role Tiers`. The defaults are **Owner → Admin → Moderator**, but you can map any of your server's roles and create custom tiers. Each tier has:
+Each role you configure in `/settings → Role Tiers` has **capabilities** (what actions it can use), a **level** (its rank), and **approval authority** (whether it can run *dangerous* actions directly). Defaults out of the box:
 
-- **Capabilities** — which actions that tier can use (e.g. a Moderator might have warn/mute/kick but not ban).
-- **A level** — its rank in the hierarchy (Owner is always the top).
-- **Approval authority** — whether that tier can perform *dangerous* actions directly, and approve others' requests.
+| | 🟢 Moderator | 🟠 Admin | 🔴 Owner |
+|---|:-:|:-:|:-:|
+| **Level** | 25 | 50 | 100 |
+| **Approval authority** | — | — | ✅ |
 
-### Two kinds of action
+### What each tier can run (defaults)
 
-| Type | Actions | Behaviour |
-|------|---------|-----------|
-| **Standard** | warn, mute, unmute, slowmode, lock, unlock, nick, notes, info… | Execute immediately if your role has the capability. |
-| **Dangerous** | **kick, ban, unban, softban, purge** | Execute immediately *if your role has approval authority* — otherwise they route for approval. |
+<style>
+.perm-table th, .perm-table td { text-align: center; }
+.perm-table td:first-child, .perm-table th:first-child { text-align: left; }
+.perm-y { color: #1b8e3a; font-weight: 700; }
+.perm-n { color: #b9bcc4; }
+.perm-w { color: #c97a17; font-weight: 700; }
+</style>
 
-### How approval routes — it goes *up* a tier
+<table class="perm-table">
+<thead><tr><th>Command</th><th>🟢 Mod</th><th>🟠 Admin</th><th>🔴 Owner</th></tr></thead>
+<tbody>
+<tr><td>/warn, /warnings, /manage-warnings</td><td class="perm-y">✓</td><td class="perm-y">✓</td><td class="perm-y">✓</td></tr>
+<tr><td>/note, /notes</td><td class="perm-y">✓</td><td class="perm-y">✓</td><td class="perm-y">✓</td></tr>
+<tr><td>/manage-notes</td><td class="perm-n">—</td><td class="perm-y">✓</td><td class="perm-y">✓</td></tr>
+<tr><td>/info, /stats, /timezone, /help</td><td class="perm-y">✓</td><td class="perm-y">✓</td><td class="perm-y">✓</td></tr>
+<tr><td>/mute, /unmute</td><td class="perm-y">✓</td><td class="perm-y">✓</td><td class="perm-y">✓</td></tr>
+<tr><td>/kick, /ban, /softban</td><td class="perm-y">✓</td><td class="perm-y">✓</td><td class="perm-y">✓</td></tr>
+<tr><td>/unban</td><td class="perm-n">—</td><td class="perm-y">✓</td><td class="perm-y">✓</td></tr>
+<tr><td><strong>/purge</strong> <em>(needs approval)</em></td><td class="perm-n">—</td><td class="perm-w">⚠ approval</td><td class="perm-y">✓ direct</td></tr>
+<tr><td>/slowmode, /lock, /unlock, /nick</td><td class="perm-y">✓</td><td class="perm-y">✓</td><td class="perm-y">✓</td></tr>
+<tr><td>/onboarding, /snippets, /automod, /schedule</td><td class="perm-n">—</td><td class="perm-y">✓</td><td class="perm-y">✓</td></tr>
+<tr><td>/imagine, /vote, /premium, /invite</td><td class="perm-y">✓</td><td class="perm-y">✓</td><td class="perm-y">✓</td></tr>
+<tr><td>/settings</td><td class="perm-n">—</td><td class="perm-y">✓</td><td class="perm-y">✓</td></tr>
+<tr><td>/setup, /ai-config</td><td class="perm-n">—</td><td class="perm-n">—</td><td class="perm-y">✓</td></tr>
+</tbody>
+</table>
 
-If someone triggers a dangerous action they can't self-approve, the bot posts an approval request (✅ / ❌) to staff-chat, and **the tier above signs off**:
+You can customise any of this in `/settings → Role Tiers` — grant Mods `/unban`, take `/ban` away, give an Admin role approval authority, or create new tiers entirely.
 
-- A **Moderator's** request can be approved by an **Admin** (or the Owner).
-- An **Admin's** request can be approved by the **Owner**.
-- The **Owner** can approve anything, and the Owner (plus any tier you grant approval authority) performs dangerous actions directly with no approval step.
+### How approval routes
 
-Requests expire after a configurable timeout (`/settings → Behavior → Approval timeout`). Every action — and who approved it — is written to your audit-log channel.
+<style>
+.flow { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: stretch; margin: 1rem 0; }
+.flow-step { flex: 1 1 200px; min-width: 180px; padding: 0.75rem 1rem; border-radius: 12px; background: rgba(255,255,255,0.6); border: 1px solid rgba(31,38,135,0.15); box-shadow: 0 4px 16px rgba(31,38,135,0.07); font-size: 0.92rem; }
+.flow-step.act { background: rgba(37,99,235,0.10); border-color: rgba(37,99,235,0.3); }
+.flow-step.approve { background: rgba(241,196,15,0.12); border-color: rgba(201,122,23,0.35); }
+.flow-step.ok { background: rgba(46,204,113,0.12); border-color: rgba(27,142,58,0.35); }
+.flow-arrow { display: flex; align-items: center; justify-content: center; font-size: 1.4rem; color: #6a7280; min-width: 1.6rem; }
+@media (max-width: 700px) { .flow { flex-direction: column; } .flow-arrow { transform: rotate(90deg); } }
+</style>
 
-> In short: **each team can act within its level; anything above their level gets a quick sign-off from the team above.** Nothing dangerous happens silently.
+<div class="flow">
+  <div class="flow-step act">Mod runs <code>/purge</code> in any channel</div>
+  <div class="flow-arrow">→</div>
+  <div class="flow-step">Mod lacks <code>purge</code> capability → <strong>denied</strong></div>
+</div>
+<div class="flow">
+  <div class="flow-step act">Admin runs <code>/purge</code></div>
+  <div class="flow-arrow">→</div>
+  <div class="flow-step approve">Approval request posted to staff-chat (✅ / ❌)</div>
+  <div class="flow-arrow">→</div>
+  <div class="flow-step">Only the <strong>Owner</strong> (a tier above) can approve</div>
+  <div class="flow-arrow">→</div>
+  <div class="flow-step ok">Executes + audit-logged</div>
+</div>
+<div class="flow">
+  <div class="flow-step act">Owner runs <code>/purge</code></div>
+  <div class="flow-arrow">→</div>
+  <div class="flow-step ok">Executes immediately + audit-logged</div>
+</div>
+
+> Approval always goes **up** the hierarchy — a tier can only approve requests from a *strictly lower* tier. Timeout is set in `/settings → Behavior → Approval timeout`. Every action and approver is written to your audit-log channel.
 
 ---
 

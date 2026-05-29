@@ -13,23 +13,41 @@ Detailed walkthroughs of Server Assistant's flagship features. For the full comm
 
 ## 🧠 The AI-Moderation Suite
 
-What sets Server Assistant apart: a set of AI features that watch your server's *health and behaviour*, not just its messages. Every one of them is **read-only / advisory by design** — they give your team x-ray vision and leave the decisions to you. None of them act on their own.
+A set of AI features that watch your server's *health and behaviour* — every one **read-only / advisory by design**. They give your team x-ray vision and leave the decisions to you.
 
-### 🩺 Pulse — daily server-health digest
+<style>
+.ai-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin: 1rem 0 1.5rem; }
+.ai-card { background: rgba(255,255,255,0.55); border: 1px solid rgba(31,38,135,0.15); border-radius: 14px; padding: 1rem 1.2rem; box-shadow: 0 4px 18px rgba(31,38,135,0.08); }
+.ai-card h4 { margin: 0 0 .35rem; font-size: 1.05rem; }
+.ai-card .ai-tag { display: inline-block; font-size: .68rem; font-weight: 700; padding: .12rem .55rem; border-radius: 999px; background: rgba(46,204,113,.15); color: #1b5e20; margin-left: .4rem; vertical-align: middle; }
+.ai-card .ai-tag.premium { background: rgba(241,196,15,.18); color: #8a5a00; }
+.ai-card p { margin: 0; font-size: .92rem; line-height: 1.45; color: #2e3340; }
+.ai-card .ai-where { margin-top: .55rem; font-size: .8rem; color: #5c6470; }
+@media (max-width: 700px) { .ai-grid { grid-template-columns: 1fr; } }
+</style>
 
-Once a day, Pulse posts a one-embed health report to your staff chat: messages, joins/leaves, AutoMod blocks, and warnings for the last 24 hours, each with a **week-over-week delta** against your 7-day baseline. It flags the things humans miss — *AutoMod activity is 2× normal today*, or *a join spike sitting just below your raid threshold* (the "quiet flood" pattern). On by default; configure under `/settings → 🩺 Pulse`.
-
-### 🧠 Self-trained AutoMod
-
-The bot learns from *your* moderators. When enabled, it watches the messages your staff **delete or report**, clusters the patterns, and — when you ask (`/automod → Self-training`) — proposes server-specific AutoMod rules for your approval. **Nothing is ever auto-enforced** — every proposed rule is a suggestion you Accept or Skip. Opt-in and private: only message text is stored, locally, for 30 days; no identities.
-
-### 🩹 Bot Health Insurance
-
-Server Assistant watches its *own* footprint so it never quietly becomes the bot a server mutes. If its AutoMod activity gets heavy-handed over a week, it posts a single gentle check-in to staff chat with concrete ways to dial it back. Read-only, self-limiting to at most once every 14 days. On by default; toggle under `/settings → Behavior`.
-
-### 🛡️ Threat Score *(premium)*
-
-An at-a-glance risk level — 🟢 Low / 🟠 Elevated / 🔴 High — on each user, shown in their profile (`/info` or right-click → **View Info**). It's a transparent, explainable read of their infraction history (recent warnings + AutoMod hits, weighted by severity, with older incidents decaying), plus a one-line summary of what's driving it. **Advisory only — it never takes any action.** Opt-in under `/settings → Behavior`.
+<div class="ai-grid">
+  <div class="ai-card">
+    <h4>🩺 Pulse <span class="ai-tag">on by default</span></h4>
+    <p>A daily one-embed health report — messages, joins/leaves, AutoMod blocks, warnings — with week-over-week deltas and flags for the quiet patterns humans miss.</p>
+    <div class="ai-where">Configure: <code>/settings → 🩺 Pulse</code></div>
+  </div>
+  <div class="ai-card">
+    <h4>🧠 Self-trained AutoMod <span class="ai-tag">opt-in</span></h4>
+    <p>Watches the messages your staff delete or report, then proposes server-specific AutoMod rules for your approval. Nothing auto-enforced; 30-day local log, no identities stored.</p>
+    <div class="ai-where">Enable: <code>/automod → Self-training</code></div>
+  </div>
+  <div class="ai-card">
+    <h4>🩹 Bot Health Insurance <span class="ai-tag">on by default</span></h4>
+    <p>The bot watches its <em>own</em> footprint. If it gets heavy-handed, it suggests tuning — at most once every 14 days, so the anti-noise feature never becomes noise.</p>
+    <div class="ai-where">Toggle: <code>/settings → Behavior</code></div>
+  </div>
+  <div class="ai-card">
+    <h4>🛡️ Threat Score <span class="ai-tag premium">premium</span></h4>
+    <p>At-a-glance per-user risk — 🟢 Low / 🟠 Elevated / 🔴 High — in user profiles. Transparent read of infraction history, weighted by severity, decaying over time. Advisory only.</p>
+    <div class="ai-where">Enable: <code>/settings → Behavior</code></div>
+  </div>
+</div>
 
 ---
 
