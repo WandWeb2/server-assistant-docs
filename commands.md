@@ -207,7 +207,8 @@ Type `/` anywhere to see autocomplete:
 | `/timezone` | Set personal timezone |
 | `/schedule` | Schedule a reminder via modal |
 | `/help` | Interactive button-driven help |
-| `/vote` | Vote for the bot on Top.gg |
+| `/premium` | See your server's premium status + what's included |
+| `/vote` | Vote for the bot (Top.gg + Discord Bot List) |
 | `/invite` | Get the bot's invite URL |
 
 Most slash command responses are **ephemeral** by default (only you see them) for sensitive operations.

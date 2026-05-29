@@ -11,7 +11,7 @@ description: Frequently asked questions about Server Assistant.
 
 ### Is the bot free?
 
-**Yes — free for everyone, no card required.** A future premium tier will add *new* features on top of what exists today. Everything currently available stays free forever.
+**Yes — free for everyone, no card required.** Server Assistant now has a premium tier (run `/premium` to see what's in it), but **during the beta, premium is free for every server** — so right now you get everything at no cost. The generous free tier (all core moderation, AutoMod, anti-raid, Pulse, Self-trained AutoMod, AI reports) stays free forever regardless.
 
 **Beta-period perk:** servers that add Server Assistant *before* the premium tier launches receive **12 months of free premium access** from launch day. There's no claim form or signup — if your server is using the bot before premium goes live, you're in automatically. Adding the bot now is the cheapest way to lock in a year of premium for free.
 

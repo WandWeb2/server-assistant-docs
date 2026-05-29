@@ -11,6 +11,28 @@ Detailed walkthroughs of Server Assistant's flagship features. For the full comm
 
 ---
 
+## 🧠 The AI-Moderation Suite
+
+What sets Server Assistant apart: a set of AI features that watch your server's *health and behaviour*, not just its messages. Every one of them is **read-only / advisory by design** — they give your team x-ray vision and leave the decisions to you. None of them act on their own.
+
+### 🩺 Pulse — daily server-health digest
+
+Once a day, Pulse posts a one-embed health report to your staff chat: messages, joins/leaves, AutoMod blocks, and warnings for the last 24 hours, each with a **week-over-week delta** against your 7-day baseline. It flags the things humans miss — *AutoMod activity is 2× normal today*, or *a join spike sitting just below your raid threshold* (the "quiet flood" pattern). On by default; configure under `/settings → 🩺 Pulse`.
+
+### 🧠 Self-trained AutoMod
+
+The bot learns from *your* moderators. When enabled, it watches the messages your staff **delete or report**, clusters the patterns, and — when you ask (`/automod → Self-training`) — proposes server-specific AutoMod rules for your approval. **Nothing is ever auto-enforced** — every proposed rule is a suggestion you Accept or Skip. Opt-in and private: only message text is stored, locally, for 30 days; no identities.
+
+### 🩹 Bot Health Insurance
+
+Server Assistant watches its *own* footprint so it never quietly becomes the bot a server mutes. If its AutoMod activity gets heavy-handed over a week, it posts a single gentle check-in to staff chat with concrete ways to dial it back. Read-only, self-limiting to at most once every 14 days. On by default; toggle under `/settings → Behavior`.
+
+### 🛡️ Threat Score *(premium)*
+
+An at-a-glance risk level — 🟢 Low / 🟠 Elevated / 🔴 High — on each user, shown in their profile (`/info` or right-click → **View Info**). It's a transparent, explainable read of their infraction history (recent warnings + AutoMod hits, weighted by severity, with older incidents decaying), plus a one-line summary of what's driving it. **Advisory only — it never takes any action.** Opt-in under `/settings → Behavior`.
+
+---
+
 ## 🛡️ Moderation
 
 ### Role tiers
@@ -346,7 +368,7 @@ Every Monday at 9am (configurable day via `/settings → Behavior`), a digest po
 
 ## 🎨 Customisation Hub (`/settings`)
 
-Eight sub-wizards. All changes save instantly.
+Nine sub-wizards (Branding, Quick Presets, Behaviour, New Members, Verification, Channel Allowlist, Role Tiers, Notifications, and Pulse). All changes save instantly.
 
 | Section | What it covers |
 |--------|---------------|
