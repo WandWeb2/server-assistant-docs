@@ -55,6 +55,7 @@ body {
   background: transparent;
 }
 .page-content .wrapper {
+  max-width: 1280px;          /* match the roadmap page width across the whole site */
   background: var(--glass-bg);
   -webkit-backdrop-filter: blur(16px) saturate(150%);
   backdrop-filter: blur(16px) saturate(150%);
@@ -137,7 +138,7 @@ blockquote {
 /* ── Footer: frosted card ──────────────────────────────────────────────────── */
 .site-footer {
   margin: 0 auto 2rem;
-  max-width: 800px;
+  max-width: 1280px;
   background: var(--glass-bg);
   -webkit-backdrop-filter: blur(14px) saturate(150%);
   backdrop-filter: blur(14px) saturate(150%);
