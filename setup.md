@@ -7,124 +7,111 @@ description: Add Server Assistant to your Discord server in under a minute.
 
 # 🚀 Setup Guide
 
-Adding **Server Assistant** to your Discord server takes about 60 seconds. The wizard does most of the work.
+Adding **Server Assistant** takes about 60 seconds. The wizard does the rest.
 
-> ⚠️ **Important:** only the **Discord-native server owner** can run `/setup`. Co-owners and admins cannot. This is a hard safety check — the bot won't trust anyone else to map your moderation roles.
+> ⚠️ Only the **Discord-native server owner** can run `/setup` — a hard safety check so admins can't escalate their own permissions.
 
-## Step 1 — Invite the bot
+<style>
+.steps { display: grid; gap: 1rem; margin: 1.2rem 0 1.6rem; }
+.step { display: grid; grid-template-columns: 56px 1fr; gap: 1rem; align-items: start; background: rgba(255,255,255,0.55); border: 1px solid rgba(31,38,135,0.15); border-radius: 14px; padding: 1.1rem 1.2rem; box-shadow: 0 4px 18px rgba(31,38,135,0.08); }
+.step-n { width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg, #5865f2, #3498db); color: white; font-weight: 700; font-size: 1.25rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.step-body h3 { margin: 0 0 .35rem; font-size: 1.1rem; }
+.step-body p { margin: 0 0 .5rem; font-size: .93rem; line-height: 1.5; color: #2e3340; }
+.step-body p:last-child { margin-bottom: 0; }
+.step-body ul { margin: .35rem 0 .25rem 1.1rem; padding: 0; font-size: .9rem; line-height: 1.5; color: #2e3340; }
+.invite-cta { display: inline-block; background: linear-gradient(135deg, #5865f2, #3498db); color: white !important; padding: .55rem 1.1rem; border-radius: 999px; font-weight: 700; text-decoration: none !important; margin: .3rem 0; box-shadow: 0 4px 14px rgba(88,101,242,.35); }
+.invite-cta:hover { transform: translateY(-1px); box-shadow: 0 6px 18px rgba(88,101,242,.45); }
+@media (max-width: 600px) { .step { grid-template-columns: 1fr; } .step-n { margin-bottom: .35rem; } }
+</style>
 
-<p align="center">
-  <a href="https://discord.com/api/oauth2/authorize?client_id=1278486617375510570&permissions=1376267689287&scope=bot+applications.commands"><strong>➕ Invite Server Assistant to your server</strong></a>
-</p>
+<div class="steps">
 
-You'll need **Manage Server** permission on the target guild. The OAuth flow asks Discord for the permissions the bot needs — **don't uncheck any of them**, or features like ban/kick/auto-role will fail later.
+  <div class="step"><div class="step-n">1</div>
+    <div class="step-body">
+      <h3>Invite the bot</h3>
+      <p>You'll need <strong>Manage Server</strong> on the target guild. <strong>Don't uncheck any permissions</strong> in the OAuth flow — features like ban/kick/auto-role rely on them.</p>
+      <p><a class="invite-cta" href="https://discord.com/api/oauth2/authorize?client_id=1278486617375510570&permissions=1376267689287&scope=bot+applications.commands">➕ Invite Server Assistant</a></p>
+      <p style="font-size:.83rem; color:#5c6470;">Also listed on <a href="https://top.gg/bot/1278486617375510570">Top.gg</a> and <a href="https://discordbotlist.com/bots/server-assistant">discordbotlist.com</a>. Slash commands take up to 1 hour to propagate the very first time.</p>
+    </div>
+  </div>
 
-*Listed on [Top.gg](https://top.gg/bot/1278486617375510570) and [discordbotlist.com](https://discordbotlist.com/bots/server-assistant). Discord App Directory listing follows once the bot reaches Discord's 75-server verification threshold.*
+  <div class="step"><div class="step-n">2</div>
+    <div class="step-body">
+      <h3>Run <code>/setup</code> — three short steps</h3>
+      <p><strong>Channels.</strong> Pick a <em>staff-chat</em> (where the bot listens to natural-language commands) and a <em>log channel</em> (audit-trail embeds). Both should be private/staff-only.</p>
+      <p><strong>Roles.</strong> Map your existing Discord roles to the bot's tiers — <strong>Owner / Admin / Moderator</strong>. The Discord-native owner always has Owner tier implicitly. You can add custom tiers later in <code>/settings → Role Tiers</code>.</p>
+      <p><strong>AI provider (optional).</strong> Three modes — <strong>🆓 host's shared key</strong> (rate-limited, default), <strong>🔑 your own key</strong> (xAI Grok or OpenAI; encrypted, no shared limits), or <strong>⏭️ Skip AI</strong>. Change anytime via <code>/ai-config</code>.</p>
+      <p>Hit <strong>Finish Setup</strong>. The bot saves and auto-posts a 5-message walkthrough to staff-chat covering all three ways to use it.</p>
+    </div>
+  </div>
 
-After authorising, the bot appears offline-then-online in your server's member list. Slash commands take **up to 1 hour** to globally propagate the very first time you add the bot — so if `/setup` doesn't show up immediately, give it a few minutes.
+  <div class="step"><div class="step-n">3</div>
+    <div class="step-body">
+      <h3>Customise — <code>/settings</code> (optional, recommended)</h3>
+      <p>Nine sub-wizards. Everything saves instantly.</p>
+      <ul>
+        <li>🎨 <strong>Branding</strong> · embed colour, nickname, timezone</li>
+        <li>⚡ <strong>Quick Presets</strong> · AutoMod / ladder / onboarding / anti-raid bundles</li>
+        <li>🛡️ <strong>Behaviour</strong> · approval timeout, log verbosity, self-checks, Threat Score</li>
+        <li>👋 <strong>New Members</strong> · auto-role, welcome reaction emoji</li>
+        <li>🔐 <strong>Verification</strong> · DM-button gate for raid protection</li>
+        <li>📍 <strong>Channel allowlist</strong> · where the bot responds to mentions</li>
+        <li>🛂 <strong>Role Tiers</strong> · custom tiers + approval authority</li>
+        <li>🔔 <strong>Notifications</strong> · per-event role pings</li>
+        <li>🩺 <strong>Pulse</strong> · daily health digest channel + time + on/off</li>
+      </ul>
+    </div>
+  </div>
 
----
-
-## Step 2 — Run `/setup`
-
-In any text channel, type `/setup`. Discord shows the command in its autocomplete; press Enter.
-
-If you're not the server owner, you'll see:
-
-> ⛔ Only the server owner can run setup.
-
-Otherwise, the wizard launches. It has **3 short steps**.
-
-### Step 2a — Pick your channels
-
-Two dropdowns appear:
-
-- **Staff Chat** — the channel the bot listens to for natural-language commands (`warn @user`, `mute @user 30 min`, etc.). Should be private/staff-only. Outside this channel, the bot only responds when @-mentioned.
-- **Log Channel** — every action the bot takes is logged here as a colour-coded embed. Should also be private — most servers use a dedicated `#mod-log`.
-
-### Step 2b — Pick your roles
-
-Three role dropdowns appear:
-
-- **Owner role** — full bot access. Dangerous actions (delete channel, etc.) execute instantly without approval. The Discord-native server owner always has this implicitly, even if no role is mapped.
-- **Admin role** — most actions. Dangerous actions require Owner ✅/❌ approval via reaction (60s timeout, configurable).
-- **Moderator role** — basic moderation: warn, mute, kick, ban, info. No channel management.
-
-You can add more custom tiers later via `/settings → Role Tiers → Add Tier`.
-
-### Step 2c — Pick an AI provider (optional)
-
-AI features power `/imagine`, AI-assisted moderation reports, and natural language understanding in staff-chat. Three options:
-
-- **🆓 Use the host's shared key** — convenient, rate-limited (default for the public hosted bot)
-- **🔑 Use my own key** — paste your xAI Grok or OpenAI API key. Stored encrypted, never logged. No shared rate limits.
-- **⏭️ Skip AI** — disables `/imagine` and the AI **Report Message** right-click action. Can re-enable later via `/ai-config`.
-
-You can change AI mode anytime by re-running `/ai-config`.
-
-### Step 2d — Click **Finish Setup**
-
-The bot saves your config and posts a confirmation embed. Right after, it auto-posts a **5-message walkthrough** to your staff-chat teaching all 3 ways to use the bot. Tell your staff to read it.
-
----
-
-## Step 3 — Customise (optional, but recommended)
-
-Run `/settings` to open the **Customisation Hub** — 8 sub-wizards covering:
-
-| Section | What you can change |
-|--------|---------------------|
-| 🎨 **Branding** | Embed colour, bot nickname, default timezone |
-| ⚡ **Quick Presets** | One-click bundles for AutoMod, ladder, onboarding template, anti-raid sensitivity |
-| 🛡️ **Behavior** | Owner approval timeout, log verbosity, weekly digest day, mentions toggle |
-| 👋 **New Members** | Auto-role on join, welcome reaction emoji |
-| 🔐 **Verification Gate** | Optional DM-button verification for raid protection |
-| 📍 **Channel Allowlist** | Restrict where the bot responds to @-mentions |
-| 🛂 **Role Tiers** | Add custom tiers like "Helper" or "Trial Mod" |
-| 🔔 **Notifications** | Pick which staff roles get @-pinged on anti-raid alerts, dangerous-action approval, and AutoMod escalations |
-
-All changes save instantly with no "apply" button.
+</div>
 
 ---
 
-## Recommended next steps
+## ✅ Recommended quick wins
 
-After setup, do these in any order:
-
-1. **`/onboarding`** — set your welcome DM message for new members
-2. **`/automod`** → enable the **Scams + slurs (gaming)** preset for sensible auto-moderation
-3. **`/timezone`** — set your personal timezone (used by `/schedule` and time-based commands like `purge since 1pm`)
-4. **Tell your staff** to type `help` in your staff-chat to see what they can do
-5. **Right-click a user** → hover **Apps ▸ Server Assistant** for **View Info** and **View Warnings**. Right-click a **message** → **Apps ▸ Server Assistant** for **Report Message** (AI context summary).
-
----
-
-## Re-running setup
-
-If your channel/role IDs change, or you want to map different roles, just run `/setup` again. The wizard overwrites your previous config — your warnings, notes, and audit log are all preserved.
-
-To **fully reset** (rare), contact the bot operator via the [support server]({{ site.url }}{{ site.baseurl }}/support/).
+- **`/onboarding`** — set your welcome DM
+- **`/automod`** → enable **Scams + slurs (gaming)** preset
+- **`/timezone`** — set yours (used by `/schedule` and `purge since …`)
+- Tell your staff to type **`help`** in staff-chat for the full command list
+- Right-click a **user** → **Apps ▸ Server Assistant** → **View Info / View Warnings**
+- Right-click a **message** → **Apps ▸ Server Assistant** → **Report Message** for an AI context summary
 
 ---
 
-## Common setup issues
+## 🔁 Re-running setup
 
-**"`/setup` doesn't appear when I type `/`"**
-First-time slash-command propagation takes up to 1 hour. Wait, then try again. If still missing after an hour, the bot may need a guild-specific resync — message the support server.
+If you need different channels/roles, just run `/setup` again — it overwrites the mapping but **preserves warnings, notes, snippets, and audit logs**. For a full reset, contact the bot operator via the [support server]({{ site.url }}{{ site.baseurl }}/support/).
 
-**"⛔ Only the server owner can run setup"**
-You're not the Discord-native owner. Server owners can transfer ownership in **Server Settings → Members** if needed.
+---
 
-**"The bot can't ban/kick certain users"**
-Discord's role hierarchy: the bot's role must be **higher** than the target user's highest role. Drag the bot's role above the target's roles in **Server Settings → Roles**.
+## 🛠️ Common setup issues
 
-**"AutoMod isn't blocking anything"**
-Make sure you ran `/settings → Quick Presets → AutoMod` and picked a non-Off preset, then ran `/automod` and toggled **Enabled** to on.
+<style>
+details.tshoot { background: rgba(255,255,255,0.55); border: 1px solid rgba(31,38,135,0.12); border-radius: 12px; margin: .4rem 0; }
+details.tshoot[open] { background: rgba(255,255,255,0.72); box-shadow: 0 4px 14px rgba(31,38,135,0.08); }
+details.tshoot summary { cursor: pointer; padding: .7rem 1rem; font-weight: 600; font-size: .94rem; list-style: none; }
+details.tshoot summary::-webkit-details-marker { display: none; }
+details.tshoot summary::after { content: '⌄'; float: right; color: #6a7280; transition: transform .2s; }
+details.tshoot[open] summary::after { transform: rotate(180deg); }
+details.tshoot .body { padding: 0 1rem .8rem; font-size: .9rem; line-height: 1.5; color: #2e3340; }
+</style>
+
+<details class="tshoot"><summary><code>/setup</code> doesn't appear when I type <code>/</code></summary>
+<div class="body">First-time global propagation can take up to 1 hour. Wait, then try again. Still missing after that — message the support server.</div></details>
+
+<details class="tshoot"><summary>"⛔ Only the server owner can run setup"</summary>
+<div class="body">You're not the Discord-native owner. Owners can transfer ownership in <strong>Server Settings → Members</strong>.</div></details>
+
+<details class="tshoot"><summary>The bot can't ban/kick certain users</summary>
+<div class="body">Discord's role hierarchy: the <strong>bot's</strong> role must be higher than the target's highest role. Drag the bot's role above the target's in <strong>Server Settings → Roles</strong>.</div></details>
+
+<details class="tshoot"><summary>AutoMod isn't blocking anything</summary>
+<div class="body">Run <code>/settings → Quick Presets → AutoMod</code>, pick a non-Off preset, then run <code>/automod</code> and toggle <strong>Enabled</strong> on.</div></details>
 
 ---
 
 ## What's next?
 
-- See the [Commands reference]({{ site.url }}{{ site.baseurl }}/commands/) for every command available
-- Browse [Features]({{ site.url }}{{ site.baseurl }}/features/) for deep dives on AutoMod, AI, verification, etc.
-- Skim the [FAQ]({{ site.url }}{{ site.baseurl }}/faq/) for common questions
+- **[Commands]({{ site.url }}{{ site.baseurl }}/commands/)** — every command + per-tier permissions
+- **[Features]({{ site.url }}{{ site.baseurl }}/features/)** — deep dives
+- **[FAQ]({{ site.url }}{{ site.baseurl }}/faq/)** — common questions
