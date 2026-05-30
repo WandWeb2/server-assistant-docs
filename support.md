@@ -11,6 +11,62 @@ Multiple channels depending on what you need.
 
 ---
 
+## ✉️ Submit a support request directly
+
+Skip Discord and go straight to the maintainer. Replies arrive via the bot's DM (if you have the bot in a shared server) or via the email you provide.
+
+<form id="sa-support-form" style="background:rgba(255,255,255,0.55); border:1px solid rgba(31,38,135,0.15); border-radius:14px; padding:1.2rem; margin:1rem 0; box-shadow:0 4px 18px rgba(31,38,135,0.08);">
+  <label style="font-size:0.88rem; font-weight:600; color:#2e3340; display:block;">Your contact (Discord username#0 or email)</label>
+  <input id="sa-sup-contact" type="text" required maxlength="120" style="width:100%; padding:0.7rem 0.9rem; border-radius:10px; border:1px solid rgba(31,38,135,0.15); margin-top:0.3rem; font-size:0.95rem;">
+
+  <label style="font-size:0.88rem; font-weight:600; color:#2e3340; display:block; margin-top:0.8rem;">Subject (optional)</label>
+  <input id="sa-sup-subject" type="text" maxlength="200" style="width:100%; padding:0.7rem 0.9rem; border-radius:10px; border:1px solid rgba(31,38,135,0.15); margin-top:0.3rem; font-size:0.95rem;">
+
+  <label style="font-size:0.88rem; font-weight:600; color:#2e3340; display:block; margin-top:0.8rem;">Your message</label>
+  <textarea id="sa-sup-body" required minlength="10" maxlength="4000" rows="6" style="width:100%; padding:0.7rem 0.9rem; border-radius:10px; border:1px solid rgba(31,38,135,0.15); margin-top:0.3rem; font-size:0.95rem; font-family:inherit; resize:vertical;"></textarea>
+
+  <button type="submit" style="margin-top:1rem; background:linear-gradient(135deg, #5865f2, #3498db); color:white; border:0; border-radius:999px; padding:0.7rem 1.5rem; font-weight:700; cursor:pointer; font-size:0.95rem;">Send</button>
+  <div id="sa-sup-status" style="margin-top:0.7rem; font-size:0.88rem;"></div>
+</form>
+
+<script>
+(function() {
+  var form = document.getElementById("sa-support-form");
+  if (!form) return;
+  form.addEventListener("submit", async function(e) {
+    e.preventDefault();
+    var status = document.getElementById("sa-sup-status");
+    var contact = document.getElementById("sa-sup-contact").value.trim();
+    var subject = document.getElementById("sa-sup-subject").value.trim();
+    var body    = document.getElementById("sa-sup-body").value.trim();
+    if (!contact || body.length < 10) { status.textContent = "Please fill in both contact and a message (10+ chars)."; status.style.color = "#c0392b"; return; }
+    status.textContent = "Sending…"; status.style.color = "#3498db";
+    try {
+      var res = await fetch("https://sa.wandweb.co/api/tickets/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          web_source: "wandweb-public",
+          user_name: contact,
+          subject: subject || ("Web form from " + contact),
+          body: body,
+        }),
+      });
+      if (!res.ok) throw new Error("HTTP " + res.status);
+      var data = await res.json();
+      status.textContent = "✓ Sent — your ticket is #" + data.ticket_id + ". We'll reach out at " + contact + ".";
+      status.style.color = "#27ae60";
+      form.reset();
+    } catch (err) {
+      status.textContent = "Couldn't send — please try the support server instead.";
+      status.style.color = "#c0392b";
+    }
+  });
+})();
+</script>
+
+---
+
 ## 🆘 Bug reports + general help
 
 **Join the support server:** [https://discord.gg/egzwNJJcKm](https://discord.gg/egzwNJJcKm)
