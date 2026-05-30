@@ -163,8 +163,12 @@ A Discord moderation and automation bot built on three principles:
   </div>
 </div>
 
-<img src="{{ '/assets/screenshots/pulse-digest.webp' | relative_url }}" alt="Pulse daily server-health digest" style="max-width: 540px; width: 100%; border-radius: 14px; box-shadow: 0 8px 32px rgba(31,38,135,0.12); margin: 1rem auto; display: block;">
-<p style="font-size: 0.82rem; color: #6a7280; text-align: center; margin-top: -0.5rem;"><em>Pulse — example digest (illustrative figures)</em></p>
+<div class="sa-shots" markdown="0" style="margin: 1.5rem 0;">
+  <figure style="max-width: 540px; margin: 0 auto;">
+    <img src="{{ '/assets/screenshots/pulse-digest.webp' | relative_url }}" alt="Pulse daily server-health digest" loading="lazy">
+    <figcaption><em>Pulse — example digest (illustrative figures)</em></figcaption>
+  </figure>
+</div>
 
 ---
 
