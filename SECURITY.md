@@ -6,10 +6,9 @@ Thanks for helping keep Server Assistant and its communities safe.
 
 **Please do _not_ open a public GitHub issue for security vulnerabilities.** Public disclosure before a fix puts every server using the bot at risk.
 
-Instead, report privately:
+Instead, report privately using GitHub's **[private vulnerability reporting](https://github.com/WandWeb2/server-assistant-docs/security/advisories/new)** on this repository.
 
-- **DM the maintainer** in the [support server](https://discord.gg/egzwNJJcKm), or
-- Use GitHub's **[private vulnerability reporting](https://github.com/WandWeb2/server-assistant-docs/security/advisories/new)** on this repository.
+Do **not** use the in-bot `/support` command for vulnerabilities — that channel routes through Discord and the relay, which is the same attack surface you're reporting on. Out-of-band reporting via GitHub's encrypted disclosure pipeline is the only safe path.
 
 Please include, where you can:
 

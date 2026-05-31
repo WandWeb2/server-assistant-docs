@@ -274,7 +274,7 @@ details.safeguards li { margin-bottom: 0.2rem; }
 
 # 🗺️ Roadmap
 
-Where Server Assistant is heading. Priorities shift based on what server owners actually request — [join the support server]({{ site.url }}{{ site.baseurl }}/support/) if you want to influence the order.
+Where Server Assistant is heading. Priorities shift based on what server owners actually request — open a ticket via [`/support`]({{ site.url }}{{ site.baseurl }}/support/) to suggest features or vote on what's next.
 
 <div class="roadmap-hero">
   <p>📌 <strong>Dates are deliberately omitted.</strong> Things land when they're ready.</p>
@@ -478,8 +478,7 @@ Where Server Assistant is heading. Priorities shift based on what server owners 
 The fastest way to move something up the list:
 
 1. **Vote on the cards above** — the highest-voted ideas get prioritised.
-2. **Post in `#bot-feedback`** on the [support server]({{ site.url }}{{ site.baseurl }}/support/) describing the use case — not just *"add feature X"* but *what you'd do with it*.
-3. **[File a feature request](https://github.com/WandWeb2/server-assistant-docs/issues/new/choose)** on the docs repo if you want formal tracking.
+2. **Open a [`/support`]({{ site.url }}{{ site.baseurl }}/support/) ticket** describing the use case — not just *"add feature X"* but *what you'd do with it*.
 
 What ships is what gets requested most clearly. Vague *"add more features"* feedback is unactionable; *"I run a 2,000-member RP server and we need X because Y"* gets prioritised.
 

@@ -7,7 +7,7 @@ description: Release history for Server Assistant — major features, fixes, and
 
 # 📋 Changelog
 
-What's new in Server Assistant. Internal-only updates (CI, dependency bumps, host-side tooling) aren't listed here — see the [support server]({{ site.url }}{{ site.baseurl }}/support/) `#bot-feedback` channel for full release notes.
+What's new in Server Assistant. Internal-only updates (CI, dependency bumps, host-side tooling) aren't listed here.
 
 ---
 

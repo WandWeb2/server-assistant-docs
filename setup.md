@@ -80,7 +80,7 @@ Adding **Server Assistant** takes about 60 seconds. The wizard does the rest.
 
 ## 🔁 Re-running setup
 
-If you need different channels/roles, just run `/setup` again — it overwrites the mapping but **preserves warnings, notes, snippets, and audit logs**. For a full reset, contact the bot operator via the [support server]({{ site.url }}{{ site.baseurl }}/support/).
+If you need different channels/roles, just run `/setup` again — it overwrites the mapping but **preserves warnings, notes, snippets, and audit logs**. For a full reset, contact the maintainer via [`/support`]({{ site.url }}{{ site.baseurl }}/support/).
 
 ---
 
@@ -97,7 +97,7 @@ details.tshoot .body { padding: 0 1rem .8rem; font-size: .9rem; line-height: 1.5
 </style>
 
 <details class="tshoot"><summary><code>/setup</code> doesn't appear when I type <code>/</code></summary>
-<div class="body">First-time global propagation can take up to 1 hour. Wait, then try again. Still missing after that — message the support server.</div></details>
+<div class="body">First-time global propagation can take up to 1 hour. Wait, then try again. Still missing after that — open a ticket via <code>/support</code> from any server that has the bot (you can use another server you own where the commands are live).</div></details>
 
 <details class="tshoot"><summary>"⛔ Only the server owner can run setup"</summary>
 <div class="body">You're not the Discord-native owner. Owners can transfer ownership in <strong>Server Settings → Members</strong>.</div></details>

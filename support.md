@@ -2,119 +2,63 @@
 layout: default
 title: Support
 permalink: /support/
-description: How to get help, report bugs, and request features for Server Assistant.
+description: How to get help with Server Assistant — use the /support slash command.
 ---
 
 # 💬 Get Help
 
-Multiple channels depending on what you need.
+The only support channel is the **`/support`** slash command, run from any server that has Server Assistant installed.
 
 ---
 
-## ✉️ Submit a support request directly
+## How to open a ticket
 
-Skip Discord and go straight to the maintainer. Replies arrive via the bot's DM (if you have the bot in a shared server) or via the email you provide.
+In any Discord channel where you can send messages, type:
 
-<form id="sa-support-form" style="background:rgba(255,255,255,0.55); border:1px solid rgba(31,38,135,0.15); border-radius:14px; padding:1.2rem; margin:1rem 0; box-shadow:0 4px 18px rgba(31,38,135,0.08);">
-  <label style="font-size:0.88rem; font-weight:600; color:#2e3340; display:block;">Your contact (Discord username#0 or email)</label>
-  <input id="sa-sup-contact" type="text" required maxlength="120" style="width:100%; padding:0.7rem 0.9rem; border-radius:10px; border:1px solid rgba(31,38,135,0.15); margin-top:0.3rem; font-size:0.95rem;">
+```
+/support message: <describe what's going on>
+```
 
-  <label style="font-size:0.88rem; font-weight:600; color:#2e3340; display:block; margin-top:0.8rem;">Subject (optional)</label>
-  <input id="sa-sup-subject" type="text" maxlength="200" style="width:100%; padding:0.7rem 0.9rem; border-radius:10px; border:1px solid rgba(31,38,135,0.15); margin-top:0.3rem; font-size:0.95rem;">
+Hit Enter. You'll get a private (ephemeral) confirmation back from the bot with your ticket number.
 
-  <label style="font-size:0.88rem; font-weight:600; color:#2e3340; display:block; margin-top:0.8rem;">Your message</label>
-  <textarea id="sa-sup-body" required minlength="10" maxlength="4000" rows="6" style="width:100%; padding:0.7rem 0.9rem; border-radius:10px; border:1px solid rgba(31,38,135,0.15); margin-top:0.3rem; font-size:0.95rem; font-family:inherit; resize:vertical;"></textarea>
-
-  <button type="submit" style="margin-top:1rem; background:linear-gradient(135deg, #5865f2, #3498db); color:white; border:0; border-radius:999px; padding:0.7rem 1.5rem; font-weight:700; cursor:pointer; font-size:0.95rem;">Send</button>
-  <div id="sa-sup-status" style="margin-top:0.7rem; font-size:0.88rem;"></div>
-</form>
-
-<script>
-(function() {
-  var form = document.getElementById("sa-support-form");
-  if (!form) return;
-  form.addEventListener("submit", async function(e) {
-    e.preventDefault();
-    var status = document.getElementById("sa-sup-status");
-    var contact = document.getElementById("sa-sup-contact").value.trim();
-    var subject = document.getElementById("sa-sup-subject").value.trim();
-    var body    = document.getElementById("sa-sup-body").value.trim();
-    if (!contact || body.length < 10) { status.textContent = "Please fill in both contact and a message (10+ chars)."; status.style.color = "#c0392b"; return; }
-    status.textContent = "Sending…"; status.style.color = "#3498db";
-    try {
-      var res = await fetch("https://sa.wandweb.co/api/tickets/submit", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          web_source: "wandweb-public",
-          user_name: contact,
-          subject: subject || ("Web form from " + contact),
-          body: body,
-        }),
-      });
-      if (!res.ok) throw new Error("HTTP " + res.status);
-      var data = await res.json();
-      status.textContent = "✓ Sent — your ticket is #" + data.ticket_id + ". We'll reach out at " + contact + ".";
-      status.style.color = "#27ae60";
-      form.reset();
-    } catch (err) {
-      status.textContent = "Couldn't send — please try the support server instead.";
-      status.style.color = "#c0392b";
-    }
-  });
-})();
-</script>
+The maintainer is notified instantly. Replies come back via a **DM from the bot**.
 
 ---
 
-## 🆘 Bug reports + general help
+## What to include
 
-**Join the support server:** [https://discord.gg/egzwNJJcKm](https://discord.gg/egzwNJJcKm)
+Give us enough to actually help on the first reply:
 
-This is the fastest way to get help. The maintainer is usually around. Other operators chat about deployment, feature ideas, and edge cases there too.
-
-When asking for help, please include:
-
-1. **What you tried** — the exact command or interaction
+1. **What you tried** — the exact command or interaction (e.g. `/warn @user reason: …`)
 2. **What you expected**
 3. **What actually happened**
-4. **Any error message** the bot replied with
+4. **Any error message** the bot showed you
+5. **The bot version** — run `/info` in your server to find it
 
 Redact tokens, API keys, or sensitive user IDs before posting.
 
 ---
 
-## 🐛 Filing bug reports formally
+## After you open a ticket
 
-Open a [GitHub issue](https://github.com/WandWeb2/server-assistant-docs/issues/new/choose) using the **Bug Report** template. The template prompts you for:
-
-- What happened vs what you expected
-- Steps to reproduce
-- The command or interaction that triggered it
-- Any error message the bot replied with
-- The bot version, which you can find by running `/info` or `/help` in your server
-
-Issues filed via GitHub get tracked through the milestone system, so progress is visible.
+- You'll get a **DM from Server Assistant** when the maintainer replies.
+- **Reply to that DM** in Discord to add a follow-up — your reply lands in the same ticket automatically. The bot will react with ✅ to confirm receipt.
+- **Send screenshots** the same way — DM the bot with the image attached. PNG, JPG, GIF, and WEBP are supported.
+- The ticket stays open until the maintainer marks it resolved. If the issue comes back later, **open a new ticket** with `/support`.
 
 ---
 
-## 💡 Feature requests
+## Don't have the bot in any server yet?
 
-Either channel works:
-
-- **GitHub:** [Feature Request issue template](https://github.com/WandWeb2/server-assistant-docs/issues/new/choose) for things you want formally tracked
-- **Support server `#bot-feedback`:** for informal discussion or ideas you're not sure about yet
-
-The more concrete the use case, the more likely it is to get built. "As a moderator, I want to..." style descriptions land best.
+[Invite Server Assistant]({{ site.url }}{{ site.baseurl }}/setup/) to a server you own (or have **Manage Server** on), then run `/support` from there. Even a fresh server with just you and the bot works fine for support.
 
 ---
 
 ## 🔒 Security vulnerabilities
 
-**Do NOT open a public issue** for security vulnerabilities. Instead:
+For security issues, see the [SECURITY policy](https://github.com/WandWeb2/server-assistant-docs/blob/main/SECURITY.md).
 
-- **Email or DM** the maintainer directly via the support server
-- See the [SECURITY.md](https://github.com/WandWeb2/server-assistant-docs/blob/main/SECURITY.md) for full disclosure policy
+**Do not** report vulnerabilities via `/support` (it routes through Discord). Use the disclosure email in SECURITY.md.
 
 In-scope: bypasses of role-based permission, decryption of stored credentials, privilege escalation, injection vulnerabilities, and AutoMod evasion that affects host security.
 
@@ -126,7 +70,9 @@ The maintainer commits to:
 
 ---
 
-## 📚 Documentation
+## 📚 Before asking — check the docs
+
+A lot of questions are already answered:
 
 - [Setup guide]({{ site.url }}{{ site.baseurl }}/setup/) — first-time install
 - [Commands reference]({{ site.url }}{{ site.baseurl }}/commands/) — every command
@@ -135,23 +81,4 @@ The maintainer commits to:
 - [Privacy Policy]({{ site.url }}{{ site.baseurl }}/privacy/)
 - [Terms of Service]({{ site.url }}{{ site.baseurl }}/terms/)
 
----
-
-## 🛠️ Public project hub
-
-Server Assistant is a **fully managed, hosted bot** — you invite it and configure it in Discord; there's nothing to install or run yourself. The bot's source is closed.
-
-Everything public lives in one place — the **[server-assistant-docs](https://github.com/WandWeb2/server-assistant-docs)** repository:
-
-- **This documentation site**
-- **[Issues](https://github.com/WandWeb2/server-assistant-docs/issues)** — bug reports and feature requests
-- **[Discussions](https://github.com/WandWeb2/server-assistant-docs/discussions)** — roadmap voting and ideas
-- **[Roadmap]({{ site.url }}{{ site.baseurl }}/roadmap/)** and **[Changelog]({{ site.url }}{{ site.baseurl }}/changelog/)**
-
-The most valuable way to shape the bot is **filing detailed bug reports and feature requests** and **voting on the roadmap** — that directly steers what gets built next.
-
----
-
-## ❓ Anything else?
-
-If your question doesn't fit any of the above, the support server is always the right starting point. Don't worry about asking dumb questions — the docs are imperfect, and "where do I find X" is genuinely useful feedback for improving them.
+If something in the docs is wrong, unclear, or missing — say so in your `/support` message. The docs are imperfect and your feedback is what improves them.

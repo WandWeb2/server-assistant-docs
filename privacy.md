@@ -13,7 +13,7 @@ This privacy policy describes how the Server Assistant Discord bot ("the Bot") c
 
 ## Who is responsible
 
-The Bot is operated by the individual or organisation hosting it (the "Operator"). For the canonical hosted instance, contact information is available in the Bot's support server, linked from its profile and listing on the Discord App Directory.
+The Bot is operated by the individual or organisation hosting it (the "Operator"). For the canonical hosted instance, contact the Operator via the [`/support`]({{ site.url }}{{ site.baseurl }}/support/) slash command from any Discord server with the Bot installed.
 
 ## What the Bot stores
 
@@ -112,7 +112,7 @@ No data is sold or shared with advertising networks, analytics services, or thir
 
 Server owners can request deletion of all data associated with their guild by:
 1. Removing the Bot from their server (this wipes any encrypted credentials they supplied automatically).
-2. Contacting the Operator via the support server to request manual deletion of warnings, notes, and audit log entries scoped to that guild.
+2. Contacting the Operator via the [`/support` command]({{ site.url }}{{ site.baseurl }}/support/) to request manual deletion of warnings, notes, and audit log entries scoped to that guild.
 
 Individual users wishing to have their personal moderation history erased should contact the server owner first; if the server owner is unresponsive, contact the Operator directly.
 
@@ -133,4 +133,4 @@ This privacy policy may be updated to reflect changes in the Bot's features. The
 
 ## Contact
 
-For questions, concerns, or data requests, contact the Operator via the support server linked from the Bot's profile.
+For questions, concerns, or data requests, contact the Operator via the [`/support`]({{ site.url }}{{ site.baseurl }}/support/) command, which is available in any Discord server that has the Bot installed.

@@ -1,8 +1,8 @@
 blank_issues_enabled: false
 contact_links:
-  - name: 💬 Support server (fastest help)
-    url: https://discord.gg/egzwNJJcKm
-    about: For quick questions, setup help, and informal discussion.
+  - name: 💬 Get support
+    url: https://wandweb2.github.io/server-assistant-docs/support/
+    about: All support goes through the /support slash command in Discord. See the support page for instructions.
   - name: 🗳️ Roadmap & feature voting
     url: https://wandweb2.github.io/server-assistant-docs/roadmap/
     about: Vote on what gets built next.

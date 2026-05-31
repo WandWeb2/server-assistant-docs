@@ -195,7 +195,7 @@ On the host's infrastructure, encrypted at rest. Per-server data is isolated. Fu
 
 <details class="faq"><summary>What happens to my data when I remove the bot?</summary>
 <div class="faq-body">
-Your encrypted secrets (your own AI keys etc.) are wiped immediately. Operational data (warnings, notes, audit log) is retained briefly in case you re-add the bot. Request full manual deletion via the <a href="{{ site.url }}{{ site.baseurl }}/support/">support server</a>.
+Your encrypted secrets (your own AI keys etc.) are wiped immediately. Operational data (warnings, notes, audit log) is retained briefly in case you re-add the bot. Request full manual deletion via <a href="{{ site.url }}{{ site.baseurl }}/support/"><code>/support</code></a>.
 </div>
 </details>
 
@@ -207,7 +207,7 @@ Not yet. A premium-tier read-only API for your own server's data is on the <a hr
 
 <details class="faq"><summary>Can I export my server's data?</summary>
 <div class="faq-body">
-One-shot export available on request via the support server. A <code>/export-server-data</code> slash command is on the roadmap.
+One-shot export available on request via <code>/support</code>. A <code>/export-server-data</code> slash command is on the roadmap.
 </div>
 </details>
 
@@ -231,13 +231,13 @@ First-time global propagation can take <strong>up to 1 hour</strong>. If they're
 
 <details class="faq"><summary>The bot is offline</summary>
 <div class="faq-body">
-Most outages are transient — auto-reconnects. If it's been down 5+ minutes, post in the <a href="{{ site.url }}{{ site.baseurl }}/support/">support server</a>.
+Most outages are transient — auto-reconnects. If it's been down 5+ minutes, open a ticket via <a href="{{ site.url }}{{ site.baseurl }}/support/"><code>/support</code></a> from another server you own that has the bot.
 </div>
 </details>
 
 <details class="faq"><summary><code>/setup</code> isn't responding</summary>
 <div class="faq-body">
-Discord may be rate-limited. Wait 60 seconds and try again. If still unresponsive, post in the support server.
+Discord may be rate-limited. Wait 60 seconds and try again. If still unresponsive, open a ticket via <code>/support</code>.
 </div>
 </details>
 
@@ -245,7 +245,7 @@ Discord may be rate-limited. Wait 60 seconds and try again. If still unresponsiv
 
 <details class="faq"><summary>Where can I get help?</summary>
 <div class="faq-body">
-The <a href="{{ site.url }}{{ site.baseurl }}/support/">support server</a> is the fastest path to a real person.
+Run the <a href="{{ site.url }}{{ site.baseurl }}/support/"><code>/support</code> command</a> from any server that has the bot — the maintainer is notified instantly and replies via DM.
 </div>
 </details>
 

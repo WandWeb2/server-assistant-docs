@@ -91,7 +91,7 @@ When the Bot offers paid premium features through the Discord App Directory:
 
 ## 10. Changes to these terms
 
-The Operator may update these terms to reflect changes in the Bot's features, legal requirements, or industry practice. Material changes will be announced in the Bot's support server. Continued use after changes take effect constitutes acceptance.
+The Operator may update these terms to reflect changes in the Bot's features, legal requirements, or industry practice. Material changes will be announced via the Bot's release notes (linked from the [changelog]({{ site.url }}{{ site.baseurl }}/changelog/)) and a posted notice in the staff-chat channel of each configured guild. Continued use after changes take effect constitutes acceptance.
 
 ## 11. Governing law
 
@@ -103,4 +103,4 @@ If any provision of these terms is held invalid or unenforceable, the remaining 
 
 ## Contact
 
-For questions about these terms, contact the Operator via the support server linked from the Bot's profile.
+For questions about these terms, contact the Operator via the [`/support`]({{ site.url }}{{ site.baseurl }}/support/) slash command from any Discord server with the Bot installed.
