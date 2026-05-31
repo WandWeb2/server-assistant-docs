@@ -13,7 +13,7 @@ A scannable tour. For the full command list and permissions, see **[Commands]({{
 
 ## 🧠 The AI-Moderation Suite
 
-A set of AI features that watch your server's *health and behaviour* — every one **read-only / advisory by design**. They give your team x-ray vision and leave the decisions to you.
+A set of AI features that watch your server's *health and behaviour* — **advisory by design**. They give your team x-ray vision and leave the decisions to you.
 
 <style>
 .ai-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin: 1rem 0 1.5rem; }
@@ -140,13 +140,11 @@ Optional anti-raid measure (`/settings → Verification`). New members are DM'd 
 <div class="f-grid">
   <div class="f-card">
     <h4>🖼️ <code>/imagine</code> — image generation</h4>
-    <p>1024×1024 image embed. Provider order: per-guild key → reused chat key → host's shared OpenAI → free <strong>Pollinations.ai</strong> (no auth). 30s rate-limit per guild.</p>
-    <p style="margin-top:.4rem; font-size:.84em;">DALL·E 3 ~$0.04 · SDXL ~$0.02 · Pollinations free.</p>
+    <p>Type <code>/imagine &lt;prompt&gt;</code>, get a 1024×1024 image. Uses your own AI key if you've added one in <code>/ai-config</code>; otherwise falls back to a free generator. 30s cooldown between images per server.</p>
   </div>
   <div class="f-card">
     <h4>📋 Report Message — context summaries</h4>
-    <p>Right-click a message → <strong>Apps ▸ Report Message</strong>. The bot reads ~20 surrounding messages and returns a 3–5 bullet summary: tone, possible rule-breaking, escalation pattern, recommended action. Ephemeral.</p>
-    <p style="margin-top:.4rem; font-size:.84em;">~$0.001 per call on gpt-4o-mini. Bot never acts — staff decide.</p>
+    <p>Right-click any message → <strong>Apps ▸ Report Message</strong>. The bot reads ~20 surrounding messages and produces a 3–5 bullet summary: tone, possible rule-breaking, escalation pattern, recommended action. Only you see it. <strong>The bot never acts on these — staff always decide.</strong></p>
   </div>
 </div>
 
@@ -205,7 +203,7 @@ Verbosity: **All / Dangerous-only / Errors-only** (`/settings → Behavior → L
 
 ## 🔐 Privacy & Security
 
-All credentials (your bot token, BYO AI keys) are **encrypted at rest** (Fernet / AES-128). Per-server data is isolated. Removing the bot wipes your guild's encrypted secrets immediately; operational data (warnings, notes, audit log) has the retention specifics in the **[Privacy Policy]({{ site.url }}{{ site.baseurl }}/privacy/)**.
+Your AI keys and other credentials are **encrypted at rest**. Per-server data is isolated. Removing the bot wipes your server's encrypted secrets immediately; the retention rules for warnings, notes, and audit logs are in the **[Privacy Policy]({{ site.url }}{{ site.baseurl }}/privacy/)**.
 
 ---
 
