@@ -221,7 +221,7 @@ Type `/` anywhere to see autocomplete:
 | `/vote` | Vote for the bot (Top.gg + Discord Bot List) |
 | `/invite` | Get the bot's invite URL |
 
-Most slash command responses are **ephemeral** by default (only you see them) for sensitive operations.
+Most slash command responses are **only visible to you** by default for sensitive operations.
 
 ---
 
