@@ -2,10 +2,7 @@ blank_issues_enabled: false
 contact_links:
   - name: 💬 Get support
     url: https://wandweb2.github.io/server-assistant-docs/support/
-    about: All support goes through the /support slash command in Discord. See the support page for instructions.
+    about: All support — bugs, feature requests, security disclosures — goes through the /support slash command in Discord.
   - name: 🗳️ Roadmap & feature voting
     url: https://wandweb2.github.io/server-assistant-docs/roadmap/
     about: Vote on what gets built next.
-  - name: 🔒 Report a security vulnerability
-    url: https://github.com/WandWeb2/server-assistant-docs/security/advisories/new
-    about: Privately report a security issue — do not open a public issue.
