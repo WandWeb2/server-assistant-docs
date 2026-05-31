@@ -86,6 +86,7 @@ Running a Discord community means staying ahead of raids, keeping staff accounta
   <div class="feat-card"><h3>❓ <a href="{{ site.url }}{{ site.baseurl }}/faq/">FAQ</a></h3><ul><li>Common questions</li></ul></div>
   <div class="feat-card"><h3>📋 <a href="{{ site.url }}{{ site.baseurl }}/changelog/">Changelog</a></h3><ul><li>Release history</li></ul></div>
   <div class="feat-card"><h3>💬 <a href="{{ site.url }}{{ site.baseurl }}/support/">Support</a></h3><ul><li>Get help, report bugs</li></ul></div>
+  <div class="feat-card"><h3>💸 <a href="{{ site.url }}{{ site.baseurl }}/pricing/">Pricing</a></h3><ul><li>Free trial + $7/mo Premium</li></ul></div>
 </div>
 
 ## What's in the box

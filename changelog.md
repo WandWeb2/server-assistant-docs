@@ -11,6 +11,29 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 
 ---
 
+## In development — v5.0 — Premium tier, Concierge, Auto-pilot, Privacy panel
+
+The biggest release yet. Premium ships with the metered token model so the AI features stay sustainable while staying generous.
+
+### Added
+- **💸 Premium tier — $7/month, 750K tokens/month.** Includes the new Concierge chat, active Threat Score, unlimited `/imagine`, and Top-up packs ($3 / +300K) when you need extra headroom. See [pricing]({{ site.url }}{{ site.baseurl }}/pricing/).
+- **🎯 Free trial — 150K tokens lifetime** to evaluate every AI feature. Core moderation (AutoMod, anti-raid, warnings, audit log) is always free regardless of plan.
+- **🪄 Auto-pilot bootstrap.** Owners who skip `/setup` get a DM with a proposed config — staff chat, log channel, staff roles all auto-detected. One tap to apply.
+- **💬 Concierge chat (Premium).** `/concierge` opens a guided AI conversation that reviews your server's recent moderation activity and proposes setting tweaks. Conservative — every change asks first.
+- **🔒 Privacy panel** in `/settings`. Per-feature toggles for what the bot is allowed to read. New servers default privacy-first; existing servers keep current behaviour.
+- **🎁 Beta-period perk** locked in: every server added before v5 launch gets **12 months of free Premium** from launch day.
+
+### Changed
+- AI features now route through a unified Anthropic-backed wrapper with prompt caching and per-guild token accounting. BYOK preserved for xAI/OpenAI/Anthropic users.
+- 6-hour rolling caps on high-variance features (Concierge, Report Message, `/imagine`, Self-trained learning rounds) — invisible to normal use, prevents single-user abuse from draining your monthly allowance.
+
+### Coming with launch
+- Discord App Subscriptions + Stripe payment rails
+- Per-guild AI usage tile in SA-Ops PWA
+- Weekly auto-pilot "what I did" digest
+
+---
+
 ## 2026-05-31 — v4.3.0 — Support Channel + Dev Updates
 
 The way you get help, and the way I tell you about new releases, both get cleaner.

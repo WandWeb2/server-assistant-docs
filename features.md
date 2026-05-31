@@ -7,7 +7,7 @@ description: A scannable tour of Server Assistant's flagship features.
 
 # ✨ Features
 
-A scannable tour. For the full command list and permissions, see **[Commands]({{ site.url }}{{ site.baseurl }}/commands/)**.
+A scannable tour. For the full command list and permissions, see **[Commands]({{ site.url }}{{ site.baseurl }}/commands/)**. For what's free vs Premium, see **[Pricing]({{ site.url }}{{ site.baseurl }}/pricing/)**.
 
 ---
 
