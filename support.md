@@ -16,12 +16,15 @@ The only support channel is the **`/support`** slash command, run from any serve
 In any Discord channel where you can send messages, type:
 
 ```
-/support message: <describe what's going on>
+/support
 ```
 
-Hit Enter. You'll get a private (ephemeral) confirmation back from the bot with your ticket number.
+That's it — no message parameter needed. The bot replies privately (ephemeral) with a short info embed and two buttons:
 
-The maintainer is notified instantly. Replies come back via a **DM from the bot**.
+- **Create a ticket** — the bot DMs you and waits. Your next DM (within 15 minutes) becomes the ticket. You can include text, screenshots, or both.
+- **Never mind** — closes the prompt. No ticket created.
+
+The maintainer is notified the moment your first DM lands. Replies come back via a **DM from the bot**.
 
 ---
 
@@ -56,9 +59,9 @@ Redact tokens, API keys, or sensitive user IDs before posting.
 
 ## 🔒 Security vulnerabilities
 
-For security issues, see the [SECURITY policy](https://github.com/WandWeb2/server-assistant-docs/blob/main/SECURITY.md).
+For security issues, also use **`/support`** — but **prefix your first DM with `[SECURITY]`** so it's prioritised. Full policy is in [SECURITY.md](https://github.com/WandWeb2/server-assistant-docs/blob/main/SECURITY.md).
 
-**Do not** report vulnerabilities via `/support` (it routes through Discord). Use the disclosure email in SECURITY.md.
+Do **not** open a public GitHub issue for a security finding — public disclosure before a fix puts every server using the bot at risk.
 
 In-scope: bypasses of role-based permission, decryption of stored credentials, privilege escalation, injection vulnerabilities, and AutoMod evasion that affects host security.
 

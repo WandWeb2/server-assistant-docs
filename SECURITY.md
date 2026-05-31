@@ -6,12 +6,12 @@ Thanks for helping keep Server Assistant and its communities safe.
 
 **Please do _not_ open a public GitHub issue for security vulnerabilities.** Public disclosure before a fix puts every server using the bot at risk.
 
-Report privately by running the **`/support`** slash command in any Discord server that has Server Assistant installed. Start the message with `[SECURITY]` so the maintainer prioritises it.
+Report privately by running the **`/support`** slash command in any Discord server that has Server Assistant installed. The bot will show you two buttons — tap **Create a ticket**, and then **start your first DM with `[SECURITY]`** so the maintainer prioritises it.
 
-Example:
+Example first DM:
 
 ```
-/support message: [SECURITY] <short summary>
+[SECURITY] <short summary>
 
 Affected: <what part of the bot>
 Impact:   <what an attacker could do>
