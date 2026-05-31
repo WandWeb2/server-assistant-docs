@@ -11,6 +11,29 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 
 ---
 
+## 2026-05-31 — v4.3.0 — Support Channel + Dev Updates
+
+The way you get help, and the way I tell you about new releases, both get cleaner.
+
+### Added
+- **`/support` slash command.** This is now **the only way to contact the maintainer** — no support server, no email, no GitHub issues for support. Run `/support message: <what's going on>` in any channel of any server with the bot. You get a private confirmation; the maintainer is pinged immediately.
+- **Two-way ticket conversation via DM.** Once a ticket is open, the maintainer's replies arrive as a DM from Server Assistant. **Reply to the DM** to add a follow-up — your message lands in the same ticket automatically. The bot reacts ✅ to confirm receipt. No more "please use this other channel" routing.
+- **Image attachments on ticket follow-ups.** DM a screenshot to the bot while you have an open ticket and it'll be attached to the thread. PNG, JPG, GIF, WEBP — up to 12 MB each, 10 per message.
+- **Dev Updates opt-in.** New question in `/setup`: opt your server into Server Assistant development updates, posted as embeds to your staff chat when a release ships. Off by default. Toggle anytime via `/settings → Behaviour → Dev updates`.
+
+### Changed
+- **Maintainer broadcast embeds are now red.** When the maintainer sends a notice into a staff chat, it's signed **"Server Assistant Dev"** with a red embed colour, and the footer makes clear that replies to that embed are NOT seen — to respond, open a `/support` ticket.
+- **Documentation rewrite.** Every page on the docs site now routes support through `/support` only. The public web support form is closed. `SECURITY.md` also routes through `/support` (prefix your message with `[SECURITY]`).
+
+### Removed
+- The Server Assistant support server is no longer the way to get help — replaced by the in-bot `/support` flow.
+- The public web ticket form (and the docs-site form on the Support page) is closed.
+
+### Fixed
+- **DMs to the bot without an open ticket** are now silently discarded — no confusing "use /support" auto-reply, no unintended reactions. The bot only engages on DMs from users with an active support thread.
+
+---
+
 ## 2026-05-29 — v4.0.0 — The AI-Moderation Update 🚀
 
 The milestone. Server Assistant's four flagship AI-moderation features are all live, and a **premium tier** arrives.
