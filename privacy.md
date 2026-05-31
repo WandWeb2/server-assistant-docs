@@ -17,7 +17,7 @@ The Bot is operated by the individual or organisation hosting it (the "Operator"
 
 ## What the Bot stores
 
-The Bot stores the minimum data necessary to provide its features. All data is stored locally on the Operator's hosting infrastructure and is not transmitted to third parties except as described below.
+The Bot stores the minimum data necessary to provide its features. All data is stored locally on the Operator's hosting infrastructure and isn't shared with third parties except as described below.
 
 ### Per-guild configuration
 
@@ -61,7 +61,7 @@ These are deleted automatically when the task fires or is cancelled.
 
 ### Encrypted secrets
 
-The Bot stores the following credentials encrypted at rest using Fernet symmetric encryption:
+The Bot stores the following credentials encrypted at rest:
 - Discord bot token
 - AI provider API keys (xAI Grok, OpenAI, etc.)
 - Per-guild AI keys (when server owner provides their own)
@@ -81,7 +81,7 @@ These counts are **never transmitted** off the host. They are used solely by the
 
 ## What the Bot does NOT store
 
-The Bot does **not** store:
+The Bot **doesn't** store:
 - Message content beyond the request that triggered an action (truncated to 500 characters in the audit log)
 - User direct messages or private conversations
 - Voice channel recordings, transcripts, or metadata
@@ -118,14 +118,14 @@ Individual users wishing to have their personal moderation history erased should
 
 ## Data security
 
-- All sensitive credentials are stored encrypted at rest using AES-128 (via Fernet).
+- All sensitive credentials are stored encrypted at rest using AES-128.
 - The encryption master key is restricted to file owner read/write only on POSIX systems.
-- The Bot does not expose any public network endpoints beyond Discord's gateway connection.
+- The Bot doesn't expose any public network endpoints beyond Discord's gateway connection.
 - The Operator is responsible for securing the host machine and following Discord's bot token security guidelines.
 
 ## Children's privacy
 
-The Bot does not knowingly collect data from children under 13. Discord requires all users to be at least 13 years of age (or higher in some jurisdictions). If you become aware that a child has provided personal information to the Bot, contact the Operator and the data will be deleted.
+The Bot doesn't knowingly collect data from children under 13. Discord requires all users to be at least 13 years of age (or higher in some jurisdictions). If you become aware that a child has provided personal information to the Bot, contact the Operator and the data will be deleted.
 
 ## Changes to this policy
 
