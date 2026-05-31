@@ -71,11 +71,11 @@ image: /server-assistant-docs/assets/banner.jpeg
 
 ## What is Server Assistant?
 
-A Discord moderation bot built on three principles:
+Running a Discord community means staying ahead of raids, keeping staff accountable, and staying consistent with every warning and ban. Server Assistant handles the operational side — so your team can focus on the community itself.
 
-- **🛡️ Safe** — tiered approval (admins approve moderators; the owner approves admins). Nothing dangerous happens silently.
-- **🔍 Transparent** — every action is logged with a colour-coded embed; users always know why something happened.
-- **🎨 Yours to shape** — customise everything from embed colour to the punishment ladder. No code.
+- **🛡️ Safe** — dangerous actions route up the chain for approval before they run. No rogue bans, no silent purges.
+- **🔍 Transparent** — every action posts a log embed; every affected member gets a DM explaining why. Less drama, fewer appeals.
+- **🎨 Yours to shape** — role tiers, punishment ladders, branding — all configurable without touching code.
 
 ## Quick links
 
