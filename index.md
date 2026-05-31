@@ -71,11 +71,11 @@ image: /server-assistant-docs/assets/banner.jpeg
 
 ## What is Server Assistant?
 
-A Discord moderation and automation bot built on three principles:
+A Discord moderation bot built on three principles:
 
-- **🛡️ Safety** — tiered approval (admins approve moderators; the owner approves admins). Nothing dangerous happens silently.
-- **🔍 Transparency** — every action audit-logged with a colour-coded embed; users always told why.
-- **🎨 Extensibility** — server owners customise everything from embed colour to the punishment ladder, no code needed.
+- **🛡️ Safe** — tiered approval (admins approve moderators; the owner approves admins). Nothing dangerous happens silently.
+- **🔍 Transparent** — every action is logged with a colour-coded embed; users always know why something happened.
+- **🎨 Yours to shape** — customise everything from embed colour to the punishment ladder. No code.
 
 ## Quick links
 
@@ -245,5 +245,5 @@ A Discord moderation and automation bot built on three principles:
 ---
 
 <p style="text-align: center; color: #6a7280; font-size: .88rem;">
-  Server Assistant · <a href="https://github.com/WandWeb2/server-assistant-docs">Docs & issues on GitHub</a> · Built with Discord.py
+  Server Assistant · Get help with <a href="{{ site.url }}{{ site.baseurl }}/support/"><code>/support</code></a>
 </p>

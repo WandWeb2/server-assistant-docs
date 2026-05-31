@@ -245,23 +245,19 @@ Discord may be rate-limited. Wait 60 seconds and try again. If still unresponsiv
 
 <details class="faq"><summary>Where can I get help?</summary>
 <div class="faq-body">
-Run the <a href="{{ site.url }}{{ site.baseurl }}/support/"><code>/support</code> command</a> from any server that has the bot — the maintainer is notified instantly and replies via DM.
+Run <code>/support</code> from any server that has the bot. Tap <strong>Create a ticket</strong>, send your question as a DM, and you'll get a reply via DM. <a href="{{ site.url }}{{ site.baseurl }}/support/">Full details here</a>.
 </div>
 </details>
 
 <details class="faq"><summary>How do I request a feature?</summary>
 <div class="faq-body">
-<ul>
-<li><strong>Support server <code>#bot-feedback</code></strong> — informal discussion</li>
-<li><strong>GitHub Issues</strong> — formal tracking on the <a href="https://github.com/WandWeb2/server-assistant-docs/issues/new/choose">docs repo</a></li>
-<li><strong>Vote on the <a href="{{ site.url }}{{ site.baseurl }}/roadmap/">roadmap</a></strong> — highest-voted ideas get prioritised</li>
-</ul>
+Open a ticket via <code>/support</code> and describe the idea — the more concrete the use-case, the better. You can also check the <a href="{{ site.url }}{{ site.baseurl }}/roadmap/">roadmap</a> first to see if it's already planned.
 </div>
 </details>
 
 <details class="faq"><summary>Is the source code open?</summary>
 <div class="faq-body">
-No — the bot's source is closed. What <em>is</em> public lives in the <a href="https://github.com/WandWeb2/server-assistant-docs">documentation repository</a>: docs site, privacy policy, terms, changelog, roadmap, and the issues/discussions where you can report bugs and request features.
+No — the bot's source is closed. Documentation (this site, privacy, terms, changelog, roadmap) is public on <a href="https://github.com/WandWeb2/server-assistant-docs">GitHub</a>. Bug reports and feature requests go through <code>/support</code>.
 </div>
 </details>
 

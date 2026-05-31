@@ -80,7 +80,7 @@ Adding **Server Assistant** takes about 60 seconds. The wizard does the rest.
 
 ## 🔁 Re-running setup
 
-If you need different channels/roles, just run `/setup` again — it overwrites the mapping but **preserves warnings, notes, snippets, and audit logs**. For a full reset, contact the maintainer via [`/support`]({{ site.url }}{{ site.baseurl }}/support/).
+If you need different channels/roles, just run `/setup` again — it overwrites the mapping but **preserves warnings, notes, snippets, and audit logs**. For a full reset, open a ticket via [`/support`]({{ site.url }}{{ site.baseurl }}/support/).
 
 ---
 
