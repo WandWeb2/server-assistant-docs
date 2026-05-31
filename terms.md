@@ -63,13 +63,13 @@ You use the Bot at your own risk.
 
 ## 7. Limitation of liability
 
-To the maximum extent permitted by law, the Operator shall not be liable for any direct, indirect, incidental, special, consequential, or exemplary damages arising from your use of the Bot, including but not limited to:
+To the maximum extent permitted by law, the Operator won't be liable for any direct, indirect, incidental, special, consequential, or exemplary damages arising from your use of the Bot, including:
 - Lost data, lost members, or lost revenue
 - Erroneous moderation actions
 - Data breaches affecting third-party AI providers
 - Discord platform outages or changes affecting the Bot's behaviour
 
-In no event shall the Operator's total liability exceed the greater of (a) the amount paid for premium features in the last 12 months, or (b) ten US dollars (USD $10).
+The Operator's total liability won't exceed the greater of (a) the amount paid for premium features in the last 12 months, or (b) ten US dollars (USD $10).
 
 ## 8. Termination
 
@@ -99,7 +99,7 @@ These terms are governed by and construed in accordance with the laws applicable
 
 ## 12. Severability
 
-If any provision of these terms is held invalid or unenforceable, the remaining provisions shall continue in full force and effect.
+If any provision of these terms is held invalid or unenforceable, the remaining provisions remain in full force and effect.
 
 ## Contact
 
