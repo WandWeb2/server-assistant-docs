@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Server Assistant — AI Discord moderation bot with daily server-health digests
-description: AI Discord moderation bot with Pulse daily server-health digests, smart AutoMod, anti-raid detection, AI-assisted reports, DM verification gate, image generation, and a 60-second setup wizard. Free for everyone during beta.
+title: Server Assistant — Privacy-first Discord moderation with optional AI enhancement
+description: Privacy-first Discord moderation bot. Tiered approval, AutoMod, anti-raid, audit logs, and a full Customisation Hub — all free. Premium adds an AI Concierge that reads your server and proposes specific improvements.
 image: /server-assistant-docs/assets/banner.jpeg
 ---
 
@@ -13,7 +13,8 @@ image: /server-assistant-docs/assets/banner.jpeg
 
   <h1>Server Assistant</h1>
 
-  <p><strong>AI moderation that gives your staff x-ray vision into server health.</strong></p>
+  <p><strong>Privacy-first Discord moderation — with optional AI enhancement.</strong></p>
+  <p style="font-size:.95rem; color:#4a5568; margin-top:-.25rem;">Tiered approval, anti-raid, audit logs, and a full Customisation Hub — all free.<br>Premium adds an AI Concierge that actually reads your server.</p>
 </div>
 
 <script type="application/ld+json">

@@ -2,12 +2,14 @@
 layout: default
 title: Pricing
 permalink: /pricing/
-description: Server Assistant pricing — generous free tier, $7/mo Premium for unlimited AI features and 750K tokens.
+description: Server Assistant pricing — generous free tier, $7/mo USD Premium with trial-then-bill, and $3/mo BYOK for those with their own AI key.
 ---
 
 # 💸 Pricing
 
-The honest split: **core moderation stays free forever for every server.** AI features have real per-call costs, so they're metered. Premium unlocks more headroom and the Concierge chat.
+**Core moderation is free forever.** AI features cost real money to run, so they're metered — you subscribe when you want them, and we only start billing when you've actually used your free tokens.
+
+All prices in **USD**. Tax is calculated at checkout based on your billing region (Stripe and Discord handle this automatically).
 
 ---
 
@@ -15,22 +17,24 @@ The honest split: **core moderation stays free forever for every server.** AI fe
 
 These never count against any token allowance:
 
-- **Slash + text commands** — `/warn`, `/mute`, `/kick`, `/ban`, `/purge`, all the moderation tools
-- **AutoMod** — filter packs, custom regex, punishment ladder, link blocklist
+- **Slash + text commands** — `/warn`, `/mute`, `/kick`, `/ban`, `/purge`, and all moderation tools
+- **AutoMod** — filter packs, custom regex, punishment ladder, link blocklist, anti-spam
 - **Anti-raid** — mass-join detection, alerts, auto-suspend
 - **DM Verification Gate** — button-based new-member verification
 - **Warning + notes system** — full per-guild history
 - **Audit logging** — every action embed-logged to your log channel
 - **24-hour undo** — bans, mutes, channel deletions, nickname changes
-- **`/setup` and `/settings`** — 60-second onboarding + customisation hub
-- **Auto-pilot bootstrap** — zero-touch setup for owners who don't want to configure
-- **Privacy panel** — opt in to AI features only when you want them
+- **`/setup` and `/settings`** — 60-second onboarding + 9-panel Customisation Hub
+- **Auto-pilot bootstrap** — zero-touch setup via `/autopilot`
+- **Privacy panel** — `/privacy` to control exactly what the bot reads
+- **Snippets + scheduled reminders**
+- **`/imagine`** via free Pollinations.ai fallback
 
 ---
 
 ## What uses AI tokens
 
-These read messages or generate content and bill against your server's token allowance:
+These read messages or generate content:
 
 | Feature | Roughly |
 |---|---|
@@ -38,77 +42,82 @@ These read messages or generate content and bill against your server's token all
 | **🧠 Self-trained AutoMod** rule proposal | ~12K tokens per learning round |
 | **📋 Report Message** AI summary | ~5K tokens per right-click |
 | **🩹 Bot Health Insurance** check-in | ~3K every 14 days |
-| **💬 Concierge chat** *(Premium)* | ~30-50K per conversation |
-| **🖼️ `/imagine`** image generation | counts separately as 1 image |
+| **💬 Concierge chat** *(Premium)* | ~30–50K per conversation |
+| **🖼️ `/imagine`** with AI provider | ~2K per image |
 
 ---
 
 ## Plans
 
-| | **Free trial** | **Premium BYOK** | **Premium** |
+| | **Free** | **Premium BYOK** | **Premium** |
 |---|---|---|---|
-| **Price** | $0 | **$3/month** | **$7/month** |
-| **Tokens** | 150K lifetime *(our key)* | **You supply your own** | 750K/month *(our key)* |
+| **Price** | $0 | **$3 USD/month** | **$7 USD/month** |
+| **AI tokens** | 150K lifetime *(our key)* | **You supply your own key** | 750K/month *(our key)* |
+| **How billing works** | Use freely, no card | Card charged immediately | **Card captured at subscribe — billing starts only when your 150K trial runs out** |
 | **Concierge chat** | — | ✅ | ✅ |
 | **Active Threat Score** | — | ✅ | ✅ |
-| **`/imagine`** | rate-limited | unlimited | unlimited |
+| **Unlimited `/imagine`** | — | ✅ | ✅ |
 | **All free features** | ✅ | ✅ | ✅ |
 
-**BYOK** = *Bring Your Own Key*. If you already have an Anthropic, xAI, or OpenAI account, paste your API key via `/ai-config` and pay the lower **$3/month** Premium tier — you cover the tokens, we cover the features and infrastructure.
+### How Premium trial billing works
 
-When the free trial's 150K tokens run out, AI features pause but **core moderation keeps working**. You'll see a one-time DM with the upgrade path.
+When you subscribe to Premium ($7/mo), your card is saved but **you are not charged today**. We give you **150,000 free tokens** first — the same as the free trial. Billing starts the moment those tokens run out. Small or light-use servers may never deplete 150K tokens, meaning they never pay a cent despite being subscribed.
+
+**BYOK** = Bring Your Own Key. Paste your Anthropic, xAI, or OpenAI key via `/ai-config` — you pay your provider directly for token usage, and pay us just $3/mo for the software and infrastructure.
 
 ---
 
 ## Top-up packs
 
-Need more headroom this month without committing to Premium? **$3 buys you 300,000 extra tokens** — they don't expire. Available to both tiers.
+Need extra headroom without changing your plan? **$3 USD buys 300,000 extra tokens** — they don't expire and work on any tier.
 
 ---
 
 ## 🎁 Beta-period perk
 
-Servers that add Server Assistant **before the premium tier launches** automatically lock in **12 months of free Premium access** from launch day. No card, no claim form — just be on the bot before launch.
+Servers active before the v5.0 launch are grandfathered — 12 months of free Premium locked in automatically. No card, no claim form.
 
 ---
 
 ## Payment
 
-We support two payment rails:
+- **Stripe** — credit/debit card, available now
+- **Discord App Subscriptions** — pay directly through Discord *(available when Server Assistant reaches 75 server installs)*
 
-- **Discord App Subscriptions** *(preferred)* — pay directly through Discord
-- **Stripe** — for users who prefer credit card / direct billing
-
-Either way, your Premium is tied to your server. Cancel anytime.
+Premium is per-server. Cancel anytime — no charge if you cancel before your 150K trial runs out.
 
 ---
 
 ## FAQ
 
-<details><summary>What happens at 0 tokens on the free trial?</summary>
-AI features pause with a friendly notice. Core moderation (AutoMod, anti-raid, warnings, slash commands, audit log) keeps working with no change. Upgrade to Premium or buy a top-up to re-enable AI features.
+<details><summary>Will I be charged when I subscribe to Premium?</summary>
+No — not immediately. We capture your card at signup but only charge it when your 150K free tokens are fully used. If your server never hits that limit, you're never billed.
+</details>
+
+<details><summary>What happens when I run out of free tokens?</summary>
+AI features pause. Core moderation (AutoMod, anti-raid, warnings, slash commands, audit log) keeps working with no change. You'll get a DM — if you're subscribed to Premium, billing starts automatically. If you're on the free tier, you can subscribe or buy a top-up to continue.
 </details>
 
 <details><summary>What if a single user spams Concierge or Report Message?</summary>
-Each high-variance feature has an invisible 6-hour rolling cap per user — generous enough that normal use never hits it, tight enough that abuse can't drain your allowance.
-</details>
-
-<details><summary>Why is there a token limit at all?</summary>
-Each AI call has a real cost to us. The free trial lets you fully evaluate every feature. After that, Premium covers genuine ongoing AI use with healthy headroom.
+Each high-variance feature has an invisible 6-hour rolling cap per user — generous enough that normal use never hits it, tight enough to prevent abuse from draining your allowance.
 </details>
 
 <details><summary>Can I bring my own AI key?</summary>
-Yes — `/ai-config` lets you paste your own Anthropic, xAI, or OpenAI key. BYOK calls don't count against any allowance.
+Yes — `/ai-config` lets you paste your own Anthropic, xAI, or OpenAI key. BYOK calls don't count against any allowance. Premium BYOK ($3/mo) gives you all Premium features while you supply the tokens.
 </details>
 
 <details><summary>What if I cancel Premium?</summary>
-You drop to the free trial state. If you've already used your 150K lifetime trial, AI features pause until you re-subscribe or top up. Core moderation never stops.
+You drop to the free tier. If your 150K lifetime trial was already used, AI features pause until you re-subscribe or buy a top-up. Core moderation never stops.
+</details>
+
+<details><summary>Do prices include tax?</summary>
+No — applicable VAT, GST, or sales tax is added at checkout based on your billing region. Stripe and Discord calculate and collect this automatically.
 </details>
 
 ---
 
 ## Next steps
 
-- **[Setup]({{ site.url }}{{ site.baseurl }}/setup/)** — invite the bot, run `/setup`, you're done
+- **[Setup]({{ site.url }}{{ site.baseurl }}/setup/)** — invite the bot, done in 60 seconds
 - **[Features]({{ site.url }}{{ site.baseurl }}/features/)** — every feature with tier badges
 - **[FAQ]({{ site.url }}{{ site.baseurl }}/faq/)** — common questions

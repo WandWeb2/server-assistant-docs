@@ -11,26 +11,29 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 
 ---
 
-## In development — v5.0 — Premium tier, Concierge, Auto-pilot, Privacy panel
+## v5.0 — Premium tier, Concierge, Auto-pilot, Privacy panel
 
-The biggest release yet. Premium ships with the metered token model so the AI features stay sustainable while staying generous.
+The biggest release yet. Premium ships with an honest billing model — subscribe when you want AI features, pay only when you've actually used your free tokens.
 
 ### Added
-- **💸 Premium tier — $7/month, 750K tokens/month.** Includes the new Concierge chat, active Threat Score, unlimited `/imagine`, and Top-up packs ($3 / +300K) when you need extra headroom. See [pricing]({{ site.url }}{{ site.baseurl }}/pricing/).
-- **🎯 Free trial — 150K tokens lifetime** to evaluate every AI feature. Core moderation (AutoMod, anti-raid, warnings, audit log) is always free regardless of plan.
-- **🪄 Auto-pilot bootstrap.** Owners who skip `/setup` get a DM with a proposed config — staff chat, log channel, staff roles all auto-detected. One tap to apply.
-- **💬 Concierge chat (Premium).** `/concierge` opens a guided AI conversation that reviews your server's recent moderation activity and proposes setting tweaks. Conservative — every change asks first.
-- **🔒 Privacy panel** in `/settings`. Per-feature toggles for what the bot is allowed to read. New servers default privacy-first; existing servers keep current behaviour.
-- **🎁 Beta-period perk** locked in: every server added before v5 launch gets **12 months of free Premium** from launch day.
+- **💸 Premium — $7 USD/month.** Subscribe now, card charged only when your 150K free tokens run out. Small servers may never pay. Includes Concierge chat, active Threat Score, unlimited `/imagine`, 750K tokens/month, and top-up packs ($3 USD / +300K extra). See [pricing]({{ site.url }}{{ site.baseurl }}/pricing/).
+- **🔑 Premium BYOK — $3 USD/month.** Bring your own Anthropic/xAI/OpenAI key, pay us just $3/mo for the features and infrastructure. Card charged immediately on subscribe.
+- **🎯 Free tier — 150K tokens lifetime** to evaluate every AI feature. Core moderation is always free, period.
+- **🪄 Auto-pilot bootstrap.** Run `/autopilot` — the bot scans your server, detects staff chat, log channel, and staff roles, and proposes a full config. One tap applies it. Zero configuration required.
+- **💬 Concierge (Premium).** `/concierge` is an AI assistant that reads your server's actual settings and recent moderation events, then gives specific advice and proposes concrete changes. Grounded in your data, not generic tips.
+- **🔒 Privacy panel.** `/privacy` gives per-feature toggles for what the bot is allowed to read. New servers start privacy-first; existing servers keep their current behaviour.
+- **📊 Budget warnings.** DM to the owner at 80% and 100% of token allowance. Core moderation never pauses regardless of usage.
+- **🎁 Beta-period perk.** Servers active before launch: 12 months of free Premium locked in automatically. No card, no claim form.
 
 ### Changed
-- AI features now route through a unified Anthropic-backed wrapper with prompt caching and per-guild token accounting. BYOK preserved for xAI/OpenAI/Anthropic users.
-- 6-hour rolling caps on high-variance features (Concierge, Report Message, `/imagine`, Self-trained learning rounds) — invisible to normal use, prevents single-user abuse from draining your monthly allowance.
+- All AI features now route through Anthropic Claude with prompt caching and per-guild token accounting. BYOK preserved for users with their own keys.
+- 6-hour rolling caps on high-variance features (Concierge, Report Message, `/imagine`, Self-trained rounds) — invisible to normal use, prevents any single user from draining the server's allowance.
+- Bot framing updated to reflect what it actually is: **privacy-first moderation with optional AI enhancement.**
 
-### Coming with launch
-- Discord App Subscriptions + Stripe payment rails
-- Per-guild AI usage tile in SA-Ops PWA
-- Weekly auto-pilot "what I did" digest
+### Coming next
+- In-bot Stripe Checkout subscribe flow
+- Discord App Subscriptions (when Server Assistant reaches 75 server installs)
+- Premium Plus tier ($14 USD/mo, 2M tokens, multi-server bundle)
 
 ---
 
