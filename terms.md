@@ -79,7 +79,7 @@ You may stop using the Bot at any time by removing it from your server. The Oper
 - Abuse of Bot features that affect other servers
 - Decommissioning of the Service
 
-Upon termination, the Bot will wipe encrypted secrets associated with your server. Other data (warnings, notes, audit log) will be deleted upon request per the Privacy Policy.
+Upon termination, the Bot will wipe encrypted secrets associated with your server. We'll delete other data (warnings, notes, audit log) on request — see the Privacy Policy.
 
 ## 9. Premium features (when available)
 
@@ -91,7 +91,7 @@ When the Bot offers paid premium features through the Discord App Directory:
 
 ## 10. Changes to these terms
 
-The Operator may update these terms to reflect changes in the Bot's features, legal requirements, or industry practice. Material changes will be announced via the Bot's release notes (linked from the [changelog]({{ site.url }}{{ site.baseurl }}/changelog/)) and a posted notice in the staff-chat channel of each configured guild. Continued use after changes take effect constitutes acceptance.
+The Operator may update these terms to reflect changes in the Bot's features, legal requirements, or industry practice. We'll announce material changes via the Bot's release notes (linked from the [changelog]({{ site.url }}{{ site.baseurl }}/changelog/)) and post a notice in the staff-chat channel of each configured guild. Continued use after changes take effect constitutes acceptance.
 
 ## 11. Governing law
 
