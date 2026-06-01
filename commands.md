@@ -58,7 +58,7 @@ Notes are invisible to the user. Used for tracking patterns of behaviour without
 | `history @user 15` | Last 15 messages from this user across all channels |
 | `stats` | Server statistics — members, channels, boosts, etc. |
 | `actions 10` | Recent staff actions audit log |
-| `report @user` | AI-generated context summary of recent activity |
+| `report @user` | AI summary of recent activity |
 | `report #channel` | AI summary of recent activity in a channel |
 
 ---
