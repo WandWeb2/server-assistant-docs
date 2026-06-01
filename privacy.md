@@ -38,7 +38,7 @@ When staff members issue warnings, notes, or moderation actions, the Bot stores:
 - The reason text
 - The action type (warn, note, ban, etc.)
 
-Warnings are persistent until manually removed by staff. Notes are persistent until manually removed.
+Both are retained until manually removed by staff.
 
 ### Audit log
 
