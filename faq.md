@@ -159,29 +159,34 @@ Currently it's fixed wording. Custom verification copy is on the <a href="{{ sit
 
 <details class="faq"><summary>Are AI features free?</summary>
 <div class="faq-body">
-Yes on the hosted bot's shared rate-limited xAI Grok key. Want unlimited or a different model? Paste your own xAI/OpenAI key during <code>/setup</code> (or <code>/ai-config</code> later).
+<p>The free tier includes a <strong>150,000 token lifetime allowance</strong> — enough to evaluate every AI feature. Core moderation (AutoMod, anti-raid, warnings, slash commands) is always free regardless of token usage.</p>
+<p>When your trial tokens run out, you can subscribe to <strong>Premium ($7 USD/month)</strong> for 750K tokens/month — card only charged when tokens deplete. Or bring your own Anthropic/xAI/OpenAI key via <code>/ai-config</code> and pay just $3/month for Premium BYOK. See <a href="{{ site.url }}{{ site.baseurl }}/pricing/">Pricing</a> for full details.</p>
+</div>
+</details>
+
+<details class="faq"><summary>Will I be charged when I subscribe to Premium?</summary>
+<div class="faq-body">
+<p><strong>Not immediately.</strong> When you subscribe to Premium ($7/mo), your card is saved but not charged. Billing starts only when your 150K free tokens are fully used. Small or light-use servers may never hit that limit, meaning they never pay a cent despite being subscribed.</p>
+<p>Premium BYOK ($3/mo) is charged immediately on subscribe, since you're paying for feature access rather than tokens.</p>
 </div>
 </details>
 
 <details class="faq"><summary>What data is sent to the AI provider?</summary>
 <div class="faq-body">
-Only what's needed for the request. <strong>Report Message</strong> sends ~20 messages of context; <code>/imagine</code> sends just your prompt. <strong>No user metadata, IDs, or persistent identifiers.</strong> Full details in the <a href="{{ site.url }}{{ site.baseurl }}/privacy/">Privacy Policy</a>.
+Only what's needed for the request. <strong>Report Message</strong> sends ~20 messages of context; <strong>Concierge</strong> sends your question plus your server's settings and recent event summary; <code>/imagine</code> sends just your text prompt. <strong>No user metadata, IDs, or persistent identifiers are transmitted.</strong> Full details in the <a href="{{ site.url }}{{ site.baseurl }}/privacy/">Privacy Policy</a>.
 </div>
 </details>
 
-<details class="faq"><summary>What models are used?</summary>
+<details class="faq"><summary>What AI model powers the bot?</summary>
 <div class="faq-body">
-<ul>
-<li><strong>xAI Grok:</strong> <code>grok-3-mini</code> (fast, cheap)</li>
-<li><strong>OpenAI:</strong> <code>gpt-4o-mini</code> (default)</li>
-<li><strong>Image generation:</strong> DALL·E 3 (paid), Stable Diffusion XL (paid), Pollinations.ai (free)</li>
-</ul>
+<p>The default shared key uses <strong>Anthropic Claude</strong> (Sonnet) for all AI features — Concierge, Report Message, Self-trained AutoMod proposals, and Bot Health Insurance checks.</p>
+<p>If you supply your own key via <code>/ai-config</code>, you can choose Anthropic, xAI Grok, or OpenAI. Image generation (<code>/imagine</code>) defaults to free Pollinations.ai and optionally DALL·E 3 or Stable Diffusion with a paid key.</p>
 </div>
 </details>
 
 <details class="faq"><summary>Can I disable AI entirely?</summary>
 <div class="faq-body">
-Yes. <code>/ai-config → Skip AI</code>. <code>/imagine</code> and Report Message will fail gracefully with a clear message.
+Yes — <code>/ai-config → Skip AI</code> disables all AI features for your server. <code>/imagine</code> and Report Message will decline gracefully. You can also use <code>/privacy</code> to disable individual AI features while keeping others active.
 </div>
 </details>
 

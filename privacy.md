@@ -2,135 +2,150 @@
 layout: default
 title: Privacy Policy
 permalink: /privacy/
-description: How Server Assistant handles your Discord server's data, including encrypted storage, per-guild isolation, and the AI provider data flow.
+description: How Server Assistant handles your Discord server's data — encrypted storage, per-guild isolation, AI provider data flow, and billing.
 ---
 # Privacy Policy — Server Assistant
 
 **Effective date:** May 9, 2026
-**Last updated:** May 9, 2026
+**Last updated:** June 2, 2026
 
-This privacy policy describes how the Server Assistant Discord bot ("the Bot") collects, uses, and stores information when installed in a Discord server ("the Service").
+This policy describes how the Server Assistant Discord bot ("the Bot") collects, uses, and stores information when installed in a Discord server.
 
 ## Who is responsible
 
-The Bot is operated by the individual or organisation hosting it (the "Operator"). For the canonical hosted instance, contact the Operator via the [`/support`]({{ site.url }}{{ site.baseurl }}/support/) slash command from any Discord server with the Bot installed.
+The Bot is operated by WandWeb2. Contact us via the [`/support`]({{ site.url }}{{ site.baseurl }}/support/) slash command from any Discord server with the Bot installed.
+
+---
 
 ## What the Bot stores
 
-The Bot stores the minimum data necessary to provide its features. All data is stored locally on the Operator's hosting infrastructure and isn't shared with third parties except as described below.
+The Bot stores the minimum data needed to run its features. All data lives on our hosting infrastructure and is not sold or shared except as described below.
 
-### Per-guild configuration
+### Per-server configuration
 
-When a server owner runs `/setup`, the Bot stores:
-- Discord server (guild) ID
-- Selected staff-chat channel ID
-- Selected log channel ID
-- Discord role IDs mapped to the Bot's permission tiers
-- Server settings (embed colour, bot nickname, default timezone, anti-raid thresholds, etc.)
-- AI provider selection (shared / BYO key / disabled)
+When a server owner runs `/setup` or `/autopilot`, the Bot stores:
+- Discord server (guild) ID, staff-chat channel ID, log channel ID
+- Role IDs mapped to permission tiers (Moderator, Admin, Owner)
+- Server settings (embed colour, timezone, AutoMod presets, anti-raid thresholds, etc.)
+- AI provider selection (shared / BYOK / disabled)
+- Privacy panel toggles (which AI features are enabled per-server)
 
-### Per-user moderation history
+### Moderation records
 
-When staff members issue warnings, notes, or moderation actions, the Bot stores:
-- The Discord user ID of the affected member
-- A timestamp
-- The Discord user ID of the staff member who issued the action
-- The reason text
-- The action type (warn, note, ban, etc.)
+When staff issue warnings, notes, or moderation actions:
+- Discord user ID of the affected member
+- Timestamp, acting staff member's user ID, action type, and reason text
 
-Both are retained until manually removed by staff.
+Retained until manually removed by staff or until the Bot is removed from the server.
 
 ### Audit log
 
-The Bot maintains a rolling audit log of the most recent 500 staff actions across all guilds. Each entry contains:
-- Timestamp
-- Acting staff member's user ID and tag
+A rolling log of recent staff actions across the Bot. Each entry contains:
+- Timestamp, acting staff member's user ID and tag
 - Action type and parameters (truncated to 500 characters)
-- Result status (executed, denied, pending approval, etc.)
-- Guild ID
+- Result status and guild ID
 
 ### Scheduled tasks
 
-When staff schedule a reminder or recurring task, the Bot stores:
-- Task ID, creator's user ID, target channel ID, and guild ID
-- Scheduled timestamp
-- Command text (truncated to a reasonable length)
-- Created-at timestamp
+Reminder and recurring task data (task ID, creator ID, channel ID, guild ID, scheduled time, command text). Deleted automatically when the task fires or is cancelled.
 
-These are deleted automatically when the task fires or is cancelled.
+### Encrypted credentials
 
-### Encrypted secrets
+Stored encrypted at rest:
+- AI provider API keys (when server owner provides their own via `/ai-config`)
+- Bot configuration secrets
 
-The Bot stores the following credentials encrypted at rest:
-- Discord bot token
-- AI provider API keys (xAI Grok, OpenAI, etc.)
-- Per-guild AI keys (when server owner provides their own)
-- YouTube API key (if YouTube notifier feature is in use)
+The encryption key is stored separately on our host and never transmitted.
 
-The encryption key is stored separately on the Operator's host and not transmitted.
+### AI token ledger (v5.0+)
 
-### Local telemetry (anonymous)
+For servers using AI features on the shared key:
+- Guild ID, current plan, tokens used (lifetime or monthly), plan reset date
+- Per-call log: feature name, model, token counts, estimated cost in USD, timestamp
+- No message content is stored in the ledger — only usage metadata
 
-The Bot maintains anonymous, local-only counters:
-- Number of automod blocks per guild
-- Number of warnings issued
-- Number of new members seen
-- Number of AI features invoked
+### Billing data (v5.0+)
 
-These counts are **never transmitted** off the host. They are used solely by the Operator to inform feature decisions. No PII is included.
+If you subscribe to Premium via Stripe:
+- We store a reference to your Stripe Customer and Subscription ID (not your card details — those are held by Stripe)
+- Guild ID, plan tier, subscription status, and period-end date
+- Stripe handles all payment processing, card storage, and tax compliance per their own [Privacy Policy](https://stripe.com/privacy)
+
+---
 
 ## What the Bot does NOT store
 
-The Bot **doesn't** store:
-- Message content beyond the request that triggered an action (truncated to 500 characters in the audit log)
+- Message content beyond what triggered an action (truncated to 500 characters in audit log)
 - User direct messages or private conversations
 - Voice channel recordings, transcripts, or metadata
-- User avatars, banners, or media beyond what is generated by `/imagine`
+- User avatars, banners, or media (except images generated by `/imagine`)
 - Email addresses, phone numbers, or any out-of-band contact information
+- The full content of messages read by AI features — only the AI's output is retained in the channel
 
-## Third-party data sharing
+---
 
-The Bot may transmit certain data to third-party AI providers when AI features are used. This is **only** when explicitly invoked by staff (e.g., `/report`, AI-assisted reports via right-click menu, `/imagine`):
+## Third-party AI providers
 
-- **xAI Grok** (https://x.ai) — message content from the staff member's request, plus surrounding-message context (~20 messages) when generating moderation reports.
-- **OpenAI** (https://openai.com) — same scope as xAI when OpenAI is selected as the chat provider.
-- **OpenAI / Stability AI / Pollinations.ai** — text prompts only, when `/imagine` is used. No user metadata is transmitted.
+AI features transmit data to third-party providers **only when explicitly invoked by staff** (e.g., right-click Report Message, `/imagine`, Self-trained AutoMod, Concierge). The default shared-key provider is:
 
-Each AI provider has its own privacy policy governing how they handle transmitted data. The Bot does not store the responses received from these providers beyond posting them to the requesting channel.
+- **Anthropic** (https://anthropic.com) — powers Concierge, Report Message context summaries, and Self-trained AutoMod. Approximately 20 messages of surrounding context are sent for Report Message; only your question is sent for Concierge sessions. No user IDs or metadata are transmitted.
 
-No data is sold or shared with advertising networks, analytics services, or third parties beyond the AI providers strictly required to fulfil a request.
+If you've configured your own key via `/ai-config`:
+- **xAI Grok** (https://x.ai) — same scope as above when selected
+- **OpenAI** (https://openai.com) — same scope as above when selected
+
+For `/imagine` (image generation): only your text prompt is sent to the image provider. No user metadata.
+
+Each AI provider has their own privacy policy governing how they handle data. We don't store AI responses beyond posting them to the requesting channel. No data is shared with advertising networks or analytics services.
+
+---
 
 ## Data retention
 
-- **Configuration and settings:** retained until the Bot is removed from a server, at which point they are wiped shortly afterward.
-- **Encrypted secrets** (such as any AI keys you supply): wiped immediately when the Bot is removed from a server.
-- **Warnings and notes:** retained indefinitely until manually removed by staff. A future `/wipe-server-data` command will streamline this.
-- **Audit log:** rolling window of 500 entries; older entries are automatically purged.
-- **Scheduled tasks:** deleted when fired or cancelled.
+| Data | Retention |
+|---|---|
+| Server configuration and settings | Until Bot is removed from the server |
+| Encrypted API keys | Wiped immediately on Bot removal |
+| Warnings and notes | Until manually removed by staff |
+| Audit log | Rolling window; older entries auto-purged |
+| Scheduled tasks | Deleted when fired or cancelled |
+| AI token ledger | Retained for billing and analytics; deleted on request |
+| Stripe subscription reference | Retained while subscription is active; deleted on request after cancellation |
 
-## Right to erasure
+---
 
-Server owners can request deletion of all data associated with their guild by:
-1. Removing the Bot from their server (this wipes any encrypted credentials they supplied automatically).
-2. Contacting the Operator via the [`/support` command]({{ site.url }}{{ site.baseurl }}/support/) to request manual deletion of warnings, notes, and audit log entries scoped to that guild.
+## Your rights
 
-Individual users wishing to have their personal moderation history erased should contact the server owner first; if the server owner is unresponsive, contact the Operator directly.
+**Server owners** can:
+1. Remove the Bot from their server — this wipes encrypted credentials immediately
+2. Contact us via [`/support`]({{ site.url }}{{ site.baseurl }}/support/) to request deletion of warnings, notes, audit log entries, and ledger data for their guild
+
+**Individual members** wishing to have personal moderation records erased should contact their server owner first. If unresponsive, contact us directly via `/support`.
+
+---
 
 ## Data security
 
-- All sensitive credentials are stored encrypted at rest using AES-128.
-- The encryption master key is restricted to file owner read/write only on POSIX systems.
-- The Bot doesn't expose any public network endpoints beyond Discord's gateway connection.
-- The Operator is responsible for securing the host machine and following Discord's bot token security guidelines.
+- Credentials stored encrypted at rest (AES-128)
+- Encryption master key restricted to file-owner access only
+- All API communications use HTTPS/TLS
+- The Bot does not expose public network endpoints beyond Discord's gateway connection
+- Stripe handles payment card data under PCI-DSS compliance — we never see raw card numbers
+
+---
 
 ## Children's privacy
 
-The Bot doesn't knowingly collect data from children under 13. Discord requires all users to be at least 13 years of age (or higher in some jurisdictions). If you become aware that a child has provided personal information to the Bot, contact the Operator and the data will be deleted.
+The Bot doesn't knowingly collect data from anyone under 13 (Discord's minimum age). If you become aware of a child's data in the system, contact us via `/support` and we'll delete it.
+
+---
 
 ## Changes to this policy
 
-This privacy policy may be updated to reflect changes in the Bot's features. The "Effective date" at the top of this document indicates the most recent revision. Server owners are notified of material changes via the Bot's release announcements.
+Material changes will be announced via the Bot's release notes and posted in the staff-chat of each configured guild. The "Last updated" date above reflects the most recent revision.
+
+---
 
 ## Contact
 
-For questions, concerns, or data requests, contact the Operator via the [`/support`]({{ site.url }}{{ site.baseurl }}/support/) command, which is available in any Discord server that has the Bot installed.
+[`/support`]({{ site.url }}{{ site.baseurl }}/support/) from any server with the Bot installed.

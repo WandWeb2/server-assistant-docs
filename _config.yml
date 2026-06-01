@@ -2,11 +2,11 @@
 # Hosted on GitHub Pages — https://wandweb2.github.io/server-assistant-docs/
 
 title: Server Assistant
-tagline: AI-powered moderation that keeps your staff in control and your community safe.
+tagline: Privacy-first Discord moderation — with optional AI enhancement.
 description: >-
-  Discord moderation bot with daily server-health digests, AI-assisted mod
-  reports, smart AutoMod, anti-raid protection, and a 60-second setup wizard.
-  Free for everyone — servers added during beta lock in 12 months of premium automatically.
+  Privacy-first Discord moderation bot. Full mod toolkit, AutoMod, anti-raid,
+  audit logs, and a 9-panel Customisation Hub — all free. Premium adds an AI
+  Concierge that reads your server and proposes specific improvements.
 url: https://wandweb2.github.io
 baseurl: /server-assistant-docs
 lang: en-GB
@@ -44,6 +44,7 @@ header_pages:
   - setup.md
   - commands.md
   - features.md
+  - pricing.md
   - roadmap.md
   - changelog.md
   - faq.md
