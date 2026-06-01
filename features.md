@@ -9,6 +9,20 @@ description: A scannable tour of Server Assistant's flagship features.
 
 A scannable tour. For the full command list and permissions, see **[Commands]({{ site.url }}{{ site.baseurl }}/commands/)**. For what's free vs Premium, see **[Pricing]({{ site.url }}{{ site.baseurl }}/pricing/)**.
 
+<style>
+.tier-badge { display: inline-block; font-size: 0.65rem; font-weight: 800; letter-spacing: 0.05em;
+              padding: 0.15rem 0.5rem; border-radius: 999px; vertical-align: middle;
+              margin-left: 0.4rem; text-transform: uppercase; }
+.tier-free    { background: rgba(46,204,113,0.18);  color: #1b8e3a; }
+.tier-trial   { background: rgba(52,152,219,0.18);  color: #1f6dbf; }
+.tier-premium { background: rgba(241,196,15,0.20);  color: #8a5a00; }
+</style>
+
+**Tier badges below:**
+<span class="tier-badge tier-free">FREE</span> always free (no AI tokens used) ·
+<span class="tier-badge tier-trial">TRIAL</span> uses your guild's AI tokens, available on free trial ·
+<span class="tier-badge tier-premium">PREMIUM</span> requires Premium subscription
+
 ---
 
 ## 🧠 The AI-Moderation Suite
@@ -28,22 +42,22 @@ A set of AI features that watch your server's *health and behaviour* — **advis
 
 <div class="ai-grid">
   <div class="ai-card">
-    <h4>🩺 Pulse <span class="ai-tag">on by default</span></h4>
+    <h4>🩺 Pulse <span class="ai-tag">on by default</span> <span class="tier-badge tier-trial">TRIAL</span></h4>
     <p>A daily one-embed health report — messages, joins/leaves, AutoMod blocks, warnings — with week-over-week deltas and flags for the quiet patterns humans miss.</p>
     <div class="ai-where">Configure: <code>/settings → 🩺 Pulse</code></div>
   </div>
   <div class="ai-card">
-    <h4>🧠 Self-trained AutoMod <span class="ai-tag">opt-in</span></h4>
+    <h4>🧠 Self-trained AutoMod <span class="ai-tag">opt-in</span> <span class="tier-badge tier-trial">TRIAL</span></h4>
     <p>Watches the messages your staff delete or report, then proposes server-specific AutoMod rules for your approval. Nothing auto-enforced; 30-day local log, no identities stored.</p>
     <div class="ai-where">Enable: <code>/automod → Self-training</code></div>
   </div>
   <div class="ai-card">
-    <h4>🩹 Bot Health Insurance <span class="ai-tag">on by default</span></h4>
+    <h4>🩹 Bot Health Insurance <span class="ai-tag">on by default</span> <span class="tier-badge tier-trial">TRIAL</span></h4>
     <p>The bot watches its <em>own</em> footprint. If it gets heavy-handed, it suggests tuning — at most once every 14 days, so the anti-noise feature never becomes noise.</p>
     <div class="ai-where">Toggle: <code>/settings → Behavior</code></div>
   </div>
   <div class="ai-card">
-    <h4>🛡️ Threat Score <span class="ai-tag premium">premium</span></h4>
+    <h4>🛡️ Threat Score <span class="tier-badge tier-premium">PREMIUM</span></h4>
     <p>At-a-glance per-user risk — 🟢 Low / 🟠 Elevated / 🔴 High — in user profiles. Transparent read of infraction history, weighted by severity, decaying over time. Advisory only.</p>
     <div class="ai-where">Enable: <code>/settings → Behavior</code></div>
   </div>
@@ -51,7 +65,7 @@ A set of AI features that watch your server's *health and behaviour* — **advis
 
 ---
 
-## 🛡️ Moderation
+## 🛡️ Moderation <span class="tier-badge tier-free">FREE</span>
 
 <style>
 .f-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin: 1rem 0 1.5rem; }
@@ -94,7 +108,7 @@ A set of AI features that watch your server's *health and behaviour* — **advis
 
 ---
 
-## 🤖 AutoMod Engine
+## 🤖 AutoMod Engine <span class="tier-badge tier-free">FREE</span>
 
 AutoMod runs on every non-staff message. Staff are completely exempt.
 
@@ -117,7 +131,7 @@ AutoMod runs on every non-staff message. Staff are completely exempt.
 
 ---
 
-## 🚨 Anti-Raid Detection
+## 🚨 Anti-Raid Detection <span class="tier-badge tier-free">FREE</span>
 
 Tracks join rate. When the threshold trips, the bot pings the Owner (and any roles configured in `/settings → 🔔 Notifications`), suspends onboarding DMs, and logs the event.
 
@@ -129,13 +143,13 @@ Tracks join rate. When the threshold trips, the bot pings the Owner (and any rol
 
 ---
 
-## 🔐 DM Verification Gate
+## 🔐 DM Verification Gate <span class="tier-badge tier-free">FREE</span>
 
 Optional anti-raid measure (`/settings → Verification`). New members are DM'd a green **Verify** button; clicking it grants the verified role. If DMs are closed, the failure is logged and the user only sees `@everyone`-open channels. Stops most automated raid bots cold.
 
 ---
 
-## 🎨 AI Features
+## 🎨 AI Features <span class="tier-badge tier-trial">TRIAL</span>
 
 <div class="f-grid">
   <div class="f-card">
@@ -150,7 +164,7 @@ Optional anti-raid measure (`/settings → Verification`). New members are DM'd 
 
 ---
 
-## 👋 New-Member Experience
+## 👋 New-Member Experience <span class="tier-badge tier-free">FREE</span>
 
 - **Auto-onboarding DMs** (`/onboarding`) with placeholders: `[servername]`, `[usermention]`, `[membercount]`, `[owner]`, `[usercreatedat]`. Templates: Friendly · Gaming · Professional · Minimal · Custom.
 - **Auto-role on join** — pick the role new members receive (`/settings → New Members → Auto-role`).
@@ -158,14 +172,14 @@ Optional anti-raid measure (`/settings → Verification`). New members are DM'd 
 
 ---
 
-## 📋 Canned Responses & Scheduled Reminders
+## 📋 Canned Responses & Scheduled Reminders <span class="tier-badge tier-free">FREE</span>
 
 - **Snippets** — `snippet add rules-link …` then `snippet rules-link` (supports the same placeholders as onboarding). Mention a user when invoking to fill `[user]` slots.
 - **Reminders** — `/schedule` (modal) or text `schedule in 30 min: check the new mod application` / `schedule at 9am: post daily update`. Uses your `/timezone`. Fires in the channel where it was created.
 
 ---
 
-## 📊 Audit Logging
+## 📊 Audit Logging <span class="tier-badge tier-free">FREE</span>
 
 Every action posts a colour-coded embed to your log channel:
 
@@ -183,7 +197,7 @@ Verbosity: **All / Dangerous-only / Errors-only** (`/settings → Behavior → L
 
 ---
 
-## 🎨 Customisation Hub (`/settings`)
+## 🎨 Customisation Hub (`/settings`) <span class="tier-badge tier-free">FREE</span>
 
 **Nine sub-wizards.** All changes save instantly.
 
@@ -201,7 +215,7 @@ Verbosity: **All / Dangerous-only / Errors-only** (`/settings → Behavior → L
 
 ---
 
-## 🔐 Privacy & Security
+## 🔐 Privacy & Security <span class="tier-badge tier-free">FREE</span>
 
 Your AI keys and other credentials are **encrypted at rest**. Per-server data is isolated. Removing the bot wipes your server's encrypted secrets immediately; the retention rules for warnings, notes, and audit logs are in the **[Privacy Policy]({{ site.url }}{{ site.baseurl }}/privacy/)**.
 
