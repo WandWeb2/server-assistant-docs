@@ -9,7 +9,7 @@ description: Server Assistant terms of use — permitted use, moderation respons
 **Effective date:** May 9, 2026
 **Last updated:** June 2, 2026
 
-These terms govern your use of the Server Assistant Discord bot ("the Bot"). By inviting the Bot to a server, the server owner agrees to these terms on behalf of that server.
+Server Assistant is built and maintained by **Wandering Webmaster** ([wandweb.co](https://wandweb.co)) ("we", "us", "our"). These terms govern your use of the Server Assistant Discord bot ("the Bot"). By inviting the Bot to a server, the server owner agrees to these terms on behalf of that server.
 
 ---
 
@@ -144,4 +144,4 @@ If any provision of these terms is held invalid or unenforceable, the remaining 
 
 ## Contact
 
-[`/support`]({{ site.url }}{{ site.baseurl }}/support/) from any server with the Bot installed.
+[`/support`]({{ site.url }}{{ site.baseurl }}/support/) from any server with the Bot installed, or visit [wandweb.co](https://wandweb.co).

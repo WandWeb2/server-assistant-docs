@@ -13,7 +13,7 @@ This policy describes how the Server Assistant Discord bot ("the Bot") collects,
 
 ## Who is responsible
 
-The Bot is operated by WandWeb2. Contact us via the [`/support`]({{ site.url }}{{ site.baseurl }}/support/) slash command from any Discord server with the Bot installed.
+Server Assistant is built and maintained by **Wandering Webmaster** ([wandweb.co](https://wandweb.co)). Contact us via the [`/support`]({{ site.url }}{{ site.baseurl }}/support/) slash command from any Discord server with the Bot installed.
 
 ---
 
@@ -148,4 +148,4 @@ Material changes will be announced via the Bot's release notes and posted in the
 
 ## Contact
 
-[`/support`]({{ site.url }}{{ site.baseurl }}/support/) from any server with the Bot installed.
+[`/support`]({{ site.url }}{{ site.baseurl }}/support/) from any server with the Bot installed, or visit [wandweb.co](https://wandweb.co).
