@@ -84,6 +84,23 @@ If you subscribe to Premium via Stripe:
 
 ---
 
+## What each feature reads
+
+You control all of this via the `/privacy` panel. AutoMod and anti-raid are required for moderation and always on; everything else is opt-in.
+
+| Feature | What it reads | Default |
+|---|---|---|
+| **AutoMod** | Message content, checked against your filters | Always on |
+| **Anti-raid** | Join events only (no message content) | Always on |
+| **Natural-language commands** | Messages in your staff-chat channel | Off (new servers) |
+| **Report Message** | ~20 messages around the one you right-click | Off (new servers) |
+| **🩺 Pulse** | Aggregate counts only — no message content stored | On |
+| **🧠 Self-trained AutoMod** | Messages your staff delete or report | Off |
+| **🩹 Bot Health Insurance** | The bot's own action counts | On |
+| **💬 Concierge** | Your settings + recent event summary + your typed question | On-demand |
+
+---
+
 ## Third-party AI providers
 
 AI features transmit data to third-party providers **only when explicitly invoked by staff** (e.g., right-click Report Message, `/imagine`, Self-trained AutoMod, Concierge). The default shared-key provider is:
