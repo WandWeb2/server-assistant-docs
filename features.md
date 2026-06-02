@@ -195,6 +195,16 @@ Verbosity: **All / Dangerous-only / Errors-only** (`/settings → Behavior → L
 
 **Weekly digest** — every Monday at 9am (configurable day) the bot posts a summary: total actions, warnings, top action types, most active staff, member count. Separate from the daily 🩺 Pulse digest.
 
+### 🔐 Complete, tamper-proof audit trail
+
+Logging isn't just for actions run through the bot:
+
+- **Native actions captured too.** A right-click ban, kick, or timeout done **directly in Discord** is logged just like a bot command — nothing slips past your audit log.
+- **Encrypted at rest.** Every action is written to a separate record that's encrypted with the same key protecting your credentials. Staff can't read, edit, or erase it — only Server Assistant can.
+- **Tamper alerts.** If anyone deletes an entry from your log channel, the owner is notified automatically, and the encrypted record stays intact.
+- **Optional locked log channel.** During `/autopilot` or `/setup`, opt in to a `#server-assistant-log` channel only the bot can post to — entries can't be deleted.
+- **Native-action coaching.** When staff moderate outside the bot, the log entry includes a tip on doing it through Server Assistant next time (so it's reversible and logged consistently).
+
 ---
 
 ## 🎨 Customisation Hub (`/settings`) <span class="tier-badge tier-free">FREE</span>
