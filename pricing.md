@@ -29,6 +29,7 @@ These never count against any token allowance:
 - **Privacy panel** — `/privacy` to control exactly what the bot reads
 - **Snippets + scheduled reminders**
 - **`/imagine`** via free Pollinations.ai fallback
+- **Ticket Panels (core)** — panel embed, private ticket channels, one intake question, `.txt` transcripts on close, `/tickets close`
 
 ---
 
@@ -57,7 +58,10 @@ These read messages or generate content:
 | **Concierge chat** | — | ✅ | ✅ |
 | **Active Threat Score** | — | ✅ | ✅ |
 | **Unlimited `/imagine`** | — | ✅ | ✅ |
+| **Ticket Panels — premium features** | — | ✅ | ✅ |
 | **All free features** | ✅ | ✅ | ✅ |
+
+**Ticket Panels — premium features** include: up to 4 custom intake form questions, custom welcome and close messages, and `/tickets add @user` to grant mid-ticket access.
 
 ### How Premium trial billing works
 
@@ -95,7 +99,7 @@ No — not immediately. We capture your card at signup but only charge it when y
 </details>
 
 <details><summary>What happens when I run out of free tokens?</summary>
-AI features pause. Core moderation (AutoMod, anti-raid, warnings, slash commands, audit log) keeps working with no change. You'll get a DM — if you're subscribed to Premium, billing starts automatically. If you're on the free tier, you can subscribe or buy a top-up to continue.
+AI features pause. Core moderation (AutoMod, anti-raid, warnings, slash commands, audit log, Ticket Panels) keeps working with no change. You'll get a DM — if you're subscribed to Premium, billing starts automatically. If you're on the free tier, you can subscribe or buy a top-up to continue.
 </details>
 
 <details><summary>What if a single user spams Concierge or Report Message?</summary>
@@ -107,7 +111,7 @@ Yes — `/ai-config` lets you paste your own Anthropic, xAI, or OpenAI key. BYOK
 </details>
 
 <details><summary>What if I cancel Premium?</summary>
-You drop to the free tier. If your 150K lifetime trial was already used, AI features pause until you re-subscribe or buy a top-up. Core moderation never stops.
+You drop to the free tier. If your 150K lifetime trial was already used, AI features pause until you re-subscribe or buy a top-up. Core moderation and basic Ticket Panels never stop.
 </details>
 
 <details><summary>Do prices include tax?</summary>

@@ -11,6 +11,20 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 
 ---
 
+## v5.2 — Ticket Panels
+
+Private in-server support tickets — no DMs, no leaving your server, no messy threads.
+
+### Added
+- **🎫 Ticket Panels.** Admins run `/tickets setup` to post a panel embed with a **Create Ticket** button in any channel. Members click it to fill a short intake form; the bot creates a private `ticket-NNNN-username` channel, notifies the support role, and drops in a **Close Ticket** button. On close, a full `.txt` transcript is posted to the configured channel and the ticket channel is deleted.
+- **Free tier:** one-question intake form, private ticket channels, transcript on close, editable panel text.
+- **Premium tier:** up to 4 custom intake form questions (`/tickets questions`), custom welcome and close messages (`/tickets panel`), and the ability to add users to an open ticket mid-conversation (`/tickets add @user`).
+- **Persistent panels** — the Create Ticket button survives bot restarts.
+- **Per-ticket privacy** — each ticket channel is visible only to the opener, the configured support role, and admins.
+- **Storage** in `tickets.json` alongside the other per-guild JSON stores; no extra setup required.
+
+---
+
 ## v5.1 — Complete audit trail & tamper protection
 
 Oversight you can trust. Server Assistant now records **every** moderation action — not just the ones run through the bot — and keeps them somewhere staff can't touch.
