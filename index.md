@@ -24,7 +24,7 @@ image: /server-assistant-docs/assets/banner.jpeg
   "name": "Server Assistant",
   "applicationCategory": "Discord Bot",
   "operatingSystem": "Discord",
-  "description": "AI Discord moderation and automation bot with Pulse daily server-health digests, AI-assisted moderation reports, customisable AutoMod with custom regex and ReDoS guard, anti-raid detection, DM-button verification gate, and AI image generation.",
+  "description": "AI Discord moderation and automation bot with Pulse daily server-health digests, AI-assisted moderation reports, customisable AutoMod with custom regex and ReDoS guard, anti-raid detection, DM-button verification gate, ticket panels, and AI image generation.",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
   "url": "https://wandweb2.github.io/server-assistant-docs/",
   "image": "https://wandweb2.github.io/server-assistant-docs/assets/banner.jpeg",
@@ -138,6 +138,14 @@ Running a Discord community means staying ahead of raids, keeping staff accounta
     <ul>
       <li>Button-based new-member verification</li>
       <li>Stops most automated raid bots</li>
+    </ul>
+  </div>
+  <div class="feat-card">
+    <h3>🎫 Ticket Panels</h3>
+    <ul>
+      <li>Private support tickets inside your server</li>
+      <li>Intake form, transcripts, persistent panel button</li>
+      <li>Custom questions + messages <small>(premium)</small></li>
     </ul>
   </div>
   <div class="feat-card">

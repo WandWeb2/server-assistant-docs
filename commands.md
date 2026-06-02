@@ -22,7 +22,7 @@ Server Assistant supports **three interaction modes**. Most commands are availab
 Targeting users supports `@mention`, plain-text username (e.g. `mute jen`), or numeric Discord user ID.
 
 | Command | Description | Example |
-|---------|-------------|---------|
+|---------|-------------|-------|
 | `ban @user [reason]` | Ban a user | `ban @spammer raid` |
 | `kick @user [reason]` | Kick a user | `kick username spam` |
 | `softban @user` | Ban + immediate unban — clears recent messages, lets user rejoin | `softban @user` |
@@ -168,6 +168,22 @@ The `undo` command reverses your most recent reversible action.
 
 ---
 
+## 🎫 Ticket Panels
+
+Set up a persistent support-ticket panel in any public channel. Members click **Create Ticket** to open a private channel with your support team.
+
+| Command | Description | Who |
+|---------|-------------|-----|
+| `/tickets setup` | Configure the ticket system and post a panel embed | Admin / Owner |
+| `/tickets close [reason]` | Close the ticket channel you're currently in | Ticket owner, support role, or anyone with Manage Channels |
+| `/tickets panel` | Edit the panel's title/description, or (Premium) set custom in-ticket messages | Admin / Owner |
+| `/tickets questions` | *(Premium)* Define up to 4 custom intake form questions | Admin / Owner |
+| `/tickets add @user` | *(Premium)* Add a user to the current open ticket | Admin / Owner |
+
+See **[Features → Ticket Panels]({{ site.url }}{{ site.baseurl }}/features/#-ticket-panels)** for the full setup walkthrough and free vs Premium breakdown.
+
+---
+
 ## 🖱️ Right-click context menus
 
 Right-click any user or message → hover **Apps ▸ Server Assistant**:
@@ -188,7 +204,7 @@ Right-click any user or message → hover **Apps ▸ Server Assistant**:
 Type `/` anywhere to see autocomplete:
 
 | Slash command | What it does |
-|--------------|--------------|
+|--------------|----------------|
 | `/setup` | Initial config wizard (owner only) |
 | `/settings` | Open customisation hub |
 | `/automod` | Configure auto-moderation |
@@ -220,6 +236,11 @@ Type `/` anywhere to see autocomplete:
 | `/premium` | See your server's premium status + what's included |
 | `/vote` | Vote for the bot (Top.gg + Discord Bot List) |
 | `/invite` | Get the bot's invite URL |
+| `/tickets setup` | Configure ticket system + post panel in a channel |
+| `/tickets close [reason]` | Close the ticket channel you're in |
+| `/tickets panel` | Edit panel title/description or (Premium) custom messages |
+| `/tickets questions` | *(Premium)* Set up to 4 custom intake form questions |
+| `/tickets add @user` | *(Premium)* Add a user to an open ticket |
 
 Most slash command responses are **only visible to you** by default for sensitive operations.
 
@@ -260,6 +281,9 @@ Each role you configure in `/settings → Role Tiers` has **capabilities** (what
 <tr><td>/imagine, /vote, /premium, /invite</td><td class="perm-y">✓</td><td class="perm-y">✓</td><td class="perm-y">✓</td></tr>
 <tr><td>/settings</td><td class="perm-n">—</td><td class="perm-y">✓</td><td class="perm-y">✓</td></tr>
 <tr><td>/setup, /ai-config</td><td class="perm-n">—</td><td class="perm-n">—</td><td class="perm-y">✓</td></tr>
+<tr><td>/tickets setup, /tickets panel, /tickets questions</td><td class="perm-n">—</td><td class="perm-y">✓</td><td class="perm-y">✓</td></tr>
+<tr><td>/tickets close</td><td class="perm-y">✓</td><td class="perm-y">✓</td><td class="perm-y">✓</td></tr>
+<tr><td>/tickets add (Premium)</td><td class="perm-n">—</td><td class="perm-y">✓</td><td class="perm-y">✓</td></tr>
 </tbody>
 </table>
 
@@ -304,5 +328,5 @@ You can customise any of this in `/settings → Role Tiers` — grant Mods `/unb
 ## What's next?
 
 - [FAQ]({{ site.url }}{{ site.baseurl }}/faq/) for common questions
-- [Features]({{ site.url }}{{ site.baseurl }}/features/) for deep dives on AutoMod, verification gate, AI features
+- [Features]({{ site.url }}{{ site.baseurl }}/features/) for deep dives on AutoMod, verification gate, AI features, and Ticket Panels
 - [Setup]({{ site.url }}{{ site.baseurl }}/setup/) if you haven't run `/setup` yet

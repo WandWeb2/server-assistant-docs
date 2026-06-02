@@ -215,6 +215,52 @@ Verbosity: **All / Dangerous-only / Errors-only** (`/settings → Behavior → L
 
 ---
 
+## 🎫 Ticket Panels <span class="tier-badge tier-free">FREE</span> <span class="tier-badge tier-premium">PREMIUM</span>
+
+Give your members a private, structured way to reach staff without leaving your server. An admin posts a panel in any public channel; members click **Create Ticket** to open a dedicated private channel with your support team.
+
+**How the flow works:**
+
+1. Admin runs `/tickets setup` — picks the panel channel, ticket category, support role, and (optionally) a transcript channel.
+2. The bot posts a styled embed with a persistent **Create Ticket** button.
+3. A member clicks the button, fills a short intake form (a Discord modal), and the bot creates a private `ticket-0001-username` channel — visible only to them, the support role, and admins.
+4. The ticket's opening message shows the intake answers, pings the support role, and includes a **Close Ticket** button.
+5. On close, the bot saves a `.txt` transcript and posts it to the transcript channel, then deletes the ticket channel after 5 seconds.
+
+<div class="f-grid">
+  <div class="f-card">
+    <h4>Free tier <span class="tier-badge tier-free">FREE</span></h4>
+    <ul>
+      <li>Panel embed with one intake question (<em>"Briefly describe your issue"</em>)</li>
+      <li>Private ticket channels with support-role and admin access</li>
+      <li>Close button in every ticket + <code>/tickets close [reason]</code></li>
+      <li>Plain-text <code>.txt</code> transcript posted to the transcript channel on close</li>
+      <li>Edit panel title and description via <code>/tickets panel</code></li>
+    </ul>
+  </div>
+  <div class="f-card">
+    <h4>Premium tier <span class="tier-badge tier-premium">PREMIUM</span></h4>
+    <ul>
+      <li><strong>Up to 4 custom intake questions</strong> — <code>/tickets questions q1: … q2: … q3: … q4: …</code></li>
+      <li><strong>Custom welcome message</strong> — set via <code>/tickets panel welcome_message: …</code></li>
+      <li><strong>Custom close message</strong> — set via <code>/tickets panel close_message: …</code></li>
+      <li><strong>Add users mid-ticket</strong> — <code>/tickets add @user</code></li>
+    </ul>
+  </div>
+</div>
+
+| Command | Who can use it |
+|---|---|
+| `/tickets setup` | Admin / Owner |
+| `/tickets close [reason]` | Ticket owner, support-role members, anyone with Manage Channels |
+| `/tickets panel` | Admin / Owner |
+| `/tickets questions` | Admin / Owner *(Premium)* |
+| `/tickets add @user` | Admin / Owner *(Premium)* |
+
+> **Note:** The bot needs **Manage Channels** and **Manage Roles** permissions to create private ticket channels and set per-channel access overwrites. Make sure the bot's role sits above the support role in the Discord role hierarchy.
+
+---
+
 ## 🔐 Privacy & Security <span class="tier-badge tier-free">FREE</span>
 
 Your AI keys and other credentials are **encrypted at rest**. Per-server data is isolated. Removing the bot wipes your server's encrypted secrets immediately; the retention rules for warnings, notes, and audit logs are in the **[Privacy Policy]({{ site.url }}{{ site.baseurl }}/privacy/)**.
