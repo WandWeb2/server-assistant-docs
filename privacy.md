@@ -40,10 +40,12 @@ Retained until manually removed by staff or until the Bot is removed from the se
 
 ### Audit log
 
-A rolling log of recent staff actions across the Bot. Each entry contains:
+A rolling log of recent staff actions across the Bot — including actions taken **directly in Discord** (native bans, kicks, timeouts), not just those routed through the Bot. Each entry contains:
 - Timestamp, acting staff member's user ID and tag
 - Action type and parameters (truncated to 500 characters)
 - Result status and guild ID
+
+This audit trail is **encrypted at rest** with the same master key used for credentials. Server staff cannot read, edit, or erase it — only the Bot can access it. If anyone deletes an entry from a server's visible log channel, the owner is alerted automatically, and the encrypted record remains intact.
 
 ### Scheduled tasks
 
