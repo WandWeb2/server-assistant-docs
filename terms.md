@@ -81,7 +81,7 @@ The Bot offers optional AI features (Concierge, Report Message, Self-trained Aut
 
 **Refunds:** All subscriptions are non-refundable except where required by applicable consumer protection law. If you subscribed to Premium and billing has not yet started (you haven't exhausted your 150K trial tokens), contact us via [`/support`]({{ site.url }}{{ site.baseurl }}/support/) within 7 days of subscribing and we'll issue a full refund.
 
-**Beta-period perk:** Servers active before the v5.0 launch date receive 12 months of free Premium access. This is applied as a subscription credit; no card is required and no automatic billing begins at the end of the perk period.
+**Founding-server perk:** Servers that joined before the v5.0 launch date received 12 months of free Premium access, applied as a subscription credit; no card is required and no automatic billing begins at the end of the perk period. This window has closed for new servers.
 
 **Payment processing** is handled by Stripe. By subscribing, you agree to [Stripe's Terms of Service](https://stripe.com/legal). We never store your card details.
 

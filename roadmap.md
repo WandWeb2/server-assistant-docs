@@ -279,7 +279,7 @@ Where Server Assistant is heading. Priorities shift based on what server owners 
 <div class="roadmap-hero">
   <p>📌 <strong>Dates are deliberately omitted.</strong> Things land when they're ready.</p>
   <p>💚 <strong>Every current feature stays free forever.</strong> The Premium-tier section below adds <em>new</em> capabilities.</p>
-  <p>🎁 <strong>Beta-period perk:</strong> servers that add Server Assistant <em>before the premium tier launches</em> receive <strong>12 months of free premium access</strong> from launch day. Use the bot now → keep premium free for a year. No card, no claim form.</p>
+  <p>🆓 <strong>Free to start:</strong> the full moderation toolkit is free forever, and the AI features come with a 150K-token trial. <a href="{{ site.url }}{{ site.baseurl }}/pricing/">See pricing →</a></p>
 </div>
 
 <div class="expand-all-bar">
@@ -386,7 +386,7 @@ Where Server Assistant is heading. Priorities shift based on what server owners 
 
 <div class="roadmap-section premium">
   🟡 Premium-tier feature backlog
-  <span class="sub">Launches alongside Discord App Directory verification. Current features stay free forever. Beta-period servers (those using Server Assistant before launch) get 12 months of free premium access on launch.</span>
+  <span class="sub">All current features stay free forever. The items below are <em>new</em> capabilities planned for the Premium tier.</span>
 </div>
 
 <div class="premium-grid">

@@ -65,7 +65,7 @@ image: /server-assistant-docs/assets/banner.jpeg
 </div>
 
 <div class="beta-callout">
-  <strong>🎁 Beta-period perk:</strong> servers added <em>before the premium tier launches</em> lock in <strong>12 months of free premium</strong> automatically — no card, no claim form. See the <a href="{{ site.url }}{{ site.baseurl }}/roadmap/">roadmap</a> for what's coming.
+  <strong>🆓 Free to start, free to stay:</strong> the full moderation toolkit is free forever. The AI features come with a <strong>150K-token trial</strong> — and Premium ($7/mo) only bills once your trial runs out, so light-use servers may never pay. See <a href="{{ site.url }}{{ site.baseurl }}/pricing/">Pricing</a>.
 </div>
 
 ---

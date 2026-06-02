@@ -73,9 +73,9 @@ Need extra headroom without changing your plan? **$3 USD buys 300,000 extra toke
 
 ---
 
-## 🎁 Beta-period perk
+## 🎁 Founding servers
 
-Servers active before the v5.0 launch are grandfathered — 12 months of free Premium locked in automatically. No card, no claim form.
+Servers that joined during the beta (before our v5.0 launch) are grandfathered with **12 months of free Premium**, applied automatically — our thanks for being early. This window has now closed for new servers, but the generous free tier and 150K trial above are available to everyone.
 
 ---
 

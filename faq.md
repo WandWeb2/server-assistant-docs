@@ -25,8 +25,8 @@ details.faq .faq-body table { margin: .5rem 0; }
 
 <details class="faq"><summary>Is the bot free?</summary>
 <div class="faq-body">
-<p><strong>Yes — free for everyone, no card required.</strong> Server Assistant has a premium tier (run <code>/premium</code> to see what's in it), but <strong>during the beta, premium is free for every server</strong>. The generous free tier (core moderation, AutoMod, anti-raid, Pulse, Self-trained AutoMod, Health Insurance, AI reports) stays free forever regardless.</p>
-<p><strong>🎁 Beta perk:</strong> servers added <em>before</em> the paid tier launches lock in <strong>12 months of free premium</strong> automatically — no card, no claim form. Adding the bot now is the cheapest way to get a year of premium for free.</p>
+<p><strong>The full moderation toolkit is free forever</strong> — no card, no catch. Core moderation, AutoMod, anti-raid, DM verification, audit logs, warnings, the Customisation Hub, and zero-touch <code>/autopilot</code> setup never cost a thing.</p>
+<p>The <strong>AI features</strong> (Concierge, Report Message, Self-trained AutoMod, Pulse) come with a <strong>150,000-token free trial</strong> to evaluate them. After that, <strong>Premium ($7 USD/mo)</strong> keeps them going — and you're only charged once your trial tokens run out, so light-use servers may never pay. Already have your own AI key? <strong>Premium BYOK is $3 USD/mo</strong>. See <a href="{{ site.url }}{{ site.baseurl }}/pricing/">Pricing</a> for the full breakdown.</p>
 </div>
 </details>
 
