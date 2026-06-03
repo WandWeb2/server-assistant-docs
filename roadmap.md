@@ -210,6 +210,22 @@ details.card .desc {
   letter-spacing: 0.02em;
   vertical-align: middle;
 }
+.ver-pill {
+  display: inline-block;
+  margin-left: 0.4rem;
+  padding: 0.12rem 0.5rem;
+  background: #e8eaf6;
+  border: 1px solid #9fa8da;
+  border-radius: 999px;
+  color: #283593;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  vertical-align: middle;
+  font-variant-numeric: tabular-nums;
+}
+/* Version tag inside a tier column header */
+.premium-tier-col h4 .ver-pill { margin-left: 0.3rem; }
 .vote-arrow {
   position: absolute;
   right: 0.55rem;
@@ -313,6 +329,7 @@ Where Server Assistant is heading. Priorities shift based on what server owners 
      <strong style="color:#1e8449">🟢 Coming up</strong> — committed, building now or next ·
      <strong style="color:#2471a3">🔵 Future</strong> — planned, direction is set, timing isn't ·
      <strong style="color:#7d3c98">🔮 Potential ideas</strong> — exploratory, not yet committed. Your votes move things up.</p>
+  <p>🏷️ <strong>Version tags show release <em>order</em>, not dates.</strong> Each card carries the release it's targeted for — <code>v5.2</code> ships before <code>v5.3</code>, and so on. We're currently on <strong>v5.1</strong>. Targets can shift as priorities change; Potential ideas stay unversioned until they're committed.</p>
 </div>
 
 <div class="expand-all-bar">
@@ -371,12 +388,12 @@ Where Server Assistant is heading. Priorities shift based on what server owners 
     <h3>🟢 Coming up<small>Committed — building now or next</small></h3>
 
     <details class="card">
-      <summary>AutoMod confidence scoring</summary>
+      <summary>AutoMod confidence scoring <span class="ver-pill">🎯 v5.2</span></summary>
       <span class="desc">Every AI-flagged action shows its confidence level. Staff set thresholds for auto-action vs review-required.</span>
     </details>
 
     <details class="card">
-      <summary>Repeat-offender detection<a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/6" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary>
+      <summary>Repeat-offender detection <span class="ver-pill">🎯 v5.2</span><a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/6" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary>
       <span class="desc">Fingerprint behaviour to recognise users coming back on alt accounts after a ban.</span>
     </details>
   </div>
@@ -389,48 +406,48 @@ Where Server Assistant is heading. Priorities shift based on what server owners 
 
 <div class="roadmap-section future">
   🔵 Future
-  <span class="sub">Planned and prioritised — the direction is set, the timing isn't. Two parts: free-tier upgrades (below) and new Premium capabilities (further down). Voting moves things up.</span>
+  <span class="sub">Planned and prioritised — the direction is set, the timing isn't. Free-tier upgrades target the <strong>v5.3–v5.6</strong> series; new Premium capabilities target <strong>v6.x</strong>. Voting reorders what lands first.</span>
 </div>
 
 <div class="future-grid">
 
   <details class="card">
-    <summary>AI rule explainer<a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/7" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary>
+    <summary>AI rule explainer <span class="ver-pill">🎯 v5.3</span><a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/7" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary>
     <span class="desc">AutoMod DMs the user not just which filter matched, but why this rule exists, in plain language.</span>
   </details>
 
   <details class="card">
-    <summary>Smart purge<a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/8" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary>
+    <summary>Smart purge <span class="ver-pill">🎯 v5.3</span><a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/8" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary>
     <span class="desc"><code>purge ai 50</code> deletes the genuinely problematic messages and archives constructive ones to a thread, instead of nuke-everything.</span>
   </details>
 
   <details class="card">
-    <summary>Mod team retrospectives<a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/9" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary>
+    <summary>Mod team retrospectives <span class="ver-pill">🎯 v5.4</span><a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/9" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary>
     <span class="desc">Weekly auto-generated retro embed: case counts, resolution times, notable patterns, items worth discussing.</span>
   </details>
 
   <details class="card">
-    <summary>Cross-server reputation<a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/10" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary>
+    <summary>Cross-server reputation <span class="ver-pill">🎯 v5.5</span><a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/10" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary>
     <span class="desc">Opt-in positive reputation that follows trusted users between partner servers. The inverse of federated banlists.</span>
   </details>
 
   <details class="card">
-    <summary>Community-of-practice sharing<a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/11" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary>
+    <summary>Community-of-practice sharing <span class="ver-pill">🎯 v5.5</span><a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/11" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary>
     <span class="desc"><em>"Servers like yours configure X this way"</em> recommendations based on similar community profiles.</span>
   </details>
 
   <details class="card">
-    <summary>Staff coverage map<a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/12" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary>
+    <summary>Staff coverage map <span class="ver-pill">🎯 v5.4</span><a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/12" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary>
     <span class="desc">Time-zone-aware visualisation of when each mod is typically active; flags coverage gaps for raid-prone hours.</span>
   </details>
 
   <details class="card">
-    <summary>Bot-on-bot detection<a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/13" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary>
+    <summary>Bot-on-bot detection <span class="ver-pill">🎯 v5.6</span><a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/13" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary>
     <span class="desc">Flag suspicious automation pretending to be human — relevant for mass-marketing raids that evade text filters.</span>
   </details>
 
   <details class="card">
-    <summary>Native-action coaching <span class="admin-pill">Recommended</span></summary>
+    <summary>Native-action coaching <span class="admin-pill">Recommended</span><span class="ver-pill">🎯 v5.3</span></summary>
     <span class="desc">When staff moderate from Discord's own UI instead of Server Assistant, the action is still logged for you — and the team gets a gentle tip on how to do the same thing through the bot next time, so your audit trail stays complete without nagging. Already partly live; the coaching layer is the planned next step.</span>
   </details>
 
@@ -448,7 +465,7 @@ Where Server Assistant is heading. Priorities shift based on what server owners 
 <div class="premium-grid">
 
   <div class="premium-tier-col">
-    <h4>Tier A — ship first</h4>
+    <h4>Tier A — ship first <span class="ver-pill">🎯 v6.0</span></h4>
 
     <details class="card"><summary>🌟 Premium Plus ($14/mo) <span class="shipped-pill">Under consideration</span></summary><span class="desc">For high-volume servers that push past the 750K/month Standard Premium cap. Includes: 2M tokens/month, priority Concierge response queue, multi-server bundle (3 servers per subscription), and bonus features as they ship. Pending validation from 50+ Standard Premium subs — highest-voted ideas from that cohort will define the final feature set.</span></details>
 
@@ -460,7 +477,7 @@ Where Server Assistant is heading. Priorities shift based on what server owners 
   </div>
 
   <div class="premium-tier-col">
-    <h4>Tier B — solid additions</h4>
+    <h4>Tier B — solid additions <span class="ver-pill">🎯 v6.1</span></h4>
 
     <details class="card"><summary>Leveling / XP<a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/19" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary><span class="desc">Server-wide XP with level-up roles and a leaderboard. Opt-in per server, opt-out per user.</span></details>
     <details class="card"><summary>Polls<a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/20" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary><span class="desc"><code>/poll</code> with button-based voting and live tally.</span></details>
@@ -468,7 +485,7 @@ Where Server Assistant is heading. Priorities shift based on what server owners 
   </div>
 
   <div class="premium-tier-col">
-    <h4>Tier C — nice-to-have</h4>
+    <h4>Tier C — nice-to-have <span class="ver-pill">🎯 v6.2</span></h4>
 
     <details class="card"><summary>Birthday tracker<a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/22" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary><span class="desc">Opt-in birthdays with auto-DM and channel post on the day.</span></details>
     <details class="card"><summary>Welcome card images<a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/23" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary><span class="desc">Auto-generated PNG welcome for each new joiner.</span></details>
@@ -477,7 +494,7 @@ Where Server Assistant is heading. Priorities shift based on what server owners 
   </div>
 
   <div class="premium-tier-col">
-    <h4>Tier D — power users</h4>
+    <h4>Tier D — power users <span class="ver-pill">🎯 v6.3</span></h4>
 
     <details class="card"><summary>REST / webhook API<a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/26" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary><span class="desc">Read-only endpoints for your guild's bot data (warnings, audit log, activity stats).</span></details>
     <details class="card"><summary>White-label branding<a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/27" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary><span class="desc">Fully replace the bot's identity per-server — your name, your avatar, your colour scheme.</span></details>
