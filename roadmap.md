@@ -315,7 +315,7 @@ Where Server Assistant is heading. Priorities shift based on what server owners 
      <strong style="color:#1e8449">🟢 Coming up</strong> — committed, building now or next ·
      <strong style="color:#2471a3">🔵 Future</strong> — planned, direction is set, timing isn't ·
      <strong style="color:#7d3c98">🔮 Potential ideas</strong> — exploratory, not yet committed. Your votes move things up.</p>
-  <p>🏷️ <strong>Version tags show release <em>order</em>, not dates.</strong> Each card carries the release it's targeted for — <code>v5.4</code> ships before <code>v5.5</code>, and so on. We're currently on <strong>v5.3</strong>. Targets can shift as priorities change; Potential ideas stay unversioned until they're committed.</p>
+  <p>🏷️ <strong>Version tags show release <em>order</em>, not dates.</strong> Each card carries the release it's targeted for — <code>v5.5</code> ships before <code>v5.6</code>, and so on. We're currently on <strong>v5.4</strong>. Targets can shift as priorities change; Potential ideas stay unversioned until they're committed.</p>
 </div>
 
 <div class="expand-all-bar">
@@ -373,19 +373,24 @@ Where Server Assistant is heading. Priorities shift based on what server owners 
       <summary>Baseline admin: <code>/role</code> · <code>/lockdown</code> · <code>/tempban</code> <span class="admin-pill">Baseline admin</span><span class="shipped-pill">✅ Shipped v5.3</span></summary>
       <span class="desc"><strong>Shipped 2026-06-03.</strong> Three plug-and-play admin essentials — all permission-gated and written to your audit trail. <code>/role add|remove</code> changes a member's roles in one command, with guards so staff can't assign a role at or above their own. <code>/lockdown start|end</code> locks every channel at once for raid response and, on end, restores each channel's <em>exact</em> prior permissions — not a best guess. <code>/tempban @user 7d</code> bans for a set time and un-bans automatically, with a timer that survives restarts.</span>
     </details>
+
+    <details class="card">
+      <summary>AutoMod AI second-opinion + repeat-offender detection <span class="shipped-pill">✅ Shipped v5.4</span></summary>
+      <span class="desc"><strong>Shipped 2026-06-03.</strong> Two safety upgrades. <strong>AutoMod AI second-opinion</strong> (Premium, opt-in via <code>/automod → AI Review</code>) scores borderline filter hits and routes low-confidence catches to a one-tap staff review card — <em>Delete &amp; warn</em> / <em>Allow</em> — instead of auto-deleting, cutting false positives. <strong>Repeat-offender detection</strong> (free, opt-in via <code>/altguard</code>) fingerprints banned/kicked users and, on a confident match, auto-bans likely ban-evading alts on join while alerting staff.</span>
+    </details>
   </div>
 
   <div class="lane lane-comingup">
-    <h3>🟢 Coming up<small>Committed — building now or next</small></h3>
+    <h3>🟢 Coming up<small>Next — shaped by your votes</small></h3>
 
     <details class="card">
-      <summary>AutoMod confidence scoring <span class="ver-pill">🎯 v5.4</span></summary>
-      <span class="desc">Every AI-flagged action shows its confidence level. Staff set thresholds for auto-action vs review-required.</span>
+      <summary>AI rule explainer <span class="ver-pill">🎯 v5.5</span><a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/7" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary>
+      <span class="desc">AutoMod DMs the user not just which filter matched, but why this rule exists, in plain language.</span>
     </details>
 
     <details class="card">
-      <summary>Repeat-offender detection <span class="ver-pill">🎯 v5.4</span><a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/6" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary>
-      <span class="desc">Fingerprint behaviour to recognise users coming back on alt accounts after a ban.</span>
+      <summary>Smart purge <span class="ver-pill">🎯 v5.5</span><a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/8" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary>
+      <span class="desc"><code>purge ai 50</code> deletes the genuinely problematic messages and archives constructive ones to a thread, instead of nuke-everything.</span>
     </details>
   </div>
 
@@ -401,16 +406,6 @@ Where Server Assistant is heading. Priorities shift based on what server owners 
 </div>
 
 <div class="future-grid">
-
-  <details class="card">
-    <summary>AI rule explainer <span class="ver-pill">🎯 v5.5</span><a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/7" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary>
-    <span class="desc">AutoMod DMs the user not just which filter matched, but why this rule exists, in plain language.</span>
-  </details>
-
-  <details class="card">
-    <summary>Smart purge <span class="ver-pill">🎯 v5.5</span><a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/8" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary>
-    <span class="desc"><code>purge ai 50</code> deletes the genuinely problematic messages and archives constructive ones to a thread, instead of nuke-everything.</span>
-  </details>
 
   <details class="card">
     <summary>Mod team retrospectives <span class="ver-pill">🎯 v5.6</span><a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/9" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary>

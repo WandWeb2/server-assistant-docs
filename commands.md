@@ -226,6 +226,7 @@ Type `/` anywhere to see autocomplete:
 | `/lock [channel]` / `/unlock [channel]` | Lock / unlock a channel |
 | `/lockdown start` / `/lockdown end` | Lock every channel at once, then restore exact prior permissions |
 | `/role add` / `/role remove <user> <role>` | Add or remove a role from a member |
+| `/altguard on` / `off` / `status` | Repeat-offender detection — auto-flag/ban likely ban-evading alts on join |
 | `/nick <user> [nickname]` | Change / reset a nickname |
 | `/warnings <user>` | View warnings |
 | `/note <user> <text>` | Add note |
@@ -279,6 +280,7 @@ Each role you configure in `/settings → Role Tiers` has **capabilities** (what
 <tr><td>/kick, /ban, /softban, /tempban</td><td class="perm-y">✓</td><td class="perm-y">✓</td><td class="perm-y">✓</td></tr>
 <tr><td>/unban</td><td class="perm-n">—</td><td class="perm-y">✓</td><td class="perm-y">✓</td></tr>
 <tr><td>/role <em>(or Manage Roles)</em></td><td class="perm-n">—</td><td class="perm-y">✓</td><td class="perm-y">✓</td></tr>
+<tr><td>/altguard <em>(Manage Server)</em></td><td class="perm-n">—</td><td class="perm-y">✓</td><td class="perm-y">✓</td></tr>
 <tr><td><strong>/purge</strong> <em>(needs approval)</em></td><td class="perm-n">—</td><td class="perm-w">⚠ approval</td><td class="perm-y">✓ direct</td></tr>
 <tr><td>/slowmode, /lock, /unlock, /lockdown, /nick</td><td class="perm-y">✓</td><td class="perm-y">✓</td><td class="perm-y">✓</td></tr>
 <tr><td>/onboarding, /snippets, /automod, /schedule</td><td class="perm-n">—</td><td class="perm-y">✓</td><td class="perm-y">✓</td></tr>

@@ -111,6 +111,14 @@ A set of AI features that watch your server's *health and behaviour* — **advis
     <p><code>/lockdown start</code> locks every <strong>text and forum channel</strong> in one shot — including their threads and posts, so a raid can't just move into a thread. <code>/lockdown end</code> restores each channel to its <strong>exact prior permissions</strong>, not a best guess. Reuses your existing lock permission, so there's nothing new to configure.</p>
   </div>
   <div class="f-card">
+    <h4>🕵️ Repeat-offender detection</h4>
+    <p>Enable with <code>/altguard on</code>. Fingerprints the users you ban or kick, then checks every new joiner — a fresh account reusing a banned user's avatar or near-identical name is <strong>auto-banned and reported to staff</strong>; weaker matches are flagged for review. Soft-bans are excluded.</p>
+  </div>
+  <div class="f-card">
+    <h4>🤔 AutoMod AI second-opinion <span class="tier-badge tier-premium">PREMIUM</span></h4>
+    <p>Optional in <code>/automod → AI Review</code>. Borderline filter hits get an AI confidence check first — confident ones act, low-confidence ones go to a one-tap staff review card (<em>Delete &amp; warn</em> / <em>Allow</em>) instead of an auto-delete. Cuts false positives; only borderline messages cost tokens.</p>
+  </div>
+  <div class="f-card">
     <h4>↩️ 24-hour undo</h4>
     <p>Reverses your most recent ban, mute, channel deletion (incl. permissions), or nickname change. Note: deleted message contents can't be recovered — that's a Discord limit.</p>
   </div>
