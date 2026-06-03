@@ -108,7 +108,7 @@ A set of AI features that watch your server's *health and behaviour* — **advis
   </div>
   <div class="f-card">
     <h4>🚨 Server-wide lockdown</h4>
-    <p><code>/lockdown start</code> locks every channel in one shot for raid response; <code>/lockdown end</code> restores each channel to its <strong>exact prior permissions</strong> — not a best guess. Reuses your existing lock permission, so there's nothing new to configure.</p>
+    <p><code>/lockdown start</code> locks every <strong>text and forum channel</strong> in one shot — including their threads and posts, so a raid can't just move into a thread. <code>/lockdown end</code> restores each channel to its <strong>exact prior permissions</strong>, not a best guess. Reuses your existing lock permission, so there's nothing new to configure.</p>
   </div>
   <div class="f-card">
     <h4>↩️ 24-hour undo</h4>
