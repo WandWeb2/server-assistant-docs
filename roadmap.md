@@ -49,6 +49,8 @@ description: Server Assistant's product roadmap — what's in development, what'
   text-transform: uppercase;
   color: #fff;
 }
+.roadmap-section.comingup { background: #229954; }
+.roadmap-section.future   { background: #2471a3; }
 .roadmap-section.premium  { background: #d4ac0d; }
 .roadmap-section.longterm { background: #7d3c98; }
 .roadmap-section .sub {
@@ -80,14 +82,14 @@ description: Server Assistant's product roadmap — what's in development, what'
   gap: 0.5rem;
 }
 
-/* ── Long-term: 3-column gallery ──────────────────────────────────────────── */
-.longterm-grid {
+/* ── Long-term + Future free-tier: 3-column gallery ───────────────────────── */
+.longterm-grid, .future-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1rem;
 }
-@media (max-width: 900px) { .longterm-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 560px) { .longterm-grid { grid-template-columns: 1fr; } }
+@media (max-width: 900px) { .longterm-grid, .future-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .longterm-grid, .future-grid { grid-template-columns: 1fr; } }
 
 /* ── Lane shared styles ───────────────────────────────────────────────────── */
 .lane {
@@ -100,6 +102,7 @@ description: Server Assistant's product roadmap — what's in development, what'
   gap: 0.5rem;
 }
 .lane-now      { border-color: #2ecc71; }
+.lane-comingup { border-color: #229954; }
 .lane-planned  { border-color: #3498db; }
 
 .lane h3 {
@@ -176,6 +179,32 @@ details.card .desc {
   border: 1px solid #66bb6a;
   border-radius: 999px;
   color: #1b5e20;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  vertical-align: middle;
+}
+.admin-pill {
+  display: inline-block;
+  margin-left: 0.4rem;
+  padding: 0.12rem 0.5rem;
+  background: #d6eaf8;
+  border: 1px solid #5dade2;
+  border-radius: 999px;
+  color: #1a5276;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  vertical-align: middle;
+}
+.building-pill {
+  display: inline-block;
+  margin-left: 0.4rem;
+  padding: 0.12rem 0.5rem;
+  background: #fcf3cf;
+  border: 1px solid #f4d03f;
+  border-radius: 999px;
+  color: #7d6608;
   font-size: 0.7rem;
   font-weight: 700;
   letter-spacing: 0.02em;
@@ -280,6 +309,10 @@ Where Server Assistant is heading. Priorities shift based on what server owners 
   <p>📌 <strong>Dates are deliberately omitted.</strong> Things land when they're ready.</p>
   <p>💚 <strong>Every current feature stays free forever.</strong> The Premium-tier section below adds <em>new</em> capabilities.</p>
   <p>🆓 <strong>Free to start:</strong> the full moderation toolkit is free forever, and the AI features come with a 150K-token trial. <a href="{{ site.url }}{{ site.baseurl }}/pricing/">See pricing →</a></p>
+  <p>🧭 <strong>Three buckets, so you always know where things stand:</strong>
+     <strong style="color:#1e8449">🟢 Coming up</strong> — committed, building now or next ·
+     <strong style="color:#2471a3">🔵 Future</strong> — planned, direction is set, timing isn't ·
+     <strong style="color:#7d3c98">🔮 Potential ideas</strong> — exploratory, not yet committed. Your votes move things up.</p>
 </div>
 
 <div class="expand-all-bar">
@@ -294,7 +327,7 @@ Where Server Assistant is heading. Priorities shift based on what server owners 
 <div class="roadmap-top">
 
   <div class="lane lane-now">
-    <h3>✅ Shipped<small>v4.0 — the AI-moderation update is live 🚀</small></h3>
+    <h3>✅ Shipped<small>Live in production today 🚀</small></h3>
 
     <details class="card">
       <summary>Pulse <span class="shipped-pill">✅ Shipped v3.5</span><a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/1" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary>
@@ -329,8 +362,23 @@ Where Server Assistant is heading. Priorities shift based on what server owners 
     </details>
   </div>
 
-  <div class="lane lane-planned">
-    <h3>🔵 Planned<small>Free-tier features after v4.0</small></h3>
+  <div class="lane lane-comingup">
+    <h3>🟢 Coming up<small>Committed — building now or next</small></h3>
+
+    <details class="card">
+      <summary>Baseline admin: <code>/role</code> <span class="admin-pill">Baseline admin</span><span class="building-pill">Building</span></summary>
+      <span class="desc">Give or take a role from a member in one command — no fiddling with Discord's role menus. <code>/role add @user @role</code> / <code>/role remove @user @role</code>, fully permission-gated and written to your audit trail. Closes a baseline-admin gap so staff never need to leave Server Assistant for routine role changes.</span>
+    </details>
+
+    <details class="card">
+      <summary>Baseline admin: <code>/lockdown</code> <span class="admin-pill">Baseline admin</span><span class="building-pill">Building</span></summary>
+      <span class="desc">One command to lock the whole server (or a channel set) during a raid or incident, and <code>/lockdown end</code> to lift it — restoring the exact prior permissions, not a best-guess. Pairs with raid alerts so you can react in seconds rather than touching every channel by hand.</span>
+    </details>
+
+    <details class="card">
+      <summary>Baseline admin: <code>/tempban</code> <span class="admin-pill">Baseline admin</span><span class="building-pill">Building</span></summary>
+      <span class="desc">Timed bans with automatic un-ban — <code>/tempban @user 7d reason</code>. The cooldown-then-restore flow most servers currently fake with reminders and manual un-bans, done properly and logged. Complements the existing <code>/ban</code>, <code>/softban</code> and <code>/mute</code> ladder.</span>
+    </details>
 
     <details class="card">
       <summary>AutoMod confidence scoring</summary>
@@ -341,52 +389,70 @@ Where Server Assistant is heading. Priorities shift based on what server owners 
       <summary>Repeat-offender detection<a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/6" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary>
       <span class="desc">Fingerprint behaviour to recognise users coming back on alt accounts after a ban.</span>
     </details>
-
-    <details class="card">
-      <summary>AI rule explainer<a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/7" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary>
-      <span class="desc">AutoMod DMs the user not just which filter matched, but why this rule exists, in plain language.</span>
-    </details>
-
-    <details class="card">
-      <summary>Smart purge<a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/8" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary>
-      <span class="desc"><code>purge ai 50</code> deletes the genuinely problematic messages and archives constructive ones to a thread, instead of nuke-everything.</span>
-    </details>
-
-    <details class="card">
-      <summary>Mod team retrospectives<a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/9" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary>
-      <span class="desc">Weekly auto-generated retro embed: case counts, resolution times, notable patterns, items worth discussing.</span>
-    </details>
-
-    <details class="card">
-      <summary>Cross-server reputation<a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/10" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary>
-      <span class="desc">Opt-in positive reputation that follows trusted users between partner servers. The inverse of federated banlists.</span>
-    </details>
-
-    <details class="card">
-      <summary>Community-of-practice sharing<a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/11" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary>
-      <span class="desc"><em>"Servers like yours configure X this way"</em> recommendations based on similar community profiles.</span>
-    </details>
-
-    <details class="card">
-      <summary>Staff coverage map<a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/12" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary>
-      <span class="desc">Time-zone-aware visualisation of when each mod is typically active; flags coverage gaps for raid-prone hours.</span>
-    </details>
-
-    <details class="card">
-      <summary>Bot-on-bot detection<a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/13" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary>
-      <span class="desc">Flag suspicious automation pretending to be human — relevant for mass-marketing raids that evade text filters.</span>
-    </details>
   </div>
 
 </div>
 
 <!-- ════════════════════════════════════════════════════════════════════════
-     PREMIUM-TIER — full width, 4 sub-columns by tier
+     FUTURE — planned, direction set, timing isn't
+     ════════════════════════════════════════════════════════════════════════ -->
+
+<div class="roadmap-section future">
+  🔵 Future
+  <span class="sub">Planned and prioritised — the direction is set, the timing isn't. Two parts: free-tier upgrades (below) and new Premium capabilities (further down). Voting moves things up.</span>
+</div>
+
+<div class="future-grid">
+
+  <details class="card">
+    <summary>AI rule explainer<a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/7" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary>
+    <span class="desc">AutoMod DMs the user not just which filter matched, but why this rule exists, in plain language.</span>
+  </details>
+
+  <details class="card">
+    <summary>Smart purge<a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/8" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary>
+    <span class="desc"><code>purge ai 50</code> deletes the genuinely problematic messages and archives constructive ones to a thread, instead of nuke-everything.</span>
+  </details>
+
+  <details class="card">
+    <summary>Mod team retrospectives<a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/9" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary>
+    <span class="desc">Weekly auto-generated retro embed: case counts, resolution times, notable patterns, items worth discussing.</span>
+  </details>
+
+  <details class="card">
+    <summary>Cross-server reputation<a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/10" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary>
+    <span class="desc">Opt-in positive reputation that follows trusted users between partner servers. The inverse of federated banlists.</span>
+  </details>
+
+  <details class="card">
+    <summary>Community-of-practice sharing<a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/11" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary>
+    <span class="desc"><em>"Servers like yours configure X this way"</em> recommendations based on similar community profiles.</span>
+  </details>
+
+  <details class="card">
+    <summary>Staff coverage map<a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/12" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary>
+    <span class="desc">Time-zone-aware visualisation of when each mod is typically active; flags coverage gaps for raid-prone hours.</span>
+  </details>
+
+  <details class="card">
+    <summary>Bot-on-bot detection<a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/13" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary>
+    <span class="desc">Flag suspicious automation pretending to be human — relevant for mass-marketing raids that evade text filters.</span>
+  </details>
+
+  <details class="card">
+    <summary>Native-action coaching <span class="admin-pill">Recommended</span></summary>
+    <span class="desc">When staff moderate from Discord's own UI instead of Server Assistant, the action is still logged for you — and the team gets a gentle tip on how to do the same thing through the bot next time, so your audit trail stays complete without nagging. Already partly live; the coaching layer is the planned next step.</span>
+  </details>
+
+</div>
+
+<!-- ════════════════════════════════════════════════════════════════════════
+     PREMIUM-TIER — part of Future, full width, 4 sub-columns by tier
      ════════════════════════════════════════════════════════════════════════ -->
 
 <div class="roadmap-section premium">
-  🟡 Premium-tier feature backlog
-  <span class="sub">All current features stay free forever. The items below are <em>new</em> capabilities planned for the Premium tier.</span>
+  🟡 Premium-tier — new paid capabilities
+  <span class="sub">Part of <strong>Future</strong>. All current features stay free forever; the items below are <em>new</em> capabilities planned for Premium subscribers.</span>
 </div>
 
 <div class="premium-grid">
@@ -435,8 +501,8 @@ Where Server Assistant is heading. Priorities shift based on what server owners 
      ════════════════════════════════════════════════════════════════════════ -->
 
 <div class="roadmap-section longterm">
-  🔮 Long-term explorations
-  <span class="sub">Bigger conceptual swings. Interesting if v4.0 validates the AI-moderation direction; not yet committed to any specific release.</span>
+  🔮 Potential ideas
+  <span class="sub">Bigger conceptual swings we're genuinely interested in — including <strong>voice-channel moderation</strong>, the industry's biggest blind spot. Exploratory, not committed to any release. The ones you vote up are the ones we investigate first.</span>
 </div>
 
 <div class="longterm-grid">
