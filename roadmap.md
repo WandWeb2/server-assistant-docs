@@ -310,8 +310,7 @@ Where Server Assistant is heading. Priorities shift based on what server owners 
 
 <div class="roadmap-hero">
   <p>📌 <strong>Dates are deliberately omitted.</strong> Things land when they're ready.</p>
-  <p>💚 <strong>Every current feature stays free forever.</strong> The Premium-tier section below adds <em>new</em> capabilities.</p>
-  <p>🆓 <strong>Free to start:</strong> the full moderation toolkit is free forever, and the AI features come with a 150K-token trial. <a href="{{ site.url }}{{ site.baseurl }}/pricing/">See pricing →</a></p>
+  <p>💚 <strong>Core moderation is free forever.</strong> AI features are metered with a 150K-token trial; Premium adds a larger monthly allowance plus extra capabilities. <a href="{{ site.url }}{{ site.baseurl }}/pricing/">See pricing →</a></p>
   <p>🧭 <strong>Three buckets, so you always know where things stand:</strong>
      <strong style="color:#1e8449">🟢 Coming up</strong> — committed, building now or next ·
      <strong style="color:#2471a3">🔵 Future</strong> — planned, direction is set, timing isn't ·
@@ -451,7 +450,7 @@ Where Server Assistant is heading. Priorities shift based on what server owners 
 
 <div class="roadmap-section premium">
   🟡 Premium-tier — new paid capabilities
-  <span class="sub">Part of <strong>Future</strong>. All current features stay free forever; the items below are <em>new</em> capabilities planned for Premium subscribers.</span>
+  <span class="sub">Part of <strong>Future</strong>. Core moderation stays free forever — the items below are <em>new</em> capabilities planned for the Premium tier, alongside the larger monthly AI-token allowance Premium already includes.</span>
 </div>
 
 <div class="premium-grid">
