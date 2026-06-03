@@ -95,7 +95,7 @@ You control all of this via the `/privacy` panel. AutoMod and anti-raid are requ
 | **AutoMod** | Message content, checked against your filters | Always on |
 | **Anti-raid** | Join events only (no message content) | Always on |
 | **Natural-language commands** | Messages in your staff-chat channel | Off (new servers) |
-| **Report Message** | ~20 messages around the one you right-click | Off (new servers) |
+| **Message Report** | ~20 messages around the one you right-click | Off (new servers) |
 | **🩺 Pulse** | Aggregate counts only — no message content stored | On |
 | **🧠 Self-trained AutoMod** | Messages your staff delete or report | Off |
 | **🩹 Bot Health Insurance** | The bot's own action counts | On |
@@ -105,9 +105,9 @@ You control all of this via the `/privacy` panel. AutoMod and anti-raid are requ
 
 ## Third-party AI providers
 
-AI features transmit data to third-party providers **only when explicitly invoked by staff** (e.g., right-click Report Message, `/imagine`, Self-trained AutoMod, Concierge). The default shared-key provider is:
+AI features transmit data to third-party providers **only when explicitly invoked by staff** (e.g., right-click Message Report, `/imagine`, Self-trained AutoMod, Concierge). The default shared-key provider is:
 
-- **Anthropic** (https://anthropic.com) — powers Concierge, Report Message context summaries, and Self-trained AutoMod. Approximately 20 messages of surrounding context are sent for Report Message; only your question is sent for Concierge sessions. No user IDs or metadata are transmitted.
+- **Anthropic** (https://anthropic.com) — powers Concierge, Message Report context summaries, and Self-trained AutoMod. Approximately 20 messages of surrounding context are sent for Message Report; only your question is sent for Concierge sessions. No user IDs or metadata are transmitted.
 
 If you've configured your own key via `/ai-config`:
 - **xAI Grok** (https://x.ai) — same scope as above when selected

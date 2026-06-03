@@ -193,7 +193,7 @@ Right-click any user or message → hover **Apps ▸ Server Assistant**:
 - ⚠️ **View Warnings** — full warning history
 
 ### On a message
-- 📋 **Report Message** — AI reads ~20 surrounding messages and produces an objective 3–5 bullet summary covering tone, possible rule-breaking, escalation patterns, and recommended action
+- 📋 **Message Report** — AI reads ~20 surrounding messages and produces an objective 3–5 bullet summary covering tone, possible rule-breaking, escalation patterns, and recommended action
 
 > 💡 If "Apps ▸" looks empty, hard-refresh Discord (Ctrl+R) to pull the latest commands.
 

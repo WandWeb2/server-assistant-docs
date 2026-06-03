@@ -41,7 +41,7 @@ These read messages or generate content:
 |---|---|
 | **🩺 Pulse** daily digest | ~3K tokens per day |
 | **🧠 Self-trained AutoMod** rule proposal | ~12K tokens per learning round |
-| **📋 Report Message** AI summary | ~5K tokens per right-click |
+| **📋 Message Report** AI summary | ~5K tokens per right-click |
 | **🩹 Bot Health Insurance** check-in | ~3K every 14 days |
 | **💬 Concierge chat** *(Premium)* | ~30–50K per conversation |
 | **🖼️ `/imagine`** with AI provider | ~2K per image |
@@ -102,7 +102,7 @@ No — not immediately. We capture your card at signup but only charge it when y
 AI features pause. Core moderation (AutoMod, anti-raid, warnings, slash commands, audit log, Ticket Panels) keeps working with no change. You'll get a DM — if you're subscribed to Premium, billing starts automatically. If you're on the free tier, you can subscribe or buy a top-up to continue.
 </details>
 
-<details><summary>What if a single user spams Concierge or Report Message?</summary>
+<details><summary>What if a single user spams Concierge or Message Report?</summary>
 Each high-variance feature has an invisible 6-hour rolling cap per user — generous enough that normal use never hits it, tight enough to prevent abuse from draining your allowance.
 </details>
 

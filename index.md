@@ -152,7 +152,7 @@ Running a Discord community means staying ahead of raids, keeping staff accounta
     <h3>🎨 AI Features</h3>
     <ul>
       <li><code>/imagine</code> — image gen (free Pollinations fallback)</li>
-      <li>Right-click "Report Message" for an AI summary</li>
+      <li>Right-click "Message Report" for an AI summary</li>
       <li>BYO xAI/OpenAI key, or use the host's</li>
     </ul>
   </div>
@@ -195,7 +195,7 @@ Running a Discord community means staying ahead of raids, keeping staff accounta
   </div>
   <div class="way">
     <h3>🖱️ Right-click menus</h3>
-    <p>Apps ▸ <strong>View Info</strong> / <strong>View Warnings</strong> on a user, or <strong>Report Message</strong> on a message for an AI context summary.</p>
+    <p>Apps ▸ <strong>View Info</strong> / <strong>View Warnings</strong> on a user, or <strong>Message Report</strong> on a message for an AI context summary.</p>
   </div>
 </div>
 
@@ -230,8 +230,8 @@ Running a Discord community means staying ahead of raids, keeping staff accounta
 
 <div class="pair">
   <figure>
-    <img src="{{ '/assets/screenshots/report-menu.webp' | relative_url }}" alt="Right-click Apps menu showing Report Message" loading="lazy">
-    <figcaption><strong>Right-click any message</strong> → Apps ▸ Server Assistant ▸ Report Message.</figcaption>
+    <img src="{{ '/assets/screenshots/report-menu.webp' | relative_url }}" alt="Right-click Apps menu showing Message Report" loading="lazy">
+    <figcaption><strong>Right-click any message</strong> → Apps ▸ Server Assistant ▸ Message Report.</figcaption>
   </figure>
   <figure>
     <img src="{{ '/assets/screenshots/report-result.webp' | relative_url }}" alt="AI Moderation Report embed" loading="lazy">

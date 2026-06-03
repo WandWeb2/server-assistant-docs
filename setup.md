@@ -74,7 +74,7 @@ Adding **Server Assistant** takes about 60 seconds. The wizard does the rest.
 - **`/timezone`** — set yours (used by `/schedule` and `purge since …`)
 - Tell your staff to type **`help`** in staff-chat for the full command list
 - Right-click a **user** → **Apps ▸ Server Assistant** → **View Info / View Warnings**
-- Right-click a **message** → **Apps ▸ Server Assistant** → **Report Message** for an AI context summary
+- Right-click a **message** → **Apps ▸ Server Assistant** → **Message Report** for an AI context summary
 
 ---
 

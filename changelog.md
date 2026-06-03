@@ -11,6 +11,20 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 
 ---
 
+## v5.5 — Ban reasons & one-reply appeals
+
+Bans are no longer a silent door slam — and an appeal is one reply away.
+
+### Added
+- **📩 Ban-reason DMs + appeals.** When anyone is banned — manually, by `/tempban`, by AutoMod, or by a native Discord ban — Server Assistant DMs them **why**, and invites them to send **one reply** to appeal. (Soft-bans are excluded, since they're meant to let people rejoin.)
+- **One-reply appeal tickets.** The user's single reply opens an **appeal ticket** in your log/staff channel with three buttons: **✅ Unban** (lifts the ban and DMs the user), **🚫 Deny** (DMs the user the decision), and **🔎 Research** — which runs **Message Report** on the user's last message so you can judge the context before deciding. Buttons survive restarts.
+- On by default; turn it off any time if your server doesn't want appeals.
+
+### Changed
+- **Report Message is now "Message Report."** Same right-click AI context summary — clearer name. It also powers the new appeal **Research** button.
+
+---
+
 ## v5.4 — Smarter AutoMod & ban-evasion defence
 
 Two safety upgrades — one that cuts false positives, one that catches returning troublemakers.
@@ -78,7 +92,7 @@ The biggest release yet. Premium ships with an honest billing model — subscrib
 
 ### Changed
 - All AI features now route through Anthropic Claude with prompt caching and per-guild token accounting. BYOK preserved for users with their own keys.
-- 6-hour rolling caps on high-variance features (Concierge, Report Message, `/imagine`, Self-trained rounds) — invisible to normal use, prevents any single user from draining the server's allowance.
+- 6-hour rolling caps on high-variance features (Concierge, Message Report, `/imagine`, Self-trained rounds) — invisible to normal use, prevents any single user from draining the server's allowance.
 - Bot framing updated to reflect what it actually is: **privacy-first moderation with optional AI enhancement.**
 
 ### Coming next
@@ -148,7 +162,7 @@ Every one gives your team x-ray vision and leaves the decisions to you.
 
 ### Added
 - **🧠 Self-trained AutoMod** (`/automod → Self-training`). The bot learns from *your* moderators, not just preset filters:
-  - **Watches** the content of messages your staff delete or flag via Report Message (opt-in, stored locally for 30 days — message text only, no identities, nothing leaves the host)
+  - **Watches** the content of messages your staff delete or flag via Message Report (opt-in, stored locally for 30 days — message text only, no identities, nothing leaves the host)
   - **Learns** on demand — once it has enough samples, the AI clusters the patterns and proposes server-specific AutoMod rules, each with a rationale and the examples it would catch
   - **You approve** each rule one at a time; accepted rules run through the same backtracking-safety guard as hand-written filters. **Nothing is ever auto-enforced** — they're suggestions until you accept them
   - Off by default; toggle on and clear the learning log any time
@@ -230,7 +244,7 @@ Every one gives your team x-ray vision and leaves the decisions to you.
 
 ### Added
 - **First-steps guide** — after `/setup` completes, the bot auto-posts a 5-message walkthrough to your staff-chat covering core commands, slash commands, right-click menus, and `/settings`.
-- **Right-click discoverability** — `/help`, the text `help` command, and the welcome DM now all surface the **Apps ▸ Server Assistant** context menus (View Info, View Warnings, Report Message).
+- **Right-click discoverability** — `/help`, the text `help` command, and the welcome DM now all surface the **Apps ▸ Server Assistant** context menus (View Info, View Warnings, Message Report).
 - **`/vote`** — quick link to vote for the bot on Top.gg.
 - **Public documentation site** — full Setup, Commands, Features, FAQ, Support, Privacy, Terms, and this Changelog page.
 

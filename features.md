@@ -119,6 +119,10 @@ A set of AI features that watch your server's *health and behaviour* — **advis
     <p>Optional in <code>/automod → AI Review</code>. Borderline filter hits get an AI confidence check first — confident ones act, low-confidence ones go to a one-tap staff review card (<em>Delete &amp; warn</em> / <em>Allow</em>) instead of an auto-delete. Cuts false positives; only borderline messages cost tokens.</p>
   </div>
   <div class="f-card">
+    <h4>📩 Ban reasons &amp; appeals</h4>
+    <p>Every ban (manual, <code>/tempban</code>, AutoMod, or native) DMs the user <strong>why</strong> and invites <strong>one reply</strong> to appeal. The reply opens a staff appeal ticket with <strong>Unban</strong> / <strong>Deny</strong> / <strong>Research</strong> (runs Message Report on their last message). Soft-bans excluded; on by default.</p>
+  </div>
+  <div class="f-card">
     <h4>↩️ 24-hour undo</h4>
     <p>Reverses your most recent ban, mute, channel deletion (incl. permissions), or nickname change. Note: deleted message contents can't be recovered — that's a Discord limit.</p>
   </div>
@@ -177,8 +181,8 @@ Optional anti-raid measure (`/settings → Verification`). New members are DM'd 
     <p>Type <code>/imagine &lt;prompt&gt;</code>, get a 1024×1024 image. Uses your own AI key if you've added one in <code>/ai-config</code>; otherwise falls back to a free generator. 30s cooldown between images per server.</p>
   </div>
   <div class="f-card">
-    <h4>📋 Report Message — context summaries</h4>
-    <p>Right-click any message → <strong>Apps ▸ Report Message</strong>. The bot reads ~20 surrounding messages and produces a 3–5 bullet summary: tone, possible rule-breaking, escalation pattern, recommended action. Only you see it. <strong>The bot never acts on these — staff always decide.</strong></p>
+    <h4>📋 Message Report — context summaries</h4>
+    <p>Right-click any message → <strong>Apps ▸ Message Report</strong>. The bot reads ~20 surrounding messages and produces a 3–5 bullet summary: tone, possible rule-breaking, escalation pattern, recommended action. Only you see it. <strong>The bot never acts on these — staff always decide.</strong></p>
   </div>
 </div>
 
