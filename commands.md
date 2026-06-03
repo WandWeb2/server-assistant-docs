@@ -239,7 +239,7 @@ Type `/` anywhere to see autocomplete:
 | `/premium` | See your server's premium status + what's included |
 | `/vote` | Vote for the bot (Top.gg + Discord Bot List) |
 | `/invite` | Get the bot's invite URL |
-| `/tickets setup` | Configure ticket system + post panel in a channel |
+| `/tickets setup [channel] [support_role] [create_channel]` | Post the ticket panel. Pass `create_channel` to have the bot make a properly-locked channel for you |
 | `/tickets close [reason]` | Close the ticket channel you're in |
 | `/tickets panel` | Edit panel title/description or (Premium) custom messages |
 | `/tickets questions` | *(Premium)* Set up to 4 custom intake form questions |
