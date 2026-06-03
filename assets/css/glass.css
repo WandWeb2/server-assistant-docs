@@ -48,6 +48,25 @@ body {
 .site-nav .page-link { color: #3a4150 !important; font-weight: 500; }
 .site-nav .page-link:hover { color: var(--accent) !important; }
 
+/* Header bar spans the same width as page content. Minima's default wrapper is
+   only 800px, which is too narrow for the title + 8 nav links — so the nav was
+   dropping onto a second line even on wide screens. Widening + a flex row keeps
+   the title left and the nav right on one tidy line; Minima's mobile hamburger
+   (≤600px) is untouched. */
+.site-header .wrapper { max-width: 1280px; }
+@media screen and (min-width: 601px) {
+  .site-header .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  .site-title { float: none !important; margin: 0 !important; white-space: nowrap; }
+  .site-nav { float: none !important; line-height: normal; }
+  .site-nav .trigger { display: flex; flex-wrap: wrap; justify-content: flex-end; align-items: center; gap: 0.35rem 1.15rem; }
+  .site-nav .page-link:not(:last-child) { margin-right: 0 !important; }
+}
+
 /* ── Main content: frosted card ────────────────────────────────────────────── */
 .page-content {
   padding-top: 2rem;
