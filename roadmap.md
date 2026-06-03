@@ -360,25 +360,15 @@ Where Server Assistant is heading. Priorities shift based on what server owners 
         </ul>
       </details>
     </details>
+
+    <details class="card">
+      <summary>Baseline admin: <code>/role</code> · <code>/lockdown</code> · <code>/tempban</code> <span class="admin-pill">Baseline admin</span><span class="shipped-pill">✅ Shipped v5.1</span></summary>
+      <span class="desc"><strong>Shipped 2026-06-03.</strong> Three plug-and-play admin essentials — all permission-gated and written to your audit trail. <code>/role add|remove</code> changes a member's roles in one command, with guards so staff can't assign a role at or above their own. <code>/lockdown start|end</code> locks every channel at once for raid response and, on end, restores each channel's <em>exact</em> prior permissions — not a best guess. <code>/tempban @user 7d</code> bans for a set time and un-bans automatically, with a timer that survives restarts.</span>
+    </details>
   </div>
 
   <div class="lane lane-comingup">
     <h3>🟢 Coming up<small>Committed — building now or next</small></h3>
-
-    <details class="card">
-      <summary>Baseline admin: <code>/role</code> <span class="admin-pill">Baseline admin</span><span class="building-pill">Building</span></summary>
-      <span class="desc">Give or take a role from a member in one command — no fiddling with Discord's role menus. <code>/role add @user @role</code> / <code>/role remove @user @role</code>, fully permission-gated and written to your audit trail. Closes a baseline-admin gap so staff never need to leave Server Assistant for routine role changes.</span>
-    </details>
-
-    <details class="card">
-      <summary>Baseline admin: <code>/lockdown</code> <span class="admin-pill">Baseline admin</span><span class="building-pill">Building</span></summary>
-      <span class="desc">One command to lock the whole server (or a channel set) during a raid or incident, and <code>/lockdown end</code> to lift it — restoring the exact prior permissions, not a best-guess. Pairs with raid alerts so you can react in seconds rather than touching every channel by hand.</span>
-    </details>
-
-    <details class="card">
-      <summary>Baseline admin: <code>/tempban</code> <span class="admin-pill">Baseline admin</span><span class="building-pill">Building</span></summary>
-      <span class="desc">Timed bans with automatic un-ban — <code>/tempban @user 7d reason</code>. The cooldown-then-restore flow most servers currently fake with reminders and manual un-bans, done properly and logged. Complements the existing <code>/ban</code>, <code>/softban</code> and <code>/mute</code> ladder.</span>
-    </details>
 
     <details class="card">
       <summary>AutoMod confidence scoring</summary>

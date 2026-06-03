@@ -99,6 +99,18 @@ A set of AI features that watch your server's *health and behaviour* — **advis
     <p><code>/softban</code> ban-then-unban to sweep messages without permanent removal. <code>/purge 50</code> or text <code>purge since 1pm</code> (your timezone; capped at Discord's 14-day limit).</p>
   </div>
   <div class="f-card">
+    <h4>⏲️ Timed bans</h4>
+    <p><code>/tempban @user 7d reason</code> bans for a set time — <code>30m</code>, <code>2h</code>, <code>7d</code>, <code>1w</code>, even <code>1d12h</code> (1 min–28 days) — then <strong>un-bans automatically</strong>. The timer survives restarts, and the lift is logged to your audit trail.</p>
+  </div>
+  <div class="f-card">
+    <h4>🎭 One-command roles</h4>
+    <p><code>/role add @user @role</code> / <code>/role remove @user @role</code> — no digging through Discord's menus. Guards against privilege escalation: you can only assign roles below your own, and managed/integration roles are off-limits.</p>
+  </div>
+  <div class="f-card">
+    <h4>🚨 Server-wide lockdown</h4>
+    <p><code>/lockdown start</code> locks every channel in one shot for raid response; <code>/lockdown end</code> restores each channel to its <strong>exact prior permissions</strong> — not a best guess. Reuses your existing lock permission, so there's nothing new to configure.</p>
+  </div>
+  <div class="f-card">
     <h4>↩️ 24-hour undo</h4>
     <p>Reverses your most recent ban, mute, channel deletion (incl. permissions), or nickname change. Note: deleted message contents can't be recovered — that's a Discord limit.</p>
   </div>
