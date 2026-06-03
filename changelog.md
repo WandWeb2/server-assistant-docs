@@ -11,6 +11,17 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 
 ---
 
+## v5.3 — Baseline admin essentials
+
+Three plug-and-play admin commands that close common gaps — all permission-gated and written to your audit trail.
+
+### Added
+- **🎭 `/role add` / `/role remove`.** Add or remove a role from a member in one command, instead of digging through Discord's role menus. Guarded against privilege escalation: you can only assign roles **below** your own highest role, and `@everyone` / integration-managed roles are off-limits. Usable by anyone with **Manage Roles** (or a role tier that grants it).
+- **🚨 `/lockdown start` / `/lockdown end`.** Lock **every** channel at once for raid response, then restore each channel's **exact** prior permissions on `end` — not a best guess. Reuses your existing channel-lock permission, so there's nothing new to configure.
+- **⏲️ `/tempban <user> <duration>`.** Timed bans that **un-ban automatically** — `30m`, `2h`, `7d`, `1w`, even `1d12h` (1 minute to 28 days). The timer is persisted and survives restarts; when it expires the bot un-bans, logs it to your audit trail, and DMs the staff member who set it.
+
+---
+
 ## v5.2 — Ticket Panels
 
 Private in-server support tickets — no DMs, no leaving your server, no messy threads.

@@ -220,9 +220,12 @@ Type `/` anywhere to see autocomplete:
 | `/ban <user> [reason] [delete_days]` | Ban a user |
 | `/unban <user_id> [reason]` | Unban by ID |
 | `/softban <user> [reason]` | Ban + unban to clear messages |
+| `/tempban <user> <duration> [reason] [delete_days]` | Timed ban that auto-unbans (e.g. `7d`, `2h`, `1d12h`; 1m–28d) |
 | `/purge <count> [user]` | Bulk-delete messages here *(may need approval)* |
 | `/slowmode <seconds> [channel]` | Set channel slowmode |
 | `/lock [channel]` / `/unlock [channel]` | Lock / unlock a channel |
+| `/lockdown start` / `/lockdown end` | Lock every channel at once, then restore exact prior permissions |
+| `/role add` / `/role remove <user> <role>` | Add or remove a role from a member |
 | `/nick <user> [nickname]` | Change / reset a nickname |
 | `/warnings <user>` | View warnings |
 | `/note <user> <text>` | Add note |
@@ -273,10 +276,11 @@ Each role you configure in `/settings → Role Tiers` has **capabilities** (what
 <tr><td>/manage-notes</td><td class="perm-n">—</td><td class="perm-y">✓</td><td class="perm-y">✓</td></tr>
 <tr><td>/info, /stats, /timezone, /help</td><td class="perm-y">✓</td><td class="perm-y">✓</td><td class="perm-y">✓</td></tr>
 <tr><td>/mute, /unmute</td><td class="perm-y">✓</td><td class="perm-y">✓</td><td class="perm-y">✓</td></tr>
-<tr><td>/kick, /ban, /softban</td><td class="perm-y">✓</td><td class="perm-y">✓</td><td class="perm-y">✓</td></tr>
+<tr><td>/kick, /ban, /softban, /tempban</td><td class="perm-y">✓</td><td class="perm-y">✓</td><td class="perm-y">✓</td></tr>
 <tr><td>/unban</td><td class="perm-n">—</td><td class="perm-y">✓</td><td class="perm-y">✓</td></tr>
+<tr><td>/role <em>(or Manage Roles)</em></td><td class="perm-n">—</td><td class="perm-y">✓</td><td class="perm-y">✓</td></tr>
 <tr><td><strong>/purge</strong> <em>(needs approval)</em></td><td class="perm-n">—</td><td class="perm-w">⚠ approval</td><td class="perm-y">✓ direct</td></tr>
-<tr><td>/slowmode, /lock, /unlock, /nick</td><td class="perm-y">✓</td><td class="perm-y">✓</td><td class="perm-y">✓</td></tr>
+<tr><td>/slowmode, /lock, /unlock, /lockdown, /nick</td><td class="perm-y">✓</td><td class="perm-y">✓</td><td class="perm-y">✓</td></tr>
 <tr><td>/onboarding, /snippets, /automod, /schedule</td><td class="perm-n">—</td><td class="perm-y">✓</td><td class="perm-y">✓</td></tr>
 <tr><td>/imagine, /vote, /premium, /invite</td><td class="perm-y">✓</td><td class="perm-y">✓</td><td class="perm-y">✓</td></tr>
 <tr><td>/settings</td><td class="perm-n">—</td><td class="perm-y">✓</td><td class="perm-y">✓</td></tr>
