@@ -96,6 +96,9 @@ You control all of this via the `/privacy` panel. AutoMod and anti-raid are requ
 | **Anti-raid** | Join events only (no message content) | Always on |
 | **Natural-language commands** | Messages in your staff-chat channel | Off (new servers) |
 | **Message Report** | ~20 messages around the one you right-click | Off (new servers) |
+| **🤔 AutoMod AI second-opinion** *(Premium, opt-in)* | The text of a single borderline AutoMod-flagged message + which filter matched. Confident hits and clear misses are never sent | Off (opt-in via `/automod → AI Review`) |
+| **🕵️ Alt-guard / repeat-offender detection** | **Local-only fingerprint** of users your staff ban or kick (avatar hash, name fragments, account-age bucket) plus the same for each new joiner. **Nothing leaves your host** — no AI, no third party, no cross-server lookup | Off (opt-in via `/altguard on`) |
+| **📩 Ban-reason DMs + appeals** | The staff-supplied ban reason is sent in a DM to the banned member; the member's **single** appeal reply (if they send one) is forwarded to your staff channel verbatim. No AI is invoked unless staff press **Research** (which runs Message Report on the member's last message) | On (opt-out per server) |
 | **🩺 Pulse** | Aggregate counts only — no message content stored | On |
 | **🧠 Self-trained AutoMod** | Messages your staff delete or report | Off |
 | **🩹 Bot Health Insurance** | The bot's own action counts | On |
@@ -105,9 +108,9 @@ You control all of this via the `/privacy` panel. AutoMod and anti-raid are requ
 
 ## Third-party AI providers
 
-AI features transmit data to third-party providers **only when explicitly invoked by staff** (e.g., right-click Message Report, `/imagine`, Self-trained AutoMod, Concierge). The default shared-key provider is:
+AI features transmit data to third-party providers **only when explicitly invoked by staff or when an enabled, opt-in feature fires** (e.g., right-click Message Report, `/imagine`, Self-trained AutoMod, Concierge, or — if you've turned it on — AutoMod AI second-opinion). The default shared-key provider is:
 
-- **Anthropic** (https://anthropic.com) — powers Concierge, Message Report context summaries, and Self-trained AutoMod. Approximately 20 messages of surrounding context are sent for Message Report; only your question is sent for Concierge sessions. No user IDs or metadata are transmitted.
+- **Anthropic** (https://anthropic.com) — powers Concierge, Message Report context summaries, Self-trained AutoMod, and (if enabled) AutoMod AI second-opinion. Approximately 20 messages of surrounding context are sent for Message Report; only your question is sent for Concierge sessions; only the **single borderline message** + matching filter name is sent for AutoMod AI second-opinion (never confident hits, never clear misses). No user IDs or metadata are transmitted.
 
 If you've configured your own key via `/ai-config`:
 - **xAI Grok** (https://x.ai) — same scope as above when selected

@@ -174,6 +174,7 @@ image: /server-assistant-docs/assets/banner.jpeg
             <div class="dc-code">that's it, I'm done with this place</div>
             <div class="dc-foot">appeal · review below</div>
             <div class="dc-btns"><span class="dc-btn green">✅ Unban</span><span class="dc-btn red">🚫 Deny</span><span class="dc-btn grey">🔎 Research</span></div>
+            <div class="dc-btns"><span class="dc-btn grey">👤 Info</span><span class="dc-btn grey">⚠️ Warnings</span><span class="dc-btn grey">📝 Notes</span></div>
           </div>
         </div>
       </div>
@@ -200,6 +201,7 @@ image: /server-assistant-docs/assets/banner.jpeg
             <div class="dc-fname">Message</div>
             <div class="dc-code">honestly I love visiting Scunthorpe in the summer</div>
             <div class="dc-btns"><span class="dc-btn red">🗑️ Delete &amp; warn</span><span class="dc-btn grey">✅ Allow</span></div>
+            <div class="dc-btns"><span class="dc-btn grey">👤 Info</span><span class="dc-btn grey">⚠️ Warnings</span><span class="dc-btn grey">📝 Notes</span></div>
           </div>
         </div>
       </div>
@@ -236,6 +238,23 @@ image: /server-assistant-docs/assets/banner.jpeg
 </div>
 
 > And it keeps you honest: a **🛡️ tamper-proof audit trail** records every action — even bans done by hand in Discord — in an encrypted log staff can't edit or erase, and pings the owner if anyone tries. **🕵️ Repeat-offender detection** fingerprints the people you ban and auto-stops their alt accounts at the door. **🛡️ Threat Score** turns raw behaviour into an explainable risk level. No other moderation bot ties all of this together.
+
+<style>
+.shipped-strip { background: rgba(46,204,113,.10); border-left: 4px solid #2ecc71; border-radius: 10px; padding: .85rem 1.1rem; margin: 1.5rem 0 0; font-size: .9rem; line-height: 1.55; }
+.shipped-strip strong.lbl { color: #1b8e3a; }
+.shipped-strip code { font-size: .82em; }
+.shipped-pill-i { display: inline-block; font-size: .68rem; font-weight: 800; letter-spacing: .04em; padding: .12rem .45rem; border-radius: 999px; background: #d6eaf8; color: #1a5276; margin-right: .25rem; vertical-align: middle; }
+</style>
+
+<div class="shipped-strip">
+  <strong class="lbl">🚀 Shipped this fortnight</strong> &nbsp;·&nbsp;
+  <span class="shipped-pill-i">v5.2</span>Ticket Panels &nbsp;·&nbsp;
+  <span class="shipped-pill-i">v5.3</span><code>/role</code> · <code>/lockdown</code> · <code>/tempban</code> &nbsp;·&nbsp;
+  <span class="shipped-pill-i">v5.4</span>AutoMod AI second-opinion + alt-guard &nbsp;·&nbsp;
+  <span class="shipped-pill-i">v5.5</span>Ban reasons + one-reply appeals &nbsp;·&nbsp;
+  <span class="shipped-pill-i">v5.5.4</span>Premium <code>/imagine</code> cooldown removed &nbsp;·&nbsp;
+  <a href="{{ site.url }}{{ site.baseurl }}/changelog/">see the full changelog →</a>
+</div>
 
 ---
 
@@ -299,6 +318,18 @@ image: /server-assistant-docs/assets/banner.jpeg
 - **🔍 Transparent** — every action is logged and the affected member is told why. The audit trail is encrypted and tamper-evident.
 - **🎨 Yours to shape** — role tiers, punishment ladders, branding, thresholds — all configurable, no code.
 
+<style>
+.upcoming-strip { background: rgba(52,152,219,.08); border-left: 4px solid #3498db; border-radius: 10px; padding: .85rem 1.1rem; margin: 1rem 0 1.75rem; font-size: .9rem; line-height: 1.55; }
+.upcoming-strip strong.lbl { color: #1f6dbf; }
+.upcoming-strip code { font-size: .82em; }
+</style>
+
+<div class="upcoming-strip">
+  <strong class="lbl">🟢 Coming up next</strong> &nbsp;·&nbsp;
+  AI rule explainer · Smart purge · Native-action coaching (all <code>v5.6</code>) &nbsp;·&nbsp;
+  <a href="{{ site.url }}{{ site.baseurl }}/roadmap/">see the full roadmap →</a>
+</div>
+
 ## Three ways to use it
 
 <div class="ways-grid">
@@ -340,6 +371,7 @@ Every panel below is a to-scale mock of a real Server Assistant message — same
         <div class="dc-fname">Reported user</div><div class="dc-fval">@nightowl</div>
         <div class="dc-foot">AI summary · reads ~20 messages of context</div>
         <div class="dc-btns"><span class="dc-btn grey">⚠️ Warn</span><span class="dc-btn grey">🔇 Timeout</span><span class="dc-btn grey">🗑️ Delete</span><span class="dc-btn red">👢 Kick</span><span class="dc-btn red">🔨 Ban</span></div>
+        <div class="dc-btns"><span class="dc-btn grey">👤 Info</span><span class="dc-btn grey">⚠️ Warnings</span><span class="dc-btn grey">📝 Notes</span></div>
       </div>
     </div>
   </div>

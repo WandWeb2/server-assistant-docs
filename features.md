@@ -9,6 +9,8 @@ description: A scannable tour of Server Assistant's flagship features.
 
 A scannable tour. For the full command list and permissions, see **[Commands]({{ site.url }}{{ site.baseurl }}/commands/)**. For what's free vs Premium, see **[Pricing]({{ site.url }}{{ site.baseurl }}/pricing/)**.
 
+> **Why Server Assistant?** Four things almost no other moderation bot does — **🩺 Pulse** (daily health insight), **📩 ban-reason DMs + one-reply appeals**, **🤔 AutoMod AI second-opinion** (fewer false positives), and **🧠 self-trained AutoMod** (adapts to *your* team). [See the differentiators on the homepage →]({{ site.url }}{{ site.baseurl }}/) Everything below builds on that core.
+
 <style>
 .tier-badge { display: inline-block; font-size: 0.65rem; font-weight: 800; letter-spacing: 0.05em;
               padding: 0.15rem 0.5rem; border-radius: 999px; vertical-align: middle;
@@ -57,8 +59,8 @@ A set of AI features that watch your server's *health and behaviour* — **advis
     <div class="ai-where">Toggle: <code>/settings → Behavior</code></div>
   </div>
   <div class="ai-card">
-    <h4>🛡️ Threat Score <span class="tier-badge tier-premium">PREMIUM</span></h4>
-    <p>At-a-glance per-user risk — 🟢 Low / 🟠 Elevated / 🔴 High — in user profiles. Transparent read of infraction history, weighted by severity, decaying over time. Advisory only.</p>
+    <h4>🛡️ Threat Score <span class="ai-tag">advisory free · active Premium</span></h4>
+    <p>At-a-glance per-user risk — 🟢 Low / 🟠 Elevated / 🔴 High — in user profiles. Transparent read of infraction history, weighted by severity, decaying over time. <strong>The advisory view is free for every server</strong>; the <strong>active, score-driven action</strong> phase (Premium) is what uses the score to drive moderation with the safeguards listed on the <a href="{{ site.url }}{{ site.baseurl }}/roadmap/">roadmap</a>.</p>
     <div class="ai-where">Enable: <code>/settings → Behavior</code></div>
   </div>
 </div>
@@ -155,6 +157,29 @@ AutoMod runs on every non-staff message. Staff are completely exempt.
 
 ---
 
+## 📩 Ban reasons & one-reply appeals <span class="tier-badge tier-free">FREE</span>
+
+A ban shouldn't be a silent door-slam. Server Assistant turns every ban — *manual, `/tempban`, AutoMod, or native Discord* — into a transparent process for both sides.
+
+**For the banned member:** an automatic DM with the **exact reason** the staff member supplied, and an invitation to send **one reply** if they want to appeal. Just one — no escalating reply threads, no bot back-and-forth, no DM noise.
+
+**For your staff:** that single reply opens an **appeal ticket** in your log / staff channel with three one-tap buttons:
+
+| Button | What it does |
+|---|---|
+| ✅ **Unban** | Lifts the ban, DMs the user the decision, writes to the audit trail. |
+| 🚫 **Deny** | DMs the user that the appeal was denied, closes the ticket. |
+| 🔎 **Research** | Runs **Message Report** on the member's last message in your server — so you can judge context (tone, escalation, history) before deciding. |
+| 👤 **Info** | Quick profile — created/joined dates, roles, warning + note counts, Threat Score (if enabled). Works even for already-banned users. |
+| ⚠️ **Warnings** | Full warning history for the user, even if they're not in the server anymore. |
+| 📝 **Notes** | Staff notes (private, invisible to the user). |
+
+**Why this matters:** every other moderation bot treats a ban as an opaque, final action. This gives every accused member a structured way to be heard, *without* opening a flood of DMs, *without* requiring staff to set up tickets per-incident, and *without* spending a single AI token unless **Research** is pressed. And before staff decide, the **Info / Warnings / Notes** trio means they can pull the full picture on a banned user without leaving the appeal card — no separate `/info` round-trip needed.
+
+**Soft-bans excluded** (they're meant to let people rejoin). **On by default**; turn off per server in `/settings`. Buttons survive bot restarts.
+
+---
+
 ## 🚨 Anti-Raid Detection <span class="tier-badge tier-free">FREE</span>
 
 Tracks join rate. When the threshold trips, the bot pings the Owner (and any roles configured in `/settings → 🔔 Notifications`), suspends onboarding DMs, and logs the event.
@@ -182,7 +207,7 @@ Optional anti-raid measure (`/settings → Verification`). New members are DM'd 
   </div>
   <div class="f-card">
     <h4>📋 Message Report — context summaries</h4>
-    <p>Right-click any message → <strong>Apps ▸ Message Report</strong>. The bot reads ~20 surrounding messages and produces a 3–5 bullet summary: tone, possible rule-breaking, escalation pattern, recommended action. Only you see it — with one-tap <strong>Warn · Timeout · Delete · Kick · Ban</strong> buttons so you can act right from the report (each respects your role permissions). Any action you take is logged to your audit trail <strong>with the report attached</strong>, so the reasoning behind it is on the record. <strong>The bot never auto-acts — staff always decide.</strong></p>
+    <p>Right-click any message → <strong>Apps ▸ Message Report</strong>. The bot reads ~20 surrounding messages and produces a 3–5 bullet summary: tone, possible rule-breaking, escalation pattern, recommended action. Only you see it — with one-tap <strong>Warn · Timeout · Delete · Kick · Ban</strong> action buttons and a second row of <strong>👤 Info · ⚠️ Warnings · 📝 Notes</strong> investigative buttons, so you can pull the full picture on the user before deciding (each button respects your role permissions). Any action you take is logged to your audit trail <strong>with the report attached</strong>, so the reasoning behind it is on the record. <strong>The bot never auto-acts — staff always decide.</strong></p>
   </div>
 </div>
 

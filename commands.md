@@ -33,8 +33,30 @@ Targeting users supports `@mention`, plain-text username (e.g. `mute jen`), or n
 | `unwarn @user [id]` | Remove a warning. Without ID, removes the latest | `unwarn @user 3` |
 | `nick @user new-name` | Change a user's nickname | `nick @user Helper` |
 | `nick reset @user` | Reset a user's nickname | `nick reset @user` |
+| `/tempban @user 7d [reason]` | Timed ban that auto-unbans. Supports `30m`, `2h`, `7d`, `1w`, `1d12h` (1m–28d). Survives restarts. | `/tempban @user 7d cooling off` |
+| `/role add @user @role` | Add a role to a member. Guarded against privilege escalation. | `/role add @user @Verified` |
+| `/role remove @user @role` | Remove a role from a member. | `/role remove @user @Muted` |
 
 **Bulk operations:** mention a role to apply the action to everyone in it. Examples: `mute @TrollRole 1 hour`, `ban @SpamRole`. Mod-tier maxes at 5 users; Admin/Owner have higher limits.
+
+---
+
+## 🚨 Raid response & escalation
+
+When something goes wrong, these are the levers — grouped here so you can run the playbook end-to-end without bouncing across the page.
+
+| Command | What it does | Who |
+|---------|--------------|-----|
+| `/lockdown start` | Locks **every text and forum channel** at once — including threads and posts, so a raid can't just move into a thread. Reuses your existing channel-lock permission. | Owner / Admin |
+| `/lockdown end` | Restores each channel's **exact prior permissions** — not a best guess. | Owner / Admin |
+| `/altguard on` / `off` / `status` | Toggles repeat-offender / ban-evasion detection. Fingerprints banned & kicked users (locally only), checks every new joiner — confident matches are **auto-banned and reported to staff**, weaker matches are flagged for review. Soft-bans excluded. | Owner / Admin |
+| `/tempban @user <duration>` | Timed ban (auto-unbans). Useful for short cool-downs during a raid without permanent action. | Per role tier |
+| `/slowmode 5s` | Throttle chat in a flooded channel. | Per role tier |
+| `lock #channel` / `unlock #channel` | Per-channel lock for surgical responses. | Per role tier |
+
+**Anti-raid is automatic** — mass-join detection runs always-on; configure thresholds (`/settings → Quick Presets`) and which roles get pinged (`/settings → Notifications`). **DM Verification Gate** (`/settings → Verification`) stops most automated raid bots cold by DM'ing a button to every new member.
+
+> **Suggested runbook:** at the first sign of a raid, run `/lockdown start`, flick `/altguard on` if it isn't already, and `/tempban` repeat-offenders for short windows. Hit `/lockdown end` when it's over — exact prior perms come back automatically.
 
 ---
 
