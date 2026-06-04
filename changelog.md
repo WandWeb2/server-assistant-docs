@@ -11,6 +11,13 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 
 ---
 
+## v5.5.2 — Reports on the record
+
+### Changed
+- **Actions taken from a Message Report now log the report itself.** When a staff member uses a report's Warn / Timeout / Delete / Kick / Ban button, the full AI report is written into your **encrypted audit trail** and shown on the **log-channel entry** — so every action carries the reasoning that led to it. The log footer now reads **"via Message Report"** (rather than "via slash command").
+
+---
+
 ## v5.5.1 — Actionable Message Reports
 
 ### Changed

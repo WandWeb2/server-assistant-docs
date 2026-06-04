@@ -182,7 +182,7 @@ Optional anti-raid measure (`/settings → Verification`). New members are DM'd 
   </div>
   <div class="f-card">
     <h4>📋 Message Report — context summaries</h4>
-    <p>Right-click any message → <strong>Apps ▸ Message Report</strong>. The bot reads ~20 surrounding messages and produces a 3–5 bullet summary: tone, possible rule-breaking, escalation pattern, recommended action. Only you see it — with one-tap <strong>Warn · Timeout · Delete · Kick · Ban</strong> buttons so you can act right from the report (each respects your role permissions). <strong>The bot never auto-acts — staff always decide.</strong></p>
+    <p>Right-click any message → <strong>Apps ▸ Message Report</strong>. The bot reads ~20 surrounding messages and produces a 3–5 bullet summary: tone, possible rule-breaking, escalation pattern, recommended action. Only you see it — with one-tap <strong>Warn · Timeout · Delete · Kick · Ban</strong> buttons so you can act right from the report (each respects your role permissions). Any action you take is logged to your audit trail <strong>with the report attached</strong>, so the reasoning behind it is on the record. <strong>The bot never auto-acts — staff always decide.</strong></p>
   </div>
 </div>
 
