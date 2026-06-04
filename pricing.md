@@ -88,7 +88,7 @@ Need extra headroom without changing your plan? Three sizes — **Splash** for a
 |-----------------|-------------|-------------|------------|
 | 🪣 **Splash**     | $3 USD      | 300K        | $1.00      |
 | 🛢️ **Surge**      | $10 USD     | 1.25M       | $0.80      |
-| 🏭 **Stockpile**  | $25 USD     | 4M          | $0.625     |
+| 🏭 **Stockpile**  | $25 USD     | 3.4M        | $0.74      |
 
 > 💡 **Using AI most months?** Premium ($7/mo for 750K monthly tokens) is the cheapest steady-state rate. Top-ups are designed for **bursts and overflow** — Surge and Stockpile give better per-token value because you're paying upfront with no subscription.
 
