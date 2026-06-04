@@ -339,6 +339,7 @@ Every panel below is a to-scale mock of a real Server Assistant message — same
         <div class="dc-desc">• <strong>Tone:</strong> hostile, escalating over the last few messages<br>• <strong>Likely breaks:</strong> rule 3 — personal attacks<br>• <strong>Pattern:</strong> third flare-up with the same member today<br>• <strong>Suggested action:</strong> short timeout + a staff check-in</div>
         <div class="dc-fname">Reported user</div><div class="dc-fval">@nightowl</div>
         <div class="dc-foot">AI summary · reads ~20 messages of context</div>
+        <div class="dc-btns"><span class="dc-btn grey">⚠️ Warn</span><span class="dc-btn grey">🔇 Timeout</span><span class="dc-btn grey">🗑️ Delete</span><span class="dc-btn red">👢 Kick</span><span class="dc-btn red">🔨 Ban</span></div>
       </div>
     </div>
   </div>
