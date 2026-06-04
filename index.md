@@ -56,7 +56,9 @@ image: /server-assistant-docs/assets/banner.jpeg
 .dc { background:#313338; border-radius:10px; padding:.7rem .8rem; font-family:"gg sans","Segoe UI",system-ui,sans-serif; color:#dbdee1; font-size:.84rem; line-height:1.4; box-shadow:0 8px 30px rgba(31,38,135,.18); }
 .dc + .dc { margin-top:.5rem; }
 .dc-row { display:flex; gap:.6rem; align-items:flex-start; }
-.dc-av { width:38px; height:38px; border-radius:50%; flex:0 0 38px; background:linear-gradient(135deg,#818cf8,#6366f1); display:flex; align-items:center; justify-content:center; font-size:1.05rem; }
+.dc-av { width:38px; height:38px; border-radius:50%; flex:0 0 38px; object-fit:cover; background:#fff; }
+.mock-pair { display:flex; gap:.8rem; flex-wrap:wrap; justify-content:center; }
+.mock-pair > .dc { flex:1 1 320px; }
 .dc-body { flex:1; min-width:0; }
 .dc-head { margin-bottom:.15rem; }
 .dc-name { font-weight:600; color:#f2f3f5; }
@@ -121,7 +123,7 @@ image: /server-assistant-docs/assets/banner.jpeg
   <div class="diff-mock">
     <div class="dc">
       <div class="dc-row">
-        <div class="dc-av">🧠</div>
+        <img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy">
         <div class="dc-body">
           <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">9:00 AM</span></div>
           <div class="dc-embed green">
@@ -147,7 +149,7 @@ image: /server-assistant-docs/assets/banner.jpeg
   <div class="diff-mock">
     <div class="dc">
       <div class="dc-row">
-        <div class="dc-av">🧠</div>
+        <img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy">
         <div class="dc-body">
           <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">to the banned member</span></div>
           <div class="dc-embed red">
@@ -161,7 +163,7 @@ image: /server-assistant-docs/assets/banner.jpeg
     <div class="dc-flow">↓ &nbsp; the member sends one reply &nbsp; ↓</div>
     <div class="dc">
       <div class="dc-row">
-        <div class="dc-av">🧠</div>
+        <img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy">
         <div class="dc-body">
           <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">#staff-log</span></div>
           <div class="dc-embed blue">
@@ -188,7 +190,7 @@ image: /server-assistant-docs/assets/banner.jpeg
   <div class="diff-mock">
     <div class="dc">
       <div class="dc-row">
-        <div class="dc-av">🧠</div>
+        <img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy">
         <div class="dc-body">
           <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">#staff-log</span></div>
           <div class="dc-embed amber">
@@ -214,7 +216,7 @@ image: /server-assistant-docs/assets/banner.jpeg
   <div class="diff-mock">
     <div class="dc">
       <div class="dc-row">
-        <div class="dc-av">🧠</div>
+        <img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy">
         <div class="dc-body">
           <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">#staff-log</span></div>
           <div class="dc-embed blue">
@@ -289,13 +291,6 @@ image: /server-assistant-docs/assets/banner.jpeg
   </div>
 </div>
 
-<div class="sa-shots" markdown="0" style="margin: 1.5rem 0;">
-  <figure style="max-width: 540px; margin: 0 auto;">
-    <img src="{{ '/assets/screenshots/pulse-digest.webp' | relative_url }}" alt="Pulse daily server-health digest" loading="lazy" style="display:block; max-width:100%; border-radius:14px; box-shadow:0 8px 32px rgba(31,38,135,.12);">
-    <figcaption style="color:#6a7280; font-size:.88rem; text-align:center; margin-top:.55rem;"><em>Pulse — example daily digest (illustrative figures)</em></figcaption>
-  </figure>
-</div>
-
 ---
 
 ## Built on three promises
@@ -328,48 +323,58 @@ image: /server-assistant-docs/assets/banner.jpeg
 
 ---
 
-## 📸 See it in action
+## 📸 More of what your staff sees
 
-<style>
-.sa-shots figure { margin: 0 0 2rem; }
-.sa-shots img    { display: block; max-width: 100%; height: auto; border-radius: 14px; box-shadow: 0 8px 32px rgba(31,38,135,0.12); margin: 0 auto; }
-.sa-shots figcaption { color: #6a7280; font-size: .88rem; text-align: center; margin-top: .55rem; }
-.sa-shots .pair { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
-.sa-shots .pair figure { flex: 1 1 360px; max-width: 480px; }
-</style>
+Every panel below is a to-scale mock of a real Server Assistant message — same logo, same layout you'll see in your own server.
 
-<div class="sa-shots" markdown="0">
+<div class="diffs" markdown="0">
 
-<figure>
-  <img src="{{ '/assets/screenshots/setup-wizard.webp' | relative_url }}" alt="The /setup wizard prompting for staff chat and log channel" loading="lazy">
-  <figcaption><strong>60-second <code>/setup</code> wizard</strong> — channels, roles, AI provider.</figcaption>
-</figure>
-
-<figure>
-  <img src="{{ '/assets/screenshots/settings-hub.webp' | relative_url }}" alt="The /settings customisation hub" loading="lazy">
-  <figcaption><strong>Customisation Hub</strong> — nine sub-wizards covering branding, presets, behaviour, new-member, verification, channel allowlist, role tiers, notifications, and Pulse.</figcaption>
-</figure>
-
-<div class="pair">
-  <figure>
-    <img src="{{ '/assets/screenshots/report-menu.webp' | relative_url }}" alt="Right-click Apps menu showing Message Report" loading="lazy">
-    <figcaption><strong>Right-click any message</strong> → Apps ▸ Server Assistant ▸ Message Report.</figcaption>
-  </figure>
-  <figure>
-    <img src="{{ '/assets/screenshots/report-result.webp' | relative_url }}" alt="AI moderation report embed" loading="lazy">
-    <figcaption><strong>Message Report</strong> — objective tone, possible rule-breaking, recommended action.</figcaption>
-  </figure>
+<div class="dc" style="max-width:540px;margin:0 auto 1.2rem;">
+  <div class="dc-row">
+    <img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy">
+    <div class="dc-body">
+      <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">right-click → Message Report</span></div>
+      <div class="dc-embed amber">
+        <div class="dc-title">📋 Message Report</div>
+        <div class="dc-desc">• <strong>Tone:</strong> hostile, escalating over the last few messages<br>• <strong>Likely breaks:</strong> rule 3 — personal attacks<br>• <strong>Pattern:</strong> third flare-up with the same member today<br>• <strong>Suggested action:</strong> short timeout + a staff check-in</div>
+        <div class="dc-fname">Reported user</div><div class="dc-fval">@nightowl</div>
+        <div class="dc-foot">AI summary · reads ~20 messages of context</div>
+      </div>
+    </div>
+  </div>
 </div>
 
-<div class="pair">
-  <figure>
-    <img src="{{ '/assets/screenshots/automod-log.webp' | relative_url }}" alt="AutoMod staff log embed" loading="lazy">
-    <figcaption><strong>AutoMod is transparent</strong> — every action gets a structured embed in your log channel.</figcaption>
-  </figure>
-  <figure>
-    <img src="{{ '/assets/screenshots/automod-user-dm.webp' | relative_url }}" alt="DM from AutoMod explaining which rule fired" loading="lazy">
-    <figcaption><strong>Users always know why</strong> — DM with the rule, warning count, and escalation context.</figcaption>
-  </figure>
+<p style="text-align:center;color:#3a4252;font-weight:600;margin:.4rem 0 .7rem;">AutoMod is transparent both ways — staff get a structured log, the member gets a clear explanation.</p>
+
+<div class="mock-pair">
+  <div class="dc">
+    <div class="dc-row">
+      <img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy">
+      <div class="dc-body">
+        <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">#staff-log</span></div>
+        <div class="dc-embed red">
+          <div class="dc-title">🤖 AutoMod · word_filter</div>
+          <div class="dc-fname">User</div><div class="dc-fval">@spammer42</div>
+          <div class="dc-fname">Action</div><div class="dc-fval">Message deleted · auto-warning #2</div>
+          <div class="dc-code">join for free nitro 🎁 discord-gift[.]ru/x</div>
+          <div class="dc-foot">Logged to your channel — structured + searchable</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="dc">
+    <div class="dc-row">
+      <img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy">
+      <div class="dc-body">
+        <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">to the member</span></div>
+        <div class="dc-embed red">
+          <div class="dc-title">⚠️ AutoMod action in WWM Gaming</div>
+          <div class="dc-desc">Your message was removed because it matched a content filter (<code>word_filter</code>).<br><br>This is <strong>auto-warning #2</strong>. Repeated violations escalate to mute, kick, or ban.</div>
+          <div class="dc-foot">Think it was a mistake? Contact a moderator.</div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 </div>
