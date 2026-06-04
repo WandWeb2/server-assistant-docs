@@ -11,6 +11,13 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 
 ---
 
+## v5.5.3 — Pulse on your clock
+
+### Fixed
+- **Pulse (and the weekly digest) now fire at the configured hour in *your server's* timezone.** They were comparing the target hour against the host's UTC clock, so "Pulse at 9am" actually went out at 9am UTC regardless of your server's timezone. Set your timezone in `/settings → Default timezone` and the digest hour now means *your* local time.
+
+---
+
 ## v5.5.2 — Reports on the record
 
 ### Changed
