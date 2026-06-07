@@ -157,6 +157,78 @@ Currently it's fixed wording. Custom verification copy is on the <a href="{{ sit
 
 <div class="faq-cat-heading">🎨 AI features</div>
 
+<details class="faq"><summary>Does the bot use AI tokens just to <em>read</em> staff-chat messages?</summary>
+<div class="faq-body">
+<p><strong>No.</strong> Monitoring staff-chat is free. The bot uses <strong>pattern matching</strong> (regex + keyword lookup) on every message — that costs zero tokens. AI tokens are only spent when staff write a genuinely fuzzy request that the pattern matcher can't resolve.</p>
+
+<p><strong>The decision chain on every staff-chat message:</strong></p>
+
+<pre style="background:rgba(0,0,0,0.04); padding:0.85rem 1rem; border-radius:8px; font-size:0.78rem; line-height:1.45; overflow-x:auto;"><code>Every staff-chat message
+        │
+        ▼
+[is_bot_addressed]      ← pure string check (mentions, bot name, prefixes)
+[has_actionable_command] ← regex vs FORBIDDEN/DANGEROUS/SAFE keyword sets
+[looks_like_command]    ← imperative-verb match (make, show, find, run...)
+        │
+        ├── No gate matches
+        │   → 💸 0 tokens. Silently ignored.
+        │
+        ├── Action keyword matched (warn / mute / kick / ban / purge / etc.)
+        │   → 💸 0 tokens. Direct structured handler executes.
+        │
+        └── Bot addressed AND no clear action keyword
+            → AI interprets intent
+            → ~400–500 tokens per call (billed to your guild's allowance)
+</code></pre>
+
+<p><strong>Examples that cost zero tokens:</strong></p>
+<table style="font-size:0.88rem; border-collapse:collapse; width:100%;">
+<thead><tr style="background:rgba(0,0,0,0.04);"><th style="padding:.4rem .6rem; text-align:left;">Message</th><th style="padding:.4rem .6rem; text-align:left;">Why free</th></tr></thead>
+<tbody>
+<tr><td style="padding:.4rem .6rem;"><em>"brb getting coffee"</em></td><td style="padding:.4rem .6rem;">No gate matches → silently ignored</td></tr>
+<tr><td style="padding:.4rem .6rem;"><code>warn @user spam</code></td><td style="padding:.4rem .6rem;">Action keyword <code>warn</code> → structured handler</td></tr>
+<tr><td style="padding:.4rem .6rem;"><code>mute jen 1h</code></td><td style="padding:.4rem .6rem;">Action keyword <code>mute</code> → pure-code username resolver</td></tr>
+<tr><td style="padding:.4rem .6rem;"><code>purge since 1pm</code></td><td style="padding:.4rem .6rem;">Action keyword <code>purge</code> → time parser</td></tr>
+<tr><td style="padding:.4rem .6rem;"><code>info @user</code> · <code>stats</code> · <code>help</code></td><td style="padding:.4rem .6rem;">Keyword matches → direct handlers</td></tr>
+</tbody>
+</table>
+
+<p style="margin-top:0.7rem;"><strong>That covers ~90%+ of routine moderation in staff-chat.</strong></p>
+
+<p><strong>Examples that DO use AI tokens:</strong></p>
+<table style="font-size:0.88rem; border-collapse:collapse; width:100%;">
+<thead><tr style="background:rgba(0,0,0,0.04);"><th style="padding:.4rem .6rem; text-align:left;">Message</th><th style="padding:.4rem .6rem; text-align:left;">Why AI is called</th></tr></thead>
+<tbody>
+<tr><td style="padding:.4rem .6rem;"><em>"@bot can you tell me who's been most active this week?"</em></td><td style="padding:.4rem .6rem;">No keyword + bot addressed → AI interprets</td></tr>
+<tr><td style="padding:.4rem .6rem;"><em>"bot, find me someone who joined yesterday and posted"</em></td><td style="padding:.4rem .6rem;">No keyword + bot addressed → AI interprets</td></tr>
+<tr><td style="padding:.4rem .6rem;"><em>"make me a summary of last night's drama"</em></td><td style="padding:.4rem .6rem;">Imperative verb (<code>make</code>) + no action keyword → AI interprets</td></tr>
+</tbody>
+</table>
+
+<p style="margin-top:0.7rem;"><strong>Cost per fuzzy call:</strong> ~400–500 tokens (~$0.003 at Sonnet rates). All such spends are <strong>billed to your server's AI allowance</strong> with a feature tag (<code>nl_intent</code>, <code>nl_chat</code>, <code>nl_extract</code>) so you can see exactly which interactions ate which tokens in <code>/premium</code>.</p>
+
+<p><strong>How to drive NL spend to truly zero:</strong> Owner runs <code>/privacy</code> and toggles off <strong>"Natural-language commands in staff-chat"</strong>. The bot will then only respond to slash commands and explicit <code>@mention</code>s — no fuzzy AI parsing of staff-chat messages at all. Pattern-match action keywords keep working through <code>@bot warn @user</code> style invocations.</p>
+
+<p><strong>Design philosophy:</strong> structured commands are free; the AI is an opt-in fallback for "I can't be bothered to remember the exact syntax." Most servers stay close to zero from NL processing in normal use.</p>
+</div>
+</details>
+
+<details class="faq"><summary>How does the bot know when it's being addressed?</summary>
+<div class="faq-body">
+<p>The address check is <strong>multi-tenant aware</strong> — it resolves the bot's actual nickname in <em>your</em> server at runtime, not a hardcoded name. So if you renamed the bot to "Pepper" or "Watchdog", any of these patterns trigger the bot:</p>
+<ul>
+<li><strong>@mention</strong> — <code>@Pepper mute @user spam</code></li>
+<li><strong>Reply to a bot message</strong> — quoting/replying to me</li>
+<li><strong>Command prefix</strong> — <code>!warn @user</code> or <code>/info @user</code></li>
+<li><strong>Bot's nickname in this guild</strong> — <code>Pepper, mute @user</code> or <code>Watchdog: warn @user</code></li>
+<li><strong>Bot's base username</strong> — <code>ServerAssistant, ban @user</code></li>
+<li><strong>Generic fallbacks</strong> — <code>bot, mute @user</code> or <code>assistant, show stats</code></li>
+<li><strong>Action keyword anywhere in the message</strong> — <code>warn @user spam</code> (no preamble needed)</li>
+</ul>
+<p>The "fuzzy logic" is on the <em>execution</em> side (AI interprets what action you wanted), not the addressing side. The addressing side is intentionally strict — match-by-name or @mention — so the bot doesn't burn tokens every time someone casually mentions the word "assistant" in conversation.</p>
+</div>
+</details>
+
 <details class="faq"><summary>Are AI features free?</summary>
 <div class="faq-body">
 <p>The free tier includes a <strong>150,000 token lifetime allowance</strong> — enough to evaluate every AI feature. Core moderation (AutoMod, anti-raid, warnings, slash commands) is always free regardless of token usage.</p>
