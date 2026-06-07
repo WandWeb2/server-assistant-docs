@@ -11,6 +11,34 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 
 ---
 
+## v5.5.7 — `/concierge` renamed to `/sai` + admin read-only mode
+
+### Renamed
+- **`/concierge` → `/sai`.** Same Server Assistant intelligence chat, shorter name. Owners get full access (read insights + propose config changes); **admins now get read-only access** (can ask questions, get insights, but can't enroll proposed changes — must ask the owner to apply). Embed shows the caller's role tag (`owner · full access` or `admin · read-only`) so it's obvious which mode the answer came from.
+
+### Deprecated
+- **`/concierge`** kept as a stub for ~30 days. Running it returns a short nudge: *"renamed to `/sai`, use that instead."* `/sai` remains the easiest way for owners to update the bot's settings. Stub removed in v5.7.
+
+---
+
+## v5.5.6 — Multi-tenant address detection + per-feature NL billing
+
+### Fixed
+- **Multi-tenant address check.** The bot now recognises its actual per-server nickname when staff write things like "Pepper, mute @user" or "Watchdog: ban that user" — previously it only matched a hardcoded set of legacy names, so servers that renamed the bot didn't get the by-name addressing path. The bot's nickname, base username, and generic fallbacks `bot,` / `assistant,` all trigger the same path now.
+
+### Changed
+- **Every AI call is now properly tagged in your token usage breakdown.** Five natural-language AI features (fuzzy-intent interpretation, conversational fallback, channel-create extraction, message-send extraction, report context summarisation, self-trained AutoMod analysis) previously charged your allowance under a catch-all `general` tag. They now use distinct labels (`nl_intent`, `nl_chat`, `nl_extract`, `report_command`, `self_trained`) so you can see exactly which features ate which tokens in `/premium`.
+
+---
+
+## v5.5.5 — Refreshed staff onboarding + Dev Updates default ON
+
+### Changed
+- **Staff onboarding overhauled.** The welcome message posted after `/setup` is now a 4-embed sequence (was 3): Text · Slash · Right-click · Decision cards walkthrough. First message **@mentions every configured staff role** so your team actually sees it. Slash command list grouped into Core moderation / Raid response / Config / Personal categories with all the v5.5.x additions (`/tempban`, `/role add/remove`, `/lockdown`, `/altguard`, `/tickets`, `/premium`). Final embed links to the docs site for the deeper dive.
+- **Dev Updates default to ON in setup.** Owners almost always want release notes for the bot powering their server, so the `/setup` wizard's Dev Updates toggle now starts enabled. Toggle off in the wizard or via `/settings → Behaviour` any time.
+
+---
+
 ## v5.5.4 — Docs reconciliation + Premium `/imagine` cooldown removed
 
 A coordinated sweep across the docs site, pricing page, privacy policy, roadmap, and listing copy — plus one small but long-promised bot fix. No moderation behaviour changes; this is mostly visibility, accuracy, and surface-level polish.
