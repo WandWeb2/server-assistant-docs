@@ -402,6 +402,21 @@ Where Server Assistant is heading. Priorities shift based on what server owners 
       <summary>Native-action coaching <span class="admin-pill">Baseline admin</span><span class="ver-pill">🎯 v5.6</span></summary>
       <span class="desc"><strong>Logging</strong> of native Discord actions (right-click ban/kick/timeout) <strong>shipped in v5.1</strong> — your audit trail is already complete. What's coming next: when a staff member moderates from Discord's own UI, they get a gentle one-line tip on doing the same thing through Server Assistant (so you keep your escalation ladder, approvals, and undo window intact). Read-only; never blocks the action.</span>
     </details>
+
+    <details class="card">
+      <summary>🤖 <code>/ai</code> — general-purpose AI for your community <span class="ver-pill">🎯 v5.6</span></summary>
+      <span class="desc">A new Premium-only command any member can use in opted-in servers: <code>/ai &lt;your question&gt;</code> and Server Assistant replies under its own name with a Claude-powered answer. Strict throughput design — your server's token allowance is charged per call, not ours. Default <strong>off</strong>; the owner enables it in <code>/settings → 🤖 AI Access</code> with controls for allowed channels, public-vs-ephemeral replies, per-user and per-channel rate limits, and a query log. Useful for "what time is it in Berlin?", "explain this Discord setting", "draft a server rule for X" — without any of the staff-only tooling. Image generation stays on <code>/imagine</code> separately so the free-tier Pollinations fallback isn't lost.</span>
+    </details>
+
+    <details class="card">
+      <summary><code>/image</code> and <code>/img</code> — aliases for <code>/imagine</code> <span class="ver-pill">🎯 v5.6</span></summary>
+      <span class="desc">Quality-of-life shortcuts. The full <code>/imagine</code> command stays as the canonical name; the aliases are there because muscle memory is real and everyone types one of those two by default.</span>
+    </details>
+
+    <details class="card">
+      <summary>🤖 <code>/settings → AI Access</code> panel <span class="ver-pill">🎯 v5.6</span></summary>
+      <span class="desc">The new owner-facing control panel for everything AI: <code>/ai</code> enable toggle, allowed channels, reply visibility (public/ephemeral), per-user and per-channel rate limits, content strictness, and the log-to channel. Designed to read top-to-bottom in under a minute so the <code>/settings</code> hub doesn't get harder to use as features land.</span>
+    </details>
   </div>
 
 </div>
