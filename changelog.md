@@ -13,7 +13,7 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 
 ## v5.5.4 — Docs reconciliation + Premium `/imagine` cooldown removed
 
-A coordinated sweep across the docs site, pricing page, privacy policy, roadmap, listing copy, and the operator PWA — plus one small but long-promised bot fix. No moderation behaviour changes; this is mostly visibility, accuracy, and surface-level polish.
+A coordinated sweep across the docs site, pricing page, privacy policy, roadmap, and listing copy — plus one small but long-promised bot fix. No moderation behaviour changes; this is mostly visibility, accuracy, and surface-level polish.
 
 ### Added
 - **Premium servers now get unlimited `/imagine`.** The 30-second per-guild cooldown is gone for Premium guilds — matches what the pricing page has always said. Free servers keep the cooldown (and the free Pollinations.ai fallback).
@@ -25,11 +25,8 @@ A coordinated sweep across the docs site, pricing page, privacy policy, roadmap,
 - **Commands page** gained a **🚨 Raid response & escalation** cluster grouping `/lockdown`, `/altguard`, `/tempban`, `/slowmode`, and per-channel locks into one runbook — plus a suggested raid playbook.
 - **Commands page → Moderation table:** `/role add` · `/role remove` · `/tempban` are now in the main section, not buried at the bottom of the slash-command quick reference.
 - **Homepage:** added a **🚀 Shipped this fortnight** strip (v5.2 → v5.5.4) and a small **🟢 Coming up next** strip (v5.6 items), so visitors see velocity *and* direction without scrolling the full roadmap.
-- **Operator PWA dashboard:** new **What's new** card showing the last 5 broadcasts and reminders (dev updates, service notices, reminders) — what your customers see, you see too.
-- **Listing copy (§3b "with screenshots"):** added Pulse, alt-guard, and Message Report screenshots to the long description for Top.gg / Discord Bot List.
-- **Top-up packs — three-tier ladder.** The single $3/300K pack has grown into 🪣 **Splash** ($3 / 300K · $1.00 per 100K), 🛢️ **Surge** ($10 / 1.25M · $0.80 per 100K), and 🏭 **Stockpile** ($25 / 3.4M · $0.74 per 100K). Tokens never expire; stacks on any tier. Premium remains the cheapest steady-state rate — top-ups reward upfront commit for bursts and overflow.
+- **Top-up packs — three-tier ladder.** The single $3/300K pack has grown into 🪣 **Splash** ($3 / 300K · $1.00 per 100K), 🛢️ **Surge** ($10 / 1.25M · $0.80 per 100K), and 🏭 **Stockpile** ($25 / 3.4M · $0.74 per 100K). Tokens never expire; stacks on any tier. Premium remains the cheapest steady-state rate — top-ups reward upfront commit for bursts and overflow. Buy directly from `/premium` in your server.
 - **Investigate-the-user buttons on every decision card.** Ban-appeal tickets, Message Reports, and borderline AutoMod review cards all gained a row of **👤 Info · ⚠️ Warnings · 📝 Notes** buttons. So before you Unban, Deny, Warn, Timeout, Delete, Kick, Ban, or **Allow**, you can pull the same info you'd get from `/info`, `/warnings`, or `/notes` — right from the card, ephemerally to you, without leaving the decision context. Works on banned users too (you can still review the warning history of someone who's no longer in your server). Every reply is staff-only and ephemeral; pulling info doesn't ping the subject and doesn't broadcast.
-- **Full top-up pack plumbing — shipping dormant.** The bot, relay, and PWA all carry the three-pack ladder behind a single `topups_enabled` master switch. While off (current default): nothing visible changes for customers; the existing $3/300K manual top-up path keeps working. When the switch flips: `/premium` shows three new buttons (already-Premium guilds can buy too — they appear next to "Manage billing"), Stripe Checkout opens with the right Price ID per pack, the webhook credits tokens by pack-key (not env-var drift), and the PWA's Billing card surfaces top-up revenue MTD next to MRR. **Operator UX:** PWA → System → 🎯 Top-up packs → Configure paste the three Stripe Price IDs and tick the master switch. Full playbook in `BILLING_SETUP.md`.
 
 ### Changed
 - **Threat Score wording is now consistent everywhere.** Pricing, features, and roadmap all explicitly state: **advisory view is free for every server, active (score-driven action) is Premium**.
@@ -44,8 +41,6 @@ A coordinated sweep across the docs site, pricing page, privacy policy, roadmap,
 
 ### Notes
 - No breaking changes; no migration required.
-- Docs site rebuilds on push.
-- For operators self-hosting the relay: pull the PWA changes (`index.html` + `app.js`) — the "What's new" card filters existing `events` rows client-side; no relay schema change.
 
 ---
 
