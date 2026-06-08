@@ -236,6 +236,22 @@ details.card .desc {
   letter-spacing: 0.02em;
   vertical-align: middle;
 }
+/* "Committed" pill — used on quality/correctness work that ships regardless
+   of voting (so it deliberately has no vote arrow). Visually distinct from
+   shipped (green) and admin (blue) so visitors don't confuse them. */
+.committed-pill {
+  display: inline-block;
+  margin-left: 0.4rem;
+  padding: 0.12rem 0.5rem;
+  background: #f4ecf7;
+  border: 1px solid #bb8fce;
+  border-radius: 999px;
+  color: #5b2c6f;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  vertical-align: middle;
+}
 .ver-pill {
   display: inline-block;
   margin-left: 0.4rem;
@@ -462,12 +478,12 @@ Where Server Assistant is heading. Priorities shift based on what server owners 
     <h3>🟢 Coming up<small>Next — shaped by your votes</small></h3>
 
     <details class="card">
-      <summary>🔒 Defaults &amp; disclosure audit <span class="ver-pill">🎯 v5.6</span></summary>
+      <summary>🔒 Defaults &amp; disclosure audit <span class="ver-pill">🎯 v5.6</span><span class="committed-pill">Committed</span></summary>
       <span class="desc">A focused pass through every default-on feature to make sure owners never get a behaviour they didn't ask for. Pulse, weekly digest, and several smaller features are moving to opt-in; any remaining always-on capabilities will be documented up front in <code>/setup</code> with a one-line plain-language summary. The principle: if a feature posts a message, changes a permission, or sends a DM, the owner should have seen a sentence about it before it happens — never <em>after</em>.</span>
     </details>
 
     <details class="card">
-      <summary>📣 <code>/whatsnew</code> command + post-update DM <span class="ver-pill">🎯 v5.6</span></summary>
+      <summary>📣 <code>/whatsnew</code> command + post-update DM <span class="ver-pill">🎯 v5.6</span><a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/45" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary>
       <span class="desc">A slash command any staff member can run to see what's changed since they last looked, plus a one-time DM to the owner after each update summarising the user-visible changes that affect their server (new commands, default changes, panel additions). Replaces "why did this start happening?" support questions before they get sent.</span>
     </details>
 
@@ -487,7 +503,7 @@ Where Server Assistant is heading. Priorities shift based on what server owners 
     </details>
 
     <details class="card">
-      <summary><code>/image</code> and <code>/img</code> — aliases for <code>/imagine</code> <span class="ver-pill">🎯 v5.6</span></summary>
+      <summary><code>/image</code> and <code>/img</code> — aliases for <code>/imagine</code> <span class="ver-pill">🎯 v5.6</span><a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/46" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary>
       <span class="desc">Quality-of-life shortcuts. The full <code>/imagine</code> command stays as the canonical name; the aliases are there because muscle memory is real and everyone types one of those two by default.</span>
     </details>
   </div>
@@ -506,12 +522,12 @@ Where Server Assistant is heading. Priorities shift based on what server owners 
 <div class="future-grid">
 
   <details class="card">
-    <summary>🤖 <code>/ai</code> — general-purpose AI for your community <span class="ver-pill">🎯 v5.7</span></summary>
+    <summary>🤖 <code>/ai</code> — general-purpose AI for your community <span class="ver-pill">🎯 v5.7</span><a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/47" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary>
     <span class="desc">A Premium-only command any member can use in opted-in servers: <code>/ai &lt;your question&gt;</code> and Server Assistant replies under its own name with a Claude-powered answer. Default <strong>off</strong>; the owner enables it in <code>/settings → 🤖 AI Access</code> with controls for allowed channels, public-vs-ephemeral replies, per-user and per-channel rate limits, and a query log. Useful for "what time is it in Berlin?", "explain this Discord setting", "draft a server rule for X". Image generation stays on <code>/imagine</code> separately so the free-tier Pollinations fallback isn't lost.</span>
   </details>
 
   <details class="card">
-    <summary>🤖 <code>/settings → AI Access</code> panel <span class="ver-pill">🎯 v5.7</span></summary>
+    <summary>🤖 <code>/settings → AI Access</code> panel <span class="ver-pill">🎯 v5.7</span><a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/48" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary>
     <span class="desc">The owner-facing control panel for everything AI: <code>/ai</code> enable toggle, allowed channels, reply visibility (public/ephemeral), per-user and per-channel rate limits, content strictness, and the log-to channel. Ships alongside <code>/ai</code>.</span>
   </details>
 
@@ -521,7 +537,7 @@ Where Server Assistant is heading. Priorities shift based on what server owners 
   </details>
 
   <details class="card">
-    <summary>Native-action coaching <span class="admin-pill">Baseline admin</span><span class="ver-pill">🎯 v5.7</span></summary>
+    <summary>Native-action coaching <span class="admin-pill">Baseline admin</span><span class="ver-pill">🎯 v5.7</span><a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/49" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary>
     <span class="desc"><strong>Logging</strong> of native Discord actions (right-click ban/kick/timeout) <strong>shipped in v5.1</strong>. What's coming next: when a staff member moderates from Discord's own UI, they get a gentle one-line tip on doing the same thing through Server Assistant (so you keep your escalation ladder, approvals, and undo window intact). Read-only; never blocks the action.</span>
   </details>
 
