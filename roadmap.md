@@ -383,6 +383,36 @@ Where Server Assistant is heading. Priorities shift based on what server owners 
       <summary>📩 Ban reasons &amp; one-reply appeals <span class="shipped-pill">✅ Shipped v5.5</span></summary>
       <span class="desc"><strong>Shipped 2026-06-03.</strong> Every ban — manual, <code>/tempban</code>, AutoMod, or native — now DMs the user the reason and invites <strong>one reply</strong> to appeal. That reply opens a staff appeal ticket with <strong>Unban</strong> / <strong>Deny</strong> / <strong>Research</strong> buttons; Research runs <strong>Message Report</strong> (the renamed right-click AI summary) on the user's last message so you can judge context first. Soft-bans excluded; on by default.</span>
     </details>
+
+    <details class="card">
+      <summary>📚 Docs reconciliation + Premium <code>/imagine</code> cooldown removed <span class="shipped-pill">✅ Shipped v5.5.4</span></summary>
+      <span class="desc">Premium servers now get <strong>unlimited <code>/imagine</code></strong> — the 30-second per-guild cooldown is gone, matching what the pricing page has always said. Coordinated sweep across docs, pricing, privacy policy, and listing copy to make sure every page reflects what actually shipped in v5.3–v5.5.</span>
+    </details>
+
+    <details class="card">
+      <summary>👋 Refreshed staff onboarding + Dev Updates default ON <span class="shipped-pill">✅ Shipped v5.5.5</span></summary>
+      <span class="desc">The welcome message posted after <code>/setup</code> is now a 4-embed sequence (Text · Slash · Right-click · Decision cards) and <strong>@mentions every configured staff role</strong> so your team actually sees it. Slash command list grouped by Core moderation / Raid response / Config / Personal with all v5.5.x additions. Dev Updates toggle starts enabled in setup — owners almost always want release notes for the bot powering their server.</span>
+    </details>
+
+    <details class="card">
+      <summary>🏷️ Multi-tenant address detection + per-feature NL billing <span class="shipped-pill">✅ Shipped v5.5.6</span></summary>
+      <span class="desc">The bot now recognises its <strong>actual per-server nickname</strong> when staff write "Pepper, mute @user" or "Watchdog: ban that user" — previously it only matched a hardcoded set of names. Also: every AI call is now properly tagged in your token usage breakdown (<code>nl_intent</code>, <code>nl_chat</code>, <code>nl_extract</code>, <code>report_command</code>, <code>self_trained</code>) so you see exactly which features ate which tokens in <code>/premium</code>.</span>
+    </details>
+
+    <details class="card">
+      <summary>💬 <code>/concierge</code> renamed to <code>/sai</code> + admin read-only <span class="shipped-pill">✅ Shipped v5.5.7</span></summary>
+      <span class="desc">Same Server Assistant intelligence chat, shorter name. Owners get full access (read insights + propose config changes); <strong>admins now get read-only access</strong> — they can ask questions and get insights but can't enroll proposed changes. Embed shows the caller's role tag so it's obvious which mode the answer came from.</span>
+    </details>
+
+    <details class="card">
+      <summary>⌘ Per-server command usage logging <span class="shipped-pill">✅ Shipped v5.5.9</span></summary>
+      <span class="desc">Every slash command, right-click context menu, and natural-language text command appears in your server's log channel as a compact entry: <em>user · command · channel · invocation type</em>. Owners and staff see exactly what's being used and by whom, in the same channel they already check. Fire-and-forget — never blocks the command itself. Toggle off in <code>/settings → Behaviour</code> if your server is chatty.</span>
+    </details>
+
+    <details class="card">
+      <summary>🚀 One-tap setup on install <span class="shipped-pill">✅ Shipped v5.5.10</span></summary>
+      <span class="desc">As soon as you add Server Assistant, the bot scans your server, detects sensible defaults (staff chat, log channel, Owner / Admin / Mod roles), and <strong>DMs the owner with a one-button "Apply" proposal</strong>. Tap once and your server is fully configured. Fallback to your system channel with an owner @-ping if DMs are closed, so nobody misses the setup prompt because of a privacy setting. <code>/setup</code> and <code>/autopilot</code> still work for manual flows.</span>
+    </details>
   </div>
 
   <div class="lane lane-comingup">
@@ -499,26 +529,29 @@ Where Server Assistant is heading. Priorities shift based on what server owners 
   <div class="premium-tier-col">
     <h4>Tier B — solid additions <span class="ver-pill">🎯 v6.1</span></h4>
 
-    <details class="card"><summary>Leveling / XP<a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/19" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary><span class="desc">Server-wide XP with level-up roles and a leaderboard. Opt-in per server, opt-out per user.</span></details>
-    <details class="card"><summary>Polls<a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/20" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary><span class="desc"><code>/poll</code> with button-based voting and live tally.</span></details>
+    <details class="card"><summary>🌟 AI Q&amp;A from server FAQ<a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/24" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary><span class="desc">Bot answers member questions based on FAQ snippets the owner has provided — or pinned messages it learns from automatically. Cuts the same-question-asked-50-times noise without staff having to babysit channels. Differentiator: nobody else combines this with the moderation context the bot already has.</span></details>
+
     <details class="card"><summary>Embed builder<a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/21" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary><span class="desc">Interactive wizard for crafting rich announcements with fields, images, and buttons.</span></details>
+
+    <details class="card"><summary>Leveling / XP<a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/19" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary><span class="desc">Server-wide XP with level-up roles and a leaderboard. Opt-in per server, opt-out per user.</span></details>
   </div>
 
   <div class="premium-tier-col">
     <h4>Tier C — nice-to-have <span class="ver-pill">🎯 v6.2</span></h4>
 
-    <details class="card"><summary>Birthday tracker<a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/22" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary><span class="desc">Opt-in birthdays with auto-DM and channel post on the day.</span></details>
+    <details class="card"><summary>🌟 Auto-translate (per-channel)<a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/25" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary><span class="desc">On-demand or automatic translation for configured channels — per-language, per-channel rules so an international community can have an English channel, a Spanish channel, and a bilingual one without bots crossing wires. Differentiator over off-the-shelf translate bots: pairs with moderation context (won't translate AutoMod-deleted messages, surfaces tone shifts across language).</span></details>
+
     <details class="card"><summary>Welcome card images<a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/23" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary><span class="desc">Auto-generated PNG welcome for each new joiner.</span></details>
-    <details class="card"><summary>AI Q&amp;A from server FAQ<a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/24" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary><span class="desc">Bot answers questions based on FAQ snippets the owner has provided.</span></details>
-    <details class="card"><summary>Auto-translate<a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/25" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary><span class="desc">On-demand or automatic translation for configured channels.</span></details>
+
+    <details class="card"><summary>Birthday tracker<a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/22" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary><span class="desc">Opt-in birthdays with auto-DM and channel post on the day.</span></details>
   </div>
 
   <div class="premium-tier-col">
     <h4>Tier D — power users <span class="ver-pill">🎯 v6.3</span></h4>
 
-    <details class="card"><summary>REST / webhook API<a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/26" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary><span class="desc">Read-only endpoints for your guild's bot data (warnings, audit log, activity stats).</span></details>
-    <details class="card"><summary>White-label branding<a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/27" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary><span class="desc">Fully replace the bot's identity per-server — your name, your avatar, your colour scheme.</span></details>
-    <details class="card"><summary>Unlimited <code>/imagine</code><a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/28" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary><span class="desc">Premium removes the 30-second per-guild rate limit.</span></details>
+    <details class="card"><summary>🌟 White-label branding<a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/27" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary><span class="desc">Fully replace the bot's identity per-server — your name, your avatar, your colour scheme, your support footer. No "Powered by Server Assistant" required. Differentiator: no other major moderation bot lets you fully rebrand.</span></details>
+
+    <details class="card"><summary>REST / webhook API<a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/26" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary><span class="desc">Read-only endpoints for your guild's bot data (warnings, audit log, activity stats). For staff dashboards and external tooling.</span></details>
   </div>
 
 </div>
@@ -539,6 +572,8 @@ Where Server Assistant is heading. Priorities shift based on what server owners 
   <details class="card"><summary>Federated moderation network<a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/30" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary><span class="desc">Opt-in cross-server ban / warn data sharing for trusted communities. Solves cross-server raid coordination.</span></details>
 
   <details class="card"><summary>Cross-server reputation<a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/10" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary><span class="desc">Opt-in positive reputation that follows trusted users between partner servers — the inverse of federated banlists. Conceptually strong, operationally complex (cross-tenant trust, abuse vectors). Held here until two communities ask for it by name with a use case.</span></details>
+
+  <details class="card"><summary>Polls<a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/20" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary><span class="desc"><em>Likely not building this.</em> Discord shipped native polls in 2024, which removes the need for a bot-driven <code>/poll</code> in almost every case. Kept here as a reference point — if a real use case emerges (advanced poll types, longer durations, role-restricted voting) it can be promoted back.</span></details>
 
   <details class="card"><summary>AI-drafted server policy<a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/31" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary><span class="desc">Bot reads your channels for two weeks, drafts a rules document tailored to your community's actual norms, posts it for owner approval.</span></details>
 
