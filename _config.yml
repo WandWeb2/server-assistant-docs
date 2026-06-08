@@ -38,17 +38,15 @@ plugins:
 # Header logo for the theme
 logo: /assets/logo.png
 
-# Pages that should appear in the top header navigation, in this order.
-# (Minima reads this list and renders the nav.)
+# Top-nav: trimmed to the marketing funnel (Setup → Features → Pricing →
+# Compare → Roadmap). Deeper pages (Commands, FAQ, Support, Changelog) stay
+# fully reachable via the footer — they just don't clutter the header.
 header_pages:
   - setup.md
-  - commands.md
   - features.md
   - pricing.md
+  - compare.md
   - roadmap.md
-  - changelog.md
-  - faq.md
-  - support.md
 
 # Pretty URLs: /privacy/ instead of /privacy.html
 permalink: /:title/
