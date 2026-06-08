@@ -315,7 +315,7 @@ Where Server Assistant is heading. Priorities shift based on what server owners 
      <strong style="color:#1e8449">🟢 Coming up</strong> — committed, building now or next ·
      <strong style="color:#2471a3">🔵 Future</strong> — planned, direction is set, timing isn't ·
      <strong style="color:#7d3c98">🔮 Potential ideas</strong> — exploratory, not yet committed. Your votes move things up.</p>
-  <p>🏷️ <strong>Version tags show release <em>order</em>, not dates.</strong> Each card carries the release it's targeted for — <code>v5.6</code> ships before <code>v5.7</code>, and so on. We're currently on <strong>v5.5.4</strong>. Targets can shift as priorities change; Potential ideas stay unversioned until they're committed.</p>
+  <p>🏷️ <strong>Version tags show release <em>order</em>, not dates.</strong> Each card carries the release it's targeted for — <code>v5.6</code> ships before <code>v5.7</code>, and so on. We're currently on <strong>v5.5.10</strong>. Targets can shift as priorities change; Potential ideas stay unversioned until they're committed.</p>
 </div>
 
 <div class="expand-all-bar">
@@ -389,8 +389,18 @@ Where Server Assistant is heading. Priorities shift based on what server owners 
     <h3>🟢 Coming up<small>Next — shaped by your votes</small></h3>
 
     <details class="card">
-      <summary>AI rule explainer <span class="ver-pill">🎯 v5.6</span><a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/7" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary>
-      <span class="desc">AutoMod DMs the user not just which filter matched, but why this rule exists, in plain language.</span>
+      <summary>🔒 Defaults &amp; disclosure audit <span class="ver-pill">🎯 v5.6</span></summary>
+      <span class="desc">A focused pass through every default-on feature to make sure owners never get a behaviour they didn't ask for. Pulse, weekly digest, and several smaller features are moving to opt-in; any remaining always-on capabilities will be documented up front in <code>/setup</code> with a one-line plain-language summary. The principle: if a feature posts a message, changes a permission, or sends a DM, the owner should have seen a sentence about it before it happens — never <em>after</em>.</span>
+    </details>
+
+    <details class="card">
+      <summary>📣 <code>/whatsnew</code> command + post-update DM <span class="ver-pill">🎯 v5.6</span></summary>
+      <span class="desc">A slash command any staff member can run to see what's changed since they last looked, plus a one-time DM to the owner after each update summarising the user-visible changes that affect their server (new commands, default changes, panel additions). Replaces "why did this start happening?" support questions before they get sent.</span>
+    </details>
+
+    <details class="card">
+      <summary>Setup activation metrics <span class="ver-pill">🎯 v5.6</span><span class="admin-pill">Operator-side</span></summary>
+      <span class="desc">Internal instrumentation only — no user-visible change. Adds funnel telemetry (install landed → setup opened → autopilot applied → first command used) so we can measure whether each onboarding improvement actually moves the needle. Helps prioritise the next round of setup polish from data instead of guesswork.</span>
     </details>
 
     <details class="card">
@@ -399,23 +409,13 @@ Where Server Assistant is heading. Priorities shift based on what server owners 
     </details>
 
     <details class="card">
-      <summary>Native-action coaching <span class="admin-pill">Baseline admin</span><span class="ver-pill">🎯 v5.6</span></summary>
-      <span class="desc"><strong>Logging</strong> of native Discord actions (right-click ban/kick/timeout) <strong>shipped in v5.1</strong> — your audit trail is already complete. What's coming next: when a staff member moderates from Discord's own UI, they get a gentle one-line tip on doing the same thing through Server Assistant (so you keep your escalation ladder, approvals, and undo window intact). Read-only; never blocks the action.</span>
-    </details>
-
-    <details class="card">
-      <summary>🤖 <code>/ai</code> — general-purpose AI for your community <span class="ver-pill">🎯 v5.6</span></summary>
-      <span class="desc">A new Premium-only command any member can use in opted-in servers: <code>/ai &lt;your question&gt;</code> and Server Assistant replies under its own name with a Claude-powered answer. Strict throughput design — your server's token allowance is charged per call, not ours. Default <strong>off</strong>; the owner enables it in <code>/settings → 🤖 AI Access</code> with controls for allowed channels, public-vs-ephemeral replies, per-user and per-channel rate limits, and a query log. Useful for "what time is it in Berlin?", "explain this Discord setting", "draft a server rule for X" — without any of the staff-only tooling. Image generation stays on <code>/imagine</code> separately so the free-tier Pollinations fallback isn't lost.</span>
+      <summary>Mod team retrospectives <span class="ver-pill">🎯 v5.6</span><a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/9" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary>
+      <span class="desc">Weekly auto-generated retro embed: case counts, resolution times, notable patterns, items worth discussing. A weekly artifact your mod team will actually want to share with each other and with the owner.</span>
     </details>
 
     <details class="card">
       <summary><code>/image</code> and <code>/img</code> — aliases for <code>/imagine</code> <span class="ver-pill">🎯 v5.6</span></summary>
       <span class="desc">Quality-of-life shortcuts. The full <code>/imagine</code> command stays as the canonical name; the aliases are there because muscle memory is real and everyone types one of those two by default.</span>
-    </details>
-
-    <details class="card">
-      <summary>🤖 <code>/settings → AI Access</code> panel <span class="ver-pill">🎯 v5.6</span></summary>
-      <span class="desc">The new owner-facing control panel for everything AI: <code>/ai</code> enable toggle, allowed channels, reply visibility (public/ephemeral), per-user and per-channel rate limits, content strictness, and the log-to channel. Designed to read top-to-bottom in under a minute so the <code>/settings</code> hub doesn't get harder to use as features land.</span>
     </details>
   </div>
 
@@ -433,18 +433,23 @@ Where Server Assistant is heading. Priorities shift based on what server owners 
 <div class="future-grid">
 
   <details class="card">
-    <summary>Mod team retrospectives <span class="ver-pill">🎯 v5.7</span><a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/9" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary>
-    <span class="desc">Weekly auto-generated retro embed: case counts, resolution times, notable patterns, items worth discussing.</span>
+    <summary>🤖 <code>/ai</code> — general-purpose AI for your community <span class="ver-pill">🎯 v5.7</span></summary>
+    <span class="desc">A Premium-only command any member can use in opted-in servers: <code>/ai &lt;your question&gt;</code> and Server Assistant replies under its own name with a Claude-powered answer. Default <strong>off</strong>; the owner enables it in <code>/settings → 🤖 AI Access</code> with controls for allowed channels, public-vs-ephemeral replies, per-user and per-channel rate limits, and a query log. Useful for "what time is it in Berlin?", "explain this Discord setting", "draft a server rule for X". Image generation stays on <code>/imagine</code> separately so the free-tier Pollinations fallback isn't lost.</span>
   </details>
 
   <details class="card">
-    <summary>Cross-server reputation <span class="ver-pill">🎯 v5.8</span><a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/10" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary>
-    <span class="desc">Opt-in positive reputation that follows trusted users between partner servers. The inverse of federated banlists.</span>
+    <summary>🤖 <code>/settings → AI Access</code> panel <span class="ver-pill">🎯 v5.7</span></summary>
+    <span class="desc">The owner-facing control panel for everything AI: <code>/ai</code> enable toggle, allowed channels, reply visibility (public/ephemeral), per-user and per-channel rate limits, content strictness, and the log-to channel. Ships alongside <code>/ai</code>.</span>
   </details>
 
   <details class="card">
-    <summary>Community-of-practice sharing <span class="ver-pill">🎯 v5.8</span><a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/11" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary>
-    <span class="desc"><em>"Servers like yours configure X this way"</em> recommendations based on similar community profiles.</span>
+    <summary>AI rule explainer <span class="ver-pill">🎯 v5.7</span><a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/7" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary>
+    <span class="desc">AutoMod DMs the user not just which filter matched, but why this rule exists, in plain language. Cuts the "I have no idea why I got warned" complaint at the root.</span>
+  </details>
+
+  <details class="card">
+    <summary>Native-action coaching <span class="admin-pill">Baseline admin</span><span class="ver-pill">🎯 v5.7</span></summary>
+    <span class="desc"><strong>Logging</strong> of native Discord actions (right-click ban/kick/timeout) <strong>shipped in v5.1</strong>. What's coming next: when a staff member moderates from Discord's own UI, they get a gentle one-line tip on doing the same thing through Server Assistant (so you keep your escalation ladder, approvals, and undo window intact). Read-only; never blocks the action.</span>
   </details>
 
   <details class="card">
@@ -453,7 +458,12 @@ Where Server Assistant is heading. Priorities shift based on what server owners 
   </details>
 
   <details class="card">
-    <summary>Bot-on-bot detection <span class="ver-pill">🎯 v5.9</span><a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/13" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary>
+    <summary>Community-of-practice sharing <span class="ver-pill">🎯 v5.8</span><a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/11" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary>
+    <span class="desc"><em>"Servers like yours configure X this way"</em> recommendations based on similar community profiles. Privacy-first — patterns only, no per-server identifying data.</span>
+  </details>
+
+  <details class="card">
+    <summary>Bot-on-bot detection <span class="ver-pill">🎯 v5.8</span><a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/13" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary>
     <span class="desc">Flag suspicious automation pretending to be human — relevant for mass-marketing raids that evade text filters.</span>
   </details>
 
@@ -473,13 +483,17 @@ Where Server Assistant is heading. Priorities shift based on what server owners 
   <div class="premium-tier-col">
     <h4>Tier A — ship first <span class="ver-pill">🎯 v6.0</span></h4>
 
-    <details class="card"><summary>🌟 Premium Plus ($14/mo) <span class="shipped-pill">Under consideration</span></summary><span class="desc">For high-volume servers that push past the 750K/month Standard Premium cap. Includes: 2M tokens/month, priority Concierge response queue, multi-server bundle (3 servers per subscription), and bonus features as they ship. Pending validation from 50+ Standard Premium subs — highest-voted ideas from that cohort will define the final feature set.</span></details>
+    <details class="card"><summary>🌟 Mediator — pre-action de-escalation<a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/17" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary><span class="desc">When a conversation is escalating <em>before</em> any moderation action, bot DMs both parties, collects each side privately, and produces a neutral summary for staff. The pre-action sibling to v5.5's one-reply ban appeals. Differentiator — no other major bot does this.</span></details>
+
+    <details class="card"><summary>🌟 Decision explainer + multi-round appeals<a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/18" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary><span class="desc">Builds on the one-reply ban-appeal flow shipped in v5.5. Adds: warned/muted users can DM the bot <em>"why was I actioned?"</em> for a plain-language answer drawn from the staff-supplied reason and the matched rule; banned users get a <strong>guided multi-round</strong> appeal — a short AI-facilitated back-and-forth that gives staff more than a single line to judge.</span></details>
+
+    <details class="card"><summary>Daily AI channel summaries<a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/16" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary><span class="desc">Once-a-day digest of activity in a chosen channel, posted to a configured destination.</span></details>
 
     <details class="card"><summary>Reaction roles<a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/14" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary><span class="desc">Button-based self-service role panels in any channel.</span></details>
+
     <details class="card"><summary>Custom slash commands<a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/15" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary><span class="desc">Server owners define their own <code>/foo</code> returning a configured embed or text snippet.</span></details>
-    <details class="card"><summary>Daily AI channel summaries<a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/16" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary><span class="desc">Once-a-day digest of activity in a chosen channel, posted to a configured destination.</span></details>
-    <details class="card"><summary>Mediator<a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/17" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary><span class="desc">When a conversation is escalating <em>before</em> any moderation action, bot DMs both parties, collects each side privately, and produces a neutral summary for staff. (Distinct from one-reply ban appeals, which already shipped in v5.5 — this is the pre-action sibling.)</span></details>
-    <details class="card"><summary>Decision explainer + multi-round appeals<a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/18" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary><span class="desc">Builds on the one-reply ban-appeal flow shipped in v5.5. Adds: warned/muted users can DM the bot <em>"why was I actioned?"</em> for a plain-language answer drawn from the staff-supplied reason and the matched rule; banned users get a <strong>guided multi-round</strong> appeal (a short AI-facilitated back-and-forth that gives staff more than a single line to judge).</span></details>
+
+    <details class="card"><summary>🌟 Premium Plus ($14/mo) <span class="shipped-pill">Under consideration</span></summary><span class="desc">For high-volume servers that push past the 750K/month Standard Premium cap. Includes: 2M tokens/month, priority Concierge response queue, multi-server bundle (3 servers per subscription), and bonus features as they ship. Pending validation from 50+ Standard Premium subs — highest-voted ideas from that cohort will define the final feature set.</span></details>
   </div>
 
   <div class="premium-tier-col">
@@ -523,6 +537,8 @@ Where Server Assistant is heading. Priorities shift based on what server owners 
   <details class="card"><summary>Voice-channel moderation<a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/29" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary><span class="desc">Real-time transcription + AutoMod / threat-score logic applied to voice channels. The industry's biggest moderation blind spot — no major bot touches voice.</span></details>
 
   <details class="card"><summary>Federated moderation network<a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/30" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary><span class="desc">Opt-in cross-server ban / warn data sharing for trusted communities. Solves cross-server raid coordination.</span></details>
+
+  <details class="card"><summary>Cross-server reputation<a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/10" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary><span class="desc">Opt-in positive reputation that follows trusted users between partner servers — the inverse of federated banlists. Conceptually strong, operationally complex (cross-tenant trust, abuse vectors). Held here until two communities ask for it by name with a use case.</span></details>
 
   <details class="card"><summary>AI-drafted server policy<a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/31" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary><span class="desc">Bot reads your channels for two weeks, drafts a rules document tailored to your community's actual norms, posts it for owner approval.</span></details>
 
