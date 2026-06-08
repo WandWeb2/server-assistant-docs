@@ -13,10 +13,12 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 
 ---
 
-## v5.5.8 — Per-server activity tracking
+## v5.5.9 — Per-server command usage logging
 
 ### Added
-- **Command usage is now tracked per server.** Every slash command, right-click context menu, and natural-language text command emits an activity event tagged with the server, the user who ran it, the channel, and the command name. Server owners can disseminate exactly what's getting used and by whom. Fire-and-forget — never blocks the command itself.
+- **Command usage now logs to your server's log channel.** Every slash command, right-click context menu, and natural-language text command appears as a compact entry: *user · command · channel · invocation type*. Owners and staff can see exactly what's being used and by whom, in the same channel they already check. Fire-and-forget — never blocks the command itself.
+- **Off-switch:** if your server is chatty, toggle this off in `/settings → Behaviour → Log command usage`. Moderation actions (warn / mute / ban / kick / etc.) keep their existing detailed entries regardless — only the additional "command was invoked" entries are silenced.
+- **Skipped by default:** commands that already produce a detailed log entry (warn, mute, kick, ban, softban, tempban, role add/remove, lockdown, purge, nick) don't double-log. Read-only and personal commands (`/info`, `/stats`, `/help`, `/timezone`, `/schedule`) and config commands (`/sai`, `/settings`, `/automod`, etc.) get the compact entry.
 
 ---
 
