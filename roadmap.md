@@ -544,6 +544,11 @@ Where Server Assistant is heading. Priorities shift based on what server owners 
     </details>
 
     <details class="card">
+      <summary>🎨 Server-type templates in <code>/setup</code> <span class="ver-pill">🎯 v5.6</span><a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/50" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary>
+      <span class="desc">A picker step in the setup wizard (and the autopilot Apply DM) that asks <em>"what kind of server is this?"</em> — Gaming / Brand / Community / Educational / NSFW — and applies a tuned combo of AutoMod preset, punishment ladder, anti-raid threshold, and Pulse default that fits. The underlying presets already exist in the bot; this surfaces them as a one-click choice instead of a one-size-fits-all default. Owners self-classify in 5 seconds and get a config that matches their server type out of the box.</span>
+    </details>
+
+    <details class="card">
       <summary>📣 <code>/whatsnew</code> command + post-update DM <span class="ver-pill">🎯 v5.6</span><a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/45" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary>
       <span class="desc">A slash command any staff member can run to see what's changed since they last looked, plus a one-time DM to the owner after each update summarising the user-visible changes that affect their server (new commands, default changes, panel additions). Replaces "why did this start happening?" support questions before they get sent.</span>
     </details>
