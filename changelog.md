@@ -2,10 +2,30 @@
 layout: default
 title: Changelog
 permalink: /changelog/
-description: Release history for Server Assistant — major features, fixes, and announcements.
+description: Release history for Server Assistant — v5.x line.
 ---
 
-# 📋 Changelog
+# 📋 Changelog — v5.x
+
+The current release line.
+
+<style>
+.changelog-nav { display: flex; gap: 0.4rem; flex-wrap: wrap; margin: 0.6rem 0 1.2rem; padding: 0.5rem; background: rgba(46,204,113,0.06); border: 1px solid rgba(46,204,113,0.20); border-radius: 10px; }
+.changelog-nav strong { font-size: 0.78rem; color: #2c7ad6; font-weight: 700; padding: 0.35rem 0.6rem 0.35rem 0; align-self: center; }
+.changelog-nav a { display: inline-block; padding: 0.35rem 0.85rem; border-radius: 999px; font-size: 0.85rem; font-weight: 600; text-decoration: none; color: #2c3e50; background: rgba(255,255,255,0.7); border: 1px solid rgba(31,38,135,0.12); transition: all 0.15s; }
+.changelog-nav a:hover { background: #2c7ad6; color: white; border-color: #2c7ad6; text-decoration: none; }
+.changelog-nav a.current { background: #2c7ad6; color: white; border-color: #2c7ad6; }
+.changelog-nav .latest-tag { font-size: 0.65rem; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; opacity: 0.8; margin-left: 0.3rem; }
+</style>
+
+<div class="changelog-nav">
+  <strong>Browse by version</strong>
+  <a href="{{ site.url }}{{ site.baseurl }}/changelog/" class="{% if page.permalink == '/changelog/' %}current{% endif %}">v5.x <span class="latest-tag">latest</span></a>
+  <a href="{{ site.url }}{{ site.baseurl }}/changelog/v4/" class="{% if page.permalink == '/changelog/v4/' %}current{% endif %}">v4.x</a>
+  <a href="{{ site.url }}{{ site.baseurl }}/changelog/v3/" class="{% if page.permalink == '/changelog/v3/' %}current{% endif %}">v3.x</a>
+  <a href="{{ site.url }}{{ site.baseurl }}/changelog/v2/" class="{% if page.permalink == '/changelog/v2/' %}current{% endif %}">v2.x</a>
+  <a href="{{ site.url }}{{ site.baseurl }}/changelog/v1/" class="{% if page.permalink == '/changelog/v1/' %}current{% endif %}">v1.x</a>
+</div>
 
 What's new in Server Assistant. Internal-only updates (CI, dependency bumps, host-side tooling) aren't listed here.
 
@@ -108,9 +128,83 @@ Bans are no longer a silent door slam — and an appeal is one reply away.
 
 ---
 
-## Older releases
+## v5.4 — Smarter AutoMod & ban-evasion defence
 
-See the **[Changelog archive →]({{ site.url }}{{ site.baseurl }}/changelog/archive/)** for **v5.4** and earlier (AutoMod AI second-opinion, alt-guard, baseline admin essentials, Ticket Panels, the v5.0 Premium launch, the v4.0 AI-Moderation Update, and the full v3.x / v2.x / v1.x history).
+Two safety upgrades — one that cuts false positives, one that catches returning troublemakers.
+
+### Added
+- **🤔 AutoMod AI second-opinion** *(Premium, opt-in)*. Turn it on in `/automod → AI Review`. Borderline AutoMod hits (word filters & spam) get a quick AI confidence check before anything happens. Hits at or above your threshold are actioned automatically; anything below is **left up** and posted to staff as a review card with one-tap **Delete & warn** / **Allow** buttons. High-confidence hits (blocked links, mention spam) still act instantly. AI usage counts toward your server's token allowance, and only borderline messages are checked — so the cost stays low.
+- **🕵️ Repeat-offender detection** *(free, opt-in)*. Enable with `/altguard on`. Server Assistant fingerprints the users you ban or kick (reused custom avatar, name, account age), then checks every new joiner against them. A **confident** match — like a fresh account reusing a banned user's avatar or near-identical name — is **auto-banned and reported to staff**; weaker matches are flagged for review only. Soft-bans are excluded (they're meant to let people rejoin).
+
+---
+
+## v5.3 — Baseline admin essentials
+
+Three plug-and-play admin commands that close common gaps — all permission-gated and written to your audit trail.
+
+### Added
+- **🎭 `/role add` / `/role remove`.** Add or remove a role from a member in one command, instead of digging through Discord's role menus. Guarded against privilege escalation: you can only assign roles **below** your own highest role, and `@everyone` / integration-managed roles are off-limits. Usable by anyone with **Manage Roles** (or a role tier that grants it).
+- **🚨 `/lockdown start` / `/lockdown end`.** Lock **every text and forum channel** at once for raid response — including their threads and posts, so a raid can't just move into a thread — then restore each channel's **exact** prior permissions on `end`, not a best guess. Reuses your existing channel-lock permission, so there's nothing new to configure.
+- **⏲️ `/tempban <user> <duration>`.** Timed bans that **un-ban automatically** — `30m`, `2h`, `7d`, `1w`, even `1d12h` (1 minute to 28 days). The timer is persisted and survives restarts; when it expires the bot un-bans, logs it to your audit trail, and DMs the staff member who set it.
+
+---
+
+## v5.2 — Ticket Panels
+
+Private in-server support tickets — no DMs, no leaving your server, no messy threads.
+
+### Added
+- **🎫 Ticket Panels.** Admins run `/tickets setup` to post a panel embed with a **Create Ticket** button in any channel — or pass `create_channel` to have the bot make a properly-locked channel for you (members can see the panel and click, but not chat). Members click it to fill a short intake form; the bot creates a private `ticket-NNNN-username` channel, notifies the support role, and drops in a **Close Ticket** button. On close, a full `.txt` transcript is posted to the configured channel and the ticket channel is deleted.
+- **Free tier:** one-question intake form, private ticket channels, transcript on close, editable panel text.
+- **Premium tier:** up to 4 custom intake form questions (`/tickets questions`), custom welcome and close messages (`/tickets panel`), and the ability to add users to an open ticket mid-conversation (`/tickets add @user`).
+- **Persistent panels** — the Create Ticket button survives bot restarts.
+- **Per-ticket privacy** — each ticket channel is visible only to the opener, the configured support role, and admins.
+- **Storage** in `tickets.json` alongside the other per-guild JSON stores; no extra setup required.
+
+---
+
+## v5.1 — Complete audit trail & tamper protection
+
+Oversight you can trust. Server Assistant now records **every** moderation action — not just the ones run through the bot — and keeps them somewhere staff can't touch.
+
+### Added
+- **🛡️ Native-action logging.** Moderation done **directly in Discord** — a right-click ban, kick, or timeout — is now captured and logged just like actions taken through the bot. Nothing slips past your audit log anymore.
+- **🔐 Encrypted audit trail.** Every action is written to a separate record that's **encrypted at rest**. Your staff can't read, edit, or erase it — only Server Assistant can. It's the tamper-proof source of truth behind your visible log channel.
+- **⚠️ Tamper alerts.** If anyone deletes an entry from your log channel, the server owner is **automatically notified** — and the encrypted record stays intact regardless.
+- **💡 Native-action coaching.** When a staff member moderates outside the bot, the log entry includes a friendly tip on doing it through Server Assistant next time (so it's reversible and consistent with your ladder).
+- **🔒 Optional secure log channel.** During `/autopilot` or `/setup`, you can have Server Assistant create a locked `#server-assistant-log` channel that only it can post to — entries can't be deleted. Totally optional; your existing log works fine and is monitored either way.
+
+### Fixed
+- **`/autopilot` role detection.** Now recognises staff roles by **name** (e.g. "Moderators", "Admin", "Staff"), not just by permissions — so a correctly-named role is detected even if its powers come from channel overrides. It also suggests the standard staff permissions if a detected role is missing them.
+
+---
+
+## v5.0 — Premium tier, Concierge, Auto-pilot, Privacy panel
+
+The biggest release yet. Premium ships with an honest billing model — subscribe when you want AI features, pay only when you've actually used your free tokens.
+
+### Added
+- **💸 Premium — $7 USD/month.** Subscribe now, card charged only when your 150K free tokens run out. Small servers may never pay. Includes Concierge chat, active Threat Score, unlimited `/imagine`, 750K tokens/month, and top-up packs ($3 USD / +300K extra). See [pricing]({{ site.url }}{{ site.baseurl }}/pricing/).
+- **🔑 Premium BYOK — $3 USD/month.** Bring your own Anthropic/xAI/OpenAI key, pay us just $3/mo for the features and infrastructure. Card charged immediately on subscribe.
+- **🎯 Free tier — 150K tokens lifetime** to evaluate every AI feature. Core moderation is always free, period.
+- **🪄 Auto-pilot bootstrap.** Run `/autopilot` — the bot scans your server, detects staff chat, log channel, and staff roles, and proposes a full config. One tap applies it. Zero configuration required.
+- **💬 Concierge (Premium).** `/concierge` is an AI assistant that reads your server's actual settings and recent moderation events, then gives specific advice and proposes concrete changes. Grounded in your data, not generic tips.
+- **🔒 Privacy panel.** `/privacy` gives per-feature toggles for what the bot is allowed to read. New servers start privacy-first; existing servers keep their current behaviour.
+- **📊 Budget warnings.** DM to the owner at 80% and 100% of token allowance. Core moderation never pauses regardless of usage.
+- **🎁 Beta-period perk.** Servers active before launch: 12 months of free Premium locked in automatically. No card, no claim form.
+
+### Changed
+- All AI features now route through Anthropic Claude with prompt caching and per-guild token accounting. BYOK preserved for users with their own keys.
+- 6-hour rolling caps on high-variance features (Concierge, Message Report, `/imagine`, Self-trained rounds) — invisible to normal use, prevents any single user from draining the server's allowance.
+- Bot framing updated to reflect what it actually is: **privacy-first moderation with optional AI enhancement.**
+
+### Coming next
+- In-bot Stripe Checkout subscribe flow
+- Discord App Subscriptions (when Server Assistant reaches 75 server installs)
+- Premium Plus tier ($14 USD/mo, 2M tokens, multi-server bundle)
+
+---
+
 
 ---
 
