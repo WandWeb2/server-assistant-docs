@@ -13,6 +13,13 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 
 ---
 
+## v5.5.8 — Per-server activity tracking
+
+### Added
+- **Command usage is now tracked per server.** Every slash command, right-click context menu, and natural-language text command emits an activity event tagged with the server, the user who ran it, the channel, and the command name. Server owners can disseminate exactly what's getting used and by whom. Fire-and-forget — never blocks the command itself.
+
+---
+
 ## v5.5.7 — `/concierge` renamed to `/sai` + admin read-only mode
 
 ### Renamed
