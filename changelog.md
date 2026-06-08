@@ -13,6 +13,18 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 
 ---
 
+## v5.5.10 — One-tap setup on install
+
+### Changed
+- **Setup is now one tap when you add the bot.** As soon as you install Server Assistant, the bot scans your server, detects sensible defaults (staff chat, log channel, Owner / Admin / Mod roles), and **DMs the owner with a one-button "Apply" proposal**. Tap once and your server is fully configured — no need to remember `/setup` exists. The configuration includes the AutoMod "Scams + slurs (gaming)" preset, **Normal** anti-raid (5 joins / 30s), the **Standard** punishment ladder, and Pulse daily digests.
+- **Fallback if your DMs are closed:** the same proposal posts to your server's system channel (or the first sendable channel) with the owner @-pinged — so nobody misses the setup prompt because of a privacy setting.
+- `/setup` and `/autopilot` still work exactly as before for owners who prefer the manual flow or want to re-run later.
+
+### Fixed
+- **Removed a duplicate `on_guild_join` handler** that was being silently shadowed. The earlier handler's content (basic "run /setup" DM) was never actually firing in production — only the more-detailed second handler did. Both are now collapsed into the single streamlined v5.5.10 flow above.
+
+---
+
 ## v5.5.9 — Per-server command usage logging
 
 ### Added
