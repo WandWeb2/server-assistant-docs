@@ -13,6 +13,26 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 
 ---
 
+## v5.5.11 — UX hotfix sweep
+
+A focused pass on places where the bot's behaviour didn't match what its menus claimed. Three real bugs and two defaults made more honest. Nothing changes for servers that had explicitly configured anything — only the *uncontested* defaults move.
+
+### Fixed
+- **Pulse menus no longer lie about whether Pulse is on.** Three places in the privacy and settings panels (`/privacy → 🩺 Toggle Pulse`, `/settings → 🩺 Pulse`, and the Settings hub summary) were showing **⚪ Disabled** for servers that had never explicitly toggled the setting — while Pulse was actually firing because the default was on. The panels and the digest now read from the same source of truth, so what the menu says matches what actually happens.
+- **`/help → ← Overview` button "does nothing" fixed.** The button was rendered on every page including the Overview screen itself. Clicking it from the Overview tried to redraw the same content, which Discord no-op'd visually — so it looked broken. The button now disables itself when you're already on the Overview, so its state honestly reflects what a click can do.
+- **`/autopilot` Apply button now surfaces errors instead of swallowing them.** A rare error path was double-responding to the same interaction, which meant the original error never reached you. Now errors come through reliably.
+
+### Changed — defaults moved to opt-in
+- **Pulse (daily server-health digest) is now off by default.** No more surprise 9 AM digests in servers that didn't explicitly ask for them. Turn it on via `/settings → 🩺 Pulse` (with full controls for hour and destination channel) or `/privacy → 🩺 Toggle Pulse`. **Existing servers that had explicitly enabled or disabled Pulse keep their choice** — only the default for servers that never touched it changes.
+- **Weekly digest is now off by default** for the same reason. Turn it on via `/settings → Behavior` if you want it.
+- **The one-tap install proposal no longer silently enables Pulse.** Apply previously turned Pulse on without showing it in the proposal — that's an undisclosed opt-in. Apply now leaves Pulse alone; you enable it explicitly when you want it.
+
+### Improved — `/setup` wizard
+- **The wizard is now a single ephemeral message that updates in place** as you pick each value. Previously, every dropdown choice and every Next-button press spawned a fresh acknowledgement message below the wizard, scrolling your viewport down. Now the wizard stays put and the embed itself shows a live "Selected so far" summary, so you can see what's locked in without losing context. Step transitions edit the same message rather than starting fresh.
+- **Welcome embed for new server installs updated.** The on-join embed previously referenced a closed beta perk that expired on 2 June. Removed. (Servers that already hold the grant are unaffected — only the embed text changed.)
+
+---
+
 ## v5.5.10 — One-tap setup on install
 
 ### Changed
