@@ -359,6 +359,62 @@ details.safeguards li { margin-bottom: 0.2rem; }
 }
 </style>
 
+<!-- ════════════════════════════════════════════════════════════════════════════
+     ROADMAP FORMATTING RULES — read before editing this file
+     ════════════════════════════════════════════════════════════════════════════
+     Every non-Shipped card must have EXACTLY ONE of the four states below.
+     Inconsistency here makes the page read as half-finished and damages
+     trust in the voting signal.
+
+       ┌─────────────────────┬───────────────────────┬─────────────────────────┐
+       │ State               │ Visual                │ When to use             │
+       ├─────────────────────┼───────────────────────┼─────────────────────────┤
+       │ Shipped             │ <span class=           │ Done. No vote arrow.    │
+       │                     │  "shipped-pill">       │ Goes in the Shipped     │
+       │                     │  ✅ Shipped vX.Y       │ lane, latest first.     │
+       │                     │ </span>                │                         │
+       ├─────────────────────┼───────────────────────┼─────────────────────────┤
+       │ Operator-side /     │ <span class=           │ Internal infra or       │
+       │ Baseline admin      │  "admin-pill">         │ baseline admin tooling. │
+       │                     │  Operator-side         │ Not a user-voteable     │
+       │                     │  (or Baseline admin)   │ feature → no vote arrow.│
+       │                     │ </span>                │                         │
+       ├─────────────────────┼───────────────────────┼─────────────────────────┤
+       │ Committed           │ <span class=           │ Quality / correctness   │
+       │                     │  "committed-pill">     │ work we're doing        │
+       │                     │  Committed             │ regardless of votes.    │
+       │                     │ </span>                │ No vote arrow.          │
+       ├─────────────────────┼───────────────────────┼─────────────────────────┤
+       │ Voteable            │ <a class="vote-arrow"  │ Real user-facing        │
+       │                     │  href=".../discussions/│ feature whose priority  │
+       │                     │  NNN">↑ N</a>          │ can be influenced by    │
+       │                     │                        │ community signal.       │
+       │                     │ (No pill needed; the   │ MUST have a GitHub      │
+       │                     │  ver-pill 🎯 vX is     │ Discussion in the Ideas │
+       │                     │  separate.)            │ category — create via   │
+       │                     │                        │ `gh api graphql` if not │
+       │                     │                        │ already present.        │
+       └─────────────────────┴───────────────────────┴─────────────────────────┘
+
+     Every card always carries a `ver-pill` (🎯 vX.Y) that names the targeted
+     release — this is independent of the four states above; it just says
+     when, not whether the card is voteable.
+
+     When promoting from Coming-up / Future → Shipped:
+       1. Strip the vote arrow (a/.vote-arrow with its two inner spans).
+       2. Strip any committed-pill (it's now shipped, that supersedes it).
+       3. Swap the ver-pill (🎯 v5.6) for a shipped-pill (✅ Shipped v5.6).
+       4. Move the card to the top of the .shipped-scroll list (latest first).
+
+     When promoting Potential ideas → Future (or Future → Coming-up):
+       Keep the vote arrow. Add a ver-pill for the targeted release.
+
+     When moving items between sections, also keep the GitHub Discussion alive
+     — don't orphan a vote-arrow href pointing at a deleted thread. Lock the
+     thread if the feature ships; don't delete it.
+
+     ════════════════════════════════════════════════════════════════════════════ -->
+
 # 🗺️ Roadmap
 
 Where Server Assistant is heading. Priorities shift based on what server owners actually request — open a ticket via [`/support`]({{ site.url }}{{ site.baseurl }}/support/) to suggest features or vote on what's next.
