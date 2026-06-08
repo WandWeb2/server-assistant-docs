@@ -9,6 +9,19 @@ description: Server Assistant v1.x release history.
 
 The v1.x line — initial release.
 
+---
+
+## 2026-04-30 — v1.0
+
+Initial release.
+
+- Role-based moderation (Owner / Admin / Moderator).
+- Slash command `/setup` (early version).
+- Core ban / kick / mute / warn / info / stats commands.
+- Owner approval workflow for dangerous actions.
+
+---
+
 <style>
 .changelog-nav { display: flex; gap: 0.4rem; flex-wrap: wrap; margin: 0.6rem 0 1.2rem; padding: 0.5rem; background: rgba(46,204,113,0.06); border: 1px solid rgba(46,204,113,0.20); border-radius: 10px; }
 .changelog-nav strong { font-size: 0.78rem; color: #2c7ad6; font-weight: 700; padding: 0.35rem 0.6rem 0.35rem 0; align-self: center; }
@@ -26,19 +39,6 @@ The v1.x line — initial release.
   <a href="{{ site.url }}{{ site.baseurl }}/changelog/v2/" class="{% if page.permalink == '/changelog/v2/' %}current{% endif %}">v2.x</a>
   <a href="{{ site.url }}{{ site.baseurl }}/changelog/v1/" class="{% if page.permalink == '/changelog/v1/' %}current{% endif %}">v1.x</a>
 </div>
-
----
-
-## 2026-04-30 — v1.0
-
-Initial release.
-
-- Role-based moderation (Owner / Admin / Moderator).
-- Slash command `/setup` (early version).
-- Core ban / kick / mute / warn / info / stats commands.
-- Owner approval workflow for dangerous actions.
-
----
 
 ## What's next?
 
