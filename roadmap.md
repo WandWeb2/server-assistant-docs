@@ -101,44 +101,46 @@ description: Server Assistant's product roadmap — what's in development, what'
   flex-direction: column;
   gap: 0.5rem;
 }
-.lane-now      { border-color: #2ecc71; position: relative; }
+.lane-now      { border-color: #2ecc71; }
 .lane-comingup { border-color: #229954; }
 .lane-planned  { border-color: #3498db; }
 
 /* Shipped column: locked height + scrollable list. Latest releases at top,
    older work below — visitors can browse history without the column eating
-   half the page. Bottom alpha fade hints there's more below the fold. */
+   half the page. */
+.shipped-history {
+  position: relative;
+  /* Anchor for the bottom-fade overlay */
+}
 .shipped-scroll {
   max-height: 380px;
   overflow-y: auto;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  padding-bottom: 1.5rem;
+  padding-bottom: 1.25rem;          /* room under the last card for the fade */
   scrollbar-gutter: stable;
 }
+/* Plain block layout for the cards — flex-shrink was squashing them */
+.shipped-scroll > details.card                    { margin-bottom: 0.5rem; }
+.shipped-scroll > details.card:last-child         { margin-bottom: 0; }
 /* Subtle scrollbar — visible enough to signal "scrollable", not screaming */
-.shipped-scroll::-webkit-scrollbar           { width: 6px; }
-.shipped-scroll::-webkit-scrollbar-track     { background: transparent; }
-.shipped-scroll::-webkit-scrollbar-thumb     { background: #cfd8dc; border-radius: 3px; }
-.shipped-scroll::-webkit-scrollbar-thumb:hover { background: #b0bec5; }
-.shipped-scroll { scrollbar-width: thin; scrollbar-color: #cfd8dc transparent; }
-/* Bottom-of-column fade: sits inside the lane's padding so it overlays the
-   last visible card without covering the lane's outer border. Always-on
-   because the affordance ("there's more below") is the point. */
-.lane-now::after {
+.shipped-scroll::-webkit-scrollbar                { width: 6px; }
+.shipped-scroll::-webkit-scrollbar-track          { background: transparent; }
+.shipped-scroll::-webkit-scrollbar-thumb          { background: #cfd8dc; border-radius: 3px; }
+.shipped-scroll::-webkit-scrollbar-thumb:hover    { background: #b0bec5; }
+.shipped-scroll                                   { scrollbar-width: thin; scrollbar-color: #cfd8dc transparent; }
+/* Bottom alpha fade. Sits on the .shipped-history wrapper (not the scrollable
+   div) so it never scrolls with content. Always-on so the "more below"
+   affordance is permanent — no JS scroll listener needed. */
+.shipped-history::after {
   content: "";
   position: absolute;
-  left: 1rem;
-  right: 1rem;
-  bottom: 1rem;
-  height: 60px;
+  left: 0;
+  right: 8px;                       /* leave the scrollbar gutter clear */
+  bottom: 0;
+  height: 50px;
   background: linear-gradient(to bottom,
                               rgba(250, 250, 250, 0) 0%,
-                              rgba(250, 250, 250, 0.92) 70%,
-                              rgba(250, 250, 250, 1)   100%);
+                              rgba(250, 250, 250, 0.95) 100%);
   pointer-events: none;
-  border-radius: 0 0 4px 4px;
   z-index: 3;
 }
 
@@ -369,6 +371,7 @@ Where Server Assistant is heading. Priorities shift based on what server owners 
   <div class="lane lane-now">
     <h3>✅ Shipped<small>Live in production today 🚀 — scroll for history</small></h3>
 
+    <div class="shipped-history">
     <div class="shipped-scroll">
     <details class="card">
       <summary>🚀 One-tap setup on install <span class="shipped-pill">✅ Shipped v5.5.10</span></summary>
@@ -451,6 +454,7 @@ Where Server Assistant is heading. Priorities shift based on what server owners 
       <summary>Pulse <span class="shipped-pill">✅ Shipped v3.5</span><a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/1" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary>
       <span class="desc">Always-on AI server-health analyst. Daily digests, leading-indicator flags, channel-tone shifts. Never auto-actions — just gives staff x-ray vision. <strong>v1 shipped 2026-05-28</strong> — 24-hour summary, week-over-week deltas, two leading-indicator flags (AutoMod-rate spike, sub-raid join spike). Channel-tone analysis lands in a later iteration.</span>
     </details>
+    </div>
     </div>
   </div>
 
