@@ -424,10 +424,10 @@ Where Server Assistant is heading. Priorities shift based on what server owners 
     </details>
 
     <details class="card">
-      <summary>Threat Score <span class="shipped-pill">✅ v1 (advisory) shipped v3.8</span><a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/4" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary>
+      <summary>Threat Score <span class="shipped-pill">✅ v1 (advisory) shipped v3.8</span></summary>
       <span class="desc">Risk-based moderation that replaces fixed punishment ladders. Actions fit the actual threat — context-aware, opt-in, with extensive safeguards against punishing legitimate users. <strong>v1 (advisory) shipped 2026-05-29 — free for every server</strong> — each user gets an explainable, time-decayed risk score shown to staff in their profile. <strong>It never auto-actions</strong>; it's pure visibility. The <strong>active</strong>, score-driven phase (<strong>Premium</strong>, with the safeguards below) comes only after the advisory version proves accurate in real servers.</span>
       <details class="safeguards">
-        <summary>Safeguards against false positives<a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/5" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary>
+        <summary>Safeguards against false positives</summary>
         <ul>
           <li>Sentiment + content paired with velocity (eager new members score down, not up)</li>
           <li>First-week grace period for genuinely new users</li>
@@ -441,17 +441,17 @@ Where Server Assistant is heading. Priorities shift based on what server owners 
     </details>
 
     <details class="card">
-      <summary>Bot health insurance <span class="shipped-pill">✅ Shipped v3.7</span><a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/3" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary>
+      <summary>Bot health insurance <span class="shipped-pill">✅ Shipped v3.7</span></summary>
       <span class="desc">Bot watches its own impact in each server and proactively suggests tuning when it's becoming too noisy. Stops Server Assistant from quietly becoming the bot every server eventually mutes. <strong>Shipped 2026-05-29</strong> — weekly self-check on AutoMod footprint, gentle tuning suggestion to staff chat, read-only, ≤once/14 days.</span>
     </details>
 
     <details class="card">
-      <summary>Self-trained AutoMod <span class="shipped-pill">✅ Shipped v3.6</span><a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/2" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary>
+      <summary>Self-trained AutoMod <span class="shipped-pill">✅ Shipped v3.6</span></summary>
       <span class="desc">Bot watches your staff's manual decisions (deletes + reported messages), clusters the patterns, then proposes server-specific AutoMod rules for owner approval. <strong>v1 shipped 2026-05-28</strong> — opt-in observation, on-demand AI rule suggestions, accept/skip review. Nothing is ever auto-enforced.</span>
     </details>
 
     <details class="card">
-      <summary>Pulse <span class="shipped-pill">✅ Shipped v3.5</span><a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/1" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary>
+      <summary>Pulse <span class="shipped-pill">✅ Shipped v3.5</span></summary>
       <span class="desc">Always-on AI server-health analyst. Daily digests, leading-indicator flags, channel-tone shifts. Never auto-actions — just gives staff x-ray vision. <strong>v1 shipped 2026-05-28</strong> — 24-hour summary, week-over-week deltas, two leading-indicator flags (AutoMod-rate spike, sub-raid join spike). Channel-tone analysis lands in a later iteration.</span>
     </details>
     </div>
