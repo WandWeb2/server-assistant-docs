@@ -577,6 +577,11 @@ Where Server Assistant is heading. Priorities shift based on what server owners 
       <summary><code>/image</code> and <code>/img</code> — aliases for <code>/imagine</code> <span class="ver-pill">🎯 v5.6</span><a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/46" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary>
       <span class="desc">Quality-of-life shortcuts. The full <code>/imagine</code> command stays as the canonical name; the aliases are there because muscle memory is real and everyone types one of those two by default.</span>
     </details>
+
+    <details class="card">
+      <summary>👑 Co-owner role mapping in <code>/settings</code> <span class="ver-pill">🎯 v5.6</span><a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/51" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary>
+      <span class="desc">For servers with multiple owners — business partners, co-founders, or anyone the registered Discord owner wants to grant <strong>Owner-tier</strong> capabilities to. <code>/settings → Roles → Add a co-owner role</code> picks a Discord role and grants it the same skip-approval-on-dangerous-actions permission the Discord-native owner has.<br><br>Follow-up to the v5.6 setup-wizard simplification: the Owner role dropdown was removed from <code>/setup</code> because most servers don't need it (the Discord-native owner is implicit Owner-tier). This is the surface for the minority who do — surfacing it as a deliberate <em>"I want a co-owner"</em> choice rather than an unclear option during initial setup.</span>
+    </details>
   </div>
 
 </div>
