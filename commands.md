@@ -10,7 +10,7 @@ description: Full reference of every command Server Assistant supports.
 Server Assistant supports **three interaction modes**. Most commands are available in all three:
 
 1. **Slash commands — anywhere.** Every moderation action (`/warn`, `/mute`, `/kick`, `/ban`, `/purge`, …) works as a slash command in **any channel**, so you never have to switch to staff-chat to act.
-2. **Text commands — in staff-chat** (`warn @user`, `purge 50`). A convenience for working inside your staff channel; not available in other channels.
+2. **Text commands — in staff-chat** (`warn @user`, `purge 50`). A convenience for working inside your staff channel; not available in other channels. **Start the message with the action word** — `warn @user`, `mute @user 30m`, `ban @user`. Single-word interjections in front are fine (`ok mute @user`, `bot, ban @user`). If you need to address the bot from mid-sentence, @mention it instead.
 3. **Right-click context menus** on users and messages.
 
 > Commands are role-gated, and some actions may require approval from a higher tier — see **[Permissions & approval](#-permissions--approval)** below. Run `/help` to see what's available to you specifically.

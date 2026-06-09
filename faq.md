@@ -223,9 +223,10 @@ Currently it's fixed wording. Custom verification copy is on the <a href="{{ sit
 <li><strong>Bot's nickname in this guild</strong> — <code>Pepper, mute @user</code> or <code>Watchdog: warn @user</code></li>
 <li><strong>Bot's base username</strong> — <code>ServerAssistant, ban @user</code></li>
 <li><strong>Generic fallbacks</strong> — <code>bot, mute @user</code> or <code>assistant, show stats</code></li>
-<li><strong>Action keyword anywhere in the message</strong> — <code>warn @user spam</code> (no preamble needed)</li>
+<li><strong>Action keyword at the start of the message</strong> — <code>warn @user spam</code> (action word is the first word — or with at most one interjection like <code>ok</code>, <code>yes</code>, or a vocative like <code>bot,</code> in front)</li>
 </ul>
-<p>The "fuzzy logic" is on the <em>execution</em> side (AI interprets what action you wanted), not the addressing side. The addressing side is intentionally strict — match-by-name or @mention — so the bot doesn't burn tokens every time someone casually mentions the word "assistant" in conversation.</p>
+<p><strong>What changed in v5.5.12:</strong> the action-keyword path used to trigger on action words <em>anywhere</em> in the message. That meant casual chat like <em>"hey bert can you help me move grass this weekend?"</em> would pick up <code>move</code> and respond. From v5.5.12 onward, the action keyword has to be at the start of the message (or with at most one preceding word) — matching how shorthand commands actually get typed (<code>warn @user</code>, <code>bot, ban @user</code>, <code>ok mute @user 1h</code>) and filtering out chat that just happens to contain an action word. <strong>If you need to address the bot from mid-sentence, just @mention it.</strong></p>
+<p>The "fuzzy logic" is on the <em>execution</em> side (AI interprets what action you wanted), not the addressing side. The addressing side is intentionally strict — match-by-name or @mention or action-word-at-start — so the bot doesn't burn tokens every time someone casually mentions an action word in conversation.</p>
 </div>
 </details>
 

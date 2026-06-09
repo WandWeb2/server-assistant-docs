@@ -13,6 +13,41 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 
 ---
 
+## v5.5.12 — Natural-language commands now require the action word at the start
+
+An owner reported staff chat in their server triggering the bot on completely unrelated messages — *"hey bert can you help me move grass this weekend?"* got the bot to reply *"The `move` action isn't fully implemented yet"*. The cause: shorthand commands in staff chat were triggering whenever an action word (`move`, `remove`, `create`, `role`, etc.) appeared **anywhere** in the message.
+
+### What's different
+
+**Shorthand commands now need the action word at the start of the message.** A single interjection or vocative in front is fine — `bot, ban @user`, `ok mute @user 1h`, `yes warn @user` — but anything beyond that no longer triggers.
+
+| Pattern | Before | Now |
+|---|---|---|
+| `warn @user spam` | ✅ triggers | ✅ triggers |
+| `ban @user reason` | ✅ triggers | ✅ triggers |
+| `bot, mute @user 1h` | ✅ triggers | ✅ triggers |
+| `ok kick @user` | ✅ triggers | ✅ triggers |
+| `let's ban @user` | ✅ triggers | ❌ silent (was a false positive) |
+| `should we mute @user?` | ✅ triggers | ❌ silent (was a false positive) |
+| `hey bert can you help me move grass` | ✅ triggers | ❌ silent (was a false positive) |
+| `@Server Assistant ban @user` | ✅ triggers | ✅ triggers (mentions always work) |
+| `/ban @user` | ✅ triggers | ✅ triggers (slash commands always work) |
+
+### What didn't change
+
+- **Slash commands** (`/warn`, `/ban`, `/mute`, etc.) work the same as before — they always trigger regardless of how they're typed.
+- **Direct @mentions** of the bot bypass this check entirely. If you need the bot mid-sentence, just `@mention` it.
+- **Reply-to-bot** is unchanged — replying to a bot message keeps the conversation going.
+- **Privacy panel** controls aren't affected — if you'd disabled NL commands via `/privacy → Natural-language commands in staff-chat`, that stays disabled.
+
+### Why this is the right fix
+
+The action keywords in our internal sets are common English words (`move`, `remove`, `create`, `role`, `note`, `record`, …). Matching them anywhere in a sentence made the bot interrupt natural conversation between staff. Now the bot only steps in when the message reads like a command (action word at the front).
+
+If you want the bot to act on a request mid-sentence, the `@mention` path is the explicit way to do it.
+
+---
+
 ## v5.5.11 — UX hotfix sweep
 
 A focused pass on places where the bot's behaviour didn't match what its menus claimed. Three real bugs and two defaults made more honest. Nothing changes for servers that had explicitly configured anything — only the *uncontested* defaults move.
