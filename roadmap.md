@@ -426,7 +426,7 @@ Where Server Assistant is heading. Priorities shift based on what server owners 
      <strong style="color:#1e8449">🟢 Coming up</strong> — committed, building now or next ·
      <strong style="color:#2471a3">🔵 Future</strong> — planned, direction is set, timing isn't ·
      <strong style="color:#7d3c98">🔮 Potential ideas</strong> — exploratory, not yet committed. Your votes move things up.</p>
-  <p>🏷️ <strong>Version tags show release <em>order</em>, not dates.</strong> Each card carries the release it's targeted for — <code>v5.6</code> ships before <code>v5.7</code>, and so on. We're currently on <strong>v5.5.11</strong>. Targets can shift as priorities change; Potential ideas stay unversioned until they're committed.</p>
+  <p>🏷️ <strong>Version tags show release <em>order</em>, not dates.</strong> Each card carries the release it's targeted for — <code>v5.6</code> ships before <code>v5.7</code>, and so on. We're currently on <strong>v5.5.13</strong>. Targets can shift as priorities change; Potential ideas stay unversioned until they're committed.</p>
 </div>
 
 <div class="expand-all-bar">
@@ -445,6 +445,11 @@ Where Server Assistant is heading. Priorities shift based on what server owners 
 
     <div class="shipped-history">
     <div class="shipped-scroll">
+    <details class="card">
+      <summary>🧭 <code>/setup</code> rebuilt end-to-end + safer defaults <span class="shipped-pill">✅ Shipped v5.5.13</span></summary>
+      <span class="desc">The whole setup experience, rebuilt from the moment the bot joins to the final Finish. <strong>Pre-filled detection:</strong> your staff chat, log channel, and Admin/Moderator roles are detected and filled in — confirm a clean detection in a single click. <strong>Guided and can't-get-stuck:</strong> each step stays locked until it's actually valid, and one button creates any missing channels or roles for you (private staff channels, sensibly-permissioned roles). <strong>Pre-flight permission check:</strong> if the bot was added without a permission it needs to moderate, setup tells you up front — with a one-click re-invite — instead of letting you finish a setup that silently can't work. <strong>Plain-language permission review:</strong> if an existing role or channel needs a change to be safe (a Moderator role that can manage the whole server, a staff channel visible to everyone), the bot shows exactly what it wants to change and waits for your approval — it never silently strips or weakens permissions you set on purpose. When the bot <em>can't</em> fix something itself (a staff role sitting above it in the list), it gives exact step-by-step instructions rather than failing silently. <strong>Safe re-runs:</strong> running <code>/setup</code> again pre-fills your current setup and never wipes settings you've tuned elsewhere. <strong>Safer defaults:</strong> Dev Updates ship on for new servers (existing servers are unaffected — your choice is kept), and the welcome can never fail silently — if the full wizard can't load instantly, a short text welcome points you at <code>/setup</code>.</span>
+    </details>
+
     <details class="card">
       <summary>🩹 UX hotfix sweep — privacy defaults, in-place wizards, menu correctness <span class="shipped-pill">✅ Shipped v5.5.11</span></summary>
       <span class="desc">A focused pass on places where the bot's menus didn't match its behaviour. <strong>Fixed:</strong> Pulse panels showing "Disabled" while Pulse was actually firing (three UI sites now read the same source the digest does); <code>/help → ← Overview</code> button doing nothing on click (now correctly disabled on the Overview screen); <code>/autopilot</code> Apply silently swallowing errors. <strong>Defaults moved to opt-in:</strong> Pulse and the weekly digest are now off by default — no more surprise daily messages; autopilot's one-tap install no longer silently enables Pulse. <strong>Improved:</strong> <code>/setup</code> wizard is now a single ephemeral that edits in place (no more viewport-jumping ack messages), with a live "Selected so far" summary; welcome embed for new installs no longer references the closed beta perk. <strong>Existing servers that explicitly configured anything keep their choices</strong> — only the never-touched defaults change.</span>
@@ -537,11 +542,6 @@ Where Server Assistant is heading. Priorities shift based on what server owners 
 
   <div class="lane lane-comingup">
     <h3>🟢 Coming up<small>Next — shaped by your votes</small></h3>
-
-    <details class="card">
-      <summary>🔒 Defaults &amp; disclosure audit <span class="ver-pill">🎯 v5.6</span><span class="committed-pill">Committed</span></summary>
-      <span class="desc">A focused pass through every default-on feature to make sure owners never get a behaviour they didn't ask for. Pulse, weekly digest, and several smaller features are moving to opt-in; any remaining always-on capabilities will be documented up front in <code>/setup</code> with a one-line plain-language summary. The principle: if a feature posts a message, changes a permission, or sends a DM, the owner should have seen a sentence about it before it happens — never <em>after</em>.</span>
-    </details>
 
     <details class="card">
       <summary>🎨 Server-type templates in <code>/setup</code> <span class="ver-pill">🎯 v5.6</span><a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/50" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary>
