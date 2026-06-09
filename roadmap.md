@@ -545,7 +545,12 @@ Where Server Assistant is heading. Priorities shift based on what server owners 
 
     <details class="card">
       <summary>🎨 Server-type templates in <code>/setup</code> <span class="ver-pill">🎯 v5.6</span><a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/50" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary>
-      <span class="desc">A picker step in the setup wizard (and the autopilot Apply DM) that asks <em>"what kind of server is this?"</em> — Gaming / Brand / Community / Educational / NSFW — and applies a tuned combo of AutoMod preset, punishment ladder, anti-raid threshold, and Pulse default that fits. The underlying presets already exist in the bot; this surfaces them as a one-click choice instead of a one-size-fits-all default. Owners self-classify in 5 seconds and get a config that matches their server type out of the box.</span>
+      <span class="desc">A picker step in the setup wizard (and the autopilot Apply DM) that asks <em>"what kind of community is this?"</em> and applies a moderation profile tuned to the answer. Categories picked from the actual dominant Discord community types — not generic labels:
+        <br><br>
+        🎮 <strong>Gaming</strong> · 🎨 <strong>Creator / Streamer</strong> · 🌸 <strong>Anime / Fandom</strong> · 💰 <strong>Crypto / Trading</strong> · 📚 <strong>Education / Study</strong> · 🔞 <strong>NSFW / 18+</strong> · 🛠️ <strong>Set it up myself</strong>
+        <br><br>
+        Each template = a tuned combo of AutoMod preset, punishment ladder, anti-raid threshold, Pulse default, and Threat Score mode. Crypto, for example, ships strict anti-scam and link filters by default; Education uses a soft-action ladder (warnings over bans); Creator servers get tighter anti-raid because rival fan bases are a real attack vector; NSFW gets age-verification emphasis. The underlying presets already exist — this surfaces them as a 5-second self-classification instead of leaving owners with a one-size-fits-all default.
+      </span>
     </details>
 
     <details class="card">
