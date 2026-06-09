@@ -13,6 +13,37 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 
 ---
 
+## v5.5.13 — A rebuilt `/setup`, from first join to finish
+
+Setup is the one thing every server does before getting any value from the bot, so this release rebuilds it end to end — from the moment the bot joins, through to the final confirmation. The goal: get a server configured and moderating in about a minute, with nothing silently half-working.
+
+### The wizard, rebuilt
+
+- **It starts the moment you add the bot.** Instead of a separate "click to apply" prompt, the bot walks you straight through setup — in your DMs, or in-server if your DMs are closed.
+- **Everything is pre-filled.** Your staff chat, log channel, and Admin/Moderator roles are detected automatically from your server's naming and permissions. If the detection's right, you can confirm in a single click — the button literally turns green and reads **"Looks good"**.
+- **You can't get stuck with a half-done step.** Each step stays locked until it's actually valid, so you never reach the end with something missing.
+- **One button creates whatever's missing.** No staff chat? No Moderator role? A single **"Create required channels / roles"** button makes them — private staff channels, sensibly-permissioned roles, color-coded — so you don't have to set any of it up by hand first.
+- **A pre-flight check before you invest any time.** If the bot was added without a permission it needs to actually moderate, setup tells you up front — with a one-click re-invite link — rather than letting you finish a setup that can't work.
+- **A plain-language permission review.** If any of your existing roles or channels need a change to work safely — for example a Moderator role that can manage the whole server, or a staff channel that's visible to everyone — the bot shows you exactly what it wants to change and waits for your approval. It never silently weakens or strips permissions you set on purpose.
+- **Clear guidance when the bot can't fix something itself.** If a staff role sits above the bot in your role list (so Discord won't let the bot edit it), you get exact step-by-step instructions and a re-check button — not a silent failure.
+
+### Re-running `/setup` is now safe
+
+- **It shows your current setup, not a blank form.** Running `/setup` again pre-fills everything you already chose, so you can review or tweak one thing without redoing all of it.
+- **It never wipes your other settings.** Re-running setup preserves everything you've tuned elsewhere — alert roles, Pulse schedule, anti-raid thresholds, and the rest. Only what the wizard actually manages gets touched.
+
+### Smarter, more honest defaults
+
+- **Dev Updates are on by default for new servers** — most owners want release notes about the bot running their server, posted to your staff chat. You can turn them off any time via `/settings → Behaviour`. **Existing servers are unaffected** — if you never turned this on, it stays off; if you'd set it either way, your choice is kept.
+- **The Behaviour panel now shows the true Dev Updates state** (it previously could show "off" while updates were actually being delivered).
+
+### Also fixed
+
+- **The welcome can never fail silently.** If the bot can't build the full wizard the instant it joins, it falls back to a short text welcome pointing you at `/setup` — a new server always hears from the bot.
+- **Buttons no longer hang on a spinner.** A rare timing hiccup with Discord could leave a wizard button stuck loading; it now fails cleanly and you can simply click again.
+
+---
+
 ## v5.5.12 — Natural-language commands now require the action word at the start
 
 An owner reported staff chat in their server triggering the bot on completely unrelated messages — *"hey bert can you help me move grass this weekend?"* got the bot to reply *"The `move` action isn't fully implemented yet"*. The cause: shorthand commands in staff chat were triggering whenever an action word (`move`, `remove`, `create`, `role`, etc.) appeared **anywhere** in the message.
