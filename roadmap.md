@@ -426,7 +426,7 @@ Where Server Assistant is heading. Priorities shift based on what server owners 
      <strong style="color:#1e8449">🟢 Coming up</strong> — committed, building now or next ·
      <strong style="color:#2471a3">🔵 Future</strong> — planned, direction is set, timing isn't ·
      <strong style="color:#7d3c98">🔮 Potential ideas</strong> — exploratory, not yet committed. Your votes move things up.</p>
-  <p>🏷️ <strong>Version tags show release <em>order</em>, not dates.</strong> Each card carries the release it's targeted for — <code>v5.6</code> ships before <code>v5.7</code>, and so on. We're currently on <strong>v5.5.14</strong>. Targets can shift as priorities change; Potential ideas stay unversioned until they're committed.</p>
+  <p>🏷️ <strong>Version tags show release <em>order</em>, not dates.</strong> Each card carries the release it's targeted for — <code>v5.6</code> ships before <code>v5.7</code>, and so on. We're currently on <strong>v5.6.0</strong>. Targets can shift as priorities change; Potential ideas stay unversioned until they're committed.</p>
 </div>
 
 <div class="expand-all-bar">
@@ -445,6 +445,41 @@ Where Server Assistant is heading. Priorities shift based on what server owners 
 
     <div class="shipped-history">
     <div class="shipped-scroll">
+    <details class="card">
+      <summary>🎨 Server-type templates in <code>/setup</code> <span class="shipped-pill">✅ Shipped v5.6.0</span></summary>
+      <span class="desc">A picker step in the setup wizard (and the autopilot Apply DM) that asks <em>"what kind of community is this?"</em> and applies a moderation profile tuned to the answer. Categories picked from the actual dominant Discord community types — not generic labels:
+        <br><br>
+        🎮 <strong>Gaming</strong> · 🎨 <strong>Creator / Streamer</strong> · 🌸 <strong>Anime / Fandom</strong> · 💰 <strong>Crypto / Trading</strong> · 📚 <strong>Education / Study</strong> · 🔞 <strong>NSFW / 18+</strong> · 🛠️ <strong>Set it up myself</strong>
+        <br><br>
+        Each template = a tuned combo of AutoMod preset, punishment ladder, anti-raid threshold, Pulse default, and Threat Score mode. Crypto, for example, ships strict anti-scam and link filters by default; Education uses a soft-action ladder (warnings over bans); Creator servers get tighter anti-raid because rival fan bases are a real attack vector; NSFW gets age-verification emphasis. The underlying presets already exist — this surfaces them as a 5-second self-classification instead of leaving owners with a one-size-fits-all default.
+      </span>
+    </details>
+
+    <details class="card">
+      <summary>📣 <code>/whatsnew</code> command + post-update DM <span class="shipped-pill">✅ Shipped v5.6.0</span></summary>
+      <span class="desc">A slash command any staff member can run to see what's changed since they last looked, plus a one-time DM to the owner after each update summarising the user-visible changes that affect their server (new commands, default changes, panel additions). Replaces "why did this start happening?" support questions before they get sent.</span>
+    </details>
+
+    <details class="card">
+      <summary>Smart purge <span class="shipped-pill">✅ Shipped v5.6.0</span></summary>
+      <span class="desc"><code>purge ai 50</code> deletes the genuinely problematic messages and archives constructive ones to a thread, instead of nuke-everything.</span>
+    </details>
+
+    <details class="card">
+      <summary>Mod team retrospectives <span class="shipped-pill">✅ Shipped v5.6.0</span></summary>
+      <span class="desc">Weekly auto-generated retro embed: case counts, resolution times, notable patterns, items worth discussing. A weekly artifact your mod team will actually want to share with each other and with the owner.</span>
+    </details>
+
+    <details class="card">
+      <summary><code>/image</code> and <code>/img</code> — aliases for <code>/imagine</code> <span class="shipped-pill">✅ Shipped v5.6.0</span></summary>
+      <span class="desc">Quality-of-life shortcuts. The full <code>/imagine</code> command stays as the canonical name; the aliases are there because muscle memory is real and everyone types one of those two by default.</span>
+    </details>
+
+    <details class="card">
+      <summary>👑 Co-owner role mapping in <code>/settings</code> <span class="shipped-pill">✅ Shipped v5.6.0</span></summary>
+      <span class="desc">For servers with multiple owners — business partners, co-founders, or anyone the registered Discord owner wants to grant <strong>Owner-tier</strong> capabilities to. <code>/settings → Roles → Add a co-owner role</code> picks a Discord role and grants it the same skip-approval-on-dangerous-actions permission the Discord-native owner has.<br><br>Follow-up to the v5.6 setup-wizard simplification: the Owner role dropdown was removed from <code>/setup</code> because most servers don't need it (the Discord-native owner is implicit Owner-tier). This is the surface for the minority who do — surfacing it as a deliberate <em>"I want a co-owner"</em> choice rather than an unclear option during initial setup.</span>
+    </details>
+
     <details class="card">
       <summary>🔔 Gentler setup reminders <span class="shipped-pill">✅ Shipped v5.5.14</span></summary>
       <span class="desc">Servers that add the bot but don't finish <code>/setup</code> now get a <strong>short, finite reminder sequence</strong> — a friendly nudge around day 2, day 7, and day 14, then it stops for good (the last one says so). Previously these reminders ran weekly with no end. Spaced out, never bunched; owner DM first with a system-channel fallback; and the moment you run <code>/setup</code>, reminders stop. Only touches servers that haven't completed setup — nothing about moderation changes.</span>
@@ -548,45 +583,7 @@ Where Server Assistant is heading. Priorities shift based on what server owners 
   <div class="lane lane-comingup">
     <h3>🟢 Coming up<small>Next — shaped by your votes</small></h3>
 
-    <details class="card">
-      <summary>🎨 Server-type templates in <code>/setup</code> <span class="ver-pill">🎯 v5.6</span><a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/50" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary>
-      <span class="desc">A picker step in the setup wizard (and the autopilot Apply DM) that asks <em>"what kind of community is this?"</em> and applies a moderation profile tuned to the answer. Categories picked from the actual dominant Discord community types — not generic labels:
-        <br><br>
-        🎮 <strong>Gaming</strong> · 🎨 <strong>Creator / Streamer</strong> · 🌸 <strong>Anime / Fandom</strong> · 💰 <strong>Crypto / Trading</strong> · 📚 <strong>Education / Study</strong> · 🔞 <strong>NSFW / 18+</strong> · 🛠️ <strong>Set it up myself</strong>
-        <br><br>
-        Each template = a tuned combo of AutoMod preset, punishment ladder, anti-raid threshold, Pulse default, and Threat Score mode. Crypto, for example, ships strict anti-scam and link filters by default; Education uses a soft-action ladder (warnings over bans); Creator servers get tighter anti-raid because rival fan bases are a real attack vector; NSFW gets age-verification emphasis. The underlying presets already exist — this surfaces them as a 5-second self-classification instead of leaving owners with a one-size-fits-all default.
-      </span>
-    </details>
-
-    <details class="card">
-      <summary>📣 <code>/whatsnew</code> command + post-update DM <span class="ver-pill">🎯 v5.6</span><a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/45" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary>
-      <span class="desc">A slash command any staff member can run to see what's changed since they last looked, plus a one-time DM to the owner after each update summarising the user-visible changes that affect their server (new commands, default changes, panel additions). Replaces "why did this start happening?" support questions before they get sent.</span>
-    </details>
-
-    <details class="card">
-      <summary>Setup activation metrics <span class="ver-pill">🎯 v5.6</span><span class="admin-pill">Operator-side</span></summary>
-      <span class="desc">Internal instrumentation only — no user-visible change. Adds funnel telemetry (install landed → setup opened → autopilot applied → first command used) so we can measure whether each onboarding improvement actually moves the needle. Helps prioritise the next round of setup polish from data instead of guesswork.</span>
-    </details>
-
-    <details class="card">
-      <summary>Smart purge <span class="ver-pill">🎯 v5.6</span><a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/8" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary>
-      <span class="desc"><code>purge ai 50</code> deletes the genuinely problematic messages and archives constructive ones to a thread, instead of nuke-everything.</span>
-    </details>
-
-    <details class="card">
-      <summary>Mod team retrospectives <span class="ver-pill">🎯 v5.6</span><a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/9" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary>
-      <span class="desc">Weekly auto-generated retro embed: case counts, resolution times, notable patterns, items worth discussing. A weekly artifact your mod team will actually want to share with each other and with the owner.</span>
-    </details>
-
-    <details class="card">
-      <summary><code>/image</code> and <code>/img</code> — aliases for <code>/imagine</code> <span class="ver-pill">🎯 v5.6</span><a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/46" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary>
-      <span class="desc">Quality-of-life shortcuts. The full <code>/imagine</code> command stays as the canonical name; the aliases are there because muscle memory is real and everyone types one of those two by default.</span>
-    </details>
-
-    <details class="card">
-      <summary>👑 Co-owner role mapping in <code>/settings</code> <span class="ver-pill">🎯 v5.6</span><a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/51" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary>
-      <span class="desc">For servers with multiple owners — business partners, co-founders, or anyone the registered Discord owner wants to grant <strong>Owner-tier</strong> capabilities to. <code>/settings → Roles → Add a co-owner role</code> picks a Discord role and grants it the same skip-approval-on-dangerous-actions permission the Discord-native owner has.<br><br>Follow-up to the v5.6 setup-wizard simplification: the Owner role dropdown was removed from <code>/setup</code> because most servers don't need it (the Discord-native owner is implicit Owner-tier). This is the surface for the minority who do — surfacing it as a deliberate <em>"I want a co-owner"</em> choice rather than an unclear option during initial setup.</span>
-    </details>
+    <p class="roadmap-hint">The v5.6 batch just shipped 🚀 — see the Shipped lane. The next batch is being shaped; the strongest candidates from <strong>Future</strong> move up here as they firm up. Vote on the cards below to influence what lands next.</p>
   </div>
 
 </div>
