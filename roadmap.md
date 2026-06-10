@@ -637,6 +637,11 @@ Where Server Assistant is heading. Priorities shift based on what server owners 
     <span class="desc">Flag suspicious automation pretending to be human — relevant for mass-marketing raids that evade text filters.</span>
   </details>
 
+  <details class="card">
+    <summary>🎨 Bring your own AI media credits <span class="ver-pill">🎯 v5.8</span><a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/52" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary>
+    <span class="desc">Connect your own <a href="https://pollinations.ai" target="_blank" rel="noopener">Pollinations</a> account to power AI media generation — <code>/imagine</code> images today, plus video, text-to-speech, and voice over time — on your <strong>own</strong> balance, with no shared limits. A one-time approve-in-browser flow links your account; you set your own budget, restrict allowed models, and revoke access any time. Media runs at your pace, independent of the built-in allowance.</span>
+  </details>
+
 </div>
 
 <!-- ════════════════════════════════════════════════════════════════════════
