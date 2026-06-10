@@ -13,6 +13,28 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 
 ---
 
+## v5.6.0 — Templates, smart purge, weekly retros & more
+
+The biggest feature drop in the v5.x line: a setup that fits your kind of community, two new moderation tools, a weekly team recap, and a clearer way to see what's changed.
+
+### Set up in your server's flavor
+
+- **`/setup` now asks what kind of community you run** — Gaming, Creator/Streamer, Anime/Fandom, Crypto/Trading, Education/Study, NSFW/18+, or General — and tunes AutoMod, the punishment ladder, and anti-raid to fit. It even pre-guesses from your server's name, so most servers just confirm. Re-running setup never overwrites moderation you've already tuned.
+
+### Two new ways to moderate
+
+- **`/smartpurge` — cleanup that thinks.** Instead of nuking the last N messages, it has the AI flag only the genuinely problematic ones (spam, scams, raids, slurs), shows you a **preview**, and removes *only* those once you confirm. Constructive messages stay, pinned messages are never touched, and everything removed is archived to your log channel so you can review or restore.
+- **`/retro` — a weekly mod-team recap.** Cases handled, the week-over-week trend, most-active staff, and a short AI "notable patterns" summary — posted to your staff chat. Built from **aggregate counts only** (no message content). Opt-in via `/settings → Behaviour`.
+
+### Quality of life
+
+- **`/whatsnew`** — see recent releases at a glance right in Discord, with anything new since you last looked flagged for you.
+- **Co-owner roles** — `/settings → Role Tiers → Add co-owner` grants a Discord role full owner-tier power, for servers with more than one owner.
+- **`/image` and `/img`** now work as aliases for `/imagine`.
+- **More reliable image generation.** `/imagine` is sturdier and clearer when the service is busy. The free trial covers **~30 AI images**; **Premium is unlimited**. Add your own image key anytime via `/ai-config` for unmetered generation.
+
+---
+
 ## v5.5.15 — Invite-link permission fix
 
 If you added Server Assistant recently and it couldn't finish `/setup` — stopping to say it was missing a permission — here's why: the invite link was handing the bot an **incomplete set of permissions**. It's fixed.

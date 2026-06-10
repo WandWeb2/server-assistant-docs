@@ -111,7 +111,7 @@ description: Honest feature comparisons — Server Assistant vs the bots you mig
         <li><strong>Ban reasons + one-reply appeals.</strong> Every ban DMs the user the reason and opens a structured appeal channel to staff. Civora doesn't do post-action recovery flows.</li>
         <li><strong>One-tap setup on install.</strong> Bot DMs the owner a one-button Apply proposal when it joins — no need to remember <code>/setup</code> exists.</li>
         <li><strong>Better usage economics.</strong> Premium $7/mo includes ~750,000 AI tokens; Civora Pro $14/mo includes 8,000 messages. Roughly an order of magnitude more usage for half the price.</li>
-        <li><strong>Image generation.</strong> <code>/imagine</code> command with a free Pollinations fallback on the free tier; unlimited on Premium.</li>
+        <li><strong>Image generation.</strong> <code>/imagine</code> command — the free trial covers ~30 AI images; unlimited on Premium, or bring your own image key for unmetered generation.</li>
       </ul>
     </div>
   </div>

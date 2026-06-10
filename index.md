@@ -295,7 +295,7 @@ image: /server-assistant-docs/assets/banner.jpeg
   <div class="feat-card">
     <h3>🎨 AI extras</h3>
     <ul>
-      <li><code>/imagine</code> image generation (free fallback)</li>
+      <li><code>/imagine</code> image generation (free trial; unlimited on Premium)</li>
       <li>Right-click <strong>Message Report</strong> for AI context</li>
       <li>Bring your own key, or use the host's</li>
     </ul>

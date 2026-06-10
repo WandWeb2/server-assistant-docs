@@ -253,7 +253,7 @@ Only what's needed for the request. <strong>Message Report</strong> sends ~20 me
 <details class="faq"><summary>What AI model powers the bot?</summary>
 <div class="faq-body">
 <p>The default shared key uses <strong>Anthropic Claude</strong> (Sonnet) for all AI features — Concierge, Message Report, Self-trained AutoMod proposals, and Bot Health Insurance checks.</p>
-<p>If you supply your own key via <code>/ai-config</code>, you can choose Anthropic, xAI Grok, or OpenAI. Image generation (<code>/imagine</code>) defaults to free Pollinations.ai and optionally DALL·E 3 or Stable Diffusion with a paid key.</p>
+<p>If you supply your own key via <code>/ai-config</code>, you can choose Anthropic, xAI Grok, or OpenAI. Image generation (<code>/imagine</code>) runs on the shared service — the free trial covers ~30 images, unlimited on Premium — or use your own DALL·E 3 / Stable Diffusion key via <code>/ai-config</code> for unmetered generation.</p>
 </div>
 </details>
 

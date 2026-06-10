@@ -33,7 +33,7 @@ These never count against any token allowance:
 - **Auto-pilot bootstrap** — zero-touch setup via `/autopilot`
 - **Privacy panel** — `/privacy` to control exactly what the bot reads
 - **Snippets + scheduled reminders**
-- **`/imagine`** via free Pollinations.ai fallback (30s/guild cooldown; Premium removes the cooldown)
+- **`/imagine`** AI image generation — the free trial covers ~30 images (30s/guild cooldown); **unlimited on Premium** (no cooldown), or bring your own image key
 - **Ticket Panels (core)** — panel embed, private ticket channels, one intake question, `.txt` transcripts on close, `/tickets close`
 
 ---
@@ -50,7 +50,7 @@ These read messages or generate content:
 | **🤔 AutoMod AI second-opinion** *(Premium, opt-in)* | ~1K per borderline filter hit (only when AutoMod is uncertain — confident hits + clear-misses are never sent) |
 | **🩹 Bot Health Insurance** check-in | ~3K every 14 days |
 | **💬 Concierge chat** *(Premium)* | ~30–50K per conversation |
-| **🖼️ `/imagine`** with AI provider | ~2K per image |
+| **🖼️ `/imagine`** image generation | ~5K per image (free trial; unlimited on Premium) |
 
 ---
 

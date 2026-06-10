@@ -203,7 +203,7 @@ Optional anti-raid measure (`/settings → Verification`). New members are DM'd 
 <div class="f-grid">
   <div class="f-card">
     <h4>🖼️ <code>/imagine</code> — image generation</h4>
-    <p>Type <code>/imagine &lt;prompt&gt;</code>, get a 1024×1024 image. Uses your own AI key if you've added one in <code>/ai-config</code>; otherwise falls back to a free generator. 30s cooldown between images per server.</p>
+    <p>Type <code>/imagine &lt;prompt&gt;</code>, get a 1024×1024 image. Uses your own AI key if you've added one in <code>/ai-config</code>; otherwise the free trial covers ~30 images and Premium is unlimited. 30s cooldown between images on the free tier.</p>
   </div>
   <div class="f-card">
     <h4>📋 Message Report — context summaries</h4>
