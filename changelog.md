@@ -13,6 +13,22 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 
 ---
 
+## v5.5.14 — Gentler setup reminders
+
+If you add Server Assistant but don't finish `/setup` right away, the bot sends a short reminder so your server doesn't sit half-protected. This release makes those reminders **finite and considerate**.
+
+### What's different
+
+- **A capped reminder sequence instead of an open-ended one.** You'll get a friendly nudge at roughly **day 2, day 7, and day 14** after adding the bot — and then it stops. No more reminders after that.
+- **The last one says it's the last one** — *"run `/setup` whenever you're ready, or remove me if you don't need me, no hard feelings."* If a server genuinely isn't going to use the bot, it won't keep getting pinged.
+- **Reminders are spaced out**, never bunched up — even if the bot has been sitting in a server a while.
+
+### What didn't change
+
+- Reminders still go to the **server owner's DMs first**, falling back to the server's system channel if DMs are closed.
+- **Once you've run `/setup`, reminders stop immediately** — configured servers are never nudged.
+- This only affects servers that haven't completed setup; it changes nothing about how the bot moderates.
+
 ## v5.5.13 — A rebuilt `/setup`, from first join to finish
 
 Setup is the one thing every server does before getting any value from the bot, so this release rebuilds it end to end — from the moment the bot joins, through to the final confirmation. The goal: get a server configured and moderating in about a minute, with nothing silently half-working.
