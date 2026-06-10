@@ -13,6 +13,16 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 
 ---
 
+## v5.6.1 — Permission health check
+
+Server Assistant now keeps an eye on its own permissions so a stray server change can't quietly break your moderation.
+
+### Added
+
+- **Daily permission health check.** Once a day the bot confirms it still has the permissions and channels it needs to moderate — manage roles, post in your log channel, read your staff chat. If an admin edits the bot's role or a channel and something drifts, the bot **DMs the owner** (or posts a quiet staff-chat note) the moment it notices, with exactly what broke and how to fix it. No more silent failures — and no spam, since it only speaks up when something's actually wrong.
+
+---
+
 ## v5.6.0 — Templates, smart purge, weekly retros & more
 
 The biggest feature drop in the v5.x line: a setup that fits your kind of community, two new moderation tools, a weekly team recap, and a clearer way to see what's changed.

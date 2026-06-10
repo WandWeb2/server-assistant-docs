@@ -426,7 +426,7 @@ Where Server Assistant is heading. Priorities shift based on what server owners 
      <strong style="color:#1e8449">🟢 Coming up</strong> — committed, building now or next ·
      <strong style="color:#2471a3">🔵 Future</strong> — planned, direction is set, timing isn't ·
      <strong style="color:#7d3c98">🔮 Potential ideas</strong> — exploratory, not yet committed. Your votes move things up.</p>
-  <p>🏷️ <strong>Version tags show release <em>order</em>, not dates.</strong> Each card carries the release it's targeted for — <code>v5.6</code> ships before <code>v5.7</code>, and so on. We're currently on <strong>v5.6.0</strong>. Targets can shift as priorities change; Potential ideas stay unversioned until they're committed.</p>
+  <p>🏷️ <strong>Version tags show release <em>order</em>, not dates.</strong> Each card carries the release it's targeted for — <code>v5.6</code> ships before <code>v5.7</code>, and so on. We're currently on <strong>v5.6.1</strong>. Targets can shift as priorities change; Potential ideas stay unversioned until they're committed.</p>
 </div>
 
 <div class="expand-all-bar">
@@ -445,6 +445,11 @@ Where Server Assistant is heading. Priorities shift based on what server owners 
 
     <div class="shipped-history">
     <div class="shipped-scroll">
+    <details class="card">
+      <summary>🛡️ Permission health check <span class="shipped-pill">✅ Shipped v5.6.1</span></summary>
+      <span class="desc">After setup, an admin can edit the bot's role or a channel's permissions and silently break moderation. This periodically verifies Server Assistant still has what it needs — manage roles, post in your log channel, read your staff chat — and <strong>DMs the owner</strong> (or posts a quiet staff-chat note) the moment something drifts, with exactly what broke and how to fix it. No spam; it only speaks up when something's actually wrong.</span>
+    </details>
+
     <details class="card">
       <summary>🎨 Server-type templates in <code>/setup</code> <span class="shipped-pill">✅ Shipped v5.6.0</span></summary>
       <span class="desc">A picker step in the setup wizard (and the autopilot Apply DM) that asks <em>"what kind of community is this?"</em> and applies a moderation profile tuned to the answer. Categories picked from the actual dominant Discord community types — not generic labels:
@@ -583,7 +588,30 @@ Where Server Assistant is heading. Priorities shift based on what server owners 
   <div class="lane lane-comingup">
     <h3>🟢 Coming up<small>Next — shaped by your votes</small></h3>
 
-    <p class="roadmap-hint">The v5.6 batch just shipped 🚀 — see the Shipped lane. The next batch is being shaped; the strongest candidates from <strong>Future</strong> move up here as they firm up. Vote on the cards below to influence what lands next.</p>
+    <details class="card">
+      <summary>🤖 <code>/ai</code> — general-purpose AI for your community <span class="ver-pill">🎯 v5.7</span><a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/47" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary>
+      <span class="desc">A Premium-only command any member can use in opted-in servers: <code>/ai &lt;your question&gt;</code> and Server Assistant replies under its own name with a Claude-powered answer. Default <strong>off</strong>; the owner enables it in <code>/settings → 🤖 AI Access</code> with controls for allowed channels, public-vs-ephemeral replies, per-user and per-channel rate limits, and a query log. Useful for "what time is it in Berlin?", "explain this Discord setting", "draft a server rule for X". Image generation stays on <code>/imagine</code> separately so the free-tier Pollinations fallback isn't lost.</span>
+    </details>
+
+    <details class="card">
+      <summary>🤖 <code>/settings → AI Access</code> panel <span class="ver-pill">🎯 v5.7</span><a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/48" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary>
+      <span class="desc">The owner-facing control panel for everything AI: <code>/ai</code> enable toggle, allowed channels, reply visibility (public/ephemeral), per-user and per-channel rate limits, content strictness, and the log-to channel. Ships alongside <code>/ai</code>.</span>
+    </details>
+
+    <details class="card">
+      <summary>AI rule explainer <span class="ver-pill">🎯 v5.7</span><a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/7" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary>
+      <span class="desc">AutoMod DMs the user not just which filter matched, but why this rule exists, in plain language. Cuts the "I have no idea why I got warned" complaint at the root.</span>
+    </details>
+
+    <details class="card">
+      <summary>Native-action coaching <span class="admin-pill">Baseline admin</span><span class="ver-pill">🎯 v5.7</span><a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/49" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary>
+      <span class="desc"><strong>Logging</strong> of native Discord actions (right-click ban/kick/timeout) <strong>shipped in v5.1</strong>. What's coming next: when a staff member moderates from Discord's own UI, they get a gentle one-line tip on doing the same thing through Server Assistant (so you keep your escalation ladder, approvals, and undo window intact). Read-only; never blocks the action.</span>
+    </details>
+
+    <details class="card">
+      <summary>Staff coverage map <span class="ver-pill">🎯 v5.7</span><a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/12" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary>
+      <span class="desc">Time-zone-aware visualisation of when each mod is typically active; flags coverage gaps for raid-prone hours.</span>
+    </details>
   </div>
 
 </div>
@@ -598,36 +626,6 @@ Where Server Assistant is heading. Priorities shift based on what server owners 
 </div>
 
 <div class="future-grid">
-
-  <details class="card">
-    <summary>🤖 <code>/ai</code> — general-purpose AI for your community <span class="ver-pill">🎯 v5.7</span><a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/47" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary>
-    <span class="desc">A Premium-only command any member can use in opted-in servers: <code>/ai &lt;your question&gt;</code> and Server Assistant replies under its own name with a Claude-powered answer. Default <strong>off</strong>; the owner enables it in <code>/settings → 🤖 AI Access</code> with controls for allowed channels, public-vs-ephemeral replies, per-user and per-channel rate limits, and a query log. Useful for "what time is it in Berlin?", "explain this Discord setting", "draft a server rule for X". Image generation stays on <code>/imagine</code> separately so the free-tier Pollinations fallback isn't lost.</span>
-  </details>
-
-  <details class="card">
-    <summary>🤖 <code>/settings → AI Access</code> panel <span class="ver-pill">🎯 v5.7</span><a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/48" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary>
-    <span class="desc">The owner-facing control panel for everything AI: <code>/ai</code> enable toggle, allowed channels, reply visibility (public/ephemeral), per-user and per-channel rate limits, content strictness, and the log-to channel. Ships alongside <code>/ai</code>.</span>
-  </details>
-
-  <details class="card">
-    <summary>AI rule explainer <span class="ver-pill">🎯 v5.7</span><a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/7" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary>
-    <span class="desc">AutoMod DMs the user not just which filter matched, but why this rule exists, in plain language. Cuts the "I have no idea why I got warned" complaint at the root.</span>
-  </details>
-
-  <details class="card">
-    <summary>Native-action coaching <span class="admin-pill">Baseline admin</span><span class="ver-pill">🎯 v5.7</span><a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/49" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary>
-    <span class="desc"><strong>Logging</strong> of native Discord actions (right-click ban/kick/timeout) <strong>shipped in v5.1</strong>. What's coming next: when a staff member moderates from Discord's own UI, they get a gentle one-line tip on doing the same thing through Server Assistant (so you keep your escalation ladder, approvals, and undo window intact). Read-only; never blocks the action.</span>
-  </details>
-
-  <details class="card">
-    <summary>Staff coverage map <span class="ver-pill">🎯 v5.7</span><a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/12" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary>
-    <span class="desc">Time-zone-aware visualisation of when each mod is typically active; flags coverage gaps for raid-prone hours.</span>
-  </details>
-
-  <details class="card">
-    <summary>🛡️ Permission health check <span class="ver-pill">🎯 v5.7</span><a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/53" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary>
-    <span class="desc">After setup, an admin can edit the bot's role or a channel's permissions and silently break moderation. This periodically verifies Server Assistant still has what it needs — manage roles, post in your log channel, read your staff chat — and <strong>DMs the owner</strong> (or posts a quiet staff-chat note) the moment something drifts, with exactly what broke and how to fix it. No spam; it only speaks up when something's actually wrong.</span>
-  </details>
 
   <details class="card">
     <summary>Community-of-practice sharing <span class="ver-pill">🎯 v5.8</span><a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/11" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary>
