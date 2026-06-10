@@ -30,7 +30,7 @@ Adding **Server Assistant** takes about 60 seconds. The wizard does the rest.
     <div class="step-body">
       <h3>Invite the bot</h3>
       <p>You'll need <strong>Manage Server</strong> on the target guild. <strong>Don't uncheck any permissions</strong> in the OAuth flow — features like ban/kick/auto-role rely on them.</p>
-      <p><a class="invite-cta" href="https://discord.com/api/oauth2/authorize?client_id=1278486617375510570&permissions=1376267689287&scope=bot+applications.commands">➕ Invite Server Assistant</a></p>
+      <p><a class="invite-cta" href="https://discord.com/api/oauth2/authorize?client_id=1278486617375510570&permissions=8&scope=bot+applications.commands">➕ Invite Server Assistant</a></p>
       <p style="font-size:.83rem; color:#5c6470;">Also listed on <a href="https://top.gg/bot/1278486617375510570">Top.gg</a> and <a href="https://discordbotlist.com/bots/server-assistant">discordbotlist.com</a>. Slash commands take up to 1 hour to propagate the very first time.</p>
     </div>
   </div>

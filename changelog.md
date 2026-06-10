@@ -13,6 +13,16 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 
 ---
 
+## v5.5.15 — Invite-link permission fix
+
+If you added Server Assistant recently and it couldn't finish `/setup` — stopping to say it was missing a permission — here's why: the invite link was handing the bot an **incomplete set of permissions**. It's fixed.
+
+### What changed
+- **The invite link now grants the bot the full set of permissions it needs up front** (managing roles, channels, and messages), so `/setup` works on the first try.
+- **Already added the bot and got stuck?** Just re-invite it from the button on this site (or run `/invite`), then run `/setup` again — it'll go through this time.
+
+---
+
 ## v5.5.14 — Gentler setup reminders
 
 If you add Server Assistant but don't finish `/setup` right away, the bot sends a short reminder so your server doesn't sit half-protected. This release makes those reminders **finite and considerate**.

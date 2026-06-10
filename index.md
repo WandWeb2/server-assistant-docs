@@ -97,7 +97,7 @@ image: /server-assistant-docs/assets/banner.jpeg
 </style>
 
 <div class="cta-row">
-  <a class="cta cta-primary" href="https://discord.com/api/oauth2/authorize?client_id=1278486617375510570&permissions=1376267689287&scope=bot+applications.commands">➕ Invite to your server</a>
+  <a class="cta cta-primary" href="https://discord.com/api/oauth2/authorize?client_id=1278486617375510570&permissions=8&scope=bot+applications.commands">➕ Invite to your server</a>
   <a class="cta cta-secondary" href="{{ site.url }}{{ site.baseurl }}/setup/">📖 Setup guide</a>
   <a class="cta cta-secondary" href="https://top.gg/bot/1278486617375510570">👍 Vote on Top.gg</a>
 </div>
@@ -348,7 +348,7 @@ image: /server-assistant-docs/assets/banner.jpeg
 </div>
 
 <div class="cta-row">
-  <a class="cta cta-primary" href="https://discord.com/api/oauth2/authorize?client_id=1278486617375510570&permissions=1376267689287&scope=bot+applications.commands">➕ Invite to your server</a>
+  <a class="cta cta-primary" href="https://discord.com/api/oauth2/authorize?client_id=1278486617375510570&permissions=8&scope=bot+applications.commands">➕ Invite to your server</a>
   <a class="cta cta-secondary" href="{{ site.url }}{{ site.baseurl }}/features/">✨ Explore every feature</a>
 </div>
 
