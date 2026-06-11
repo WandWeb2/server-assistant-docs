@@ -53,6 +53,23 @@ description: Server Assistant's product roadmap — what's in development, what'
 .roadmap-section.future   { background: #2471a3; }
 .roadmap-section.premium  { background: #d4ac0d; }
 .roadmap-section.longterm { background: #7d3c98; }
+.roadmap-section.flagship { background: linear-gradient(90deg, #16a085, #2471a3); }
+/* Flagship — the next major release, full-width hero card */
+.flagship-card {
+  background: #f3fbf9;
+  border: 1px solid #cdeae3;
+  border-left: 4px solid #16a085;
+  border-radius: 0 0 6px 6px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1rem;
+}
+.flagship-card h4 {
+  margin: 0 0 0.5rem;
+  font-size: 1.05rem;
+  color: #117a65;
+}
+.flagship-card ul { margin: 0.5rem 0 0; padding-left: 1.2rem; }
+.flagship-card li { margin: 0.25rem 0; }
 .roadmap-section .sub {
   display: block;
   font-size: 0.75rem;
@@ -441,7 +458,8 @@ Where Server Assistant is heading. Priorities shift based on what server owners 
   <p>🧭 <strong>Three buckets, so you always know where things stand:</strong>
      <strong style="color:#1e8449">🟢 Coming up</strong> — committed, building now or next ·
      <strong style="color:#2471a3">🔵 Future</strong> — planned, direction is set, timing isn't ·
-     <strong style="color:#7d3c98">🔮 Potential ideas</strong> — exploratory, not yet committed. Your votes move things up.</p>
+     <strong style="color:#7d3c98">🔮 Potential ideas</strong> — exploratory, not yet committed. Your votes move things up.<br>
+     <strong style="color:#16a085">🚀 Flagship</strong> — the next major version (v7.0.0), called out on its own.</p>
   <p>🏷️ <strong>Version tags show release <em>order</em>, not dates.</strong> Each card carries the release it's targeted for — <code>v5.6</code> ships before <code>v5.7</code>, and so on. We're currently on <strong>v5.6.2</strong>. Targets can shift as priorities change; Potential ideas stay unversioned until they're committed.</p>
 </div>
 
@@ -644,6 +662,26 @@ Where Server Assistant is heading. Priorities shift based on what server owners 
 <div class="future-grid">
 
   <details class="card">
+    <summary>🛡️ Verification gate — DM-button · web captcha · risk-targeted <span class="ver-pill">🎯 v5.8</span><a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/issues/57" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary>
+    <span class="desc">A configurable join-gate that holds new members in a quarantine role until they prove they're human, then auto-grants your member role. <strong>Three modes, so friction matches your threat level:</strong> <strong>DM-button</strong> (one tap, lowest friction — the sensible default), <strong>web captcha</strong> (a hosted challenge page for raid-prone or high-profile servers), and <strong>risk-targeted</strong> — verify <em>only</em> accounts that Threat Score and AltGuard already flag as suspicious (brand-new accounts, likely ban-evading alts) while trusted regulars walk straight in. Fail or time out → auto-kick, staff alerted. <strong>The differentiator:</strong> friction scales with risk instead of taxing every legitimate joiner the way fixed-captcha bots do — only Server Assistant already computes the risk signal to drive it.</span>
+  </details>
+
+  <details class="card">
+    <summary>📋 Application / join-approval forms <span class="ver-pill">🎯 v5.9</span><a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/issues/58" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary>
+    <span class="desc">A staff-reviewed application step before access is granted. Owners define the questions (<em>why are you here, age-gate confirmation, rules agreement</em>); applicants answer a short form on join, and each submission lands in staff chat with one-tap <strong>Approve</strong> / <strong>Deny</strong> and an optional reason DM'd back. Builds directly on the Ticket Panels intake engine shipped in v5.2, and pairs naturally with the Verification gate for communities that want both a human-check <em>and</em> a curation step.</span>
+  </details>
+
+  <details class="card">
+    <summary>🛡️ Anti-nuke / rogue-admin guard <span class="ver-pill">🎯 v5.9</span><a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/issues/59" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary>
+    <span class="desc">Proactive protection against a compromised admin account or a malicious insider — the gap between today's <em>manual</em> <code>/lockdown</code> and a real attack. Rate-limits destructive admin actions (mass channel/role deletions, mass bans/kicks, mass webhook creation) and, on a confident burst, <strong>auto-strips the actor's roles into a powerless quarantine</strong> mid-attack and alerts the owner with exactly what was attempted. Reuses the exact-permission restore engine already shipped in <code>/lockdown end</code>, so reversing the damage isn't a best-guess. Core security → free forever.</span>
+  </details>
+
+  <details class="card">
+    <summary>💾 Server backup &amp; restore <span class="ver-pill">🎯 v6.x</span><span class="premium-pill">💎 Premium</span><a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/issues/60" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary>
+    <span class="desc">Scheduled snapshots of your server's structure — channels, categories, roles, and their <em>exact</em> permission overwrites — with one-tap restore after a nuke or a botched reorganisation. The insurance policy that sits behind the anti-nuke guard: if something does get through, you rebuild in seconds instead of from memory. Builds on the same permission-capture primitive the anti-nuke guard and <code>/lockdown</code> already use.</span>
+  </details>
+
+  <details class="card">
     <summary>Community-of-practice sharing <span class="ver-pill">🎯 v5.8</span><a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/11" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary>
     <span class="desc"><em>"Servers like yours configure X this way"</em> recommendations based on similar community profiles. Privacy-first — patterns only, no per-server identifying data.</span>
   </details>
@@ -722,9 +760,30 @@ Where Server Assistant is heading. Priorities shift based on what server owners 
 
     <details class="card"><summary>🌟 White-label branding<a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/27" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary><span class="desc">Fully replace the bot's identity per-server — your name, your avatar, your colour scheme, your support footer. No "Powered by Server Assistant" required. Differentiator: no other major moderation bot lets you fully rebrand.</span></details>
 
-    <details class="card"><summary>REST / webhook API<a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/26" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary><span class="desc">Read-only endpoints for your guild's bot data (warnings, audit log, activity stats). For staff dashboards and external tooling.</span></details>
+    <details class="card"><summary>REST / webhook API<a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/26" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary><span class="desc">Read-only endpoints for your guild's bot data (warnings, audit log, activity stats). For staff dashboards and external tooling — and the <strong>backend foundation for the v7.0.0 web portal</strong>.</span></details>
   </div>
 
+</div>
+
+<!-- ════════════════════════════════════════════════════════════════════════
+     FLAGSHIP — the next major version, full-width hero
+     ════════════════════════════════════════════════════════════════════════ -->
+
+<div class="roadmap-section flagship">
+  🚀 Flagship — v7.0.0
+  <span class="sub">The next <strong>major</strong> release. Everything in the v5.x–v6.x line is built and managed inside Discord; v7.0.0 opens a second front door.</span>
+</div>
+
+<div class="flagship-card">
+  <h4>🖥️ Web portal for server administration <span class="ver-pill">🎯 v7.0.0</span><a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/issues/61" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></h4>
+  <span class="desc"><strong>Free for every server.</strong> A full browser-based control panel for Server Assistant — sign in with <strong>Discord OAuth</strong>, pick a server, and manage it from a real screen instead of chat. The big-three bots (MEE6, Dyno, Carl-bot) all lead with a dashboard; this is Server Assistant's answer, built on top of the v6.3 <strong>REST / webhook API</strong> as its backend. <strong>At launch:</strong>
+    <ul>
+      <li><strong>Config &amp; settings, visualised</strong> — edit AutoMod, escalation ladders, server-type templates, and every <code>/settings</code> toggle with live previews, not blind form fields.</li>
+      <li><strong>Moderation &amp; cases</strong> — searchable case history, warnings, appeals, tickets, and the audit trail in one filterable view; act on cases (review, undo, escalate) from the browser.</li>
+      <li><strong>Analytics dashboards</strong> — Pulse, threat-score trends, mod-team retros, and token usage as real charts over time.</li>
+      <li><strong>Guardrails carried over, not bypassed</strong> — the portal honours the same approval prompts, undo windows, and audit logging as the Discord commands. The web is a new <em>surface</em>, never a back door around the safety model — the core differentiator versus competitors' raw settings dashboards.</li>
+    </ul>
+    <em>After launch:</em> multi-server management from one login, with per-server role-mapped access for your staff.</span>
 </div>
 
 <!-- ════════════════════════════════════════════════════════════════════════
@@ -796,9 +855,9 @@ What ships is what gets requested most clearly. Vague *"add more features"* feed
 - [Support]({{ site.url }}{{ site.baseurl }}/support/) to ask questions or request features
 
 <script>
-// Live vote counts for each roadmap card — fetched from the public GitHub
-// Discussions API for the docs repo. Cached in localStorage for 5 minutes
-// to stay well under the 60 req/hour unauthenticated rate limit.
+// Live vote counts for each roadmap card — discussion upvotes plus 👍
+// reactions on labelled roadmap Issues, for the docs repo. Cached in
+// localStorage for 5 minutes to stay well under any rate limit.
 (function () {
   // Counts are produced by a scheduled GitHub Action that queries the GraphQL
   // upvoteCount of each Ideas-category discussion and commits the result to
@@ -809,12 +868,22 @@ What ships is what gets requested most clearly. Vague *"add more features"* feed
   const CACHE_KEY = 'sa_vote_counts_v3';
   const CACHE_TTL_MS = 5 * 60 * 1000;
 
+  // Resolve a vote-arrow's key in votes.json: Discussions are keyed by their
+  // bare number ("47"); Issue-backed arrows are namespaced ("i57") so the two
+  // independent numbering spaces can never collide.
+  function voteKey(a) {
+    let m = a.href.match(/discussions\/(\d+)/);
+    if (m) return m[1];
+    m = a.href.match(/issues\/(\d+)/);
+    if (m) return 'i' + m[1];
+    return null;
+  }
+
   function applyCounts(counts) {
     document.querySelectorAll('a.vote-arrow').forEach(function (a) {
-      const m = a.href.match(/discussions\/(\d+)/);
-      if (!m) return;
-      const num = parseInt(m[1], 10);
-      const count = counts[num] || 0;
+      const key = voteKey(a);
+      if (key === null) return;
+      const count = counts[key] || 0;
       const countEl = a.querySelector('.vote-arrow-count');
       if (countEl) countEl.textContent = count;
       a.classList.toggle('zero', count === 0);
@@ -838,10 +907,10 @@ What ships is what gets requested most clearly. Vague *"add more features"* feed
   fetch(API_URL)
     .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
     .then(function (data) {
-      // votes.json shape: { updated_at: "...", counts: { "1": 5, "2": 0, ... } }
-      const counts = {};
-      const raw = (data && data.counts) || {};
-      Object.keys(raw).forEach(function (k) { counts[parseInt(k, 10)] = raw[k]; });
+      // votes.json shape: { updated_at: "...", counts: { "1": 5, "i57": 3, ... } }
+      // Keys stay as strings: discussion numbers ("1") and namespaced issue
+      // keys ("i57") share one map.
+      const counts = (data && data.counts) || {};
       applyCounts(counts);
       try {
         localStorage.setItem(CACHE_KEY, JSON.stringify({ ts: Date.now(), counts: counts }));
