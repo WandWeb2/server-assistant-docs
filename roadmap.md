@@ -776,15 +776,14 @@ Where Server Assistant is heading. Priorities shift based on what server owners 
 
 <div class="flagship-card">
   <h4>🖥️ Web portal for server administration <span class="ver-pill">🎯 v7.0.0</span><a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></h4>
-  <span class="desc">A full browser-based control panel for Server Assistant — sign in with <strong>Discord OAuth</strong>, pick a server, and manage it from a real screen instead of chat. The big-three bots (MEE6, Dyno, Carl-bot) all lead with a dashboard; this is Server Assistant's answer, built on top of the v6.3 <strong>REST / webhook API</strong> as its backend. What sets it apart from a plain settings panel:
+  <span class="desc"><strong>Free for every server.</strong> A full browser-based control panel for Server Assistant — sign in with <strong>Discord OAuth</strong>, pick a server, and manage it from a real screen instead of chat. The big-three bots (MEE6, Dyno, Carl-bot) all lead with a dashboard; this is Server Assistant's answer, built on top of the v6.3 <strong>REST / webhook API</strong> as its backend. <strong>At launch:</strong>
     <ul>
-      <li><strong>Config, visualised</strong> — edit AutoMod, escalation ladders, server-type templates, and every <code>/settings</code> toggle with live previews, not blind form fields.</li>
-      <li><strong>Moderation cockpit</strong> — searchable case history, warnings, appeals, and the audit trail in one filterable view; act on cases (review, undo, escalate) from the browser.</li>
+      <li><strong>Config &amp; settings, visualised</strong> — edit AutoMod, escalation ladders, server-type templates, and every <code>/settings</code> toggle with live previews, not blind form fields.</li>
+      <li><strong>Moderation &amp; cases</strong> — searchable case history, warnings, appeals, tickets, and the audit trail in one filterable view; act on cases (review, undo, escalate) from the browser.</li>
       <li><strong>Analytics dashboards</strong> — Pulse, threat-score trends, mod-team retros, and token usage as real charts over time.</li>
       <li><strong>Guardrails carried over, not bypassed</strong> — the portal honours the same approval prompts, undo windows, and audit logging as the Discord commands. The web is a new <em>surface</em>, never a back door around the safety model — the core differentiator versus competitors' raw settings dashboards.</li>
-      <li><strong>Multi-server</strong> — manage every server you run from one login, with per-server role-mapped access for your staff.</li>
     </ul>
-  </span>
+    <em>After launch:</em> multi-server management from one login, with per-server role-mapped access for your staff.</span>
 </div>
 
 <!-- ════════════════════════════════════════════════════════════════════════
