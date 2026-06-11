@@ -7,7 +7,7 @@ description: How to get help with Server Assistant — use the /support slash co
 
 # 💬 Get Help
 
-The only support channel is the **`/support`** slash command, run from any server that has Server Assistant installed.
+The only support channel is the **`/support`** slash command — also available as **`/feedback`**, which is an exact alias — run from any server that has Server Assistant installed.
 
 ---
 
@@ -19,7 +19,7 @@ In any Discord channel where you can send messages, type:
 /support
 ```
 
-That's it — no message parameter needed. The bot replies privately (ephemeral) with a short info embed and two buttons:
+(or `/feedback` — both open the same ticket flow). That's it — no message parameter needed. The bot replies privately (ephemeral) with a short info embed and two buttons:
 
 - **Create a ticket** — the bot DMs you and waits. Your next DM (within 15 minutes) becomes the ticket. You can include text, screenshots, or both.
 - **Never mind** — closes the prompt. No ticket created.
