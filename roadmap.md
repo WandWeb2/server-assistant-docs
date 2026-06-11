@@ -644,6 +644,16 @@ Where Server Assistant is heading. Priorities shift based on what server owners 
 <div class="future-grid">
 
   <details class="card">
+    <summary>🛡️ Verification gate — DM-button · web captcha · risk-targeted <span class="ver-pill">🎯 v5.8</span><a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary>
+    <span class="desc">A configurable join-gate that holds new members in a quarantine role until they prove they're human, then auto-grants your member role. <strong>Three modes, so friction matches your threat level:</strong> <strong>DM-button</strong> (one tap, lowest friction — the sensible default), <strong>web captcha</strong> (a hosted challenge page for raid-prone or high-profile servers), and <strong>risk-targeted</strong> — verify <em>only</em> accounts that Threat Score and AltGuard already flag as suspicious (brand-new accounts, likely ban-evading alts) while trusted regulars walk straight in. Fail or time out → auto-kick, staff alerted. <strong>The differentiator:</strong> friction scales with risk instead of taxing every legitimate joiner the way fixed-captcha bots do — only Server Assistant already computes the risk signal to drive it.</span>
+  </details>
+
+  <details class="card">
+    <summary>📋 Application / join-approval forms <span class="ver-pill">🎯 v5.9</span><a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary>
+    <span class="desc">A staff-reviewed application step before access is granted. Owners define the questions (<em>why are you here, age-gate confirmation, rules agreement</em>); applicants answer a short form on join, and each submission lands in staff chat with one-tap <strong>Approve</strong> / <strong>Deny</strong> and an optional reason DM'd back. Builds directly on the Ticket Panels intake engine shipped in v5.2, and pairs naturally with the Verification gate for communities that want both a human-check <em>and</em> a curation step.</span>
+  </details>
+
+  <details class="card">
     <summary>Community-of-practice sharing <span class="ver-pill">🎯 v5.8</span><a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/11" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary>
     <span class="desc"><em>"Servers like yours configure X this way"</em> recommendations based on similar community profiles. Privacy-first — patterns only, no per-server identifying data.</span>
   </details>
