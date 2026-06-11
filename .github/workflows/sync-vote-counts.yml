@@ -13,6 +13,7 @@ on:
 permissions:
   contents: write
   discussions: read
+  issues: read
 
 jobs:
   sync:
@@ -20,22 +21,31 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Fetch upvote counts via GraphQL
+      - name: Fetch vote counts via GraphQL
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           mkdir -p assets/data
+          # Discussions are keyed by bare number ("47"); issue-backed roadmap
+          # cards (label: roadmap-vote) are namespaced as "i<number>" so the two
+          # numbering spaces never collide. The client reads both from one map.
           gh api graphql -f query='
             query {
               repository(owner: "WandWeb2", name: "server-assistant-docs") {
                 discussions(first: 100, categoryId: "DIC_kwDOSZFMS84C9fk3") {
                   nodes { number upvoteCount }
                 }
+                issues(first: 100, states: OPEN, labels: ["roadmap-vote"]) {
+                  nodes { number reactions(content: THUMBS_UP) { totalCount } }
+                }
               }
             }' --jq '{updated_at: (now | strftime("%Y-%m-%dT%H:%M:%SZ")),
-                       counts: (.data.repository.discussions.nodes
-                                | map({key: (.number|tostring), value: .upvoteCount})
-                                | from_entries)}' > assets/data/votes.json
+                       counts: (
+                         (.data.repository.discussions.nodes
+                            | map({key: (.number|tostring), value: .upvoteCount}))
+                         + (.data.repository.issues.nodes
+                            | map({key: ("i" + (.number|tostring)), value: .reactions.totalCount}))
+                         | from_entries)}' > assets/data/votes.json
           echo "--- new votes.json ---"
           cat assets/data/votes.json
 
