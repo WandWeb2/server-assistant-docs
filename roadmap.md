@@ -252,6 +252,22 @@ details.card .desc {
   letter-spacing: 0.02em;
   vertical-align: middle;
 }
+/* "Premium" pill — marks a card as a Premium-tier capability when it appears
+   outside the Premium section (e.g. an early Premium feature pulled forward
+   into the Future lane). Gold/amber palette to match the Premium theme. */
+.premium-pill {
+  display: inline-block;
+  margin-left: 0.4rem;
+  padding: 0.12rem 0.5rem;
+  background: #fcf3cf;
+  border: 1px solid #f1c40f;
+  border-radius: 999px;
+  color: #7d6608;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  vertical-align: middle;
+}
 .ver-pill {
   display: inline-block;
   margin-left: 0.4rem;
@@ -622,7 +638,7 @@ Where Server Assistant is heading. Priorities shift based on what server owners 
 
 <div class="roadmap-section future">
   🔵 Future
-  <span class="sub">Planned and prioritised — the direction is set, the timing isn't. Free-tier upgrades target the <strong>v5.6–v5.9</strong> series; new Premium capabilities target <strong>v6.x</strong>. Voting reorders what lands first.</span>
+  <span class="sub">Planned and prioritised — the direction is set, the timing isn't. Free-tier upgrades target the <strong>v5.6–v5.9</strong> series, and the <strong>first Premium features now arrive in the v5.8–v5.9 ramp</strong> ahead of the full Premium suite at <strong>v6.0</strong>. Voting reorders what lands first.</span>
 </div>
 
 <div class="future-grid">
@@ -642,6 +658,21 @@ Where Server Assistant is heading. Priorities shift based on what server owners 
     <span class="desc">Connect your own <a href="https://pollinations.ai" target="_blank" rel="noopener">Pollinations</a> account to power AI media generation — <code>/imagine</code> images today, plus video, text-to-speech, and voice over time — on your <strong>own</strong> balance, with no shared limits. A one-time approve-in-browser flow links your account; you set your own budget, restrict allowed models, and revoke access any time. Media runs at your pace, independent of the built-in allowance.</span>
   </details>
 
+  <details class="card">
+    <summary>🌟 Decision explainer + multi-round appeals <span class="ver-pill">🎯 v5.8</span><span class="premium-pill">💎 Premium</span><a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/18" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary>
+    <span class="desc">Builds on the one-reply ban-appeal flow shipped in v5.5. Adds: warned/muted users can DM the bot <em>"why was I actioned?"</em> for a plain-language answer drawn from the staff-supplied reason and the matched rule; banned users get a <strong>guided multi-round</strong> appeal — a short AI-facilitated back-and-forth that gives staff more than a single line to judge.</span>
+  </details>
+
+  <details class="card">
+    <summary>Reaction roles <span class="ver-pill">🎯 v5.9</span><span class="premium-pill">💎 Premium</span><a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/14" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary>
+    <span class="desc">Button-based self-service role panels in any channel.</span>
+  </details>
+
+  <details class="card">
+    <summary>Custom slash commands <span class="ver-pill">🎯 v5.9</span><span class="premium-pill">💎 Premium</span><a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/15" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary>
+    <span class="desc">Server owners define their own <code>/foo</code> returning a configured embed or text snippet.</span>
+  </details>
+
 </div>
 
 <!-- ════════════════════════════════════════════════════════════════════════
@@ -657,16 +688,11 @@ Where Server Assistant is heading. Priorities shift based on what server owners 
 
   <div class="premium-tier-col">
     <h4>Tier A — ship first <span class="ver-pill">🎯 v6.0</span></h4>
+    <p style="margin:0 0 0.25rem;font-size:0.78rem;color:#8a6d0c;">A few Tier A features have been pulled forward into the <strong>v5.8–v5.9</strong> ramp (see the Future lane above) — the rest land here at v6.0.</p>
 
     <details class="card"><summary>🌟 Mediator — pre-action de-escalation<a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/17" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary><span class="desc">When a conversation is escalating <em>before</em> any moderation action, bot DMs both parties, collects each side privately, and produces a neutral summary for staff. The pre-action sibling to v5.5's one-reply ban appeals. Differentiator — no other major bot does this.</span></details>
 
-    <details class="card"><summary>🌟 Decision explainer + multi-round appeals<a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/18" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary><span class="desc">Builds on the one-reply ban-appeal flow shipped in v5.5. Adds: warned/muted users can DM the bot <em>"why was I actioned?"</em> for a plain-language answer drawn from the staff-supplied reason and the matched rule; banned users get a <strong>guided multi-round</strong> appeal — a short AI-facilitated back-and-forth that gives staff more than a single line to judge.</span></details>
-
     <details class="card"><summary>Daily AI channel summaries<a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/16" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary><span class="desc">Once-a-day digest of activity in a chosen channel, posted to a configured destination.</span></details>
-
-    <details class="card"><summary>Reaction roles<a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/14" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary><span class="desc">Button-based self-service role panels in any channel.</span></details>
-
-    <details class="card"><summary>Custom slash commands<a class="vote-arrow" href="https://github.com/WandWeb2/server-assistant-docs/discussions/15" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Vote on this idea"><span class="vote-arrow-icon">↑</span><span class="vote-arrow-count">0</span></a></summary><span class="desc">Server owners define their own <code>/foo</code> returning a configured embed or text snippet.</span></details>
 
     <details class="card"><summary>🌟 Premium Plus ($14/mo) <span class="shipped-pill">Under consideration</span></summary><span class="desc">For high-volume servers that push past the 750K/month Standard Premium cap. Includes: 2M tokens/month, priority Concierge response queue, multi-server bundle (3 servers per subscription), and bonus features as they ship. Pending validation from 50+ Standard Premium subs — highest-voted ideas from that cohort will define the final feature set.</span></details>
   </div>
