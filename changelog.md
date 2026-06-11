@@ -13,6 +13,17 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 
 ---
 
+## v5.6.2 — Feedback command & dev-update prompts
+
+A friendlier front door for sharing ideas — plus a nudge so you never forget it's there.
+
+### Added
+
+- **`/feedback` is now an alias for `/support`.** They open the exact same ticket — text and screenshots welcome, with two-way replies via DM — but `/feedback` is there for when you want to share an idea or suggestion rather than report a problem. Reach for whichever word fits.
+- **Dev updates now point you to it.** When a release note lands in your staff chat, it now carries a short prompt reminding you that you can run `/feedback` or `/support` to send ideas, bug reports, or questions straight to the dev. Urgent service notices stay short and stick to the point.
+
+---
+
 ## v5.6.1 — Permission health check
 
 Server Assistant now keeps an eye on its own permissions so a stray server change can't quietly break your moderation.
