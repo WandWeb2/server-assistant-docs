@@ -27,6 +27,7 @@ description: Server Assistant's product roadmap — what's in development, what'
 .lp-fill { display: block; height: 100%; background: linear-gradient(90deg, #1e8449, #2ecc71); border-radius: 999px; transition: width .8s ease; }
 .lp-pct { flex: 0 0 70px; text-align: right; font-variant-numeric: tabular-nums; font-size: .8rem; }
 .lp-meta { margin-top: .55rem; font-size: .8rem; color: #555; }
+.lp-refresh { margin-top: .25rem; font-size: .72rem; color: #7a8a7d; font-variant-numeric: tabular-nums; }
 
 /* ── The build queue: one container, banded by status ─────────────────── */
 .build-queue { border: 1px solid #e0e0e0; border-radius: 10px; padding: 1rem 1.1rem; background: #fff; margin: 1.2rem 0 2rem; }
@@ -834,7 +835,8 @@ What ships is what gets requested most clearly. Vague *"add more features"* feed
                '<span class="lp-pct" data-i="' + i + '">0% (0)</span></div>';
       }).join("");
       box.innerHTML = '<div class="lp-q">🗳️ Live community vote — ' + esc(p.question) + "</div>" + rows +
-                      '<div class="lp-meta" id="lp-meta"></div>';
+                      '<div class="lp-meta" id="lp-meta"></div>' +
+                      '<div class="lp-refresh" id="lp-refresh"></div>';
       box.setAttribute("data-built", String(p.answers.length));
     }
     p.answers.forEach(function (a, i) {
@@ -899,7 +901,10 @@ What ships is what gets requested most clearly. Vague *"add more features"* feed
     });
   }
 
+  var nextRefreshAt = Date.now() + 60000;
+
   function refresh() {
+    nextRefreshAt = Date.now() + 60000;
     fetch(API + "?ts=" + Math.floor(Date.now() / 30000))
       .then(function (r) { return r.ok ? r.json() : null; })
       .then(function (data) {
@@ -913,6 +918,14 @@ What ships is what gets requested most clearly. Vague *"add more features"* feed
       })
       .catch(function () { /* keep current view */ });
   }
+
+  // Visible countdown to the next data refresh, ticking every second
+  setInterval(function () {
+    var el = document.getElementById("lp-refresh");
+    if (!el) return;
+    var s = Math.max(0, Math.ceil((nextRefreshAt - Date.now()) / 1000));
+    el.textContent = "↻ live results — next update in " + s + "s";
+  }, 1000);
 
   refresh();
   setInterval(refresh, 60000);
