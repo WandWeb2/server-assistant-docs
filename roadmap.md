@@ -556,27 +556,27 @@ Where Server Assistant is heading. Priorities are decided by the people who run 
   <div class="lane lane-comingup">
     <h3>🟢 Coming up<small>Next — shaped by your votes</small></h3>
 
-    <details class="card">
+    <details class="card" id="card-ai-command">
       <summary>🤖 <code>/ai</code> — general-purpose AI for your community <span class="ver-pill">🎯 v5.7</span></summary>
       <span class="desc">A Premium-only command any member can use in opted-in servers: <code>/ai &lt;your question&gt;</code> and Server Assistant replies under its own name with a Claude-powered answer. Default <strong>off</strong>; the owner enables it in <code>/settings → 🤖 AI Access</code> with controls for allowed channels, public-vs-ephemeral replies, per-user and per-channel rate limits, and a query log. Useful for "what time is it in Berlin?", "explain this Discord setting", "draft a server rule for X". Image generation stays on <code>/imagine</code> separately so the free-tier Pollinations fallback isn't lost.</span>
     </details>
 
-    <details class="card">
+    <details class="card" id="card-ai-access">
       <summary>🤖 <code>/settings → AI Access</code> panel <span class="ver-pill">🎯 v5.7</span></summary>
       <span class="desc">The owner-facing control panel for everything AI: <code>/ai</code> enable toggle, allowed channels, reply visibility (public/ephemeral), per-user and per-channel rate limits, content strictness, and the log-to channel. Ships alongside <code>/ai</code>.</span>
     </details>
 
-    <details class="card">
+    <details class="card" id="card-rule-explainer">
       <summary>AI rule explainer <span class="ver-pill">🎯 v5.7</span></summary>
       <span class="desc">AutoMod DMs the user not just which filter matched, but why this rule exists, in plain language. Cuts the "I have no idea why I got warned" complaint at the root.</span>
     </details>
 
-    <details class="card">
+    <details class="card" id="card-native-coaching">
       <summary>Native-action coaching <span class="admin-pill">Baseline admin</span><span class="ver-pill">🎯 v5.7</span></summary>
       <span class="desc"><strong>Logging</strong> of native Discord actions (right-click ban/kick/timeout) <strong>shipped in v5.1</strong>. What's coming next: when a staff member moderates from Discord's own UI, they get a gentle one-line tip on doing the same thing through Server Assistant (so you keep your escalation ladder, approvals, and undo window intact). Read-only; never blocks the action.</span>
     </details>
 
-    <details class="card">
+    <details class="card" id="card-coverage-map">
       <summary>Staff coverage map <span class="ver-pill">🎯 v5.7</span></summary>
       <span class="desc">Time-zone-aware visualisation of when each mod is typically active; flags coverage gaps for raid-prone hours.</span>
     </details>
@@ -595,17 +595,17 @@ Where Server Assistant is heading. Priorities are decided by the people who run 
 
 <div class="future-grid">
 
-  <details class="card">
+  <details class="card" id="card-verification-gate">
     <summary>🛡️ Verification gate — DM-button · web captcha · risk-targeted <span class="ver-pill">🎯 v5.8</span></summary>
     <span class="desc">A configurable join-gate that holds new members in a quarantine role until they prove they're human, then auto-grants your member role. <strong>Three modes, so friction matches your threat level:</strong> <strong>DM-button</strong> (one tap, lowest friction — the sensible default), <strong>web captcha</strong> (a hosted challenge page for raid-prone or high-profile servers), and <strong>risk-targeted</strong> — verify <em>only</em> accounts that Threat Score and AltGuard already flag as suspicious (brand-new accounts, likely ban-evading alts) while trusted regulars walk straight in. Fail or time out → auto-kick, staff alerted. <strong>The differentiator:</strong> friction scales with risk instead of taxing every legitimate joiner the way fixed-captcha bots do — only Server Assistant already computes the risk signal to drive it.</span>
   </details>
 
-  <details class="card">
+  <details class="card" id="card-application-forms">
     <summary>📋 Application / join-approval forms <span class="ver-pill">🎯 v5.9</span></summary>
     <span class="desc">A staff-reviewed application step before access is granted. Owners define the questions (<em>why are you here, age-gate confirmation, rules agreement</em>); applicants answer a short form on join, and each submission lands in staff chat with one-tap <strong>Approve</strong> / <strong>Deny</strong> and an optional reason DM'd back. Builds directly on the Ticket Panels intake engine shipped in v5.2, and pairs naturally with the Verification gate for communities that want both a human-check <em>and</em> a curation step.</span>
   </details>
 
-  <details class="card">
+  <details class="card" id="card-anti-nuke">
     <summary>🛡️ Anti-nuke / rogue-admin guard <span class="ver-pill">🎯 v5.9</span></summary>
     <span class="desc">Proactive protection against a compromised admin account or a malicious insider — the gap between today's <em>manual</em> <code>/lockdown</code> and a real attack. Rate-limits destructive admin actions (mass channel/role deletions, mass bans/kicks, mass webhook creation) and, on a confident burst, <strong>auto-strips the actor's roles into a powerless quarantine</strong> mid-attack and alerts the owner with exactly what was attempted. Reuses the exact-permission restore engine already shipped in <code>/lockdown end</code>, so reversing the damage isn't a best-guess. Core security → free forever.</span>
   </details>
@@ -615,32 +615,32 @@ Where Server Assistant is heading. Priorities are decided by the people who run 
     <span class="desc">Scheduled snapshots of your server's structure — channels, categories, roles, and their <em>exact</em> permission overwrites — with one-tap restore after a nuke or a botched reorganisation. The insurance policy that sits behind the anti-nuke guard: if something does get through, you rebuild in seconds instead of from memory. Builds on the same permission-capture primitive the anti-nuke guard and <code>/lockdown</code> already use.</span>
   </details>
 
-  <details class="card">
+  <details class="card" id="card-community-practice">
     <summary>Community-of-practice sharing <span class="ver-pill">🎯 v5.8</span></summary>
     <span class="desc"><em>"Servers like yours configure X this way"</em> recommendations based on similar community profiles. Privacy-first — patterns only, no per-server identifying data.</span>
   </details>
 
-  <details class="card">
+  <details class="card" id="card-bot-on-bot">
     <summary>Bot-on-bot detection <span class="ver-pill">🎯 v5.8</span></summary>
     <span class="desc">Flag suspicious automation pretending to be human — relevant for mass-marketing raids that evade text filters.</span>
   </details>
 
-  <details class="card">
+  <details class="card" id="card-byo-media">
     <summary>🎨 Bring your own AI media credits <span class="ver-pill">🎯 v5.8</span></summary>
     <span class="desc">Connect your own <a href="https://pollinations.ai" target="_blank" rel="noopener">Pollinations</a> account to power AI media generation — <code>/imagine</code> images today, plus video, text-to-speech, and voice over time — on your <strong>own</strong> balance, with no shared limits. A one-time approve-in-browser flow links your account; you set your own budget, restrict allowed models, and revoke access any time. Media runs at your pace, independent of the built-in allowance.</span>
   </details>
 
-  <details class="card">
+  <details class="card" id="card-decision-explainer">
     <summary>🌟 Decision explainer + multi-round appeals <span class="ver-pill">🎯 v5.8</span><span class="premium-pill">💎 Premium</span></summary>
     <span class="desc">Builds on the one-reply ban-appeal flow shipped in v5.5. Adds: warned/muted users can DM the bot <em>"why was I actioned?"</em> for a plain-language answer drawn from the staff-supplied reason and the matched rule; banned users get a <strong>guided multi-round</strong> appeal — a short AI-facilitated back-and-forth that gives staff more than a single line to judge.</span>
   </details>
 
-  <details class="card">
+  <details class="card" id="card-reaction-roles">
     <summary>Reaction roles <span class="ver-pill">🎯 v5.9</span><span class="premium-pill">💎 Premium</span></summary>
     <span class="desc">Button-based self-service role panels in any channel.</span>
   </details>
 
-  <details class="card">
+  <details class="card" id="card-custom-commands">
     <summary>Custom slash commands <span class="ver-pill">🎯 v5.9</span><span class="premium-pill">💎 Premium</span></summary>
     <span class="desc">Server owners define their own <code>/foo</code> returning a configured embed or text snippet.</span>
   </details>
@@ -788,3 +788,20 @@ What ships is what gets requested most clearly. Vague *"add more features"* feed
 - [Changelog]({{ site.url }}{{ site.baseurl }}/changelog/) for what's already shipped
 - [Support]({{ site.url }}{{ site.baseurl }}/support/) to ask questions or request features
 
+
+<script>
+(function () {
+  // Deep-links from community-poll embeds: #card-xyz opens that card.
+  function openCardFromHash() {
+    var id = location.hash.replace(/^#/, "");
+    if (!id) return;
+    var el = document.getElementById(id);
+    if (el && el.tagName === "DETAILS") {
+      el.open = true;
+      el.scrollIntoView({ block: "center" });
+    }
+  }
+  window.addEventListener("hashchange", openCardFromHash);
+  openCardFromHash();
+})();
+</script>
