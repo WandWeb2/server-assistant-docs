@@ -24,7 +24,7 @@ description: Server Assistant's product roadmap — what's in development, what'
 .lp-label { flex: 0 0 42%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .lp-label a { color: inherit; text-decoration: underline dotted; }
 .lp-track { flex: 1; background: #dcebe0; border-radius: 999px; height: 10px; overflow: hidden; }
-.lp-fill { display: block; height: 100%; background: linear-gradient(90deg, #1e8449, #2ecc71); border-radius: 999px; }
+.lp-fill { display: block; height: 100%; background: linear-gradient(90deg, #1e8449, #2ecc71); border-radius: 999px; transition: width .8s ease; }
 .lp-pct { flex: 0 0 70px; text-align: right; font-variant-numeric: tabular-nums; font-size: .8rem; }
 .lp-meta { margin-top: .55rem; font-size: .8rem; color: #555; }
 
@@ -806,72 +806,110 @@ What ships is what gets requested most clearly. Vague *"add more features"* feed
 
 <script>
 (function () {
-  // Live community-vote results in the hero — aggregate numbers only, served
-  // by the public results API (60s cache). Falls back to the static line if
-  // no poll has run yet or the API is unreachable.
+  // Live community-vote results — self-refreshing every 60s, no manual
+  // reload needed. Bars animate via CSS width transitions; cards moving
+  // between/within bands animate with a FLIP translate.
   var box = document.getElementById("live-poll");
   if (!box) return;
+  var API = "https://sa.wandweb.co/api/public/poll-results";
+
   function esc(s) {
     return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
   }
-  fetch("https://sa.wandweb.co/api/public/poll-results")
-    .then(function (r) { return r.ok ? r.json() : null; })
-    .then(function (data) {
-      var p = data && data.poll;
-      if (!p || !p.answers || !p.answers.length) return;
-      var t = p.tallies || {};
-      var total = 0;
-      Object.keys(t).forEach(function (k) { total += Number(t[k]) || 0; });
+
+  function renderHero(p, t, total) {
+    // Build the row skeleton once; afterwards only update widths/labels so
+    // the bars visibly grow/shrink instead of repainting.
+    if (box.getAttribute("data-built") !== String(p.answers.length)) {
       var rows = p.answers.map(function (a, i) {
-        var n = Number(t[i]) || 0;
-        var pct = total ? Math.round(n / total * 100) : 0;
         var name = esc((a.emoji ? a.emoji + " " : "") + a.text);
         var label = a.link ? '<a href="' + esc(a.link) + '">' + name + "</a>" : name;
         return '<div class="lp-row"><span class="lp-label">' + label + '</span>' +
-               '<span class="lp-track"><span class="lp-fill" style="width:' + pct + '%"></span></span>' +
-               '<span class="lp-pct">' + pct + "% (" + n + ")</span></div>";
+               '<span class="lp-track"><span class="lp-fill" data-i="' + i + '" style="width:0%"></span></span>' +
+               '<span class="lp-pct" data-i="' + i + '">0% (0)</span></div>';
       }).join("");
-      var closes = "";
-      if (p.status === "active" && p.closes_at) {
-        var d = new Date(p.closes_at);
-        if (!isNaN(d)) closes = " · closes " + d.toLocaleDateString(undefined, { month: "short", day: "numeric" });
-      }
-      box.innerHTML =
-        '<div class="lp-q">🗳️ Live community vote — ' + esc(p.question) + "</div>" + rows +
-        '<div class="lp-meta">' + total + " votes · " + (p.servers || 0) + " server" + (p.servers === 1 ? "" : "s") + closes +
-        (p.status === "active"
-          ? " · 🟢 live — vote from your server's staff chat; every staff member has a voice"
-          : " · ✅ closed — thank you!") +
-        "</div>";
+      box.innerHTML = '<div class="lp-q">🗳️ Live community vote — ' + esc(p.question) + "</div>" + rows +
+                      '<div class="lp-meta" id="lp-meta"></div>';
+      box.setAttribute("data-built", String(p.answers.length));
+    }
+    p.answers.forEach(function (a, i) {
+      var n = Number(t[i]) || 0;
+      var pct = total ? Math.round(n / total * 100) : 0;
+      var f = box.querySelector('.lp-fill[data-i="' + i + '"]');
+      if (f) f.style.width = pct + "%";
+      var c = box.querySelector('.lp-pct[data-i="' + i + '"]');
+      if (c) c.textContent = pct + "% (" + n + ")";
+    });
+    var closes = "";
+    if (p.status === "active" && p.closes_at) {
+      var d = new Date(p.closes_at);
+      if (!isNaN(d)) closes = " · closes " + d.toLocaleDateString(undefined, { month: "short", day: "numeric" });
+    }
+    var meta = box.querySelector("#lp-meta");
+    if (meta) meta.textContent =
+      total + " votes · " + (p.servers || 0) + " server" + (p.servers === 1 ? "" : "s") + closes +
+      (p.status === "active"
+        ? " · 🟢 live — vote from your server's staff chat; every staff member has a voice"
+        : " · ✅ closed — thank you!");
+  }
 
-      // Build queue: fill each card's vote badge, sort by votes, then split —
-      // the live top 3 physically move UP into the gold band (the prospective
-      // build slots), the rest stay in purple. At poll close the operator
-      // freezes gold in the HTML with version pills.
-      var band = document.getElementById("band-purple");
-      var gold = document.getElementById("band-gold");
-      if (band) {
-        var cards = Array.prototype.slice.call(
-          document.querySelectorAll("#band-purple details[data-poll-answer], #band-gold details[data-poll-answer]"));
-        cards.forEach(function (c) {
-          var n = Number(t[Number(c.getAttribute("data-poll-answer"))]) || 0;
-          var b = c.querySelector(".vote-badge");
-          if (b) b.textContent = "▲ " + n;
+  function renderBands(t, total) {
+    var band = document.getElementById("band-purple");
+    var gold = document.getElementById("band-gold");
+    if (!band) return;
+    var cards = Array.prototype.slice.call(
+      document.querySelectorAll("#band-purple details[data-poll-answer], #band-gold details[data-poll-answer]"));
+    if (!cards.length) return;
+    // FLIP step 1: remember where every card currently sits
+    var firstPos = {};
+    cards.forEach(function (c) { firstPos[c.id] = c.getBoundingClientRect().top; });
+    cards.forEach(function (c) {
+      var n = Number(t[Number(c.getAttribute("data-poll-answer"))]) || 0;
+      var b = c.querySelector(".vote-badge");
+      if (b) b.textContent = "▲ " + n;
+    });
+    cards.sort(function (a, b) {
+      return (Number(t[b.getAttribute("data-poll-answer")]) || 0) -
+             (Number(t[a.getAttribute("data-poll-answer")]) || 0);
+    });
+    if (gold && cards.length > 3 && total > 0) {
+      var ph = gold.querySelector(".band-empty");
+      if (ph) ph.parentNode.removeChild(ph);
+      cards.slice(0, 3).forEach(function (c) { gold.appendChild(c); });
+      cards.slice(3).forEach(function (c) { band.appendChild(c); });
+    } else {
+      cards.forEach(function (c) { band.appendChild(c); });
+    }
+    // FLIP step 2: invert to the old position, then transition to the new one
+    cards.forEach(function (c) {
+      var dy = firstPos[c.id] - c.getBoundingClientRect().top;
+      if (dy) {
+        c.style.transition = "none";
+        c.style.transform = "translateY(" + dy + "px)";
+        requestAnimationFrame(function () {
+          c.style.transition = "transform .6s ease";
+          c.style.transform = "";
         });
-        cards.sort(function (a, b) {
-          return (Number(t[b.getAttribute("data-poll-answer")]) || 0) -
-                 (Number(t[a.getAttribute("data-poll-answer")]) || 0);
-        });
-        if (gold && cards.length > 3 && total > 0) {
-          var ph = gold.querySelector(".band-empty");
-          if (ph) ph.parentNode.removeChild(ph);
-          cards.slice(0, 3).forEach(function (c) { gold.appendChild(c); });
-          cards.slice(3).forEach(function (c) { band.appendChild(c); });
-        } else {
-          cards.forEach(function (c) { band.appendChild(c); });
-        }
       }
-    })
-    .catch(function () { /* keep the static fallback line */ });
+    });
+  }
+
+  function refresh() {
+    fetch(API + "?ts=" + Math.floor(Date.now() / 30000))
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (data) {
+        var p = data && data.poll;
+        if (!p || !p.answers || !p.answers.length) return;
+        var t = p.tallies || {};
+        var total = 0;
+        Object.keys(t).forEach(function (k) { total += Number(t[k]) || 0; });
+        renderHero(p, t, total);
+        renderBands(t, total);
+      })
+      .catch(function () { /* keep current view */ });
+  }
+
+  refresh();
+  setInterval(refresh, 60000);
 })();
 </script>
