@@ -42,6 +42,10 @@ description: Server Assistant's product roadmap — what's in development, what'
 #band-gold   > details.card { border-left-color: #d4ac0d; }
 #band-blue   > .flagship-card { margin-bottom: .5rem; }
 .band-empty { font-size: .85rem; color: #777; padding: .55rem .25rem; font-style: italic; }
+/* Purple + blue share a row (two columns); stacks on mobile */
+.band-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.1rem; align-items: start; margin-top: 1.2rem; }
+.band-row .band-h { margin-top: 0; }
+@media (max-width: 900px) { .band-row { grid-template-columns: 1fr; } }
 .vote-badge { display: inline-block; margin-left: .4rem; padding: .12rem .5rem; background: #f4ecf7; border: 1px solid #af7ac5; border-radius: 999px; color: #6c3483; font-size: .7rem; font-weight: 700; vertical-align: middle; font-variant-numeric: tabular-nums; }
 .vote-badge:empty { display: none; }
 details.band-shipped { margin-top: 1.2rem; }
@@ -400,8 +404,12 @@ details.safeguards li { margin-bottom: 0.2rem; }
                          summary. Page JS fills the badges, sorts ALL tagged
                          cards by live tallies, promotes the top 3 to gold,
                          and keeps the rest here. NO ver-pills in this band.
-       🔵 #band-blue   — committed regardless of votes (e.g. the web-portal
-                         flagship card).
+       🔵 #band-blue   — committed regardless of votes. Sits NEXT TO purple
+                         in a two-column .band-row (stacks on mobile). Holds
+                         the web-portal flagship card (terse FEATURE LIST,
+                         not prose) plus every 💎 premium-pill card — the
+                         committed Premium-tier launch set. Premium-pilled
+                         features are NEVER poll options.
        🟢 #band-pool   — everything else, ONE flat pool (longterm-grid
                          gallery, no tier columns), green header. Future vote
                          rounds draw from here; 🌟 in a summary marks a
@@ -452,6 +460,8 @@ Where Server Assistant is heading. Priorities are decided by the people who run 
     <div class="band-empty">Waiting for the first votes — the live top 3 appear here, and when the poll closes they become the next five releases. Vote from your server's staff chat!</div>
   </div>
 
+  <div class="band-row">
+  <div class="band-col">
   <div class="band-h band-purple">🟣 In the running<span class="sub">The rest of the current vote — every vote can push a card up into gold</span></div>
   <div class="band" id="band-purple">
 
@@ -495,44 +505,48 @@ Where Server Assistant is heading. Priorities are decided by the people who run 
     <span class="desc">Connect your own <a href="https://pollinations.ai" target="_blank" rel="noopener">Pollinations</a> account to power AI media generation — <code>/imagine</code> images today, plus video, text-to-speech, and voice over time — on your <strong>own</strong> balance, with no shared limits. A one-time approve-in-browser flow links your account; you set your own budget, restrict allowed models, and revoke access any time. Media runs at your pace, independent of the built-in allowance.</span>
   </details>
 
-  <details class="card" id="card-decision-explainer" data-poll-answer="8">
-    <summary>🌟 Decision explainer + multi-round appeals<span class="premium-pill">💎 Premium</span><span class="vote-badge"></span></summary>
-    <span class="desc">Builds on the one-reply ban-appeal flow shipped in v5.5. Adds: warned/muted users can DM the bot <em>"why was I actioned?"</em> for a plain-language answer drawn from the staff-supplied reason and the matched rule; banned users get a <strong>guided multi-round</strong> appeal — a short AI-facilitated back-and-forth that gives staff more than a single line to judge.</span>
-  </details>
-
-  <details class="card" id="card-reaction-roles" data-poll-answer="9">
-    <summary>🎭 Reaction roles + custom slash commands<span class="premium-pill">💎 Premium</span><span class="vote-badge"></span></summary>
-    <span class="desc">Two engagement utilities that ship as one bundle. <strong>Reaction roles</strong> — button-based self-service role panels in any channel. <strong>Custom slash commands</strong> — server owners define their own <code>/foo</code> returning a configured embed or text snippet.</span>
-  </details>
-
+  </div>
   </div>
 
-  <div class="band-h band-blue">🔵 Committed<span class="sub">Building regardless of votes</span></div>
+  <div class="band-col">
+  <div class="band-h band-blue">🔵 Committed<span class="sub">Building regardless of votes — including the Premium-tier launch set 💎</span></div>
   <div class="band" id="band-blue">
 
 <div class="flagship-card">
   <h4>🖥️ Web portal for server administration</h4>
-  <span class="desc"><strong>Free for every server.</strong> A full browser-based control panel for Server Assistant — sign in with <strong>Discord OAuth</strong>, pick a server, and manage it from a real screen instead of chat. The big-three bots (MEE6, Dyno, Carl-bot) all lead with a dashboard; this is Server Assistant's answer, built on top of the v6.3 <strong>REST / webhook API</strong> as its backend. <strong>At launch:</strong>
-    <ul>
-      <li><strong>Config &amp; settings, visualised</strong> — edit AutoMod, escalation ladders, server-type templates, and every <code>/settings</code> toggle with live previews, not blind form fields.</li>
-      <li><strong>Moderation &amp; cases</strong> — searchable case history, warnings, appeals, tickets, and the audit trail in one filterable view; act on cases (review, undo, escalate) from the browser.</li>
-      <li><strong>Analytics dashboards</strong> — Pulse, threat-score trends, mod-team retros, and token usage as real charts over time.</li>
-      <li><strong>Guardrails carried over, not bypassed</strong> — the portal honours the same approval prompts, undo windows, and audit logging as the Discord commands. The web is a new <em>surface</em>, never a back door around the safety model — the core differentiator versus competitors' raw settings dashboards.</li>
-    </ul>
-    <em>After launch:</em> multi-server management from one login, with per-server role-mapped access for your staff.</span>
+  <ul>
+    <li>🔑 Sign in with <strong>Discord OAuth</strong> — free for every server</li>
+    <li>🎛️ Every setting visualised — AutoMod, escalation ladders, templates, live previews</li>
+    <li>📋 Cases &amp; moderation — warnings, appeals, tickets, audit trail; act from the browser</li>
+    <li>📈 Analytics — Pulse, threat-score trends, mod retros, token usage charts</li>
+    <li>🛡️ Same guardrails as in Discord — approvals, undo windows, audit logging</li>
+    <li>🌐 After launch — multi-server management with role-mapped staff access</li>
+  </ul>
 </div>
 
+  <details class="card" id="card-decision-explainer">
+    <summary>🌟 Decision explainer + multi-round appeals<span class="premium-pill">💎 Premium</span></summary>
+    <span class="desc">Builds on the one-reply ban-appeal flow shipped in v5.5. Adds: warned/muted users can DM the bot <em>"why was I actioned?"</em> for a plain-language answer drawn from the staff-supplied reason and the matched rule; banned users get a <strong>guided multi-round</strong> appeal — a short AI-facilitated back-and-forth that gives staff more than a single line to judge.</span>
+  </details>
+
+  <details class="card" id="card-reaction-roles">
+    <summary>🎭 Reaction roles + custom slash commands<span class="premium-pill">💎 Premium</span></summary>
+    <span class="desc">Two engagement utilities that ship as one bundle. <strong>Reaction roles</strong> — button-based self-service role panels in any channel. <strong>Custom slash commands</strong> — server owners define their own <code>/foo</code> returning a configured embed or text snippet.</span>
+  </details>
+
+  <details class="card">
+    <summary>💾 Server backup &amp; restore<span class="premium-pill">💎 Premium</span></summary>
+    <span class="desc">Scheduled snapshots of your server's structure — channels, categories, roles, and their <em>exact</em> permission overwrites — with one-tap restore after a nuke or a botched reorganisation. The insurance policy that sits behind the anti-nuke guard: if something does get through, you rebuild in seconds instead of from memory. Builds on the same permission-capture primitive the anti-nuke guard and <code>/lockdown</code> already use.</span>
+  </details>
+
+  </div>
+  </div>
   </div>
 
   <div class="band-h band-green">🟢 Everything else<span class="sub">One pool — future vote rounds draw from here · strong /feedback cases pull ideas into a vote · 🌟 marks planned Premium-tier capabilities</span></div>
   <div class="band" id="band-pool">
 
 <div class="longterm-grid">
-
-  <details class="card">
-    <summary>💾 Server backup &amp; restore<span class="premium-pill">💎 Premium</span></summary>
-    <span class="desc">Scheduled snapshots of your server's structure — channels, categories, roles, and their <em>exact</em> permission overwrites — with one-tap restore after a nuke or a botched reorganisation. The insurance policy that sits behind the anti-nuke guard: if something does get through, you rebuild in seconds instead of from memory. Builds on the same permission-capture primitive the anti-nuke guard and <code>/lockdown</code> already use.</span>
-  </details>
 
   <details class="card"><summary>🌟 Mediator — pre-action de-escalation</summary><span class="desc">When a conversation is escalating <em>before</em> any moderation action, bot DMs both parties, collects each side privately, and produces a neutral summary for staff. The pre-action sibling to v5.5's one-reply ban appeals. Differentiator — no other major bot does this.</span></details>
 
