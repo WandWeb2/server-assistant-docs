@@ -507,6 +507,16 @@ Where Server Assistant is heading. Priorities are decided by the people who run 
     <span class="desc">Connect your own <a href="https://pollinations.ai" target="_blank" rel="noopener">Pollinations</a> account to power AI media generation — <code>/imagine</code> images today, plus video, text-to-speech, and voice over time — on your <strong>own</strong> balance, with no shared limits. A one-time approve-in-browser flow links your account; you set your own budget, restrict allowed models, and revoke access any time. Media runs at your pace, independent of the built-in allowance.</span>
   </details>
 
+  <details class="card" id="card-leveling-xp" data-poll-answer="8">
+    <summary>🏅 Leveling / XP<span class="vote-badge"></span></summary>
+    <span class="desc">Server-wide XP with level-up roles and a leaderboard. Opt-in per server, opt-out per user.</span>
+  </details>
+
+  <details class="card" id="card-embed-builder" data-poll-answer="9">
+    <summary>🪄 Embed builder<span class="vote-badge"></span></summary>
+    <span class="desc">Interactive wizard for crafting rich announcements with fields, images, and buttons.</span>
+  </details>
+
   </div>
   </div>
 
@@ -564,10 +574,6 @@ Where Server Assistant is heading. Priorities are decided by the people who run 
   <details class="card"><summary>🌟 Premium Plus ($14/mo) <span class="shipped-pill">Under consideration</span></summary><span class="desc">For high-volume servers that push past the 750K/month Standard Premium cap. Includes: 2M tokens/month, priority Concierge response queue, multi-server bundle (3 servers per subscription), and bonus features as they ship. Pending validation from 50+ Standard Premium subs — highest-voted ideas from that cohort will define the final feature set.</span></details>
 
   
-  <details class="card"><summary>Embed builder</summary><span class="desc">Interactive wizard for crafting rich announcements with fields, images, and buttons.</span></details>
-
-  <details class="card"><summary>Leveling / XP</summary><span class="desc">Server-wide XP with level-up roles and a leaderboard. Opt-in per server, opt-out per user.</span></details>
-
   
   <details class="card"><summary>Welcome card images</summary><span class="desc">Auto-generated PNG welcome for each new joiner.</span></details>
 
