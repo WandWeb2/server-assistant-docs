@@ -453,14 +453,7 @@ details.safeguards li { margin-bottom: 0.2rem; }
 Where Server Assistant is heading. Priorities shift based on what server owners actually request — open a ticket via [`/support`]({{ site.url }}{{ site.baseurl }}/support/) to suggest features or vote on what's next.
 
 <div class="roadmap-hero">
-  <p>📌 <strong>Dates are deliberately omitted.</strong> Things land when they're ready.</p>
-  <p>💚 <strong>Core moderation is free forever.</strong> AI features are metered with a 150K-token trial; Premium adds a larger monthly allowance plus extra capabilities. <a href="{{ site.url }}{{ site.baseurl }}/pricing/">See pricing →</a></p>
-  <p>🧭 <strong>Three buckets, so you always know where things stand:</strong>
-     <strong style="color:#1e8449">🟢 Coming up</strong> — committed, building now or next ·
-     <strong style="color:#2471a3">🔵 Future</strong> — planned, direction is set, timing isn't ·
-     <strong style="color:#7d3c98">🔮 Potential ideas</strong> — exploratory, not yet committed. Your votes move things up.<br>
-     <strong style="color:#16a085">🚀 Flagship</strong> — the next major version (v7.0.0), called out on its own.</p>
-  <p>🏷️ <strong>Version tags show release <em>order</em>, not dates.</strong> Each card carries the release it's targeted for — <code>v5.6</code> ships before <code>v5.7</code>, and so on. We're currently on <strong>v5.6.2</strong>. Targets can shift as priorities change; Potential ideas stay unversioned until they're committed.</p>
+  <p>📌 No dates — version tags show release <em>order</em> (we're on <strong>v5.6.2</strong>) · 💚 <strong>Core moderation is free forever</strong> (<a href="{{ site.url }}{{ site.baseurl }}/pricing/">pricing →</a>) · 🗳️ Your votes move things up.</p>
 </div>
 
 <div class="expand-all-bar">
