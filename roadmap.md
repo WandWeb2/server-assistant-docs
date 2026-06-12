@@ -48,6 +48,8 @@ description: Server Assistant's product roadmap — what's in development, what'
 @media (max-width: 900px) { .band-row { grid-template-columns: 1fr; } }
 .vote-badge { display: inline-block; margin-left: .4rem; padding: .12rem .5rem; background: #f4ecf7; border: 1px solid #af7ac5; border-radius: 999px; color: #6c3483; font-size: .7rem; font-weight: 700; vertical-align: middle; font-variant-numeric: tabular-nums; }
 .vote-badge:empty { display: none; }
+/* Badge colour follows the band the card currently sits in */
+#band-gold .vote-badge { background: #fdf3d7; border-color: #d4ac0d; color: #7d6608; }
 details.band-shipped { margin-top: 1.2rem; }
 details.band-shipped > summary { cursor: pointer; font-weight: 700; color: #37474f; padding: .55rem .85rem; background: #eceff1; border: 1px solid #b0bec5; border-radius: 6px; list-style: none; user-select: none; }
 details.band-shipped > summary::-webkit-details-marker { display: none; }
@@ -539,35 +541,39 @@ Where Server Assistant is heading. Priorities are decided by the people who run 
     <span class="desc">Scheduled snapshots of your server's structure — channels, categories, roles, and their <em>exact</em> permission overwrites — with one-tap restore after a nuke or a botched reorganisation. The insurance policy that sits behind the anti-nuke guard: if something does get through, you rebuild in seconds instead of from memory. Builds on the same permission-capture primitive the anti-nuke guard and <code>/lockdown</code> already use.</span>
   </details>
 
+  <details class="card"><summary>🌟 Mediator — pre-action de-escalation<span class="premium-pill">💎 Premium</span></summary><span class="desc">When a conversation is escalating <em>before</em> any moderation action, bot DMs both parties, collects each side privately, and produces a neutral summary for staff. The pre-action sibling to v5.5's one-reply ban appeals. Differentiator — no other major bot does this.</span></details>
+
+  <details class="card"><summary>🌟 AI Q&amp;A from server FAQ<span class="premium-pill">💎 Premium</span></summary><span class="desc">Bot answers member questions based on FAQ snippets the owner has provided — or pinned messages it learns from automatically. Cuts the same-question-asked-50-times noise without staff having to babysit channels. Differentiator: nobody else combines this with the moderation context the bot already has.</span></details>
+
+  <details class="card"><summary>🌟 Auto-translate (per-channel)<span class="premium-pill">💎 Premium</span></summary><span class="desc">On-demand or automatic translation for configured channels — per-language, per-channel rules so an international community can have an English channel, a Spanish channel, and a bilingual one without bots crossing wires. Differentiator over off-the-shelf translate bots: pairs with moderation context (won't translate AutoMod-deleted messages, surfaces tone shifts across language).</span></details>
+
+  <details class="card"><summary>🌟 White-label branding<span class="premium-pill">💎 Premium</span></summary><span class="desc">Fully replace the bot's identity per-server — your name, your avatar, your colour scheme, your support footer. No "Powered by Server Assistant" required. Differentiator: no other major moderation bot lets you fully rebrand.</span></details>
+
   </div>
   </div>
   </div>
 
-  <div class="band-h band-green">🟢 Everything else<span class="sub">One pool — future vote rounds draw from here · strong /feedback cases pull ideas into a vote · 🌟 marks planned Premium-tier capabilities</span></div>
+  <div class="band-h band-green">🟢 Everything else<span class="sub">One pool — future vote rounds draw from here · strong /feedback cases pull ideas into a vote</span></div>
   <div class="band" id="band-pool">
 
 <div class="longterm-grid">
 
-  <details class="card"><summary>🌟 Mediator — pre-action de-escalation</summary><span class="desc">When a conversation is escalating <em>before</em> any moderation action, bot DMs both parties, collects each side privately, and produces a neutral summary for staff. The pre-action sibling to v5.5's one-reply ban appeals. Differentiator — no other major bot does this.</span></details>
-
+  
   <details class="card"><summary>Daily AI channel summaries</summary><span class="desc">Once-a-day digest of activity in a chosen channel, posted to a configured destination.</span></details>
 
   <details class="card"><summary>🌟 Premium Plus ($14/mo) <span class="shipped-pill">Under consideration</span></summary><span class="desc">For high-volume servers that push past the 750K/month Standard Premium cap. Includes: 2M tokens/month, priority Concierge response queue, multi-server bundle (3 servers per subscription), and bonus features as they ship. Pending validation from 50+ Standard Premium subs — highest-voted ideas from that cohort will define the final feature set.</span></details>
 
-  <details class="card"><summary>🌟 AI Q&amp;A from server FAQ</summary><span class="desc">Bot answers member questions based on FAQ snippets the owner has provided — or pinned messages it learns from automatically. Cuts the same-question-asked-50-times noise without staff having to babysit channels. Differentiator: nobody else combines this with the moderation context the bot already has.</span></details>
-
+  
   <details class="card"><summary>Embed builder</summary><span class="desc">Interactive wizard for crafting rich announcements with fields, images, and buttons.</span></details>
 
   <details class="card"><summary>Leveling / XP</summary><span class="desc">Server-wide XP with level-up roles and a leaderboard. Opt-in per server, opt-out per user.</span></details>
 
-  <details class="card"><summary>🌟 Auto-translate (per-channel)</summary><span class="desc">On-demand or automatic translation for configured channels — per-language, per-channel rules so an international community can have an English channel, a Spanish channel, and a bilingual one without bots crossing wires. Differentiator over off-the-shelf translate bots: pairs with moderation context (won't translate AutoMod-deleted messages, surfaces tone shifts across language).</span></details>
-
+  
   <details class="card"><summary>Welcome card images</summary><span class="desc">Auto-generated PNG welcome for each new joiner.</span></details>
 
   <details class="card"><summary>Birthday tracker</summary><span class="desc">Opt-in birthdays with auto-DM and channel post on the day.</span></details>
 
-  <details class="card"><summary>🌟 White-label branding</summary><span class="desc">Fully replace the bot's identity per-server — your name, your avatar, your colour scheme, your support footer. No "Powered by Server Assistant" required. Differentiator: no other major moderation bot lets you fully rebrand.</span></details>
-
+  
   <details class="card"><summary>REST / webhook API</summary><span class="desc">Read-only endpoints for your guild's bot data (warnings, audit log, activity stats). For staff dashboards and external tooling — and the <strong>backend foundation for the v7.0.0 web portal</strong>.</span></details>
 
   <details class="card"><summary>Voice-channel moderation</summary><span class="desc">Real-time transcription + AutoMod / threat-score logic applied to voice channels. The industry's biggest moderation blind spot — no major bot touches voice.</span></details>
