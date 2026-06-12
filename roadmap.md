@@ -381,14 +381,14 @@ details.safeguards li { margin-bottom: 0.2rem; }
      THE BUILD QUEUE — one container (.build-queue), six bands, top→bottom.
      Band order is FIXED; cards move BETWEEN bands as polls complete.
 
-       🥇 #band-gold   — the CURRENT top 5, which ALL ship together as the
+       🥇 #band-gold   — the CURRENT top 3, which ALL ship together as the
                          next release. The band HEADER carries the version
                          ("🥇 v5.7 — confirmed by our community") — bump it
                          each poll round; cards carry NO ver-pills. While a
                          poll is live, page JS moves the five vote leaders up
                          here automatically. Static HTML keeps all 10 in
                          purple; gold holds only the .band-empty placeholder.
-                         At poll close the operator freezes the final top 5
+                         At poll close the operator freezes the final top 3
                          here in the HTML.
        🟣 #band-purple — the rest of the current poll. EXACTLY one card per
                          poll option overall (Discord caps polls at 10
@@ -398,7 +398,7 @@ details.safeguards li { margin-bottom: 0.2rem; }
                          poll's answers) and an empty
                          <span class="vote-badge"></span> at the end of its
                          summary. Page JS fills the badges, sorts ALL tagged
-                         cards by live tallies, promotes the top 5 to gold,
+                         cards by live tallies, promotes the top 3 to gold,
                          and keeps the rest here. NO ver-pills in this band.
        🔵 #band-blue   — committed regardless of votes (e.g. the web-portal
                          flagship card).
@@ -410,7 +410,7 @@ details.safeguards li { margin-bottom: 0.2rem; }
                          .shipped-scroll, newest first.
 
      POLL LIFECYCLE — run these steps when each poll closes:
-       1. Sort the purple cards by final votes; move the top 5 to gold
+       1. Sort the purple cards by final votes; move the top 3 to gold
           (strip their data-poll-answer + vote-badge spans). They ALL ship
           together as the version named in the gold band header.
        2. Refill purple with the next round's options from the pool,
@@ -447,9 +447,9 @@ Where Server Assistant is heading. Priorities are decided by the people who run 
 
 <div class="build-queue">
 
-  <div class="band-h band-gold">🥇 v5.7 — confirmed by our community<span class="sub">The top 5 most-voted features all ship together as the next update — live standings until the poll closes</span></div>
+  <div class="band-h band-gold">🥇 v5.7 — confirmed by our community<span class="sub">The top 3 most-voted features all ship together as the next update — live standings until the poll closes</span></div>
   <div class="band" id="band-gold">
-    <div class="band-empty">Waiting for the first votes — the live top 5 appear here, and when the poll closes they become the next five releases. Vote from your server's staff chat!</div>
+    <div class="band-empty">Waiting for the first votes — the live top 3 appear here, and when the poll closes they become the next five releases. Vote from your server's staff chat!</div>
   </div>
 
   <div class="band-h band-purple">🟣 In the running<span class="sub">The rest of the current vote — every vote can push a card up into gold</span></div>
@@ -747,7 +747,7 @@ Where Server Assistant is heading. Priorities are decided by the people who run 
 
 The fastest way to move something up the list:
 
-1. **Vote in the feature polls** that arrive in your server's staff chat — every staff member in every server gets an equal vote. Cards physically climb into the 🥇 gold band as votes land, and when the poll closes, **the top 5 together become the next release**.
+1. **Vote in the feature polls** that arrive in your server's staff chat — every staff member in every server gets an equal vote. Cards physically climb into the 🥇 gold band as votes land, and when the poll closes, **the top 3 together become the next release**.
 2. **Send [`/feedback`]({{ site.url }}{{ site.baseurl }}/support/) or open a [`/support`]({{ site.url }}{{ site.baseurl }}/support/) ticket** describing the use case — not just *"add feature X"* but *what you'd do with it*. Strong cases pull ideas out of ⚫ grey and into a vote round.
 
 What ships is what gets requested most clearly. Vague *"add more features"* feedback is unactionable; *"I run a 2,000-member RP server and we need X because Y"* gets prioritised.
@@ -819,7 +819,7 @@ What ships is what gets requested most clearly. Vague *"add more features"* feed
         "</div>";
 
       // Build queue: fill each card's vote badge, sort by votes, then split —
-      // the live top 5 physically move UP into the gold band (the prospective
+      // the live top 3 physically move UP into the gold band (the prospective
       // build slots), the rest stay in purple. At poll close the operator
       // freezes gold in the HTML with version pills.
       var band = document.getElementById("band-purple");
@@ -836,11 +836,11 @@ What ships is what gets requested most clearly. Vague *"add more features"* feed
           return (Number(t[b.getAttribute("data-poll-answer")]) || 0) -
                  (Number(t[a.getAttribute("data-poll-answer")]) || 0);
         });
-        if (gold && cards.length > 5 && total > 0) {
+        if (gold && cards.length > 3 && total > 0) {
           var ph = gold.querySelector(".band-empty");
           if (ph) ph.parentNode.removeChild(ph);
-          cards.slice(0, 5).forEach(function (c) { gold.appendChild(c); });
-          cards.slice(5).forEach(function (c) { band.appendChild(c); });
+          cards.slice(0, 3).forEach(function (c) { gold.appendChild(c); });
+          cards.slice(3).forEach(function (c) { band.appendChild(c); });
         } else {
           cards.forEach(function (c) { band.appendChild(c); });
         }
