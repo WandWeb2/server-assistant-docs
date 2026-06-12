@@ -39,6 +39,7 @@ description: Server Assistant's product roadmap — what's in development, what'
 .band-h.band-grey   { background: #5d6d7e; }
 .band > details.card { border-left: 3px solid #e0e0e0; margin-bottom: .5rem; }
 #band-purple > details.card { border-left-color: #af7ac5; }
+#band-gold   > details.card { border-left-color: #d4ac0d; }
 #band-blue   > .flagship-card { margin-bottom: .5rem; }
 .band-empty { font-size: .85rem; color: #777; padding: .55rem .25rem; font-style: italic; }
 .vote-badge { display: inline-block; margin-left: .4rem; padding: .12rem .5rem; background: #f4ecf7; border: 1px solid #af7ac5; border-radius: 999px; color: #6c3483; font-size: .7rem; font-weight: 700; vertical-align: middle; font-variant-numeric: tabular-nums; }
@@ -380,19 +381,24 @@ details.safeguards li { margin-bottom: 0.2rem; }
      THE BUILD QUEUE — one container (.build-queue), six bands, top→bottom.
      Band order is FIXED; cards move BETWEEN bands as polls complete.
 
-       🥇 #band-gold   — top 5 of the LAST completed poll, sorted by final
-                         votes. All 5 carry ver-pills (🎯 vX.Y) assigned
-                         at poll close, in vote order. ONLY gold and shipped
-                         cards may carry version tags.
-       🟣 #band-purple — EXACTLY one card per poll option (Discord caps polls
-                         at 10 answers — merge related features into one card
-                         whose title matches the poll answer text). Each card
+       🥇 #band-gold   — the CURRENT top 5. While a poll is live, page JS
+                         moves the five vote leaders up here automatically
+                         (the static HTML keeps all 10 in purple; gold holds
+                         only the .band-empty placeholder). At poll close the
+                         operator freezes the final top 5 here in the HTML
+                         with ver-pills (🎯 vX.Y) for the next five releases,
+                         in vote order. ONLY gold and shipped cards may carry
+                         version tags.
+       🟣 #band-purple — the rest of the current poll. EXACTLY one card per
+                         poll option overall (Discord caps polls at 10
+                         answers — merge related features into one card whose
+                         title matches the poll answer text). Each card
                          carries data-poll-answer="N" (0-based index into the
                          poll's answers) and an empty
                          <span class="vote-badge"></span> at the end of its
-                         summary. Page JS fills the badges and re-sorts this
-                         band live from /api/public/poll-results.
-                         NO ver-pills in this band.
+                         summary. Page JS fills the badges, sorts ALL tagged
+                         cards by live tallies, promotes the top 5 to gold,
+                         and keeps the rest here. NO ver-pills in this band.
        🔵 #band-blue   — committed regardless of votes (e.g. the web-portal
                          flagship card).
        ⚫ #band-pool   — everything else, ONE flat pool (longterm-grid
@@ -439,12 +445,12 @@ Where Server Assistant is heading. Priorities are decided by the people who run 
 
 <div class="build-queue">
 
-  <div class="band-h band-gold">🥇 Top 5 — community-voted build order<span class="sub">Decided by each poll · all five take the next build slots and get their version numbers, in vote order</span></div>
+  <div class="band-h band-gold">🥇 Top 5 — community-voted build order<span class="sub">The five most-voted features take the next five build slots, in vote order · live standings until the poll closes</span></div>
   <div class="band" id="band-gold">
-    <div class="band-empty">The first community vote is live right now — its top 5 land here when it closes and become the next five releases, in vote order. Vote from your server's staff chat!</div>
+    <div class="band-empty">Waiting for the first votes — the live top 5 appear here, and when the poll closes they become the next five releases. Vote from your server's staff chat!</div>
   </div>
 
-  <div class="band-h band-purple">🟣 In the current vote<span class="sub">Live fleet-wide tallies — one card per poll option, re-sorting as votes land</span></div>
+  <div class="band-h band-purple">🟣 In the running<span class="sub">The rest of the current vote — every vote can push a card up into gold</span></div>
   <div class="band" id="band-purple">
 
   <details class="card" id="card-ai-command" data-poll-answer="0">
@@ -810,11 +816,15 @@ What ships is what gets requested most clearly. Vague *"add more features"* feed
           : " · ✅ closed — thank you!") +
         "</div>";
 
-      // Build queue: fill each purple-band card's vote badge and re-sort the
-      // band so the most-voted cards physically rise to the top of the page.
+      // Build queue: fill each card's vote badge, sort by votes, then split —
+      // the live top 5 physically move UP into the gold band (the prospective
+      // build slots), the rest stay in purple. At poll close the operator
+      // freezes gold in the HTML with version pills.
       var band = document.getElementById("band-purple");
+      var gold = document.getElementById("band-gold");
       if (band) {
-        var cards = Array.prototype.slice.call(band.querySelectorAll("details[data-poll-answer]"));
+        var cards = Array.prototype.slice.call(
+          document.querySelectorAll("#band-purple details[data-poll-answer], #band-gold details[data-poll-answer]"));
         cards.forEach(function (c) {
           var n = Number(t[Number(c.getAttribute("data-poll-answer"))]) || 0;
           var b = c.querySelector(".vote-badge");
@@ -824,7 +834,14 @@ What ships is what gets requested most clearly. Vague *"add more features"* feed
           return (Number(t[b.getAttribute("data-poll-answer")]) || 0) -
                  (Number(t[a.getAttribute("data-poll-answer")]) || 0);
         });
-        cards.forEach(function (c) { band.appendChild(c); });
+        if (gold && cards.length > 5) {
+          var ph = gold.querySelector(".band-empty");
+          if (ph) ph.parentNode.removeChild(ph);
+          cards.slice(0, 5).forEach(function (c) { gold.appendChild(c); });
+          cards.slice(5).forEach(function (c) { band.appendChild(c); });
+        } else {
+          cards.forEach(function (c) { band.appendChild(c); });
+        }
       }
     })
     .catch(function () { /* keep the static fallback line */ });
