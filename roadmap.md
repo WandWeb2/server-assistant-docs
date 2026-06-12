@@ -901,11 +901,15 @@ What ships is what gets requested most clearly. Vague *"add more features"* feed
     });
   }
 
-  var nextRefreshAt = Date.now() + 60000;
+  // Updates are anchored to wall-clock minute boundaries (the same 60s
+  // cadence the bot's vote-embed updater runs on), NOT to when this page
+  // happened to load — so a manual reload lands mid-countdown instead of
+  // resetting it, and every visitor refreshes on the same global tick.
+  function nextBoundary() { return (Math.floor(Date.now() / 60000) + 1) * 60000; }
+  var nextRefreshAt = nextBoundary();
 
   function refresh() {
-    nextRefreshAt = Date.now() + 60000;
-    fetch(API + "?ts=" + Math.floor(Date.now() / 30000))
+    fetch(API + "?ts=" + Math.floor(Date.now() / 60000))
       .then(function (r) { return r.ok ? r.json() : null; })
       .then(function (data) {
         var p = data && data.poll;
@@ -919,6 +923,11 @@ What ships is what gets requested most clearly. Vague *"add more features"* feed
       .catch(function () { /* keep current view */ });
   }
 
+  function schedule() {
+    nextRefreshAt = nextBoundary();
+    setTimeout(function () { refresh(); schedule(); }, nextRefreshAt - Date.now());
+  }
+
   // Visible countdown to the next data refresh, ticking every second
   setInterval(function () {
     var el = document.getElementById("lp-refresh");
@@ -928,6 +937,6 @@ What ships is what gets requested most clearly. Vague *"add more features"* feed
   }, 1000);
 
   refresh();
-  setInterval(refresh, 60000);
+  schedule();
 })();
 </script>
