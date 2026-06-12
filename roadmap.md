@@ -18,6 +18,15 @@ description: Server Assistant's product roadmap — what's in development, what'
   color: #333;
 }
 .roadmap-hero p { margin: .3rem 0; }
+/* Live community-poll results (filled by JS from the public results API) */
+.lp-q { font-weight: 700; margin-bottom: .55rem; }
+.lp-row { display: flex; align-items: center; gap: .55rem; margin: .28rem 0; font-size: .85rem; }
+.lp-label { flex: 0 0 42%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.lp-label a { color: inherit; text-decoration: underline dotted; }
+.lp-track { flex: 1; background: #dcebe0; border-radius: 999px; height: 10px; overflow: hidden; }
+.lp-fill { display: block; height: 100%; background: linear-gradient(90deg, #1e8449, #2ecc71); border-radius: 999px; }
+.lp-pct { flex: 0 0 70px; text-align: right; font-variant-numeric: tabular-nums; font-size: .8rem; }
+.lp-meta { margin-top: .55rem; font-size: .8rem; color: #555; }
 
 .roadmap-hint {
   font-size: 0.82rem;
@@ -393,8 +402,8 @@ details.safeguards li { margin-bottom: 0.2rem; }
 
 Where Server Assistant is heading. Priorities are decided by the people who run servers: we send **feature polls straight to every server's staff chat** and tally the votes across the whole fleet — every staff member in every server gets an equal say. Between polls, [`/feedback`]({{ site.url }}{{ site.baseurl }}/support/) or [`/support`]({{ site.url }}{{ site.baseurl }}/support/) reach the dev directly.
 
-<div class="roadmap-hero">
-  <p>📌 No dates — version tags show release <em>order</em> (we're on <strong>v5.6.2</strong>) · 💚 <strong>Core moderation is free forever</strong> (<a href="{{ site.url }}{{ site.baseurl }}/pricing/">pricing →</a>) · 🗳️ Staff-chat polls decide what we build next.</p>
+<div class="roadmap-hero" id="live-poll">
+  <p>🗳️ <strong>Community votes decide what we build.</strong> Feature polls arrive in every server's staff chat — live results appear here.</p>
 </div>
 
 <div class="expand-all-bar">
@@ -803,5 +812,49 @@ What ships is what gets requested most clearly. Vague *"add more features"* feed
   }
   window.addEventListener("hashchange", openCardFromHash);
   openCardFromHash();
+})();
+</script>
+
+<script>
+(function () {
+  // Live community-vote results in the hero — aggregate numbers only, served
+  // by the public results API (60s cache). Falls back to the static line if
+  // no poll has run yet or the API is unreachable.
+  var box = document.getElementById("live-poll");
+  if (!box) return;
+  function esc(s) {
+    return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+  }
+  fetch("https://sa.wandweb.co/api/public/poll-results")
+    .then(function (r) { return r.ok ? r.json() : null; })
+    .then(function (data) {
+      var p = data && data.poll;
+      if (!p || !p.answers || !p.answers.length) return;
+      var t = p.tallies || {};
+      var total = 0;
+      Object.keys(t).forEach(function (k) { total += Number(t[k]) || 0; });
+      var rows = p.answers.map(function (a, i) {
+        var n = Number(t[i]) || 0;
+        var pct = total ? Math.round(n / total * 100) : 0;
+        var name = esc((a.emoji ? a.emoji + " " : "") + a.text);
+        var label = a.link ? '<a href="' + esc(a.link) + '">' + name + "</a>" : name;
+        return '<div class="lp-row"><span class="lp-label">' + label + '</span>' +
+               '<span class="lp-track"><span class="lp-fill" style="width:' + pct + '%"></span></span>' +
+               '<span class="lp-pct">' + pct + "% (" + n + ")</span></div>";
+      }).join("");
+      var closes = "";
+      if (p.status === "active" && p.closes_at) {
+        var d = new Date(p.closes_at);
+        if (!isNaN(d)) closes = " · closes " + d.toLocaleDateString(undefined, { month: "short", day: "numeric" });
+      }
+      box.innerHTML =
+        '<div class="lp-q">🗳️ Live community vote — ' + esc(p.question) + "</div>" + rows +
+        '<div class="lp-meta">' + total + " votes · " + (p.servers || 0) + " server" + (p.servers === 1 ? "" : "s") + closes +
+        (p.status === "active"
+          ? " · 🟢 live — vote from your server's staff chat; every staff member has a voice"
+          : " · ✅ closed — thank you!") +
+        "</div>";
+    })
+    .catch(function () { /* keep the static fallback line */ });
 })();
 </script>
