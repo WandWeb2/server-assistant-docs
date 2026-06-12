@@ -40,7 +40,9 @@ description: Server Assistant's product roadmap — what's in development, what'
 .band > details.card { border-left: 3px solid #e0e0e0; margin-bottom: .5rem; }
 #band-purple > details.card { border-left-color: #af7ac5; }
 #band-gold   > details.card { border-left-color: #d4ac0d; }
-#band-blue   > .flagship-card { margin-bottom: .5rem; }
+#band-blue   > details.card { border-left-color: #5dade2; }
+#band-blue .desc ul { margin: .3rem 0 0; padding-left: 1.2rem; }
+#band-blue .desc li { margin: .2rem 0; }
 .band-empty { font-size: .85rem; color: #777; padding: .55rem .25rem; font-style: italic; }
 /* Purple + blue share a row (two columns); stacks on mobile */
 .band-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.1rem; align-items: start; margin-top: 1.2rem; }
@@ -408,8 +410,9 @@ details.safeguards li { margin-bottom: 0.2rem; }
                          and keeps the rest here. NO ver-pills in this band.
        🔵 #band-blue   — committed regardless of votes. Sits NEXT TO purple
                          in a two-column .band-row (stacks on mobile). Holds
-                         the web-portal flagship card (terse FEATURE LIST,
-                         not prose) plus every 💎 premium-pill card — the
+                         the web-portal card (a REGULAR details card like
+                         every other feature; its desc is a bullet list, no
+                         prose) plus every 💎 premium-pill card — the
                          committed Premium-tier launch set. Premium-pilled
                          features are NEVER poll options.
        🟢 #band-pool   — everything else, ONE flat pool (longterm-grid
@@ -524,17 +527,19 @@ Where Server Assistant is heading. Priorities are decided by the people who run 
   <div class="band-h band-blue">🔵 Committed<span class="sub">Building regardless of votes — including the Premium-tier launch set 💎</span></div>
   <div class="band" id="band-blue">
 
-<div class="flagship-card">
-  <h4>🖥️ Web portal for server administration</h4>
-  <ul>
-    <li>🔑 Sign in with <strong>Discord OAuth</strong> — free for every server</li>
-    <li>🎛️ Every setting visualised — AutoMod, escalation ladders, templates, live previews</li>
-    <li>📋 Cases &amp; moderation — warnings, appeals, tickets, audit trail; act from the browser</li>
-    <li>📈 Analytics — Pulse, threat-score trends, mod retros, token usage charts</li>
-    <li>🛡️ Same guardrails as in Discord — approvals, undo windows, audit logging</li>
-    <li>🌐 After launch — multi-server management with role-mapped staff access</li>
-  </ul>
-</div>
+  <details class="card">
+    <summary>🖥️ Web portal for server administration</summary>
+    <div class="desc">
+      <ul>
+        <li>🔑 Sign in with <strong>Discord OAuth</strong> — free for every server</li>
+        <li>🎛️ Every setting visualised — AutoMod, escalation ladders, templates, live previews</li>
+        <li>📋 Cases &amp; moderation — warnings, appeals, tickets, audit trail; act from the browser</li>
+        <li>📈 Analytics — Pulse, threat-score trends, mod retros, token usage charts</li>
+        <li>🛡️ Same guardrails as in Discord — approvals, undo windows, audit logging</li>
+        <li>🌐 After launch — multi-server management with role-mapped staff access</li>
+      </ul>
+    </div>
+  </details>
 
   <details class="card" id="card-decision-explainer">
     <summary>🌟 Decision explainer + multi-round appeals<span class="premium-pill">💎 Premium</span></summary>
