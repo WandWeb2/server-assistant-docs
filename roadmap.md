@@ -381,15 +381,15 @@ details.safeguards li { margin-bottom: 0.2rem; }
      THE BUILD QUEUE — one container (.build-queue), six bands, top→bottom.
      Band order is FIXED; cards move BETWEEN bands as polls complete.
 
-       🥇 #band-gold   — the CURRENT top 5. While a poll is live, page JS
-                         moves the five vote leaders up here automatically
-                         AND prefills their build-slot ver-pills from the
-                         NEXT_VERSIONS list in the script (whatever holds a
-                         slot at close IS that release). Static HTML keeps
-                         all 10 in purple; gold holds only the .band-empty
-                         placeholder. At poll close the operator freezes the
-                         final top 5 here in the HTML with real ver-pills.
-                         ONLY gold and shipped cards may carry version tags.
+       🥇 #band-gold   — the CURRENT top 5, which ALL ship together as the
+                         next release. The band HEADER carries the version
+                         ("🥇 v5.7 — confirmed by our community") — bump it
+                         each poll round; cards carry NO ver-pills. While a
+                         poll is live, page JS moves the five vote leaders up
+                         here automatically. Static HTML keeps all 10 in
+                         purple; gold holds only the .band-empty placeholder.
+                         At poll close the operator freezes the final top 5
+                         here in the HTML.
        🟣 #band-purple — the rest of the current poll. EXACTLY one card per
                          poll option overall (Discord caps polls at 10
                          answers — merge related features into one card whose
@@ -411,15 +411,14 @@ details.safeguards li { margin-bottom: 0.2rem; }
 
      POLL LIFECYCLE — run these steps when each poll closes:
        1. Sort the purple cards by final votes; move the top 5 to gold
-          (strip their data-poll-answer + vote-badge spans).
-       2. Give all 5 ver-pills for the next five releases, in vote order.
-       3. Refill purple with the next round's options from the pool,
+          (strip their data-poll-answer + vote-badge spans). They ALL ship
+          together as the version named in the gold band header.
+       2. Refill purple with the next round's options from the pool,
           tagging each with data-poll-answer + an empty vote-badge that
           matches the NEW poll's answer indexes (one card per answer).
-       4. Update NEXT_VERSIONS in the page script to the five releases
-          after the ones just assigned.
-       5. When a gold feature ships: swap ver-pill for a shipped-pill, move
-          the card to the top of .shipped-scroll inside band-shipped.
+       3. When the gold release ships: give each card a shipped-pill
+          (✅ Shipped vX.Y), move them to the top of .shipped-scroll inside
+          band-shipped, and bump the gold band header to the next version.
 
      Voting happens IN DISCORD (staff-chat polls, tallied fleet-wide); the
      old GitHub-Discussions vote arrows are retired (threads closed, kept
@@ -448,7 +447,7 @@ Where Server Assistant is heading. Priorities are decided by the people who run 
 
 <div class="build-queue">
 
-  <div class="band-h band-gold">🥇 Top 5 — community-voted build order<span class="sub">Build slots v5.7 → v5.11, prefilled in vote order — whatever holds a slot when the poll closes IS that release · live standings</span></div>
+  <div class="band-h band-gold">🥇 v5.7 — confirmed by our community<span class="sub">The top 5 most-voted features all ship together as the next update — live standings until the poll closes</span></div>
   <div class="band" id="band-gold">
     <div class="band-empty">Waiting for the first votes — the live top 5 appear here, and when the poll closes they become the next five releases. Vote from your server's staff chat!</div>
   </div>
@@ -748,7 +747,7 @@ Where Server Assistant is heading. Priorities are decided by the people who run 
 
 The fastest way to move something up the list:
 
-1. **Vote in the feature polls** that arrive in your server's staff chat — every staff member in every server gets an equal vote. Cards in the 🟣 voting band physically rise as votes land; when the poll closes, the **top 5 turn 🥇 gold and take the next five build slots, in vote order**.
+1. **Vote in the feature polls** that arrive in your server's staff chat — every staff member in every server gets an equal vote. Cards physically climb into the 🥇 gold band as votes land, and when the poll closes, **the top 5 together become the next release**.
 2. **Send [`/feedback`]({{ site.url }}{{ site.baseurl }}/support/) or open a [`/support`]({{ site.url }}{{ site.baseurl }}/support/) ticket** describing the use case — not just *"add feature X"* but *what you'd do with it*. Strong cases pull ideas out of ⚫ grey and into a vote round.
 
 What ships is what gets requested most clearly. Vague *"add more features"* feedback is unactionable; *"I run a 2,000-member RP server and we need X because Y"* gets prioritised.
@@ -840,20 +839,7 @@ What ships is what gets requested most clearly. Vague *"add more features"* feed
         if (gold && cards.length > 5 && total > 0) {
           var ph = gold.querySelector(".band-empty");
           if (ph) ph.parentNode.removeChild(ph);
-          // Whatever holds a gold slot at poll close WILL be that release —
-          // so the build-slot version numbers are prefilled on the leaders.
-          // ⚠️ Update this list each poll round (next five after current).
-          var NEXT_VERSIONS = ["v5.7", "v5.8", "v5.9", "v5.10", "v5.11"];
-          cards.slice(0, 5).forEach(function (c, i) {
-            var s = c.querySelector("summary");
-            if (s && !s.querySelector(".ver-pill")) {
-              var pill = document.createElement("span");
-              pill.className = "ver-pill";
-              pill.textContent = "🎯 " + (NEXT_VERSIONS[i] || "");
-              s.insertBefore(pill, s.querySelector(".vote-badge"));
-            }
-            gold.appendChild(c);
-          });
+          cards.slice(0, 5).forEach(function (c) { gold.appendChild(c); });
           cards.slice(5).forEach(function (c) { band.appendChild(c); });
         } else {
           cards.forEach(function (c) { band.appendChild(c); });
