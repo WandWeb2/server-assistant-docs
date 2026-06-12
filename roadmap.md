@@ -386,12 +386,14 @@ details.safeguards li { margin-bottom: 0.2rem; }
                          votes. All 5 carry ver-pills (🎯 vX.Y) assigned
                          at poll close, in vote order. ONLY gold and shipped
                          cards may carry version tags.
-       🟣 #band-purple — options in the CURRENT poll. Each card carries
-                         data-poll-answer="N" (0-based index into the poll's
-                         answers; related cards may share one answer) and an
-                         empty <span class="vote-badge"></span> at the end of
-                         its summary. Page JS fills the badges and re-sorts
-                         this band live from /api/public/poll-results.
+       🟣 #band-purple — EXACTLY one card per poll option (Discord caps polls
+                         at 10 answers — merge related features into one card
+                         whose title matches the poll answer text). Each card
+                         carries data-poll-answer="N" (0-based index into the
+                         poll's answers) and an empty
+                         <span class="vote-badge"></span> at the end of its
+                         summary. Page JS fills the badges and re-sorts this
+                         band live from /api/public/poll-results.
                          NO ver-pills in this band.
        🔵 #band-blue   — committed regardless of votes (e.g. the web-portal
                          flagship card).
@@ -443,56 +445,41 @@ Where Server Assistant is heading. Priorities are decided by the people who run 
     <div class="band-empty">The first community vote is live right now — its top 5 land here when it closes and become the next five releases, in vote order. Vote from your server's staff chat!</div>
   </div>
 
-  <div class="band-h band-purple">🟣 In the current vote<span class="sub">Live fleet-wide tallies — cards re-sort as votes land · related options share one poll answer</span></div>
+  <div class="band-h band-purple">🟣 In the current vote<span class="sub">Live fleet-wide tallies — one card per poll option, re-sorting as votes land</span></div>
   <div class="band" id="band-purple">
 
   <details class="card" id="card-ai-command" data-poll-answer="0">
-      <summary>🤖 <code>/ai</code> — general-purpose AI for your community<span class="vote-badge"></span></summary>
-      <span class="desc">A Premium-only command any member can use in opted-in servers: <code>/ai &lt;your question&gt;</code> and Server Assistant replies under its own name with a Claude-powered answer. Default <strong>off</strong>; the owner enables it in <code>/settings → 🤖 AI Access</code> with controls for allowed channels, public-vs-ephemeral replies, per-user and per-channel rate limits, and a query log. Useful for "what time is it in Berlin?", "explain this Discord setting", "draft a server rule for X". Image generation stays on <code>/imagine</code> separately so the free-tier Pollinations fallback isn't lost.</span>
-    </details>
-
-    <details class="card" id="card-ai-access" data-poll-answer="0">
-      <summary>🤖 <code>/settings → AI Access</code> panel<span class="vote-badge"></span></summary>
-      <span class="desc">The owner-facing control panel for everything AI: <code>/ai</code> enable toggle, allowed channels, reply visibility (public/ephemeral), per-user and per-channel rate limits, content strictness, and the log-to channel. Ships alongside <code>/ai</code>.</span>
-    </details>
-
-    <details class="card" id="card-rule-explainer" data-poll-answer="1">
-      <summary>AI rule explainer<span class="vote-badge"></span></summary>
-      <span class="desc">AutoMod DMs the user not just which filter matched, but why this rule exists, in plain language. Cuts the "I have no idea why I got warned" complaint at the root.</span>
-    </details>
-
-    <details class="card" id="card-native-coaching" data-poll-answer="2">
-      <summary>Native-action coaching <span class="admin-pill">Baseline admin</span><span class="vote-badge"></span></summary>
-      <span class="desc"><strong>Logging</strong> of native Discord actions (right-click ban/kick/timeout) <strong>shipped in v5.1</strong>. What's coming next: when a staff member moderates from Discord's own UI, they get a gentle one-line tip on doing the same thing through Server Assistant (so you keep your escalation ladder, approvals, and undo window intact). Read-only; never blocks the action.</span>
-    </details>
-
-    <details class="card" id="card-coverage-map" data-poll-answer="3">
-      <summary>Staff coverage map<span class="vote-badge"></span></summary>
-      <span class="desc">Time-zone-aware visualisation of when each mod is typically active; flags coverage gaps for raid-prone hours.</span>
-    </details>
-
-  <details class="card" id="card-verification-gate" data-poll-answer="4">
-    <summary>🛡️ Verification gate — DM-button · web captcha · risk-targeted<span class="vote-badge"></span></summary>
-    <span class="desc">A configurable join-gate that holds new members in a quarantine role until they prove they're human, then auto-grants your member role. <strong>Three modes, so friction matches your threat level:</strong> <strong>DM-button</strong> (one tap, lowest friction — the sensible default), <strong>web captcha</strong> (a hosted challenge page for raid-prone or high-profile servers), and <strong>risk-targeted</strong> — verify <em>only</em> accounts that Threat Score and AltGuard already flag as suspicious (brand-new accounts, likely ban-evading alts) while trusted regulars walk straight in. Fail or time out → auto-kick, staff alerted. <strong>The differentiator:</strong> friction scales with risk instead of taxing every legitimate joiner the way fixed-captcha bots do — only Server Assistant already computes the risk signal to drive it.</span>
+    <summary>🤖 <code>/ai</code> for your community + AI Access panel<span class="vote-badge"></span></summary>
+    <span class="desc">A Premium-only command any member can use in opted-in servers: <code>/ai &lt;your question&gt;</code> and Server Assistant replies under its own name with a Claude-powered answer. Default <strong>off</strong>. Useful for "what time is it in Berlin?", "explain this Discord setting", "draft a server rule for X". Image generation stays on <code>/imagine</code> separately so the free-tier Pollinations fallback isn't lost. <strong>Ships with its owner-facing control panel</strong> — <code>/settings → 🤖 AI Access</code>: enable toggle, allowed channels, reply visibility (public/ephemeral), per-user and per-channel rate limits, content strictness, and a query log.</span>
   </details>
 
-  <details class="card" id="card-application-forms" data-poll-answer="4">
-    <summary>📋 Application / join-approval forms<span class="vote-badge"></span></summary>
-    <span class="desc">A staff-reviewed application step before access is granted. Owners define the questions (<em>why are you here, age-gate confirmation, rules agreement</em>); applicants answer a short form on join, and each submission lands in staff chat with one-tap <strong>Approve</strong> / <strong>Deny</strong> and an optional reason DM'd back. Builds directly on the Ticket Panels intake engine shipped in v5.2, and pairs naturally with the Verification gate for communities that want both a human-check <em>and</em> a curation step.</span>
+  <details class="card" id="card-rule-explainer" data-poll-answer="1">
+    <summary>🧠 AI rule explainer<span class="vote-badge"></span></summary>
+    <span class="desc">AutoMod DMs the user not just which filter matched, but why this rule exists, in plain language. Cuts the "I have no idea why I got warned" complaint at the root.</span>
+  </details>
+
+  <details class="card" id="card-native-coaching" data-poll-answer="2">
+    <summary>🧭 Native-action coaching <span class="admin-pill">Baseline admin</span><span class="vote-badge"></span></summary>
+    <span class="desc"><strong>Logging</strong> of native Discord actions (right-click ban/kick/timeout) <strong>shipped in v5.1</strong>. What's coming next: when a staff member moderates from Discord's own UI, they get a gentle one-line tip on doing the same thing through Server Assistant (so you keep your escalation ladder, approvals, and undo window intact). Read-only; never blocks the action.</span>
+  </details>
+
+  <details class="card" id="card-coverage-map" data-poll-answer="3">
+    <summary>📊 Staff insights — coverage map + shared tips<span class="vote-badge"></span></summary>
+    <span class="desc">Two staff-intelligence features that ship as one bundle. <strong>Staff coverage map</strong> — time-zone-aware visualisation of when each mod is typically active; flags coverage gaps for raid-prone hours. <strong>Community-of-practice sharing</strong> — <em>"servers like yours configure X this way"</em> recommendations based on similar community profiles; privacy-first — patterns only, no per-server identifying data.</span>
+  </details>
+
+  <details class="card" id="card-verification-gate" data-poll-answer="4">
+    <summary>🛡️ Verification gate + application forms<span class="vote-badge"></span></summary>
+    <span class="desc">Two complementary join-gates that ship together. <strong>Verification gate</strong> — holds new members in a quarantine role until they prove they're human, then auto-grants your member role. Three modes so friction matches your threat level: <strong>DM-button</strong> (one tap, the sensible default), <strong>web captcha</strong> (hosted challenge page for raid-prone servers), and <strong>risk-targeted</strong> — verify <em>only</em> accounts Threat Score and AltGuard already flag, while trusted regulars walk straight in; fail or time out → auto-kick, staff alerted. Friction scales with risk instead of taxing every legitimate joiner. <strong>Application / join-approval forms</strong> — a staff-reviewed application step: owners define the questions (<em>why are you here, age-gate confirmation, rules agreement</em>), applicants answer a short form on join, and each submission lands in staff chat with one-tap <strong>Approve</strong> / <strong>Deny</strong> and an optional reason DM'd back. Builds on the Ticket Panels intake engine shipped in v5.2.</span>
   </details>
 
   <details class="card" id="card-anti-nuke" data-poll-answer="5">
-    <summary>🛡️ Anti-nuke / rogue-admin guard<span class="vote-badge"></span></summary>
+    <summary>🚨 Anti-nuke / rogue-admin guard<span class="vote-badge"></span></summary>
     <span class="desc">Proactive protection against a compromised admin account or a malicious insider — the gap between today's <em>manual</em> <code>/lockdown</code> and a real attack. Rate-limits destructive admin actions (mass channel/role deletions, mass bans/kicks, mass webhook creation) and, on a confident burst, <strong>auto-strips the actor's roles into a powerless quarantine</strong> mid-attack and alerts the owner with exactly what was attempted. Reuses the exact-permission restore engine already shipped in <code>/lockdown end</code>, so reversing the damage isn't a best-guess. Core security → free forever.</span>
   </details>
 
-  <details class="card" id="card-community-practice" data-poll-answer="3">
-    <summary>Community-of-practice sharing<span class="vote-badge"></span></summary>
-    <span class="desc"><em>"Servers like yours configure X this way"</em> recommendations based on similar community profiles. Privacy-first — patterns only, no per-server identifying data.</span>
-  </details>
-
   <details class="card" id="card-bot-on-bot" data-poll-answer="6">
-    <summary>Bot-on-bot detection<span class="vote-badge"></span></summary>
+    <summary>🔍 Bot-on-bot detection<span class="vote-badge"></span></summary>
     <span class="desc">Flag suspicious automation pretending to be human — relevant for mass-marketing raids that evade text filters.</span>
   </details>
 
@@ -507,13 +494,8 @@ Where Server Assistant is heading. Priorities are decided by the people who run 
   </details>
 
   <details class="card" id="card-reaction-roles" data-poll-answer="9">
-    <summary>Reaction roles<span class="premium-pill">💎 Premium</span><span class="vote-badge"></span></summary>
-    <span class="desc">Button-based self-service role panels in any channel.</span>
-  </details>
-
-  <details class="card" id="card-custom-commands" data-poll-answer="9">
-    <summary>Custom slash commands<span class="premium-pill">💎 Premium</span><span class="vote-badge"></span></summary>
-    <span class="desc">Server owners define their own <code>/foo</code> returning a configured embed or text snippet.</span>
+    <summary>🎭 Reaction roles + custom slash commands<span class="premium-pill">💎 Premium</span><span class="vote-badge"></span></summary>
+    <span class="desc">Two engagement utilities that ship as one bundle. <strong>Reaction roles</strong> — button-based self-service role panels in any channel. <strong>Custom slash commands</strong> — server owners define their own <code>/foo</code> returning a configured embed or text snippet.</span>
   </details>
 
   </div>
