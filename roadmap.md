@@ -834,7 +834,7 @@ What ships is what gets requested most clearly. Vague *"add more features"* feed
           return (Number(t[b.getAttribute("data-poll-answer")]) || 0) -
                  (Number(t[a.getAttribute("data-poll-answer")]) || 0);
         });
-        if (gold && cards.length > 5) {
+        if (gold && cards.length > 5 && total > 0) {
           var ph = gold.querySelector(".band-empty");
           if (ph) ph.parentNode.removeChild(ph);
           cards.slice(0, 5).forEach(function (c) { gold.appendChild(c); });
