@@ -383,7 +383,7 @@ details.safeguards li { margin-bottom: 0.2rem; }
      Band order is FIXED; cards move BETWEEN bands as polls complete.
 
        🥇 #band-gold   — top 5 of the LAST completed poll, sorted by final
-                         votes. The top 3 carry ver-pills (🎯 vX.Y) assigned
+                         votes. All 5 carry ver-pills (🎯 vX.Y) assigned
                          at poll close, in vote order. ONLY gold and shipped
                          cards may carry version tags.
        🟣 #band-purple — options in the CURRENT poll. Each card carries
@@ -404,7 +404,7 @@ details.safeguards li { margin-bottom: 0.2rem; }
      POLL LIFECYCLE — run these steps when each poll closes:
        1. Sort the purple cards by final votes; move the top 5 to gold
           (strip their data-poll-answer + vote-badge spans).
-       2. Give the top 3 ver-pills for the next three releases, vote order.
+       2. Give all 5 ver-pills for the next five releases, in vote order.
        3. Refill purple with the next round's options from green/grey,
           tagging each with data-poll-answer + an empty vote-badge that
           matches the NEW poll's answer indexes.
@@ -438,9 +438,9 @@ Where Server Assistant is heading. Priorities are decided by the people who run 
 
 <div class="build-queue">
 
-  <div class="band-h band-gold">🥇 Top 5 — community-voted build order<span class="sub">Decided by each poll · the top 3 take the next build slots and get their version numbers</span></div>
+  <div class="band-h band-gold">🥇 Top 5 — community-voted build order<span class="sub">Decided by each poll · all five take the next build slots and get their version numbers, in vote order</span></div>
   <div class="band" id="band-gold">
-    <div class="band-empty">The first community vote is live right now — its top 5 land here when it closes, and the top 3 become the next three releases. Vote from your server's staff chat!</div>
+    <div class="band-empty">The first community vote is live right now — its top 5 land here when it closes and become the next five releases, in vote order. Vote from your server's staff chat!</div>
   </div>
 
   <div class="band-h band-purple">🟣 In the current vote<span class="sub">Live fleet-wide tallies — cards re-sort as votes land · related options share one poll answer</span></div>
@@ -784,7 +784,7 @@ Where Server Assistant is heading. Priorities are decided by the people who run 
 
 The fastest way to move something up the list:
 
-1. **Vote in the feature polls** that arrive in your server's staff chat — every staff member in every server gets an equal vote. Cards in the 🟣 voting band physically rise as votes land; when the poll closes, the **top 5 turn 🥇 gold and the top 3 take the next three build slots**.
+1. **Vote in the feature polls** that arrive in your server's staff chat — every staff member in every server gets an equal vote. Cards in the 🟣 voting band physically rise as votes land; when the poll closes, the **top 5 turn 🥇 gold and take the next five build slots, in vote order**.
 2. **Send [`/feedback`]({{ site.url }}{{ site.baseurl }}/support/) or open a [`/support`]({{ site.url }}{{ site.baseurl }}/support/) ticket** describing the use case — not just *"add feature X"* but *what you'd do with it*. Strong cases pull ideas out of ⚫ grey and into a vote round.
 
 What ships is what gets requested most clearly. Vague *"add more features"* feedback is unactionable; *"I run a 2,000-member RP server and we need X because Y"* gets prioritised.
