@@ -7,9 +7,14 @@ description: Add Server Assistant to your Discord server in under a minute.
 
 # 🚀 Setup Guide
 
-Adding **Server Assistant** takes about 60 seconds. The wizard does the rest.
+Adding **Server Assistant** takes about 60 seconds — the wizard does the rest.
 
 > ⚠️ Only the **Discord-native server owner** can run `/setup` — a hard safety check so admins can't escalate their own permissions.
+
+<figure class="media-frame">
+  <img src="{{ '/assets/screenshots/setup-wizard.webp' | relative_url }}" alt="The /setup wizard in Discord, showing the channel, role, and AI provider steps." loading="lazy">
+  <figcaption>The <code>/setup</code> wizard walks you through channels, roles, and AI in three short steps.</figcaption>
+</figure>
 
 <style>
 .steps { display: grid; gap: 1rem; margin: 1.2rem 0 1.6rem; }
@@ -29,17 +34,17 @@ Adding **Server Assistant** takes about 60 seconds. The wizard does the rest.
   <div class="step"><div class="step-n">1</div>
     <div class="step-body">
       <h3>Invite the bot</h3>
-      <p>You'll need <strong>Manage Server</strong> on the target guild. <strong>Don't uncheck any permissions</strong> in the OAuth flow — features like ban/kick/auto-role rely on them.</p>
+      <p>You'll need <strong>Manage Server</strong> on the target guild. <strong>Don't uncheck any OAuth permissions</strong> — ban/kick/auto-role rely on them.</p>
       <p><a class="invite-cta" href="https://discord.com/api/oauth2/authorize?client_id=1278486617375510570&permissions=8&scope=bot+applications.commands">➕ Invite Server Assistant</a></p>
-      <p style="font-size:.83rem; color:#5c6470;">Also listed on <a href="https://top.gg/bot/1278486617375510570">Top.gg</a> and <a href="https://discordbotlist.com/bots/server-assistant">discordbotlist.com</a>. Slash commands take up to 1 hour to propagate the very first time.</p>
+      <p style="font-size:.83rem; color:#5c6470;">Also on <a href="https://top.gg/bot/1278486617375510570">Top.gg</a> and <a href="https://discordbotlist.com/bots/server-assistant">discordbotlist.com</a>. Slash commands take up to 1 hour to propagate the first time.</p>
     </div>
   </div>
 
   <div class="step"><div class="step-n">2</div>
     <div class="step-body">
       <h3>Run <code>/setup</code> — three short steps</h3>
-      <p><strong>Channels.</strong> Pick a <em>staff-chat</em> (where the bot listens to natural-language commands) and a <em>log channel</em> (audit-trail embeds). Both should be private/staff-only.</p>
-      <p><strong>Roles.</strong> Map your existing Discord roles to the bot's tiers — <strong>Owner / Admin / Moderator</strong>. The Discord-native owner always has Owner tier implicitly. You can add custom tiers later in <code>/settings → Role Tiers</code>.</p>
+      <p><strong>Channels.</strong> Pick a <em>staff-chat</em> (the bot listens for natural-language commands here) and a <em>log channel</em> (audit-trail embeds). Keep both private/staff-only.</p>
+      <p><strong>Roles.</strong> Map existing Discord roles to the bot's tiers — <strong>Owner / Admin / Moderator</strong>. The Discord-native owner always holds Owner tier implicitly; add custom tiers later in <code>/settings → Role Tiers</code>.</p>
       <p><strong>AI provider (optional).</strong> Three modes — <strong>🆓 host's shared key</strong> (rate-limited, default), <strong>🔑 your own key</strong> (xAI Grok or OpenAI; encrypted, no shared limits), or <strong>⏭️ Skip AI</strong>. Change anytime via <code>/ai-config</code>.</p>
       <p>Hit <strong>Finish Setup</strong>. The bot saves and auto-posts a 5-message walkthrough to staff-chat covering all three ways to use it.</p>
     </div>
@@ -80,7 +85,7 @@ Adding **Server Assistant** takes about 60 seconds. The wizard does the rest.
 
 ## 🔁 Re-running setup
 
-If you need different channels/roles, just run `/setup` again — it overwrites the mapping but **preserves warnings, notes, snippets, and audit logs**. For a full reset, open a ticket via [`/support`]({{ site.url }}{{ site.baseurl }}/support/).
+Need different channels/roles? Run `/setup` again — it overwrites the mapping but **preserves warnings, notes, snippets, and audit logs**. For a full reset, open a ticket via [`/support`]({{ site.url }}{{ site.baseurl }}/support/).
 
 ---
 
@@ -97,7 +102,7 @@ details.tshoot .body { padding: 0 1rem .8rem; font-size: .9rem; line-height: 1.5
 </style>
 
 <details class="tshoot"><summary><code>/setup</code> doesn't appear when I type <code>/</code></summary>
-<div class="body">First-time global propagation can take up to 1 hour. Wait, then try again. Still missing after that — open a ticket via <code>/support</code> from any server that has the bot (you can use another server you own where the commands are live).</div></details>
+<div class="body">First-time global propagation can take up to 1 hour. Wait, then try again. Still missing? Open a ticket via <code>/support</code> from any server where the bot's commands are already live.</div></details>
 
 <details class="tshoot"><summary>"⛔ Only the server owner can run setup"</summary>
 <div class="body">You're not the Discord-native owner. Owners can transfer ownership in <strong>Server Settings → Members</strong>.</div></details>

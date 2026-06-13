@@ -29,7 +29,12 @@ A scannable tour. For the full command list and permissions, see **[Commands]({{
 
 ## 🧠 The AI-Moderation Suite
 
-A set of AI features that watch your server's *health and behaviour* — **advisory by design**. They give your team x-ray vision and leave the decisions to you.
+AI features that watch your server's *health and behaviour* — **advisory by design**. X-ray vision for your team; the decisions stay with you.
+
+<figure class="media-frame">
+  <img src="{{ '/assets/screenshots/pulse-digest.webp' | relative_url }}" alt="The daily Pulse health digest embed showing message counts, joins and leaves, AutoMod blocks, and week-over-week deltas." loading="lazy">
+  <figcaption>The daily 🩺 Pulse digest — server health at a glance.</figcaption>
+</figure>
 
 <style>
 .ai-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin: 1rem 0 1.5rem; }
@@ -60,7 +65,7 @@ A set of AI features that watch your server's *health and behaviour* — **advis
   </div>
   <div class="ai-card">
     <h4>🛡️ Threat Score <span class="ai-tag">advisory free · active Premium</span></h4>
-    <p>At-a-glance per-user risk — 🟢 Low / 🟠 Elevated / 🔴 High — in user profiles. Transparent read of infraction history, weighted by severity, decaying over time. <strong>The advisory view is free for every server</strong>; the <strong>active, score-driven action</strong> phase (Premium) is what uses the score to drive moderation with the safeguards listed on the <a href="{{ site.url }}{{ site.baseurl }}/roadmap/">roadmap</a>.</p>
+    <p>At-a-glance per-user risk — 🟢 Low / 🟠 Elevated / 🔴 High — in user profiles. A transparent read of infraction history, weighted by severity and decaying over time. <strong>The advisory view is free for every server</strong>; the <strong>active, score-driven action</strong> phase (Premium) uses the score to drive moderation, with the safeguards listed on the <a href="{{ site.url }}{{ site.baseurl }}/roadmap/">roadmap</a>.</p>
     <div class="ai-where">Enable: <code>/settings → Behavior</code></div>
   </div>
 </div>
@@ -149,11 +154,21 @@ AutoMod runs on every non-staff message. Staff are completely exempt.
 
 **Other knobs:**
 
-- **Custom regex** — `/automod → Add Filter` with a built-in safety check for catastrophic-backtracking patterns
+- **Custom regex** — `/automod → Add Filter`, with a built-in safety check for catastrophic-backtracking patterns
 - **Link blocklist** — domain-level blocks (IP-grabbers preloaded)
 - **Punishment ladder** — Gentle 5/10/20 · Standard 3/5/10 · Strict 2/3/5 (warns → action)
 - **Anti-spam** — auto on; 5+ duplicate messages in 5s = removed + warned
 - **User DM** — every AutoMod removal DMs the user *which rule fired* + their warning count. Staff see the full embed in the log channel either way.
+
+<figure class="media-frame">
+  <img src="{{ '/assets/screenshots/automod-log.webp' | relative_url }}" alt="The AutoMod staff log embed showing which rule fired on a removed message." loading="lazy">
+  <figcaption>Staff see the full removal in the log channel — which rule fired and why.</figcaption>
+</figure>
+
+<figure class="media-frame">
+  <img src="{{ '/assets/screenshots/automod-user-dm.webp' | relative_url }}" alt="The DM a member receives after an AutoMod removal, naming the rule that fired and their warning count." loading="lazy">
+  <figcaption>The member gets a DM naming the rule and their current warning count.</figcaption>
+</figure>
 
 ---
 
@@ -161,7 +176,7 @@ AutoMod runs on every non-staff message. Staff are completely exempt.
 
 A ban shouldn't be a silent door-slam. Server Assistant turns every ban — *manual, `/tempban`, AutoMod, or native Discord* — into a transparent process for both sides.
 
-**For the banned member:** an automatic DM with the **exact reason** the staff member supplied, and an invitation to send **one reply** if they want to appeal. Just one — no escalating reply threads, no bot back-and-forth, no DM noise.
+**For the banned member:** an automatic DM with the **exact reason** staff supplied, plus an invitation to send **one reply** to appeal. Just one — no escalating threads, no bot back-and-forth, no DM noise.
 
 **For your staff:** that single reply opens an **appeal ticket** in your log / staff channel with three one-tap buttons:
 
@@ -174,7 +189,7 @@ A ban shouldn't be a silent door-slam. Server Assistant turns every ban — *man
 | ⚠️ **Warnings** | Full warning history for the user, even if they're not in the server anymore. |
 | 📝 **Notes** | Staff notes (private, invisible to the user). |
 
-**Why this matters:** every other moderation bot treats a ban as an opaque, final action. This gives every accused member a structured way to be heard, *without* opening a flood of DMs, *without* requiring staff to set up tickets per-incident, and *without* spending a single AI token unless **Research** is pressed. And before staff decide, the **Info / Warnings / Notes** trio means they can pull the full picture on a banned user without leaving the appeal card — no separate `/info` round-trip needed.
+**Why this matters:** most moderation bots treat a ban as an opaque, final action. This gives every accused member a structured way to be heard — *without* a flood of DMs, *without* per-incident tickets, and *without* spending an AI token unless **Research** is pressed. And the **Info / Warnings / Notes** trio lets staff pull the full picture on a banned user without leaving the appeal card — no separate `/info` round-trip.
 
 **Soft-bans excluded** (they're meant to let people rejoin). **On by default**; turn off per server in `/settings`. Buttons survive bot restarts.
 
@@ -194,7 +209,7 @@ Tracks join rate. When the threshold trips, the bot pings the Owner (and any rol
 
 ## 🔐 DM Verification Gate <span class="tier-badge tier-free">FREE</span>
 
-Optional anti-raid measure (`/settings → Verification`). New members are DM'd a green **Verify** button; clicking it grants the verified role. If DMs are closed, the failure is logged and the user only sees `@everyone`-open channels. Stops most automated raid bots cold.
+Optional anti-raid measure (`/settings → Verification`). New members are DM'd a green **Verify** button; clicking it grants the verified role. If DMs are closed, the failure is logged and the user sees only `@everyone`-open channels. Stops most automated raid bots cold.
 
 ---
 
@@ -207,9 +222,19 @@ Optional anti-raid measure (`/settings → Verification`). New members are DM'd 
   </div>
   <div class="f-card">
     <h4>📋 Message Report — context summaries</h4>
-    <p>Right-click any message → <strong>Apps ▸ Message Report</strong>. The bot reads ~20 surrounding messages and produces a 3–5 bullet summary: tone, possible rule-breaking, escalation pattern, recommended action. Only you see it — with one-tap <strong>Warn · Timeout · Delete · Kick · Ban</strong> action buttons and a second row of <strong>👤 Info · ⚠️ Warnings · 📝 Notes</strong> investigative buttons, so you can pull the full picture on the user before deciding (each button respects your role permissions). Any action you take is logged to your audit trail <strong>with the report attached</strong>, so the reasoning behind it is on the record. <strong>The bot never auto-acts — staff always decide.</strong></p>
+    <p>Right-click any message → <strong>Apps ▸ Message Report</strong>. The bot reads ~20 surrounding messages and returns a 3–5 bullet summary: tone, possible rule-breaking, escalation pattern, recommended action. Only you see it — with one-tap <strong>Warn · Timeout · Delete · Kick · Ban</strong> buttons and a second row of <strong>👤 Info · ⚠️ Warnings · 📝 Notes</strong> for pulling the full picture before deciding (each respects your role permissions). Any action is logged to your audit trail <strong>with the report attached</strong>. <strong>The bot never auto-acts — staff always decide.</strong></p>
   </div>
 </div>
+
+<figure class="media-frame">
+  <img src="{{ '/assets/screenshots/report-menu.webp' | relative_url }}" alt="The Discord right-click Apps menu showing the Message Report action." loading="lazy">
+  <figcaption>Right-click any message → Apps ▸ Message Report.</figcaption>
+</figure>
+
+<figure class="media-frame">
+  <img src="{{ '/assets/screenshots/report-result.webp' | relative_url }}" alt="A Message Report result: an AI bullet summary with one-tap action and investigative buttons." loading="lazy">
+  <figcaption>The AI summary, with action and investigative buttons attached.</figcaption>
+</figure>
 
 ---
 
@@ -248,17 +273,22 @@ Verbosity: **All / Dangerous-only / Errors-only** (`/settings → Behavior → L
 
 Logging isn't just for actions run through the bot:
 
-- **Native actions captured too.** A right-click ban, kick, or timeout done **directly in Discord** is logged just like a bot command — nothing slips past your audit log.
-- **Encrypted at rest.** Every action is written to a separate record that's encrypted with the same key protecting your credentials. Staff can't read, edit, or erase it — only Server Assistant can.
-- **Tamper alerts.** If anyone deletes an entry from your log channel, the owner is notified automatically, and the encrypted record stays intact.
+- **Native actions captured too.** A right-click ban, kick, or timeout done **directly in Discord** is logged like a bot command — nothing slips past your audit log.
+- **Encrypted at rest.** Every action is written to a separate record encrypted with the same key protecting your credentials. Staff can't read, edit, or erase it — only Server Assistant can.
+- **Tamper alerts.** Delete an entry from your log channel and the owner is notified automatically; the encrypted record stays intact.
 - **Optional locked log channel.** During `/autopilot` or `/setup`, opt in to a `#server-assistant-log` channel only the bot can post to — entries can't be deleted.
-- **Native-action coaching.** When staff moderate outside the bot, the log entry includes a tip on doing it through Server Assistant next time (so it's reversible and logged consistently).
+- **Native-action coaching.** When staff moderate outside the bot, the log entry tips them to use Server Assistant next time (so it's reversible and logged consistently).
 
 ---
 
 ## 🎨 Customisation Hub (`/settings`) <span class="tier-badge tier-free">FREE</span>
 
 **Nine sub-wizards.** All changes save instantly.
+
+<figure class="media-frame">
+  <img src="{{ '/assets/screenshots/settings-hub.webp' | relative_url }}" alt="The /settings hub showing its sub-wizards for branding, presets, behaviour, and more." loading="lazy">
+  <figcaption>The <code>/settings</code> hub — every sub-wizard in one place.</figcaption>
+</figure>
 
 | | What it covers |
 |---|---|
@@ -276,15 +306,15 @@ Logging isn't just for actions run through the bot:
 
 ## 🎫 Ticket Panels <span class="tier-badge tier-free">FREE</span> <span class="tier-badge tier-premium">PREMIUM</span>
 
-Give your members a private, structured way to reach staff without leaving your server. An admin posts a panel in any public channel; members click **Create Ticket** to open a dedicated private channel with your support team.
+Give members a private, structured way to reach staff without leaving your server. An admin posts a panel in any public channel; members click **Create Ticket** to open a dedicated private channel with your support team.
 
 **How the flow works:**
 
 1. Admin runs `/tickets setup` — picks the panel channel, ticket category, support role, and (optionally) a transcript channel.
 2. The bot posts a styled embed with a persistent **Create Ticket** button.
-3. A member clicks the button, fills a short intake form (a Discord modal), and the bot creates a private `ticket-0001-username` channel — visible only to them, the support role, and admins.
-4. The ticket's opening message shows the intake answers, pings the support role, and includes a **Close Ticket** button.
-5. On close, the bot saves a `.txt` transcript and posts it to the transcript channel, then deletes the ticket channel after 5 seconds.
+3. A member clicks it, fills a short intake form (a Discord modal), and the bot creates a private `ticket-0001-username` channel — visible only to them, the support role, and admins.
+4. The opening message shows the intake answers, pings the support role, and includes a **Close Ticket** button.
+5. On close, the bot saves a `.txt` transcript to the transcript channel, then deletes the ticket channel after 5 seconds.
 
 <div class="f-grid">
   <div class="f-card">

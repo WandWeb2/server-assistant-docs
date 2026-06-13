@@ -26,7 +26,7 @@ details.faq .faq-body table { margin: .5rem 0; }
 <details class="faq"><summary>Is the bot free?</summary>
 <div class="faq-body">
 <p><strong>The full moderation toolkit is free forever</strong> — no card, no catch. Core moderation, AutoMod, anti-raid, DM verification, audit logs, warnings, the Customisation Hub, and zero-touch <code>/autopilot</code> setup never cost a thing.</p>
-<p>The <strong>AI features</strong> (Concierge, Message Report, Self-trained AutoMod, Pulse) come with a <strong>150,000-token free trial</strong> to evaluate them. After that, <strong>Premium ($7 USD/mo)</strong> keeps them going — and you're only charged once your trial tokens run out, so light-use servers may never pay. Already have your own AI key? <strong>Premium BYOK is $3 USD/mo</strong>. See <a href="{{ site.url }}{{ site.baseurl }}/pricing/">Pricing</a> for the full breakdown.</p>
+<p>The <strong>AI features</strong> (Concierge, Message Report, Self-trained AutoMod, Pulse) include a <strong>150,000-token free trial</strong>. After that, <strong>Premium ($7 USD/mo)</strong> keeps them going — but you're only charged once your trial tokens run out, so light-use servers may never pay. Got your own AI key? <strong>Premium BYOK is $3 USD/mo</strong>. See <a href="{{ site.url }}{{ site.baseurl }}/pricing/">Pricing</a> for the full breakdown.</p>
 </div>
 </details>
 
@@ -44,7 +44,7 @@ You'll need <strong>Manage Server</strong> permission. Use the <a href="{{ site.
 
 <details class="faq"><summary>How long does setup take?</summary>
 <div class="faq-body">
-About 60 seconds — three steps (channels, roles, AI provider). Then <code>/settings</code> opens nine customisation panels (none required) to fine-tune anything from embed colour to the AutoMod ladder.
+About 60 seconds — three steps (channels, roles, AI provider). Then <code>/settings</code> opens nine optional panels to fine-tune anything from embed colour to the AutoMod ladder.
 </div>
 </details>
 
@@ -159,7 +159,7 @@ Currently it's fixed wording. Custom verification copy is on the <a href="{{ sit
 
 <details class="faq"><summary>Does the bot use AI tokens just to <em>read</em> staff-chat messages?</summary>
 <div class="faq-body">
-<p><strong>No.</strong> Monitoring staff-chat is free. The bot uses <strong>pattern matching</strong> (regex + keyword lookup) on every message — that costs zero tokens. AI tokens are only spent when staff write a genuinely fuzzy request that the pattern matcher can't resolve.</p>
+<p><strong>No.</strong> Monitoring staff-chat is free. The bot runs <strong>pattern matching</strong> (regex + keyword lookup) on every message at zero token cost. AI tokens are only spent when staff write a genuinely fuzzy request the pattern matcher can't resolve.</p>
 
 <p><strong>The decision chain on every staff-chat message:</strong></p>
 
@@ -205,17 +205,17 @@ Currently it's fixed wording. Custom verification copy is on the <a href="{{ sit
 </tbody>
 </table>
 
-<p style="margin-top:0.7rem;"><strong>Cost per fuzzy call:</strong> ~400–500 tokens (~$0.003 at Sonnet rates). All such spends are <strong>billed to your server's AI allowance</strong> with a feature tag (<code>nl_intent</code>, <code>nl_chat</code>, <code>nl_extract</code>) so you can see exactly which interactions ate which tokens in <code>/premium</code>.</p>
+<p style="margin-top:0.7rem;"><strong>Cost per fuzzy call:</strong> ~400–500 tokens (~$0.003 at Sonnet rates), <strong>billed to your server's AI allowance</strong> with a feature tag (<code>nl_intent</code>, <code>nl_chat</code>, <code>nl_extract</code>) so you can see exactly which interactions ate which tokens in <code>/premium</code>.</p>
 
-<p><strong>How to drive NL spend to truly zero:</strong> Owner runs <code>/privacy</code> and toggles off <strong>"Natural-language commands in staff-chat"</strong>. The bot will then only respond to slash commands and explicit <code>@mention</code>s — no fuzzy AI parsing of staff-chat messages at all. Pattern-match action keywords keep working through <code>@bot warn @user</code> style invocations.</p>
+<p><strong>To drive NL spend to truly zero:</strong> the owner runs <code>/privacy</code> and toggles off <strong>"Natural-language commands in staff-chat"</strong>. The bot then responds only to slash commands and explicit <code>@mention</code>s — no fuzzy AI parsing at all. Pattern-match action keywords still work via <code>@bot warn @user</code> style invocations.</p>
 
-<p><strong>Design philosophy:</strong> structured commands are free; the AI is an opt-in fallback for "I can't be bothered to remember the exact syntax." Most servers stay close to zero from NL processing in normal use.</p>
+<p><strong>Design philosophy:</strong> structured commands are free; the AI is an opt-in fallback for when you can't be bothered to remember the exact syntax. Most servers stay close to zero NL spend in normal use.</p>
 </div>
 </details>
 
 <details class="faq"><summary>How does the bot know when it's being addressed?</summary>
 <div class="faq-body">
-<p>The address check is <strong>multi-tenant aware</strong> — it resolves the bot's actual nickname in <em>your</em> server at runtime, not a hardcoded name. So if you renamed the bot to "Pepper" or "Watchdog", any of these patterns trigger the bot:</p>
+<p>The address check is <strong>multi-tenant aware</strong> — it resolves the bot's actual nickname in <em>your</em> server at runtime, not a hardcoded name. So if you renamed the bot to "Pepper" or "Watchdog", any of these patterns trigger it:</p>
 <ul>
 <li><strong>@mention</strong> — <code>@Pepper mute @user spam</code></li>
 <li><strong>Reply to a bot message</strong> — quoting/replying to me</li>
@@ -223,23 +223,23 @@ Currently it's fixed wording. Custom verification copy is on the <a href="{{ sit
 <li><strong>Bot's nickname in this guild</strong> — <code>Pepper, mute @user</code> or <code>Watchdog: warn @user</code></li>
 <li><strong>Bot's base username</strong> — <code>ServerAssistant, ban @user</code></li>
 <li><strong>Generic fallbacks</strong> — <code>bot, mute @user</code> or <code>assistant, show stats</code></li>
-<li><strong>Action keyword at the start of the message</strong> — <code>warn @user spam</code> (action word is the first word — or with at most one interjection like <code>ok</code>, <code>yes</code>, or a vocative like <code>bot,</code> in front)</li>
+<li><strong>Action keyword at the start of the message</strong> — <code>warn @user spam</code> (the action word leads, optionally behind one interjection like <code>ok</code>/<code>yes</code> or a vocative like <code>bot,</code>)</li>
 </ul>
-<p><strong>Why the start of the message?</strong> The action keyword has to lead (or sit behind at most one interjection like <code>ok</code> or a vocative like <code>bot,</code>) — matching how shorthand actually gets typed (<code>warn @user</code>, <code>bot, ban @user</code>, <code>ok mute @user 1h</code>). That way casual chat like <em>"can you help me move grass this weekend?"</em> doesn't pick up <code>move</code> and respond. <strong>Need to address the bot mid-sentence? Just @mention it.</strong></p>
-<p>The "fuzzy logic" is on the <em>execution</em> side (AI interprets what action you wanted), not the addressing side. The addressing side is intentionally strict — match-by-name or @mention or action-word-at-start — so the bot doesn't burn tokens every time someone casually mentions an action word in conversation.</p>
+<p><strong>Why the start?</strong> Requiring the action keyword to lead matches how shorthand actually gets typed (<code>warn @user</code>, <code>bot, ban @user</code>, <code>ok mute @user 1h</code>), so casual chat like <em>"can you help me move grass this weekend?"</em> doesn't pick up <code>move</code> and respond. <strong>Need to address the bot mid-sentence? Just @mention it.</strong></p>
+<p>The "fuzzy logic" lives on the <em>execution</em> side (AI interprets what action you wanted), not addressing. Addressing is intentionally strict — match-by-name, @mention, or action-word-at-start — so the bot doesn't burn tokens whenever someone casually mentions an action word.</p>
 </div>
 </details>
 
 <details class="faq"><summary>Are AI features free?</summary>
 <div class="faq-body">
 <p>The free tier includes a <strong>150,000 token lifetime allowance</strong> — enough to evaluate every AI feature. Core moderation (AutoMod, anti-raid, warnings, slash commands) is always free regardless of token usage.</p>
-<p>When your trial tokens run out, you can subscribe to <strong>Premium ($7 USD/month)</strong> for 750K tokens/month — card only charged when tokens deplete. Or bring your own Anthropic/xAI/OpenAI key via <code>/ai-config</code> and pay just $3/month for Premium BYOK. See <a href="{{ site.url }}{{ site.baseurl }}/pricing/">Pricing</a> for full details.</p>
+<p>When your trial tokens run out, subscribe to <strong>Premium ($7 USD/month)</strong> for 750K tokens/month — card only charged when tokens deplete. Or bring your own Anthropic/xAI/OpenAI key via <code>/ai-config</code> for <strong>Premium BYOK at $3/month</strong>. See <a href="{{ site.url }}{{ site.baseurl }}/pricing/">Pricing</a> for full details.</p>
 </div>
 </details>
 
 <details class="faq"><summary>Will I be charged when I subscribe to Premium?</summary>
 <div class="faq-body">
-<p><strong>Not immediately.</strong> When you subscribe to Premium ($7/mo), your card is saved but not charged. Billing starts only when your 150K free tokens are fully used. Small or light-use servers may never hit that limit, meaning they never pay a cent despite being subscribed.</p>
+<p><strong>Not immediately.</strong> On subscribing to Premium ($7/mo), your card is saved but not charged. Billing starts only when your 150K free tokens are fully used — light-use servers may never hit that limit and never pay a cent despite being subscribed.</p>
 <p>Premium BYOK ($3/mo) is charged immediately on subscribe, since you're paying for feature access rather than tokens.</p>
 </div>
 </details>
@@ -253,7 +253,7 @@ Only what's needed for the request. <strong>Message Report</strong> sends ~20 me
 <details class="faq"><summary>What AI model powers the bot?</summary>
 <div class="faq-body">
 <p>The default shared key uses <strong>Anthropic Claude</strong> (Sonnet) for all AI features — Concierge, Message Report, Self-trained AutoMod proposals, and Bot Health Insurance checks.</p>
-<p>If you supply your own key via <code>/ai-config</code>, you can choose Anthropic, xAI Grok, or OpenAI. Image generation (<code>/imagine</code>) runs on the shared service — the free trial covers ~30 images, unlimited on Premium — or use your own DALL·E 3 / Stable Diffusion key via <code>/ai-config</code> for unmetered generation.</p>
+<p>Supply your own key via <code>/ai-config</code> to choose Anthropic, xAI Grok, or OpenAI. Image generation (<code>/imagine</code>) runs on the shared service — the free trial covers ~30 images, unlimited on Premium — or add your own DALL·E 3 / Stable Diffusion key via <code>/ai-config</code> for unmetered generation.</p>
 </div>
 </details>
 
@@ -309,7 +309,7 @@ First-time global propagation can take <strong>up to 1 hour</strong>. If they're
 
 <details class="faq"><summary>The bot is offline</summary>
 <div class="faq-body">
-Most outages are transient — auto-reconnects. If it's been down 5+ minutes, open a ticket via <a href="{{ site.url }}{{ site.baseurl }}/support/"><code>/support</code></a> from another server you own that has the bot.
+Most outages are transient — the bot auto-reconnects. If it's been down 5+ minutes, open a ticket via <a href="{{ site.url }}{{ site.baseurl }}/support/"><code>/support</code></a> from another server you own that has the bot.
 </div>
 </details>
 
@@ -323,13 +323,13 @@ Discord may be rate-limited. Wait 60 seconds and try again. If still unresponsiv
 
 <details class="faq"><summary>Where can I get help?</summary>
 <div class="faq-body">
-Run <code>/support</code> from any server that has the bot. Tap <strong>Create a ticket</strong>, send your question as a DM, and you'll get a reply via DM. <a href="{{ site.url }}{{ site.baseurl }}/support/">Full details here</a>.
+Run <code>/support</code> from any server that has the bot, tap <strong>Create a ticket</strong>, and send your question as a DM — you'll get a reply via DM. <a href="{{ site.url }}{{ site.baseurl }}/support/">Full details here</a>.
 </div>
 </details>
 
 <details class="faq"><summary>How do I request a feature?</summary>
 <div class="faq-body">
-Open a ticket via <code>/support</code> and describe the idea — the more concrete the use-case, the better. You can also check the <a href="{{ site.url }}{{ site.baseurl }}/roadmap/">roadmap</a> first to see if it's already planned.
+Open a ticket via <code>/support</code> and describe the idea — the more concrete the use-case, the better. Check the <a href="{{ site.url }}{{ site.baseurl }}/roadmap/">roadmap</a> first to see if it's already planned.
 </div>
 </details>
 
@@ -341,7 +341,7 @@ No — the bot's source is closed. Documentation (this site, privacy, terms, cha
 
 <details class="faq"><summary>Can I self-host?</summary>
 <div class="faq-body">
-No — Server Assistant is a <strong>fully managed, hosted bot</strong>. You invite it and configure everything in Discord; nothing to install or maintain on your end.
+No — Server Assistant is a <strong>fully managed, hosted bot</strong>. Invite it and configure everything in Discord; nothing to install or maintain on your end.
 </div>
 </details>
 

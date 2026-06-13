@@ -7,9 +7,9 @@ description: Server Assistant pricing — generous free tier, $7/mo USD Premium 
 
 # 💸 Pricing
 
-**Core moderation is free forever.** AI features cost real money to run, so they're metered — you subscribe when you want them, and we only start billing when you've actually used your free tokens.
+**Core moderation is free forever.** AI features cost real money to run, so they're metered — subscribe when you want them, and billing only starts once you've used your free tokens.
 
-All prices in **USD**. Tax is calculated at checkout based on your billing region (Stripe and Discord handle this automatically).
+All prices in **USD**. Tax is added at checkout based on your billing region (Stripe and Discord handle this automatically).
 
 > 🩺 **Why Server Assistant?** The free tier alone gives you four things almost no other mod bot does — daily health insight (Pulse), fair one-reply ban appeals, an encrypted tamper-proof audit trail, and repeat-offender / ban-evasion detection. AI features build on top of that, not in place of it. [See the differentiators →]({{ site.url }}{{ site.baseurl }}/)
 
@@ -25,7 +25,7 @@ These never count against any token allowance:
 - **Anti-raid** — mass-join detection, alerts, auto-suspend
 - **DM Verification Gate** — button-based new-member verification
 - **🕵️ Repeat-offender / alt-guard detection** (`/altguard`) — fingerprints banned & kicked users, auto-bans confident ban-evading matches on join
-- **📩 Ban reasons + one-reply appeals** — every ban DMs the user *why*, one reply opens a staff appeal ticket with Unban / Deny / Research buttons (no AI tokens used for the DM or reply; **Research** invokes Message Report which is metered if you ask for it)
+- **📩 Ban reasons + one-reply appeals** — every ban DMs the user *why*; one reply opens a staff appeal ticket with Unban / Deny / Research buttons (the DM and reply use no AI tokens; **Research** invokes the metered Message Report only if you ask)
 - **Warning + notes system** — full per-guild history
 - **🛡️ Encrypted tamper-proof audit log** — native-action logging, tamper alerts, owner ping if anyone deletes an entry
 - **24-hour undo** — bans, mutes, channel deletions, nickname changes
@@ -74,7 +74,7 @@ These read messages or generate content:
 
 ### How Premium trial billing works
 
-When you subscribe to Premium ($7/mo), your card is saved but **you are not charged today**. We give you **150,000 free tokens** first — the same as the free trial. Billing starts the moment those tokens run out. Small or light-use servers may never deplete 150K tokens, meaning they never pay a cent despite being subscribed.
+Subscribe to Premium ($7/mo) and your card is saved but **not charged today**. You get **150,000 free tokens** first — the same as the free trial — and billing starts the moment they run out. Small or light-use servers may never deplete 150K tokens, so they never pay a cent despite being subscribed.
 
 **BYOK** = Bring Your Own Key. Paste your Anthropic, xAI, or OpenAI key via `/ai-config` — you pay your provider directly for token usage, and pay us just $3/mo for the software and infrastructure.
 
@@ -82,7 +82,7 @@ When you subscribe to Premium ($7/mo), your card is saved but **you are not char
 
 ## Top-up packs
 
-Need extra headroom without changing your plan? Three sizes — **Splash** for a light overflow, **Surge** for a busy month, **Stockpile** for heavy use. Top-ups never expire and stack on any tier.
+Need extra headroom without changing plans? Three sizes — **Splash** for a light overflow, **Surge** for a busy month, **Stockpile** for heavy use. Top-ups never expire and stack on any tier.
 
 | Pack            | Price       | Tokens      | $ per 100K |
 |-----------------|-------------|-------------|------------|
@@ -96,7 +96,7 @@ Need extra headroom without changing your plan? Three sizes — **Splash** for a
 
 ## 🎁 Founding servers
 
-Servers that joined during the beta are grandfathered with **12 months of free Premium**, applied automatically — our thanks for being early. This window has now closed for new servers, but the generous free tier and 150K trial above are available to everyone.
+Servers that joined during the beta are grandfathered with **12 months of free Premium**, applied automatically — our thanks for being early. This window has closed for new servers, but the generous free tier and 150K trial above are open to everyone.
 
 ---
 
@@ -112,7 +112,7 @@ Premium is per-server. Cancel anytime — no charge if you cancel before your 15
 ## FAQ
 
 <details><summary>Will I be charged when I subscribe to Premium?</summary>
-No — not immediately. We capture your card at signup but only charge it when your 150K free tokens are fully used. If your server never hits that limit, you're never billed.
+Not immediately. We capture your card at signup but only charge it once your 150K free tokens are fully used. If your server never hits that limit, you're never billed.
 </details>
 
 <details><summary>What happens when I run out of free tokens?</summary>
@@ -120,7 +120,7 @@ No — not immediately. We capture your card at signup but only charge it when y
 </details>
 
 <details><summary>What if a single user spams Concierge or Message Report?</summary>
-Each high-variance feature has an invisible 6-hour rolling cap per user — generous enough that normal use never hits it, tight enough to prevent abuse from draining your allowance.
+Each high-variance feature has an invisible 6-hour rolling cap per user — generous enough that normal use never hits it, tight enough to stop abuse from draining your allowance.
 </details>
 
 <details><summary>Can I bring my own AI key?</summary>
@@ -132,7 +132,7 @@ You drop to the free tier. If your 150K lifetime trial was already used, AI feat
 </details>
 
 <details><summary>Do prices include tax?</summary>
-No — applicable VAT, GST, or sales tax is added at checkout based on your billing region. Stripe and Discord calculate and collect this automatically.
+No — applicable VAT, GST, or sales tax is added at checkout based on your billing region. Stripe and Discord calculate and collect it automatically.
 </details>
 
 ---
