@@ -45,6 +45,26 @@ description: Server Assistant's product roadmap — what's in development, what'
 #band-blue .desc ul { margin: .3rem 0 0; padding-left: 1.2rem; }
 #band-blue .desc li { margin: .2rem 0; }
 .band-empty { font-size: .85rem; color: #777; padding: .55rem .25rem; font-style: italic; }
+/* Animated CTA filling any gold slot left open by a tie */
+.gold-cta {
+  display: flex; align-items: center; gap: .65rem;
+  margin: .45rem 0; padding: .7rem .9rem;
+  border: 1px dashed #d4ac0d; border-left: 3px solid #d4ac0d; border-radius: 8px;
+  background: linear-gradient(90deg, rgba(212, 172, 13, .14), rgba(212, 172, 13, .03));
+  animation: goldCtaPulse 2.2s ease-in-out infinite;
+}
+.gold-cta-ico { font-size: 1.25rem; animation: goldCtaBob 1.6s ease-in-out infinite; }
+.gold-cta-text { display: flex; flex-direction: column; line-height: 1.3; }
+.gold-cta-text strong { color: #b7950b; }
+.gold-cta-sub { font-size: .8rem; color: #777; margin-top: .1rem; }
+@keyframes goldCtaPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(212, 172, 13, 0); }
+  50%      { box-shadow: 0 0 16px 1px rgba(212, 172, 13, .38); }
+}
+@keyframes goldCtaBob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-3px); } }
+@media (prefers-reduced-motion: reduce) {
+  .gold-cta, .gold-cta-ico { animation: none; }
+}
 /* Purple + blue share a row (two columns); stacks on mobile */
 .band-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.1rem; align-items: start; margin-top: 1.2rem; }
 .band-row .band-h { margin-top: 0; }
@@ -400,6 +420,8 @@ details.safeguards li { margin-bottom: 0.2rem; }
 
 .build-queue { background: rgba(255, 255, 255, 0.025); border-color: rgba(255, 255, 255, 0.10); }
 .band-empty { color: #9aa3b6; }
+.gold-cta-text strong { color: #f1c40f; }
+.gold-cta-sub { color: #9aa3b6; }
 
 details.card { background: rgba(255, 255, 255, 0.045); border-color: rgba(255, 255, 255, 0.10); box-shadow: none; }
 details.card[open] { background: rgba(255, 255, 255, 0.07); }
@@ -865,6 +887,39 @@ What ships is what gets requested most clearly. Vague *"add more features"* feed
     return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
   }
 
+  // Which answer indexes are LOCKED into the gold band (would ship as the next
+  // version). Tie policy: ship the clear winners; a feature tied for the final
+  // slot does NOT lock — it carries to the next round — so a contested slot
+  // stays open rather than promoting one tied feature over another. Returns a
+  // map { answerIndex: true }. Shared by the hero bars and the gold band.
+  function computeLocked(t, total, nAnswers) {
+    var locked = {};
+    if (total > 0) {
+      var ranked = [];
+      for (var i = 0; i < nAnswers; i++) ranked.push({ i: i, n: Number(t[i]) || 0 });
+      ranked.sort(function (x, y) { return (y.n - x.n) || (x.i - y.i); });
+      var cut = ranked.length >= 3 ? ranked[2].n : (ranked.length ? ranked[ranked.length - 1].n : 0);
+      var winners = ranked.filter(function (r) { return r.n > cut; });
+      var contenders = ranked.filter(function (r) { return r.n === cut && r.n > 0; });
+      var lockedArr = winners.concat(contenders.length <= (3 - winners.length) ? contenders : []);
+      lockedArr.forEach(function (r) { locked[r.i] = true; });
+    }
+    return locked;
+  }
+
+  // Animated placeholder for any gold slot left open by a tie — invites votes
+  // to break it rather than silently promoting a tied feature.
+  function makeGoldCta(slots) {
+    var el = document.createElement("div");
+    el.className = "gold-cta";
+    el.innerHTML =
+      '<span class="gold-cta-ico">🗳️</span>' +
+      '<span class="gold-cta-text"><strong>Vote now to influence what gets added next!</strong>' +
+      '<span class="gold-cta-sub">' + slots + ' slot' + (slots === 1 ? '' : 's') +
+      ' still up for grabs — it\'s a tie, so every vote decides who locks in.</span></span>';
+    return el;
+  }
+
   function renderHero(p, t, total) {
     // Build the row skeleton once; afterwards only update widths/labels so
     // the bars visibly grow/shrink instead of repainting.
@@ -886,20 +941,11 @@ What ships is what gets requested most clearly. Vague *"add more features"* feed
     // shows the true share of all votes.
     var max = 0;
     p.answers.forEach(function (a, i) { var v = Number(t[i]) || 0; if (v > max) max = v; });
-    // The currently-winning features (they'd take the gold band / become the
-    // next release) get gold bars. Tie policy: a feature tied for the final
-    // slot does NOT lock it — those bars stay purple (they'd carry to the next
-    // round), so a contested 3rd slot is visible and motivates breaking the tie.
-    var gold = {};
-    if (total > 0) {
-      var ranked = p.answers.map(function (a, i) { return { i: i, n: Number(t[i]) || 0 }; })
-                            .sort(function (x, y) { return (y.n - x.n) || (x.i - y.i); });
-      var cut = ranked.length >= 3 ? ranked[2].n : (ranked.length ? ranked[ranked.length - 1].n : 0);
-      var winners = ranked.filter(function (r) { return r.n > cut; });
-      var contenders = ranked.filter(function (r) { return r.n === cut && r.n > 0; });
-      var locked = winners.concat(contenders.length <= (3 - winners.length) ? contenders : []);
-      locked.forEach(function (r) { gold[r.i] = true; });
-    }
+    // The currently-locked features (they'd take the gold band / become the
+    // next release) get gold bars. A feature tied for the final slot does NOT
+    // lock — its bar stays purple — so a contested slot is visible and motivates
+    // breaking the tie.
+    var gold = computeLocked(t, total, p.answers.length);
     p.answers.forEach(function (a, i) {
       var n = Number(t[i]) || 0;
       var pct = total ? Math.round(n / total * 100) : 0;   // true share — shown in the label
@@ -948,7 +994,7 @@ What ships is what gets requested most clearly. Vague *"add more features"* feed
         : " · ✅ closed — thank you!");
   }
 
-  function renderBands(t, total) {
+  function renderBands(t, total, nAnswers) {
     var band = document.getElementById("band-purple");
     var gold = document.getElementById("band-gold");
     if (!band) return;
@@ -967,11 +1013,21 @@ What ships is what gets requested most clearly. Vague *"add more features"* feed
       return (Number(t[b.getAttribute("data-poll-answer")]) || 0) -
              (Number(t[a.getAttribute("data-poll-answer")]) || 0);
     });
-    if (gold && cards.length > 3 && total > 0) {
+    // Clear any placeholder we previously injected
+    var oldCta = gold ? gold.querySelector(".gold-cta") : null;
+    if (oldCta) oldCta.parentNode.removeChild(oldCta);
+    if (gold && total > 0) {
+      // Promote ONLY locked winners to gold; tied/contested slots stay open and
+      // get an animated "vote now" CTA instead of an arbitrary tied feature.
+      var locked = computeLocked(t, total, nAnswers);
       var ph = gold.querySelector(".band-empty");
       if (ph) ph.parentNode.removeChild(ph);
-      cards.slice(0, 3).forEach(function (c) { gold.appendChild(c); });
-      cards.slice(3).forEach(function (c) { band.appendChild(c); });
+      var goldCount = 0;
+      cards.forEach(function (c) {
+        if (locked[Number(c.getAttribute("data-poll-answer"))]) { gold.appendChild(c); goldCount++; }
+        else { band.appendChild(c); }
+      });
+      if (goldCount < 3) gold.appendChild(makeGoldCta(3 - goldCount));
     } else {
       cards.forEach(function (c) { band.appendChild(c); });
     }
@@ -1006,7 +1062,7 @@ What ships is what gets requested most clearly. Vague *"add more features"* feed
         var total = 0;
         Object.keys(t).forEach(function (k) { total += Number(t[k]) || 0; });
         renderHero(p, t, total);
-        renderBands(t, total);
+        renderBands(t, total, p.answers.length);
       })
       .catch(function () { /* keep current view */ });
   }
