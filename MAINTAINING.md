@@ -52,5 +52,5 @@ grep -rnE 'v[0-9]+\.[0-9]' --include='*.md' . | grep -vE 'roadmap.md|changelog'
 - Product **screenshots are hand-built CSS Discord mockups** (`.dc*` classes in
   `assets/css/glass.css`), not image files — keep it that way, and don't reuse the
   same mock on two pages.
-- **Dark theme by default**; the roadmap is exempted via `:has(.build-queue)`.
+- **Dark theme by default**, site-wide. The shared chrome is themed in `assets/css/glass.css`; the roadmap is dark-themed inside its own `<style>` block (dark overrides at the end of it).
 - Always `git pull --rebase` before pushing (the repo gets concurrent CI commits).

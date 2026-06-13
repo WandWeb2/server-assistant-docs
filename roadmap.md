@@ -382,6 +382,42 @@ details.safeguards li { margin-bottom: 0.2rem; }
   border-color: #2c7ad6;
   color: #fff;
 }
+
+/* ════════════════════════════════════════════════════════════════════════
+   DARK THEME — overrides the light rules above (same selectors, later wins).
+   Structure, bands, and animations are unchanged; only colours + bar size.
+   ════════════════════════════════════════════════════════════════════════ */
+.roadmap-hero { background: rgba(46, 204, 113, 0.10); border-left-color: #2ecc71; color: #e6e9f0; }
+.lp-q { color: #e6e9f0; }
+.lp-label a { color: #cdd4e3; }
+.lp-track { background: rgba(255, 255, 255, 0.12); height: 16px; }
+.lp-fill { background: linear-gradient(90deg, #1e8449, #2ecc71); }
+.lp-pct { color: #cdd4e3; }
+.lp-meta { color: #aab2c5; }
+.lp-refresh { color: #8b93a7; }
+.lp-row { font-size: .92rem; margin: .4rem 0; }
+
+.build-queue { background: rgba(255, 255, 255, 0.025); border-color: rgba(255, 255, 255, 0.10); }
+.band-empty { color: #9aa3b6; }
+
+details.card { background: rgba(255, 255, 255, 0.045); border-color: rgba(255, 255, 255, 0.10); box-shadow: none; }
+details.card[open] { background: rgba(255, 255, 255, 0.07); }
+details.card > summary { color: #e6e9f0; }
+details.card > summary:hover { color: #7c9bff; }
+details.card .desc { color: #c4cbdb; border-top-color: rgba(255, 255, 255, 0.10); }
+
+details.band-shipped > summary { background: rgba(255, 255, 255, 0.06); color: #d4dae6; border-color: rgba(255, 255, 255, 0.14); }
+details.band-shipped > .shipped-scroll { border-color: rgba(255, 255, 255, 0.12); }
+
+.flagship-card { background: rgba(22, 160, 133, 0.12); border-color: rgba(22, 160, 133, 0.35); }
+.flagship-card h4 { color: #5fd0b6; }
+
+.lane { background: rgba(255, 255, 255, 0.04); }
+.lane h3 { color: #e6e9f0; }
+.lane h3 small { color: #9aa3b6; }
+.premium-tier-col { background: rgba(241, 196, 15, 0.07); }
+.premium-tier-col h4 { color: #e9c84b; border-bottom-color: rgba(233, 200, 75, 0.35); }
+.expand-all-bar button { background: rgba(255, 255, 255, 0.06); border-color: rgba(255, 255, 255, 0.18); color: #c4cbdb; }
 </style>
 
 <!-- ════════════════════════════════════════════════════════════════════════════

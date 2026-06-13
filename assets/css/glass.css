@@ -127,7 +127,8 @@ table th {
   font-weight: 600;
 }
 table td { border: none; border-top: 1px solid rgba(255, 255, 255, 0.08); background: transparent; }
-table tr:nth-child(even) td { background: rgba(255, 255, 255, 0.035); }
+table tr:nth-child(even) { background: transparent; }   /* neutralise Minima's light #f7f7f7 even-row */
+table tr:nth-child(even) td { background: rgba(255, 255, 255, 0.05); }
 
 /* ── Blockquotes / callouts ────────────────────────────────────────────────── */
 blockquote {
@@ -305,36 +306,17 @@ table tbody tr:hover td { background: rgba(124, 155, 255, 0.08); }
 .page-content .compare-col h3 .pill-us { background: rgba(46, 204, 113, 0.18); color: #6ee79a; }
 .page-content .compare-col h3 .pill-them { background: rgba(231, 76, 134, 0.18); color: #ff8fb4; }
 
-/* ── Roadmap stays in its own (light) design — the user likes it as-is.
-   :has() reverts the page shell to light for that page only; the roadmap's
-   own inline-styled bands/cards are already light and untouched. ───────────── */
-body:has(.build-queue) {
-  background-color: #eaf0fb;
-  background-image:
-    radial-gradient(at 0% 0%,   rgba(199, 210, 254, 0.85) 0, transparent 55%),
-    radial-gradient(at 100% 0%, rgba(186, 230, 253, 0.80) 0, transparent 55%),
-    radial-gradient(at 50% 100%, rgba(221, 214, 254, 0.70) 0, transparent 55%);
-}
-body:has(.build-queue) .page-content .wrapper {
-  background: rgba(255, 255, 255, 0.55);
-  border-color: rgba(255, 255, 255, 0.6);
-  color: #1e2430;
-}
-body:has(.build-queue) .page-content h1,
-body:has(.build-queue) .page-content h2,
-body:has(.build-queue) .page-content h3,
-body:has(.build-queue) .page-content h4 { color: #1e2430; }
-body:has(.build-queue) .page-content a { color: #2563eb; }
-body:has(.build-queue) .page-content code { color: #1d4ed8; background: rgba(37, 99, 235, 0.10); border-color: rgba(37, 99, 235, 0.15); }
-body:has(.build-queue) .page-content table { background: rgba(255, 255, 255, 0.5); }
-body:has(.build-queue) .page-content table th { background: rgba(37, 99, 235, 0.12); }
-body:has(.build-queue) .page-content table td { border-top-color: rgba(31, 38, 135, 0.07); }
-body:has(.build-queue) .page-content table tr:nth-child(even) td { background: rgba(255, 255, 255, 0.35); }
+/* The roadmap is dark-themed within its own <style> block (roadmap.md). */
 
 /* ── Mobile: relax padding so cards don't crowd small screens ──────────────── */
 @media (max-width: 600px) {
   .page-content .wrapper { padding: 1.25rem 1.1rem; border-radius: 14px; }
   .site-footer { margin: 0 0.6rem 1.2rem; }
+  /* Minima's mobile nav dropdown is white by default — dark it so the (light)
+     links are visible instead of white-on-white. */
+  .site-nav { background: var(--glass-bg-strong) !important; border-color: var(--glass-border) !important; }
+  .site-nav .page-link { color: #c4cbdb !important; }
+  .site-nav .menu-icon > svg { fill: #c4cbdb; }
 }
 
 @media (prefers-reduced-motion: reduce) {
