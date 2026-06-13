@@ -27,6 +27,10 @@ Your voice now decides what gets built next.
 - **Polls reach every server.** Like service notices, feature polls now go to everyone so no one misses the chance to vote — even servers without a staff chat configured get them in a sensible channel.
 - **Clearer ties on the roadmap.** The public roadmap now explains how ties are handled, and when features tie for the final slot it invites you to vote rather than promoting one arbitrarily — your vote breaks the tie.
 
+### Fixed
+
+- **Reliable installs.** An invite link we'd shared in a few places was missing a permission Server Assistant needs to configure itself, which left some servers with a half-finished setup. It's corrected everywhere now — and as a safety net, if the bot is ever added without a permission it needs, it immediately **DMs the server owner a one-click re-invite link** to fix it, so setup can finish in about a minute.
+
 ---
 
 ## v5.6.2 — Feedback command & dev-update prompts
