@@ -13,6 +13,22 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 
 ---
 
+## v5.6.3 — Community feature polls
+
+Your voice now decides what gets built next.
+
+### Added
+
+- **Feature polls land right in your staff chat.** Vote on what Server Assistant should build next with a one-tap Discord poll — change your mind any time, and votes update live. A companion card shows how the whole community is leaning (not just your server) and links each option to its card on the public roadmap, so you know exactly what you're voting for. Every staff member in every server gets an equal say, and the results directly set the build order. Polls follow the same opt-out as Dev Updates (`/settings → Behaviour`).
+- **Results announced when a vote closes.** When a poll ends, your server gets the outcome — the top picks confirmed for the next release with their vote share, plus a heads-up that the next round opens once that release ships.
+
+### Changed
+
+- **Polls reach every server.** Like service notices, feature polls now go to everyone so no one misses the chance to vote — even servers without a staff chat configured get them in a sensible channel.
+- **Clearer ties on the roadmap.** The public roadmap now explains how ties are handled, and when features tie for the final slot it invites you to vote rather than promoting one arbitrarily — your vote breaks the tie.
+
+---
+
 ## v5.6.2 — Feedback command & dev-update prompts
 
 A friendlier front door for sharing ideas — plus a nudge so you never forget it's there.
