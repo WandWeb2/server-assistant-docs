@@ -525,7 +525,7 @@ Where Server Assistant is heading. Priorities are decided by the people who run 
 
 <div class="build-queue">
 
-  <div class="band-h band-gold">🥇 v5.7 — confirmed by our community<span class="sub">The top 3 most-voted features all ship together as the next update — live standings until the poll closes</span></div>
+  <div class="band-h band-gold">🥇 v5.7 — confirmed by our community<span class="sub">The top 3 most-voted features all ship together as the next update. If features tie for the final spot, none is picked over another — they carry to the next vote.</span></div>
   <div class="band" id="band-gold">
     <div class="band-empty">Waiting for the first votes — the live top 3 appear here, and when the poll closes they become the next five releases. Vote from your server's staff chat!</div>
   </div>
@@ -915,8 +915,10 @@ What ships is what gets requested most clearly. Vague *"add more features"* feed
     el.innerHTML =
       '<span class="gold-cta-ico">🗳️</span>' +
       '<span class="gold-cta-text"><strong>Vote now to influence what gets added next!</strong>' +
-      '<span class="gold-cta-sub">' + slots + ' slot' + (slots === 1 ? '' : 's') +
-      ' still up for grabs — it\'s a tie, so every vote decides who locks in.</span></span>';
+      '<span class="gold-cta-sub">' + slots + ' final ' + (slots === 1 ? 'spot is' : 'spots are') +
+      ' tied. We won\'t pick one feature over another, so a tie that holds when the poll closes ' +
+      'means the tied features <strong>carry to the front of the next vote</strong> instead of shipping now. ' +
+      'Your vote can break the tie and lock one in for this release.</span></span>';
     return el;
   }
 
