@@ -44,7 +44,7 @@ You'll need <strong>Manage Server</strong> permission. Use the <a href="{{ site.
 
 <details class="faq"><summary>How long does setup take?</summary>
 <div class="faq-body">
-About 60 seconds. The bot auto-detects your channels and roles, so you mostly just confirm: <strong>channels</strong>, <strong>roles</strong>, then a <strong>server-type + AI</strong> step — the server-type picker tunes AutoMod, the punishment ladder, and anti-raid to your kind of community (Gaming, Creator, Crypto, Education, NSFW, General…). In a hurry, <code>/autopilot</code> does it all in one command. Then <code>/settings</code> opens nine optional panels to fine-tune anything from embed colour to the AutoMod ladder.
+About 60 seconds — and you may not even need to run <code>/setup</code>: when the bot joins it <strong>DMs the owner the setup wizard</strong>, pre-filled, ready to finish in DMs. However you start it, the bot auto-detects your channels and roles so you mostly just confirm: <strong>channels</strong>, <strong>roles</strong>, then a <strong>server-type + AI</strong> step — the server-type picker tunes AutoMod, the punishment ladder, and anti-raid to your kind of community (Gaming, Creator, Crypto, Education, NSFW, General…). In a hurry, <code>/autopilot</code> does it all in one command. Then <code>/settings</code> opens nine optional panels to fine-tune anything from embed colour to the AutoMod ladder.
 </div>
 </details>
 

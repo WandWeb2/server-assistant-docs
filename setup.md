@@ -11,7 +11,7 @@ Adding **Server Assistant** takes about 60 seconds — the wizard does the rest.
 
 > ⚠️ Only the **Discord-native server owner** can run `/setup` — a hard safety check so admins can't escalate their own permissions.
 
-> ⚡ **In a hurry?** Run `/autopilot` and the bot detects and applies a full sensible config in one command. It even DMs the owner a one-tap **Apply** proposal the moment it joins — so you can be configured before you open `/setup` at all.
+> 💬 **You might not even need to run `/setup`.** The moment the bot joins, it **DMs the owner the full setup wizard** — already pre-filled by auto-detection — so you can finish it right there in under a minute (it falls back to a staff channel if your DMs are closed). Prefer one command? `/autopilot` detects and applies a sensible config in a single step. The steps below are that same wizard, whether you run it in DMs or with `/setup`.
 
 <style>
 .steps { display: grid; gap: 1rem; margin: 1.2rem 0 1.6rem; }
