@@ -567,7 +567,7 @@ Where Server Assistant is heading. Priorities are decided by the people who run 
   </div>
 
   <div class="band-col">
-  <div class="band-h band-blue">🔵 Committed<span class="sub">Building regardless of votes — including the Premium-tier launch set 💎</span></div>
+  <div class="band-h band-blue">🔵 Committed<span class="sub">Building regardless of votes</span></div>
   <div class="band" id="band-blue">
 
   <details class="card">
