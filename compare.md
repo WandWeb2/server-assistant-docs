@@ -88,7 +88,7 @@ description: Honest feature comparisons — Server Assistant vs the bots you mig
   <p>🔍 <strong>Feature comparisons only.</strong> We don't grade websites or marketing — only what the bots actually do once installed.</p>
 </div>
 
-## 🧠 vs Civora
+## Server Assistant vs Civora
 
 <div class="compare-block">
   <h2>Server Assistant vs Civora</h2>
@@ -123,7 +123,7 @@ description: Honest feature comparisons — Server Assistant vs the bots you mig
   </div>
 </div>
 
-## 🎮 vs MEE6
+## Server Assistant vs MEE6
 
 <div class="compare-block">
   <h2>Server Assistant vs MEE6</h2>
@@ -160,7 +160,7 @@ description: Honest feature comparisons — Server Assistant vs the bots you mig
   </div>
 </div>
 
-## 🛡️ vs Wick
+## Server Assistant vs Wick
 
 <div class="compare-block">
   <h2>Server Assistant vs Wick</h2>
@@ -196,7 +196,7 @@ description: Honest feature comparisons — Server Assistant vs the bots you mig
   </div>
 </div>
 
-## 🎨 vs Carl-bot
+## Server Assistant vs Carl-bot
 
 <div class="compare-block">
   <h2>Server Assistant vs Carl-bot</h2>
