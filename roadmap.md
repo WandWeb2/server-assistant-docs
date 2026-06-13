@@ -464,9 +464,14 @@ details.band-shipped > .shipped-scroll { border-color: rgba(255, 255, 255, 0.12)
        1. Sort the purple cards by final votes; move the top 3 to gold
           (strip their data-poll-answer + vote-badge spans). They ALL ship
           together as the version named in the gold band header.
-       2. Refill purple with the next round's options from the pool,
-          tagging each with data-poll-answer + an empty vote-badge that
-          matches the NEW poll's answer indexes (one card per answer).
+          TIE POLICY: ship the CLEAR winners. If features are tied for the
+          final slot (e.g. #3 and #4 level), do NOT pick one — ship only the
+          clear ones above the tie, and put the tied features at the TOP of
+          the next round's purple band (first in line). Releases stay ≤3; the
+          bot's close announcement already states this automatically.
+       2. Refill purple with the next round's options from the pool —
+          tied-from-last-round cards FIRST — tagging each with data-poll-answer
+          + an empty vote-badge matching the NEW poll's answer indexes.
        3. When the gold release ships: give each card a shipped-pill
           (✅ Shipped vX.Y), move them to the top of .shipped-scroll inside
           band-shipped, and bump the gold band header to the next version.
@@ -881,12 +886,20 @@ What ships is what gets requested most clearly. Vague *"add more features"* feed
     // shows the true share of all votes.
     var max = 0;
     p.answers.forEach(function (a, i) { var v = Number(t[i]) || 0; if (v > max) max = v; });
-    // The top 3 vote-getters are "currently winning" (they'd take the gold band /
-    // become the next release) — colour those bars gold to match.
+    // The currently-winning features (they'd take the gold band / become the
+    // next release) get gold bars. Tie policy: a feature tied for the final
+    // slot does NOT lock it — those bars stay green (they'd carry to the next
+    // round), so a contested 3rd slot is visible and motivates breaking the tie.
     var gold = {};
-    p.answers.map(function (a, i) { return { i: i, n: Number(t[i]) || 0 }; })
-             .sort(function (x, y) { return y.n - x.n; })
-             .slice(0, 3).forEach(function (r) { if (r.n > 0) gold[r.i] = true; });
+    if (total > 0) {
+      var ranked = p.answers.map(function (a, i) { return { i: i, n: Number(t[i]) || 0 }; })
+                            .sort(function (x, y) { return (y.n - x.n) || (x.i - y.i); });
+      var cut = ranked.length >= 3 ? ranked[2].n : (ranked.length ? ranked[ranked.length - 1].n : 0);
+      var winners = ranked.filter(function (r) { return r.n > cut; });
+      var contenders = ranked.filter(function (r) { return r.n === cut && r.n > 0; });
+      var locked = winners.concat(contenders.length <= (3 - winners.length) ? contenders : []);
+      locked.forEach(function (r) { gold[r.i] = true; });
+    }
     p.answers.forEach(function (a, i) {
       var n = Number(t[i]) || 0;
       var pct = total ? Math.round(n / total * 100) : 0;   // true share — shown in the label
