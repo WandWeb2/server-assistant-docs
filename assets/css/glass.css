@@ -313,10 +313,18 @@ table tbody tr:hover td { background: rgba(124, 155, 255, 0.08); }
   .page-content .wrapper { padding: 1.25rem 1.1rem; border-radius: 14px; }
   .site-footer { margin: 0 0.6rem 1.2rem; }
   /* Minima's mobile nav dropdown is white by default — dark it so the (light)
-     links are visible instead of white-on-white. */
-  .site-nav { background: var(--glass-bg-strong) !important; border-color: var(--glass-border) !important; }
-  .site-nav .page-link { color: #c4cbdb !important; }
-  .site-nav .menu-icon > svg { fill: #c4cbdb; }
+     links are visible instead of white-on-white. Solid colour + broad
+     selectors so it can't be undercut by Minima's nested elements. */
+  .site-header .site-nav,
+  .site-header .site-nav .trigger,
+  .site-header .site-nav label {
+    background: #141a27 !important;
+    background-color: #141a27 !important;
+    border-color: var(--glass-border) !important;
+  }
+  .site-header .site-nav .page-link { color: #c4cbdb !important; }
+  .site-header .site-nav .menu-icon > svg { fill: #c4cbdb !important; }
+  .site-header .site-nav .menu-icon > svg path { fill: #c4cbdb !important; }
 }
 
 @media (prefers-reduced-motion: reduce) {
