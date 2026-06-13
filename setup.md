@@ -11,8 +11,6 @@ Adding **Server Assistant** takes about 60 seconds — the wizard does the rest.
 
 > ⚠️ Only the **Discord-native server owner** can run `/setup` — a hard safety check so admins can't escalate their own permissions.
 
-> 💬 **You might not even need to run `/setup`.** The moment the bot joins, it **DMs the owner the full setup wizard** — already pre-filled by auto-detection — so you can finish it right there in under a minute (it falls back to a staff channel if your DMs are closed). Prefer one command? `/autopilot` detects and applies a sensible config in a single step. The steps below are that same wizard, whether you run it in DMs or with `/setup`.
-
 <style>
 .steps { display: grid; gap: 1rem; margin: 1.2rem 0 1.6rem; }
 .step { display: grid; grid-template-columns: 56px 1fr; gap: 1rem; align-items: start; background: rgba(255,255,255,0.55); border: 1px solid rgba(31,38,135,0.15); border-radius: 14px; padding: 1.1rem 1.2rem; box-shadow: 0 4px 18px rgba(31,38,135,0.08); }
@@ -41,6 +39,14 @@ Adding **Server Assistant** takes about 60 seconds — the wizard does the rest.
       <p>You'll need <strong>Manage Server</strong> on the target guild. <strong>Don't uncheck any OAuth permissions</strong> — ban/kick/auto-role rely on them.</p>
       <p><a class="invite-cta" href="https://discord.com/api/oauth2/authorize?client_id=1278486617375510570&permissions=8&scope=bot+applications.commands">➕ Invite Server Assistant</a></p>
       <p style="font-size:.83rem; color:#9aa3b6;">Also on <a href="https://top.gg/bot/1278486617375510570">Top.gg</a> and <a href="https://discordbotlist.com/bots/server-assistant">discordbotlist.com</a>. Slash commands take up to 1 hour to propagate the first time.</p>
+    </div>
+  </div>
+
+  <div class="step"><div class="step-n" style="font-size:.95rem; background:linear-gradient(135deg,#1e8449,#2ecc71);">1.5</div>
+    <div class="step-body">
+      <h3>💬 …or skip <code>/setup</code> entirely</h3>
+      <p>You might not even need step 2. The moment the bot joins, it <strong>DMs the owner the full setup wizard</strong> — already pre-filled by auto-detection — so you can finish it right there in under a minute. (Falls back to a staff channel if your DMs are closed.)</p>
+      <p>Prefer one command? <code>/autopilot</code> detects and applies a sensible config in a single step. Either way, it's the same wizard as step 2 below.</p>
     </div>
   </div>
 
