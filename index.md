@@ -247,9 +247,36 @@ image: /server-assistant-docs/assets/banner.jpeg
 
 <div class="shipped-strip">
   <strong class="lbl">🚀 Recently shipped</strong> &nbsp;·&nbsp;
-  Ticket Panels · <code>/role</code> · <code>/lockdown</code> · AutoMod AI second-opinion + alt-guard · ban reasons + one-reply appeals &nbsp;·&nbsp;
+  <span id="recently-shipped">New features ship continuously — see the changelog for the latest</span> &nbsp;·&nbsp;
   <a href="{{ site.url }}{{ site.baseurl }}/changelog/">full changelog →</a>
 </div>
+
+<script>
+/* Pull the latest shipped features straight from the roadmap's Shipped band,
+   so this strip never needs separate updating. Same-origin fetch; degrades to
+   the evergreen fallback text if JS is off or the fetch fails. */
+(function () {
+  var box = document.getElementById("recently-shipped");
+  if (!box) return;
+  fetch("{{ site.url }}{{ site.baseurl }}/roadmap/")
+    .then(function (r) { return r.ok ? r.text() : null; })
+    .then(function (html) {
+      if (!html) return;
+      var doc = new DOMParser().parseFromString(html, "text/html");
+      var cards = doc.querySelectorAll(".band-shipped .shipped-scroll > details.card > summary");
+      var names = [];
+      for (var i = 0; i < cards.length && names.length < 5; i++) {
+        var s = cards[i].cloneNode(true);
+        var pill = s.querySelector(".shipped-pill");
+        if (pill) pill.parentNode.removeChild(pill);
+        var t = (s.textContent || "").replace(/\s+/g, " ").trim();
+        if (t) names.push(t);
+      }
+      if (names.length) box.textContent = names.join(" · ");
+    })
+    .catch(function () {});
+})();
+</script>
 
 ---
 
