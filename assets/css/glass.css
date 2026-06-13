@@ -119,6 +119,7 @@ table {
   overflow: hidden;
   box-shadow: var(--glass-shadow);
   background: rgba(255, 255, 255, 0.03);
+  color: var(--ink);
 }
 table th {
   background: rgba(124, 155, 255, 0.16);
@@ -126,7 +127,7 @@ table th {
   border: none;
   font-weight: 600;
 }
-table td { border: none; border-top: 1px solid rgba(255, 255, 255, 0.08); background: transparent; }
+table td { border: none; border-top: 1px solid rgba(255, 255, 255, 0.08); background: transparent; color: var(--ink); }
 table tr:nth-child(even) { background: transparent; }   /* neutralise Minima's light #f7f7f7 even-row */
 table tr:nth-child(even) td { background: rgba(255, 255, 255, 0.05); }
 
