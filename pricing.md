@@ -9,9 +9,21 @@ description: Server Assistant pricing — generous free tier, $7/mo USD Premium 
 
 **Core moderation is free forever.** AI features cost real money to run, so they're metered — subscribe when you want them, and billing only starts once you've used your free tokens.
 
-All prices in **USD**. Tax is added at checkout based on your billing region (Stripe and Discord handle this automatically).
+<style>
+.price-intro { display: grid; grid-template-columns: 1fr 1.6fr; gap: 1rem; align-items: stretch; margin: 1.25rem 0; }
+.price-intro .pi-card { background: rgba(255,255,255,0.5); border: 1px solid rgba(31,38,135,0.12); border-left: 4px solid #3498db; border-radius: 10px; padding: 1rem 1.2rem; }
+.price-intro .pi-card p { margin: 0; font-size: .92rem; line-height: 1.5; }
+@media (max-width: 640px) { .price-intro { grid-template-columns: 1fr; } }
+</style>
 
-> 🩺 **Why Server Assistant?** The free tier alone gives you four things almost no other mod bot does — daily health insight (Pulse), fair one-reply ban appeals, an encrypted tamper-proof audit trail, and repeat-offender / ban-evasion detection. AI features build on top of that, not in place of it. [See the differentiators →]({{ site.url }}{{ site.baseurl }}/)
+<div class="price-intro">
+  <div class="pi-card">
+    <p>💳 <strong>All prices in USD.</strong> Tax is added at checkout based on your billing region — Stripe and Discord handle it automatically.</p>
+  </div>
+  <div class="pi-card">
+    <p>🩺 <strong>Why Server Assistant?</strong> The free tier alone gives you four things almost no other mod bot does — daily health insight (Pulse), fair one-reply ban appeals, an encrypted tamper-proof audit trail, and repeat-offender / ban-evasion detection. AI features build on top of that, not in place of it. <a href="{{ site.url }}{{ site.baseurl }}/">See the differentiators →</a></p>
+  </div>
+</div>
 
 ---
 

@@ -14,7 +14,7 @@ image: /server-assistant-docs/assets/banner.jpeg
   <h1>Server Assistant</h1>
 
   <p style="font-size:1.15rem; font-weight:700;">Most Discord mod bots just react to messages.<br>This one understands your whole server.</p>
-  <p style="font-size:.95rem; color:#4a5568; margin-top:-.25rem;">Daily health insight · AutoMod that learns your team · fair ban appeals · a tamper-proof audit trail.<br><strong>Privacy-first. Free to start.</strong></p>
+  <p style="font-size:.95rem; color:#aab2c5; margin-top:-.25rem;">Daily health insight · AutoMod that learns your team · fair ban appeals · a tamper-proof audit trail.<br><strong>Privacy-first. Free to start.</strong></p>
 </div>
 
 <script type="application/ld+json">
@@ -37,19 +37,19 @@ image: /server-assistant-docs/assets/banner.jpeg
 .cta { display: inline-block; padding: .6rem 1.2rem; border-radius: 999px; font-weight: 700; text-decoration: none !important; transition: transform .15s, box-shadow .15s; }
 .cta-primary { background: linear-gradient(135deg, #5865f2, #3498db); color: white !important; box-shadow: 0 4px 14px rgba(88,101,242,.35); }
 .cta-primary:hover { transform: translateY(-1px); box-shadow: 0 6px 18px rgba(88,101,242,.45); }
-.cta-secondary { background: rgba(255,255,255,0.55); color: #2e3340 !important; border: 1px solid rgba(31,38,135,.18); }
-.cta-secondary:hover { background: rgba(255,255,255,0.8); }
+.cta-secondary { background: rgba(255,255,255,0.08); color: #e6e9f0 !important; border: 1px solid rgba(255,255,255,.18); }
+.cta-secondary:hover { background: rgba(255,255,255,0.14); }
 
 .free-callout { margin: 1.5rem 0; padding: 1rem 1.25rem; background: rgba(46,204,113,.12); border-left: 4px solid #2ecc71; border-radius: 10px; }
 
 /* ── Differentiators ─────────────────────────────────────────────────────── */
-.lead-line { text-align:center; font-size:1.05rem; color:#3a4252; max-width:760px; margin:1rem auto 2rem; }
+.lead-line { text-align:center; font-size:1.05rem; color:#aab2c5; max-width:760px; margin:1rem auto 2rem; }
 .diff { display:flex; gap:1.5rem; align-items:center; margin:2.25rem 0; flex-wrap:wrap; }
 .diff:nth-child(even) { flex-direction:row-reverse; }
 .diff-text { flex:1 1 300px; min-width:280px; }
 .diff-text .tag { display:inline-block; font-size:.72rem; font-weight:800; letter-spacing:.04em; text-transform:uppercase; color:#5865f2; background:rgba(88,101,242,.1); padding:.15rem .55rem; border-radius:999px; margin-bottom:.5rem; }
 .diff-text h3 { margin:.1rem 0 .5rem; font-size:1.3rem; line-height:1.25; }
-.diff-text p { margin:0; color:#3a4252; font-size:.95rem; line-height:1.55; }
+.diff-text p { margin:0; color:#aab2c5; font-size:.95rem; line-height:1.55; }
 .diff-mock { flex:1 1 360px; min-width:300px; }
 
 /* Discord embed mockup styles (.dc*) now live in the shared glass.css */
@@ -373,7 +373,7 @@ Every panel below is a to-scale mock of a real Server Assistant message — same
   </div>
 </div>
 
-<p style="text-align:center;color:#3a4252;font-weight:600;margin:.4rem 0 .7rem;">AutoMod is transparent both ways — staff get a structured log, the member gets a clear explanation.</p>
+<p style="text-align:center;color:#aab2c5;font-weight:600;margin:.4rem 0 .7rem;">AutoMod is transparent both ways — staff get a structured log, the member gets a clear explanation.</p>
 
 <div class="mock-pair">
   <div class="dc">
@@ -410,6 +410,6 @@ Every panel below is a to-scale mock of a real Server Assistant message — same
 
 ---
 
-<p style="text-align: center; color: #6a7280; font-size: .88rem;">
+<p style="text-align: center; color: #9aa3b6; font-size: .88rem;">
   Server Assistant · Get help with <a href="{{ site.url }}{{ site.baseurl }}/support/"><code>/support</code></a> · <a href="{{ site.url }}{{ site.baseurl }}/pricing/">Pricing</a> · <a href="{{ site.url }}{{ site.baseurl }}/roadmap/">Roadmap</a>
 </p>

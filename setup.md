@@ -38,7 +38,7 @@ Adding **Server Assistant** takes about 60 seconds — the wizard does the rest.
       <h3>Invite the bot</h3>
       <p>You'll need <strong>Manage Server</strong> on the target guild. <strong>Don't uncheck any OAuth permissions</strong> — ban/kick/auto-role rely on them.</p>
       <p><a class="invite-cta" href="https://discord.com/api/oauth2/authorize?client_id=1278486617375510570&permissions=8&scope=bot+applications.commands">➕ Invite Server Assistant</a></p>
-      <p style="font-size:.83rem; color:#5c6470;">Also on <a href="https://top.gg/bot/1278486617375510570">Top.gg</a> and <a href="https://discordbotlist.com/bots/server-assistant">discordbotlist.com</a>. Slash commands take up to 1 hour to propagate the first time.</p>
+      <p style="font-size:.83rem; color:#9aa3b6;">Also on <a href="https://top.gg/bot/1278486617375510570">Top.gg</a> and <a href="https://discordbotlist.com/bots/server-assistant">discordbotlist.com</a>. Slash commands take up to 1 hour to propagate the first time.</p>
     </div>
   </div>
 
@@ -89,7 +89,7 @@ Adding **Server Assistant** takes about 60 seconds — the wizard does the rest.
       </div>
     </div>
   </div>
-  <div style="font-size:.8rem;color:#4a5568;text-align:center;margin-top:.5rem;">Channels, roles, AI — three short steps.</div>
+  <div style="font-size:.8rem;color:#aab2c5;text-align:center;margin-top:.5rem;">Channels, roles, AI — three short steps.</div>
 </div>
 
 </div>
@@ -120,7 +120,7 @@ details.tshoot { background: rgba(255,255,255,0.55); border: 1px solid rgba(31,3
 details.tshoot[open] { background: rgba(255,255,255,0.72); box-shadow: 0 4px 14px rgba(31,38,135,0.08); }
 details.tshoot summary { cursor: pointer; padding: .7rem 1rem; font-weight: 600; font-size: .94rem; list-style: none; }
 details.tshoot summary::-webkit-details-marker { display: none; }
-details.tshoot summary::after { content: '⌄'; float: right; color: #6a7280; transition: transform .2s; }
+details.tshoot summary::after { content: '⌄'; float: right; color: #9aa3b6; transition: transform .2s; }
 details.tshoot[open] summary::after { transform: rotate(180deg); }
 details.tshoot .body { padding: 0 1rem .8rem; font-size: .9rem; line-height: 1.5; color: #2e3340; }
 </style>

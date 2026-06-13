@@ -6,25 +6,26 @@
    ============================================================================ */
 
 :root {
-  --glass-bg:        rgba(255, 255, 255, 0.55);
-  --glass-bg-strong: rgba(255, 255, 255, 0.72);
-  --glass-border:    rgba(255, 255, 255, 0.6);
-  --glass-shadow:    0 8px 32px rgba(31, 38, 135, 0.12);
+  --glass-bg:        rgba(28, 34, 48, 0.55);
+  --glass-bg-strong: rgba(20, 25, 37, 0.82);
+  --glass-border:    rgba(255, 255, 255, 0.10);
+  --glass-shadow:    0 8px 32px rgba(0, 0, 0, 0.45);
   --glass-radius:    18px;
-  --accent:          #2563eb;
-  --accent-soft:     rgba(37, 99, 235, 0.10);
-  --ink:             #1e2430;
+  --accent:          #7c9bff;
+  --accent-soft:     rgba(124, 155, 255, 0.14);
+  --ink:             #e6e9f0;
+  --ink-soft:        #aab2c5;
 }
 
-/* ── Background: soft fixed mesh gradient ──────────────────────────────────── */
+/* ── Background: dark fixed mesh gradient ──────────────────────────────────── */
 html { scroll-behavior: smooth; }
 
 body {
-  background-color: #eaf0fb;
+  background-color: #0c0f17;
   background-image:
-    radial-gradient(at 0% 0%,   rgba(199, 210, 254, 0.85) 0, transparent 55%),
-    radial-gradient(at 100% 0%, rgba(186, 230, 253, 0.80) 0, transparent 55%),
-    radial-gradient(at 50% 100%, rgba(221, 214, 254, 0.70) 0, transparent 55%);
+    radial-gradient(at 0% 0%,   rgba(49, 60, 110, 0.55) 0, transparent 55%),
+    radial-gradient(at 100% 0%, rgba(28, 66, 96, 0.50) 0, transparent 55%),
+    radial-gradient(at 50% 100%, rgba(58, 45, 105, 0.45) 0, transparent 55%);
   background-attachment: fixed;
   color: var(--ink);
   -webkit-font-smoothing: antialiased;
@@ -45,7 +46,7 @@ body {
   min-height: 56px;
 }
 .site-title, .site-title:visited { color: var(--ink) !important; font-weight: 700; }
-.site-nav .page-link { color: #3a4150 !important; font-weight: 500; }
+.site-nav .page-link { color: #c4cbdb !important; font-weight: 500; }
 .site-nav .page-link:hover { color: var(--accent) !important; }
 
 /* Header bar spans the same width as page content. Minima's default wrapper is
@@ -94,10 +95,10 @@ a:hover { text-decoration: underline; }
 /* ── Code & pre ────────────────────────────────────────────────────────────── */
 code {
   background: var(--accent-soft);
-  border: 1px solid rgba(37, 99, 235, 0.15);
+  border: 1px solid rgba(124, 155, 255, 0.22);
   border-radius: 7px;
   padding: 0.1em 0.4em;
-  color: #1d4ed8;
+  color: #b3c5ff;
   font-size: 0.88em;
 }
 pre {
@@ -117,16 +118,16 @@ table {
   border-radius: 14px;
   overflow: hidden;
   box-shadow: var(--glass-shadow);
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.03);
 }
 table th {
-  background: rgba(37, 99, 235, 0.12);
+  background: rgba(124, 155, 255, 0.16);
   color: var(--ink);
   border: none;
   font-weight: 600;
 }
-table td { border: none; border-top: 1px solid rgba(31, 38, 135, 0.07); background: transparent; }
-table tr:nth-child(even) td { background: rgba(255, 255, 255, 0.35); }
+table td { border: none; border-top: 1px solid rgba(255, 255, 255, 0.08); background: transparent; }
+table tr:nth-child(even) td { background: rgba(255, 255, 255, 0.035); }
 
 /* ── Blockquotes / callouts ────────────────────────────────────────────────── */
 blockquote {
@@ -134,7 +135,7 @@ blockquote {
   border-left: 4px solid var(--accent);
   border-radius: 12px;
   padding: 0.8rem 1.1rem;
-  color: #2b3242;
+  color: var(--ink);
   font-style: normal;
 }
 
@@ -164,8 +165,10 @@ blockquote {
   border: 1px solid var(--glass-border);
   border-radius: var(--glass-radius);
   box-shadow: var(--glass-shadow);
-  color: #3a4150;
+  color: var(--ink-soft);
 }
+.site-footer .footer-heading { color: var(--ink); }
+.site-footer a { color: var(--accent); }
 
 /* ── Motion: gentle scroll-reveal ──────────────────────────────────────────
    Applied site-wide by the small script in _includes/footer.html, which tags
@@ -184,7 +187,7 @@ blockquote {
 /* ── Micro-interactions: subtle, consistent, low-noise ─────────────────────── */
 a { transition: color .15s ease; }
 table tr td { transition: background .15s ease; }
-table tbody tr:hover td { background: rgba(37, 99, 235, 0.06); }
+table tbody tr:hover td { background: rgba(124, 155, 255, 0.08); }
 
 /* Reusable media frame for screenshots — a clean inset that animates on hover */
 .media-frame {
@@ -236,6 +239,97 @@ table tbody tr:hover td { background: rgba(37, 99, 235, 0.06); }
 .dc-flow { text-align:center; color:#949ba4; font-size:.74rem; margin:.35rem 0; }
 /* A Discord mock pinned beside body copy (used on Features/Setup) */
 .shot { background:transparent; border:none; box-shadow:none; margin:1.2rem 0; }
+
+/* ════════════════════════════════════════════════════════════════════════
+   DARK-MODE COMPONENT OVERRIDES
+   The per-page inline <style> blocks were authored light (white cards, dark
+   text). These selectors are prefixed with `.page-content` so they outrank the
+   bare-class page rules regardless of load order, flipping every component to
+   the dark palette. The .dc Discord mockups are already dark — left untouched.
+   ════════════════════════════════════════════════════════════════════════ */
+/* Cards & panels → dark frosted */
+.page-content .feat-card,
+.page-content .way,
+.page-content .ai-card,
+.page-content .f-card,
+.page-content .step,
+.page-content .flow-step,
+.page-content .price-intro .pi-card,
+.page-content .compare-hero-grid .hero-card,
+.page-content .compare-col,
+.page-content details.faq,
+.page-content details.tshoot,
+.page-content .changelog-nav a,
+.page-content .cta-secondary {
+  background: rgba(255, 255, 255, 0.045);
+  border-color: rgba(255, 255, 255, 0.10);
+}
+.page-content .compare-block { background: rgba(255, 255, 255, 0.025); border-color: rgba(255, 255, 255, 0.08); }
+.page-content details.faq[open],
+.page-content details.tshoot[open] { background: rgba(255, 255, 255, 0.07); }
+.page-content .compare-hero-grid .hero-card { background: rgba(124, 155, 255, 0.10); }
+.page-content .cta-secondary:hover { background: rgba(255, 255, 255, 0.12); }
+
+/* Tinted callout strips → restated on dark */
+.page-content .free-callout { background: rgba(46, 204, 113, 0.12); }
+.page-content .pick-row { background: rgba(241, 196, 15, 0.10); border-color: rgba(241, 196, 15, 0.30); }
+
+/* Body text inside cards → light (prefixed = outranks bare-class page rules) */
+.page-content .feat-card ul,
+.page-content .ai-card p,
+.page-content .f-card p, .page-content .f-card ul,
+.page-content .way p,
+.page-content .step-body p, .page-content .step-body ul,
+.page-content .diff-text p,
+.page-content .lead-line,
+.page-content .compare-hero-grid .hero-card,
+.page-content .compare-hero-grid .hero-card p,
+.page-content .compare-col, .page-content .compare-col li,
+.page-content .compare-block .wedge,
+.page-content details.faq .faq-body,
+.page-content details.faq > summary,
+.page-content details.tshoot .body,
+.page-content .cta-secondary,
+.page-content .changelog-nav a { color: var(--ink); }
+.page-content .ai-card .ai-where { color: var(--ink-soft); }
+
+/* Accent text → brighter so it reads on dark */
+.page-content .shipped-strip strong.lbl,
+.page-content .tier-free,
+.page-content .ai-card .ai-tag { color: #46d07a; }
+.page-content .upcoming-strip strong.lbl,
+.page-content .tier-trial { color: #6bb6ff; }
+.page-content .tier-premium,
+.page-content .pick-row strong,
+.page-content .ai-card .ai-tag.premium { color: #f1c40f; }
+.page-content .compare-col h3 .pill-us { background: rgba(46, 204, 113, 0.18); color: #6ee79a; }
+.page-content .compare-col h3 .pill-them { background: rgba(231, 76, 134, 0.18); color: #ff8fb4; }
+
+/* ── Roadmap stays in its own (light) design — the user likes it as-is.
+   :has() reverts the page shell to light for that page only; the roadmap's
+   own inline-styled bands/cards are already light and untouched. ───────────── */
+body:has(.build-queue) {
+  background-color: #eaf0fb;
+  background-image:
+    radial-gradient(at 0% 0%,   rgba(199, 210, 254, 0.85) 0, transparent 55%),
+    radial-gradient(at 100% 0%, rgba(186, 230, 253, 0.80) 0, transparent 55%),
+    radial-gradient(at 50% 100%, rgba(221, 214, 254, 0.70) 0, transparent 55%);
+}
+body:has(.build-queue) .page-content .wrapper {
+  background: rgba(255, 255, 255, 0.55);
+  border-color: rgba(255, 255, 255, 0.6);
+  color: #1e2430;
+}
+body:has(.build-queue) .page-content h1,
+body:has(.build-queue) .page-content h2,
+body:has(.build-queue) .page-content h3,
+body:has(.build-queue) .page-content h4 { color: #1e2430; }
+body:has(.build-queue) .page-content a { color: #2563eb; }
+body:has(.build-queue) .page-content code { color: #1d4ed8; background: rgba(37, 99, 235, 0.10); border-color: rgba(37, 99, 235, 0.15); }
+body:has(.build-queue) .page-content table { background: rgba(255, 255, 255, 0.5); }
+body:has(.build-queue) .page-content table th { background: rgba(37, 99, 235, 0.12); }
+body:has(.build-queue) .page-content table td { border-top-color: rgba(31, 38, 135, 0.07); }
+body:has(.build-queue) .page-content table tr:nth-child(even) td { background: rgba(255, 255, 255, 0.35); }
 
 /* ── Mobile: relax padding so cards don't crowd small screens ──────────────── */
 @media (max-width: 600px) {
