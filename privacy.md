@@ -59,14 +59,14 @@ Stored encrypted at rest:
 
 The encryption key is stored separately on our host and never transmitted.
 
-### AI token ledger (v5.0+)
+### AI token ledger
 
 For servers using AI features on the shared key:
 - Guild ID, current plan, tokens used (lifetime or monthly), plan reset date
 - Per-call log: feature name, model, token counts, estimated cost in USD, timestamp
 - No message content is stored in the ledger — only usage metadata
 
-### Billing data (v5.0+)
+### Billing data
 
 If you subscribe to Premium via Stripe:
 - We store a reference to your Stripe Customer and Subscription ID (not your card details — those are held by Stripe)

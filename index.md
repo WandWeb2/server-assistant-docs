@@ -243,17 +243,12 @@ image: /server-assistant-docs/assets/banner.jpeg
 .shipped-strip { background: rgba(46,204,113,.10); border-left: 4px solid #2ecc71; border-radius: 10px; padding: .85rem 1.1rem; margin: 1.5rem 0 0; font-size: .9rem; line-height: 1.55; }
 .shipped-strip strong.lbl { color: #1b8e3a; }
 .shipped-strip code { font-size: .82em; }
-.shipped-pill-i { display: inline-block; font-size: .68rem; font-weight: 800; letter-spacing: .04em; padding: .12rem .45rem; border-radius: 999px; background: #d6eaf8; color: #1a5276; margin-right: .25rem; vertical-align: middle; }
 </style>
 
 <div class="shipped-strip">
-  <strong class="lbl">🚀 Shipped this fortnight</strong> &nbsp;·&nbsp;
-  <span class="shipped-pill-i">v5.2</span>Ticket Panels &nbsp;·&nbsp;
-  <span class="shipped-pill-i">v5.3</span><code>/role</code> · <code>/lockdown</code> · <code>/tempban</code> &nbsp;·&nbsp;
-  <span class="shipped-pill-i">v5.4</span>AutoMod AI second-opinion + alt-guard &nbsp;·&nbsp;
-  <span class="shipped-pill-i">v5.5</span>Ban reasons + one-reply appeals &nbsp;·&nbsp;
-  <span class="shipped-pill-i">v5.5.4</span>Premium <code>/imagine</code> cooldown removed &nbsp;·&nbsp;
-  <a href="{{ site.url }}{{ site.baseurl }}/changelog/">see the full changelog →</a>
+  <strong class="lbl">🚀 Recently shipped</strong> &nbsp;·&nbsp;
+  Ticket Panels · <code>/role</code> · <code>/lockdown</code> · AutoMod AI second-opinion + alt-guard · ban reasons + one-reply appeals &nbsp;·&nbsp;
+  <a href="{{ site.url }}{{ site.baseurl }}/changelog/">full changelog →</a>
 </div>
 
 ---
@@ -326,8 +321,8 @@ image: /server-assistant-docs/assets/banner.jpeg
 
 <div class="upcoming-strip">
   <strong class="lbl">🟢 Coming up next</strong> &nbsp;·&nbsp;
-  AI rule explainer · Smart purge · Native-action coaching (all <code>v5.6</code>) &nbsp;·&nbsp;
-  <a href="{{ site.url }}{{ site.baseurl }}/roadmap/">see the full roadmap →</a>
+  Your votes decide — feature polls land in your staff chat and the top picks ship first &nbsp;·&nbsp;
+  <a href="{{ site.url }}{{ site.baseurl }}/roadmap/">see the live roadmap →</a>
 </div>
 
 ## Three ways to use it

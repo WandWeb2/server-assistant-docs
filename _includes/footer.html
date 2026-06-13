@@ -59,3 +59,27 @@
 
   </div>
 </footer>
+
+<script>
+/* Gentle scroll-reveal for every page except the roadmap (which has its own
+   bespoke motion). No-JS and reduced-motion users keep content fully visible —
+   the hidden state only switches on once we've confirmed motion is wanted. */
+(function () {
+  if (document.querySelector(".build-queue")) return;            // leave roadmap alone
+  if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  if (!("IntersectionObserver" in window)) return;
+  var wrap = document.querySelector(".page-content .wrapper");
+  if (!wrap) return;
+  document.body.classList.add("reveal-ready");
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+    });
+  }, { rootMargin: "0px 0px -6% 0px", threshold: 0.04 });
+  Array.prototype.forEach.call(wrap.children, function (el) {
+    if (el.tagName === "STYLE" || el.tagName === "SCRIPT") return;
+    el.classList.add("reveal");
+    io.observe(el);
+  });
+})();
+</script>

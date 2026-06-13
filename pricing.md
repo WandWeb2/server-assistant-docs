@@ -96,7 +96,7 @@ Need extra headroom without changing your plan? Three sizes — **Splash** for a
 
 ## 🎁 Founding servers
 
-Servers that joined during the beta (before our v5.0 launch) are grandfathered with **12 months of free Premium**, applied automatically — our thanks for being early. This window has now closed for new servers, but the generous free tier and 150K trial above are available to everyone.
+Servers that joined during the beta are grandfathered with **12 months of free Premium**, applied automatically — our thanks for being early. This window has now closed for new servers, but the generous free tier and 150K trial above are available to everyone.
 
 ---
 
