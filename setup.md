@@ -11,11 +11,6 @@ Adding **Server Assistant** takes about 60 seconds — the wizard does the rest.
 
 > ⚠️ Only the **Discord-native server owner** can run `/setup` — a hard safety check so admins can't escalate their own permissions.
 
-<figure class="media-frame">
-  <img src="{{ '/assets/screenshots/setup-wizard.webp' | relative_url }}" alt="The /setup wizard in Discord, showing the channel, role, and AI provider steps." loading="lazy">
-  <figcaption>The <code>/setup</code> wizard walks you through channels, roles, and AI in three short steps.</figcaption>
-</figure>
-
 <style>
 .steps { display: grid; gap: 1rem; margin: 1.2rem 0 1.6rem; }
 .step { display: grid; grid-template-columns: 56px 1fr; gap: 1rem; align-items: start; background: rgba(255,255,255,0.55); border: 1px solid rgba(31,38,135,0.15); border-radius: 14px; padding: 1.1rem 1.2rem; box-shadow: 0 4px 18px rgba(31,38,135,0.08); }
@@ -27,8 +22,15 @@ Adding **Server Assistant** takes about 60 seconds — the wizard does the rest.
 .invite-cta { display: inline-block; background: linear-gradient(135deg, #5865f2, #3498db); color: white !important; padding: .55rem 1.1rem; border-radius: 999px; font-weight: 700; text-decoration: none !important; margin: .3rem 0; box-shadow: 0 4px 14px rgba(88,101,242,.35); }
 .invite-cta:hover { transform: translateY(-1px); box-shadow: 0 6px 18px rgba(88,101,242,.45); }
 @media (max-width: 600px) { .step { grid-template-columns: 1fr; } .step-n { margin-bottom: .35rem; } }
+/* Steps on the left (~4/7), the wizard screenshot pinned to the right (~3/7) */
+.setup-layout { display: grid; grid-template-columns: 4fr 3fr; gap: 1.5rem; align-items: start; margin: 1.2rem 0 1.6rem; }
+.setup-layout .steps { margin: 0; }
+.setup-layout .setup-shot { margin: 0; max-width: none; position: sticky; top: 80px; }
+.setup-layout .setup-shot figcaption { font-size: .8rem; }
+@media (max-width: 760px) { .setup-layout { grid-template-columns: 1fr; } .setup-layout .setup-shot { position: static; } }
 </style>
 
+<div class="setup-layout">
 <div class="steps">
 
   <div class="step"><div class="step-n">1</div>
@@ -67,6 +69,13 @@ Adding **Server Assistant** takes about 60 seconds — the wizard does the rest.
       </ul>
     </div>
   </div>
+
+</div>
+
+<figure class="media-frame setup-shot">
+  <img src="{{ '/assets/screenshots/setup-wizard.webp' | relative_url }}" alt="The /setup wizard in Discord, showing the channel, role, and AI provider steps." loading="lazy">
+  <figcaption>The <code>/setup</code> wizard walks you through channels, roles, and AI in three short steps.</figcaption>
+</figure>
 
 </div>
 

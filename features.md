@@ -9,8 +9,6 @@ description: A scannable tour of Server Assistant's flagship features.
 
 A scannable tour. For the full command list and permissions, see **[Commands]({{ site.url }}{{ site.baseurl }}/commands/)**. For what's free vs Premium, see **[Pricing]({{ site.url }}{{ site.baseurl }}/pricing/)**.
 
-> **Why Server Assistant?** Four things almost no other moderation bot does — **🩺 Pulse** (daily health insight), **📩 ban-reason DMs + one-reply appeals**, **🤔 AutoMod AI second-opinion** (fewer false positives), and **🧠 self-trained AutoMod** (adapts to *your* team). [See the differentiators on the homepage →]({{ site.url }}{{ site.baseurl }}/) Everything below builds on that core.
-
 <style>
 .tier-badge { display: inline-block; font-size: 0.65rem; font-weight: 800; letter-spacing: 0.05em;
               padding: 0.15rem 0.5rem; border-radius: 999px; vertical-align: middle;
