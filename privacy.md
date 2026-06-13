@@ -7,13 +7,15 @@ description: How Server Assistant handles your Discord server's data — encrypt
 # Privacy Policy — Server Assistant
 
 **Effective date:** May 9, 2026
-**Last updated:** June 2, 2026
+**Last updated:** June 13, 2026
 
 This policy describes how the Server Assistant Discord bot ("the Bot") collects, uses, and stores information when installed in a Discord server.
 
 ## Who is responsible
 
 Server Assistant is built and maintained by **Wandering Webmaster** ([wandweb.co](https://wandweb.co)). Contact us via the [`/support`]({{ site.url }}{{ site.baseurl }}/support/) slash command from any Discord server with the Bot installed.
+
+Wandering Webmaster is the **data controller** for the information described in this policy. Where we process moderation records about a server's members **on that server's behalf**, the server owner is the controller and we act as a **processor** carrying out the owner's instructions.
 
 ---
 
@@ -122,6 +124,27 @@ Each AI provider has their own privacy policy governing how they handle data. We
 
 ---
 
+## Where your data is stored
+
+Server Assistant runs on dedicated infrastructure hosted by **Hetzner Online GmbH** in the **United States (Oregon)**. All data described above is stored there.
+
+Because Discord and our users are global, using the Bot from outside the United States involves an **international transfer** of the limited data described in this policy to the US. Where required, we rely on appropriate safeguards (such as Standard Contractual Clauses) for those transfers. Our sub-processors may handle data in other regions under their own policies.
+
+### Sub-processors
+
+We rely on a small set of vetted third parties to run the service:
+
+| Sub-processor | Purpose | Privacy policy |
+|---|---|---|
+| **Hetzner Online GmbH** | Server hosting (United States) | [hetzner.com](https://www.hetzner.com/legal/privacy-policy) |
+| **Anthropic** | Default AI features (Concierge, Message Report, etc.) | [anthropic.com](https://www.anthropic.com/legal/privacy) |
+| **OpenAI / xAI** | AI features — only if you supply your own key (BYOK) | [openai.com](https://openai.com/policies/privacy-policy) · [x.ai](https://x.ai/legal/privacy-policy) |
+| **Stripe** | Payment processing for Premium subscriptions | [stripe.com/privacy](https://stripe.com/privacy) |
+
+We do **not** sell your data or share it with advertising or analytics networks.
+
+---
+
 ## Data retention
 
 | Data | Retention |
@@ -143,6 +166,14 @@ Each AI provider has their own privacy policy governing how they handle data. We
 2. Contact us via [`/support`]({{ site.url }}{{ site.baseurl }}/support/) to request deletion of warnings, notes, audit log entries, and ledger data for their guild
 
 **Individual members** wishing to have personal moderation records erased should contact their server owner first. If unresponsive, contact us directly via `/support`.
+
+### GDPR (EEA / UK)
+
+If you're in the European Economic Area or the UK, you have the right to **access, correct, delete, restrict, or object to** our processing of your personal data, and the right to **data portability**. Our legal bases for processing are: **performance of the service** (running the features a server has enabled), our **legitimate interests** (security, anti-abuse, and service integrity), and **consent** for opt-in AI features. To exercise any of these rights, contact us via [`/support`]({{ site.url }}{{ site.baseurl }}/support/) or [wandweb.co](https://wandweb.co). You also have the right to lodge a complaint with your local data-protection supervisory authority.
+
+### CCPA (California)
+
+We **do not sell or share** personal information (as those terms are defined under the CCPA), and never have. California residents may request to know what personal information we hold and to have it deleted, using the same channels above. We will **not discriminate** against you for exercising these rights.
 
 ---
 
