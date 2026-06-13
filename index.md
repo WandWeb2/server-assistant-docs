@@ -52,33 +52,7 @@ image: /server-assistant-docs/assets/banner.jpeg
 .diff-text p { margin:0; color:#3a4252; font-size:.95rem; line-height:1.55; }
 .diff-mock { flex:1 1 360px; min-width:300px; }
 
-/* ── Discord embed mockups ───────────────────────────────────────────────── */
-.dc { background:#313338; border-radius:10px; padding:.7rem .8rem; font-family:"gg sans","Segoe UI",system-ui,sans-serif; color:#dbdee1; font-size:.84rem; line-height:1.4; box-shadow:0 8px 30px rgba(31,38,135,.18); }
-.dc + .dc { margin-top:.5rem; }
-.dc-row { display:flex; gap:.6rem; align-items:flex-start; }
-.dc-av { width:38px; height:38px; border-radius:50%; flex:0 0 38px; object-fit:cover; background:#fff; }
-.mock-pair { display:flex; gap:.8rem; flex-wrap:wrap; justify-content:center; }
-.mock-pair > .dc { flex:1 1 320px; }
-.dc-body { flex:1; min-width:0; }
-.dc-head { margin-bottom:.15rem; }
-.dc-name { font-weight:600; color:#f2f3f5; }
-.dc-bot { background:#5865f2; color:#fff; font-size:.6rem; font-weight:700; padding:.02rem .28rem; border-radius:3px; margin-left:.35rem; vertical-align:middle; text-transform:uppercase; letter-spacing:.02em; }
-.dc-time { color:#949ba4; font-size:.7rem; margin-left:.4rem; }
-.dc-embed { border-left:4px solid #5865f2; background:#2b2d31; border-radius:0 4px 4px 0; padding:.55rem .75rem; margin-top:.15rem; }
-.dc-embed.red { border-left-color:#da373c; }
-.dc-embed.blue { border-left-color:#3498db; }
-.dc-embed.green { border-left-color:#2ecc71; }
-.dc-embed.amber { border-left-color:#f1c40f; }
-.dc-title { font-weight:700; color:#f2f3f5; margin-bottom:.2rem; }
-.dc-desc { color:#dbdee1; }
-.dc-fname { font-weight:700; color:#f2f3f5; font-size:.78rem; margin-top:.45rem; }
-.dc-fval { color:#b5bac1; font-size:.82rem; }
-.dc-foot { color:#949ba4; font-size:.7rem; margin-top:.55rem; }
-.dc-code { background:#1e1f22; border-radius:4px; padding:.3rem .5rem; font-family:Consolas,monospace; font-size:.78rem; color:#dbdee1; margin-top:.3rem; white-space:pre-wrap; word-break:break-word; }
-.dc-btns { display:flex; gap:.4rem; margin-top:.55rem; flex-wrap:wrap; }
-.dc-btn { font-size:.76rem; font-weight:600; padding:.3rem .65rem; border-radius:4px; color:#fff !important; }
-.dc-btn.green{background:#248046;} .dc-btn.red{background:#da373c;} .dc-btn.grey{background:#4e5058;} .dc-btn.blurple{background:#5865f2;}
-.dc-flow { text-align:center; color:#949ba4; font-size:.74rem; margin:.35rem 0; }
+/* Discord embed mockup styles (.dc*) now live in the shared glass.css */
 
 .feat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin: 1.25rem 0; }
 .feat-card { background: rgba(255,255,255,0.55); border: 1px solid rgba(31,38,135,0.15); border-radius: 14px; padding: 1rem 1.15rem; box-shadow: 0 4px 18px rgba(31,38,135,0.08); }

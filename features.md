@@ -29,10 +29,21 @@ A scannable tour. For the full command list and permissions, see **[Commands]({{
 
 AI features that watch your server's *health and behaviour* — **advisory by design**. X-ray vision for your team; the decisions stay with you.
 
-<figure class="media-frame">
-  <img src="{{ '/assets/screenshots/pulse-digest.webp' | relative_url }}" alt="The daily Pulse health digest embed showing message counts, joins and leaves, AutoMod blocks, and week-over-week deltas." loading="lazy">
-  <figcaption>The daily 🩺 Pulse digest — server health at a glance.</figcaption>
-</figure>
+<div class="dc" style="max-width:540px;margin:1rem 0 1.5rem;">
+  <div class="dc-row">
+    <img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy">
+    <div class="dc-body">
+      <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">👤 Info → Threat Score</span></div>
+      <div class="dc-embed amber">
+        <div class="dc-title">🛡️ Threat Score — @driftwood</div>
+        <div class="dc-desc">🟠 <strong>Elevated</strong> · 58/100 — an explainable read of infraction history, weighted by severity and decaying over time.</div>
+        <div class="dc-fname">Recent history</div><div class="dc-fval">3 warnings · 1 timeout · 0 bans</div>
+        <div class="dc-fname">Trend</div><div class="dc-fval">▲ rising — 2 of 3 warnings in the last 7 days</div>
+        <div class="dc-foot">Advisory view · free for every server · /settings → Behavior</div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <style>
 .ai-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin: 1rem 0 1.5rem; }
@@ -158,15 +169,38 @@ AutoMod runs on every non-staff message. Staff are completely exempt.
 - **Anti-spam** — auto on; 5+ duplicate messages in 5s = removed + warned
 - **User DM** — every AutoMod removal DMs the user *which rule fired* + their warning count. Staff see the full embed in the log channel either way.
 
-<figure class="media-frame">
-  <img src="{{ '/assets/screenshots/automod-log.webp' | relative_url }}" alt="The AutoMod staff log embed showing which rule fired on a removed message." loading="lazy">
-  <figcaption>Staff see the full removal in the log channel — which rule fired and why.</figcaption>
-</figure>
-
-<figure class="media-frame">
-  <img src="{{ '/assets/screenshots/automod-user-dm.webp' | relative_url }}" alt="The DM a member receives after an AutoMod removal, naming the rule that fired and their warning count." loading="lazy">
-  <figcaption>The member gets a DM naming the rule and their current warning count.</figcaption>
-</figure>
+<div class="mock-pair">
+  <div class="dc">
+    <div class="dc-row">
+      <img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy">
+      <div class="dc-body">
+        <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">/automod → Add Filter</span></div>
+        <div class="dc-embed green">
+          <div class="dc-title">✅ Custom filter added</div>
+          <div class="dc-desc">Your new regex rule is live and will run on every non-staff message.</div>
+          <div class="dc-fname">Pattern</div>
+          <div class="dc-code">\b(free|cheap)\s+followers?\b</div>
+          <div class="dc-fname">Safety check</div><div class="dc-fval">Passed — no catastrophic backtracking</div>
+          <div class="dc-foot">Staff are exempt · edit anytime in /automod</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="dc">
+    <div class="dc-row">
+      <img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy">
+      <div class="dc-body">
+        <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">#staff-log</span></div>
+        <div class="dc-embed amber">
+          <div class="dc-title">⏫ Punishment ladder — auto-escalation</div>
+          <div class="dc-desc">@loudmouth hit <strong>auto-warning #3</strong> on the Standard ladder (3/5/10), so the bot escalated automatically.</div>
+          <div class="dc-fname">Action</div><div class="dc-fval">10-minute timeout applied · DM sent</div>
+          <div class="dc-foot">Standard ladder · warns → timeout → kick → ban</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 ---
 
@@ -224,15 +258,38 @@ Optional anti-raid measure (`/settings → Verification`). New members are DM'd 
   </div>
 </div>
 
-<figure class="media-frame">
-  <img src="{{ '/assets/screenshots/report-menu.webp' | relative_url }}" alt="The Discord right-click Apps menu showing the Message Report action." loading="lazy">
-  <figcaption>Right-click any message → Apps ▸ Message Report.</figcaption>
-</figure>
-
-<figure class="media-frame">
-  <img src="{{ '/assets/screenshots/report-result.webp' | relative_url }}" alt="A Message Report result: an AI bullet summary with one-tap action and investigative buttons." loading="lazy">
-  <figcaption>The AI summary, with action and investigative buttons attached.</figcaption>
-</figure>
+<div class="mock-pair">
+  <div class="dc">
+    <div class="dc-row">
+      <img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy">
+      <div class="dc-body">
+        <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">/imagine</span></div>
+        <div class="dc-embed">
+          <div class="dc-title">🖼️ Here's your image</div>
+          <div class="dc-desc"><em>"a cozy pixel-art tavern at night, warm lantern glow"</em></div>
+          <div class="dc-fname">Size</div><div class="dc-fval">1024 × 1024</div>
+          <div class="dc-fname">Billed to</div><div class="dc-fval">Free trial · ~30 images included</div>
+          <div class="dc-foot">30s cooldown on the free tier · add your own key in /ai-config</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="dc">
+    <div class="dc-row">
+      <img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy">
+      <div class="dc-body">
+        <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">/sai</span></div>
+        <div class="dc-embed green">
+          <div class="dc-title">🤖 Done — settings updated</div>
+          <div class="dc-desc">You asked: <em>"make the embed colour purple and switch AutoMod to scams + slurs"</em></div>
+          <div class="dc-fname">Branding → colour</div><div class="dc-fval">Custom purple <code>#8e44ad</code></div>
+          <div class="dc-fname">AutoMod preset</div><div class="dc-fval">Scams + slurs (gaming) ⭐</div>
+          <div class="dc-foot">Natural-language config · changes saved instantly</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 ---
 
@@ -283,10 +340,22 @@ Logging isn't just for actions run through the bot:
 
 **Nine sub-wizards.** All changes save instantly.
 
-<figure class="media-frame">
-  <img src="{{ '/assets/screenshots/settings-hub.webp' | relative_url }}" alt="The /settings hub showing its sub-wizards for branding, presets, behaviour, and more." loading="lazy">
-  <figcaption>The <code>/settings</code> hub — every sub-wizard in one place.</figcaption>
-</figure>
+<div class="dc" style="max-width:540px;margin:0 0 1.2rem;">
+  <div class="dc-row">
+    <img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy">
+    <div class="dc-body">
+      <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">/settings</span></div>
+      <div class="dc-embed">
+        <div class="dc-title">🎨 Settings — pick a wizard</div>
+        <div class="dc-desc">Nine sub-wizards, all in one place. Choose one to configure — every change saves instantly.</div>
+        <div class="dc-fname">Available</div><div class="dc-fval">🎨 Branding · ⚡ Quick Presets · 🛡️ Behaviour · 👋 New Members · 🔐 Verification</div>
+        <div class="dc-fname">More</div><div class="dc-fval">📍 Channel allowlist · 🛂 Role Tiers · 🔔 Notifications · 🩺 Pulse</div>
+        <div class="dc-foot">Changes save instantly · no code, no restart</div>
+        <div class="dc-btns"><span class="dc-btn blurple">🎨 Branding</span><span class="dc-btn grey">⚡ Presets</span><span class="dc-btn grey">🛡️ Behaviour</span><span class="dc-btn grey">🛂 Role Tiers</span></div>
+      </div>
+    </div>
+  </div>
+</div>
 
 | | What it covers |
 |---|---|

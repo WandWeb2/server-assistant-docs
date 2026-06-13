@@ -72,10 +72,25 @@ Adding **Server Assistant** takes about 60 seconds — the wizard does the rest.
 
 </div>
 
-<figure class="media-frame setup-shot">
-  <img src="{{ '/assets/screenshots/setup-wizard.webp' | relative_url }}" alt="The /setup wizard in Discord, showing the channel, role, and AI provider steps." loading="lazy">
-  <figcaption>The <code>/setup</code> wizard walks you through channels, roles, and AI in three short steps.</figcaption>
-</figure>
+<div class="setup-shot">
+  <div class="dc">
+    <div class="dc-row">
+      <img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy">
+      <div class="dc-body">
+        <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">/setup · step 2 of 3</span></div>
+        <div class="dc-embed blue">
+          <div class="dc-title">🧭 Setup — Roles</div>
+          <div class="dc-desc">Map your existing roles to the bot's permission tiers. Add custom tiers later in <code>/settings</code>.</div>
+          <div class="dc-fname">Admin tier</div><div class="dc-fval">@Admin · @Staff</div>
+          <div class="dc-fname">Moderator tier</div><div class="dc-fval">@Mod · @Trial Mod</div>
+          <div class="dc-foot">Owner tier is always you · next: AI provider →</div>
+          <div class="dc-btns"><span class="dc-btn grey">← Back</span><span class="dc-btn blurple">Next ▸</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="font-size:.8rem;color:#4a5568;text-align:center;margin-top:.5rem;">Channels, roles, AI — three short steps.</div>
+</div>
 
 </div>
 

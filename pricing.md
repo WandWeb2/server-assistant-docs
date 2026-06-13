@@ -19,6 +19,15 @@ All prices in **USD**. Tax is added at checkout based on your billing region (St
 
 These never count against any token allowance:
 
+<style>
+.free-cols { columns: 2; column-gap: 2rem; margin: .8rem 0; }
+.free-cols ul { margin: 0; padding-left: 1.1rem; }
+.free-cols li { break-inside: avoid; margin-bottom: .45rem; font-size: .92rem; line-height: 1.45; }
+@media (max-width: 640px) { .free-cols { columns: 1; } }
+</style>
+
+<div class="free-cols" markdown="1">
+
 - **Slash + text commands** — `/warn`, `/mute`, `/kick`, `/ban`, `/purge`, and all moderation tools
 - **Baseline admin essentials** — `/role add` / `/role remove`, `/tempban` (timed bans, persists across restarts), `/lockdown start` / `/lockdown end` (server-wide channel lock with exact-prior-perm restore)
 - **AutoMod** — filter packs, custom regex, punishment ladder, link blocklist, anti-spam
@@ -35,6 +44,8 @@ These never count against any token allowance:
 - **Snippets + scheduled reminders**
 - **`/imagine`** AI image generation — the free trial covers ~30 images (30s/guild cooldown); **unlimited on Premium** (no cooldown), or bring your own image key
 - **Ticket Panels (core)** — panel embed, private ticket channels, one intake question, `.txt` transcripts on close, `/tickets close`
+
+</div>
 
 ---
 

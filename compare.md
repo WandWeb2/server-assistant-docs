@@ -15,6 +15,10 @@ description: Honest feature comparisons — Server Assistant vs the bots you mig
   color: #333;
 }
 .compare-hero p { margin: 0.3rem 0; }
+.compare-hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.5rem 0 2rem; }
+.compare-hero-grid .hero-card { padding: 1.1rem 1.3rem; border-left: 4px solid #3498db; background: #eef5fb; border-radius: 8px; color: #333; }
+.compare-hero-grid .hero-card p { margin: 0; font-size: .95rem; line-height: 1.5; }
+@media (max-width: 640px) { .compare-hero-grid { grid-template-columns: 1fr; } }
 
 .compare-block {
   margin: 2.5rem 0;
@@ -83,9 +87,13 @@ description: Honest feature comparisons — Server Assistant vs the bots you mig
 
 # 🤝 How Server Assistant compares
 
-<div class="compare-hero">
-  <p>📌 <strong>Honest framing.</strong> No bot is the right pick for every server. The pages below show where each tool genuinely wins — including the cases where you should pick <em>them</em> over us.</p>
-  <p>🔍 <strong>Feature comparisons only.</strong> We don't grade websites or marketing — only what the bots actually do once installed.</p>
+<div class="compare-hero-grid">
+  <div class="hero-card">
+    <p>📌 <strong>Honest framing.</strong> No bot is the right pick for every server. The pages below show where each tool genuinely wins — including the cases where you should pick <em>them</em> over us.</p>
+  </div>
+  <div class="hero-card">
+    <p>🔍 <strong>Feature comparisons only.</strong> We don't grade websites or marketing — only what the bots actually do once installed.</p>
+  </div>
 </div>
 
 ## Server Assistant vs Civora
