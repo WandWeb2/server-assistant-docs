@@ -1,0 +1,36 @@
+{%- comment -%}
+  Injected into <head> via Minima's custom-head hook.
+  - Favicons (so search/tabs show the logo, not a generic globe).
+  - WebSite + Organization structured data so Google shows "Server Assistant"
+    as the site name and uses our logo instead of "GitHub Pages documentation".
+{%- endcomment -%}
+
+<link rel="icon" type="image/png" sizes="any" href="{{ '/assets/logo.png' | relative_url }}">
+<link rel="icon" type="image/webp" href="{{ '/assets/logo.webp' | relative_url }}">
+<link rel="apple-touch-icon" href="{{ '/assets/logo.png' | relative_url }}">
+<link rel="shortcut icon" href="{{ '/assets/logo.png' | relative_url }}">
+<meta name="application-name" content="Server Assistant">
+<meta name="apple-mobile-web-app-title" content="Server Assistant">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Server Assistant",
+  "alternateName": "Server Assistant — Discord moderation bot",
+  "url": "{{ site.url }}{{ site.baseurl }}/"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Server Assistant",
+  "url": "{{ site.url }}{{ site.baseurl }}/",
+  "logo": "{{ site.url }}{{ site.baseurl }}/assets/logo.png",
+  "sameAs": [
+    "https://top.gg/bot/1278486617375510570",
+    "https://discordbotlist.com/bots/server-assistant"
+  ]
+}
+</script>
