@@ -11,6 +11,8 @@ Adding **Server Assistant** takes about 60 seconds — the wizard does the rest.
 
 > ⚠️ Only the **Discord-native server owner** can run `/setup` — a hard safety check so admins can't escalate their own permissions.
 
+> ⚡ **In a hurry?** Run `/autopilot` and the bot detects and applies a full sensible config in one command. It even DMs the owner a one-tap **Apply** proposal the moment it joins — so you can be configured before you open `/setup` at all.
+
 <style>
 .steps { display: grid; gap: 1rem; margin: 1.2rem 0 1.6rem; }
 .step { display: grid; grid-template-columns: 56px 1fr; gap: 1rem; align-items: start; background: rgba(255,255,255,0.55); border: 1px solid rgba(31,38,135,0.15); border-radius: 14px; padding: 1.1rem 1.2rem; box-shadow: 0 4px 18px rgba(31,38,135,0.08); }
@@ -44,11 +46,12 @@ Adding **Server Assistant** takes about 60 seconds — the wizard does the rest.
 
   <div class="step"><div class="step-n">2</div>
     <div class="step-body">
-      <h3>Run <code>/setup</code> — three short steps</h3>
-      <p><strong>Channels.</strong> Pick a <em>staff-chat</em> (the bot listens for natural-language commands here) and a <em>log channel</em> (audit-trail embeds). Keep both private/staff-only.</p>
-      <p><strong>Roles.</strong> Map existing Discord roles to the bot's tiers — <strong>Owner / Admin / Moderator</strong>. The Discord-native owner always holds Owner tier implicitly; add custom tiers later in <code>/settings → Role Tiers</code>.</p>
-      <p><strong>AI provider (optional).</strong> Three modes — <strong>🆓 host's shared key</strong> (rate-limited, default), <strong>🔑 your own key</strong> (xAI Grok or OpenAI; encrypted, no shared limits), or <strong>⏭️ Skip AI</strong>. Change anytime via <code>/ai-config</code>.</p>
-      <p>Hit <strong>Finish Setup</strong>. The bot saves and auto-posts a 5-message walkthrough to staff-chat covering all three ways to use it.</p>
+      <h3>Run <code>/setup</code> — the wizard does the rest</h3>
+      <p>The bot <strong>auto-detects</strong> sensible channels and roles when it joins, so most of the wizard is just confirming. Missing a permission it needs? <code>/setup</code> shows a <strong>one-click fix-it screen first</strong> — so it never <em>looks</em> set up while quietly not working.</p>
+      <p><strong>① Channels.</strong> Pick a <em>staff-chat</em> (the bot listens for plain-language commands here) and a <em>log channel</em> (audit-trail embeds) — or let the bot <strong>create them for you</strong>. Keep both staff-only.</p>
+      <p><strong>② Roles.</strong> Map your roles to <strong>Owner / Admin / Moderator</strong> tiers — pre-filled from what it detected. Add custom tiers later in <code>/settings → Role Tiers</code>.</p>
+      <p><strong>③ Server type + AI.</strong> Pick your community — <strong>🎮 Gaming · 🎨 Creator · 🌸 Anime · 💰 Crypto · 📚 Education · 🔞 NSFW · 🌐 General</strong> — and the bot tunes AutoMod, the punishment ladder, and anti-raid sensitivity to fit. It's pre-selected from your server's name (General by default; pick <em>“set it up myself”</em> to skip). Then choose your AI provider: <strong>🆓 host's shared key</strong>, <strong>🔑 your own key</strong>, or <strong>⏭️ skip AI</strong>.</p>
+      <p>Hit <strong>Finish</strong>. The bot saves, applies your server-type tuning, and posts a short walkthrough to staff-chat.</p>
     </div>
   </div>
 
@@ -79,17 +82,17 @@ Adding **Server Assistant** takes about 60 seconds — the wizard does the rest.
       <div class="dc-body">
         <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">/setup · step 2 of 3</span></div>
         <div class="dc-embed blue">
-          <div class="dc-title">🧭 Setup — Roles</div>
-          <div class="dc-desc">Map your existing roles to the bot's permission tiers. Add custom tiers later in <code>/settings</code>.</div>
-          <div class="dc-fname">Admin tier</div><div class="dc-fval">@Admin · @Staff</div>
-          <div class="dc-fname">Moderator tier</div><div class="dc-fval">@Mod · @Trial Mod</div>
-          <div class="dc-foot">Owner tier is always you · next: AI provider →</div>
-          <div class="dc-btns"><span class="dc-btn grey">← Back</span><span class="dc-btn blurple">Next ▸</span></div>
+          <div class="dc-title">🧭 Setup — Server type + AI</div>
+          <div class="dc-desc">Tune moderation to fit your community — we pre-selected a best guess from your server's name.</div>
+          <div class="dc-fname">Server type</div><div class="dc-fval">🎮 Gaming — anti-scam AutoMod · standard ladder · tighter anti-raid</div>
+          <div class="dc-fname">AI provider</div><div class="dc-fval">🆓 Host's shared key · 150K-token free trial</div>
+          <div class="dc-foot">Change anything later in /settings</div>
+          <div class="dc-btns"><span class="dc-btn grey">← Back</span><span class="dc-btn green">Finish ✓</span></div>
         </div>
       </div>
     </div>
   </div>
-  <div style="font-size:.8rem;color:#aab2c5;text-align:center;margin-top:.5rem;">Channels, roles, AI — three short steps.</div>
+  <div style="font-size:.8rem;color:#aab2c5;text-align:center;margin-top:.5rem;">Channels · roles · server type + AI.</div>
 </div>
 
 </div>

@@ -181,11 +181,14 @@ The `undo` command reverses your most recent reversible action.
 | Command | Description |
 |---------|-------------|
 | `/setup` | Run the initial setup wizard (owner only) |
+| `/autopilot` | Detect and apply a sensible config automatically (owner only) |
 | `/settings` | Open the customisation hub (owner / admin) |
 | `/automod` | Configure auto-moderation (admin and above) |
 | `/onboarding` | Configure new-member welcome DMs |
 | `/snippets` | Manage canned responses |
 | `/ai-config` | Configure AI provider/key (owner only) |
+| `/sai` | *(Premium)* Chat with Server Assistant's intelligence to tune your bot — *formerly `/concierge`* |
+| `/privacy` | Manage what the bot is allowed to read |
 | `/invite` | Get the bot's invite URL |
 
 ---
@@ -233,7 +236,10 @@ Type `/` anywhere to see autocomplete:
 | `/onboarding` | Configure welcome DMs |
 | `/snippets` | Manage canned responses |
 | `/ai-config` | Configure AI provider |
-| `/imagine <prompt>` | AI image generation |
+| `/autopilot` | Let Server Assistant detect and apply a sensible config automatically |
+| `/sai` | *(Premium)* Chat with Server Assistant's intelligence to tune your bot *(formerly `/concierge`)* |
+| `/privacy` | Manage what the bot is allowed to read (privacy panel) |
+| `/imagine <prompt>` *(aliases `/image`, `/img`)* | AI image generation |
 | `/info <user>` | User profile (incl. Threat Score if enabled) |
 | `/warn <user> <reason>` | Issue a warning |
 | `/mute <user> <minutes> [reason]` | Time out a user |
@@ -244,6 +250,7 @@ Type `/` anywhere to see autocomplete:
 | `/softban <user> [reason]` | Ban + unban to clear messages |
 | `/tempban <user> <duration> [reason] [delete_days]` | Timed ban that auto-unbans (e.g. `7d`, `2h`, `1d12h`; 1m–28d) |
 | `/purge <count> [user]` | Bulk-delete messages here *(may need approval)* |
+| `/smartpurge` | AI cleanup — removes only genuinely problematic messages, keeps the rest |
 | `/slowmode <seconds> [channel]` | Set channel slowmode |
 | `/lock [channel]` / `/unlock [channel]` | Lock / unlock a channel |
 | `/lockdown start` / `/lockdown end` | Lock every channel at once, then restore exact prior permissions |
@@ -258,7 +265,9 @@ Type `/` anywhere to see autocomplete:
 | `/stats` | Server statistics |
 | `/timezone` | Set personal timezone |
 | `/schedule` | Schedule a reminder via modal |
+| `/retro` | Generate this week's mod-team retrospective now |
 | `/help` | Interactive button-driven help |
+| `/whatsnew` | See what's new in Server Assistant |
 | `/premium` | See your server's premium status + what's included |
 | `/vote` | Vote for the bot (Top.gg + Discord Bot List) |
 | `/invite` | Get the bot's invite URL |
@@ -304,12 +313,15 @@ Each role you configure in `/settings → Role Tiers` has **capabilities** (what
 <tr><td>/unban</td><td class="perm-n">—</td><td class="perm-y">✓</td><td class="perm-y">✓</td></tr>
 <tr><td>/role <em>(or Manage Roles)</em></td><td class="perm-n">—</td><td class="perm-y">✓</td><td class="perm-y">✓</td></tr>
 <tr><td>/altguard <em>(Manage Server)</em></td><td class="perm-n">—</td><td class="perm-y">✓</td><td class="perm-y">✓</td></tr>
-<tr><td><strong>/purge</strong> <em>(needs approval)</em></td><td class="perm-n">—</td><td class="perm-w">⚠ approval</td><td class="perm-y">✓ direct</td></tr>
+<tr><td><strong>/purge, /smartpurge</strong> <em>(needs approval)</em></td><td class="perm-n">—</td><td class="perm-w">⚠ approval</td><td class="perm-y">✓ direct</td></tr>
 <tr><td>/slowmode, /lock, /unlock, /lockdown, /nick</td><td class="perm-y">✓</td><td class="perm-y">✓</td><td class="perm-y">✓</td></tr>
 <tr><td>/onboarding, /snippets, /automod, /schedule</td><td class="perm-n">—</td><td class="perm-y">✓</td><td class="perm-y">✓</td></tr>
-<tr><td>/imagine, /vote, /premium, /invite</td><td class="perm-y">✓</td><td class="perm-y">✓</td><td class="perm-y">✓</td></tr>
+<tr><td>/retro</td><td class="perm-n">—</td><td class="perm-y">✓</td><td class="perm-y">✓</td></tr>
+<tr><td>/imagine <em>(or /image, /img)</em>, /vote, /premium, /invite</td><td class="perm-y">✓</td><td class="perm-y">✓</td><td class="perm-y">✓</td></tr>
+<tr><td>/whatsnew, /support <em>(/feedback)</em>, /privacy</td><td class="perm-y">✓</td><td class="perm-y">✓</td><td class="perm-y">✓</td></tr>
+<tr><td>/sai <em>(Premium)</em></td><td class="perm-n">—</td><td class="perm-y">✓</td><td class="perm-y">✓</td></tr>
 <tr><td>/settings</td><td class="perm-n">—</td><td class="perm-y">✓</td><td class="perm-y">✓</td></tr>
-<tr><td>/setup, /ai-config</td><td class="perm-n">—</td><td class="perm-n">—</td><td class="perm-y">✓</td></tr>
+<tr><td>/setup, /autopilot, /ai-config</td><td class="perm-n">—</td><td class="perm-n">—</td><td class="perm-y">✓</td></tr>
 <tr><td>/tickets setup, /tickets panel, /tickets questions</td><td class="perm-n">—</td><td class="perm-y">✓</td><td class="perm-y">✓</td></tr>
 <tr><td>/tickets close</td><td class="perm-y">✓</td><td class="perm-y">✓</td><td class="perm-y">✓</td></tr>
 <tr><td>/tickets add (Premium)</td><td class="perm-n">—</td><td class="perm-y">✓</td><td class="perm-y">✓</td></tr>

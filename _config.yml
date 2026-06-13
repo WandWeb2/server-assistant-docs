@@ -68,6 +68,7 @@ defaults:
 # Don't include drafts or other Jekyll noise in the build
 exclude:
   - README.md
+  - MAINTAINING.md
   - Gemfile
   - Gemfile.lock
   - .gitignore

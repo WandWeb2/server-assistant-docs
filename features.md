@@ -115,6 +115,10 @@ AI features that watch your server's *health and behaviour* — **advisory by de
     <p><code>/softban</code> ban-then-unban to sweep messages without permanent removal. <code>/purge 50</code> or text <code>purge since 1pm</code> (your timezone; capped at Discord's 14-day limit).</p>
   </div>
   <div class="f-card">
+    <h4>🤖 Smart purge</h4>
+    <p><code>/smartpurge</code> — AI cleanup that removes only the genuinely problematic messages and <strong>keeps the rest</strong>, instead of clearing everything like a plain <code>/purge</code>.</p>
+  </div>
+  <div class="f-card">
     <h4>⏲️ Timed bans</h4>
     <p><code>/tempban @user 7d reason</code> bans for a set time — <code>30m</code>, <code>2h</code>, <code>7d</code>, <code>1w</code>, even <code>1d12h</code> (1 min–28 days) — then <strong>un-bans automatically</strong>. The timer survives restarts, and the lift is logged to your audit trail.</p>
   </div>
@@ -168,6 +172,47 @@ AutoMod runs on every non-staff message. Staff are completely exempt.
 - **Punishment ladder** — Gentle 5/10/20 · Standard 3/5/10 · Strict 2/3/5 (warns → action)
 - **Anti-spam** — auto on; 5+ duplicate messages in 5s = removed + warned
 - **User DM** — every AutoMod removal DMs the user *which rule fired* + their warning count. Staff see the full embed in the log channel either way.
+
+### 🧩 Server-type templates <span class="tier-badge tier-free">FREE</span>
+
+The final step of `/setup` is a **community type** picker that tunes moderation to the *kind* of server you run, instead of one-size-fits-all. Each profile applies a tuned combo of **AutoMod pack + punishment ladder + anti-raid sensitivity**.
+
+<div class="f-grid">
+  <div class="f-card">
+    <h4>🌐 General</h4>
+    <p>Balanced defaults for a mixed community. The fallback if nothing else fits.</p>
+  </div>
+  <div class="f-card">
+    <h4>🎮 Gaming</h4>
+    <p>Scams + slurs filtering that allows casual profanity, tuned for fast-moving chat.</p>
+  </div>
+  <div class="f-card">
+    <h4>🎨 Creator / Streamer</h4>
+    <p>Stricter anti-raid to weather follow-raids and shout-out spikes.</p>
+  </div>
+  <div class="f-card">
+    <h4>🌸 Anime / Fandom</h4>
+    <p>Community-friendly moderation tuned for high-energy fandom chat.</p>
+  </div>
+  <div class="f-card">
+    <h4>💰 Crypto / Trading</h4>
+    <p>Strict anti-scam, fast escalation, and tight anti-raid — the highest-pressure profile.</p>
+  </div>
+  <div class="f-card">
+    <h4>📚 Education / Study</h4>
+    <p>A gentle, warning-first ladder that leans toward coaching over punishment.</p>
+  </div>
+  <div class="f-card">
+    <h4>🔞 NSFW / 18+</h4>
+    <p>Stricter anti-raid sized for adult communities and the traffic they attract.</p>
+  </div>
+  <div class="f-card">
+    <h4>🛠️ Set it up myself</h4>
+    <p>Applies nothing — you keep full manual control and tune every knob yourself.</p>
+  </div>
+</div>
+
+It's **pre-selected from your server's name** and defaults to General. A template is applied **only on a fresh setup or a deliberate pick**, so re-running `/setup` never overwrites tuning you've changed. **Pulse and Threat Score are never auto-enabled by a template.**
 
 <div class="mock-pair">
   <div class="dc">
@@ -333,6 +378,15 @@ Logging isn't just for actions run through the bot:
 - **Tamper alerts.** Delete an entry from your log channel and the owner is notified automatically; the encrypted record stays intact.
 - **Optional locked log channel.** During `/autopilot` or `/setup`, opt in to a `#server-assistant-log` channel only the bot can post to — entries can't be deleted.
 - **Native-action coaching.** When staff moderate outside the bot, the log entry tips them to use Server Assistant next time (so it's reversible and logged consistently).
+
+### 🩺 Permission health check
+
+Catches the silent *"why did the bot stop working?"* failure after a channel is deleted or the bot's role is moved.
+
+- **Once a day, per server,** the bot verifies it still has what it needs: the **Manage Roles** permission, plus a **working (existing + postable) staff chat and log channel**.
+- If a later admin change broke any of them, the **server Owner gets a one-time DM** (with a channel-fallback `@owner` ping) naming exactly **what broke and how to fix it**.
+- **Idempotent and quiet:** it only notifies when the *set* of problems changes, and clears once healthy — no repeat pings.
+- **Read-only.** It checks and reports; it never changes your settings.
 
 ---
 
