@@ -13,6 +13,24 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 
 ---
 
+## v5.6.4 — Smarter staff-chat commands
+
+Server Assistant listens more carefully, and butts in a lot less.
+
+### Fixed
+
+- **No more reacting to ordinary words in conversation.** A message that simply *started* with a word like "Stop" (or "Die", "Move", "Check", "Send", "Role", "Note", "Welcome"…) could be mistaken for a command — most noticeably, "Stop…" got a "that action isn't permitted" reply. Now those blocked/system words only ever respond when you actually address the bot, and everyday words that happen to be commands ("move", "remove", "create", "delete", "check", "send", "say", "role", "note", "report", "invite", "welcome", "setup"…) only count as a command when they include a real target (an `@mention`). Genuine shorthand like `warn @user 30m`, `ban @user`, `purge 50`, or `slowmode 10` works exactly as before — and you can always ask directly: `@Assistant send the rules to #general`.
+- **Casual sentences aren't taken literally.** Phrases like "create a poll for movie night" or "send help lol" are now understood as conversation instead of triggering the matching action.
+- **The "Post welcome to staff chat" button no longer errors out.** At the end of `/setup` it could occasionally fail with an "interaction expired" message; it now acknowledges instantly and posts reliably.
+- **A deleted log channel no longer causes repeated errors.** If your log channel is removed, the bot notices and stops trying to post there (set a new one via `/setup` or `/settings`) instead of erroring on every action.
+- **More complete moderation logging.** Fixed an internal hiccup that could skip some audit-log entries (e.g. certain native timeouts), so they now appear consistently.
+
+### Changed
+
+- **Roadmap poll links land on the right feature.** The live vote re-orders cards as results come in, which could previously scroll a poll link to the wrong card; links now reliably scroll to, expand, and highlight the exact feature you tapped.
+
+---
+
 ## v5.6.3 — Community feature polls
 
 Your voice now decides what gets built next.
