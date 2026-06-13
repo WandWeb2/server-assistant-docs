@@ -13,6 +13,16 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 
 ---
 
+## v5.6.5 — Reliable "your channel is gone" alerts
+
+If a channel Server Assistant relies on disappears, the right people now hear about it.
+
+### Fixed
+
+- **A deleted staff chat is reliably detected — and flagged to the right people.** If your configured staff chat is removed, the bot now notices promptly (even catching cases its daily self-check used to miss) and posts a heads-up in a visible channel that tags **both the owner and your admin roles** — not just the owner — so whoever can repoint it in `/settings` actually sees it. (Reminder: the bot never changes your channel settings on its own — it only flags what needs your attention.)
+
+---
+
 ## v5.6.4 — Smarter staff-chat commands
 
 Server Assistant listens more carefully, and butts in a lot less.
