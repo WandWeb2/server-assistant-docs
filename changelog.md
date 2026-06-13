@@ -13,6 +13,16 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 
 ---
 
+## v5.6.8 — Mid-cycle servers get a vote
+
+Joining partway through a community vote no longer means missing out.
+
+### Added
+
+- **Servers that join during an open community poll now get it automatically.** When you finish setup while a feature vote is running, the poll (and its live results card) is delivered straight to your staff chat — so newer servers still get a say in the round they joined during, not just the next one. Once a poll closes, nothing is sent.
+
+---
+
 ## v5.6.5 — Reliable "your channel is gone" alerts
 
 If a channel Server Assistant relies on disappears, the right people now hear about it.
