@@ -896,6 +896,32 @@ What ships is what gets requested most clearly. Vague *"add more features"* feed
       var c = box.querySelector('.lp-pct[data-i="' + i + '"]');
       if (c) c.textContent = pct + "% (" + n + ")";
     });
+    // Re-sort the rows most→least votes, live, with a FLIP slide so a feature
+    // climbing the leaderboard visibly moves up. Ties hold answer order so
+    // nothing jitters.
+    var meta = box.querySelector("#lp-meta");
+    var rowEls = Array.prototype.slice.call(box.querySelectorAll(".lp-row"));
+    var firstTop = {};
+    rowEls.forEach(function (r) { firstTop[r.querySelector(".lp-fill").getAttribute("data-i")] = r.getBoundingClientRect().top; });
+    rowEls.sort(function (a, b) {
+      var ai = Number(a.querySelector(".lp-fill").getAttribute("data-i"));
+      var bi = Number(b.querySelector(".lp-fill").getAttribute("data-i"));
+      var d = (Number(t[bi]) || 0) - (Number(t[ai]) || 0);
+      return d !== 0 ? d : ai - bi;
+    });
+    rowEls.forEach(function (r) { box.insertBefore(r, meta); });
+    rowEls.forEach(function (r) {
+      var key = r.querySelector(".lp-fill").getAttribute("data-i");
+      var dy = firstTop[key] - r.getBoundingClientRect().top;
+      if (dy) {
+        r.style.transition = "none";
+        r.style.transform = "translateY(" + dy + "px)";
+        requestAnimationFrame(function () {
+          r.style.transition = "transform .6s ease";
+          r.style.transform = "";
+        });
+      }
+    });
     var closes = "";
     if (p.status === "active" && p.closes_at) {
       var d = new Date(p.closes_at);
