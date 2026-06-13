@@ -857,20 +857,63 @@ What ships is what gets requested most clearly. Vague *"add more features"* feed
 - [Support]({{ site.url }}{{ site.baseurl }}/support/) to ask questions or request features
 
 
+<style>
+  /* Flash highlight when a community-poll deep-link focuses a feature card. */
+  @keyframes cardFlash {
+    0%   { box-shadow: 0 0 0 0 rgba(139, 150, 255, 0); }
+    12%  { box-shadow: 0 0 0 4px rgba(139, 150, 255, 0.65); }
+    100% { box-shadow: 0 0 0 0 rgba(139, 150, 255, 0); }
+  }
+  details.card.card-flash { animation: cardFlash 2.2s ease-out 1; border-radius: 10px; }
+</style>
+
 <script>
 (function () {
-  // Deep-links from community-poll embeds: #card-xyz opens that card.
-  function openCardFromHash() {
-    var id = location.hash.replace(/^#/, "");
-    if (!id) return;
+  // Deep-links from community-poll embeds (e.g. #card-leveling-xp). The poll
+  // cards in the gold/purple bands get RE-SORTED live from vote tallies AFTER
+  // the page loads, so a native #anchor scroll lands on whatever card slid into
+  // that slot — the wrong feature. Instead we open the target <details>, scroll
+  // it to centre, and flash it; for live poll cards we wait until the bands
+  // have re-sorted (see renderBands below) so we land on the FINAL position.
+  function focusCard(id) {
+    if (!id) return false;
     var el = document.getElementById(id);
-    if (el && el.tagName === "DETAILS") {
-      el.open = true;
-      el.scrollIntoView({ block: "center" });
+    if (!el || el.tagName !== "DETAILS") {
+      // Unknown/stale target: at least bring the feature cards into view so a
+      // visitor is never stranded at the wrong spot.
+      var fb = document.getElementById("band-gold") || document.getElementById("band-purple");
+      if (fb) fb.scrollIntoView({ behavior: "smooth", block: "start" });
+      return false;
     }
+    el.open = true;
+    el.scrollIntoView({ behavior: "smooth", block: "center" });
+    el.classList.remove("card-flash");
+    void el.offsetWidth;                 // reflow so the flash can retrigger
+    el.classList.add("card-flash");
+    window.setTimeout(function () { el.classList.remove("card-flash"); }, 2400);
+    return true;
   }
-  window.addEventListener("hashchange", openCardFromHash);
-  openCardFromHash();
+  window.__focusPollCard = focusCard;
+
+  function hashId() { return decodeURIComponent(location.hash.replace(/^#/, "")); }
+
+  // In-page hash changes always focus immediately.
+  window.addEventListener("hashchange", function () { focusCard(hashId()); });
+
+  var id = hashId();
+  if (id) {
+    var el = document.getElementById(id);
+    var isPollCard = !!(el && el.getAttribute && el.getAttribute("data-poll-answer") !== null);
+    if (!isPollCard) {
+      // Static card (or no live poll): nothing will move it — focus now.
+      window.setTimeout(function () { window.__deepLinkDone = true; focusCard(id); }, 60);
+    }
+    // Live poll cards are focused by the vote renderer after its first re-sort.
+    // Fallback here in case poll data never loads.
+    window.setTimeout(function () {
+      if (!window.__deepLinkDone) { window.__deepLinkDone = true; focusCard(id); }
+    }, 2500);
+  }
 })();
 </script>
 
@@ -1045,6 +1088,18 @@ What ships is what gets requested most clearly. Vague *"add more features"* feed
         });
       }
     });
+
+    // Community-poll deep-link: once, after the FIRST live re-sort, focus the
+    // embed-linked card at its FINAL (post-sort) position so links never land
+    // on the wrong slot. Guarded so the 60s refreshes don't re-yank the view.
+    if (!window.__deepLinkDone) {
+      window.__deepLinkDone = true;
+      var hid = location.hash.replace(/^#/, "");
+      if (hid && window.__focusPollCard) {
+        // Wait out the .6s FLIP transition so we scroll to the settled position.
+        window.setTimeout(function () { window.__focusPollCard(decodeURIComponent(hid)); }, 680);
+      }
+    }
   }
 
   // Updates are anchored to wall-clock minute boundaries (the same 60s
