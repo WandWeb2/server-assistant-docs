@@ -391,7 +391,7 @@ details.safeguards li { margin-bottom: 0.2rem; }
 .lp-q { color: #e6e9f0; }
 .lp-label a { color: #cdd4e3; }
 .lp-track { background: rgba(255, 255, 255, 0.12); height: 16px; }
-.lp-fill { background: linear-gradient(90deg, #1e8449, #2ecc71); }
+.lp-fill { background: linear-gradient(90deg, #6c3483, #a569bd); }
 .lp-fill.gold { background: linear-gradient(90deg, #b7950b, #f1c40f); }
 .lp-pct { color: #cdd4e3; }
 .lp-meta { color: #aab2c5; }
@@ -888,7 +888,7 @@ What ships is what gets requested most clearly. Vague *"add more features"* feed
     p.answers.forEach(function (a, i) { var v = Number(t[i]) || 0; if (v > max) max = v; });
     // The currently-winning features (they'd take the gold band / become the
     // next release) get gold bars. Tie policy: a feature tied for the final
-    // slot does NOT lock it — those bars stay green (they'd carry to the next
+    // slot does NOT lock it — those bars stay purple (they'd carry to the next
     // round), so a contested 3rd slot is visible and motivates breaking the tie.
     var gold = {};
     if (total > 0) {
