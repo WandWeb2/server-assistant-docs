@@ -860,11 +860,11 @@ What ships is what gets requested most clearly. Vague *"add more features"* feed
 <style>
   /* Flash highlight when a community-poll deep-link focuses a feature card. */
   @keyframes cardFlash {
-    0%   { box-shadow: 0 0 0 0 rgba(139, 150, 255, 0); }
-    12%  { box-shadow: 0 0 0 4px rgba(139, 150, 255, 0.65); }
-    100% { box-shadow: 0 0 0 0 rgba(139, 150, 255, 0); }
+    0%, 100% { box-shadow: 0 0 0 0 rgba(139, 150, 255, 0); }
+    50%      { box-shadow: 0 0 0 4px rgba(139, 150, 255, 0.65); }
   }
-  details.card.card-flash { animation: cardFlash 2.2s ease-out 1; border-radius: 10px; }
+  /* Three quick strobes (~0.5s each). */
+  details.card.card-flash { animation: cardFlash 0.5s ease-in-out 3; border-radius: 10px; }
 </style>
 
 <script>
@@ -890,7 +890,7 @@ What ships is what gets requested most clearly. Vague *"add more features"* feed
     el.classList.remove("card-flash");
     void el.offsetWidth;                 // reflow so the flash can retrigger
     el.classList.add("card-flash");
-    window.setTimeout(function () { el.classList.remove("card-flash"); }, 2400);
+    window.setTimeout(function () { el.classList.remove("card-flash"); }, 1700);
     return true;
   }
   window.__focusPollCard = focusCard;
