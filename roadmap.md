@@ -875,11 +875,17 @@ What ships is what gets requested most clearly. Vague *"add more features"* feed
                       '<div class="lp-refresh" id="lp-refresh"></div>';
       box.setAttribute("data-built", String(p.answers.length));
     }
+    // Bar width is RELATIVE to the leading option (leader = full bar) so the
+    // gaps are visible even when every option sits around 10%. The label still
+    // shows the true share of all votes.
+    var max = 0;
+    p.answers.forEach(function (a, i) { var v = Number(t[i]) || 0; if (v > max) max = v; });
     p.answers.forEach(function (a, i) {
       var n = Number(t[i]) || 0;
-      var pct = total ? Math.round(n / total * 100) : 0;
+      var pct = total ? Math.round(n / total * 100) : 0;   // true share — shown in the label
+      var rel = max ? Math.round(n / max * 100) : 0;        // relative to leader — drives the bar
       var f = box.querySelector('.lp-fill[data-i="' + i + '"]');
-      if (f) f.style.width = pct + "%";
+      if (f) f.style.width = rel + "%";
       var c = box.querySelector('.lp-pct[data-i="' + i + '"]');
       if (c) c.textContent = pct + "% (" + n + ")";
     });
