@@ -863,8 +863,8 @@ What ships is what gets requested most clearly. Vague *"add more features"* feed
     0%, 100% { box-shadow: 0 0 0 0 rgba(139, 150, 255, 0); }
     50%      { box-shadow: 0 0 0 4px rgba(139, 150, 255, 0.65); }
   }
-  /* Three slow strobes (~1s each). */
-  details.card.card-flash { animation: cardFlash 1s ease-in-out 3; border-radius: 10px; }
+  /* Five slow strobes (~1s each). */
+  details.card.card-flash { animation: cardFlash 1s ease-in-out 5; border-radius: 10px; }
 </style>
 
 <script>
@@ -875,28 +875,6 @@ What ships is what gets requested most clearly. Vague *"add more features"* feed
   // that slot — the wrong feature. Instead we open the target <details>, scroll
   // it to centre, and flash it; for live poll cards we wait until the bands
   // have re-sorted (see renderBands below) so we land on the FINAL position.
-  // Custom eased scroll so we control the SPEED (native behavior:"smooth" isn't
-  // adjustable). block "center" | "start". duration in ms.
-  function animatedScrollTo(el, block, duration) {
-    var rect = el.getBoundingClientRect();
-    var top = (block === "center")
-      ? window.pageYOffset + rect.top - (window.innerHeight - rect.height) / 2
-      : window.pageYOffset + rect.top - 24;
-    var maxY = Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
-    top = Math.max(0, Math.min(top, maxY));
-    var startY = window.pageYOffset, diff = top - startY;
-    if (Math.abs(diff) < 2) return;
-    var startTs = null;
-    function ease(t) { return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t; } // easeInOutQuad
-    function step(ts) {
-      if (startTs === null) startTs = ts;
-      var p = Math.min(1, (ts - startTs) / duration);
-      window.scrollTo(0, startY + diff * ease(p));
-      if (p < 1) requestAnimationFrame(step);
-    }
-    requestAnimationFrame(step);
-  }
-
   function focusCard(id) {
     if (!id) return false;
     var el = document.getElementById(id);
@@ -904,15 +882,15 @@ What ships is what gets requested most clearly. Vague *"add more features"* feed
       // Unknown/stale target: at least bring the feature cards into view so a
       // visitor is never stranded at the wrong spot.
       var fb = document.getElementById("band-gold") || document.getElementById("band-purple");
-      if (fb) animatedScrollTo(fb, "start", 1400);
+      if (fb) fb.scrollIntoView({ behavior: "smooth", block: "start" });
       return false;
     }
     el.open = true;
-    animatedScrollTo(el, "center", 1400);   // slow, eased scroll
+    el.scrollIntoView({ behavior: "smooth", block: "center" });
     el.classList.remove("card-flash");
     void el.offsetWidth;                 // reflow so the flash can retrigger
     el.classList.add("card-flash");
-    window.setTimeout(function () { el.classList.remove("card-flash"); }, 3200);
+    window.setTimeout(function () { el.classList.remove("card-flash"); }, 5200);
     return true;
   }
   window.__focusPollCard = focusCard;
