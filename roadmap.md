@@ -24,7 +24,7 @@ description: Server Assistant's product roadmap — what's in development, what'
 .lp-label { flex: 0 0 42%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .lp-label a { color: inherit; text-decoration: underline dotted; }
 .lp-track { flex: 1; background: #dcebe0; border-radius: 999px; height: 10px; overflow: hidden; }
-.lp-fill { display: block; height: 100%; background: linear-gradient(90deg, #1e8449, #2ecc71); border-radius: 999px; transition: width .8s ease; }
+.lp-fill { display: block; height: 100%; background: linear-gradient(90deg, #1e8449, #2ecc71); border-radius: 999px; transition: width .8s ease, background .4s ease; }
 .lp-pct { flex: 0 0 70px; text-align: right; font-variant-numeric: tabular-nums; font-size: .8rem; }
 .lp-meta { margin-top: .55rem; font-size: .8rem; color: #555; }
 .lp-refresh { margin-top: .25rem; font-size: .72rem; color: #7a8a7d; font-variant-numeric: tabular-nums; }
@@ -392,6 +392,7 @@ details.safeguards li { margin-bottom: 0.2rem; }
 .lp-label a { color: #cdd4e3; }
 .lp-track { background: rgba(255, 255, 255, 0.12); height: 16px; }
 .lp-fill { background: linear-gradient(90deg, #1e8449, #2ecc71); }
+.lp-fill.gold { background: linear-gradient(90deg, #b7950b, #f1c40f); }
 .lp-pct { color: #cdd4e3; }
 .lp-meta { color: #aab2c5; }
 .lp-refresh { color: #8b93a7; }
@@ -880,12 +881,18 @@ What ships is what gets requested most clearly. Vague *"add more features"* feed
     // shows the true share of all votes.
     var max = 0;
     p.answers.forEach(function (a, i) { var v = Number(t[i]) || 0; if (v > max) max = v; });
+    // The top 3 vote-getters are "currently winning" (they'd take the gold band /
+    // become the next release) — colour those bars gold to match.
+    var gold = {};
+    p.answers.map(function (a, i) { return { i: i, n: Number(t[i]) || 0 }; })
+             .sort(function (x, y) { return y.n - x.n; })
+             .slice(0, 3).forEach(function (r) { if (r.n > 0) gold[r.i] = true; });
     p.answers.forEach(function (a, i) {
       var n = Number(t[i]) || 0;
       var pct = total ? Math.round(n / total * 100) : 0;   // true share — shown in the label
       var rel = max ? Math.round(n / max * 100) : 0;        // relative to leader — drives the bar
       var f = box.querySelector('.lp-fill[data-i="' + i + '"]');
-      if (f) f.style.width = rel + "%";
+      if (f) { f.style.width = rel + "%"; f.classList.toggle("gold", !!gold[i]); }
       var c = box.querySelector('.lp-pct[data-i="' + i + '"]');
       if (c) c.textContent = pct + "% (" + n + ")";
     });
