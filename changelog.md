@@ -27,6 +27,10 @@ Your portal at [serverassistant.wandweb.co](https://serverassistant.wandweb.co) 
 
 - The portal moved to its own home at **[serverassistant.wandweb.co](https://serverassistant.wandweb.co)** with a branded, installable, animated redesign.
 
+### Privacy
+
+- **Our [Privacy Policy]({{ site.url }}{{ site.baseurl }}/privacy/) was updated (June 14, 2026)** to match the new web portal and live insights. It now describes: what we store when staff **sign in to the portal** (your Discord ID, username, and which servers/roles you manage) and how portal **push notifications** work; that we read **presence and voice state only to show aggregate counts** ("42 online · 6 in voice") — never which member, never which channel, only the running totals; and that the web portal and its API are the service's only public endpoints (behind TLS + Discord sign-in). Nothing changed about what the bot does inside Discord — this simply documents the data handling the portal introduced.
+
 ---
 
 ## v5.6.17 — Your whole staff team can use the web portal
