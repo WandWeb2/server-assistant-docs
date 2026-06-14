@@ -47,6 +47,7 @@ header_pages:
   - pricing.md
   - compare.md
   - roadmap.md
+  - portal.md
 
 # Pretty URLs: /privacy/ instead of /privacy.html
 permalink: /:title/
