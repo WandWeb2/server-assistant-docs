@@ -92,12 +92,12 @@ These read messages or generate content:
 | **Active Threat Score** *(score-driven actions)* | — | ✅ | ✅ |
 | **🌟 Decision explainer & guided appeals** | — | ✅ | ✅ |
 | **🎭 Reaction roles** *(`/rolepanel`)* | — | ✅ | ✅ |
-| **⌨️ Custom slash commands** *(`/customcmd`)* | — | ✅ | ✅ |
+| **⌨️ Custom slash commands** *(`/customcmd`)* | — | — | ✅ |
 | **❓ AI Q&A from your FAQ** *(`/faq`)* | — | ✅ | ✅ |
 | **🌐 Translation** *(`/translate`)* | — | ✅ | ✅ |
 | **🤝 Mediator** *(`/mediate`)* | — | ✅ | ✅ |
-| **💾 Server backup & restore** *(`/backup`)* | — | ✅ | ✅ |
-| **🎨 White-label branding** *(`/brand`)* | — | ✅ | ✅ |
+| **💾 Server backup & restore** *(`/backup`)* | — | — | ✅ |
+| **🎨 White-label branding** *(`/brand`)* | — | — | ✅ |
 | **Unlimited `/imagine`** *(no 30s cooldown)* | — | ✅ | ✅ |
 | **Ticket Panels — premium features** | — | ✅ | ✅ |
 | **All free features** | ✅ | ✅ | ✅ |
