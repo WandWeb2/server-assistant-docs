@@ -608,7 +608,7 @@ Where Server Assistant is heading. Priorities are decided by the people who run 
 
   <details class="card"><summary>🌟 Auto-translate (per-channel)<span class="premium-pill">💎 Premium</span></summary><span class="desc">On-demand or automatic translation for configured channels — per-language, per-channel rules so an international community can have an English channel, a Spanish channel, and a bilingual one without bots crossing wires. Differentiator over off-the-shelf translate bots: pairs with moderation context (won't translate AutoMod-deleted messages, surfaces tone shifts across language).</span></details>
 
-  <details class="card"><summary>🌟 White-label branding<span class="premium-pill">💎 Premium</span></summary><span class="desc">Fully replace the bot's identity per-server — your name, your avatar, your colour scheme, your support footer. No "Powered by Server Assistant" required. Differentiator: no other major moderation bot lets you fully rebrand.</span></details>
+  <details class="card"><summary>🌟 White-label branding<span class="premium-pill">💎 Premium</span></summary><span class="desc">Rebrand the bot for your server from a <code>/brand</code> wizard: a custom <strong>per-server nickname</strong>, your <strong>name + icon</strong> on the bot's embeds, your <strong>colour scheme</strong>, and your name in place of "Server Assistant" in footers. Discord only allows one global bot identity, so this rebrands the bot's <em>nickname and output</em> rather than the underlying account — a true per-server avatar/username swap would need a dedicated bot, which we'd look at for enterprise.</span></details>
 
   </div>
   </div>
