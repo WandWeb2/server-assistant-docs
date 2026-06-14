@@ -13,7 +13,7 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 
 ---
 
-## v5.7.0 — The web portal grows up
+## v5.6.25 — The web portal grows up
 
 Your portal at [serverassistant.wandweb.co](https://serverassistant.wandweb.co) went from a settings screen to a full command center. Run `/portal` to jump in.
 
