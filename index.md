@@ -24,7 +24,7 @@ image: /server-assistant-docs/assets/banner.jpeg
   "name": "Server Assistant",
   "applicationCategory": "Discord Bot",
   "operatingSystem": "Discord",
-  "description": "A Discord moderation bot that watches server health (Pulse daily digests), learns your staff's moderation decisions (self-trained AutoMod), reduces false positives with an AI second-opinion, gives banned members a structured one-reply appeal, catches ban-evading alts, and keeps an encrypted tamper-proof audit trail. AutoMod, anti-raid, verification, ticket panels, and AI image generation included.",
+  "description": "A Discord moderation bot that watches server health (Pulse daily digests), learns your staff's moderation decisions (self-trained AutoMod), reduces false positives with an AI second-opinion, gives banned members a structured appeal, catches ban-evading alts, and keeps an encrypted tamper-proof audit trail. Free AutoMod, anti-raid, verification, ticket panels and image generation, plus a Premium toolkit: reaction roles, custom slash commands, AI Q&A from your FAQ, translation, AI mediation, server backup & restore, and white-label branding.",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
   "url": "https://wandweb2.github.io/server-assistant-docs/",
   "image": "https://wandweb2.github.io/server-assistant-docs/assets/banner.jpeg",
@@ -291,8 +291,8 @@ image: /server-assistant-docs/assets/banner.jpeg
   <div class="feat-card">
     <h3>🎨 AI extras</h3>
     <ul>
-      <li><code>/imagine</code> image generation (free trial; unlimited on Premium)</li>
-      <li>Right-click <strong>Message Report</strong> for AI context</li>
+      <li><code>/imagine</code> images · 🌐 <code>/translate</code> · ❓ <code>/faq</code> Q&amp;A</li>
+      <li>Right-click <strong>Message Report</strong> &amp; <strong>Translate</strong></li>
       <li>Bring your own key, or use the host's</li>
     </ul>
   </div>
@@ -302,6 +302,14 @@ image: /server-assistant-docs/assets/banner.jpeg
       <li>Nine sub-wizards in <code>/settings</code></li>
       <li>Branding, role tiers, ladders, notifications</li>
       <li>Everything saves instantly — no code</li>
+    </ul>
+  </div>
+  <div class="feat-card">
+    <h3>💎 Premium toolkit</h3>
+    <ul>
+      <li>🎭 Reaction roles · ⌨️ custom <code>/commands</code></li>
+      <li>❓ FAQ Q&amp;A · 🌐 translation · 🤝 mediator</li>
+      <li>💾 Backup &amp; restore · 🎨 white-label branding</li>
     </ul>
   </div>
 </div>
