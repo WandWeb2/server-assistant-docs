@@ -429,11 +429,12 @@ Catches the silent *"why did the bot stop working?"* failure after a channel is 
 
 Manage your server from any browser — no Discord required. Sign in with Discord at **[serverassistant.wandweb.co](https://serverassistant.wandweb.co)** (or run `/portal` in your server for a private link), and you get a clean dashboard for everything:
 
+- **Insights** — expandable KPIs (members · mod actions · AI usage) with trend charts, a member-growth chart, **online / in-voice** counts, a **paginated activity log** (with real names), and your **Daily Pulse + Weekly mod recap**.
+- **Act from the web** — take moderation actions (warn/timeout/kick/ban/unban, per your role), and resolve **staff decisions** — ban appeals, AutoMod reviews, owner-approvals, raid lock-downs — from a "Needs input" strip, kept in sync with the Discord card.
+- **Install it + get notified** — add the portal to your home screen as an app, and turn on notifications to get a push the moment something needs your input.
 - **Settings** — every customisation, the same safe options as `/settings`, with sensible defaults shown inline.
-- **Moderation** — warn, time out, kick or ban by user ID, with a full audit trail back in your log channel.
-- **Insights** — AI token usage, a 30-day moderation summary, and server stats at a glance.
 - **Support** — open and follow up on tickets with the team, with reply notifications.
-- **SAi** — your AI assistant in a chat bubble: ask in plain English and (as owner) apply its suggestions in one tap.
+- **SAi** — your AI assistant in a chat bubble: ask in plain English and (as owner/admin) apply its suggestions in one tap.
 - **Web setup** — brand-new servers can be configured entirely from the portal: pick your channels, roles and AI, and the bot does the rest.
 
 Your **whole staff team** can sign in — **owners, admins, and moderators** — and the portal mirrors each person's role exactly, never granting more than they already have in your server:

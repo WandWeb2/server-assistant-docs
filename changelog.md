@@ -13,6 +13,22 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 
 ---
 
+## v5.7.0 — The web portal grows up
+
+Your portal at [serverassistant.wandweb.co](https://serverassistant.wandweb.co) went from a settings screen to a full command center. Run `/portal` to jump in.
+
+### Added
+
+- **A real Insights dashboard.** At-a-glance KPIs (members · 30-day mod actions · AI usage) that tap to expand with trend charts, a **member-growth chart**, **🟢 online / 🔊 in-voice** counts, and a **paginated activity log** (moderation, AutoMod, raids, config changes, tickets) with filters and real names. Plus your **🩺 Daily Pulse** and **📅 Weekly mod recap** surfaced right on the page.
+- **Act from the web — and get notified.** Take moderation actions from the portal, and resolve staff decisions — **ban appeals, AutoMod reviews, owner-approvals, and raid lock-downs** — from a "⚡ Needs input" strip, all **kept in sync with the Discord card** (whoever acts first wins). **Install the portal as an app** on your phone or desktop and **turn on notifications** to get a push the moment something needs your input.
+- **Finish setup from the web** for new servers, plus support tickets, billing, and your **SAi** assistant — all in one place.
+
+### Changed
+
+- The portal moved to its own home at **[serverassistant.wandweb.co](https://serverassistant.wandweb.co)** with a branded, installable, animated redesign.
+
+---
+
 ## v5.6.17 — Your whole staff team can use the web portal
 
 The web portal now fits everyone on your team, not just owners and admins.
