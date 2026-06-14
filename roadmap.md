@@ -663,42 +663,42 @@ Where Server Assistant is heading. Priorities are decided by the people who run 
     <div class="shipped-scroll">
 
     <details class="card">
-      <summary>🎭 Reaction roles <span class="shipped-pill">✅ Shipped v5.6.27</span></summary>
+      <summary>🎭 Reaction roles <span class="premium-pill">💎 Premium</span> <span class="shipped-pill">✅ Shipped v5.6.27</span></summary>
       <span class="desc">Self-service role buttons built from one <code>/rolepanel</code> wizard — pick roles from a dropdown, name the panel, post it. Members click to add/remove a role, and a <strong>🎭 My roles</strong> button opens a private menu showing a ✓ next to the roles they already have. The bot only offers roles it can actually assign.</span>
     </details>
 
     <details class="card">
-      <summary>⌨️ Custom slash commands <span class="shipped-pill">✅ Shipped v5.6.27</span></summary>
+      <summary>⌨️ Custom slash commands <span class="premium-pill">💎 Premium</span> <span class="shipped-pill">✅ Shipped v5.6.27</span></summary>
       <span class="desc">Owners define their own real <code>/command</code> (text or embed) from the <code>/customcmd</code> wizard. Embed commands have an optional <strong>🔄 Live</strong> toggle — editing the embed updates every copy already posted, turning <code>/rules</code>, <code>/announcement</code>, etc. into living documents.</span>
     </details>
 
     <details class="card">
-      <summary>❓ AI Q&amp;A from your FAQ <span class="shipped-pill">✅ Shipped v5.6.27</span></summary>
+      <summary>❓ AI Q&amp;A from your FAQ <span class="premium-pill">💎 Premium</span> <span class="shipped-pill">✅ Shipped v5.6.27</span></summary>
       <span class="desc">Members run <code>/faq</code> with a question and the bot answers <strong>only</strong> from your curated entries — when the FAQ doesn't cover it, it says so and points them to staff rather than inventing a policy. Staff curate from the <code>/faq</code> management wizard.</span>
     </details>
 
     <details class="card">
-      <summary>🌐 Translation <span class="shipped-pill">✅ Shipped v5.6.27</span></summary>
+      <summary>🌐 Translation <span class="premium-pill">💎 Premium</span> <span class="shipped-pill">✅ Shipped v5.6.27</span></summary>
       <span class="desc">Right-click any message → <strong>Translate</strong>, or use <code>/translate</code> — into your Discord language or one you name. On-demand, so there's no per-message cost or channel noise.</span>
     </details>
 
     <details class="card">
-      <summary>🤝 Mediator <span class="shipped-pill">✅ Shipped v5.6.27</span></summary>
+      <summary>🤝 Mediator <span class="premium-pill">💎 Premium</span> <span class="shipped-pill">✅ Shipped v5.6.27</span></summary>
       <span class="desc">The <code>/mediate</code> wizard has the bot DM two members, collect each side privately, and post a <strong>neutral summary</strong> to staff — a chance to de-escalate before anyone reaches for a moderation action. The bot never takes sides or recommends punishment.</span>
     </details>
 
     <details class="card">
-      <summary>💾 Server backup &amp; restore <span class="shipped-pill">✅ Shipped v5.6.27</span></summary>
+      <summary>💾 Server backup &amp; restore <span class="premium-pill">💎 Premium</span> <span class="shipped-pill">✅ Shipped v5.6.27</span></summary>
       <span class="desc">The <code>/backup</code> wizard snapshots your roles, categories, channels and their exact permission overwrites. <strong>Restore</strong> is owner-only + confirmation-gated and strictly <strong>additive</strong> — it recreates anything missing and reapplies overwrites, never deletes — safe insurance after a nuke or a botched reorg.</span>
     </details>
 
     <details class="card">
-      <summary>🎨 White-label branding <span class="shipped-pill">✅ Shipped v5.6.27</span></summary>
+      <summary>🎨 White-label branding <span class="premium-pill">💎 Premium</span> <span class="shipped-pill">✅ Shipped v5.6.27</span></summary>
       <span class="desc">Rebrand the bot for your server from the <code>/brand</code> wizard: a custom per-server nickname, your name + icon on the bot's embeds, your colour scheme, and your name in place of "Server Assistant" in footers. (Discord allows one global bot identity, so this rebrands the nickname + the bot's output, not the account itself.)</span>
     </details>
 
     <details class="card">
-      <summary>🌟 Decision explainer + guided appeals <span class="shipped-pill">✅ Shipped v5.6.26</span></summary>
+      <summary>🌟 Decision explainer + guided appeals <span class="premium-pill">💎 Premium</span> <span class="shipped-pill">✅ Shipped v5.6.26</span></summary>
       <span class="desc">Two premium upgrades to the free one-reply appeal flow. <strong>"Why was I actioned?"</strong> — warned/muted members get a DM button (or can DM the bot) for a calm, plain-language AI explanation of the staff-supplied reason. <strong>Guided multi-round appeals</strong> — a banned member's appeal becomes a short AI-facilitated back-and-forth (the bot asks a neutral follow-up or two), then staff get a concise summary + full transcript on the appeal ticket and the portal "Needs input" card. Bounded by a max-rounds setting; the facilitator never decides or promises an outcome — staff make every call. Free servers keep the one-reply flow unchanged.</span>
     </details>
 

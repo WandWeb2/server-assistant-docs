@@ -289,12 +289,13 @@ Two premium upgrades that build on the free flow above — fairer moderation for
 Seven premium features, most set up from a one-screen wizard. Tap a card for details.
 
 <style>
-.feat-list details.feat { border: 1px solid #e3e3e3; border-radius: 8px; margin: 0.45rem 0; background: #fafafa; }
-.feat-list details.feat > summary { cursor: pointer; font-weight: 700; padding: 0.6rem 0.9rem; list-style: none; }
+.feat-list details.feat { border: 1px solid var(--glass-border); border-radius: 12px; margin: 0.45rem 0; background: var(--glass-bg); }
+.feat-list details.feat > summary { cursor: pointer; font-weight: 700; padding: 0.6rem 0.9rem; list-style: none; color: var(--ink); }
 .feat-list details.feat > summary::-webkit-details-marker { display: none; }
-.feat-list details.feat > summary::before { content: "▸ "; color: #888; }
+.feat-list details.feat > summary::before { content: "▸ "; color: var(--ink-soft); }
 .feat-list details.feat[open] > summary::before { content: "▾ "; }
-.feat-list details.feat .body { padding: 0 0.9rem 0.75rem; color: #444; font-size: 0.92rem; }
+.feat-list details.feat .body { padding: 0 0.9rem 0.75rem; color: var(--ink-soft); font-size: 0.92rem; }
+.feat-list details.feat code { color: var(--accent); }
 </style>
 
 <div class="feat-list" markdown="0">
