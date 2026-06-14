@@ -272,6 +272,18 @@ A ban shouldn't be a silent door-slam. Server Assistant turns every ban — *man
 
 ---
 
+## 🌟 Decision explainer & guided appeals <span class="tier-badge tier-premium">PREMIUM</span>
+
+Two premium upgrades that build on the free flow above — fairer moderation for the people on the receiving end, less explaining for your staff.
+
+**❓ "Why was I actioned?"** — when a member is **warned** or **muted**, the bot DMs them a short notice with a **Why was I actioned?** button. One tap returns a calm, plain-language explanation drawn from the staff-supplied reason, so the member understands what happened without a moderator writing it out. They can also just DM the bot *"why was I actioned?"* for the same on their most recent warning.
+
+**🗣️ Guided multi-round appeals** — instead of the single reply, a ban appeal becomes a short **AI-facilitated back-and-forth**: the member shares their side, the bot may ask **one or two neutral follow-up questions** to draw out context, then hands staff a **concise summary plus the full transcript** — on the appeal ticket *and* the portal "Needs input" card. You set the maximum rounds (default 3), and the facilitator **never decides or promises an outcome** — your staff still make every call.
+
+**On by default** for premium servers (toggle in **Settings → Protection**); both need AI enabled. Free servers keep the one-reply appeal + ban-reason DM exactly as above.
+
+---
+
 ## 🚨 Anti-Raid Detection <span class="tier-badge tier-free">FREE</span>
 
 Tracks join rate. When the threshold trips, the bot pings the Owner (and any roles configured in `/settings → 🔔 Notifications`), suspends onboarding DMs, and logs the event.

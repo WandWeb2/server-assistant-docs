@@ -592,11 +592,6 @@ Where Server Assistant is heading. Priorities are decided by the people who run 
   <div class="band-h band-blue">🔵 Committed<span class="sub">Building regardless of votes</span></div>
   <div class="band" id="band-blue">
 
-  <details class="card" id="card-decision-explainer">
-    <summary>🌟 Decision explainer + multi-round appeals<span class="premium-pill">💎 Premium</span></summary>
-    <span class="desc">Builds on the one-reply ban-appeal flow shipped in v5.5. Adds: warned/muted users can DM the bot <em>"why was I actioned?"</em> for a plain-language answer drawn from the staff-supplied reason and the matched rule; banned users get a <strong>guided multi-round</strong> appeal — a short AI-facilitated back-and-forth that gives staff more than a single line to judge.</span>
-  </details>
-
   <details class="card" id="card-reaction-roles">
     <summary>🎭 Reaction roles + custom slash commands<span class="premium-pill">💎 Premium</span></summary>
     <span class="desc">Two engagement utilities that ship as one bundle. <strong>Reaction roles</strong> — button-based self-service role panels in any channel. <strong>Custom slash commands</strong> — server owners define their own <code>/foo</code> returning a configured embed or text snippet.</span>
@@ -682,6 +677,11 @@ Where Server Assistant is heading. Priorities are decided by the people who run 
   <details class="band-shipped">
     <summary>✅ Shipped — the full history (tap to expand)</summary>
     <div class="shipped-scroll">
+
+    <details class="card">
+      <summary>🌟 Decision explainer + guided appeals <span class="shipped-pill">✅ Shipped v5.6.26</span></summary>
+      <span class="desc">Two premium upgrades to the free one-reply appeal flow. <strong>"Why was I actioned?"</strong> — warned/muted members get a DM button (or can DM the bot) for a calm, plain-language AI explanation of the staff-supplied reason. <strong>Guided multi-round appeals</strong> — a banned member's appeal becomes a short AI-facilitated back-and-forth (the bot asks a neutral follow-up or two), then staff get a concise summary + full transcript on the appeal ticket and the portal "Needs input" card. Bounded by a max-rounds setting; the facilitator never decides or promises an outcome — staff make every call. Free servers keep the one-reply flow unchanged.</span>
+    </details>
 
     <details class="card">
       <summary>🖥️ Web portal for server administration <span class="shipped-pill">✅ Shipped v5.6.25</span></summary>

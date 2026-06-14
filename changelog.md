@@ -13,6 +13,19 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 
 ---
 
+## v5.6.26 — Guided appeals & the decision explainer
+
+Two premium upgrades that make moderation fairer for the people on the receiving end. *(Your free one-reply appeals and ban-reason DMs are unchanged.)*
+
+### Added
+
+- **🌟 "Why was I actioned?" (Premium).** When a member is **warned** or **muted**, the bot DMs them a short notice with a **❓ Why was I actioned?** button — one tap returns a calm, plain-language explanation drawn from the staff reason, so they understand what happened without a moderator having to spell it out. Members can also just DM the bot *"why was I actioned?"* to get the same for their most recent warning.
+- **🌟 Guided multi-round appeals (Premium).** A ban appeal becomes a short **back-and-forth** instead of a single reply: the member shares their side, the bot may ask **one or two neutral follow-up questions** to draw out context, then hands your staff a **concise summary plus the full transcript** — on the appeal ticket *and* the portal "Needs input" card — so you judge with more than one line. You set the max rounds (default 3), and the bot never decides or promises an outcome.
+
+Both are on by default for premium servers (toggle in **Settings → Protection**) and need AI enabled. Free servers keep the existing one-reply appeal + ban-reason DM exactly as-is.
+
+---
+
 ## v5.6.25 — The web portal grows up
 
 Your portal at [serverassistant.wandweb.co](https://serverassistant.wandweb.co) went from a settings screen to a full command center. Run `/portal` to jump in.
