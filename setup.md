@@ -11,6 +11,8 @@ Adding **Server Assistant** takes about 60 seconds — the wizard does the rest.
 
 > ⚠️ Only the **Discord-native server owner** can run `/setup` — a hard safety check so admins can't escalate their own permissions.
 
+> 🌐 **Prefer the web?** Owners can also finish setup from the **[web portal](https://serverassistant.wandweb.co)** — pick your channels, roles and AI in a browser and the bot configures everything. Run `/portal` for a private link.
+
 <style>
 .steps { display: grid; gap: 1rem; margin: 1.2rem 0 1.6rem; }
 .step { display: grid; grid-template-columns: 56px 1fr; gap: 1rem; align-items: start; background: rgba(255,255,255,0.55); border: 1px solid rgba(31,38,135,0.15); border-radius: 14px; padding: 1.1rem 1.2rem; box-shadow: 0 4px 18px rgba(31,38,135,0.08); }

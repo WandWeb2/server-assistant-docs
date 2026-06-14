@@ -13,6 +13,17 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 
 ---
 
+## v5.6.15 — Manage your server from the web
+
+A new web portal lets owners and admins run their server from any browser.
+
+### Added
+
+- **New `/portal` command + web portal at [serverassistant.wandweb.co](https://serverassistant.wandweb.co).** Sign in with Discord and manage your server from your browser — adjust settings, take moderation actions, view insights and AI usage, handle support tickets, and chat with your AI assistant **SAi**. Run `/portal` for a private link straight to it. Only the server owner and admins can sign in, and each session is scoped to just the servers you manage.
+- **Finish setup from the web.** Brand-new servers can be configured straight from the portal — pick your staff chat, log channel, admin and moderator roles, and whether to turn AI on, and the bot does the rest. You can still run `/setup` in Discord — whichever you prefer.
+
+---
+
 ## v5.6.8 — Mid-cycle servers get a vote
 
 Joining partway through a community vote no longer means missing out.

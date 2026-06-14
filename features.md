@@ -425,6 +425,21 @@ Catches the silent *"why did the bot stop working?"* failure after a channel is 
 
 ---
 
+## 🌐 Web Portal <span class="tier-badge tier-free">FREE</span>
+
+Manage your server from any browser — no Discord required. Sign in with Discord at **[serverassistant.wandweb.co](https://serverassistant.wandweb.co)** (or run `/portal` in your server for a private link), and you get a clean dashboard for everything:
+
+- **Settings** — every customisation, the same safe options as `/settings`, with sensible defaults shown inline.
+- **Moderation** — warn, time out, kick or ban by user ID, with a full audit trail back in your log channel.
+- **Insights** — AI token usage, a 30-day moderation summary, and server stats at a glance.
+- **Support** — open and follow up on tickets with the team, with reply notifications.
+- **SAi** — your AI assistant in a chat bubble: ask in plain English and (as owner) apply its suggestions in one tap.
+- **Web setup** — brand-new servers can be configured entirely from the portal: pick your channels, roles and AI, and the bot does the rest.
+
+Only the **owner and admins** can sign in, and each session is scoped to just the servers you manage — sign-in is verified through Discord, so there's no separate password.
+
+---
+
 ## 🎫 Ticket Panels <span class="tier-badge tier-free">FREE</span> <span class="tier-badge tier-premium">PREMIUM</span>
 
 Give members a private, structured way to reach staff without leaving your server. An admin posts a panel in any public channel; members click **Create Ticket** to open a dedicated private channel with your support team.

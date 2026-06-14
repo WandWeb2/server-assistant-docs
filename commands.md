@@ -190,6 +190,7 @@ The `undo` command reverses your most recent reversible action.
 | `/sai` | *(Premium)* Chat with Server Assistant's intelligence to tune your bot — *formerly `/concierge`* |
 | `/privacy` | Manage what the bot is allowed to read |
 | `/invite` | Get the bot's invite URL |
+| `/portal` | Get a private link to the **web portal** to manage your server from a browser (anyone can run it; only owners/admins can sign in) |
 
 ---
 
@@ -239,6 +240,7 @@ Type `/` anywhere to see autocomplete:
 | `/autopilot` | Let Server Assistant detect and apply a sensible config automatically |
 | `/sai` | *(Premium)* Chat with Server Assistant's intelligence to tune your bot *(formerly `/concierge`)* |
 | `/privacy` | Manage what the bot is allowed to read (privacy panel) |
+| `/portal` | Private link to the web portal (manage your server from a browser) |
 | `/imagine <prompt>` *(aliases `/image`, `/img`)* | AI image generation |
 | `/info <user>` | User profile (incl. Threat Score if enabled) |
 | `/warn <user> <reason>` | Issue a warning |
