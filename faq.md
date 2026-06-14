@@ -26,7 +26,7 @@ details.faq .faq-body table { margin: .5rem 0; }
 <details class="faq"><summary>Is the bot free?</summary>
 <div class="faq-body">
 <p><strong>The full moderation toolkit is free forever</strong> — no card, no catch. Core moderation, AutoMod, anti-raid, DM verification, audit logs, warnings, the Customisation Hub, and zero-touch <code>/autopilot</code> setup never cost a thing.</p>
-<p>The <strong>AI features</strong> (Concierge, Message Report, Self-trained AutoMod, Pulse) include a <strong>150,000-token free trial</strong>. After that, <strong>Premium ($7 USD/mo)</strong> keeps them going — but you're only charged once your trial tokens run out, so light-use servers may never pay. Got your own AI key? <strong>Premium BYOK is $3 USD/mo</strong>. See <a href="{{ site.url }}{{ site.baseurl }}/pricing/">Pricing</a> for the full breakdown.</p>
+<p>The <strong>AI features</strong> (SAi, Message Report, Self-trained AutoMod, Pulse) include a <strong>150,000-token free trial</strong>. After that, <strong>Premium ($7 USD/mo)</strong> keeps them going — but you're only charged once your trial tokens run out, so light-use servers may never pay. Got your own AI key? <strong>Premium BYOK is $3 USD/mo</strong>. See <a href="{{ site.url }}{{ site.baseurl }}/pricing/">Pricing</a> for the full breakdown.</p>
 </div>
 </details>
 
@@ -246,13 +246,13 @@ Currently it's fixed wording. Custom verification copy is on the <a href="{{ sit
 
 <details class="faq"><summary>What data is sent to the AI provider?</summary>
 <div class="faq-body">
-Only what's needed for the request. <strong>Message Report</strong> sends ~20 messages of context; <strong>Concierge</strong> sends your question plus your server's settings and recent event summary; <code>/imagine</code> sends just your text prompt. <strong>No user metadata, IDs, or persistent identifiers are transmitted.</strong> Full details in the <a href="{{ site.url }}{{ site.baseurl }}/privacy/">Privacy Policy</a>.
+Only what's needed for the request. <strong>Message Report</strong> sends ~20 messages of context; <strong>SAi</strong> sends your question plus your server's settings and recent event summary; <code>/imagine</code> sends just your text prompt. <strong>No user metadata, IDs, or persistent identifiers are transmitted.</strong> Full details in the <a href="{{ site.url }}{{ site.baseurl }}/privacy/">Privacy Policy</a>.
 </div>
 </details>
 
 <details class="faq"><summary>What AI model powers the bot?</summary>
 <div class="faq-body">
-<p>The default shared key uses <strong>Anthropic Claude</strong> (Sonnet) for all AI features — Concierge, Message Report, Self-trained AutoMod proposals, and Bot Health Insurance checks.</p>
+<p>The default shared key uses <strong>Anthropic Claude</strong> (Sonnet) for all AI features — SAi, Message Report, Self-trained AutoMod proposals, and Bot Health Insurance checks.</p>
 <p>Supply your own key via <code>/ai-config</code> to choose Anthropic, xAI Grok, or OpenAI. Image generation (<code>/imagine</code>) runs on the shared service — the free trial covers ~30 images, unlimited on Premium — or add your own DALL·E 3 / Stable Diffusion key via <code>/ai-config</code> for unmetered generation.</p>
 </div>
 </details>

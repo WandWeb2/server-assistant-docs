@@ -13,6 +13,27 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 
 ---
 
+## v5.6.27 — The premium toolkit
+
+A big drop of **seven new Premium features** — most built around one-screen **wizards** so they're quick to set up — plus a tidier command list. Free-tier moderation is untouched.
+
+### Added — Premium
+
+- **🎭 Reaction roles.** Build self-service role panels from one **`/rolepanel`** wizard: pick roles from a dropdown, name the panel, post it. Members click a button to add or remove a role, and a **🎭 My roles** button opens a private menu showing a ✓ next to the roles they already have. The bot only ever offers roles it can actually assign.
+- **⌨️ Custom slash commands.** Define your own real **`/command`** (text or embed) with the **`/customcmd`** wizard — e.g. `/rules`, `/faq`. Embed commands have an optional **🔄 Live** toggle: edit the embed once and **every copy already posted updates**, turning announcements into living documents.
+- **❓ AI Q&A from your FAQ.** Members run **`/faq`** with a question and the bot answers **only** from your curated entries — when the FAQ doesn't cover something it says so and points them to staff, instead of inventing an answer. Staff curate from the `/faq` management wizard.
+- **🌐 Translation.** Right-click any message → **Translate**, or use **`/translate`** — into your Discord language or one you name. On-demand, so no per-message cost or channel noise.
+- **🤝 Mediator.** The **`/mediate`** wizard has the bot DM two members, collect each side privately, and post a **neutral summary** to staff — a chance to de-escalate *before* anyone reaches for a moderation action. It never takes sides or recommends punishment.
+- **💾 Server backup & restore.** The **`/backup`** wizard snapshots your roles, categories, channels and their exact permission overwrites. **Restore** is owner-only, confirmation-gated, and strictly **additive — it recreates anything missing and reapplies overwrites, never deletes** — safe insurance after a nuke or a botched reorg.
+- **🎨 White-label branding.** Rebrand the bot for your server from the **`/brand`** wizard: a per-server **nickname**, your **name + icon** on the bot's embeds, your **colour**, and your name in place of "Server Assistant" in footers. *(Discord allows only one global bot identity, so this rebrands the nickname and the bot's output — not the underlying account.)*
+
+### Changed
+
+- **📨 Ban appeals — "request more info".** Staff can now reopen a guided appeal with a follow-up question; the member's reply refreshes the neutral summary and returns a fresh ticket. Completes the guided-appeals flow.
+- **Tidier command list.** Removed the redundant **`/image`** alias (use `/imagine` or `/img`) and the long-deprecated **`/concierge`** (use `/sai`), and folded **`/smartpurge`** into **`/purge`** as a **Smart** mode (`/purge … mode: Smart`). No capability lost.
+
+---
+
 ## v5.6.26 — Guided appeals & the decision explainer
 
 Two premium upgrades that make moderation fairer for the people on the receiving end. *(Your free one-reply appeals and ban-reason DMs are unchanged.)*

@@ -116,7 +116,7 @@ AI features that watch your server's *health and behaviour* — **advisory by de
   </div>
   <div class="f-card">
     <h4>🤖 Smart purge</h4>
-    <p><code>/smartpurge</code> — AI cleanup that removes only the genuinely problematic messages and <strong>keeps the rest</strong>, instead of clearing everything like a plain <code>/purge</code>.</p>
+    <p><code>/purge … mode: Smart</code> — AI cleanup that removes only the genuinely problematic messages and <strong>keeps the rest</strong>, instead of clearing everything like a plain purge.</p>
   </div>
   <div class="f-card">
     <h4>⏲️ Timed bans</h4>
@@ -278,9 +278,56 @@ Two premium upgrades that build on the free flow above — fairer moderation for
 
 **❓ "Why was I actioned?"** — when a member is **warned** or **muted**, the bot DMs them a short notice with a **Why was I actioned?** button. One tap returns a calm, plain-language explanation drawn from the staff-supplied reason, so the member understands what happened without a moderator writing it out. They can also just DM the bot *"why was I actioned?"* for the same on their most recent warning.
 
-**🗣️ Guided multi-round appeals** — instead of the single reply, a ban appeal becomes a short **AI-facilitated back-and-forth**: the member shares their side, the bot may ask **one or two neutral follow-up questions** to draw out context, then hands staff a **concise summary plus the full transcript** — on the appeal ticket *and* the portal "Needs input" card. You set the maximum rounds (default 3), and the facilitator **never decides or promises an outcome** — your staff still make every call.
+**🗣️ Guided multi-round appeals** — instead of the single reply, a ban appeal becomes a short **AI-facilitated back-and-forth**: the member shares their side, the bot may ask **one or two neutral follow-up questions** to draw out context, then hands staff a **concise summary plus the full transcript** — on the appeal ticket *and* the portal "Needs input" card. You set the maximum rounds (default 3), and the facilitator **never decides or promises an outcome** — your staff still make every call. Staff can also press **📨 More info** to reopen an appeal with a follow-up question — the member's reply refreshes the summary and returns a fresh ticket.
 
 **On by default** for premium servers (toggle in **Settings → Protection**); both need AI enabled. Free servers keep the one-reply appeal + ban-reason DM exactly as above.
+
+---
+
+## 💎 The Premium Toolkit <span class="tier-badge tier-premium">PREMIUM</span>
+
+Seven premium features, most set up from a one-screen wizard. Tap a card for details.
+
+<style>
+.feat-list details.feat { border: 1px solid #e3e3e3; border-radius: 8px; margin: 0.45rem 0; background: #fafafa; }
+.feat-list details.feat > summary { cursor: pointer; font-weight: 700; padding: 0.6rem 0.9rem; list-style: none; }
+.feat-list details.feat > summary::-webkit-details-marker { display: none; }
+.feat-list details.feat > summary::before { content: "▸ "; color: #888; }
+.feat-list details.feat[open] > summary::before { content: "▾ "; }
+.feat-list details.feat .body { padding: 0 0.9rem 0.75rem; color: #444; font-size: 0.92rem; }
+</style>
+
+<div class="feat-list" markdown="0">
+
+<details class="feat"><summary>🎭 Reaction roles — <code>/rolepanel</code></summary>
+<div class="body">Self-service role buttons built from one wizard: pick roles from a dropdown, name the panel, post it. Members click a button to add or remove a role, and a <strong>🎭 My roles</strong> button opens a private menu showing a ✓ next to the roles they already have. The bot only ever offers roles it can actually assign (nothing above its own role).</div>
+</details>
+
+<details class="feat"><summary>⌨️ Custom slash commands — <code>/customcmd</code></summary>
+<div class="body">Define your own real <code>/command</code> (text or embed) — e.g. <code>/rules</code>, <code>/faq</code> — from a wizard. Embed commands have an optional <strong>🔄 Live</strong> toggle: edit the embed once and <em>every copy already posted updates</em>, turning announcements into living documents. Names are validated and can't shadow the bot's built-ins; up to 25 per server.</div>
+</details>
+
+<details class="feat"><summary>❓ AI Q&amp;A from your FAQ — <code>/faq</code></summary>
+<div class="body">Members run <code>/faq</code> with a question and the bot answers <strong>only</strong> from your curated entries — when the FAQ doesn't cover something it says so and points them to staff, rather than inventing an answer. Staff curate from the <code>/faq</code> management wizard. Counts toward your AI usage, with a per-user cooldown.</div>
+</details>
+
+<details class="feat"><summary>🌐 Translation — right-click or <code>/translate</code></summary>
+<div class="body">Right-click any message → <strong>Translate</strong>, or use <code>/translate</code> — into your Discord language or one you name. On-demand only, so there's no per-message cost or channel noise.</div>
+</details>
+
+<details class="feat"><summary>🤝 Mediator — <code>/mediate</code></summary>
+<div class="body">The wizard has the bot DM two members, collect each side privately, and post a <strong>neutral summary</strong> to staff — a chance to de-escalate <em>before</em> anyone reaches for a moderation action. It never takes sides or recommends punishment.</div>
+</details>
+
+<details class="feat"><summary>💾 Server backup &amp; restore — <code>/backup</code></summary>
+<div class="body">Snapshot your roles, categories, channels and their exact permission overwrites. <strong>Restore</strong> is owner-only, confirmation-gated, and strictly <strong>additive — it recreates anything missing and reapplies overwrites, never deletes</strong> — safe insurance after a nuke or a botched reorg.</div>
+</details>
+
+<details class="feat"><summary>🎨 White-label branding — <code>/brand</code></summary>
+<div class="body">Rebrand the bot for your server: a custom per-server <strong>nickname</strong>, your <strong>name + icon</strong> on the bot's embeds, your <strong>colour</strong>, and your name in place of "Server Assistant" in footers. <em>Discord allows only one global bot identity, so this rebrands the nickname and the bot's output — not the underlying account.</em></div>
+</details>
+
+</div>
 
 ---
 

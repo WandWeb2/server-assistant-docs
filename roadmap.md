@@ -592,23 +592,7 @@ Where Server Assistant is heading. Priorities are decided by the people who run 
   <div class="band-h band-blue">🔵 Committed<span class="sub">Building regardless of votes</span></div>
   <div class="band" id="band-blue">
 
-  <details class="card" id="card-reaction-roles">
-    <summary>🎭 Reaction roles + custom slash commands<span class="premium-pill">💎 Premium</span></summary>
-    <span class="desc">Two engagement utilities that ship as one bundle. <strong>Reaction roles</strong> — button-based self-service role panels in any channel. <strong>Custom slash commands</strong> — server owners define their own <code>/foo</code> returning a configured embed or text snippet.</span>
-  </details>
-
-  <details class="card">
-    <summary>💾 Server backup &amp; restore<span class="premium-pill">💎 Premium</span></summary>
-    <span class="desc">Scheduled snapshots of your server's structure — channels, categories, roles, and their <em>exact</em> permission overwrites — with one-tap restore after a nuke or a botched reorganisation. The insurance policy that sits behind the anti-nuke guard: if something does get through, you rebuild in seconds instead of from memory. Builds on the same permission-capture primitive the anti-nuke guard and <code>/lockdown</code> already use.</span>
-  </details>
-
-  <details class="card"><summary>🌟 Mediator — pre-action de-escalation<span class="premium-pill">💎 Premium</span></summary><span class="desc">When a conversation is escalating <em>before</em> any moderation action, bot DMs both parties, collects each side privately, and produces a neutral summary for staff. The pre-action sibling to v5.5's one-reply ban appeals. Differentiator — no other major bot does this.</span></details>
-
-  <details class="card"><summary>🌟 AI Q&amp;A from server FAQ<span class="premium-pill">💎 Premium</span></summary><span class="desc">Bot answers member questions based on FAQ snippets the owner has provided — or pinned messages it learns from automatically. Cuts the same-question-asked-50-times noise without staff having to babysit channels. Differentiator: nobody else combines this with the moderation context the bot already has.</span></details>
-
-  <details class="card"><summary>🌟 Auto-translate (per-channel)<span class="premium-pill">💎 Premium</span></summary><span class="desc">On-demand or automatic translation for configured channels — per-language, per-channel rules so an international community can have an English channel, a Spanish channel, and a bilingual one without bots crossing wires. Differentiator over off-the-shelf translate bots: pairs with moderation context (won't translate AutoMod-deleted messages, surfaces tone shifts across language).</span></details>
-
-  <details class="card"><summary>🌟 White-label branding<span class="premium-pill">💎 Premium</span></summary><span class="desc">Rebrand the bot for your server from a <code>/brand</code> wizard: a custom <strong>per-server nickname</strong>, your <strong>name + icon</strong> on the bot's embeds, your <strong>colour scheme</strong>, and your name in place of "Server Assistant" in footers. Discord only allows one global bot identity, so this rebrands the bot's <em>nickname and output</em> rather than the underlying account — a true per-server avatar/username swap would need a dedicated bot, which we'd look at for enterprise.</span></details>
+    <div class="band-empty">All committed features have shipped 🎉 — the next builds are decided by the community vote above. Got an idea? Run <code>/feedback</code>.</div>
 
   </div>
   </div>
@@ -677,6 +661,41 @@ Where Server Assistant is heading. Priorities are decided by the people who run 
   <details class="band-shipped">
     <summary>✅ Shipped — the full history (tap to expand)</summary>
     <div class="shipped-scroll">
+
+    <details class="card">
+      <summary>🎭 Reaction roles <span class="shipped-pill">✅ Shipped v5.6.27</span></summary>
+      <span class="desc">Self-service role buttons built from one <code>/rolepanel</code> wizard — pick roles from a dropdown, name the panel, post it. Members click to add/remove a role, and a <strong>🎭 My roles</strong> button opens a private menu showing a ✓ next to the roles they already have. The bot only offers roles it can actually assign.</span>
+    </details>
+
+    <details class="card">
+      <summary>⌨️ Custom slash commands <span class="shipped-pill">✅ Shipped v5.6.27</span></summary>
+      <span class="desc">Owners define their own real <code>/command</code> (text or embed) from the <code>/customcmd</code> wizard. Embed commands have an optional <strong>🔄 Live</strong> toggle — editing the embed updates every copy already posted, turning <code>/rules</code>, <code>/announcement</code>, etc. into living documents.</span>
+    </details>
+
+    <details class="card">
+      <summary>❓ AI Q&amp;A from your FAQ <span class="shipped-pill">✅ Shipped v5.6.27</span></summary>
+      <span class="desc">Members run <code>/faq</code> with a question and the bot answers <strong>only</strong> from your curated entries — when the FAQ doesn't cover it, it says so and points them to staff rather than inventing a policy. Staff curate from the <code>/faq</code> management wizard.</span>
+    </details>
+
+    <details class="card">
+      <summary>🌐 Translation <span class="shipped-pill">✅ Shipped v5.6.27</span></summary>
+      <span class="desc">Right-click any message → <strong>Translate</strong>, or use <code>/translate</code> — into your Discord language or one you name. On-demand, so there's no per-message cost or channel noise.</span>
+    </details>
+
+    <details class="card">
+      <summary>🤝 Mediator <span class="shipped-pill">✅ Shipped v5.6.27</span></summary>
+      <span class="desc">The <code>/mediate</code> wizard has the bot DM two members, collect each side privately, and post a <strong>neutral summary</strong> to staff — a chance to de-escalate before anyone reaches for a moderation action. The bot never takes sides or recommends punishment.</span>
+    </details>
+
+    <details class="card">
+      <summary>💾 Server backup &amp; restore <span class="shipped-pill">✅ Shipped v5.6.27</span></summary>
+      <span class="desc">The <code>/backup</code> wizard snapshots your roles, categories, channels and their exact permission overwrites. <strong>Restore</strong> is owner-only + confirmation-gated and strictly <strong>additive</strong> — it recreates anything missing and reapplies overwrites, never deletes — safe insurance after a nuke or a botched reorg.</span>
+    </details>
+
+    <details class="card">
+      <summary>🎨 White-label branding <span class="shipped-pill">✅ Shipped v5.6.27</span></summary>
+      <span class="desc">Rebrand the bot for your server from the <code>/brand</code> wizard: a custom per-server nickname, your name + icon on the bot's embeds, your colour scheme, and your name in place of "Server Assistant" in footers. (Discord allows one global bot identity, so this rebrands the nickname + the bot's output, not the account itself.)</span>
+    </details>
 
     <details class="card">
       <summary>🌟 Decision explainer + guided appeals <span class="shipped-pill">✅ Shipped v5.6.26</span></summary>

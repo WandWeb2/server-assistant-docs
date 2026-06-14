@@ -187,7 +187,7 @@ The `undo` command reverses your most recent reversible action.
 | `/onboarding` | Configure new-member welcome DMs |
 | `/snippets` | Manage canned responses |
 | `/ai-config` | Configure AI provider/key (owner only) |
-| `/sai` | *(Premium)* Chat with Server Assistant's intelligence to tune your bot — *formerly `/concierge`* |
+| `/sai` | *(Premium)* Chat with Server Assistant's intelligence to tune your bot |
 | `/privacy` | Manage what the bot is allowed to read |
 | `/invite` | Get the bot's invite URL |
 | `/portal` | Get a private link to the **web portal** to manage your server from a browser (anyone can run it; only owners/admins can sign in) |
@@ -220,6 +220,7 @@ Right-click any user or message → hover **Apps ▸ Server Assistant**:
 
 ### On a message
 - 📋 **Message Report** — AI reads ~20 surrounding messages and produces an objective 3–5 bullet summary covering tone, possible rule-breaking, escalation patterns, and recommended action
+- 🌐 **Translate** — *(Premium)* translate the message into your Discord language
 
 > 💡 If "Apps ▸" looks empty, hard-refresh Discord (Ctrl+R) to pull the latest commands.
 
@@ -238,10 +239,17 @@ Type `/` anywhere to see autocomplete:
 | `/snippets` | Manage canned responses |
 | `/ai-config` | Configure AI provider |
 | `/autopilot` | Let Server Assistant detect and apply a sensible config automatically |
-| `/sai` | *(Premium)* Chat with Server Assistant's intelligence to tune your bot *(formerly `/concierge`)* |
+| `/sai` | *(Premium)* Chat with Server Assistant's intelligence to tune your bot |
 | `/privacy` | Manage what the bot is allowed to read (privacy panel) |
 | `/portal` | Private link to the web portal (manage your server from a browser) |
-| `/imagine <prompt>` *(aliases `/image`, `/img`)* | AI image generation |
+| `/rolepanel` | *(Premium)* Build self-service reaction-role panels (wizard) |
+| `/customcmd` | *(Premium)* Create your own `/commands` — text or embed, optional 🔄 Live (wizard) |
+| `/faq <question>` | *(Premium)* Ask a question answered only from the server FAQ (blank → manage, staff) |
+| `/translate <text> [language]` | *(Premium)* Translate text into another language |
+| `/mediate` | *(Premium)* AI-facilitated mediation between two members (wizard) |
+| `/backup` | *(Premium)* Snapshot & restore your server's structure (wizard) |
+| `/brand` | *(Premium)* White-label the bot — nickname + embed branding (wizard) |
+| `/imagine <prompt>` *(alias `/img`)* | AI image generation |
 | `/info <user>` | User profile (incl. Threat Score if enabled) |
 | `/warn <user> <reason>` | Issue a warning |
 | `/mute <user> <minutes> [reason]` | Time out a user |
@@ -251,8 +259,7 @@ Type `/` anywhere to see autocomplete:
 | `/unban <user_id> [reason]` | Unban by ID |
 | `/softban <user> [reason]` | Ban + unban to clear messages |
 | `/tempban <user> <duration> [reason] [delete_days]` | Timed ban that auto-unbans (e.g. `7d`, `2h`, `1d12h`; 1m–28d) |
-| `/purge <count> [user]` | Bulk-delete messages here *(may need approval)* |
-| `/smartpurge` | AI cleanup — removes only genuinely problematic messages, keeps the rest |
+| `/purge <count> [user] [mode: Smart]` | Bulk-delete messages, or **Smart** AI cleanup that keeps the good ones, here *(may need approval)* |
 | `/slowmode <seconds> [channel]` | Set channel slowmode |
 | `/lock [channel]` / `/unlock [channel]` | Lock / unlock a channel |
 | `/lockdown start` / `/lockdown end` | Lock every channel at once, then restore exact prior permissions |
@@ -315,11 +322,11 @@ Each role you configure in `/settings → Role Tiers` has **capabilities** (what
 <tr><td>/unban</td><td class="perm-n">—</td><td class="perm-y">✓</td><td class="perm-y">✓</td></tr>
 <tr><td>/role <em>(or Manage Roles)</em></td><td class="perm-n">—</td><td class="perm-y">✓</td><td class="perm-y">✓</td></tr>
 <tr><td>/altguard <em>(Manage Server)</em></td><td class="perm-n">—</td><td class="perm-y">✓</td><td class="perm-y">✓</td></tr>
-<tr><td><strong>/purge, /smartpurge</strong> <em>(needs approval)</em></td><td class="perm-n">—</td><td class="perm-w">⚠ approval</td><td class="perm-y">✓ direct</td></tr>
+<tr><td><strong>/purge</strong> <em>(incl. Smart mode; needs approval)</em></td><td class="perm-n">—</td><td class="perm-w">⚠ approval</td><td class="perm-y">✓ direct</td></tr>
 <tr><td>/slowmode, /lock, /unlock, /lockdown, /nick</td><td class="perm-y">✓</td><td class="perm-y">✓</td><td class="perm-y">✓</td></tr>
 <tr><td>/onboarding, /snippets, /automod, /schedule</td><td class="perm-n">—</td><td class="perm-y">✓</td><td class="perm-y">✓</td></tr>
 <tr><td>/retro</td><td class="perm-n">—</td><td class="perm-y">✓</td><td class="perm-y">✓</td></tr>
-<tr><td>/imagine <em>(or /image, /img)</em>, /vote, /premium, /invite</td><td class="perm-y">✓</td><td class="perm-y">✓</td><td class="perm-y">✓</td></tr>
+<tr><td>/imagine <em>(or /img)</em>, /translate, /faq, /vote, /premium, /invite</td><td class="perm-y">✓</td><td class="perm-y">✓</td><td class="perm-y">✓</td></tr>
 <tr><td>/whatsnew, /support <em>(/feedback)</em>, /privacy</td><td class="perm-y">✓</td><td class="perm-y">✓</td><td class="perm-y">✓</td></tr>
 <tr><td>/sai <em>(Premium)</em></td><td class="perm-n">—</td><td class="perm-y">✓</td><td class="perm-y">✓</td></tr>
 <tr><td>/settings</td><td class="perm-n">—</td><td class="perm-y">✓</td><td class="perm-y">✓</td></tr>

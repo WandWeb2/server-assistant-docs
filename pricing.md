@@ -72,7 +72,10 @@ These read messages or generate content:
 | **📋 Message Report** AI summary | ~5K tokens per right-click |
 | **🤔 AutoMod AI second-opinion** *(Premium, opt-in)* | ~1K per borderline filter hit (only when AutoMod is uncertain — confident hits + clear-misses are never sent) |
 | **🩹 Bot Health Insurance** check-in | ~3K every 14 days |
-| **💬 Concierge chat** *(Premium)* | ~30–50K per conversation |
+| **💬 SAi chat** (`/sai`) *(Premium)* | ~30–50K per conversation |
+| **❓ FAQ answer** (`/faq`) *(Premium)* | ~2–6K per question |
+| **🌐 Translation** (`/translate`) *(Premium)* | ~1–3K per message |
+| **🤝 Mediator summary** (`/mediate`) *(Premium)* | ~3–6K per mediation |
 | **🖼️ `/imagine`** image generation | ~5K per image (free trial; unlimited on Premium) |
 
 ---
@@ -84,9 +87,17 @@ These read messages or generate content:
 | **Price** | $0 | **$3 USD/month** | **$7 USD/month** |
 | **AI tokens** | 150K lifetime *(our key)* | **You supply your own key** | 750K/month *(our key)* |
 | **How billing works** | Use freely, no card | Card charged immediately | **Card captured at subscribe — billing starts only when your 150K trial runs out** |
-| **Concierge chat** | — | ✅ | ✅ |
+| **SAi chat** (`/sai`) | — | ✅ | ✅ |
 | **AutoMod AI second-opinion** | — | ✅ | ✅ |
 | **Active Threat Score** *(score-driven actions)* | — | ✅ | ✅ |
+| **🌟 Decision explainer & guided appeals** | — | ✅ | ✅ |
+| **🎭 Reaction roles** *(`/rolepanel`)* | — | ✅ | ✅ |
+| **⌨️ Custom slash commands** *(`/customcmd`)* | — | ✅ | ✅ |
+| **❓ AI Q&A from your FAQ** *(`/faq`)* | — | ✅ | ✅ |
+| **🌐 Translation** *(`/translate`)* | — | ✅ | ✅ |
+| **🤝 Mediator** *(`/mediate`)* | — | ✅ | ✅ |
+| **💾 Server backup & restore** *(`/backup`)* | — | ✅ | ✅ |
+| **🎨 White-label branding** *(`/brand`)* | — | ✅ | ✅ |
 | **Unlimited `/imagine`** *(no 30s cooldown)* | — | ✅ | ✅ |
 | **Ticket Panels — premium features** | — | ✅ | ✅ |
 | **All free features** | ✅ | ✅ | ✅ |
