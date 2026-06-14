@@ -470,11 +470,11 @@ details.band-shipped > .shipped-scroll { border-color: rgba(255, 255, 255, 0.12)
                          and keeps the rest here. NO ver-pills in this band.
        🔵 #band-blue   — committed regardless of votes. Sits NEXT TO purple
                          in a two-column .band-row (stacks on mobile). Holds
-                         the web-portal card (a REGULAR details card like
-                         every other feature; its desc is a bullet list, no
-                         prose) plus every 💎 premium-pill card — the
-                         committed Premium-tier launch set. Premium-pilled
-                         features are NEVER poll options.
+                         every 💎 premium-pill card — the committed
+                         Premium-tier launch set. Premium-pilled features
+                         are NEVER poll options. (The web portal shipped in
+                         v5.6.25 and now lives in band-shipped; its remaining
+                         advanced settings/analytics live in band-pool.)
        🟢 #band-pool   — everything else, ONE flat pool (longterm-grid
                          gallery, no tier columns), green header. Future vote
                          rounds draw from here; 🌟 in a summary marks a
@@ -592,20 +592,6 @@ Where Server Assistant is heading. Priorities are decided by the people who run 
   <div class="band-h band-blue">🔵 Committed<span class="sub">Building regardless of votes</span></div>
   <div class="band" id="band-blue">
 
-  <details class="card">
-    <summary>🖥️ Web portal for server administration</summary>
-    <div class="desc">
-      <ul>
-        <li>🔑 Sign in with <strong>Discord OAuth</strong> — free for every server</li>
-        <li>🎛️ Every setting visualised — AutoMod, escalation ladders, templates, live previews</li>
-        <li>📋 Cases &amp; moderation — warnings, appeals, tickets, audit trail; act from the browser</li>
-        <li>📈 Analytics — Pulse, threat-score trends, mod retros, token usage charts</li>
-        <li>🛡️ Same guardrails as in Discord — approvals, undo windows, audit logging</li>
-        <li>🌐 After launch — multi-server management with role-mapped staff access</li>
-      </ul>
-    </div>
-  </details>
-
   <details class="card" id="card-decision-explainer">
     <summary>🌟 Decision explainer + multi-round appeals<span class="premium-pill">💎 Premium</span></summary>
     <span class="desc">Builds on the one-reply ban-appeal flow shipped in v5.5. Adds: warned/muted users can DM the bot <em>"why was I actioned?"</em> for a plain-language answer drawn from the staff-supplied reason and the matched rule; banned users get a <strong>guided multi-round</strong> appeal — a short AI-facilitated back-and-forth that gives staff more than a single line to judge.</span>
@@ -638,7 +624,8 @@ Where Server Assistant is heading. Priorities are decided by the people who run 
 
 <div class="longterm-grid">
 
-  
+  <details class="card"><summary>🖥️ Web portal — advanced settings &amp; analytics</summary><span class="desc">Extends the shipped <strong>web portal</strong> with the deeper tools that still live in Discord today: <strong>full AutoMod editing in the browser</strong> — escalation ladders, server-type templates and live previews; <strong>threat-score trend charts</strong>; and <strong>undo windows</strong> surfaced right in the portal.</span></details>
+
   <details class="card"><summary>Daily AI channel summaries</summary><span class="desc">Once-a-day digest of activity in a chosen channel, posted to a configured destination.</span></details>
 
   <details class="card"><summary>🌟 Premium Plus ($14/mo) <span class="shipped-pill">Under consideration</span></summary><span class="desc">For high-volume servers that push past the 750K/month Standard Premium cap. Includes: 2M tokens/month, priority Concierge response queue, multi-server bundle (3 servers per subscription), and bonus features as they ship. Pending validation from 50+ Standard Premium subs — highest-voted ideas from that cohort will define the final feature set.</span></details>
@@ -650,7 +637,7 @@ Where Server Assistant is heading. Priorities are decided by the people who run 
   <details class="card"><summary>Birthday tracker</summary><span class="desc">Opt-in birthdays with auto-DM and channel post on the day.</span></details>
 
   
-  <details class="card"><summary>REST / webhook API</summary><span class="desc">Read-only endpoints for your guild's bot data (warnings, audit log, activity stats). For staff dashboards and external tooling — and the <strong>backend foundation for the v7.0.0 web portal</strong>.</span></details>
+  <details class="card"><summary>REST / webhook API</summary><span class="desc">Read-only endpoints for your guild's bot data (warnings, audit log, activity stats). For <strong>external</strong> staff dashboards and tooling — the same guild data the web portal already uses, exposed for your own builds.</span></details>
 
   <details class="card"><summary>Voice-channel moderation</summary><span class="desc">Real-time transcription + AutoMod / threat-score logic applied to voice channels. The industry's biggest moderation blind spot — no major bot touches voice.</span></details>
 
@@ -695,7 +682,22 @@ Where Server Assistant is heading. Priorities are decided by the people who run 
   <details class="band-shipped">
     <summary>✅ Shipped — the full history (tap to expand)</summary>
     <div class="shipped-scroll">
-    
+
+    <details class="card">
+      <summary>🖥️ Web portal for server administration <span class="shipped-pill">✅ Shipped v5.6.25</span></summary>
+      <div class="desc">
+        Your whole staff team manages the server from the browser at <strong>serverassistant.wandweb.co</strong> (or run <code>/portal</code>):
+        <ul>
+          <li>🔑 <strong>Discord OAuth</strong> sign-in — free for every server; owners, admins &amp; moderators each get role-mapped access</li>
+          <li>📊 <strong>Insights dashboard</strong> — members, online &amp; voice counts, moderation &amp; AI-usage trends, a paginated activity log, plus your Daily Pulse and weekly mod recap</li>
+          <li>📋 <strong>Cases &amp; moderation from the browser</strong> — warnings, ban appeals, tickets and a full audit trail</li>
+          <li>✅ <strong>Act-from-web decisions</strong> — resolve ban appeals, AutoMod reviews, owner-approvals and raid lock-downs from a "Needs input" queue, kept in sync with Discord</li>
+          <li>📱 <strong>Install it as an app</strong> on phone or desktop and turn on <strong>push notifications</strong></li>
+          <li>🛡️ Same guardrails as in Discord — approvals and full audit logging</li>
+        </ul>
+      </div>
+    </details>
+
     <details class="card">
       <summary>🛡️ Permission health check <span class="shipped-pill">✅ Shipped v5.6.1</span></summary>
       <span class="desc">After setup, an admin can edit the bot's role or a channel's permissions and silently break moderation. This periodically verifies Server Assistant still has what it needs — manage roles, post in your log channel, read your staff chat — and <strong>DMs the owner</strong> (or posts a quiet staff-chat note) the moment something drifts, with exactly what broke and how to fix it. No spam; it only speaks up when something's actually wrong.</span>
