@@ -100,66 +100,27 @@ AI features that watch your server's *health and behaviour* — **advisory by de
 .doc-sec[open] { padding-bottom: 0.5rem; }
 </style>
 
-<details class="doc-sec">
-<summary>🛡️ Moderation <span class="tier-badge tier-free">FREE</span></summary>
+## 🛡️ Moderation <span class="tier-badge tier-free">FREE</span>
 
-<div class="f-grid">
-  <div class="f-card">
-    <h4>🛂 Role-based tiers</h4>
-    <p>Defaults: <strong>Owner / Admin / Moderator</strong>. Each tier has its own capabilities + approval authority — fully customisable in <code>/settings → Role Tiers</code> (add Helper, Trial Mod, Senior Mod, anything).</p>
-  </div>
-  <div class="f-card">
-    <h4>⚖️ Tiered approval</h4>
-    <p>Dangerous actions (like <code>/purge</code>) route <strong>up</strong> a tier: admins approve moderators; the owner approves admins. Anyone with approval authority — or the owner — runs them directly.</p>
-  </div>
-  <div class="f-card">
-    <h4>⚠️ Persistent warnings + DMs</h4>
-    <p>Every warning is timestamped, attributed, and the user gets a DM with their current count and escalation context. Run <code>/warnings @user</code> or <code>/manage-warnings</code> to view or remove.</p>
-  </div>
-  <div class="f-card">
-    <h4>📝 Private staff notes</h4>
-    <p>For tracking behaviour without a formal warning. <strong>Invisible to the user</strong>; staff-only via <code>/note</code>, <code>/notes</code>, <code>/manage-notes</code>.</p>
-  </div>
-  <div class="f-card">
-    <h4>🧹 Soft-ban + time-based purge</h4>
-    <p><code>/softban</code> ban-then-unban to sweep messages without permanent removal. <code>/purge 50</code> or text <code>purge since 1pm</code> (your timezone; capped at Discord's 14-day limit).</p>
-  </div>
-  <div class="f-card">
-    <h4>🤖 Smart purge</h4>
-    <p><code>/purge … mode: Smart</code> — AI cleanup that removes only the genuinely problematic messages and <strong>keeps the rest</strong>, instead of clearing everything like a plain purge.</p>
-  </div>
-  <div class="f-card">
-    <h4>⏲️ Timed bans</h4>
-    <p><code>/tempban @user 7d reason</code> bans for a set time — <code>30m</code>, <code>2h</code>, <code>7d</code>, <code>1w</code>, even <code>1d12h</code> (1 min–28 days) — then <strong>un-bans automatically</strong>. The timer survives restarts, and the lift is logged to your audit trail.</p>
-  </div>
-  <div class="f-card">
-    <h4>🎭 One-command roles</h4>
-    <p><code>/role add @user @role</code> / <code>/role remove @user @role</code> — no digging through Discord's menus. Guards against privilege escalation: you can only assign roles below your own, and managed/integration roles are off-limits.</p>
-  </div>
-  <div class="f-card">
-    <h4>🚨 Server-wide lockdown</h4>
-    <p><code>/lockdown start</code> locks every <strong>text and forum channel</strong> in one shot — including their threads and posts, so a raid can't just move into a thread. <code>/lockdown end</code> restores each channel to its <strong>exact prior permissions</strong>, not a best guess. Reuses your existing lock permission, so there's nothing new to configure.</p>
-  </div>
-  <div class="f-card">
-    <h4>🕵️ Repeat-offender detection</h4>
-    <p>Enable with <code>/altguard on</code>. Fingerprints the users you ban or kick, then checks every new joiner — a fresh account reusing a banned user's avatar or near-identical name is <strong>auto-banned and reported to staff</strong>; weaker matches are flagged for review. Soft-bans are excluded.</p>
-  </div>
-  <div class="f-card">
-    <h4>🤔 AutoMod AI second-opinion <span class="tier-badge tier-premium">PREMIUM</span></h4>
-    <p>Optional in <code>/automod → AI Review</code>. Borderline filter hits get an AI confidence check first — confident ones act, low-confidence ones go to a one-tap staff review card (<em>Delete &amp; warn</em> / <em>Allow</em>) instead of an auto-delete. Cuts false positives; only borderline messages cost tokens.</p>
-  </div>
-  <div class="f-card">
-    <h4>📩 Ban reasons &amp; appeals</h4>
-    <p>Every ban (manual, <code>/tempban</code>, AutoMod, or native) DMs the user <strong>why</strong> and invites <strong>one reply</strong> to appeal. The reply opens a staff appeal ticket with <strong>Unban</strong> / <strong>Deny</strong> / <strong>Research</strong> (runs Message Report on their last message). Soft-bans excluded; on by default.</p>
-  </div>
-  <div class="f-card">
-    <h4>↩️ 24-hour undo</h4>
-    <p>Reverses your most recent ban, mute, channel deletion (incl. permissions), or nickname change. Note: deleted message contents can't be recovered — that's a Discord limit.</p>
-  </div>
-</div>
+The core toolkit — staff-only, role-aware, every action logged.
 
-<blockquote><strong>Bulk via role mention:</strong> <code>mute @TrollRole 1 hour</code> actions every member of that role. Bots auto-excluded; &gt;5 targets requires the Owner.</blockquote>
-</details>
+| Feature | What it does |
+|---|---|
+| 🛂 **Role-based tiers** | Owner / Admin / Moderator defaults, each with its own capabilities + approval authority — fully customisable in `/settings → Role Tiers`. |
+| ⚖️ **Tiered approval** | Dangerous actions (e.g. `/purge`) route *up* a tier for sign-off; anyone with approval authority — or the owner — runs them directly. |
+| ⚠️ **Persistent warnings + DMs** | Every warning is timestamped, attributed, and DM'd to the user with their current count — view or remove via `/warnings` / `/manage-warnings`. |
+| 📝 **Private staff notes** | Track behaviour without a formal warning; invisible to the user, via `/note`, `/notes`, `/manage-notes`. |
+| 🧹 **Soft-ban + timed purge** | `/softban` sweeps messages without a permanent ban; `/purge 50` or `purge since 1pm` clears recent messages (14-day Discord cap). |
+| 🤖 **Smart purge** | `/purge … mode: Smart` — AI removes only the genuinely problematic messages and keeps the rest. |
+| ⏲️ **Timed bans** | `/tempban @user 7d` auto-unbans after a set time (1 min–28 days); the timer survives restarts and the lift is logged. |
+| 🎭 **One-command roles** | `/role add` / `/role remove` with privilege-escalation guards — you can only assign roles below your own. |
+| 🚨 **Server-wide lockdown** | `/lockdown start` locks every text + forum channel (and their threads) at once; `/lockdown end` restores the exact prior permissions. |
+| 🕵️ **Repeat-offender detection** | `/altguard on` fingerprints banned users and auto-bans returning alts that reuse an avatar or near-identical name; weaker matches are flagged. |
+| 🤔 **AutoMod AI second-opinion** <span class="tier-badge tier-premium">PREMIUM</span> | Borderline filter hits get an AI confidence check — confident ones act, the rest go to a one-tap staff review card. |
+| 📩 **Ban reasons & appeals** | Every ban DMs the user *why* and invites one reply to appeal, opening a staff ticket with Unban / Deny / Research. |
+| ↩️ **24-hour undo** | Reverses your most recent ban, mute, channel deletion, or nickname change (deleted message contents can't be recovered — a Discord limit). |
+
+> **Bulk via role mention:** `mute @TrollRole 1 hour` actions every member of that role. Bots auto-excluded; >5 targets requires the Owner.
 
 ---
 
