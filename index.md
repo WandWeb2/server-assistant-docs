@@ -71,9 +71,9 @@ image: /server-assistant-docs/assets/banner.jpeg
 </style>
 
 <div class="cta-row">
-  <a class="cta cta-primary" href="https://discord.com/api/oauth2/authorize?client_id=1278486617375510570&permissions=8&scope=bot+applications.commands">➕ Invite to your server</a>
+  <a class="cta cta-primary" href="https://discord.com/api/oauth2/authorize?client_id=1278486617375510570&permissions=8&scope=bot+applications.commands">➕ Add to Discord</a>
+  <a class="cta cta-secondary" href="{{ site.url }}{{ site.baseurl }}/pricing/">💎 Pricing</a>
   <a class="cta cta-secondary" href="{{ site.url }}{{ site.baseurl }}/setup/">📖 Setup guide</a>
-  <a class="cta cta-secondary" href="https://top.gg/bot/1278486617375510570">👍 Vote on Top.gg</a>
 </div>
 
 <div class="free-callout">
@@ -251,6 +251,46 @@ image: /server-assistant-docs/assets/banner.jpeg
     .catch(function () {});
 })();
 </script>
+
+---
+
+## 💎 Level up with Premium
+
+The free tier is a *complete* moderation suite. **Premium** turns Server Assistant into **your server's own toolkit** — and almost all of it is set up from a single one-screen wizard.
+
+<div class="feat-grid">
+  <div class="feat-card">
+    <h3>🎨 White-label branding</h3>
+    <ul><li>Your nickname, your name + icon on its embeds, your colour</li><li>The bot wears <em>your</em> brand, not ours</li></ul>
+  </div>
+  <div class="feat-card">
+    <h3>💾 Backup &amp; restore</h3>
+    <ul><li>Snapshot roles, channels &amp; their exact permissions</li><li>One-tap, additive restore after a nuke or botched reorg</li></ul>
+  </div>
+  <div class="feat-card">
+    <h3>⌨️ Custom slash commands</h3>
+    <ul><li>Make your own <code>/rules</code>, <code>/faq</code> …</li><li>🔄 Live embeds — edit once, every posted copy updates</li></ul>
+  </div>
+  <div class="feat-card">
+    <h3>🎭 Reaction roles</h3>
+    <ul><li>Self-service role-button panels</li><li>A "My roles" menu with a ✓ next to roles you have</li></ul>
+  </div>
+  <div class="feat-card">
+    <h3>❓ AI Q&amp;A from your FAQ</h3>
+    <ul><li>Members ask — the bot answers from <strong>your entries only</strong></li><li>Kills the same-question-asked-50× noise</li></ul>
+  </div>
+  <div class="feat-card">
+    <h3>🌐 Translation · 🤝 Mediator</h3>
+    <ul><li>Right-click <strong>Translate</strong> or <code>/translate</code></li><li>AI mediation that hands staff a neutral summary</li></ul>
+  </div>
+</div>
+
+<div class="cta-row">
+  <a class="cta cta-primary" href="https://discord.com/api/oauth2/authorize?client_id=1278486617375510570&permissions=8&scope=bot+applications.commands">➕ Add to Discord</a>
+  <a class="cta cta-secondary" href="{{ site.url }}{{ site.baseurl }}/pricing/">💎 See Premium pricing</a>
+</div>
+
+> **Premium is $7/mo**, and billing only starts once your free 150K-token AI trial runs out — so light-use servers may never pay. Prefer your own AI key? **Premium BYOK is $3/mo.** A few perks (white-label, backup, custom commands) are full-Premium only.
 
 ---
 
