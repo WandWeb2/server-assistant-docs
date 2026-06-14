@@ -81,8 +81,6 @@ AI features that watch your server's *health and behaviour* — **advisory by de
 
 ---
 
-## 🛡️ Moderation <span class="tier-badge tier-free">FREE</span>
-
 <style>
 .f-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin: 1rem 0 1.5rem; }
 .f-card { background: rgba(255,255,255,0.55); border: 1px solid rgba(31,38,135,0.15); border-radius: 14px; padding: 0.95rem 1.15rem; box-shadow: 0 4px 18px rgba(31,38,135,0.08); }
@@ -91,7 +89,19 @@ AI features that watch your server's *health and behaviour* — **advisory by de
 .f-card ul { padding-left: 1.1rem; }
 .f-card code { font-size: 0.84em; }
 @media (max-width: 700px) { .f-grid { grid-template-columns: 1fr; } }
+/* Collapsed section cards — keep the page short; tap a heading to expand. */
+.doc-sec { border: 1px solid var(--glass-border); border-radius: 12px; margin: 0.7rem 0; background: rgba(255,255,255,0.03); }
+.doc-sec > summary { cursor: pointer; font-size: 1.35rem; font-weight: 700; padding: 0.75rem 0.85rem; list-style: none; color: var(--ink); }
+.doc-sec > summary::-webkit-details-marker { display: none; }
+.doc-sec > summary::before { content: "▸"; color: var(--ink-soft); margin-right: .5rem; font-size: .8em; }
+.doc-sec[open] > summary::before { content: "▾"; }
+.doc-sec[open] > summary { border-bottom: 1px solid var(--glass-border); margin-bottom: .5rem; }
+.doc-sec > *:not(summary) { margin-left: 0.85rem; margin-right: 0.85rem; }
+.doc-sec[open] { padding-bottom: 0.5rem; }
 </style>
+
+<details class="doc-sec">
+<summary>🛡️ Moderation <span class="tier-badge tier-free">FREE</span></summary>
 
 <div class="f-grid">
   <div class="f-card">
@@ -148,7 +158,8 @@ AI features that watch your server's *health and behaviour* — **advisory by de
   </div>
 </div>
 
-> **Bulk via role mention:** `mute @TrollRole 1 hour` actions every member of that role. Bots auto-excluded; >5 targets requires the Owner.
+<blockquote><strong>Bulk via role mention:</strong> <code>mute @TrollRole 1 hour</code> actions every member of that role. Bots auto-excluded; &gt;5 targets requires the Owner.</blockquote>
+</details>
 
 ---
 
