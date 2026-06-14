@@ -13,6 +13,20 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 
 ---
 
+## v5.6.17 — Your whole staff team can use the web portal
+
+The web portal now fits everyone on your team, not just owners and admins.
+
+### Added
+
+- **Moderators can now sign in to the web portal** — and everyone gets exactly the access their role already grants, never more. The portal reads the **roles you configured in `/setup`**: owners get full control, admins get settings plus the full moderation toolkit, and moderators get the moderation actions their role allows (e.g. warn, timeout, kick, ban) with a read-only view of settings. Every action is also re-checked on the server, so the access is real, not just hidden buttons.
+
+### Changed
+
+- **Portal sign-in now reflects your role tiers.** Previously the portal only recognised the server owner and Discord admins; now it recognises your configured **Moderator** and **Admin** roles too. (You may be asked to approve one extra Discord permission the first time you sign in, so the portal can see which of your roles you hold.)
+
+---
+
 ## v5.6.15 — Manage your server from the web
 
 A new web portal lets owners and admins run their server from any browser.

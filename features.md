@@ -436,7 +436,13 @@ Manage your server from any browser — no Discord required. Sign in with Discor
 - **SAi** — your AI assistant in a chat bubble: ask in plain English and (as owner) apply its suggestions in one tap.
 - **Web setup** — brand-new servers can be configured entirely from the portal: pick your channels, roles and AI, and the bot does the rest.
 
-Only the **owner and admins** can sign in, and each session is scoped to just the servers you manage — sign-in is verified through Discord, so there's no separate password.
+Your **whole staff team** can sign in — **owners, admins, and moderators** — and the portal mirrors each person's role exactly, never granting more than they already have in your server:
+
+- **Owners** — full control: settings, all moderation, billing, and setup.
+- **Admins** — settings + the full moderation toolkit (warn, timeout, kick, ban, unban).
+- **Moderators** — the moderation actions their role allows (e.g. warn, timeout, kick, ban) and a read-only view of settings.
+
+Access is verified through Discord (no separate password), resolved from the **roles you've already configured** in `/setup`, and every session is scoped to just the servers that person manages — and re-checked on the server for every action.
 
 ---
 
