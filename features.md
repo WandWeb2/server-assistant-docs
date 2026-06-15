@@ -7,29 +7,47 @@ description: A scannable tour of Server Assistant's flagship features.
 
 # ✨ Features
 
-A scannable tour. For the full command list and permissions, see **[Commands]({{ site.url }}{{ site.baseurl }}/commands/)**. For what's free vs Premium, see **[Pricing]({{ site.url }}{{ site.baseurl }}/pricing/)**.
+Scroll for the highlights — **tap any card to expand the detail.** For the full command list see **[Commands]({{ site.url }}{{ site.baseurl }}/commands/)**; for what's free vs Premium see **[Pricing]({{ site.url }}{{ site.baseurl }}/pricing/)**.
 
 <style>
-.tier-badge { display: inline-block; font-size: 0.65rem; font-weight: 800; letter-spacing: 0.05em;
-              padding: 0.15rem 0.5rem; border-radius: 999px; vertical-align: middle;
-              margin-left: 0.4rem; text-transform: uppercase; }
+.tier-badge { display: inline-block; font-size: 0.62rem; font-weight: 800; letter-spacing: 0.05em;
+              padding: 0.12rem 0.45rem; border-radius: 999px; vertical-align: middle;
+              margin-left: 0.35rem; text-transform: uppercase; }
 .tier-free    { background: rgba(46,204,113,0.18);  color: #1b8e3a; }
 .tier-trial   { background: rgba(52,152,219,0.18);  color: #1f6dbf; }
 .tier-premium { background: rgba(241,196,15,0.20);  color: #8a5a00; }
+
+/* First-glance card grid — scannable summaries, full detail one tap away. */
+.xgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 0.5rem; align-items: start; margin: 1rem 0 1.4rem; }
+.xgrid details.x { border: 1px solid var(--glass-border); border-radius: 10px; background: rgba(255,255,255,0.04); }
+.xgrid details.x > summary { cursor: pointer; padding: 0.55rem 0.8rem; list-style: none; color: var(--ink); font-size: 0.94rem; }
+.xgrid details.x > summary::-webkit-details-marker { display: none; }
+.xgrid details.x > summary::before { content: "▸"; color: var(--ink-soft); margin-right: .4rem; font-size: .75em; }
+.xgrid details.x[open] > summary::before { content: "▾"; }
+.xgrid details.x[open] > summary { border-bottom: 1px solid var(--glass-border); }
+.xgrid details.x .b { padding: 0.55rem 0.85rem 0.7rem; color: var(--ink-soft); font-size: 0.87rem; line-height: 1.5; }
+.xgrid details.x .b code { color: var(--accent); font-size: 0.85em; }
+.xgrid details.x .b p { margin: 0 0 .5rem; }
+.xgrid details.x .b p:last-child { margin-bottom: 0; }
+.xgrid details.x .b table { width: 100%; font-size: 0.82rem; margin: .2rem 0 .4rem; border-collapse: collapse; }
+.xgrid details.x .b th, .xgrid details.x .b td { text-align: left; padding: .25rem .4rem; border-bottom: 1px solid var(--glass-border); vertical-align: top; }
+.xgrid .t { color: var(--ink-soft); font-weight: 400; }
+@media (max-width: 600px) { .xgrid { grid-template-columns: 1fr; } }
 </style>
 
-**Tier badges below:**
-<span class="tier-badge tier-free">FREE</span> always free (no AI tokens used) ·
-<span class="tier-badge tier-trial">TRIAL</span> uses your guild's AI tokens, available on free trial ·
-<span class="tier-badge tier-premium">PREMIUM</span> requires Premium subscription
+<p style="font-size:.85rem;color:var(--ink-soft);margin:.2rem 0 0;">
+<span class="tier-badge tier-free">FREE</span> always free ·
+<span class="tier-badge tier-trial">TRIAL</span> uses your AI tokens, on the free trial ·
+<span class="tier-badge tier-premium">PREMIUM</span> needs a subscription
+</p>
 
 ---
 
 ## 🧠 The AI-Moderation Suite
 
-AI features that watch your server's *health and behaviour* — **advisory by design**. X-ray vision for your team; the decisions stay with you.
+AI that watches your server's *health and behaviour* — **advisory by design**. X-ray vision for your team; the decisions stay with you.
 
-<div class="dc" style="max-width:540px;margin:1rem 0 1.5rem;">
+<div class="dc" style="max-width:540px;margin:1rem 0 1.2rem;">
   <div class="dc-row">
     <img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy">
     <div class="dc-body">
@@ -45,44 +63,18 @@ AI features that watch your server's *health and behaviour* — **advisory by de
   </div>
 </div>
 
-| Feature | What it does |
-|---|---|
-| 🩺 **Pulse** <span class="tier-badge tier-trial">TRIAL</span> | Daily one-embed health report — messages, joins/leaves, AutoMod blocks, warnings — with week-over-week deltas. On by default; `/settings → 🩺 Pulse`. |
-| 🧠 **Self-trained AutoMod** <span class="tier-badge tier-trial">TRIAL</span> | Watches the messages staff delete or report, then proposes server-specific AutoMod rules for your approval — nothing auto-enforced, no identities stored. `/automod → Self-training`. |
-| 🩹 **Bot Health Insurance** <span class="tier-badge tier-trial">TRIAL</span> | The bot watches its *own* footprint and suggests tuning if it gets heavy-handed — at most once every 14 days, so the anti-noise feature never becomes noise. `/settings → Behavior`. |
-| 🛡️ **Threat Score** | At-a-glance per-user risk (🟢 Low / 🟠 Elevated / 🔴 High) from infraction history, weighted by severity and decaying over time. **Advisory view free for every server**; the score-driven **action** phase is Premium. `/settings → Behavior`. |
+<div class="xgrid" markdown="0">
+  <details class="x"><summary>🩺 <strong>Pulse</strong> <span class="t">— daily health report</span> <span class="tier-badge tier-trial">TRIAL</span></summary><div class="b">A daily one-embed health report — messages, joins/leaves, AutoMod blocks, warnings — with week-over-week deltas and flags for the quiet patterns humans miss. On by default; configure in <code>/settings → 🩺 Pulse</code>.</div></details>
+  <details class="x"><summary>🧠 <strong>Self-trained AutoMod</strong> <span class="t">— learns from you</span> <span class="tier-badge tier-trial">TRIAL</span></summary><div class="b">Watches the messages your staff delete or report, then proposes server-specific AutoMod rules for your approval. Nothing auto-enforced; 30-day local log, no identities stored. Enable in <code>/automod → Self-training</code>.</div></details>
+  <details class="x"><summary>🩹 <strong>Bot Health Insurance</strong> <span class="t">— it watches itself</span> <span class="tier-badge tier-trial">TRIAL</span></summary><div class="b">The bot watches its <em>own</em> footprint. If it gets heavy-handed, it suggests tuning — at most once every 14 days, so the anti-noise feature never becomes noise. Toggle in <code>/settings → Behavior</code>.</div></details>
+  <details class="x"><summary>🛡️ <strong>Threat Score</strong> <span class="t">— per-user risk read</span></summary><div class="b">At-a-glance per-user risk — 🟢 Low / 🟠 Elevated / 🔴 High — in user profiles. A transparent read of infraction history, weighted by severity and decaying over time. <strong>The advisory view is free for every server</strong>; the <strong>active, score-driven action</strong> phase (Premium) uses the score to drive moderation, with the safeguards listed on the roadmap. Enable in <code>/settings → Behavior</code>.</div></details>
+</div>
 
 ---
 
-<style>
-/* Deep-detail collapsibles — tap a heading to expand the genuinely long bits. */
-.doc-sec { border: 1px solid var(--glass-border); border-radius: 12px; margin: 0.7rem 0; background: rgba(255,255,255,0.03); }
-.doc-sec > summary { cursor: pointer; font-size: 1.02rem; font-weight: 700; padding: 0.6rem 0.85rem; list-style: none; color: var(--ink); }
-.doc-sec > summary::-webkit-details-marker { display: none; }
-.doc-sec > summary::before { content: "▸"; color: var(--ink-soft); margin-right: .5rem; font-size: .8em; }
-.doc-sec[open] > summary::before { content: "▾"; }
-.doc-sec[open] > summary { border-bottom: 1px solid var(--glass-border); margin-bottom: .5rem; }
-.doc-sec > *:not(summary) { margin-left: 0.85rem; margin-right: 0.85rem; }
-.doc-sec[open] { padding-bottom: 0.5rem; }
-</style>
-
 ## 🛡️ Moderation <span class="tier-badge tier-free">FREE</span>
 
-The core toolkit — staff-only, role-aware, every action logged. **Tap any card for the detail.**
-
-<style>
-/* First-glance card grid — scannable summaries, full detail one tap away. */
-.xgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 0.5rem; align-items: start; margin: 1rem 0 1.25rem; }
-.xgrid details.x { border: 1px solid var(--glass-border); border-radius: 10px; background: rgba(255,255,255,0.04); }
-.xgrid details.x > summary { cursor: pointer; padding: 0.55rem 0.8rem; list-style: none; color: var(--ink); font-size: 0.94rem; }
-.xgrid details.x > summary::-webkit-details-marker { display: none; }
-.xgrid details.x > summary::before { content: "▸"; color: var(--ink-soft); margin-right: .4rem; font-size: .75em; }
-.xgrid details.x[open] > summary::before { content: "▾"; }
-.xgrid details.x .b { padding: 0.1rem 0.85rem 0.7rem; color: var(--ink-soft); font-size: 0.87rem; line-height: 1.5; }
-.xgrid details.x .b code { color: var(--accent); font-size: 0.85em; }
-.xgrid .t { color: var(--ink-soft); font-weight: 400; }
-@media (max-width: 640px) { .xgrid { grid-template-columns: 1fr; } }
-</style>
+The core toolkit — staff-only, role-aware, every action logged.
 
 <div class="xgrid" markdown="0">
   <details class="x"><summary>🛂 <strong>Role-based tiers</strong> <span class="t">— customisable</span></summary><div class="b">Defaults: <strong>Owner / Admin / Moderator</strong>. Each tier has its own capabilities + approval authority — fully customisable in <code>/settings → Role Tiers</code> (add Helper, Trial Mod, Senior Mod, anything).</div></details>
@@ -106,41 +98,17 @@ The core toolkit — staff-only, role-aware, every action logged. **Tap any card
 
 ## 🤖 AutoMod Engine <span class="tier-badge tier-free">FREE</span>
 
-AutoMod runs on every non-staff message. Staff are completely exempt.
+Runs on every non-staff message. Staff are completely exempt.
 
-**Filter presets** (`/settings → Quick Presets → AutoMod`):
-
-| Preset | Catches |
-|---|---|
-| Off | Nothing |
-| Scams only | Free Nitro / Steam gift / Robux / IP-grabber links |
-| **Scams + slurs (gaming)** ⭐ | Above + Level-1 hate speech. Allows casual profanity |
-| Strict | Above + slurs L2, profanity L3 (high false-positive rate; child-friendly servers only) |
-
-**Other knobs:**
-
-- **Custom regex** — `/automod → Add Filter`, with a built-in safety check for catastrophic-backtracking patterns
-- **Link blocklist** — domain-level blocks (IP-grabbers preloaded)
-- **Punishment ladder** — Gentle 5/10/20 · Standard 3/5/10 · Strict 2/3/5 (warns → action)
-- **Anti-spam** — auto on; 5+ duplicate messages in 5s = removed + warned
-- **User DM** — every AutoMod removal DMs the user *which rule fired* + their warning count. Staff see the full embed in the log channel either way.
-
-### 🧩 Server-type templates <span class="tier-badge tier-free">FREE</span>
-
-The final step of `/setup` is a **community type** picker that tunes moderation to the *kind* of server you run. Each profile applies a tuned combo of **AutoMod pack + punishment ladder + anti-raid sensitivity**.
-
-| Type | Tuning |
-|---|---|
-| 🌐 **General** | Balanced defaults for a mixed community — the fallback if nothing else fits. |
-| 🎮 **Gaming** | Scams + slurs filtering that allows casual profanity, tuned for fast-moving chat. |
-| 🎨 **Creator / Streamer** | Stricter anti-raid to weather follow-raids and shout-out spikes. |
-| 🌸 **Anime / Fandom** | Community-friendly moderation tuned for high-energy fandom chat. |
-| 💰 **Crypto / Trading** | Strict anti-scam, fast escalation, tight anti-raid — the highest-pressure profile. |
-| 📚 **Education / Study** | A gentle, warning-first ladder that leans toward coaching over punishment. |
-| 🔞 **NSFW / 18+** | Stricter anti-raid sized for adult communities and the traffic they attract. |
-| 🛠️ **Set it up myself** | Applies nothing — you keep full manual control and tune every knob yourself. |
-
-It's **pre-selected from your server's name** and defaults to General. A template is applied **only on a fresh setup or a deliberate pick**, so re-running `/setup` never overwrites tuning you've changed. **Pulse and Threat Score are never auto-enabled by a template.**
+<div class="xgrid" markdown="0">
+  <details class="x"><summary>⚡ <strong>Filter presets</strong> <span class="t">— Off → Strict</span></summary><div class="b"><p>One-click packs in <code>/settings → Quick Presets → AutoMod</code>:</p><table><thead><tr><th>Preset</th><th>Catches</th></tr></thead><tbody><tr><td>Off</td><td>Nothing</td></tr><tr><td>Scams only</td><td>Free Nitro / Steam gift / Robux / IP-grabber links</td></tr><tr><td><strong>Scams + slurs (gaming)</strong> ⭐</td><td>Above + Level-1 hate speech. Allows casual profanity</td></tr><tr><td>Strict</td><td>Above + slurs L2, profanity L3 (high false-positive; child-friendly only)</td></tr></tbody></table></div></details>
+  <details class="x"><summary>🧩 <strong>Server-type templates</strong> <span class="t">— tune to your community</span></summary><div class="b"><p>The final <code>/setup</code> step tunes moderation to the <em>kind</em> of server you run — each profile a combo of AutoMod pack + punishment ladder + anti-raid sensitivity.</p><table><thead><tr><th>Type</th><th>Tuning</th></tr></thead><tbody><tr><td>🌐 General</td><td>Balanced defaults for a mixed community.</td></tr><tr><td>🎮 Gaming</td><td>Scams + slurs, allows casual profanity, tuned for fast chat.</td></tr><tr><td>🎨 Creator / Streamer</td><td>Stricter anti-raid for follow-raids and shout-out spikes.</td></tr><tr><td>🌸 Anime / Fandom</td><td>Community-friendly, tuned for high-energy fandom chat.</td></tr><tr><td>💰 Crypto / Trading</td><td>Strict anti-scam, fast escalation, tight anti-raid.</td></tr><tr><td>📚 Education / Study</td><td>Gentle, warning-first, coaching over punishment.</td></tr><tr><td>🔞 NSFW / 18+</td><td>Stricter anti-raid sized for adult communities.</td></tr><tr><td>🛠️ Set it up myself</td><td>Applies nothing — full manual control.</td></tr></tbody></table><p>Pre-selected from your server's name. Applied only on a fresh setup or a deliberate pick, so re-running <code>/setup</code> never overwrites tuning you've changed. Pulse and Threat Score are never auto-enabled.</p></div></details>
+  <details class="x"><summary>🔧 <strong>Custom regex filters</strong></summary><div class="b"><code>/automod → Add Filter</code>, with a built-in safety check for catastrophic-backtracking patterns before a rule goes live.</div></details>
+  <details class="x"><summary>🚫 <strong>Link blocklist</strong></summary><div class="b">Domain-level blocks, with known IP-grabber domains preloaded.</div></details>
+  <details class="x"><summary>⏫ <strong>Punishment ladder</strong></summary><div class="b">Auto-escalation: Gentle 5/10/20 · Standard 3/5/10 · Strict 2/3/5 (warns → timeout → kick → ban).</div></details>
+  <details class="x"><summary>💢 <strong>Anti-spam</strong></summary><div class="b">Auto-on; 5+ duplicate messages in 5 seconds are removed and the user is warned.</div></details>
+  <details class="x"><summary>📩 <strong>User DM on removal</strong></summary><div class="b">Every AutoMod removal DMs the user <em>which rule fired</em> plus their warning count. Staff see the full embed in the log channel either way.</div></details>
+</div>
 
 <div class="mock-pair">
   <div class="dc">
@@ -179,28 +147,23 @@ It's **pre-selected from your server's name** and defaults to General. A templat
 
 ## 📩 Ban reasons & one-reply appeals <span class="tier-badge tier-free">FREE</span>
 
-A ban shouldn't be a silent door-slam. Every ban — *manual, `/tempban`, AutoMod, or native Discord* — DMs the member the **exact reason** staff supplied plus an invite to send **one reply** to appeal. That single reply opens an **appeal ticket** in your staff channel with one-tap buttons:
+A ban shouldn't be a silent door-slam — every ban becomes a transparent process for both sides.
 
-| Button | What it does |
-|---|---|
-| ✅ **Unban** | Lifts the ban, DMs the user the decision, writes to the audit trail. |
-| 🚫 **Deny** | DMs the user that the appeal was denied, closes the ticket. |
-| 🔎 **Research** | Runs **Message Report** on the member's last message so you can judge context before deciding. |
-| 👤 **Info** | Quick profile — created/joined dates, roles, warning + note counts, Threat Score. Works even for banned users. |
-| ⚠️ **Warnings** | Full warning history, even if they've left the server. |
-| 📝 **Notes** | Staff notes (private, invisible to the user). |
-
-No DM noise, no per-incident tickets, and no AI token spent unless **Research** is pressed — and the Info / Warnings / Notes trio pulls the full picture without leaving the card. **Soft-bans excluded; on by default** (toggle in `/settings`); buttons survive restarts.
+<div class="xgrid" markdown="0">
+  <details class="x"><summary>📨 <strong>For the banned member</strong> <span class="t">— reason + one reply</span></summary><div class="b">An automatic DM with the <strong>exact reason</strong> staff supplied, plus an invitation to send <strong>one reply</strong> to appeal. Just one — no escalating threads, no bot back-and-forth, no DM noise. Soft-bans are excluded (they're meant to let people rejoin).</div></details>
+  <details class="x"><summary>🛠️ <strong>For your staff</strong> <span class="t">— one-tap appeal ticket</span></summary><div class="b"><p>That single reply opens an <strong>appeal ticket</strong> in your staff channel with one-tap buttons:</p><table><thead><tr><th>Button</th><th>What it does</th></tr></thead><tbody><tr><td>✅ <strong>Unban</strong></td><td>Lifts the ban, DMs the user, writes to the audit trail.</td></tr><tr><td>🚫 <strong>Deny</strong></td><td>DMs the denial, closes the ticket.</td></tr><tr><td>🔎 <strong>Research</strong></td><td>Runs Message Report on their last message for context.</td></tr><tr><td>👤 <strong>Info</strong></td><td>Profile — dates, roles, warning + note counts, Threat Score.</td></tr><tr><td>⚠️ <strong>Warnings</strong></td><td>Full history, even if they've left.</td></tr><tr><td>📝 <strong>Notes</strong></td><td>Staff notes (private).</td></tr></tbody></table><p>No AI token is spent unless <strong>Research</strong> is pressed. On by default; toggle in <code>/settings</code>; buttons survive restarts.</p></div></details>
+</div>
 
 ---
 
 ## 🌟 Decision explainer & guided appeals <span class="tier-badge tier-premium">PREMIUM</span>
 
-Two upgrades on the free flow above — fairer for members on the receiving end, less explaining for staff.
+Two upgrades on the free flow above — fairer for members, less explaining for staff.
 
-**❓ "Why was I actioned?"** — when a member is warned or muted, the bot DMs a short notice with a **Why was I actioned?** button that returns a calm, plain-language explanation drawn from the staff-supplied reason. They can also DM the bot *"why was I actioned?"* for the same on their most recent warning.
-
-**🗣️ Guided multi-round appeals** — a ban appeal becomes a short **AI-facilitated back-and-forth**: the member shares their side, the bot asks one or two neutral follow-ups, then hands staff a **concise summary plus the full transcript** (on the ticket *and* the portal). You set the max rounds (default 3); the facilitator **never decides or promises an outcome**. Staff can press **📨 More info** to reopen with a follow-up.
+<div class="xgrid" markdown="0">
+  <details class="x"><summary>❓ <strong>"Why was I actioned?"</strong> <span class="t">— plain-language reason</span></summary><div class="b">When a member is <strong>warned</strong> or <strong>muted</strong>, the bot DMs a short notice with a <strong>Why was I actioned?</strong> button. One tap returns a calm, plain-language explanation drawn from the staff-supplied reason — no moderator has to write it out. They can also DM the bot <em>"why was I actioned?"</em> for the same on their most recent warning.</div></details>
+  <details class="x"><summary>🗣️ <strong>Guided multi-round appeals</strong> <span class="t">— AI-facilitated</span></summary><div class="b">A ban appeal becomes a short <strong>AI-facilitated back-and-forth</strong>: the member shares their side, the bot asks <strong>one or two neutral follow-ups</strong>, then hands staff a <strong>concise summary plus the full transcript</strong> — on the ticket <em>and</em> the portal "Needs input" card. You set the max rounds (default 3); the facilitator <strong>never decides or promises an outcome</strong>. Staff can press <strong>📨 More info</strong> to reopen with a follow-up.</div></details>
+</div>
 
 **On by default** for premium servers (toggle in **Settings → Protection**); both need AI enabled. Free servers keep the one-reply appeal exactly as above.
 
@@ -208,76 +171,37 @@ Two upgrades on the free flow above — fairer for members on the receiving end,
 
 ## 💎 The Premium Toolkit <span class="tier-badge tier-premium">PREMIUM</span>
 
-Seven premium features, most set up from a one-screen wizard. Tap a card for details.
+Seven premium features, most set up from a one-screen wizard.
 
-<style>
-.feat-list details.feat { border: 1px solid var(--glass-border); border-radius: 12px; margin: 0.45rem 0; background: var(--glass-bg); }
-.feat-list details.feat > summary { cursor: pointer; font-weight: 700; padding: 0.6rem 0.9rem; list-style: none; color: var(--ink); }
-.feat-list details.feat > summary::-webkit-details-marker { display: none; }
-.feat-list details.feat > summary::before { content: "▸ "; color: var(--ink-soft); }
-.feat-list details.feat[open] > summary::before { content: "▾ "; }
-.feat-list details.feat .body { padding: 0 0.9rem 0.75rem; color: var(--ink-soft); font-size: 0.92rem; }
-.feat-list details.feat code { color: var(--accent); }
-</style>
-
-<div class="feat-list" markdown="0">
-
-<details class="feat"><summary>🎭 Reaction roles — <code>/rolepanel</code></summary>
-<div class="body">Self-service role buttons built from one wizard: pick roles from a dropdown, name the panel, post it. Members click a button to add or remove a role, and a <strong>🎭 My roles</strong> button opens a private menu showing a ✓ next to the roles they already have. The bot only ever offers roles it can actually assign (nothing above its own role).</div>
-</details>
-
-<details class="feat"><summary>⌨️ Custom slash commands — <code>/customcmd</code></summary>
-<div class="body">Define your own real <code>/command</code> (text or embed) — e.g. <code>/rules</code>, <code>/faq</code> — from a wizard. Embed commands have an optional <strong>🔄 Live</strong> toggle: edit the embed once and <em>every copy already posted updates</em>, turning announcements into living documents. Names are validated and can't shadow the bot's built-ins; up to 25 per server.</div>
-</details>
-
-<details class="feat"><summary>❓ AI Q&amp;A from your FAQ — <code>/faq</code></summary>
-<div class="body">Members run <code>/faq</code> with a question and the bot answers <strong>only</strong> from your curated entries — when the FAQ doesn't cover something it says so and points them to staff, rather than inventing an answer. Staff curate from the <code>/faq</code> management wizard. Counts toward your AI usage, with a per-user cooldown.</div>
-</details>
-
-<details class="feat"><summary>🌐 Translation — right-click or <code>/translate</code></summary>
-<div class="body">Right-click any message → <strong>Translate</strong>, or use <code>/translate</code> — into your Discord language or one you name. On-demand only, so there's no per-message cost or channel noise.</div>
-</details>
-
-<details class="feat"><summary>🤝 Mediator — <code>/mediate</code></summary>
-<div class="body">The wizard has the bot DM two members, collect each side privately, and post a <strong>neutral summary</strong> to staff — a chance to de-escalate <em>before</em> anyone reaches for a moderation action. It never takes sides or recommends punishment.</div>
-</details>
-
-<details class="feat"><summary>💾 Server backup &amp; restore — <code>/backup</code></summary>
-<div class="body">Snapshot your roles, categories, channels and their exact permission overwrites. <strong>Restore</strong> is owner-only, confirmation-gated, and strictly <strong>additive — it recreates anything missing and reapplies overwrites, never deletes</strong> — safe insurance after a nuke or a botched reorg.</div>
-</details>
-
-<details class="feat"><summary>🎨 White-label branding — <code>/brand</code></summary>
-<div class="body">Rebrand the bot for your server: a custom per-server <strong>nickname</strong>, your <strong>name + icon</strong> on the bot's embeds, your <strong>colour</strong>, and your name in place of "Server Assistant" in footers. <em>Discord allows only one global bot identity, so this rebrands the nickname and the bot's output — not the underlying account.</em></div>
-</details>
-
+<div class="xgrid" markdown="0">
+  <details class="x"><summary>🎭 <strong>Reaction roles</strong> <span class="t">— <code>/rolepanel</code></span></summary><div class="b">Self-service role buttons built from one wizard: pick roles from a dropdown, name the panel, post it. Members click to add or remove a role, and a <strong>🎭 My roles</strong> button opens a private menu showing a ✓ next to roles they already have. The bot only offers roles it can actually assign (nothing above its own role).</div></details>
+  <details class="x"><summary>⌨️ <strong>Custom slash commands</strong> <span class="t">— <code>/customcmd</code></span></summary><div class="b">Define your own real <code>/command</code> (text or embed) — e.g. <code>/rules</code>, <code>/faq</code> — from a wizard. Embed commands have an optional <strong>🔄 Live</strong> toggle: edit the embed once and <em>every copy already posted updates</em>. Names are validated and can't shadow the bot's built-ins; up to 25 per server.</div></details>
+  <details class="x"><summary>❓ <strong>AI Q&amp;A from your FAQ</strong> <span class="t">— <code>/faq</code></span></summary><div class="b">Members run <code>/faq</code> with a question and the bot answers <strong>only</strong> from your curated entries — when the FAQ doesn't cover something it says so and points to staff, rather than inventing an answer. Staff curate from the <code>/faq</code> wizard. Counts toward your AI usage, with a per-user cooldown.</div></details>
+  <details class="x"><summary>🌐 <strong>Translation</strong> <span class="t">— right-click or <code>/translate</code></span></summary><div class="b">Right-click any message → <strong>Translate</strong>, or use <code>/translate</code> — into your Discord language or one you name. On-demand only, so there's no per-message cost or channel noise.</div></details>
+  <details class="x"><summary>🤝 <strong>Mediator</strong> <span class="t">— <code>/mediate</code></span></summary><div class="b">The wizard has the bot DM two members, collect each side privately, and post a <strong>neutral summary</strong> to staff — a chance to de-escalate <em>before</em> anyone reaches for a moderation action. It never takes sides or recommends punishment.</div></details>
+  <details class="x"><summary>💾 <strong>Server backup &amp; restore</strong> <span class="t">— <code>/backup</code></span></summary><div class="b">Snapshot your roles, categories, channels and their exact permission overwrites. <strong>Restore</strong> is owner-only, confirmation-gated, and strictly <strong>additive — recreates anything missing and reapplies overwrites, never deletes</strong> — safe insurance after a nuke or a botched reorg.</div></details>
+  <details class="x"><summary>🎨 <strong>White-label branding</strong> <span class="t">— <code>/brand</code></span></summary><div class="b">Rebrand the bot for your server: a custom per-server <strong>nickname</strong>, your <strong>name + icon</strong> on embeds, your <strong>colour</strong>, and your name in place of "Server Assistant" in footers. <em>Discord allows only one global bot identity, so this rebrands the nickname and output — not the underlying account.</em></div></details>
 </div>
 
 ---
 
-## 🚨 Anti-Raid Detection <span class="tier-badge tier-free">FREE</span>
+## 🚨 Raid Protection <span class="tier-badge tier-free">FREE</span>
 
-Tracks join rate. When the threshold trips, the bot pings the Owner (and any roles configured in `/settings → 🔔 Notifications`), suspends onboarding DMs, and logs the event.
+Two layers that blunt automated raids before they reach your channels.
 
-| Preset | Threshold |
-|---|---|
-| Off | — |
-| Normal | 5 joins in 30s |
-| Strict | 3 joins in 15s |
-
----
-
-## 🔐 DM Verification Gate <span class="tier-badge tier-free">FREE</span>
-
-Optional anti-raid measure (`/settings → Verification`). New members are DM'd a green **Verify** button; clicking it grants the verified role. If DMs are closed, the failure is logged and the user sees only `@everyone`-open channels. Stops most automated raid bots cold.
+<div class="xgrid" markdown="0">
+  <details class="x"><summary>🚨 <strong>Anti-Raid Detection</strong> <span class="t">— join-rate alerts</span></summary><div class="b"><p>Tracks join rate. When the threshold trips, the bot pings the Owner (and any roles in <code>/settings → 🔔 Notifications</code>), suspends onboarding DMs, and logs the event.</p><table><thead><tr><th>Preset</th><th>Threshold</th></tr></thead><tbody><tr><td>Off</td><td>—</td></tr><tr><td>Normal</td><td>5 joins in 30s</td></tr><tr><td>Strict</td><td>3 joins in 15s</td></tr></tbody></table></div></details>
+  <details class="x"><summary>🔐 <strong>DM Verification Gate</strong> <span class="t">— verify button on join</span></summary><div class="b">Optional measure (<code>/settings → Verification</code>). New members are DM'd a green <strong>Verify</strong> button; clicking it grants the verified role. If DMs are closed, the failure is logged and the user sees only <code>@everyone</code>-open channels. Stops most automated raid bots cold.</div></details>
+</div>
 
 ---
 
 ## 🎨 AI Features <span class="tier-badge tier-trial">TRIAL</span>
 
-| Feature | What it does |
-|---|---|
-| 🖼️ **`/imagine`** | `/imagine <prompt>` returns a 1024×1024 image. Uses your own AI key (`/ai-config`), or the free trial (~30 images), or unlimited on Premium; 30s cooldown on the free tier. |
-| 📋 **Message Report** | Right-click any message → **Apps ▸ Message Report** for a 3–5 bullet context summary (tone, rule-breaking, escalation, recommended action), with one-tap **Warn · Timeout · Delete · Kick · Ban** + **👤 Info · ⚠️ Warnings · 📝 Notes** (each respects your role). The bot never auto-acts — staff always decide; any action is logged with the report attached. |
+<div class="xgrid" markdown="0">
+  <details class="x"><summary>🖼️ <strong>Image generation</strong> <span class="t">— <code>/imagine</code></span></summary><div class="b">Type <code>/imagine &lt;prompt&gt;</code>, get a 1024×1024 image. Uses your own AI key if you've added one in <code>/ai-config</code>; otherwise the free trial covers ~30 images and Premium is unlimited. 30s cooldown between images on the free tier.</div></details>
+  <details class="x"><summary>📋 <strong>Message Report</strong> <span class="t">— context summaries</span></summary><div class="b">Right-click any message → <strong>Apps ▸ Message Report</strong>. The bot reads ~20 surrounding messages and returns a 3–5 bullet summary: tone, possible rule-breaking, escalation pattern, recommended action. Only you see it — with one-tap <strong>Warn · Timeout · Delete · Kick · Ban</strong> and a second row of <strong>👤 Info · ⚠️ Warnings · 📝 Notes</strong> (each respects your role). Any action is logged <strong>with the report attached</strong>. The bot never auto-acts — staff always decide.</div></details>
+</div>
 
 <div class="mock-pair">
   <div class="dc">
@@ -316,48 +240,39 @@ Optional anti-raid measure (`/settings → Verification`). New members are DM'd 
 
 ## 👋 New-Member Experience <span class="tier-badge tier-free">FREE</span>
 
-- **Auto-onboarding DMs** (`/onboarding`) with placeholders: `[servername]`, `[usermention]`, `[membercount]`, `[owner]`, `[usercreatedat]`. Templates: Friendly · Gaming · Professional · Minimal · Custom.
-- **Auto-role on join** — pick the role new members receive (`/settings → New Members → Auto-role`).
-- **Welcome reaction emoji** — bot reacts to "X joined the server" system messages with your chosen emoji.
+<div class="xgrid" markdown="0">
+  <details class="x"><summary>✉️ <strong>Auto-onboarding DMs</strong></summary><div class="b">Welcome DMs (<code>/onboarding</code>) with placeholders: <code>[servername]</code>, <code>[usermention]</code>, <code>[membercount]</code>, <code>[owner]</code>, <code>[usercreatedat]</code>. Templates: Friendly · Gaming · Professional · Minimal · Custom.</div></details>
+  <details class="x"><summary>🏷️ <strong>Auto-role on join</strong></summary><div class="b">Pick the role new members receive automatically (<code>/settings → New Members → Auto-role</code>).</div></details>
+  <details class="x"><summary>👋 <strong>Welcome reaction emoji</strong></summary><div class="b">The bot reacts to "X joined the server" system messages with your chosen emoji.</div></details>
+</div>
 
 ---
 
 ## 📋 Canned Responses & Scheduled Reminders <span class="tier-badge tier-free">FREE</span>
 
-- **Snippets** — `snippet add rules-link …` then `snippet rules-link` (supports the same placeholders as onboarding). Mention a user when invoking to fill `[user]` slots.
-- **Reminders** — `/schedule` (modal) or text `schedule in 30 min: check the new mod application` / `schedule at 9am: post daily update`. Uses your `/timezone`. Fires in the channel where it was created.
+<div class="xgrid" markdown="0">
+  <details class="x"><summary>📋 <strong>Snippets</strong> <span class="t">— reusable canned replies</span></summary><div class="b"><code>snippet add rules-link …</code> then <code>snippet rules-link</code> (supports the same placeholders as onboarding). Mention a user when invoking to fill <code>[user]</code> slots.</div></details>
+  <details class="x"><summary>⏰ <strong>Reminders</strong> <span class="t">— scheduled messages</span></summary><div class="b"><code>/schedule</code> (modal) or text <code>schedule in 30 min: check the new mod application</code> / <code>schedule at 9am: post daily update</code>. Uses your <code>/timezone</code>. Fires in the channel where it was created.</div></details>
+</div>
 
 ---
 
 ## 📊 Audit Logging <span class="tier-badge tier-free">FREE</span>
 
-Every action posts a colour-coded embed to your log channel:
-
-| Status | Colour |
-|---|---|
-| EXECUTING / SUCCESS / APPROVED | 🟢 |
-| OWNER_BYPASS | 🔵 |
-| PENDING_APPROVAL | 🟡 |
-| DENIED / FORBIDDEN | 🔴 |
-| PERMISSION_DENIED | 🟠 |
-
-Verbosity is **All / Dangerous-only / Errors-only** (`/settings → Behavior`). A **weekly digest** posts every Monday 9am (configurable): total actions, warnings, top action types, most active staff, member count — separate from the daily 🩺 Pulse.
-
-<details class="doc-sec" markdown="1">
-<summary>🔐 Tamper-proof trail &amp; daily permission health check</summary>
-
-**Complete, tamper-proof audit trail** — native right-click bans/kicks/timeouts are logged like bot commands (nothing slips past); every action is written to a separate record **encrypted at rest** that staff can't read, edit, or erase; deleting a log-channel entry **alerts the owner** while the encrypted record survives; and during setup you can opt into a locked `#server-assistant-log` channel only the bot can post to. When staff moderate outside the bot, the log entry nudges them to use Server Assistant next time.
-
-**Permission health check** — once a day the bot verifies it still has **Manage Roles** plus a working staff + log channel. If a later admin change broke any of them, the **owner gets a one-time DM** naming exactly what broke and how to fix it. Idempotent and quiet (only notifies when the set of problems changes, clears once healthy), and strictly read-only.
-</details>
+<div class="xgrid" markdown="0">
+  <details class="x"><summary>🎨 <strong>Colour-coded log</strong> <span class="t">— every action, every status</span></summary><div class="b"><p>Every action posts a colour-coded embed to your log channel:</p><table><thead><tr><th>Status</th><th>Colour</th></tr></thead><tbody><tr><td>EXECUTING / SUCCESS / APPROVED</td><td>🟢</td></tr><tr><td>OWNER_BYPASS</td><td>🔵</td></tr><tr><td>PENDING_APPROVAL</td><td>🟡</td></tr><tr><td>DENIED / FORBIDDEN</td><td>🔴</td></tr><tr><td>PERMISSION_DENIED</td><td>🟠</td></tr></tbody></table><p>Verbosity: All / Dangerous-only / Errors-only (<code>/settings → Behavior</code>).</p></div></details>
+  <details class="x"><summary>📅 <strong>Weekly digest</strong></summary><div class="b">Every Monday at 9am (configurable day) the bot posts a summary: total actions, warnings, top action types, most active staff, member count. Separate from the daily 🩺 Pulse.</div></details>
+  <details class="x"><summary>🔐 <strong>Tamper-proof trail</strong></summary><div class="b">Native right-click bans/kicks/timeouts are logged like bot commands — nothing slips past. Every action is written to a separate record <strong>encrypted at rest</strong> that staff can't read, edit, or erase; deleting a log-channel entry <strong>alerts the owner</strong> while the encrypted record survives. Opt into a locked <code>#server-assistant-log</code> channel during setup.</div></details>
+  <details class="x"><summary>🩺 <strong>Permission health check</strong></summary><div class="b">Once a day the bot verifies it still has <strong>Manage Roles</strong> plus a working staff + log channel. If a later admin change broke any of them, the <strong>owner gets a one-time DM</strong> naming exactly what broke and how to fix it. Idempotent, quiet, and read-only.</div></details>
+</div>
 
 ---
 
-## 🎨 Customisation Hub (`/settings`) <span class="tier-badge tier-free">FREE</span>
+## 🎨 Customisation Hub <span class="tier-badge tier-free">FREE</span>
 
-**Nine sub-wizards.** All changes save instantly.
+**Nine sub-wizards in `/settings`** — all changes save instantly, no code, no restart.
 
-<div class="dc" style="max-width:540px;margin:0 0 1.2rem;">
+<div class="dc" style="max-width:540px;margin:0 0 1rem;">
   <div class="dc-row">
     <img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy">
     <div class="dc-body">
@@ -365,81 +280,59 @@ Verbosity is **All / Dangerous-only / Errors-only** (`/settings → Behavior`). 
       <div class="dc-embed">
         <div class="dc-title">🎨 Settings — pick a wizard</div>
         <div class="dc-desc">Nine sub-wizards, all in one place. Choose one to configure — every change saves instantly.</div>
-        <div class="dc-fname">Available</div><div class="dc-fval">🎨 Branding · ⚡ Quick Presets · 🛡️ Behaviour · 👋 New Members · 🔐 Verification</div>
-        <div class="dc-fname">More</div><div class="dc-fval">📍 Channel allowlist · 🛂 Role Tiers · 🔔 Notifications · 🩺 Pulse</div>
-        <div class="dc-foot">Changes save instantly · no code, no restart</div>
         <div class="dc-btns"><span class="dc-btn blurple">🎨 Branding</span><span class="dc-btn grey">⚡ Presets</span><span class="dc-btn grey">🛡️ Behaviour</span><span class="dc-btn grey">🛂 Role Tiers</span></div>
       </div>
     </div>
   </div>
 </div>
 
-| | What it covers |
-|---|---|
-| 🎨 **Branding** | Embed colour (12 presets + custom hex), bot nickname, default timezone |
-| ⚡ **Quick Presets** | One-click bundles for AutoMod, ladder, onboarding template, anti-raid |
-| 🛡️ **Behaviour** | Approval timeout, log verbosity, weekly digest day, self-checks, Threat Score |
-| 👋 **New Members** | Auto-role, welcome reaction emoji |
-| 🔐 **Verification** | Toggle gate + verified role |
-| 📍 **Channel allowlist** | Where the bot responds to mentions |
-| 🛂 **Role Tiers** | Custom tiers + approval authority per tier |
-| 🔔 **Notifications** | Which staff roles get pinged on raids / approval requests / AutoMod escalations |
-| 🩺 **Pulse** | Daily health digest channel + time + on/off |
+<div class="xgrid" markdown="0">
+  <details class="x"><summary>🎨 <strong>Branding</strong></summary><div class="b">Embed colour (12 presets + custom hex), bot nickname, default timezone.</div></details>
+  <details class="x"><summary>⚡ <strong>Quick Presets</strong></summary><div class="b">One-click bundles for AutoMod, punishment ladder, onboarding template, anti-raid.</div></details>
+  <details class="x"><summary>🛡️ <strong>Behaviour</strong></summary><div class="b">Approval timeout, log verbosity, weekly digest day, self-checks, Threat Score.</div></details>
+  <details class="x"><summary>👋 <strong>New Members</strong></summary><div class="b">Auto-role and welcome reaction emoji.</div></details>
+  <details class="x"><summary>🔐 <strong>Verification</strong></summary><div class="b">Toggle the DM verification gate and pick the verified role.</div></details>
+  <details class="x"><summary>📍 <strong>Channel allowlist</strong></summary><div class="b">Choose where the bot responds to mentions.</div></details>
+  <details class="x"><summary>🛂 <strong>Role Tiers</strong></summary><div class="b">Custom tiers and approval authority per tier.</div></details>
+  <details class="x"><summary>🔔 <strong>Notifications</strong></summary><div class="b">Which staff roles get pinged on raids / approval requests / AutoMod escalations.</div></details>
+  <details class="x"><summary>🩺 <strong>Pulse</strong></summary><div class="b">Daily health digest channel, time, and on/off.</div></details>
+</div>
 
 ---
 
 ## 🌐 Web Portal <span class="tier-badge tier-free">FREE</span>
 
-Manage your server from any browser — no Discord required. Sign in with Discord at **[serverassistant.wandweb.co](https://serverassistant.wandweb.co)** (or run `/portal` for a private link) for a clean dashboard.
+Manage your server from any browser — no Discord required. Sign in with Discord at **[serverassistant.wandweb.co](https://serverassistant.wandweb.co)** (or run `/portal` for a private link).
 
-| Area | What you get |
-|---|---|
-| 📊 **Insights** | Expandable KPIs (members · mod actions · AI usage) with trend charts, member-growth, online / in-voice counts, a paginated activity log, and your Daily Pulse + Weekly recap. |
-| 🛡️ **Act from the web** | Warn / timeout / kick / ban / unban (per your role) and resolve staff decisions — appeals, AutoMod reviews, approvals, lockdowns — from a "Needs input" strip kept in sync with the Discord card. |
-| 📲 **Install + notify** | Add the portal to your home screen as an app and get a push the moment something needs your input. |
-| ⚙️ **Settings** | Every customisation, the same safe options as `/settings`, with defaults shown inline. |
-| 🎫 **Support** | Open and follow up on tickets with the team, with reply notifications. |
-| 🤖 **SAi** | Your AI assistant in a chat bubble — ask in plain English and (as owner/admin) apply suggestions in one tap. |
-| 🚀 **Web setup** | Configure a brand-new server entirely from the portal — channels, roles, AI, done. |
-
-<details class="doc-sec" markdown="1">
-<summary>👥 Your whole staff team can sign in</summary>
-
-Owners, admins, and moderators can all sign in, and the portal mirrors each person's role exactly — never granting more than they already have in Discord. **Owners** get full control (settings, all moderation, billing, setup); **Admins** get settings + the full moderation toolkit (warn, timeout, kick, ban, unban); **Moderators** get the actions their role allows plus a read-only view of settings. Access is verified through Discord (no separate password), resolved from the roles you configured in `/setup`, scoped to just the servers that person manages, and re-checked on the server for every action.
-</details>
+<div class="xgrid" markdown="0">
+  <details class="x"><summary>📊 <strong>Insights</strong></summary><div class="b">Expandable KPIs (members · mod actions · AI usage) with trend charts, a member-growth chart, <strong>online / in-voice</strong> counts, a paginated activity log with real names, and your Daily Pulse + Weekly mod recap.</div></details>
+  <details class="x"><summary>🛡️ <strong>Act from the web</strong></summary><div class="b">Warn / timeout / kick / ban / unban (per your role) and resolve <strong>staff decisions</strong> — ban appeals, AutoMod reviews, owner-approvals, raid lock-downs — from a "Needs input" strip, kept in sync with the Discord card.</div></details>
+  <details class="x"><summary>📲 <strong>Install + notify</strong></summary><div class="b">Add the portal to your home screen as an app and turn on notifications to get a push the moment something needs your input.</div></details>
+  <details class="x"><summary>⚙️ <strong>Settings</strong></summary><div class="b">Every customisation, the same safe options as <code>/settings</code>, with sensible defaults shown inline.</div></details>
+  <details class="x"><summary>🎫 <strong>Support</strong></summary><div class="b">Open and follow up on tickets with the team, with reply notifications.</div></details>
+  <details class="x"><summary>🤖 <strong>SAi</strong> <span class="t">— AI assistant</span></summary><div class="b">Your AI assistant in a chat bubble: ask in plain English and (as owner/admin) apply its suggestions in one tap.</div></details>
+  <details class="x"><summary>🚀 <strong>Web setup</strong></summary><div class="b">Brand-new servers can be configured entirely from the portal: pick your channels, roles and AI, and the bot does the rest.</div></details>
+  <details class="x"><summary>👥 <strong>Your whole staff team</strong></summary><div class="b">Owners, admins, and moderators can all sign in, and the portal mirrors each person's role exactly — never granting more than they have in Discord. Verified through Discord (no separate password), resolved from the roles you configured in <code>/setup</code>, and re-checked on the server for every action.</div></details>
+</div>
 
 ---
 
 ## 🎫 Ticket Panels <span class="tier-badge tier-free">FREE</span> <span class="tier-badge tier-premium">PREMIUM</span>
 
-A private, structured way for members to reach staff. An admin posts a panel; members click **Create Ticket** to open a private channel with your support team. On close, a `.txt` transcript is saved to the transcript channel and the ticket channel is removed.
+A private, structured way for members to reach staff. An admin posts a panel; members click **Create Ticket** to open a private channel with your support team.
 
-| | Free <span class="tier-badge tier-free">FREE</span> | Premium <span class="tier-badge tier-premium">PREMIUM</span> |
-|---|---|---|
-| **Intake** | One question ("Briefly describe your issue") | Up to 4 custom questions |
-| **Messages** | Default welcome | Custom welcome + close messages |
-| **Mid-ticket** | — | Add users with `/tickets add @user` |
-| **Always** | Private channels, Close button + `/tickets close`, `.txt` transcript, editable panel title/description | Everything in Free, plus the above |
-
-<details class="doc-sec" markdown="1">
-<summary>⚙️ Setup flow &amp; commands</summary>
-
-Run `/tickets setup` — pick the panel channel, ticket category, support role, and an optional transcript channel. The bot posts a styled embed with a persistent **Create Ticket** button; a member's click opens a private `ticket-0001-username` channel visible only to them, the support role, and admins, showing the intake answers with a **Close Ticket** button.
-
-| Command | Who can use it |
-|---|---|
-| `/tickets setup` · `/tickets panel` | Admin / Owner |
-| `/tickets close [reason]` | Ticket owner, support role, anyone with Manage Channels |
-| `/tickets questions` · `/tickets add @user` | Admin / Owner *(Premium)* |
-
-The bot needs **Manage Channels** + **Manage Roles**, with its role above the support role in the hierarchy.
-</details>
+<div class="xgrid" markdown="0">
+  <details class="x"><summary>🎫 <strong>How it works</strong></summary><div class="b">Run <code>/tickets setup</code> — pick the panel channel, ticket category, support role, and an optional transcript channel. The bot posts a styled embed with a persistent <strong>Create Ticket</strong> button; a click opens a private <code>ticket-0001-username</code> channel visible only to the member, support role, and admins. On close, a <code>.txt</code> transcript is saved and the channel is removed.</div></details>
+  <details class="x"><summary>🆓 <strong>Free tier</strong> <span class="tier-badge tier-free">FREE</span></summary><div class="b">One intake question, private ticket channels, a Close button + <code>/tickets close [reason]</code>, a plain-text transcript on close, and an editable panel title/description via <code>/tickets panel</code>.</div></details>
+  <details class="x"><summary>💎 <strong>Premium tier</strong> <span class="tier-badge tier-premium">PREMIUM</span></summary><div class="b">Up to <strong>4 custom intake questions</strong> (<code>/tickets questions</code>), custom <strong>welcome + close messages</strong> (<code>/tickets panel</code>), and <strong>add users mid-ticket</strong> (<code>/tickets add @user</code>).</div></details>
+  <details class="x"><summary>⚙️ <strong>Commands &amp; permissions</strong></summary><div class="b"><table><thead><tr><th>Command</th><th>Who</th></tr></thead><tbody><tr><td><code>/tickets setup</code> · <code>/tickets panel</code></td><td>Admin / Owner</td></tr><tr><td><code>/tickets close [reason]</code></td><td>Ticket owner, support role, Manage Channels</td></tr><tr><td><code>/tickets questions</code> · <code>/tickets add</code></td><td>Admin / Owner <em>(Premium)</em></td></tr></tbody></table><p>The bot needs <strong>Manage Channels</strong> + <strong>Manage Roles</strong>, with its role above the support role.</p></div></details>
+</div>
 
 ---
 
 ## 🔐 Privacy & Security <span class="tier-badge tier-free">FREE</span>
 
-Your AI keys and other credentials are **encrypted at rest**. Per-server data is isolated. Removing the bot wipes your server's encrypted secrets immediately; the retention rules for warnings, notes, and audit logs are in the **[Privacy Policy]({{ site.url }}{{ site.baseurl }}/privacy/)**.
+Your AI keys and credentials are **encrypted at rest**, per-server data is isolated, and removing the bot wipes your server's encrypted secrets immediately. Retention rules for warnings, notes, and audit logs are in the **[Privacy Policy]({{ site.url }}{{ site.baseurl }}/privacy/)**.
 
 ---
 
