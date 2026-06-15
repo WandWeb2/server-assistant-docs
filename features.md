@@ -7,7 +7,7 @@ description: A scannable tour of Server Assistant's flagship features.
 
 # ✨ Features
 
-Each row is a feature area — what you get **free** on the left, what **Trial &amp; Premium** add on the right. Tap any card to expand the detail. See also **[Commands]({{ site.url }}{{ site.baseurl }}/commands/)** and **[Pricing]({{ site.url }}{{ site.baseurl }}/pricing/)**.
+Each feature area pairs what you get **free** (the <span style="color:#5aa0ea;font-weight:700;">blue</span> cards) with what **Trial &amp; Premium** add (the <span style="color:#e9c44c;font-weight:700;">gold</span> cards). Tap any card to expand the detail. See also **[Commands]({{ site.url }}{{ site.baseurl }}/commands/)** and **[Pricing]({{ site.url }}{{ site.baseurl }}/pricing/)**.
 
 <style>
 /* Continuous coloured-glass columns behind an aligned per-group grid. */
