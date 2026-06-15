@@ -9,6 +9,17 @@ description: How to get help with Server Assistant — use the /support slash co
 
 The only support channel is the **`/support`** slash command — also available as **`/feedback`**, which is an exact alias — run from any server that has Server Assistant installed.
 
+<style>
+.sup-cta { display: flex; gap: 1rem; align-items: center; margin: 1.3rem 0; padding: 1.1rem 1.3rem; background: rgba(52,130,225,0.10); border: 1px solid rgba(52,130,225,0.3); border-radius: 12px; font-size: .95rem; line-height: 1.5; }
+.sup-cta .ico { font-size: 1.8rem; flex-shrink: 0; }
+.sup-cta code { color: var(--accent); }
+</style>
+
+<div class="sup-cta">
+  <div class="ico">🎫</div>
+  <div>Run <code>/support</code> (or <code>/feedback</code>) from any server with the bot, tap <strong>Create a ticket</strong>, and DM your question — replies come straight back to your DMs.</div>
+</div>
+
 ---
 
 ## How to open a ticket

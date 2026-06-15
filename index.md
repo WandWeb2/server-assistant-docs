@@ -55,18 +55,19 @@ image: /server-assistant-docs/assets/banner.jpeg
 /* Discord embed mockup styles (.dc*) now live in the shared glass.css */
 
 .feat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin: 1.25rem 0; }
-.feat-card { background: rgba(255,255,255,0.55); border: 1px solid rgba(31,38,135,0.15); border-radius: 14px; padding: 1rem 1.15rem; box-shadow: 0 4px 18px rgba(31,38,135,0.08); }
-.feat-card h3 { margin: 0 0 .35rem; font-size: 1rem; }
-.feat-card ul { margin: 0; padding-left: 1.1rem; font-size: .88rem; line-height: 1.5; color: #2e3340; }
+.feat-card { background: rgba(255,255,255,0.04); border: 1px solid var(--glass-border); border-radius: 14px; padding: 1rem 1.15rem; }
+.feat-card h3 { margin: 0 0 .35rem; font-size: 1rem; color: var(--ink); }
+.feat-card ul { margin: 0; padding-left: 1.1rem; font-size: .88rem; line-height: 1.5; color: var(--ink-soft); }
 .feat-card ul li { margin: .15rem 0; }
+.feat-card code { color: var(--accent); }
 @media (max-width: 900px) { .feat-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 580px) { .feat-grid { grid-template-columns: 1fr; } }
 
 .ways-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin: 1rem 0; }
-.way { background: rgba(255,255,255,0.55); border: 1px solid rgba(31,38,135,0.15); border-radius: 14px; padding: 1rem 1.15rem; box-shadow: 0 4px 18px rgba(31,38,135,0.08); }
-.way h3 { margin: 0 0 .35rem; font-size: .98rem; }
-.way p { margin: 0; font-size: .88rem; line-height: 1.45; color: #2e3340; }
-.way code { font-size: .82em; }
+.way { background: rgba(255,255,255,0.04); border: 1px solid var(--glass-border); border-radius: 14px; padding: 1rem 1.15rem; }
+.way h3 { margin: 0 0 .35rem; font-size: .98rem; color: var(--ink); }
+.way p { margin: 0; font-size: .88rem; line-height: 1.45; color: var(--ink-soft); }
+.way code { font-size: .82em; color: var(--accent); }
 @media (max-width: 700px) { .ways-grid { grid-template-columns: 1fr; } }
 </style>
 

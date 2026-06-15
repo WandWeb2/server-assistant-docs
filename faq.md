@@ -8,14 +8,15 @@ description: Frequently asked questions about Server Assistant.
 # ❓ Frequently Asked Questions
 
 <style>
-.faq-cat-heading { margin: 1.6rem 0 0.6rem; font-size: 1.15rem; font-weight: 700; }
-details.faq { background: rgba(255,255,255,0.55); border: 1px solid rgba(31,38,135,0.12); border-radius: 12px; margin: 0.45rem 0; transition: background .15s, box-shadow .15s; }
-details.faq[open] { background: rgba(255,255,255,0.72); box-shadow: 0 4px 14px rgba(31,38,135,0.08); }
-details.faq > summary { cursor: pointer; padding: .8rem 1.1rem; font-weight: 600; font-size: .98rem; list-style: none; color: #1e2430; }
+.faq-cat-heading { margin: 1.6rem 0 0.6rem; font-size: 1.15rem; font-weight: 700; color: var(--ink); }
+details.faq { background: rgba(255,255,255,0.04); border: 1px solid var(--glass-border); border-radius: 12px; margin: 0.45rem 0; transition: background .15s; }
+details.faq[open] { background: rgba(255,255,255,0.07); }
+details.faq > summary { cursor: pointer; padding: .8rem 1.1rem; font-weight: 600; font-size: .98rem; list-style: none; color: var(--ink); }
 details.faq > summary::-webkit-details-marker { display: none; }
-details.faq > summary::after { content: '⌄'; float: right; color: #6a7280; font-size: 1.15rem; line-height: 1; transition: transform .2s; }
+details.faq > summary::after { content: '⌄'; float: right; color: var(--ink-soft); font-size: 1.15rem; line-height: 1; transition: transform .2s; }
 details.faq[open] > summary::after { transform: rotate(180deg); }
-details.faq .faq-body { padding: 0 1.1rem 1rem; font-size: .92rem; line-height: 1.55; color: #2e3340; }
+details.faq .faq-body { padding: 0 1.1rem 1rem; font-size: .92rem; line-height: 1.55; color: var(--ink-soft); }
+details.faq .faq-body code { color: var(--accent); }
 details.faq .faq-body p:first-child { margin-top: 0; }
 details.faq .faq-body p:last-child, details.faq .faq-body ul:last-child { margin-bottom: 0; }
 details.faq .faq-body table { margin: .5rem 0; }
@@ -163,7 +164,7 @@ Currently it's fixed wording. Custom verification copy is on the <a href="{{ sit
 
 <p><strong>The decision chain on every staff-chat message:</strong></p>
 
-<pre style="background:rgba(0,0,0,0.04); padding:0.85rem 1rem; border-radius:8px; font-size:0.78rem; line-height:1.45; overflow-x:auto;"><code>Every staff-chat message
+<pre style="background:rgba(255,255,255,0.06); padding:0.85rem 1rem; border-radius:8px; font-size:0.78rem; line-height:1.45; overflow-x:auto;"><code>Every staff-chat message
         │
         ▼
 [is_bot_addressed]      ← pure string check (mentions, bot name, prefixes)
@@ -183,7 +184,7 @@ Currently it's fixed wording. Custom verification copy is on the <a href="{{ sit
 
 <p><strong>Examples that cost zero tokens:</strong></p>
 <table style="font-size:0.88rem; border-collapse:collapse; width:100%;">
-<thead><tr style="background:rgba(0,0,0,0.04);"><th style="padding:.4rem .6rem; text-align:left;">Message</th><th style="padding:.4rem .6rem; text-align:left;">Why free</th></tr></thead>
+<thead><tr style="background:rgba(255,255,255,0.06);"><th style="padding:.4rem .6rem; text-align:left;">Message</th><th style="padding:.4rem .6rem; text-align:left;">Why free</th></tr></thead>
 <tbody>
 <tr><td style="padding:.4rem .6rem;"><em>"brb getting coffee"</em></td><td style="padding:.4rem .6rem;">No gate matches → silently ignored</td></tr>
 <tr><td style="padding:.4rem .6rem;"><code>warn @user spam</code></td><td style="padding:.4rem .6rem;">Action keyword <code>warn</code> → structured handler</td></tr>
@@ -197,7 +198,7 @@ Currently it's fixed wording. Custom verification copy is on the <a href="{{ sit
 
 <p><strong>Examples that DO use AI tokens:</strong></p>
 <table style="font-size:0.88rem; border-collapse:collapse; width:100%;">
-<thead><tr style="background:rgba(0,0,0,0.04);"><th style="padding:.4rem .6rem; text-align:left;">Message</th><th style="padding:.4rem .6rem; text-align:left;">Why AI is called</th></tr></thead>
+<thead><tr style="background:rgba(255,255,255,0.06);"><th style="padding:.4rem .6rem; text-align:left;">Message</th><th style="padding:.4rem .6rem; text-align:left;">Why AI is called</th></tr></thead>
 <tbody>
 <tr><td style="padding:.4rem .6rem;"><em>"@bot can you tell me who's been most active this week?"</em></td><td style="padding:.4rem .6rem;">No keyword + bot addressed → AI interprets</td></tr>
 <tr><td style="padding:.4rem .6rem;"><em>"bot, find me someone who joined yesterday and posted"</em></td><td style="padding:.4rem .6rem;">No keyword + bot addressed → AI interprets</td></tr>

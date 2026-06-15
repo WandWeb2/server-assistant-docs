@@ -15,12 +15,13 @@ Adding **Server Assistant** takes about 60 seconds — the wizard does the rest.
 
 <style>
 .steps { display: grid; gap: 1rem; margin: 1.2rem 0 1.6rem; }
-.step { display: grid; grid-template-columns: 56px 1fr; gap: 1rem; align-items: start; background: rgba(255,255,255,0.55); border: 1px solid rgba(31,38,135,0.15); border-radius: 14px; padding: 1.1rem 1.2rem; box-shadow: 0 4px 18px rgba(31,38,135,0.08); }
+.step { display: grid; grid-template-columns: 56px 1fr; gap: 1rem; align-items: start; background: rgba(255,255,255,0.04); border: 1px solid var(--glass-border); border-radius: 14px; padding: 1.1rem 1.2rem; }
 .step-n { width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg, #5865f2, #3498db); color: white; font-weight: 700; font-size: 1.25rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-.step-body h3 { margin: 0 0 .35rem; font-size: 1.1rem; }
-.step-body p { margin: 0 0 .5rem; font-size: .93rem; line-height: 1.5; color: #2e3340; }
+.step-body h3 { margin: 0 0 .35rem; font-size: 1.1rem; color: var(--ink); }
+.step-body p { margin: 0 0 .5rem; font-size: .93rem; line-height: 1.5; color: var(--ink-soft); }
 .step-body p:last-child { margin-bottom: 0; }
-.step-body ul { margin: .35rem 0 .25rem 1.1rem; padding: 0; font-size: .9rem; line-height: 1.5; color: #2e3340; }
+.step-body ul { margin: .35rem 0 .25rem 1.1rem; padding: 0; font-size: .9rem; line-height: 1.5; color: var(--ink-soft); }
+.step-body code { color: var(--accent); }
 .invite-cta { display: inline-block; background: linear-gradient(135deg, #5865f2, #3498db); color: white !important; padding: .55rem 1.1rem; border-radius: 999px; font-weight: 700; text-decoration: none !important; margin: .3rem 0; box-shadow: 0 4px 14px rgba(88,101,242,.35); }
 .invite-cta:hover { transform: translateY(-1px); box-shadow: 0 6px 18px rgba(88,101,242,.45); }
 @media (max-width: 600px) { .step { grid-template-columns: 1fr; } .step-n { margin-bottom: .35rem; } }
@@ -127,13 +128,14 @@ Need different channels/roles? Run `/setup` again — it overwrites the mapping 
 ## 🛠️ Common setup issues
 
 <style>
-details.tshoot { background: rgba(255,255,255,0.55); border: 1px solid rgba(31,38,135,0.12); border-radius: 12px; margin: .4rem 0; }
-details.tshoot[open] { background: rgba(255,255,255,0.72); box-shadow: 0 4px 14px rgba(31,38,135,0.08); }
-details.tshoot summary { cursor: pointer; padding: .7rem 1rem; font-weight: 600; font-size: .94rem; list-style: none; }
+details.tshoot { background: rgba(255,255,255,0.04); border: 1px solid var(--glass-border); border-radius: 12px; margin: .4rem 0; }
+details.tshoot[open] { background: rgba(255,255,255,0.07); }
+details.tshoot summary { cursor: pointer; padding: .7rem 1rem; font-weight: 600; font-size: .94rem; list-style: none; color: var(--ink); }
 details.tshoot summary::-webkit-details-marker { display: none; }
-details.tshoot summary::after { content: '⌄'; float: right; color: #9aa3b6; transition: transform .2s; }
+details.tshoot summary::after { content: '⌄'; float: right; color: var(--ink-soft); transition: transform .2s; }
 details.tshoot[open] summary::after { transform: rotate(180deg); }
-details.tshoot .body { padding: 0 1rem .8rem; font-size: .9rem; line-height: 1.5; color: #2e3340; }
+details.tshoot .body { padding: 0 1rem .8rem; font-size: .9rem; line-height: 1.5; color: var(--ink-soft); }
+details.tshoot .body code { color: var(--accent); }
 </style>
 
 <details class="tshoot"><summary><code>/setup</code> doesn't appear when I type <code>/</code></summary>
