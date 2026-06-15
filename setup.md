@@ -47,15 +47,13 @@ Adding **Server Assistant** takes about 60 seconds — the wizard does the rest.
 .fork-title { display: flex; align-items: center; gap: .5rem; justify-content: center; margin: 1.3rem 0 0; font-weight: 800; font-size: 1.05rem; color: var(--ink); }
 .fork-title .farrow { color: var(--ink-soft); font-size: 1.2rem; }
 .fork-title .stepn { display: inline-flex; align-items: center; justify-content: center; width: 1.7rem; height: 1.7rem; border-radius: 50%; background: linear-gradient(135deg,#5865f2,#3498db); color: #fff; font-weight: 800; font-size: .95rem; }
-.branch { position: relative; padding: 1.8rem 0; }
-.branch::before { content: ""; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 2px; height: .9rem; background: var(--glass-border); }   /* stem: heading → split bar */
-.branch::after  { content: ""; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 2px; height: .9rem; background: var(--glass-border); }  /* stem: merge bar → step 3 */
-.paths { display: grid; grid-template-columns: repeat(4, 1fr); gap: .8rem; position: relative; }
-.paths::before { content: ""; position: absolute; top: -.9rem; left: 12.5%; right: 12.5%; height: 2px; background: var(--glass-border); }   /* split bar */
-.paths::after  { content: ""; position: absolute; bottom: -.9rem; left: 12.5%; right: 12.5%; height: 2px; background: var(--glass-border); } /* merge bar */
+/* One SVG per connector → every line shares one coordinate system and meets
+   exactly. preserveAspectRatio="none" maps x 0–100 to the full width (so the
+   stubs sit over the 4 card columns); non-scaling-stroke keeps the lines 2px. */
+.forksvg { display: block; width: 100%; height: 24px; margin: 0; overflow: visible; }
+.forksvg line { stroke: var(--glass-border); stroke-width: 2; vector-effect: non-scaling-stroke; }
+.paths { display: grid; grid-template-columns: repeat(4, 1fr); gap: .8rem; }
 .path { position: relative; border-radius: 14px; border: 1px solid var(--glass-border); padding: .9rem .8rem; text-align: center; }
-.path::before { content: ""; position: absolute; top: -.9rem; left: 50%; transform: translateX(-50%); width: 2px; height: .9rem; background: var(--glass-border); }   /* stub: split bar → path top */
-.path::after  { content: ""; position: absolute; bottom: -.9rem; left: 50%; transform: translateX(-50%); width: 2px; height: .9rem; background: var(--glass-border); } /* stub: path bottom → merge bar */
 .path.c-green { background: rgba(46,204,113,0.08);  border-color: rgba(46,204,113,0.24); }
 .path.c-purple{ background: rgba(155,89,182,0.09);  border-color: rgba(155,89,182,0.26); }
 .path.c-blue  { background: rgba(52,130,225,0.09);  border-color: rgba(52,130,225,0.26); }
@@ -69,8 +67,7 @@ Adding **Server Assistant** takes about 60 seconds — the wizard does the rest.
 @media (max-width: 760px) {
   .steprow, .paths { grid-template-columns: 1fr; }
   .steprow.flip .stext, .steprow.flip .sshot { order: 0; }
-  .branch { padding: .6rem 0; }
-  .branch::before, .branch::after, .paths::before, .paths::after, .path::before, .path::after { display: none; }
+  .forksvg { display: none; }
 }
 
 .qwin-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap: .6rem; margin: 1rem 0; }
@@ -111,6 +108,7 @@ details.tshoot .body code { color: var(--accent); }
           <div class="dc-fname">Log channel</div><div class="dc-fval">#mod-log ✓ detected</div>
           <div class="dc-foot">Roles, then server-type + AI next</div>
           <div class="dc-btns"><span class="dc-btn grey">Create for me</span><span class="dc-btn blurple">Next: Roles →</span></div>
+          <div class="dc-btns"><span class="dc-btn">🌐 …or finish setup on the web</span></div>
         </div>
       </div></div>
     </div>
@@ -119,8 +117,9 @@ details.tshoot .body code { color: var(--accent); }
 
 <div class="fork-title"><span class="farrow">▼</span> <span class="stepn">2</span> Finish setup — any one of these</div>
 
-<div class="branch">
-  <div class="paths">
+<svg class="forksvg" viewBox="0 0 100 12" preserveAspectRatio="none" aria-hidden="true"><line x1="50" y1="0" x2="50" y2="4"/><line x1="12.5" y1="4" x2="87.5" y2="4"/><line x1="12.5" y1="4" x2="12.5" y2="12"/><line x1="37.5" y1="4" x2="37.5" y2="12"/><line x1="62.5" y1="4" x2="62.5" y2="12"/><line x1="87.5" y1="4" x2="87.5" y2="12"/></svg>
+
+<div class="paths">
     <div class="path c-blue">
       <div class="ptag">Default</div>
       <div class="pico">💬</div>
@@ -143,10 +142,11 @@ details.tshoot .body code { color: var(--accent); }
       <div class="ptag">In a browser</div>
       <div class="pico">🌐</div>
       <h4>Web portal</h4>
-      <p>Configure the same channels, roles &amp; AI at <a href="https://serverassistant.wandweb.co">serverassistant.wandweb.co</a> (or <code>/portal</code>) — the bot applies it just the same.</p>
+      <p>Configure the same channels, roles &amp; AI at <a href="https://serverassistant.wandweb.co">serverassistant.wandweb.co</a> — or just tap <strong>🌐 …finish setup on the web</strong> right in the welcome DM.</p>
     </div>
   </div>
-</div>
+
+<svg class="forksvg" viewBox="0 0 100 12" preserveAspectRatio="none" aria-hidden="true"><line x1="12.5" y1="0" x2="12.5" y2="8"/><line x1="37.5" y1="0" x2="37.5" y2="8"/><line x1="62.5" y1="0" x2="62.5" y2="8"/><line x1="87.5" y1="0" x2="87.5" y2="8"/><line x1="12.5" y1="8" x2="87.5" y2="8"/><line x1="50" y1="8" x2="50" y2="12"/></svg>
 
 <div class="steprow flip c-green">
   <div class="stext">
