@@ -21,8 +21,10 @@ Server Assistant supports **three interaction modes**. Most commands are availab
 .doc-sec > summary::-webkit-details-marker { display: none; }
 .doc-sec > summary::before { content: "▸"; color: var(--ink-soft); margin-right: .5rem; font-size: .8em; }
 .doc-sec[open] > summary::before { content: "▾"; }
-.doc-sec > *:not(summary) { margin-left: .85rem; margin-right: .85rem; }
-.doc-sec[open] { padding-bottom: .5rem; }
+.doc-sec[open] { padding: 0 .9rem .6rem; }
+.doc-sec[open] > summary { margin: 0 -.9rem .35rem; }
+.doc-sec table { width: 100%; border-collapse: collapse; }
+.doc-sec th, .doc-sec td { word-break: break-word; }
 </style>
 
 <details class="doc-sec" markdown="1">

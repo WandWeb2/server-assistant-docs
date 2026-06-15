@@ -26,16 +26,19 @@ description: Server Assistant pricing — generous free tier, $7/mo USD Premium 
 .plan li.no::before { content: "✕"; color: var(--ink-soft); }
 .plan-badge { position: absolute; top: -.55rem; left: 50%; transform: translateX(-50%); background: #e8b923; color: #3a2e00; font-size: .58rem; font-weight: 800; letter-spacing: .05em; padding: .18rem .6rem; border-radius: 999px; text-transform: uppercase; white-space: nowrap; }
 .pcta { display: block; text-align: center; margin-top: .9rem; padding: .5rem; border-radius: 999px; font-weight: 700; font-size: .86rem; text-decoration: none !important; background: rgba(255,255,255,0.1); color: var(--ink) !important; border: 1px solid var(--glass-border); }
-.plan.prem .pcta { background: linear-gradient(135deg,#e8b923,#d98b1f); color: #241a00 !important; border: none; }
-.plan.prem .pcta:hover, .pcta:hover { filter: brightness(1.08); }
+.pcta:hover { filter: brightness(1.15); background: rgba(255,255,255,0.16); }
+.add-cta { display: inline-block; padding: .7rem 1.7rem; border-radius: 999px; font-weight: 800; font-size: 1rem; text-decoration: none !important; background: linear-gradient(135deg,#5865f2,#3498db); color: #fff !important; box-shadow: 0 4px 16px rgba(88,101,242,.4); }
+.add-cta:hover { filter: brightness(1.08); }
 
 .doc-sec { border: 1px solid var(--glass-border); border-radius: 12px; margin: .55rem 0; background: rgba(255,255,255,0.03); }
 .doc-sec > summary { cursor: pointer; font-size: 1.0rem; font-weight: 700; padding: .6rem .85rem; list-style: none; color: var(--ink); }
 .doc-sec > summary::-webkit-details-marker { display: none; }
 .doc-sec > summary::before { content: "▸"; color: var(--ink-soft); margin-right: .5rem; font-size: .8em; }
 .doc-sec[open] > summary::before { content: "▾"; }
-.doc-sec > *:not(summary) { margin-left: .85rem; margin-right: .85rem; }
-.doc-sec[open] { padding-bottom: .5rem; }
+.doc-sec[open] { padding: 0 .9rem .6rem; }
+.doc-sec[open] > summary { margin: 0 -.9rem .35rem; }
+.doc-sec table { width: 100%; border-collapse: collapse; }
+.doc-sec th, .doc-sec td { word-break: break-word; }
 .free-cols { columns: 2; column-gap: 1.5rem; }
 .free-cols ul { margin: .2rem 0; padding-left: 1.1rem; }
 .free-cols li { break-inside: avoid; margin-bottom: .4rem; font-size: .88rem; line-height: 1.4; }
@@ -55,7 +58,7 @@ description: Server Assistant pricing — generous free tier, $7/mo USD Premium 
       <li>150K lifetime AI trial tokens</li>
       <li>~30 <code>/imagine</code> images</li>
     </ul>
-    <a class="pcta" href="https://discord.com/api/oauth2/authorize?client_id=1278486617375510570&permissions=8&scope=bot+applications.commands">➕ Add to Discord</a>
+    <a class="pcta" href="{{ site.url }}{{ site.baseurl }}/features/">✨ Explore features</a>
   </div>
   <div class="plan byok">
     <div class="plan-name">🔑 Premium BYOK</div>
@@ -70,7 +73,7 @@ description: Server Assistant pricing — generous free tier, $7/mo USD Premium 
       <li>You supply the key (Anthropic / xAI / OpenAI)</li>
       <li class="no">Custom commands, backup, white-label</li>
     </ul>
-    <a class="pcta" href="https://discord.com/api/oauth2/authorize?client_id=1278486617375510570&permissions=8&scope=bot+applications.commands">➕ Add to Discord</a>
+    <a class="pcta" href="{{ site.url }}{{ site.baseurl }}/features/">✨ Explore features</a>
   </div>
   <div class="plan prem">
     <div class="plan-badge">Most popular</div>
@@ -85,8 +88,12 @@ description: Server Assistant pricing — generous free tier, $7/mo USD Premium 
       <li>750K tokens / month (our key)</li>
       <li>Trial-then-bill — see below</li>
     </ul>
-    <a class="pcta" href="https://discord.com/api/oauth2/authorize?client_id=1278486617375510570&permissions=8&scope=bot+applications.commands">➕ Add to Discord</a>
+    <a class="pcta" href="{{ site.url }}{{ site.baseurl }}/features/">✨ Explore features</a>
   </div>
+</div>
+
+<div style="text-align:center; margin:.2rem 0 .6rem;">
+  <a class="add-cta" href="https://discord.com/api/oauth2/authorize?client_id=1278486617375510570&permissions=8&scope=bot+applications.commands">➕ Add to Discord</a>
 </div>
 
 <p style="font-size:.8rem;color:var(--ink-soft);text-align:center;margin:.2rem 0 1rem;">All prices in USD · tax added at checkout by region · Premium is per-server · cancel anytime.</p>
