@@ -41,20 +41,21 @@ Adding **Server Assistant** takes about 60 seconds — the wizard does the rest.
 .steprow.flip .stext { order: 2; }
 .steprow.flip .sshot { order: 1; }
 
-/* Flow connectors: one step flows into the next; the middle branches and re-merges */
-.flow-down { display: flex; flex-direction: column; align-items: center; color: var(--ink-soft); margin: .1rem 0; }
-.flow-down .arrow { font-size: 1.5rem; line-height: 1; }
-.flow-down .cap { font-size: .9rem; margin-top: -.1rem; }
-.branch-h { display: flex; align-items: center; gap: .5rem; justify-content: center; margin: .2rem 0 .1rem; font-weight: 800; font-size: 1.05rem; color: var(--ink); }
-.branch-h .stepn { display: inline-flex; align-items: center; justify-content: center; width: 1.7rem; height: 1.7rem; border-radius: 50%; background: linear-gradient(135deg,#5865f2,#3498db); color: #fff; font-weight: 800; font-size: .95rem; }
-.paths { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; position: relative; margin: 1.5rem 0; }
-.paths::before, .paths::after { content: ""; position: absolute; left: 16.66%; right: 16.66%; height: 2px; background: var(--glass-border); }
-.paths::before { top: -.9rem; }
-.paths::after  { bottom: -.9rem; }
+/* Flow: step 1 flows down, branches into 3 paths, then re-merges into step 3 —
+   fully connected with continuous CSS lines (stem → split bar → stubs → cards →
+   stubs → merge bar → stem). */
+.fork-title { display: flex; align-items: center; gap: .5rem; justify-content: center; margin: 1.3rem 0 0; font-weight: 800; font-size: 1.05rem; color: var(--ink); }
+.fork-title .farrow { color: var(--ink-soft); font-size: 1.2rem; }
+.fork-title .stepn { display: inline-flex; align-items: center; justify-content: center; width: 1.7rem; height: 1.7rem; border-radius: 50%; background: linear-gradient(135deg,#5865f2,#3498db); color: #fff; font-weight: 800; font-size: .95rem; }
+.branch { position: relative; padding: 1.8rem 0; }
+.branch::before { content: ""; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 2px; height: .9rem; background: var(--glass-border); }   /* stem: heading → split bar */
+.branch::after  { content: ""; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 2px; height: .9rem; background: var(--glass-border); }  /* stem: merge bar → step 3 */
+.paths { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; position: relative; }
+.paths::before { content: ""; position: absolute; top: -.9rem; left: 16.66%; right: 16.66%; height: 2px; background: var(--glass-border); }   /* split bar */
+.paths::after  { content: ""; position: absolute; bottom: -.9rem; left: 16.66%; right: 16.66%; height: 2px; background: var(--glass-border); } /* merge bar */
 .path { position: relative; border-radius: 14px; border: 1px solid var(--glass-border); padding: 1rem 1.1rem; text-align: center; }
-.path::before, .path::after { content: ""; position: absolute; left: 50%; transform: translateX(-50%); width: 2px; height: .9rem; background: var(--glass-border); }
-.path::before { top: -.9rem; }
-.path::after  { bottom: -.9rem; }
+.path::before { content: ""; position: absolute; top: -.9rem; left: 50%; transform: translateX(-50%); width: 2px; height: .9rem; background: var(--glass-border); }   /* stub: split bar → path top */
+.path::after  { content: ""; position: absolute; bottom: -.9rem; left: 50%; transform: translateX(-50%); width: 2px; height: .9rem; background: var(--glass-border); } /* stub: path bottom → merge bar */
 .path.c-green { background: rgba(46,204,113,0.08);  border-color: rgba(46,204,113,0.24); }
 .path.c-purple{ background: rgba(155,89,182,0.09);  border-color: rgba(155,89,182,0.26); }
 .path.c-blue  { background: rgba(52,130,225,0.09);  border-color: rgba(52,130,225,0.26); }
@@ -63,10 +64,12 @@ Adding **Server Assistant** takes about 60 seconds — the wizard does the rest.
 .path h4 { margin: .25rem 0 .3rem; font-size: 1.05rem; }
 .path h4 code { color: var(--accent); }
 .path p { margin: 0; color: var(--ink-soft); font-size: .87rem; line-height: 1.5; }
+.merge-cap { text-align: center; font-size: .85rem; color: var(--ink-soft); margin: .1rem 0 1rem; }
 @media (max-width: 760px) {
   .steprow, .paths { grid-template-columns: 1fr; }
   .steprow.flip .stext, .steprow.flip .sshot { order: 0; }
-  .paths::before, .paths::after, .path::before, .path::after { display: none; }
+  .branch { padding: .6rem 0; }
+  .branch::before, .branch::after, .paths::before, .paths::after, .path::before, .path::after { display: none; }
 }
 
 .qwin-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap: .6rem; margin: 1rem 0; }
@@ -97,52 +100,51 @@ details.tshoot .body code { color: var(--accent); }
   <div class="stext">
     <div class="stepn">1</div>
     <h3>Invite the bot</h3>
-    <p>One click to add it — <strong>don't uncheck any OAuth permissions</strong> (ban/kick/auto-role rely on them). The moment it joins, it scans your server and <strong>DMs the owner a pre-filled setup proposal</strong>.</p>
+    <p>One click to add it — <strong>don't uncheck any OAuth permissions</strong> (ban/kick/auto-role rely on them). The moment it joins, it scans your server and <strong>DMs the owner the pre-filled setup wizard</strong> — or a one-click fix-it screen if it's missing a permission it needs.</p>
     <p><a class="cta-inline" href="https://discord.com/api/oauth2/authorize?client_id=1278486617375510570&permissions=8&scope=bot+applications.commands">➕ Add to Discord</a></p>
-    <details class="smore"><summary>More</summary><div class="sbody">Also on <a href="https://top.gg/bot/1278486617375510570">Top.gg</a> and <a href="https://discordbotlist.com/bots/server-assistant">discordbotlist.com</a>. Slash commands take up to 1 hour to propagate the first time.</div></details>
+    <details class="smore"><summary>More</summary><div class="sbody">Also on <a href="https://top.gg/bot/1278486617375510570">Top.gg</a> and <a href="https://discordbotlist.com/bots/server-assistant">discordbotlist.com</a>. If your DMs are closed it posts the wizard in-server instead. Slash commands take up to 1 hour to propagate the first time.</div></details>
   </div>
   <div class="sshot">
     <div class="dc">
       <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
         <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">Direct Message</span></div>
-        <div class="dc-embed green">
-          <div class="dc-title">👋 Thanks for adding me!</div>
-          <div class="dc-desc">I scanned your server and detected sensible defaults. Tap <strong>Apply</strong> and you're set up.</div>
-          <div class="dc-fname">Detected</div><div class="dc-fval">#staff-chat · #mod-log · @Admin · @Moderator</div>
-          <div class="dc-foot">Or run /setup to configure step by step</div>
-          <div class="dc-btns"><span class="dc-btn green">✅ Apply</span><span class="dc-btn grey">Customise</span></div>
+        <div class="dc-embed blue">
+          <div class="dc-title">🧭 Welcome — let's get you set up</div>
+          <div class="dc-desc">I scanned your server and pre-filled the wizard. <strong>Step 1 of 3 · Channels</strong> — confirm or change anything.</div>
+          <div class="dc-fname">Staff chat</div><div class="dc-fval">#staff-chat ✓ detected</div>
+          <div class="dc-fname">Log channel</div><div class="dc-fval">#mod-log ✓ detected</div>
+          <div class="dc-foot">Roles, then server-type + AI next</div>
+          <div class="dc-btns"><span class="dc-btn grey">Create for me</span><span class="dc-btn blurple">Next: Roles →</span></div>
         </div>
       </div></div>
     </div>
   </div>
 </div>
 
-<div class="flow-down"><span class="arrow">▼</span></div>
+<div class="fork-title"><span class="farrow">▼</span> <span class="stepn">2</span> Finish setup — any one of these</div>
 
-<div class="branch-h"><span class="stepn">2</span> Finish setup — any one of these</div>
-
-<div class="paths">
-  <div class="path c-green">
-    <div class="ptag">⚡ Fastest</div>
-    <div class="pico">✅</div>
-    <h4>Tap "Apply"</h4>
-    <p>One tap on the DM the bot just sent you — it applies the detected config and you're live.</p>
-  </div>
-  <div class="path c-purple">
-    <div class="ptag">🧭 Guided</div>
-    <div class="pico">🧭</div>
-    <h4><code>/setup</code></h4>
-    <p>The 3-step wizard: confirm channels, map roles, pick your server type + AI. About 60 seconds.</p>
-  </div>
-  <div class="path c-blue">
-    <div class="ptag">🤖 Hands-off</div>
-    <div class="pico">🤖</div>
-    <h4><code>/autopilot</code></h4>
-    <p>One command — detects and applies a sensible config in a single step.</p>
+<div class="branch">
+  <div class="paths">
+    <div class="path c-blue">
+      <div class="ptag">Default</div>
+      <div class="pico">💬</div>
+      <h4>In your DMs</h4>
+      <p>The wizard's already waiting — confirm the detected channels &amp; roles, pick your server type + AI, hit <strong>Finish</strong>.</p>
+    </div>
+    <div class="path c-purple">
+      <div class="ptag">Same wizard</div>
+      <div class="pico">🧭</div>
+      <h4><code>/setup</code></h4>
+      <p>The exact same wizard, run in-server — handy if your DMs were closed or you want to redo it.</p>
+    </div>
+    <div class="path c-green">
+      <div class="ptag">One-tap</div>
+      <div class="pico">🪄</div>
+      <h4><code>/autopilot</code></h4>
+      <p>Scans your server and shows a proposed config — tap <strong>Apply</strong> to use it as-is.</p>
+    </div>
   </div>
 </div>
-
-<div class="flow-down"><span class="arrow">▼</span><span class="cap">…all three land you here</span></div>
 
 <div class="steprow flip c-green">
   <div class="stext">
