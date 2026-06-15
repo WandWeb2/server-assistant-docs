@@ -53,7 +53,7 @@ The Bot is a tool. Final accountability for any moderation action rests with the
 
 ## 5. AI features
 
-The Bot offers optional AI features (Concierge, Message Report, Self-trained AutoMod, Pulse, `/imagine`) powered by Anthropic and optionally by third-party providers (xAI, OpenAI) when you supply your own key:
+The Bot offers optional AI features (SAi, Message Report, Self-trained AutoMod, Pulse, `/imagine`) powered by Anthropic and optionally by third-party providers (xAI, OpenAI) when you supply your own key:
 
 - AI-generated content is **not guaranteed to be accurate or appropriate**
 - You are responsible for reviewing AI output before relying on it for moderation decisions
