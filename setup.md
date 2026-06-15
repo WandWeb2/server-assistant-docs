@@ -50,15 +50,16 @@ Adding **Server Assistant** takes about 60 seconds — the wizard does the rest.
 .branch { position: relative; padding: 1.8rem 0; }
 .branch::before { content: ""; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 2px; height: .9rem; background: var(--glass-border); }   /* stem: heading → split bar */
 .branch::after  { content: ""; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 2px; height: .9rem; background: var(--glass-border); }  /* stem: merge bar → step 3 */
-.paths { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; position: relative; }
-.paths::before { content: ""; position: absolute; top: -.9rem; left: 16.66%; right: 16.66%; height: 2px; background: var(--glass-border); }   /* split bar */
-.paths::after  { content: ""; position: absolute; bottom: -.9rem; left: 16.66%; right: 16.66%; height: 2px; background: var(--glass-border); } /* merge bar */
-.path { position: relative; border-radius: 14px; border: 1px solid var(--glass-border); padding: 1rem 1.1rem; text-align: center; }
+.paths { display: grid; grid-template-columns: repeat(4, 1fr); gap: .8rem; position: relative; }
+.paths::before { content: ""; position: absolute; top: -.9rem; left: 12.5%; right: 12.5%; height: 2px; background: var(--glass-border); }   /* split bar */
+.paths::after  { content: ""; position: absolute; bottom: -.9rem; left: 12.5%; right: 12.5%; height: 2px; background: var(--glass-border); } /* merge bar */
+.path { position: relative; border-radius: 14px; border: 1px solid var(--glass-border); padding: .9rem .8rem; text-align: center; }
 .path::before { content: ""; position: absolute; top: -.9rem; left: 50%; transform: translateX(-50%); width: 2px; height: .9rem; background: var(--glass-border); }   /* stub: split bar → path top */
 .path::after  { content: ""; position: absolute; bottom: -.9rem; left: 50%; transform: translateX(-50%); width: 2px; height: .9rem; background: var(--glass-border); } /* stub: path bottom → merge bar */
 .path.c-green { background: rgba(46,204,113,0.08);  border-color: rgba(46,204,113,0.24); }
 .path.c-purple{ background: rgba(155,89,182,0.09);  border-color: rgba(155,89,182,0.26); }
 .path.c-blue  { background: rgba(52,130,225,0.09);  border-color: rgba(52,130,225,0.26); }
+.path.c-amber { background: rgba(241,196,15,0.08);  border-color: rgba(241,196,15,0.26); }
 .path .ptag { display: inline-block; font-size: .66rem; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: .25rem; }
 .path .pico { font-size: 1.7rem; line-height: 1; }
 .path h4 { margin: .25rem 0 .3rem; font-size: 1.05rem; }
@@ -89,11 +90,6 @@ details.tshoot .body code { color: var(--accent); }
 <div class="callout warn">
   <div class="ico">⚠️</div>
   <div>Only the <strong>Discord-native server owner</strong> can run <code>/setup</code> — a hard safety check so admins can't escalate their own permissions.</div>
-</div>
-
-<div class="callout info">
-  <div class="ico">🌐</div>
-  <div><strong>Prefer the web?</strong> Owners can finish setup from the <a href="https://serverassistant.wandweb.co">web portal</a> — pick your channels, roles and AI in a browser and the bot configures everything. Run <code>/portal</code> for a private link.</div>
 </div>
 
 <div class="steprow c-blue">
@@ -142,6 +138,12 @@ details.tshoot .body code { color: var(--accent); }
       <div class="pico">🪄</div>
       <h4><code>/autopilot</code></h4>
       <p>Scans your server and shows a proposed config — tap <strong>Apply</strong> to use it as-is.</p>
+    </div>
+    <div class="path c-amber">
+      <div class="ptag">In a browser</div>
+      <div class="pico">🌐</div>
+      <h4>Web portal</h4>
+      <p>Configure the same channels, roles &amp; AI at <a href="https://serverassistant.wandweb.co">serverassistant.wandweb.co</a> (or <code>/portal</code>) — the bot applies it just the same.</p>
     </div>
   </div>
 </div>
