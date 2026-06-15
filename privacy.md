@@ -119,15 +119,15 @@ You control all of this via the `/privacy` panel. AutoMod and anti-raid are requ
 | **🟢 Live server insights** *(Pulse + web-portal dashboard)* | Member **presence** (online / idle / DND vs offline) and **voice-channel membership**, read live to show **aggregate counts only** (e.g. "42 online · 6 in voice"). Never which member, never which channel; only the running totals are stored, as time-series numbers for the growth/activity charts | On |
 | **🧠 Self-trained AutoMod** | Messages your staff delete or report | Off |
 | **🩹 Bot Health Insurance** | The bot's own action counts | On |
-| **💬 Concierge** | Your settings + recent event summary + your typed question | On-demand |
+| **💬 SAi** | Your settings + recent event summary + your typed question | On-demand |
 
 ---
 
 ## Third-party AI providers
 
-AI features transmit data to third-party providers **only when explicitly invoked by staff or when an enabled, opt-in feature fires** (e.g., right-click Message Report, `/imagine`, Self-trained AutoMod, Concierge, or — if you've turned it on — AutoMod AI second-opinion). The default shared-key provider is:
+AI features transmit data to third-party providers **only when explicitly invoked by staff or when an enabled, opt-in feature fires** (e.g., right-click Message Report, `/imagine`, Self-trained AutoMod, SAi, or — if you've turned it on — AutoMod AI second-opinion). The default shared-key provider is:
 
-- **Anthropic** (https://anthropic.com) — powers Concierge, Message Report context summaries, Self-trained AutoMod, and (if enabled) AutoMod AI second-opinion. Approximately 20 messages of surrounding context are sent for Message Report; only your question is sent for Concierge sessions; only the **single borderline message** + matching filter name is sent for AutoMod AI second-opinion (never confident hits, never clear misses). No user IDs or metadata are transmitted.
+- **Anthropic** (https://anthropic.com) — powers SAi, Message Report context summaries, Self-trained AutoMod, and (if enabled) AutoMod AI second-opinion. Approximately 20 messages of surrounding context are sent for Message Report; only your question is sent for SAi sessions; only the **single borderline message** + matching filter name is sent for AutoMod AI second-opinion (never confident hits, never clear misses). No user IDs or metadata are transmitted.
 
 If you've configured your own key via `/ai-config`:
 - **xAI Grok** (https://x.ai) — same scope as above when selected
@@ -152,7 +152,7 @@ We rely on a small set of vetted third parties to run the service:
 | Sub-processor | Purpose | Privacy policy |
 |---|---|---|
 | **Hetzner Online GmbH** | Server hosting (United States) | [hetzner.com](https://www.hetzner.com/legal/privacy-policy) |
-| **Anthropic** | Default AI features (Concierge, Message Report, etc.) | [anthropic.com](https://www.anthropic.com/legal/privacy) |
+| **Anthropic** | Default AI features (SAi, Message Report, etc.) | [anthropic.com](https://www.anthropic.com/legal/privacy) |
 | **OpenAI / xAI** | AI features — only if you supply your own key (BYOK) | [openai.com](https://openai.com/policies/privacy-policy) · [x.ai](https://x.ai/legal/privacy-policy) |
 | **Stripe** | Payment processing for Premium subscriptions | [stripe.com/privacy](https://stripe.com/privacy) |
 | **Browser push services** (Google / Mozilla / Apple, depending on the staff member's browser) | Delivering web-portal push notifications to staff who opt in | per-vendor |

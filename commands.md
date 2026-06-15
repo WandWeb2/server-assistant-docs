@@ -15,9 +15,18 @@ Server Assistant supports **three interaction modes**. Most commands are availab
 
 > Commands are role-gated, and some actions may require approval from a higher tier — see **[Permissions & approval](#-permissions--approval)** below. Run `/help` to see what's available to you specifically.
 
----
+<style>
+.doc-sec { border: 1px solid var(--glass-border); border-radius: 12px; margin: .5rem 0; background: rgba(255,255,255,0.03); }
+.doc-sec > summary { cursor: pointer; font-size: 1.05rem; font-weight: 700; padding: .65rem .85rem; list-style: none; color: var(--ink); }
+.doc-sec > summary::-webkit-details-marker { display: none; }
+.doc-sec > summary::before { content: "▸"; color: var(--ink-soft); margin-right: .5rem; font-size: .8em; }
+.doc-sec[open] > summary::before { content: "▾"; }
+.doc-sec > *:not(summary) { margin-left: .85rem; margin-right: .85rem; }
+.doc-sec[open] { padding-bottom: .5rem; }
+</style>
 
-## 🛡️ Moderation
+<details class="doc-sec" markdown="1">
+<summary>🛡️ Moderation</summary>
 
 Targeting users supports `@mention`, plain-text username (e.g. `mute jen`), or numeric Discord user ID.
 
@@ -39,9 +48,10 @@ Targeting users supports `@mention`, plain-text username (e.g. `mute jen`), or n
 
 **Bulk operations:** mention a role to apply the action to everyone in it. Examples: `mute @TrollRole 1 hour`, `ban @SpamRole`. Mod-tier maxes at 5 users; Admin/Owner have higher limits.
 
----
+</details>
 
-## 🚨 Raid response & escalation
+<details class="doc-sec" markdown="1">
+<summary>🚨 Raid response & escalation</summary>
 
 When something goes wrong, these are the levers — grouped here so you can run the playbook end-to-end without bouncing across the page.
 
@@ -58,9 +68,10 @@ When something goes wrong, these are the levers — grouped here so you can run 
 
 > **Suggested runbook:** at the first sign of a raid, run `/lockdown start`, flick `/altguard on` if it isn't already, and `/tempban` repeat-offenders for short windows. Hit `/lockdown end` when it's over — exact prior perms come back automatically.
 
----
+</details>
 
-## 📝 Notes (private staff-only)
+<details class="doc-sec" markdown="1">
+<summary>📝 Notes (private staff-only)</summary>
 
 Notes are invisible to the user. Used for tracking patterns of behaviour without an official warning.
 
@@ -70,9 +81,10 @@ Notes are invisible to the user. Used for tracking patterns of behaviour without
 | `notes @user` | View notes on a user |
 | `delnote @user 3` | Remove note #3 |
 
----
+</details>
 
-## 📊 Information
+<details class="doc-sec" markdown="1">
+<summary>📊 Information</summary>
 
 | Command | Description |
 |---------|-------------|
@@ -83,9 +95,10 @@ Notes are invisible to the user. Used for tracking patterns of behaviour without
 | `report @user` | AI summary of recent activity |
 | `report #channel` | AI summary of recent activity in a channel |
 
----
+</details>
 
-## 📂 Channel management
+<details class="doc-sec" markdown="1">
+<summary>📂 Channel management</summary>
 
 | Command | Description |
 |---------|-------------|
@@ -105,9 +118,10 @@ Notes are invisible to the user. Used for tracking patterns of behaviour without
 
 > Discord only allows **bulk delete of messages newer than 14 days**. The bot warns you and adjusts the cutoff automatically.
 
----
+</details>
 
-## 💬 Communication
+<details class="doc-sec" markdown="1">
+<summary>💬 Communication</summary>
 
 | Command | Description |
 |---------|-------------|
@@ -136,9 +150,10 @@ Notes are invisible to the user. Used for tracking patterns of behaviour without
 
 Both `[brackets]` and `{braces}` syntax work, case-insensitive.
 
----
+</details>
 
-## 📅 Scheduling
+<details class="doc-sec" markdown="1">
+<summary>📅 Scheduling</summary>
 
 | Command | Description |
 |---------|-------------|
@@ -149,9 +164,10 @@ Both `[brackets]` and `{braces}` syntax work, case-insensitive.
 | `scheduled list` | View your pending tasks |
 | `scheduled cancel 3` | Cancel task #3 |
 
----
+</details>
 
-## ↩️ Undo (24h window)
+<details class="doc-sec" markdown="1">
+<summary>↩️ Undo (24h window)</summary>
 
 The `undo` command reverses your most recent reversible action.
 
@@ -163,9 +179,10 @@ The `undo` command reverses your most recent reversible action.
 
 > ⚠️ Channel undo recreates the channel with original name, topic, NSFW, slowmode, category, and all permission overwrites — but **messages and threads cannot be recovered**. Discord doesn't preserve them.
 
----
+</details>
 
-## ⚙️ Personal settings
+<details class="doc-sec" markdown="1">
+<summary>⚙️ Personal settings</summary>
 
 | Command | Description |
 |---------|-------------|
@@ -174,9 +191,10 @@ The `undo` command reverses your most recent reversible action.
 | `timezone` | View your current timezone |
 | `help` | Interactive help |
 
----
+</details>
 
-## 🛂 Owner / Admin only
+<details class="doc-sec" markdown="1">
+<summary>🛂 Owner / Admin only</summary>
 
 | Command | Description |
 |---------|-------------|
@@ -192,9 +210,10 @@ The `undo` command reverses your most recent reversible action.
 | `/invite` | Get the bot's invite URL |
 | `/portal` | Get a private link to the **web portal** to manage your server from a browser (anyone can run it; only owners/admins can sign in) |
 
----
+</details>
 
-## 🎫 Ticket Panels
+<details class="doc-sec" markdown="1">
+<summary>🎫 Ticket Panels</summary>
 
 Set up a persistent support-ticket panel in any public channel. Members click **Create Ticket** to open a private channel with your support team.
 
@@ -208,9 +227,10 @@ Set up a persistent support-ticket panel in any public channel. Members click **
 
 See **[Features → Ticket Panels]({{ site.url }}{{ site.baseurl }}/features/#-ticket-panels)** for the full setup walkthrough and free vs Premium breakdown.
 
----
+</details>
 
-## 🖱️ Right-click context menus
+<details class="doc-sec" markdown="1">
+<summary>🖱️ Right-click context menus</summary>
 
 Right-click any user or message → hover **Apps ▸ Server Assistant**:
 
@@ -224,9 +244,10 @@ Right-click any user or message → hover **Apps ▸ Server Assistant**:
 
 > 💡 If "Apps ▸" looks empty, hard-refresh Discord (Ctrl+R) to pull the latest commands.
 
----
+</details>
 
-## ⚡ Slash command quick reference
+<details class="doc-sec" markdown="1">
+<summary>⚡ Slash command quick reference</summary>
 
 Type `/` anywhere to see autocomplete:
 
@@ -288,6 +309,8 @@ Type `/` anywhere to see autocomplete:
 | `/tickets add @user` | *(Premium)* Add a user to an open ticket |
 
 Most slash command responses are **only visible to you** by default for sensitive operations.
+
+</details>
 
 ---
 
