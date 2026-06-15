@@ -13,7 +13,6 @@ Adding **Server Assistant** takes about 60 seconds — the wizard does the rest.
 .cta-inline { display: inline-block; padding: .55rem 1.2rem; border-radius: 999px; font-weight: 700; text-decoration: none !important; background: linear-gradient(135deg,#5865f2,#3498db); color: #fff !important; box-shadow: 0 4px 14px rgba(88,101,242,.35); }
 .cta-inline:hover { filter: brightness(1.08); }
 
-/* Dark-glass callouts */
 .callout { display: flex; gap: .9rem; align-items: flex-start; margin: 1rem 0; padding: .9rem 1.2rem; border-radius: 12px; font-size: .92rem; line-height: 1.5; color: var(--ink-soft); }
 .callout .ico { font-size: 1.4rem; flex-shrink: 0; }
 .callout strong { color: var(--ink); }
@@ -21,29 +20,54 @@ Adding **Server Assistant** takes about 60 seconds — the wizard does the rest.
 .callout.warn { background: rgba(241,196,15,0.08); border: 1px solid rgba(241,196,15,0.28); }
 .callout.info { background: rgba(52,130,225,0.09); border: 1px solid rgba(52,130,225,0.26); }
 
-/* Coloured-glass step rows: number + text (brief + expand) one side, screenshot the other. */
-.steprow { display: grid; grid-template-columns: 1fr 1fr; gap: 1.6rem; align-items: center; margin: 1rem 0; padding: 1.4rem 1.6rem; border-radius: 16px; border: 1px solid var(--glass-border); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
+/* Coloured-glass step rows */
+.steprow { display: grid; grid-template-columns: 1fr 1fr; gap: 1.6rem; align-items: center; margin: 0; padding: 1.4rem 1.6rem; border-radius: 16px; border: 1px solid var(--glass-border); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
 .steprow.c-blue  { background: rgba(52,130,225,0.08);  border-color: rgba(52,130,225,0.24); }
 .steprow.c-green { background: rgba(46,204,113,0.07);  border-color: rgba(46,204,113,0.22); }
-.steprow.c-purple{ background: rgba(155,89,182,0.08);  border-color: rgba(155,89,182,0.26); }
 .steprow .stext { min-width: 0; }
 .steprow .stepn { display: inline-flex; align-items: center; justify-content: center; width: 2rem; height: 2rem; border-radius: 50%; background: linear-gradient(135deg,#5865f2,#3498db); color: #fff; font-weight: 800; font-size: 1.05rem; margin-bottom: .5rem; }
 .steprow .stext h3 { margin: 0 0 .5rem; font-size: 1.25rem; line-height: 1.25; }
 .steprow .stext > p { margin: 0 0 .6rem; color: var(--ink-soft); font-size: .96rem; line-height: 1.55; }
-.steprow .stext code { color: var(--accent); }
+.steprow .stext code, .steprow .sbody code { color: var(--accent); }
 .steprow .smore > summary { cursor: pointer; color: var(--accent); font-weight: 600; font-size: .9rem; list-style: none; }
 .steprow .smore > summary::-webkit-details-marker { display: none; }
 .steprow .smore > summary::before { content: "▸ "; }
 .steprow .smore[open] > summary::before { content: "▾ "; }
 .steprow .smore .sbody { margin-top: .45rem; color: var(--ink-soft); font-size: .9rem; line-height: 1.55; }
-.steprow .smore .sbody code { color: var(--accent); }
 .steprow .smore .sbody ul { margin: .35rem 0 0 1.05rem; padding: 0; }
 .steprow .smore .sbody li { margin: .2rem 0; }
 .steprow .sshot { min-width: 0; }
 .steprow .sshot .dc { max-width: 100%; margin: 0; }
 .steprow.flip .stext { order: 2; }
 .steprow.flip .sshot { order: 1; }
-@media (max-width: 760px) { .steprow { grid-template-columns: 1fr; } .steprow.flip .stext, .steprow.flip .sshot { order: 0; } }
+
+/* Flow connectors: one step flows into the next; the middle branches and re-merges */
+.flow-down { display: flex; flex-direction: column; align-items: center; color: var(--ink-soft); margin: .1rem 0; }
+.flow-down .arrow { font-size: 1.5rem; line-height: 1; }
+.flow-down .cap { font-size: .9rem; margin-top: -.1rem; }
+.branch-h { display: flex; align-items: center; gap: .5rem; justify-content: center; margin: .2rem 0 .1rem; font-weight: 800; font-size: 1.05rem; color: var(--ink); }
+.branch-h .stepn { display: inline-flex; align-items: center; justify-content: center; width: 1.7rem; height: 1.7rem; border-radius: 50%; background: linear-gradient(135deg,#5865f2,#3498db); color: #fff; font-weight: 800; font-size: .95rem; }
+.paths { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; position: relative; margin: 1.5rem 0; }
+.paths::before, .paths::after { content: ""; position: absolute; left: 16.66%; right: 16.66%; height: 2px; background: var(--glass-border); }
+.paths::before { top: -.9rem; }
+.paths::after  { bottom: -.9rem; }
+.path { position: relative; border-radius: 14px; border: 1px solid var(--glass-border); padding: 1rem 1.1rem; text-align: center; }
+.path::before, .path::after { content: ""; position: absolute; left: 50%; transform: translateX(-50%); width: 2px; height: .9rem; background: var(--glass-border); }
+.path::before { top: -.9rem; }
+.path::after  { bottom: -.9rem; }
+.path.c-green { background: rgba(46,204,113,0.08);  border-color: rgba(46,204,113,0.24); }
+.path.c-purple{ background: rgba(155,89,182,0.09);  border-color: rgba(155,89,182,0.26); }
+.path.c-blue  { background: rgba(52,130,225,0.09);  border-color: rgba(52,130,225,0.26); }
+.path .ptag { display: inline-block; font-size: .66rem; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: .25rem; }
+.path .pico { font-size: 1.7rem; line-height: 1; }
+.path h4 { margin: .25rem 0 .3rem; font-size: 1.05rem; }
+.path h4 code { color: var(--accent); }
+.path p { margin: 0; color: var(--ink-soft); font-size: .87rem; line-height: 1.5; }
+@media (max-width: 760px) {
+  .steprow, .paths { grid-template-columns: 1fr; }
+  .steprow.flip .stext, .steprow.flip .sshot { order: 0; }
+  .paths::before, .paths::after, .path::before, .path::after { display: none; }
+}
 
 .qwin-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap: .6rem; margin: 1rem 0; }
 .qwin { background: rgba(255,255,255,0.04); border: 1px solid var(--glass-border); border-radius: 10px; padding: .7rem .9rem; font-size: .9rem; color: var(--ink-soft); }
@@ -72,10 +96,10 @@ details.tshoot .body code { color: var(--accent); }
 <div class="steprow c-blue">
   <div class="stext">
     <div class="stepn">1</div>
-    <h3>Invite the bot — it sets itself up</h3>
-    <p>One click to add it (<strong>don't uncheck any OAuth permissions</strong> — ban/kick/auto-role rely on them). The moment it joins, it <strong>DMs the owner a pre-filled setup wizard</strong> — tap <strong>Apply</strong> and you're done.</p>
+    <h3>Invite the bot</h3>
+    <p>One click to add it — <strong>don't uncheck any OAuth permissions</strong> (ban/kick/auto-role rely on them). The moment it joins, it scans your server and <strong>DMs the owner a pre-filled setup proposal</strong>.</p>
     <p><a class="cta-inline" href="https://discord.com/api/oauth2/authorize?client_id=1278486617375510570&permissions=8&scope=bot+applications.commands">➕ Add to Discord</a></p>
-    <details class="smore"><summary>More</summary><div class="sbody">Also on <a href="https://top.gg/bot/1278486617375510570">Top.gg</a> and <a href="https://discordbotlist.com/bots/server-assistant">discordbotlist.com</a>. Prefer one command? <code>/autopilot</code> applies a sensible config in one step. (Falls back to a staff channel if DMs are closed.) Slash commands take up to 1 hour to propagate the first time.</div></details>
+    <details class="smore"><summary>More</summary><div class="sbody">Also on <a href="https://top.gg/bot/1278486617375510570">Top.gg</a> and <a href="https://discordbotlist.com/bots/server-assistant">discordbotlist.com</a>. Slash commands take up to 1 hour to propagate the first time.</div></details>
   </div>
   <div class="sshot">
     <div class="dc">
@@ -93,35 +117,34 @@ details.tshoot .body code { color: var(--accent); }
   </div>
 </div>
 
-<div class="steprow flip c-purple">
-  <div class="stext">
-    <div class="stepn">2</div>
-    <h3>Run <code>/setup</code> — the wizard does the rest</h3>
-    <p>The bot <strong>auto-detects</strong> sensible channels and roles, so most of the wizard is just confirming — and if it's missing a permission, it shows a <strong>one-click fix-it screen first</strong>.</p>
-    <details class="smore"><summary>The three steps</summary><div class="sbody"><ul>
-      <li><strong>① Channels</strong> — pick (or let it create) a staff-chat and a log channel.</li>
-      <li><strong>② Roles</strong> — map your roles to Owner / Admin / Moderator tiers (pre-filled).</li>
-      <li><strong>③ Server type + AI</strong> — pick your community (🎮 Gaming · 🎨 Creator · 🌸 Anime · 💰 Crypto · 📚 Education · 🔞 NSFW · 🌐 General) to tune AutoMod, the ladder &amp; anti-raid, then choose your AI: host's key, your own, or skip.</li>
-    </ul>Hit <strong>Finish</strong> — the bot saves, applies your tuning, and posts a short walkthrough to staff-chat.</div></details>
+<div class="flow-down"><span class="arrow">▼</span></div>
+
+<div class="branch-h"><span class="stepn">2</span> Finish setup — any one of these</div>
+
+<div class="paths">
+  <div class="path c-green">
+    <div class="ptag">⚡ Fastest</div>
+    <div class="pico">✅</div>
+    <h4>Tap "Apply"</h4>
+    <p>One tap on the DM the bot just sent you — it applies the detected config and you're live.</p>
   </div>
-  <div class="sshot">
-    <div class="dc">
-      <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
-        <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">/setup · step 2 of 3</span></div>
-        <div class="dc-embed blue">
-          <div class="dc-title">🧭 Setup — Server type + AI</div>
-          <div class="dc-desc">Tune moderation to fit your community — we pre-selected a best guess from your server's name.</div>
-          <div class="dc-fname">Server type</div><div class="dc-fval">🎮 Gaming — anti-scam AutoMod · standard ladder · tighter anti-raid</div>
-          <div class="dc-fname">AI provider</div><div class="dc-fval">🆓 Host's shared key · 150K-token free trial</div>
-          <div class="dc-foot">Change anything later in /settings</div>
-          <div class="dc-btns"><span class="dc-btn grey">← Back</span><span class="dc-btn green">Finish ✓</span></div>
-        </div>
-      </div></div>
-    </div>
+  <div class="path c-purple">
+    <div class="ptag">🧭 Guided</div>
+    <div class="pico">🧭</div>
+    <h4><code>/setup</code></h4>
+    <p>The 3-step wizard: confirm channels, map roles, pick your server type + AI. About 60 seconds.</p>
+  </div>
+  <div class="path c-blue">
+    <div class="ptag">🤖 Hands-off</div>
+    <div class="pico">🤖</div>
+    <h4><code>/autopilot</code></h4>
+    <p>One command — detects and applies a sensible config in a single step.</p>
   </div>
 </div>
 
-<div class="steprow c-green">
+<div class="flow-down"><span class="arrow">▼</span><span class="cap">…all three land you here</span></div>
+
+<div class="steprow flip c-green">
   <div class="stext">
     <div class="stepn">3</div>
     <h3>Customise — <code>/settings</code> <span style="font-weight:400;font-size:.9rem;color:var(--ink-soft);">(optional)</span></h3>
