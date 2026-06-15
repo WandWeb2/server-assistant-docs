@@ -52,7 +52,7 @@ Adding **Server Assistant** takes about 60 seconds — the wizard does the rest.
    stubs sit over the 4 card columns); non-scaling-stroke keeps the lines 2px. */
 .forksvg { display: block; width: 100%; height: 24px; margin: 0; overflow: visible; }
 .forksvg line { stroke: var(--glass-border); stroke-width: 2; vector-effect: non-scaling-stroke; }
-.paths { display: grid; grid-template-columns: repeat(4, 1fr); gap: .8rem; }
+.paths { display: grid; grid-template-columns: repeat(3, 1fr); gap: .8rem; }
 .path { position: relative; border-radius: 14px; border: 1px solid var(--glass-border); padding: .9rem .8rem; text-align: center; }
 .path.c-green { background: rgba(46,204,113,0.08);  border-color: rgba(46,204,113,0.24); }
 .path.c-purple{ background: rgba(155,89,182,0.09);  border-color: rgba(155,89,182,0.26); }
@@ -107,7 +107,7 @@ details.tshoot .body code { color: var(--accent); }
           <div class="dc-fname">Staff chat</div><div class="dc-fval">#staff-chat ✓ detected</div>
           <div class="dc-fname">Log channel</div><div class="dc-fval">#mod-log ✓ detected</div>
           <div class="dc-foot">Roles, then server-type + AI next</div>
-          <div class="dc-btns"><span class="dc-btn grey">Create for me</span><span class="dc-btn blurple">Next: Roles →</span></div>
+          <div class="dc-btns"><span class="dc-btn grey">Create for me</span><span class="dc-btn green">✅ Looks good →</span></div>
           <div class="dc-btns"><span class="dc-btn">🌐 …or finish setup on the web</span></div>
         </div>
       </div></div>
@@ -117,26 +117,20 @@ details.tshoot .body code { color: var(--accent); }
 
 <div class="fork-title"><span class="farrow">▼</span> <span class="stepn">2</span> Finish setup — any one of these</div>
 
-<svg class="forksvg" viewBox="0 0 100 12" preserveAspectRatio="none" aria-hidden="true"><line x1="50" y1="0" x2="50" y2="4"/><line x1="12.5" y1="4" x2="87.5" y2="4"/><line x1="12.5" y1="4" x2="12.5" y2="12"/><line x1="37.5" y1="4" x2="37.5" y2="12"/><line x1="62.5" y1="4" x2="62.5" y2="12"/><line x1="87.5" y1="4" x2="87.5" y2="12"/></svg>
+<svg class="forksvg" viewBox="0 0 100 12" preserveAspectRatio="none" aria-hidden="true"><line x1="50" y1="0" x2="50" y2="4"/><line x1="16.67" y1="4" x2="83.33" y2="4"/><line x1="16.67" y1="4" x2="16.67" y2="12"/><line x1="50" y1="4" x2="50" y2="12"/><line x1="83.33" y1="4" x2="83.33" y2="12"/></svg>
 
 <div class="paths">
     <div class="path c-blue">
       <div class="ptag">Default</div>
       <div class="pico">💬</div>
       <h4>In your DMs</h4>
-      <p>The wizard's already waiting — confirm the detected channels &amp; roles, pick your server type + AI, hit <strong>Finish</strong>.</p>
+      <p>The wizard's already there, <strong>pre-filled from auto-detection</strong> — tap <strong>Looks good</strong> to accept it as-is, or change anything, then Finish.</p>
     </div>
     <div class="path c-purple">
       <div class="ptag">Same wizard</div>
       <div class="pico">🧭</div>
       <h4><code>/setup</code></h4>
       <p>The exact same wizard, run in-server — handy if your DMs were closed or you want to redo it.</p>
-    </div>
-    <div class="path c-green">
-      <div class="ptag">One-tap</div>
-      <div class="pico">🪄</div>
-      <h4><code>/autopilot</code></h4>
-      <p>Scans your server and shows a proposed config — tap <strong>Apply</strong> to use it as-is.</p>
     </div>
     <div class="path c-amber">
       <div class="ptag">In a browser</div>
@@ -146,7 +140,7 @@ details.tshoot .body code { color: var(--accent); }
     </div>
   </div>
 
-<svg class="forksvg" viewBox="0 0 100 12" preserveAspectRatio="none" aria-hidden="true"><line x1="12.5" y1="0" x2="12.5" y2="8"/><line x1="37.5" y1="0" x2="37.5" y2="8"/><line x1="62.5" y1="0" x2="62.5" y2="8"/><line x1="87.5" y1="0" x2="87.5" y2="8"/><line x1="12.5" y1="8" x2="87.5" y2="8"/><line x1="50" y1="8" x2="50" y2="12"/></svg>
+<svg class="forksvg" viewBox="0 0 100 12" preserveAspectRatio="none" aria-hidden="true"><line x1="16.67" y1="0" x2="16.67" y2="8"/><line x1="50" y1="0" x2="50" y2="8"/><line x1="83.33" y1="0" x2="83.33" y2="8"/><line x1="16.67" y1="8" x2="83.33" y2="8"/><line x1="50" y1="8" x2="50" y2="12"/></svg>
 
 <div class="steprow flip c-green">
   <div class="stext">
@@ -178,6 +172,8 @@ details.tshoot .body code { color: var(--accent); }
     </div>
   </div>
 </div>
+
+<p style="text-align:center; font-size:.85rem; color:var(--ink-soft); margin:1.1rem 0 0;">💡 Rather not open the wizard at all? <code>/autopilot</code> shows a single <strong>Apply</strong> card with the same auto-detected config.</p>
 
 ---
 
