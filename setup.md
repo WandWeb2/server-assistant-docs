@@ -48,19 +48,20 @@ Adding **Server Assistant** takes about 60 seconds — the wizard does the rest.
   <div class="step"><div class="step-n" style="font-size:.95rem; background:linear-gradient(135deg,#1e8449,#2ecc71);">1.5</div>
     <div class="step-body">
       <h3>💬 …or skip <code>/setup</code> entirely</h3>
-      <p>You might not even need step 2. The moment the bot joins, it <strong>DMs the owner the full setup wizard</strong> — already pre-filled by auto-detection — so you can finish it right there in under a minute. (Falls back to a staff channel if your DMs are closed.)</p>
-      <p>Prefer one command? <code>/autopilot</code> detects and applies a sensible config in a single step. Either way, it's the same wizard as step 2 below.</p>
+      <p>You might not even need step 2: when the bot joins it <strong>DMs the owner the full setup wizard</strong>, pre-filled by auto-detection — finish it in under a minute. Prefer one command? <code>/autopilot</code> applies a sensible config in one step. (Falls back to a staff channel if DMs are closed.)</p>
     </div>
   </div>
 
   <div class="step"><div class="step-n">2</div>
     <div class="step-body">
       <h3>Run <code>/setup</code> — the wizard does the rest</h3>
-      <p>The bot <strong>auto-detects</strong> sensible channels and roles when it joins, so most of the wizard is just confirming. Missing a permission it needs? <code>/setup</code> shows a <strong>one-click fix-it screen first</strong> — so it never <em>looks</em> set up while quietly not working.</p>
-      <p><strong>① Channels.</strong> Pick a <em>staff-chat</em> (the bot listens for plain-language commands here) and a <em>log channel</em> (audit-trail embeds) — or let the bot <strong>create them for you</strong>. Keep both staff-only.</p>
-      <p><strong>② Roles.</strong> Map your roles to <strong>Owner / Admin / Moderator</strong> tiers — pre-filled from what it detected. Add custom tiers later in <code>/settings → Role Tiers</code>.</p>
-      <p><strong>③ Server type + AI.</strong> Pick your community — <strong>🎮 Gaming · 🎨 Creator · 🌸 Anime · 💰 Crypto · 📚 Education · 🔞 NSFW · 🌐 General</strong> — and the bot tunes AutoMod, the punishment ladder, and anti-raid sensitivity to fit. It's pre-selected from your server's name (General by default; pick <em>“set it up myself”</em> to skip). Then choose your AI provider: <strong>🆓 host's shared key</strong>, <strong>🔑 your own key</strong>, or <strong>⏭️ skip AI</strong>.</p>
-      <p>Hit <strong>Finish</strong>. The bot saves, applies your server-type tuning, and posts a short walkthrough to staff-chat.</p>
+      <p>The bot <strong>auto-detects</strong> sensible channels and roles, so most of the wizard is just confirming — and if it's missing a permission, it shows a <strong>one-click fix-it screen first</strong> rather than looking set up while quietly not working.</p>
+      <ul>
+        <li><strong>① Channels</strong> — pick (or let it create) a staff-chat and a log channel.</li>
+        <li><strong>② Roles</strong> — map your roles to <strong>Owner / Admin / Moderator</strong> tiers (pre-filled).</li>
+        <li><strong>③ Server type + AI</strong> — pick your community (🎮 Gaming · 🎨 Creator · 🌸 Anime · 💰 Crypto · 📚 Education · 🔞 NSFW · 🌐 General) to tune AutoMod, the ladder &amp; anti-raid, then choose your AI: host's key, your own, or skip.</li>
+      </ul>
+      <p>Hit <strong>Finish</strong> — the bot saves, applies your tuning, and posts a short walkthrough to staff-chat.</p>
     </div>
   </div>
 

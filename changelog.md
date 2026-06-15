@@ -9,11 +9,23 @@ description: Release history for Server Assistant — v5.x line.
 
 The current release line.
 
-What's new in Server Assistant. Internal-only updates (CI, dependency bumps, host-side tooling) aren't listed here.
+What's new in Server Assistant. Internal-only updates (CI, dependency bumps, host-side tooling) aren't listed here. **Tap a release to expand it.**
 
----
+<style>
+.doc-sec { border: 1px solid var(--glass-border); border-radius: 12px; margin: .5rem 0; background: rgba(255,255,255,0.04); }
+.doc-sec > summary { cursor: pointer; font-size: 1.02rem; font-weight: 700; padding: .65rem .85rem; list-style: none; color: var(--ink); }
+.doc-sec > summary::-webkit-details-marker { display: none; }
+.doc-sec > summary::before { content: "▸"; color: var(--ink-soft); margin-right: .5rem; font-size: .8em; }
+.doc-sec[open] > summary::before { content: "▾"; }
+.doc-sec[open] { padding: 0 .9rem .6rem; }
+.doc-sec[open] > summary { margin: 0 -.9rem .35rem; }
+.doc-sec code { color: var(--accent); }
+.doc-sec h3 { font-size: 1rem; margin: .7rem 0 .3rem; }
+</style>
 
-## v5.6.27 — The premium toolkit
+<details class="doc-sec" markdown="1" open>
+<summary>v5.6.27 — The premium toolkit</summary>
+
 
 A big drop of **seven new Premium features** — most built around one-screen **wizards** so they're quick to set up — plus a tidier command list. Free-tier moderation is untouched.
 
@@ -32,9 +44,12 @@ A big drop of **seven new Premium features** — most built around one-screen **
 - **📨 Ban appeals — "request more info".** Staff can now reopen a guided appeal with a follow-up question; the member's reply refreshes the neutral summary and returns a fresh ticket. Completes the guided-appeals flow.
 - **Tidier command list.** Removed the redundant **`/image`** alias (use `/imagine` or `/img`) and the long-deprecated **`/concierge`** (use `/sai`), and folded **`/smartpurge`** into **`/purge`** as a **Smart** mode (`/purge … mode: Smart`). No capability lost.
 
----
 
-## v5.6.26 — Guided appeals & the decision explainer
+</details>
+
+<details class="doc-sec" markdown="1">
+<summary>v5.6.26 — Guided appeals & the decision explainer</summary>
+
 
 Two premium upgrades that make moderation fairer for the people on the receiving end. *(Your free one-reply appeals and ban-reason DMs are unchanged.)*
 
@@ -45,9 +60,12 @@ Two premium upgrades that make moderation fairer for the people on the receiving
 
 Both are on by default for premium servers (toggle in **Settings → Protection**) and need AI enabled. Free servers keep the existing one-reply appeal + ban-reason DM exactly as-is.
 
----
 
-## v5.6.25 — The web portal grows up
+</details>
+
+<details class="doc-sec" markdown="1">
+<summary>v5.6.25 — The web portal grows up</summary>
+
 
 Your portal at [serverassistant.wandweb.co](https://serverassistant.wandweb.co) went from a settings screen to a full command center. Run `/portal` to jump in.
 
@@ -65,9 +83,12 @@ Your portal at [serverassistant.wandweb.co](https://serverassistant.wandweb.co) 
 
 - **Our [Privacy Policy]({{ site.url }}{{ site.baseurl }}/privacy/) was updated (June 14, 2026)** to match the new web portal and live insights. It now describes: what we store when staff **sign in to the portal** (your Discord ID, username, and which servers/roles you manage) and how portal **push notifications** work; that we read **presence and voice state only to show aggregate counts** ("42 online · 6 in voice") — never which member, never which channel, only the running totals; and that the web portal and its API are the service's only public endpoints (behind TLS + Discord sign-in). Nothing changed about what the bot does inside Discord — this simply documents the data handling the portal introduced.
 
----
 
-## v5.6.17 — Your whole staff team can use the web portal
+</details>
+
+<details class="doc-sec" markdown="1">
+<summary>v5.6.17 — Your whole staff team can use the web portal</summary>
+
 
 The web portal now fits everyone on your team, not just owners and admins.
 
@@ -79,9 +100,12 @@ The web portal now fits everyone on your team, not just owners and admins.
 
 - **Portal sign-in now reflects your role tiers.** Previously the portal only recognised the server owner and Discord admins; now it recognises your configured **Moderator** and **Admin** roles too. (You may be asked to approve one extra Discord permission the first time you sign in, so the portal can see which of your roles you hold.)
 
----
 
-## v5.6.15 — Manage your server from the web
+</details>
+
+<details class="doc-sec" markdown="1">
+<summary>v5.6.15 — Manage your server from the web</summary>
+
 
 A new web portal lets owners and admins run their server from any browser.
 
@@ -90,9 +114,12 @@ A new web portal lets owners and admins run their server from any browser.
 - **New `/portal` command + web portal at [serverassistant.wandweb.co](https://serverassistant.wandweb.co).** Sign in with Discord and manage your server from your browser — adjust settings, take moderation actions, view insights and AI usage, handle support tickets, and chat with your AI assistant **SAi**. Run `/portal` for a private link straight to it. Only the server owner and admins can sign in, and each session is scoped to just the servers you manage.
 - **Finish setup from the web.** Brand-new servers can be configured straight from the portal — pick your staff chat, log channel, admin and moderator roles, and whether to turn AI on, and the bot does the rest. You can still run `/setup` in Discord — whichever you prefer.
 
----
 
-## v5.6.8 — Mid-cycle servers get a vote
+</details>
+
+<details class="doc-sec" markdown="1">
+<summary>v5.6.8 — Mid-cycle servers get a vote</summary>
+
 
 Joining partway through a community vote no longer means missing out.
 
@@ -100,9 +127,12 @@ Joining partway through a community vote no longer means missing out.
 
 - **Servers that join during an open community poll now get it automatically.** When you finish setup while a feature vote is running, the poll (and its live results card) is delivered straight to your staff chat — so newer servers still get a say in the round they joined during, not just the next one. Once a poll closes, nothing is sent.
 
----
 
-## v5.6.5 — Reliable "your channel is gone" alerts
+</details>
+
+<details class="doc-sec" markdown="1">
+<summary>v5.6.5 — Reliable "your channel is gone" alerts</summary>
+
 
 If a channel Server Assistant relies on disappears, the right people now hear about it.
 
@@ -110,9 +140,12 @@ If a channel Server Assistant relies on disappears, the right people now hear ab
 
 - **A deleted staff chat is reliably detected — and flagged to the right people.** If your configured staff chat is removed, the bot now notices promptly (even catching cases its daily self-check used to miss) and posts a heads-up in a visible channel that tags **both the owner and your admin roles** — not just the owner — so whoever can repoint it in `/settings` actually sees it. (Reminder: the bot never changes your channel settings on its own — it only flags what needs your attention.)
 
----
 
-## v5.6.4 — Smarter staff-chat commands
+</details>
+
+<details class="doc-sec" markdown="1">
+<summary>v5.6.4 — Smarter staff-chat commands</summary>
+
 
 Server Assistant listens more carefully, and butts in a lot less.
 
@@ -128,9 +161,12 @@ Server Assistant listens more carefully, and butts in a lot less.
 
 - **Roadmap poll links land on the right feature.** The live vote re-orders cards as results come in, which could previously scroll a poll link to the wrong card; links now reliably scroll to, expand, and highlight the exact feature you tapped.
 
----
 
-## v5.6.3 — Community feature polls
+</details>
+
+<details class="doc-sec" markdown="1">
+<summary>v5.6.3 — Community feature polls</summary>
+
 
 Your voice now decides what gets built next.
 
@@ -148,9 +184,12 @@ Your voice now decides what gets built next.
 
 - **Reliable installs.** An invite link we'd shared in a few places was missing a permission Server Assistant needs to configure itself, which left some servers with a half-finished setup. It's corrected everywhere now — and as a safety net, if the bot is ever added without a permission it needs, it immediately **DMs the server owner a one-click re-invite link** to fix it, so setup can finish in about a minute.
 
----
 
-## v5.6.2 — Feedback command & dev-update prompts
+</details>
+
+<details class="doc-sec" markdown="1">
+<summary>v5.6.2 — Feedback command & dev-update prompts</summary>
+
 
 A friendlier front door for sharing ideas — plus a nudge so you never forget it's there.
 
@@ -159,9 +198,12 @@ A friendlier front door for sharing ideas — plus a nudge so you never forget i
 - **`/feedback` is now an alias for `/support`.** They open the exact same ticket — text and screenshots welcome, with two-way replies via DM — but `/feedback` is there for when you want to share an idea or suggestion rather than report a problem. Reach for whichever word fits.
 - **Dev updates now point you to it.** When a release note lands in your staff chat, it now carries a short prompt reminding you that you can run `/feedback` or `/support` to send ideas, bug reports, or questions straight to the dev. Urgent service notices stay short and stick to the point.
 
----
 
-## v5.6.1 — Permission health check
+</details>
+
+<details class="doc-sec" markdown="1">
+<summary>v5.6.1 — Permission health check</summary>
+
 
 Server Assistant now keeps an eye on its own permissions so a stray server change can't quietly break your moderation.
 
@@ -169,9 +211,12 @@ Server Assistant now keeps an eye on its own permissions so a stray server chang
 
 - **Daily permission health check.** Once a day the bot confirms it still has the permissions and channels it needs to moderate — manage roles, post in your log channel, read your staff chat. If an admin edits the bot's role or a channel and something drifts, the bot **DMs the owner** (or posts a quiet staff-chat note) the moment it notices, with exactly what broke and how to fix it. No more silent failures — and no spam, since it only speaks up when something's actually wrong.
 
----
 
-## v5.6.0 — Templates, smart purge, weekly retros & more
+</details>
+
+<details class="doc-sec" markdown="1">
+<summary>v5.6.0 — Templates, smart purge, weekly retros & more</summary>
+
 
 The biggest feature drop in the v5.x line: a setup that fits your kind of community, two new moderation tools, a weekly team recap, and a clearer way to see what's changed.
 
@@ -191,9 +236,12 @@ The biggest feature drop in the v5.x line: a setup that fits your kind of commun
 - **`/image` and `/img`** now work as aliases for `/imagine`.
 - **More reliable image generation.** `/imagine` is sturdier and clearer when the service is busy. The free trial covers **~30 AI images**; **Premium is unlimited**. Add your own image key anytime via `/ai-config` for unmetered generation.
 
----
 
-## v5.5.15 — Invite-link permission fix
+</details>
+
+<details class="doc-sec" markdown="1">
+<summary>v5.5.15 — Invite-link permission fix</summary>
+
 
 If you added Server Assistant recently and it couldn't finish `/setup` — stopping to say it was missing a permission — here's why: the invite link was handing the bot an **incomplete set of permissions**. It's fixed.
 
@@ -201,9 +249,12 @@ If you added Server Assistant recently and it couldn't finish `/setup` — stopp
 - **The invite link now grants the bot the full set of permissions it needs up front** (managing roles, channels, and messages), so `/setup` works on the first try.
 - **Already added the bot and got stuck?** Just re-invite it from the button on this site (or run `/invite`), then run `/setup` again — it'll go through this time.
 
----
 
-## v5.5.14 — Gentler setup reminders
+</details>
+
+<details class="doc-sec" markdown="1">
+<summary>v5.5.14 — Gentler setup reminders</summary>
+
 
 If you add Server Assistant but don't finish `/setup` right away, the bot sends a short reminder so your server doesn't sit half-protected. This release makes those reminders **finite and considerate**.
 
@@ -219,7 +270,11 @@ If you add Server Assistant but don't finish `/setup` right away, the bot sends 
 - **Once you've run `/setup`, reminders stop immediately** — configured servers are never nudged.
 - This only affects servers that haven't completed setup; it changes nothing about how the bot moderates.
 
-## v5.5.13 — A rebuilt `/setup`, from first join to finish
+</details>
+
+<details class="doc-sec" markdown="1">
+<summary>v5.5.13 — A rebuilt `/setup`, from first join to finish</summary>
+
 
 Setup is the one thing every server does before getting any value from the bot, so this release rebuilds it end to end — from the moment the bot joins, through to the final confirmation. The goal: get a server configured and moderating in about a minute, with nothing silently half-working.
 
@@ -248,9 +303,12 @@ Setup is the one thing every server does before getting any value from the bot, 
 - **The welcome can never fail silently.** If the bot can't build the full wizard the instant it joins, it falls back to a short text welcome pointing you at `/setup` — a new server always hears from the bot.
 - **Buttons no longer hang on a spinner.** A rare timing hiccup with Discord could leave a wizard button stuck loading; it now fails cleanly and you can simply click again.
 
----
 
-## v5.5.12 — Natural-language commands now require the action word at the start
+</details>
+
+<details class="doc-sec" markdown="1">
+<summary>v5.5.12 — Natural-language commands now require the action word at the start</summary>
+
 
 An owner reported staff chat in their server triggering the bot on completely unrelated messages — *"hey bert can you help me move grass this weekend?"* got the bot to reply *"The `move` action isn't fully implemented yet"*. The cause: shorthand commands in staff chat were triggering whenever an action word (`move`, `remove`, `create`, `role`, etc.) appeared **anywhere** in the message.
 
@@ -283,9 +341,12 @@ The action keywords in our internal sets are common English words (`move`, `remo
 
 If you want the bot to act on a request mid-sentence, the `@mention` path is the explicit way to do it.
 
----
 
-## v5.5.11 — UX hotfix sweep
+</details>
+
+<details class="doc-sec" markdown="1">
+<summary>v5.5.11 — UX hotfix sweep</summary>
+
 
 A focused pass on places where the bot's behaviour didn't match what its menus claimed. Three real bugs and two defaults made more honest. Nothing changes for servers that had explicitly configured anything — only the *uncontested* defaults move.
 
@@ -303,9 +364,12 @@ A focused pass on places where the bot's behaviour didn't match what its menus c
 - **The wizard is now a single ephemeral message that updates in place** as you pick each value. Previously, every dropdown choice and every Next-button press spawned a fresh acknowledgement message below the wizard, scrolling your viewport down. Now the wizard stays put and the embed itself shows a live "Selected so far" summary, so you can see what's locked in without losing context. Step transitions edit the same message rather than starting fresh.
 - **Welcome embed for new server installs updated.** The on-join embed previously referenced a closed beta perk that expired on 2 June. Removed. (Servers that already hold the grant are unaffected — only the embed text changed.)
 
----
 
-## v5.5.10 — One-tap setup on install
+</details>
+
+<details class="doc-sec" markdown="1">
+<summary>v5.5.10 — One-tap setup on install</summary>
+
 
 ### Changed
 - **Setup is now one tap when you add the bot.** As soon as you install Server Assistant, the bot scans your server, detects sensible defaults (staff chat, log channel, Owner / Admin / Mod roles), and **DMs the owner with a one-button "Apply" proposal**. Tap once and your server is fully configured — no need to remember `/setup` exists. The configuration includes the AutoMod "Scams + slurs (gaming)" preset, **Normal** anti-raid (5 joins / 30s), the **Standard** punishment ladder, and Pulse daily digests.
@@ -315,18 +379,24 @@ A focused pass on places where the bot's behaviour didn't match what its menus c
 ### Fixed
 - **Removed a duplicate `on_guild_join` handler** that was being silently shadowed. The earlier handler's content (basic "run /setup" DM) was never actually firing in production — only the more-detailed second handler did. Both are now collapsed into the single streamlined v5.5.10 flow above.
 
----
 
-## v5.5.9 — Per-server command usage logging
+</details>
+
+<details class="doc-sec" markdown="1">
+<summary>v5.5.9 — Per-server command usage logging</summary>
+
 
 ### Added
 - **Command usage now logs to your server's log channel.** Every slash command, right-click context menu, and natural-language text command appears as a compact entry: *user · command · channel · invocation type*. Owners and staff can see exactly what's being used and by whom, in the same channel they already check. Fire-and-forget — never blocks the command itself.
 - **Off-switch:** if your server is chatty, toggle this off in `/settings → Behaviour → Log command usage`. Moderation actions (warn / mute / ban / kick / etc.) keep their existing detailed entries regardless — only the additional "command was invoked" entries are silenced.
 - **Skipped by default:** commands that already produce a detailed log entry (warn, mute, kick, ban, softban, tempban, role add/remove, lockdown, purge, nick) don't double-log. Read-only and personal commands (`/info`, `/stats`, `/help`, `/timezone`, `/schedule`) and config commands (`/sai`, `/settings`, `/automod`, etc.) get the compact entry.
 
----
 
-## v5.5.7 — `/concierge` renamed to `/sai` + admin read-only mode
+</details>
+
+<details class="doc-sec" markdown="1">
+<summary>v5.5.7 — `/concierge` renamed to `/sai` + admin read-only mode</summary>
+
 
 ### Renamed
 - **`/concierge` → `/sai`.** Same Server Assistant intelligence chat, shorter name. Owners get full access (read insights + propose config changes); **admins now get read-only access** (can ask questions, get insights, but can't enroll proposed changes — must ask the owner to apply). Embed shows the caller's role tag (`owner · full access` or `admin · read-only`) so it's obvious which mode the answer came from.
@@ -334,9 +404,12 @@ A focused pass on places where the bot's behaviour didn't match what its menus c
 ### Deprecated
 - **`/concierge`** kept as a stub for ~30 days. Running it returns a short nudge: *"renamed to `/sai`, use that instead."* `/sai` remains the easiest way for owners to update the bot's settings. Stub removed in v5.7.
 
----
 
-## v5.5.6 — Multi-tenant address detection + per-feature NL billing
+</details>
+
+<details class="doc-sec" markdown="1">
+<summary>v5.5.6 — Multi-tenant address detection + per-feature NL billing</summary>
+
 
 ### Fixed
 - **Multi-tenant address check.** The bot now recognises its actual per-server nickname when staff write things like "Pepper, mute @user" or "Watchdog: ban that user" — previously it only matched a hardcoded set of legacy names, so servers that renamed the bot didn't get the by-name addressing path. The bot's nickname, base username, and generic fallbacks `bot,` / `assistant,` all trigger the same path now.
@@ -344,17 +417,23 @@ A focused pass on places where the bot's behaviour didn't match what its menus c
 ### Changed
 - **Every AI call is now properly tagged in your token usage breakdown.** Five natural-language AI features (fuzzy-intent interpretation, conversational fallback, channel-create extraction, message-send extraction, report context summarisation, self-trained AutoMod analysis) previously charged your allowance under a catch-all `general` tag. They now use distinct labels (`nl_intent`, `nl_chat`, `nl_extract`, `report_command`, `self_trained`) so you can see exactly which features ate which tokens in `/premium`.
 
----
 
-## v5.5.5 — Refreshed staff onboarding + Dev Updates default ON
+</details>
+
+<details class="doc-sec" markdown="1">
+<summary>v5.5.5 — Refreshed staff onboarding + Dev Updates default ON</summary>
+
 
 ### Changed
 - **Staff onboarding overhauled.** The welcome message posted after `/setup` is now a 4-embed sequence (was 3): Text · Slash · Right-click · Decision cards walkthrough. First message **@mentions every configured staff role** so your team actually sees it. Slash command list grouped into Core moderation / Raid response / Config / Personal categories with all the v5.5.x additions (`/tempban`, `/role add/remove`, `/lockdown`, `/altguard`, `/tickets`, `/premium`). Final embed links to the docs site for the deeper dive.
 - **Dev Updates default to ON in setup.** Owners almost always want release notes for the bot powering their server, so the `/setup` wizard's Dev Updates toggle now starts enabled. Toggle off in the wizard or via `/settings → Behaviour` any time.
 
----
 
-## v5.5.4 — Docs reconciliation + Premium `/imagine` cooldown removed
+</details>
+
+<details class="doc-sec" markdown="1">
+<summary>v5.5.4 — Docs reconciliation + Premium `/imagine` cooldown removed</summary>
+
 
 A coordinated sweep across the docs site, pricing page, privacy policy, roadmap, and listing copy — plus one small but long-promised bot fix. No moderation behaviour changes; this is mostly visibility, accuracy, and surface-level polish.
 
@@ -385,30 +464,42 @@ A coordinated sweep across the docs site, pricing page, privacy policy, roadmap,
 ### Notes
 - No breaking changes; no migration required.
 
----
 
-## v5.5.3 — Pulse on your clock
+</details>
+
+<details class="doc-sec" markdown="1">
+<summary>v5.5.3 — Pulse on your clock</summary>
+
 
 ### Fixed
 - **Pulse (and the weekly digest) now fire at the configured hour in *your server's* timezone.** They were comparing the target hour against the host's UTC clock, so "Pulse at 9am" actually went out at 9am UTC regardless of your server's timezone. Set your timezone in `/settings → Default timezone` and the digest hour now means *your* local time.
 
----
 
-## v5.5.2 — Reports on the record
+</details>
+
+<details class="doc-sec" markdown="1">
+<summary>v5.5.2 — Reports on the record</summary>
+
 
 ### Changed
 - **Actions taken from a Message Report now log the report itself.** When a staff member uses a report's Warn / Timeout / Delete / Kick / Ban button, the full AI report is written into your **encrypted audit trail** and shown on the **log-channel entry** — so every action carries the reasoning that led to it. The log footer now reads **"via Message Report"** (rather than "via slash command").
 
----
 
-## v5.5.1 — Actionable Message Reports
+</details>
+
+<details class="doc-sec" markdown="1">
+<summary>v5.5.1 — Actionable Message Reports</summary>
+
 
 ### Changed
 - **Message Report now has action buttons.** After the right-click AI summary, staff can act in one tap — **⚠️ Warn** (with a reason), **🔇 Timeout 10m**, **🗑️ Delete message**, **👢 Kick**, **🔨 Ban** — without leaving the report or typing a command. Each button respects the staff member's role permissions, and a ban from here still sends the member their reason + appeal.
 
----
 
-## v5.5 — Ban reasons & one-reply appeals
+</details>
+
+<details class="doc-sec" markdown="1">
+<summary>v5.5 — Ban reasons & one-reply appeals</summary>
+
 
 Bans are no longer a silent door slam — and an appeal is one reply away.
 
@@ -421,9 +512,12 @@ Bans are no longer a silent door slam — and an appeal is one reply away.
 - **Report Message is now "Message Report."** Same right-click AI context summary — clearer name. It also powers the new appeal **Research** button.
 
 
----
 
-## v5.4 — Smarter AutoMod & ban-evasion defence
+</details>
+
+<details class="doc-sec" markdown="1">
+<summary>v5.4 — Smarter AutoMod & ban-evasion defence</summary>
+
 
 Two safety upgrades — one that cuts false positives, one that catches returning troublemakers.
 
@@ -431,9 +525,12 @@ Two safety upgrades — one that cuts false positives, one that catches returnin
 - **🤔 AutoMod AI second-opinion** *(Premium, opt-in)*. Turn it on in `/automod → AI Review`. Borderline AutoMod hits (word filters & spam) get a quick AI confidence check before anything happens. Hits at or above your threshold are actioned automatically; anything below is **left up** and posted to staff as a review card with one-tap **Delete & warn** / **Allow** buttons. High-confidence hits (blocked links, mention spam) still act instantly. AI usage counts toward your server's token allowance, and only borderline messages are checked — so the cost stays low.
 - **🕵️ Repeat-offender detection** *(free, opt-in)*. Enable with `/altguard on`. Server Assistant fingerprints the users you ban or kick (reused custom avatar, name, account age), then checks every new joiner against them. A **confident** match — like a fresh account reusing a banned user's avatar or near-identical name — is **auto-banned and reported to staff**; weaker matches are flagged for review only. Soft-bans are excluded (they're meant to let people rejoin).
 
----
 
-## v5.3 — Baseline admin essentials
+</details>
+
+<details class="doc-sec" markdown="1">
+<summary>v5.3 — Baseline admin essentials</summary>
+
 
 Three plug-and-play admin commands that close common gaps — all permission-gated and written to your audit trail.
 
@@ -442,9 +539,12 @@ Three plug-and-play admin commands that close common gaps — all permission-gat
 - **🚨 `/lockdown start` / `/lockdown end`.** Lock **every text and forum channel** at once for raid response — including their threads and posts, so a raid can't just move into a thread — then restore each channel's **exact** prior permissions on `end`, not a best guess. Reuses your existing channel-lock permission, so there's nothing new to configure.
 - **⏲️ `/tempban <user> <duration>`.** Timed bans that **un-ban automatically** — `30m`, `2h`, `7d`, `1w`, even `1d12h` (1 minute to 28 days). The timer is persisted and survives restarts; when it expires the bot un-bans, logs it to your audit trail, and DMs the staff member who set it.
 
----
 
-## v5.2 — Ticket Panels
+</details>
+
+<details class="doc-sec" markdown="1">
+<summary>v5.2 — Ticket Panels</summary>
+
 
 Private in-server support tickets — no DMs, no leaving your server, no messy threads.
 
@@ -456,9 +556,12 @@ Private in-server support tickets — no DMs, no leaving your server, no messy t
 - **Per-ticket privacy** — each ticket channel is visible only to the opener, the configured support role, and admins.
 - **Storage** in `tickets.json` alongside the other per-guild JSON stores; no extra setup required.
 
----
 
-## v5.1 — Complete audit trail & tamper protection
+</details>
+
+<details class="doc-sec" markdown="1">
+<summary>v5.1 — Complete audit trail & tamper protection</summary>
+
 
 Oversight you can trust. Server Assistant now records **every** moderation action — not just the ones run through the bot — and keeps them somewhere staff can't touch.
 
@@ -472,9 +575,12 @@ Oversight you can trust. Server Assistant now records **every** moderation actio
 ### Fixed
 - **`/autopilot` role detection.** Now recognises staff roles by **name** (e.g. "Moderators", "Admin", "Staff"), not just by permissions — so a correctly-named role is detected even if its powers come from channel overrides. It also suggests the standard staff permissions if a detected role is missing them.
 
----
 
-## v5.0 — Premium tier, Concierge, Auto-pilot, Privacy panel
+</details>
+
+<details class="doc-sec" markdown="1">
+<summary>v5.0 — Premium tier, Concierge, Auto-pilot, Privacy panel</summary>
+
 
 The biggest release yet. Premium ships with an honest billing model — subscribe when you want AI features, pay only when you've actually used your free tokens.
 
@@ -498,10 +604,8 @@ The biggest release yet. Premium ships with an honest billing model — subscrib
 - Discord App Subscriptions (when Server Assistant reaches 75 server installs)
 - Premium Plus tier ($14 USD/mo, 2M tokens, multi-server bundle)
 
----
 
 
----
 
 <style>
 .changelog-nav { display: flex; gap: 0.4rem; flex-wrap: wrap; margin: 0.6rem 0 1.2rem; padding: 0.5rem; background: rgba(46,204,113,0.06); border: 1px solid rgba(46,204,113,0.20); border-radius: 10px; }
@@ -520,6 +624,8 @@ The biggest release yet. Premium ships with an honest billing model — subscrib
   <a href="{{ site.url }}{{ site.baseurl }}/changelog/v2/" class="{% if page.permalink == '/changelog/v2/' %}current{% endif %}">v2.x</a>
   <a href="{{ site.url }}{{ site.baseurl }}/changelog/v1/" class="{% if page.permalink == '/changelog/v1/' %}current{% endif %}">v1.x</a>
 </div>
+
+</details>
 
 ## What's next?
 
