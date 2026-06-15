@@ -21,7 +21,7 @@ Each row is a feature area — what you get **free** on the left, what **Trial &
 .col-head.prem { border-bottom-color: rgba(241,196,15,0.55); }
 .grp-h { grid-column: 1 / -1; display: flex; align-items: center; gap: .45rem; font-size: 1.02rem; font-weight: 800; color: var(--ink); margin: .7rem 0 0; padding: .45rem .35rem .3rem; border-bottom: 2px solid var(--glass-border); }
 .col { padding: .15rem .85rem .7rem; }
-.col.empty { display: flex; align-items: center; justify-content: center; text-align: center; color: var(--ink-soft); font-size: .8rem; font-style: italic; opacity: .7; min-height: 44px; padding: .5rem .85rem; }
+.col.empty { min-height: 0; padding: 0; }
 
 /* First-glance cards — scannable summaries, full detail one tap away. */
 .xgrid { display: grid; grid-template-columns: 1fr; gap: 0.4rem; margin: .3rem 0 0; align-items: start; }
@@ -75,7 +75,7 @@ Each row is a feature area — what you get **free** on the left, what **Trial &
       <details class="x"><summary>📣 <strong>Bulk via role mention</strong></summary><div class="b"><code>mute @TrollRole 1 hour</code> actions every member of that role at once. Bots auto-excluded; &gt;5 targets requires the Owner.</div></details>
     </div>
   </div>
-  <div class="col prem empty">✓ Fully free — no premium extras</div>
+  <div class="col prem empty"></div>
 
   <div class="grp-h">📩 Ban reasons &amp; appeals</div>
   <div class="col free">
@@ -111,7 +111,7 @@ Each row is a feature area — what you get **free** on the left, what **Trial &
   </div>
 
   <div class="grp-h">🧠 Server health &amp; insight</div>
-  <div class="col free empty">Trial &amp; Premium feature</div>
+  <div class="col free empty"></div>
   <div class="col prem">
     <div class="xgrid">
       <details class="x"><summary>🩺 <strong>Pulse</strong> <span class="t">— daily health report</span></summary><div class="b">A daily one-embed health report — messages, joins/leaves, AutoMod blocks, warnings — with week-over-week deltas and flags for the quiet patterns humans miss. On by default; configure in <code>/settings → 🩺 Pulse</code>.</div></details>
@@ -121,7 +121,7 @@ Each row is a feature area — what you get **free** on the left, what **Trial &
   </div>
 
   <div class="grp-h">🖼️ AI tools</div>
-  <div class="col free empty">Trial &amp; Premium feature</div>
+  <div class="col free empty"></div>
   <div class="col prem">
     <div class="xgrid">
       <details class="x"><summary>🖼️ <strong>Image generation</strong> <span class="t">— <code>/imagine</code></span></summary><div class="b">Type <code>/imagine &lt;prompt&gt;</code>, get a 1024×1024 image. Uses your own AI key (<code>/ai-config</code>); otherwise the free trial covers ~30 images and Premium is unlimited. 30s cooldown on the free tier.</div></details>
@@ -136,7 +136,7 @@ Each row is a feature area — what you get **free** on the left, what **Trial &
       <details class="x"><summary>🔐 <strong>DM Verification Gate</strong> <span class="t">— verify button on join</span></summary><div class="b">Optional measure (<code>/settings → Verification</code>). New members are DM'd a green <strong>Verify</strong> button; clicking it grants the verified role. If DMs are closed, the failure is logged and the user sees only <code>@everyone</code>-open channels. Stops most automated raid bots cold.</div></details>
     </div>
   </div>
-  <div class="col prem empty">✓ Fully free — no premium extras</div>
+  <div class="col prem empty"></div>
 
   <div class="grp-h">👋 Onboarding &amp; canned</div>
   <div class="col free">
@@ -148,7 +148,7 @@ Each row is a feature area — what you get **free** on the left, what **Trial &
       <details class="x"><summary>⏰ <strong>Reminders</strong> <span class="t">— scheduled messages</span></summary><div class="b"><code>/schedule</code> (modal) or text <code>schedule in 30 min: …</code> / <code>schedule at 9am: …</code>. Uses your <code>/timezone</code>. Fires in the channel where it was created.</div></details>
     </div>
   </div>
-  <div class="col prem empty">✓ Fully free — no premium extras</div>
+  <div class="col prem empty"></div>
 
   <div class="grp-h">📊 Audit Logging</div>
   <div class="col free">
@@ -159,7 +159,7 @@ Each row is a feature area — what you get **free** on the left, what **Trial &
       <details class="x"><summary>🩺 <strong>Permission health check</strong></summary><div class="b">Once a day the bot verifies it still has <strong>Manage Roles</strong> plus a working staff + log channel. If an admin change broke any of them, the <strong>owner gets a one-time DM</strong> naming exactly what broke and how to fix it. Idempotent, quiet, read-only.</div></details>
     </div>
   </div>
-  <div class="col prem empty">✓ Fully free — no premium extras</div>
+  <div class="col prem empty"></div>
 
   <div class="grp-h">🎨 Customisation (<code>/settings</code>)</div>
   <div class="col free">
@@ -172,7 +172,7 @@ Each row is a feature area — what you get **free** on the left, what **Trial &
       <details class="x"><summary>📍 <strong>Channel allowlist</strong></summary><div class="b">Choose where the bot responds to mentions.</div></details>
     </div>
   </div>
-  <div class="col prem empty">✓ Fully free — no premium extras</div>
+  <div class="col prem empty"></div>
 
   <div class="grp-h">🌐 Web Portal</div>
   <div class="col free">
@@ -185,7 +185,7 @@ Each row is a feature area — what you get **free** on the left, what **Trial &
       <details class="x"><summary>👥 <strong>Whole staff team</strong></summary><div class="b">Owners, admins, and moderators can all sign in, and the portal mirrors each person's role exactly — never granting more than they have in Discord. Verified through Discord, re-checked on the server for every action.</div></details>
     </div>
   </div>
-  <div class="col prem empty">✓ Fully free — no premium extras</div>
+  <div class="col prem empty"></div>
 
   <div class="grp-h">🎫 Ticket Panels</div>
   <div class="col free">
@@ -200,7 +200,7 @@ Each row is a feature area — what you get **free** on the left, what **Trial &
   </div>
 
   <div class="grp-h">🛠️ Self-service &amp; branding toolkit</div>
-  <div class="col free empty">Premium feature</div>
+  <div class="col free empty"></div>
   <div class="col prem">
     <div class="xgrid">
       <details class="x"><summary>🎭 <strong>Reaction roles</strong> <span class="t">— <code>/rolepanel</code></span></summary><div class="b">Self-service role buttons built from one wizard: pick roles from a dropdown, name the panel, post it. Members click to add/remove a role, and a <strong>🎭 My roles</strong> button opens a private menu with a ✓ next to roles they have. The bot only offers roles it can actually assign.</div></details>
@@ -219,7 +219,7 @@ Each row is a feature area — what you get **free** on the left, what **Trial &
       <details class="x"><summary>🔐 <strong>Privacy &amp; security</strong></summary><div class="b">AI keys and credentials are <strong>encrypted at rest</strong>, per-server data is isolated, and removing the bot wipes your encrypted secrets immediately. Retention rules are in the <a href="{{ site.url }}{{ site.baseurl }}/privacy/">Privacy Policy</a>.</div></details>
     </div>
   </div>
-  <div class="col prem empty">✓ Fully free — no premium extras</div>
+  <div class="col prem empty"></div>
 
 </div>
 </div>
