@@ -7,28 +7,25 @@ description: A scannable tour of Server Assistant's flagship features.
 
 # ✨ Features
 
-Each row is a feature area — **<span style="color:#2f6fd0">Free</span> on the left, <span style="color:#9a7a00">Trial &amp; Premium</span> on the right.** Tap any card to expand the detail. See also **[Commands]({{ site.url }}{{ site.baseurl }}/commands/)** and **[Pricing]({{ site.url }}{{ site.baseurl }}/pricing/)**.
+Each row is a feature area — what you get **free** on the left, what **Trial &amp; Premium** add on the right. Tap any card to expand the detail. See also **[Commands]({{ site.url }}{{ site.baseurl }}/commands/)** and **[Pricing]({{ site.url }}{{ site.baseurl }}/pricing/)**.
 
 <style>
-.tier-badge { display: inline-block; font-size: 0.62rem; font-weight: 800; letter-spacing: 0.05em;
-              padding: 0.12rem 0.45rem; border-radius: 999px; vertical-align: middle;
-              margin-left: 0.35rem; text-transform: uppercase; }
-.tier-free    { background: rgba(46,204,113,0.18);  color: #1b8e3a; }
-.tier-trial   { background: rgba(52,152,219,0.18);  color: #1f6dbf; }
-.tier-premium { background: rgba(241,196,15,0.20);  color: #8a5a00; }
-
-/* Per-group comparison grid: full-width group header, then Free | Trial+Premium cells */
-.cmp { display: grid; grid-template-columns: 1fr 1fr; column-gap: 1rem; row-gap: .45rem; align-items: start; margin: 1.3rem 0; }
-.grp-h { grid-column: 1 / -1; display: flex; align-items: center; gap: .45rem; font-size: 1.15rem; font-weight: 800; color: var(--ink); margin: 1rem 0 .15rem; padding-bottom: .35rem; border-bottom: 2px solid var(--glass-border); }
-.grp-h:first-of-type { margin-top: 0; }
-.col { padding: .7rem .8rem .8rem; border-radius: 12px; border: 1px solid var(--glass-border); backdrop-filter: blur(7px); -webkit-backdrop-filter: blur(7px); }
-.col.free { background: rgba(52,130,225,0.10); border-color: rgba(52,130,225,0.30); }
-.col.prem { background: rgba(241,196,15,0.11); border-color: rgba(241,196,15,0.34); }
-.col.empty { display: flex; align-items: center; justify-content: center; text-align: center; color: var(--ink-soft); font-size: .8rem; font-style: italic; opacity: .75; min-height: 46px; }
+/* Continuous coloured-glass columns behind an aligned per-group grid. */
+.cmp-wrap { position: relative; margin: 1.3rem 0; }
+.cmp-bg { position: absolute; top: 0; bottom: 0; border-radius: 14px; z-index: 0; backdrop-filter: blur(7px); -webkit-backdrop-filter: blur(7px); }
+.cmp-bg.free { left: 0; right: calc(50% + .55rem); background: rgba(52,130,225,0.10); border: 1px solid rgba(52,130,225,0.30); }
+.cmp-bg.prem { left: calc(50% + .55rem); right: 0; background: rgba(241,196,15,0.11); border: 1px solid rgba(241,196,15,0.34); }
+.cmp { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1fr; column-gap: 1.1rem; row-gap: .4rem; align-items: start; }
+.col-head { font-size: 1.25rem; font-weight: 800; color: var(--ink); padding: .65rem .85rem .35rem; border-bottom: 2px solid var(--glass-border); margin-bottom: .15rem; }
+.col-head.free { border-bottom-color: rgba(52,130,225,0.5); }
+.col-head.prem { border-bottom-color: rgba(241,196,15,0.55); }
+.grp-h { grid-column: 1 / -1; display: flex; align-items: center; gap: .45rem; font-size: 1.02rem; font-weight: 800; color: var(--ink); margin: .7rem 0 0; padding: .45rem .35rem .3rem; border-bottom: 2px solid var(--glass-border); }
+.col { padding: .15rem .85rem .7rem; }
+.col.empty { display: flex; align-items: center; justify-content: center; text-align: center; color: var(--ink-soft); font-size: .8rem; font-style: italic; opacity: .7; min-height: 44px; padding: .5rem .85rem; }
 
 /* First-glance cards — scannable summaries, full detail one tap away. */
-.xgrid { display: grid; grid-template-columns: 1fr; gap: 0.4rem; margin: 0; align-items: start; }
-.xgrid details.x { border: 1px solid var(--glass-border); border-radius: 10px; background: rgba(255,255,255,0.07); }
+.xgrid { display: grid; grid-template-columns: 1fr; gap: 0.4rem; margin: .3rem 0 0; align-items: start; }
+.xgrid details.x { border: 1px solid var(--glass-border); border-radius: 10px; background: rgba(255,255,255,0.08); }
 .xgrid details.x > summary { cursor: pointer; padding: 0.5rem 0.75rem; list-style: none; color: var(--ink); font-size: 0.92rem; }
 .xgrid details.x > summary::-webkit-details-marker { display: none; }
 .xgrid details.x > summary::before { content: "▸"; color: var(--ink-soft); margin-right: .4rem; font-size: .75em; }
@@ -41,16 +38,25 @@ Each row is a feature area — **<span style="color:#2f6fd0">Free</span> on the 
 .xgrid details.x .b table { width: 100%; font-size: 0.81rem; margin: .2rem 0 .4rem; border-collapse: collapse; }
 .xgrid details.x .b th, .xgrid details.x .b td { text-align: left; padding: .25rem .4rem; border-bottom: 1px solid var(--glass-border); vertical-align: top; }
 .xgrid .t { color: var(--ink-soft); font-weight: 400; }
-@media (max-width: 760px) { .cmp { grid-template-columns: 1fr; } .grp-h { grid-column: auto; } }
+@media (max-width: 760px) {
+  .cmp { grid-template-columns: 1fr; }
+  .cmp-bg, .col-head { display: none; }
+  .grp-h { grid-column: auto; margin-top: 1rem; }
+  .col { border-radius: 10px; padding: .55rem .7rem .65rem; margin-bottom: .15rem; }
+  .col.free { background: rgba(52,130,225,0.10); border: 1px solid rgba(52,130,225,0.30); }
+  .col.prem { background: rgba(241,196,15,0.11); border: 1px solid rgba(241,196,15,0.34); }
+}
 </style>
 
-<p style="font-size:.85rem;color:var(--ink-soft);margin:.2rem 0 0;">
-<span class="tier-badge tier-free">FREE</span> always free ·
-<span class="tier-badge tier-trial">TRIAL</span> uses your AI tokens, on the free trial ·
-<span class="tier-badge tier-premium">PREMIUM</span> needs a subscription
-</p>
+<p style="font-size:.82rem;color:var(--ink-soft);margin:.2rem 0 0;">Trial features use your AI tokens (free trial included); Premium needs a subscription.</p>
 
-<div class="cmp" markdown="0">
+<div class="cmp-wrap" markdown="0">
+<div class="cmp-bg free"></div>
+<div class="cmp-bg prem"></div>
+<div class="cmp">
+
+  <div class="col-head free">🆓 Free</div>
+  <div class="col-head prem">✨ Trial &amp; Premium</div>
 
   <div class="grp-h">🛡️ Moderation</div>
   <div class="col free">
@@ -80,8 +86,8 @@ Each row is a feature area — **<span style="color:#2f6fd0">Free</span> on the 
   </div>
   <div class="col prem">
     <div class="xgrid">
-      <details class="x"><summary>❓ <strong>"Why was I actioned?"</strong> <span class="tier-badge tier-premium">PREMIUM</span></summary><div class="b">When a member is warned or muted, the bot DMs a short notice with a <strong>Why was I actioned?</strong> button that returns a calm, plain-language explanation from the staff-supplied reason. They can also DM the bot <em>"why was I actioned?"</em> for the same on their most recent warning.</div></details>
-      <details class="x"><summary>🗣️ <strong>Guided multi-round appeals</strong> <span class="tier-badge tier-premium">PREMIUM</span></summary><div class="b">A ban appeal becomes a short <strong>AI-facilitated back-and-forth</strong>: the member shares their side, the bot asks one or two neutral follow-ups, then hands staff a <strong>concise summary plus the full transcript</strong> — on the ticket and the portal. You set the max rounds (default 3); the facilitator <strong>never decides or promises an outcome</strong>.</div></details>
+      <details class="x"><summary>❓ <strong>"Why was I actioned?"</strong></summary><div class="b">When a member is warned or muted, the bot DMs a short notice with a <strong>Why was I actioned?</strong> button that returns a calm, plain-language explanation from the staff-supplied reason. They can also DM the bot <em>"why was I actioned?"</em> for the same on their most recent warning.</div></details>
+      <details class="x"><summary>🗣️ <strong>Guided multi-round appeals</strong></summary><div class="b">A ban appeal becomes a short <strong>AI-facilitated back-and-forth</strong>: the member shares their side, the bot asks one or two neutral follow-ups, then hands staff a <strong>concise summary plus the full transcript</strong> — on the ticket and the portal. You set the max rounds (default 3); the facilitator <strong>never decides or promises an outcome</strong>.</div></details>
     </div>
   </div>
 
@@ -99,8 +105,8 @@ Each row is a feature area — **<span style="color:#2f6fd0">Free</span> on the 
   </div>
   <div class="col prem">
     <div class="xgrid">
-      <details class="x"><summary>🧠 <strong>Self-trained AutoMod</strong> <span class="tier-badge tier-trial">TRIAL</span></summary><div class="b">Watches the messages your staff delete or report, then proposes server-specific AutoMod rules for your approval. Nothing auto-enforced; 30-day local log, no identities stored. Enable in <code>/automod → Self-training</code>.</div></details>
-      <details class="x"><summary>🤔 <strong>AutoMod AI second-opinion</strong> <span class="tier-badge tier-premium">PREMIUM</span></summary><div class="b">Optional in <code>/automod → AI Review</code>. Borderline filter hits get an AI confidence check first — confident ones act, low-confidence ones go to a one-tap staff review card (<em>Delete &amp; warn</em> / <em>Allow</em>) instead of an auto-delete. Cuts false positives; only borderline messages cost tokens.</div></details>
+      <details class="x"><summary>🧠 <strong>Self-trained AutoMod</strong> <span class="t">— learns from you</span></summary><div class="b">Watches the messages your staff delete or report, then proposes server-specific AutoMod rules for your approval. Nothing auto-enforced; 30-day local log, no identities stored. Enable in <code>/automod → Self-training</code>.</div></details>
+      <details class="x"><summary>🤔 <strong>AutoMod AI second-opinion</strong></summary><div class="b">Optional in <code>/automod → AI Review</code>. Borderline filter hits get an AI confidence check first — confident ones act, low-confidence ones go to a one-tap staff review card (<em>Delete &amp; warn</em> / <em>Allow</em>) instead of an auto-delete. Cuts false positives; only borderline messages cost tokens.</div></details>
     </div>
   </div>
 
@@ -108,9 +114,9 @@ Each row is a feature area — **<span style="color:#2f6fd0">Free</span> on the 
   <div class="col free empty">Trial &amp; Premium feature</div>
   <div class="col prem">
     <div class="xgrid">
-      <details class="x"><summary>🩺 <strong>Pulse</strong> <span class="t">— daily health report</span> <span class="tier-badge tier-trial">TRIAL</span></summary><div class="b">A daily one-embed health report — messages, joins/leaves, AutoMod blocks, warnings — with week-over-week deltas and flags for the quiet patterns humans miss. On by default; configure in <code>/settings → 🩺 Pulse</code>.</div></details>
-      <details class="x"><summary>🩹 <strong>Bot Health Insurance</strong> <span class="t">— it watches itself</span> <span class="tier-badge tier-trial">TRIAL</span></summary><div class="b">The bot watches its <em>own</em> footprint. If it gets heavy-handed, it suggests tuning — at most once every 14 days, so the anti-noise feature never becomes noise. Toggle in <code>/settings → Behavior</code>.</div></details>
-      <details class="x"><summary>🛡️ <strong>Threat Score</strong> <span class="t">— per-user risk read</span> <span class="tier-badge tier-premium">PREMIUM</span></summary><div class="b">At-a-glance per-user risk — 🟢 Low / 🟠 Elevated / 🔴 High — in user profiles, weighted by severity and decaying over time. <strong>The advisory view is free for every server</strong>; the <strong>active, score-driven action</strong> phase (Premium) uses the score to drive moderation, with the safeguards listed on the roadmap.</div></details>
+      <details class="x"><summary>🩺 <strong>Pulse</strong> <span class="t">— daily health report</span></summary><div class="b">A daily one-embed health report — messages, joins/leaves, AutoMod blocks, warnings — with week-over-week deltas and flags for the quiet patterns humans miss. On by default; configure in <code>/settings → 🩺 Pulse</code>.</div></details>
+      <details class="x"><summary>🩹 <strong>Bot Health Insurance</strong> <span class="t">— it watches itself</span></summary><div class="b">The bot watches its <em>own</em> footprint. If it gets heavy-handed, it suggests tuning — at most once every 14 days, so the anti-noise feature never becomes noise. Toggle in <code>/settings → Behavior</code>.</div></details>
+      <details class="x"><summary>🛡️ <strong>Threat Score</strong> <span class="t">— per-user risk read</span></summary><div class="b">At-a-glance per-user risk — 🟢 Low / 🟠 Elevated / 🔴 High — in user profiles, weighted by severity and decaying over time. <strong>The advisory view is free for every server</strong>; the <strong>active, score-driven action</strong> phase (Premium) uses the score to drive moderation, with the safeguards listed on the roadmap.</div></details>
     </div>
   </div>
 
@@ -118,8 +124,8 @@ Each row is a feature area — **<span style="color:#2f6fd0">Free</span> on the 
   <div class="col free empty">Trial &amp; Premium feature</div>
   <div class="col prem">
     <div class="xgrid">
-      <details class="x"><summary>🖼️ <strong>Image generation</strong> <span class="t">— <code>/imagine</code></span> <span class="tier-badge tier-trial">TRIAL</span></summary><div class="b">Type <code>/imagine &lt;prompt&gt;</code>, get a 1024×1024 image. Uses your own AI key (<code>/ai-config</code>); otherwise the free trial covers ~30 images and Premium is unlimited. 30s cooldown on the free tier.</div></details>
-      <details class="x"><summary>📋 <strong>Message Report</strong> <span class="t">— context summaries</span> <span class="tier-badge tier-trial">TRIAL</span></summary><div class="b">Right-click any message → <strong>Apps ▸ Message Report</strong> for a 3–5 bullet summary: tone, possible rule-breaking, escalation, recommended action. Only you see it — with one-tap <strong>Warn · Timeout · Delete · Kick · Ban</strong> plus <strong>👤 Info · ⚠️ Warnings · 📝 Notes</strong> (each respects your role). The bot never auto-acts — staff always decide.</div></details>
+      <details class="x"><summary>🖼️ <strong>Image generation</strong> <span class="t">— <code>/imagine</code></span></summary><div class="b">Type <code>/imagine &lt;prompt&gt;</code>, get a 1024×1024 image. Uses your own AI key (<code>/ai-config</code>); otherwise the free trial covers ~30 images and Premium is unlimited. 30s cooldown on the free tier.</div></details>
+      <details class="x"><summary>📋 <strong>Message Report</strong> <span class="t">— context summaries</span></summary><div class="b">Right-click any message → <strong>Apps ▸ Message Report</strong> for a 3–5 bullet summary: tone, possible rule-breaking, escalation, recommended action. Only you see it — with one-tap <strong>Warn · Timeout · Delete · Kick · Ban</strong> plus <strong>👤 Info · ⚠️ Warnings · 📝 Notes</strong> (each respects your role). The bot never auto-acts — staff always decide.</div></details>
     </div>
   </div>
 
@@ -189,7 +195,7 @@ Each row is a feature area — **<span style="color:#2f6fd0">Free</span> on the 
   </div>
   <div class="col prem">
     <div class="xgrid">
-      <details class="x"><summary>🎫 <strong>Ticket Panels — Premium extras</strong> <span class="tier-badge tier-premium">PREMIUM</span></summary><div class="b">Up to <strong>4 custom intake questions</strong> (<code>/tickets questions</code>), custom <strong>welcome + close messages</strong>, and <strong>add users mid-ticket</strong> (<code>/tickets add @user</code>).</div></details>
+      <details class="x"><summary>🎫 <strong>Ticket Panels — Premium extras</strong></summary><div class="b">Up to <strong>4 custom intake questions</strong> (<code>/tickets questions</code>), custom <strong>welcome + close messages</strong>, and <strong>add users mid-ticket</strong> (<code>/tickets add @user</code>).</div></details>
     </div>
   </div>
 
@@ -197,13 +203,13 @@ Each row is a feature area — **<span style="color:#2f6fd0">Free</span> on the 
   <div class="col free empty">Premium feature</div>
   <div class="col prem">
     <div class="xgrid">
-      <details class="x"><summary>🎭 <strong>Reaction roles</strong> <span class="t">— <code>/rolepanel</code></span> <span class="tier-badge tier-premium">PREMIUM</span></summary><div class="b">Self-service role buttons built from one wizard: pick roles from a dropdown, name the panel, post it. Members click to add/remove a role, and a <strong>🎭 My roles</strong> button opens a private menu with a ✓ next to roles they have. The bot only offers roles it can actually assign.</div></details>
-      <details class="x"><summary>⌨️ <strong>Custom slash commands</strong> <span class="t">— <code>/customcmd</code></span> <span class="tier-badge tier-premium">PREMIUM</span></summary><div class="b">Define your own real <code>/command</code> (text or embed) — e.g. <code>/rules</code>, <code>/faq</code> — from a wizard. Embed commands have an optional <strong>🔄 Live</strong> toggle: edit once and <em>every copy already posted updates</em>. Names validated; up to 25 per server.</div></details>
-      <details class="x"><summary>❓ <strong>AI Q&amp;A from your FAQ</strong> <span class="t">— <code>/faq</code></span> <span class="tier-badge tier-premium">PREMIUM</span></summary><div class="b">Members run <code>/faq</code> with a question and the bot answers <strong>only</strong> from your curated entries — when the FAQ doesn't cover something it says so and points to staff, rather than inventing an answer. Counts toward AI usage, with a per-user cooldown.</div></details>
-      <details class="x"><summary>🌐 <strong>Translation</strong> <span class="t">— right-click or <code>/translate</code></span> <span class="tier-badge tier-premium">PREMIUM</span></summary><div class="b">Right-click any message → <strong>Translate</strong>, or use <code>/translate</code> — into your Discord language or one you name. On-demand only, so there's no per-message cost or channel noise.</div></details>
-      <details class="x"><summary>🤝 <strong>Mediator</strong> <span class="t">— <code>/mediate</code></span> <span class="tier-badge tier-premium">PREMIUM</span></summary><div class="b">The wizard has the bot DM two members, collect each side privately, and post a <strong>neutral summary</strong> to staff — a chance to de-escalate <em>before</em> anyone reaches for a moderation action. It never takes sides or recommends punishment.</div></details>
-      <details class="x"><summary>💾 <strong>Server backup &amp; restore</strong> <span class="t">— <code>/backup</code></span> <span class="tier-badge tier-premium">PREMIUM</span></summary><div class="b">Snapshot your roles, categories, channels and their exact permission overwrites. <strong>Restore</strong> is owner-only, confirmation-gated, and strictly <strong>additive — recreates anything missing and reapplies overwrites, never deletes</strong>.</div></details>
-      <details class="x"><summary>🎨 <strong>White-label branding</strong> <span class="t">— <code>/brand</code></span> <span class="tier-badge tier-premium">PREMIUM</span></summary><div class="b">Rebrand the bot for your server: a custom per-server <strong>nickname</strong>, your <strong>name + icon</strong> on embeds, your <strong>colour</strong>, and your name in footers. <em>Discord allows only one global bot identity, so this rebrands the nickname and output — not the underlying account.</em></div></details>
+      <details class="x"><summary>🎭 <strong>Reaction roles</strong> <span class="t">— <code>/rolepanel</code></span></summary><div class="b">Self-service role buttons built from one wizard: pick roles from a dropdown, name the panel, post it. Members click to add/remove a role, and a <strong>🎭 My roles</strong> button opens a private menu with a ✓ next to roles they have. The bot only offers roles it can actually assign.</div></details>
+      <details class="x"><summary>⌨️ <strong>Custom slash commands</strong> <span class="t">— <code>/customcmd</code></span></summary><div class="b">Define your own real <code>/command</code> (text or embed) — e.g. <code>/rules</code>, <code>/faq</code> — from a wizard. Embed commands have an optional <strong>🔄 Live</strong> toggle: edit once and <em>every copy already posted updates</em>. Names validated; up to 25 per server.</div></details>
+      <details class="x"><summary>❓ <strong>AI Q&amp;A from your FAQ</strong> <span class="t">— <code>/faq</code></span></summary><div class="b">Members run <code>/faq</code> with a question and the bot answers <strong>only</strong> from your curated entries — when the FAQ doesn't cover something it says so and points to staff, rather than inventing an answer. Counts toward AI usage, with a per-user cooldown.</div></details>
+      <details class="x"><summary>🌐 <strong>Translation</strong> <span class="t">— right-click or <code>/translate</code></span></summary><div class="b">Right-click any message → <strong>Translate</strong>, or use <code>/translate</code> — into your Discord language or one you name. On-demand only, so there's no per-message cost or channel noise.</div></details>
+      <details class="x"><summary>🤝 <strong>Mediator</strong> <span class="t">— <code>/mediate</code></span></summary><div class="b">The wizard has the bot DM two members, collect each side privately, and post a <strong>neutral summary</strong> to staff — a chance to de-escalate <em>before</em> anyone reaches for a moderation action. It never takes sides or recommends punishment.</div></details>
+      <details class="x"><summary>💾 <strong>Server backup &amp; restore</strong> <span class="t">— <code>/backup</code></span></summary><div class="b">Snapshot your roles, categories, channels and their exact permission overwrites. <strong>Restore</strong> is owner-only, confirmation-gated, and strictly <strong>additive — recreates anything missing and reapplies overwrites, never deletes</strong>.</div></details>
+      <details class="x"><summary>🎨 <strong>White-label branding</strong> <span class="t">— <code>/brand</code></span></summary><div class="b">Rebrand the bot for your server: a custom per-server <strong>nickname</strong>, your <strong>name + icon</strong> on embeds, your <strong>colour</strong>, and your name in footers. <em>Discord allows only one global bot identity, so this rebrands the nickname and output — not the underlying account.</em></div></details>
     </div>
   </div>
 
@@ -215,6 +221,7 @@ Each row is a feature area — **<span style="color:#2f6fd0">Free</span> on the 
   </div>
   <div class="col prem empty">✓ Fully free — no premium extras</div>
 
+</div>
 </div>
 
 ---
