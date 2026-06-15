@@ -50,8 +50,18 @@ You're set up in about a minute. The bot does the work — you just confirm.
 .path p { margin: 0; color: var(--ink-soft); font-size: .88rem; line-height: 1.5; }
 @media (max-width: 760px) {
   .steprow, .paths { grid-template-columns: 1fr; }
+  .steprow { padding: 1.1rem 1.2rem; gap: 1rem; }
   .steprow.flip .stext, .steprow.flip .sshot { order: 0; }
+  /* connectors are decorative — hidden when stacked; restore vertical rhythm */
   .forksvg { display: none; }
+  .fork-title { margin: 1.6rem 0 .5rem; }
+  .paths { gap: .6rem; margin-bottom: 1.4rem; }
+  /* compact, left-aligned branch cards (centred wastes space when stacked) */
+  .path { text-align: left; padding: .8rem 1rem; display: grid; grid-template-columns: 2.4rem 1fr; align-items: center; column-gap: .2rem; }
+  .path .pico { grid-row: 1 / 3; font-size: 1.5rem; }
+  .path .ptag { grid-column: 2; margin: 0; }
+  .path h4 { grid-column: 2; margin: .1rem 0 0; }
+  .path p { grid-column: 1 / -1; margin: .4rem 0 0; }
 }
 
 .qwin-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap: .6rem; margin: 1rem 0; }
