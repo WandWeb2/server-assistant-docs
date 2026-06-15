@@ -19,14 +19,21 @@ Free on the left, paid on the right — **tap any card to expand the detail.** F
 
 /* Two tier lanes side by side: Free | (Trial + Premium) */
 .lanes { display: grid; grid-template-columns: 1fr 1fr; gap: 1.1rem; align-items: start; margin: 1.3rem 0; }
-.lane { min-width: 0; }
+.lane { min-width: 0; padding: 0.85rem 1rem 1.1rem; border-radius: 14px; border: 1px solid var(--glass-border); backdrop-filter: blur(7px); -webkit-backdrop-filter: blur(7px); }
+.lane.free { background: rgba(52,130,225,0.10); border-color: rgba(52,130,225,0.32); }
+.lane.prem { background: rgba(241,196,15,0.11); border-color: rgba(241,196,15,0.36); }
 .lane-h { display: flex; align-items: center; gap: .4rem; font-size: 1.3rem; font-weight: 800; color: var(--ink); margin: 0 0 .3rem; padding-bottom: .4rem; border-bottom: 2px solid var(--glass-border); }
+.lane.free .lane-h { border-bottom-color: rgba(52,130,225,0.48); }
+.lane.prem .lane-h { border-bottom-color: rgba(241,196,15,0.52); }
 .lane-note { font-size: .84rem; color: var(--ink-soft); margin: 0 0 .6rem; }
-.lane-sub { font-size: .8rem; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; color: var(--ink-soft); margin: 1rem 0 .35rem; display: flex; align-items: center; gap: .35rem; }
+.lane-sub { font-size: .8rem; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; color: var(--ink-soft); margin: 1.1rem 0 .4rem; padding-top: .85rem; border-top: 1px solid var(--glass-border); display: flex; align-items: center; gap: .35rem; }
+.lane.free .lane-sub { border-top-color: rgba(52,130,225,0.28); }
+.lane.prem .lane-sub { border-top-color: rgba(241,196,15,0.34); }
+.lane .lane-sub:first-of-type { border-top: none; padding-top: 0; margin-top: .35rem; }
 
 /* First-glance cards — scannable summaries, full detail one tap away. */
 .xgrid { display: grid; grid-template-columns: 1fr; gap: 0.4rem; margin: 0.2rem 0 0.5rem; align-items: start; }
-.xgrid details.x { border: 1px solid var(--glass-border); border-radius: 10px; background: rgba(255,255,255,0.04); }
+.xgrid details.x { border: 1px solid var(--glass-border); border-radius: 10px; background: rgba(255,255,255,0.07); }
 .xgrid details.x > summary { cursor: pointer; padding: 0.5rem 0.75rem; list-style: none; color: var(--ink); font-size: 0.92rem; }
 .xgrid details.x > summary::-webkit-details-marker { display: none; }
 .xgrid details.x > summary::before { content: "▸"; color: var(--ink-soft); margin-right: .4rem; font-size: .75em; }
@@ -50,7 +57,7 @@ Free on the left, paid on the right — **tap any card to expand the detail.** F
 
 <div class="lanes" markdown="0">
 
-<div class="lane">
+<div class="lane free">
   <div class="lane-h">🆓 Free</div>
   <p class="lane-note">Everything to run a safe, well-moderated server — no subscription, no AI tokens.</p>
 
@@ -137,7 +144,7 @@ Free on the left, paid on the right — **tap any card to expand the detail.** F
   </div>
 </div>
 
-<div class="lane">
+<div class="lane prem">
   <div class="lane-h">✨ Trial &amp; Premium</div>
   <p class="lane-note">AI insight on your free-trial tokens, plus the full premium toolkit for subscribers.</p>
 
