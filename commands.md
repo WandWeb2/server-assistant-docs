@@ -200,7 +200,7 @@ The `undo` command reverses your most recent reversible action.
 
 | Command | Description |
 |---------|-------------|
-| `/setup` | Run the initial setup wizard (owner only) |
+| `/setup` | Run the initial setup wizard (owner or Manage Server admin) |
 | `/autopilot` | Detect and apply a sensible config automatically (owner only) |
 | `/settings` | Open the customisation hub (owner / admin) |
 | `/automod` | Configure auto-moderation (admin and above) |
@@ -255,7 +255,7 @@ Type `/` anywhere to see autocomplete:
 
 | Slash command | What it does |
 |--------------|----------------|
-| `/setup` | Initial config wizard (owner only) |
+| `/setup` | Initial config wizard (owner or Manage Server admin) |
 | `/settings` | Open customisation hub |
 | `/automod` | Configure auto-moderation |
 | `/onboarding` | Configure welcome DMs |

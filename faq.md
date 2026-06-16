@@ -33,13 +33,13 @@ details.faq .faq-body table { margin: .5rem 0; }
 
 <details class="faq"><summary>How do I add the bot to my server?</summary>
 <div class="faq-body">
-You'll need <strong>Manage Server</strong> permission. Use the <a href="{{ site.url }}{{ site.baseurl }}/setup/#step-1--invite-the-bot">invite link</a>, or find Server Assistant on <a href="https://top.gg/bot/1278486617375510570">Top.gg</a> or <a href="https://discordbotlist.com/bots/server-assistant">discordbotlist.com</a>. After authorising, the owner runs <code>/setup</code>.
+You'll need <strong>Manage Server</strong> permission. Use the <a href="{{ site.url }}{{ site.baseurl }}/setup/#step-1--invite-the-bot">invite link</a>, or find Server Assistant on <a href="https://top.gg/bot/1278486617375510570">Top.gg</a> or <a href="https://discordbotlist.com/bots/server-assistant">discordbotlist.com</a>. After authorising, the <strong>server owner or any admin with Manage&nbsp;Server</strong> runs <code>/setup</code> — and whoever invited the bot is DM'd the setup wizard automatically.
 </div>
 </details>
 
-<details class="faq"><summary>Why does only the server owner get to run <code>/setup</code>?</summary>
+<details class="faq"><summary>Who can run <code>/setup</code>?</summary>
 <div class="faq-body">
-<code>/setup</code> maps your roles to permission tiers. If admins could run it, they could escalate themselves to Owner-tier and bypass approvals on dangerous actions. Owner-only is a hard safety check.
+The <strong>server owner</strong> or <strong>any admin with the Manage&nbsp;Server permission</strong> can run <code>/setup</code> — the same permission Discord requires to add the bot in the first place, so whoever installed it can finish onboarding without waiting on the owner. <code>/setup</code> maps your roles to permission tiers; the role-to-tier mapping itself still gates the genuinely dangerous actions, so opening setup to Manage&nbsp;Server admins is safe while keeping the bot easy to get running.
 </div>
 </details>
 

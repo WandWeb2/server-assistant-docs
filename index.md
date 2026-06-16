@@ -35,7 +35,7 @@ image: /server-assistant-docs/assets/banner.jpeg
 <style>
 .cta-row { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; margin: 1.4rem 0 .5rem; }
 .cta { display: inline-block; padding: .6rem 1.3rem; border-radius: 999px; font-weight: 700; text-decoration: none !important; transition: transform .15s, box-shadow .15s; }
-.cta-primary { background: linear-gradient(135deg, #5865f2, #3498db); color: white !important; box-shadow: 0 4px 14px rgba(88,101,242,.35); }
+.cta-primary { background: linear-gradient(135deg, var(--brand-discord), var(--brand-blue)); color: white !important; box-shadow: 0 4px 14px rgba(88,101,242,.35); }
 .cta-primary:hover { transform: translateY(-1px); box-shadow: 0 6px 18px rgba(88,101,242,.45); }
 .cta-secondary { background: rgba(255,255,255,0.08); color: var(--ink) !important; border: 1px solid var(--glass-border); }
 .cta-secondary:hover { background: rgba(255,255,255,0.14); }
@@ -77,7 +77,7 @@ image: /server-assistant-docs/assets/banner.jpeg
 .shipped-strip { background: rgba(46,204,113,.10); border-left: 4px solid #2ecc71; border-radius: 10px; padding: .85rem 1.1rem; margin: 1.5rem 0; font-size: .9rem; line-height: 1.55; }
 .shipped-strip strong.lbl { color: #56d08a; }
 .shipped-strip code { font-size: .82em; }
-.upcoming-strip { background: rgba(52,152,219,.10); border-left: 4px solid #3498db; border-radius: 10px; padding: .85rem 1.1rem; margin: 1.5rem 0; font-size: .9rem; line-height: 1.55; }
+.upcoming-strip { background: rgba(52,152,219,.10); border-left: 4px solid var(--brand-blue); border-radius: 10px; padding: .85rem 1.1rem; margin: 1.5rem 0; font-size: .9rem; line-height: 1.55; }
 .upcoming-strip strong.lbl { color: #6fa8ff; }
 
 .ways-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin: 1rem 0; }

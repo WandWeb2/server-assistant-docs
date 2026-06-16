@@ -9,25 +9,18 @@ description: Server Assistant's product roadmap — what's in development, what'
 /* Widen the Minima container for just this page so the swimlanes can breathe */
 .page-content .wrapper { max-width: 1280px; }
 
-.roadmap-hero {
-  margin: 1.5rem 0 2rem;
-  padding: 1.25rem 1.5rem;
-  border-left: 4px solid #2ecc71;
-  background: #f4f8f5;
-  border-radius: 6px;
-  color: #333;
-}
+.roadmap-hero { margin: 1.5rem 0 2rem; padding: 1.25rem 1.5rem; border-left: 4px solid #2ecc71; border-radius: 6px; }
 .roadmap-hero p { margin: .3rem 0; }
 /* Live community-poll results (filled by JS from the public results API) */
 .lp-q { font-weight: 700; margin-bottom: .55rem; }
 .lp-row { display: flex; align-items: center; gap: .55rem; margin: .28rem 0; font-size: .85rem; }
 .lp-label { flex: 0 0 42%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.lp-label a { color: inherit; text-decoration: underline dotted; }
-.lp-track { flex: 1; background: #dcebe0; border-radius: 999px; height: 10px; overflow: hidden; }
-.lp-fill { display: block; height: 100%; background: linear-gradient(90deg, #1e8449, #2ecc71); border-radius: 999px; transition: width .8s ease, background .4s ease; }
+.lp-label a { text-decoration: underline dotted; }
+.lp-track { flex: 1; border-radius: 999px; height: 10px; overflow: hidden; }
+.lp-fill { display: block; height: 100%; border-radius: 999px; transition: width .8s ease, background .4s ease; }
 .lp-pct { flex: 0 0 70px; text-align: right; font-variant-numeric: tabular-nums; font-size: .8rem; }
-.lp-meta { margin-top: .55rem; font-size: .8rem; color: #555; }
-.lp-refresh { margin-top: .25rem; font-size: .72rem; color: #7a8a7d; font-variant-numeric: tabular-nums; }
+.lp-meta { margin-top: .55rem; font-size: .8rem; }
+.lp-refresh { margin-top: .25rem; font-size: .72rem; font-variant-numeric: tabular-nums; }
 
 /* ── The build queue: one container, banded by status ─────────────────── */
 .build-queue { border: 1px solid #e0e0e0; border-radius: 10px; padding: 1rem 1.1rem; background: #fff; margin: 1.2rem 0 2rem; }
@@ -44,7 +37,7 @@ description: Server Assistant's product roadmap — what's in development, what'
 #band-blue   > details.card { border-left-color: #5dade2; }
 #band-blue .desc ul { margin: .3rem 0 0; padding-left: 1.2rem; }
 #band-blue .desc li { margin: .2rem 0; }
-.band-empty { font-size: .85rem; color: #777; padding: .55rem .25rem; font-style: italic; }
+.band-empty { font-size: .85rem; padding: .55rem .25rem; font-style: italic; }
 /* Animated CTA filling any gold slot left open by a tie */
 .gold-cta {
   display: flex; align-items: center; gap: .65rem;
@@ -55,8 +48,7 @@ description: Server Assistant's product roadmap — what's in development, what'
 }
 .gold-cta-ico { font-size: 1.25rem; animation: goldCtaBob 1.6s ease-in-out infinite; }
 .gold-cta-text { display: flex; flex-direction: column; line-height: 1.3; }
-.gold-cta-text strong { color: #b7950b; }
-.gold-cta-sub { font-size: .8rem; color: #777; margin-top: .1rem; }
+.gold-cta-sub { font-size: .8rem; margin-top: .1rem; }
 @keyframes goldCtaPulse {
   0%, 100% { box-shadow: 0 0 0 0 rgba(212, 172, 13, 0); }
   50%      { box-shadow: 0 0 16px 1px rgba(212, 172, 13, .38); }
@@ -74,7 +66,7 @@ description: Server Assistant's product roadmap — what's in development, what'
 /* Badge colour follows the band the card currently sits in */
 #band-gold .vote-badge { background: #fdf3d7; border-color: #d4ac0d; color: #7d6608; }
 details.band-shipped { margin-top: 1.2rem; }
-details.band-shipped > summary { cursor: pointer; font-weight: 700; color: #37474f; padding: .55rem .85rem; background: #eceff1; border: 1px solid #b0bec5; border-radius: 6px; list-style: none; user-select: none; }
+details.band-shipped > summary { cursor: pointer; font-weight: 700; padding: .55rem .85rem; border: 1px solid #b0bec5; border-radius: 6px; list-style: none; user-select: none; }
 details.band-shipped > summary::-webkit-details-marker { display: none; }
 details.band-shipped[open] > summary { border-radius: 6px 6px 0 0; }
 details.band-shipped > .shipped-scroll { border: 1px solid #cfd8dc; border-top: 0; border-radius: 0 0 6px 6px; padding: .6rem; }
@@ -123,11 +115,7 @@ details.band-shipped > .shipped-scroll { border: 1px solid #cfd8dc; border-top: 
   padding: 1rem 1.25rem;
   margin-bottom: 1rem;
 }
-.flagship-card h4 {
-  margin: 0 0 0.5rem;
-  font-size: 1.05rem;
-  color: #117a65;
-}
+.flagship-card h4 { margin: 0 0 0.5rem; font-size: 1.05rem; }
 .flagship-card ul { margin: 0.5rem 0 0; padding-left: 1.2rem; }
 .flagship-card li { margin: 0.25rem 0; }
 .roadmap-section .sub {
@@ -149,15 +137,7 @@ details.band-shipped > .shipped-scroll { border: 1px solid #cfd8dc; border-top: 
 }
 @media (max-width: 1000px) { .premium-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 560px)  { .premium-grid { grid-template-columns: 1fr; } }
-.premium-tier-col {
-  background: #fdfaf1;
-  border-top: 3px solid #f1c40f;
-  border-radius: 6px;
-  padding: 0.75rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
+.premium-tier-col { border-top: 3px solid #f1c40f; border-radius: 6px; padding: 0.75rem; display: flex; flex-direction: column; gap: 0.5rem; }
 
 /* ── Long-term + Future free-tier: 3-column gallery ───────────────────────── */
 .longterm-grid, .future-grid {
@@ -180,7 +160,7 @@ details.band-shipped > .shipped-scroll { border: 1px solid #cfd8dc; border-top: 
 }
 .lane-now      { border-color: #2ecc71; }
 .lane-comingup { border-color: #229954; }
-.lane-planned  { border-color: #3498db; }
+.lane-planned  { border-color: var(--brand-blue); }
 
 /* Shipped column: locked height + scrollable list. Latest releases at top,
    older work below — visitors can browse history without the column eating
@@ -221,30 +201,9 @@ details.band-shipped > .shipped-scroll { border: 1px solid #cfd8dc; border-top: 
   z-index: 3;
 }
 
-.lane h3 {
-  margin: 0 0 0.5rem;
-  font-size: 1.05rem;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  color: #333;
-}
-.lane h3 small {
-  display: block;
-  font-size: 0.72rem;
-  font-weight: 400;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-  color: #888;
-  margin-top: 0.2rem;
-}
-.premium-tier-col h4 {
-  margin: 0 0 0.4rem;
-  font-size: 0.85rem;
-  font-weight: 700;
-  color: #b7910c;
-  border-bottom: 1px dotted #e6c860;
-  padding-bottom: 0.25rem;
-}
+.lane h3 { margin: 0 0 0.5rem; font-size: 1.05rem; font-weight: 700; letter-spacing: 0.02em; }
+.lane h3 small { display: block; font-size: 0.72rem; font-weight: 400; letter-spacing: 0.03em; text-transform: uppercase; margin-top: 0.2rem; }
+.premium-tier-col h4 { margin: 0 0 0.4rem; font-size: 0.85rem; font-weight: 700; border-bottom: 1px dotted #e6c860; padding-bottom: 0.25rem; }
 
 /* ── Cards: <details> elements, collapsed by default ──────────────────────── */
 details.card {
@@ -257,34 +216,14 @@ details.card {
   overflow: hidden;
 }
 details.card:hover { box-shadow: 0 3px 8px rgba(0,0,0,0.08); }
-details.card[open] {
-  background: #fdfdfd;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
-}
+details.card[open] { box-shadow: 0 3px 10px rgba(0,0,0,0.08); }
 
-details.card > summary {
-  list-style: none;          /* hide Firefox/Chrome marker */
-  cursor: pointer;
-  padding: 0.7rem 0.85rem;
-  position: relative;
-  font-weight: 600;
-  font-size: 0.95rem;
-  color: #222;
-  user-select: none;
-}
+details.card > summary { list-style: none; /* hide Firefox/Chrome marker */
+  cursor: pointer; padding: 0.7rem 0.85rem; position: relative; font-weight: 600; font-size: 0.95rem; user-select: none; }
 details.card > summary::-webkit-details-marker { display: none; } /* hide Safari marker */
-details.card > summary:hover { color: #2c7ad6; }
+details.card > summary:hover { color: var(--accent); }
 
-details.card .desc {
-  display: block;
-  padding: 0 0.85rem 0.75rem;
-  font-size: 0.85rem;
-  color: #555;
-  line-height: 1.5;
-  border-top: 1px solid #f0f0f0;
-  padding-top: 0.6rem;
-  margin-top: 0;
-}
+details.card .desc { display: block; padding: 0 0.85rem 0.75rem; font-size: 0.85rem; line-height: 1.5; border-top: 1px solid #f0f0f0; padding-top: 0.6rem; margin-top: 0; }
 
 .shipped-pill {
   display: inline-block;
@@ -386,20 +325,10 @@ details.safeguards li { margin-bottom: 0.2rem; }
   gap: 0.5rem;
   margin: 0.5rem 0 1.5rem;
 }
-.expand-all-bar button {
-  background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 999px;
-  padding: 0.4rem 1.1rem;
-  font-size: 0.82rem;
-  font-weight: 500;
-  color: #555;
-  cursor: pointer;
-  transition: all 0.15s;
-}
+.expand-all-bar button { border: 1px solid #ddd; border-radius: 999px; padding: 0.4rem 1.1rem; font-size: 0.82rem; font-weight: 500; cursor: pointer; transition: all 0.15s; }
 .expand-all-bar button:hover {
-  background: #2c7ad6;
-  border-color: #2c7ad6;
+  background: var(--accent);
+  border-color: var(--accent);
   color: #fff;
 }
 

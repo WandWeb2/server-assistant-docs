@@ -27,9 +27,38 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 .changelog-nav a:hover { color: var(--accent); border-bottom-color: var(--accent); text-decoration: none; }
 .changelog-nav a.current { color: var(--ink); border-bottom-style: solid; }
 .changelog-nav .latest-tag { font-size: 0.58rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; opacity: 0.7; margin-left: 0.25rem; }
+/* "Tempered" — named quality release; tempered-glass styling, set apart from numbered cards */
+.doc-sec.tempered { background: linear-gradient(135deg, rgba(96,165,250,0.17), rgba(124,155,255,0.07) 55%, rgba(20,25,39,0.45)); border: 1px solid rgba(96,165,250,0.45); box-shadow: inset 0 0 0 1px rgba(158,197,255,0.10), 0 10px 34px rgba(20,40,90,0.40); }
+.doc-sec.tempered > summary { color: #cfe0ff; font-size: 1.08rem; }
+.doc-sec.tempered > summary::before { color: #60a5fa; }
+.doc-sec.tempered .tg-badge { display: inline-block; font-size: .6rem; font-weight: 800; letter-spacing: .09em; text-transform: uppercase; color: #0a1030; background: linear-gradient(135deg, #bcd6ff, #60a5fa); padding: .1rem .45rem; border-radius: 999px; margin-left: .55rem; vertical-align: middle; }
 </style>
 
-<details class="doc-sec" markdown="1" open>
+<details class="doc-sec tempered" markdown="1" open>
+<summary>✨ Tempered<span class="tg-badge">Quality release</span></summary>
+
+
+A special **quality release** — no new features, just Server Assistant running **faster and smoother**, with a few rough edges smoothed out. Named **"Tempered"** — strengthened through refinement, like tempered glass — and set apart from the usual version line.
+
+### Faster
+
+- **The bot responds quicker.** Work that used to briefly stall the bot now runs out of the way, so commands and moderation stay snappy even under load.
+
+### Clearer
+
+- **`/help`** now lists `/settings` and `/premium`.
+- The **`/onboarding`** setup no longer lets you tap an enable button that does nothing — it's clearly disabled until you've added a message.
+- The upgrade prompt now points you straight to **`/premium`**.
+- Docs corrected to match the bot exactly — e.g. **`/setup`** is open to the **owner _or_ any admin with Manage Server** (not just the owner).
+
+### More polished
+
+- A refreshed, more consistent visual style across our site.
+
+
+</details>
+
+<details class="doc-sec" markdown="1">
 <summary>v5.6.28 — Setup works when staff add the bot</summary>
 
 

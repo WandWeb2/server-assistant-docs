@@ -1,0 +1,92 @@
+/* ============================================================================
+   Server Assistant — canonical design tokens (single source of truth).
+   Shared verbatim between the operator console (sa-relay/pwa) and the public
+   docs site (server-assistant-docs/assets/css). Edit here; both consume it.
+   Console names are canonical. Locked reconciliations from the Tempered audit
+   are baked in (card radius 18px, deeper panel shadow, --glass-sheen rename,
+   docs-derived status/band/brand tokens, extended type scale).
+   ============================================================================ */
+
+:root {
+  /* ── Palette ──────────────────────────────────────────────────────────── */
+  --bg-0:        #0c0f17;
+  --bg-1:        rgba(20, 25, 39, 0.72);
+  --surface:     rgba(255, 255, 255, 0.045);
+  --surface-2:   rgba(255, 255, 255, 0.085);
+  --surface-hi:  rgba(255, 255, 255, 0.13);
+  --glass-sheen:  rgba(255, 255, 255, 0.05);   /* was console --glass */
+  --glass-panel:  rgba(28, 34, 48, 0.55);      /* docs --glass-bg */
+  --glass-strong: rgba(20, 25, 39, 0.82);
+
+  --fg-0: #e9ecf7;
+  --fg-1: #aeb4cf;
+  --fg-2: #7e84a6;
+  --fg-3: #767ea8;   /* lifted from #565c80 to clear WCAG AA (≈4.8:1 on --bg-0) */
+
+  /* Back-compat aliases — docs .md <style> blocks still reference the old names */
+  --ink:          var(--fg-0);
+  --ink-soft:     var(--fg-1);
+  --glass-border: var(--border);
+
+  --accent:           #7c9bff;
+  --accent-soft:      rgba(124, 155, 255, 0.15);
+  --accent-container: rgba(124, 155, 255, 0.18);
+  --on-accent:        #0a1030;
+
+  --warn:     #f1c40f;
+  --high:     #ff9466;
+  --critical: #ff6b6b;
+  --ok:       #5fd0a0;
+
+  /* Deep stops for status gradients + docs-derived status/brand colours */
+  --ok-deep:   #1e8449;
+  --gold-deep: #b7950b;
+
+  /* Roadmap build-queue band colours */
+  --band-gold:   #f1c40f;
+  --band-purple: #a78bfa;
+  --band-blue:   #60a5fa;
+  --band-green:  #34d399;
+
+  --brand-discord: #5865f2;
+  --brand-blue:    #3498db;
+
+  --border:  rgba(255, 255, 255, 0.10);
+  --divider: rgba(255, 255, 255, 0.07);
+  --shadow:  0 8px 32px rgba(0, 0, 0, 0.45);   /* deeper docs recipe (locked) */
+  --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.22);
+
+  --sat: env(safe-area-inset-top, 0px);
+  --sab: env(safe-area-inset-bottom, 0px);
+  --sal: env(safe-area-inset-left, 0px);
+  --sar: env(safe-area-inset-right, 0px);
+
+  /* ── Type scale — refined dashboard sizing, extended downward ─────────── */
+  --fs-3xs:  0.625rem;   /* ~10px floor for the tiniest labels */
+  --fs-2xs:  0.7rem;     /* ~11px */
+  --fs-xs:   0.78rem;
+  --fs-sm:   0.88rem;
+  --fs-base: 0.95rem;
+  --fs-md:   1.05rem;
+  --fs-lg:   1.3rem;
+  --fs-xl:   1.85rem;
+  --fs-2xl:  2.2rem;
+
+  --gap-xs: 0.4rem;
+  --gap-sm: 0.6rem;
+  --gap-md: 0.95rem;
+  --gap-lg: 1.4rem;
+
+  --circle-sm: 42px;
+  --circle-lg: 56px;
+  --tap: 44px;
+  --pill-w: 64px;
+  --pill-h: 34px;
+
+  --header-h: 56px;
+  --bottom-nav-h: 68px;
+
+  --r-lg: 20px;
+  --r-md: 18px;   /* loosened from console 16 to match docs (locked) */
+  --r-sm: 11px;
+}

@@ -27,7 +27,7 @@ description: Server Assistant pricing — generous free tier, $7/mo USD Premium 
 .plan-badge { position: absolute; top: -.55rem; left: 50%; transform: translateX(-50%); background: #e8b923; color: #3a2e00; font-size: .58rem; font-weight: 800; letter-spacing: .05em; padding: .18rem .6rem; border-radius: 999px; text-transform: uppercase; white-space: nowrap; }
 .pcta { display: block; text-align: center; margin-top: .9rem; padding: .5rem; border-radius: 999px; font-weight: 700; font-size: .86rem; text-decoration: none !important; background: rgba(255,255,255,0.1); color: var(--ink) !important; border: 1px solid var(--glass-border); }
 .pcta:hover { filter: brightness(1.15); background: rgba(255,255,255,0.16); }
-.add-cta { display: block; width: 100%; box-sizing: border-box; text-align: center; padding: .85rem 1.7rem; border-radius: 14px; font-weight: 800; font-size: 1.05rem; text-decoration: none !important; background: linear-gradient(135deg,#5865f2,#3498db); color: #fff !important; box-shadow: 0 4px 16px rgba(88,101,242,.4); }
+.add-cta { display: block; width: 100%; box-sizing: border-box; text-align: center; padding: .85rem 1.7rem; border-radius: 14px; font-weight: 800; font-size: 1.05rem; text-decoration: none !important; background: linear-gradient(135deg,var(--brand-discord),var(--brand-blue)); color: #fff !important; box-shadow: 0 4px 16px rgba(88,101,242,.4); }
 .add-cta:hover { filter: brightness(1.08); }
 
 .doc-sec { border: 1px solid var(--glass-border); border-radius: 12px; margin: .55rem 0; background: rgba(255,255,255,0.03); }

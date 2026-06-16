@@ -42,10 +42,10 @@ The v2.x line — the warnings system, persistent state, audit logs.
 
 <style>
 .changelog-nav { display: flex; gap: 0.4rem; flex-wrap: wrap; margin: 0.6rem 0 1.2rem; padding: 0.5rem; background: rgba(46,204,113,0.06); border: 1px solid rgba(46,204,113,0.20); border-radius: 10px; }
-.changelog-nav strong { font-size: 0.78rem; color: #2c7ad6; font-weight: 700; padding: 0.35rem 0.6rem 0.35rem 0; align-self: center; }
+.changelog-nav strong { font-size: 0.78rem; color: var(--accent); font-weight: 700; padding: 0.35rem 0.6rem 0.35rem 0; align-self: center; }
 .changelog-nav a { display: inline-block; padding: 0.35rem 0.85rem; border-radius: 999px; font-size: 0.85rem; font-weight: 600; text-decoration: none; color: #2c3e50; background: rgba(255,255,255,0.7); border: 1px solid rgba(31,38,135,0.12); transition: all 0.15s; }
-.changelog-nav a:hover { background: #2c7ad6; color: white; border-color: #2c7ad6; text-decoration: none; }
-.changelog-nav a.current { background: #2c7ad6; color: white; border-color: #2c7ad6; }
+.changelog-nav a:hover { background: var(--accent); color: white; border-color: var(--accent); text-decoration: none; }
+.changelog-nav a.current { background: var(--accent); color: white; border-color: var(--accent); }
 .changelog-nav .latest-tag { font-size: 0.65rem; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; opacity: 0.8; margin-left: 0.3rem; }
 </style>
 

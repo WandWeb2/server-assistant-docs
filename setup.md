@@ -10,14 +10,14 @@ description: Add Server Assistant to your Discord server in under a minute.
 You're set up in about a minute. The bot does the work — you just confirm.
 
 <style>
-.cta-inline { display: inline-block; padding: .55rem 1.2rem; border-radius: 999px; font-weight: 700; text-decoration: none !important; background: linear-gradient(135deg,#5865f2,#3498db); color: #fff !important; box-shadow: 0 4px 14px rgba(88,101,242,.35); }
+.cta-inline { display: inline-block; padding: .55rem 1.2rem; border-radius: 999px; font-weight: 700; text-decoration: none !important; background: linear-gradient(135deg,var(--brand-discord),var(--brand-blue)); color: #fff !important; box-shadow: 0 4px 14px rgba(88,101,242,.35); }
 .cta-inline:hover { filter: brightness(1.08); }
 
 .steprow { display: grid; grid-template-columns: 1fr 1fr; gap: 1.6rem; align-items: center; margin: 0; padding: 1.4rem 1.6rem; border-radius: 16px; border: 1px solid var(--glass-border); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
 .steprow.c-blue  { background: rgba(52,130,225,0.08);  border-color: rgba(52,130,225,0.24); }
 .steprow.c-green { background: rgba(46,204,113,0.07);  border-color: rgba(46,204,113,0.22); }
 .steprow .stext { min-width: 0; }
-.steprow .stepn { display: inline-flex; align-items: center; justify-content: center; width: 2rem; height: 2rem; border-radius: 50%; background: linear-gradient(135deg,#5865f2,#3498db); color: #fff; font-weight: 800; font-size: 1.05rem; margin-bottom: .5rem; }
+.steprow .stepn { display: inline-flex; align-items: center; justify-content: center; width: 2rem; height: 2rem; border-radius: 50%; background: linear-gradient(135deg,var(--brand-discord),var(--brand-blue)); color: #fff; font-weight: 800; font-size: 1.05rem; margin-bottom: .5rem; }
 .steprow .stext h3 { margin: 0 0 .5rem; font-size: 1.25rem; line-height: 1.25; }
 .steprow .stext > p { margin: 0 0 .6rem; color: var(--ink-soft); font-size: .96rem; line-height: 1.55; }
 .steprow .stext code, .steprow .sbody code { color: var(--accent); }
@@ -35,7 +35,7 @@ You're set up in about a minute. The bot does the work — you just confirm.
 
 .fork-title { display: flex; align-items: center; gap: .5rem; justify-content: center; margin: 1.3rem 0 0; font-weight: 800; font-size: 1.05rem; color: var(--ink); }
 .fork-title .farrow { color: var(--ink-soft); font-size: 1.2rem; }
-.fork-title .stepn { display: inline-flex; align-items: center; justify-content: center; width: 1.7rem; height: 1.7rem; border-radius: 50%; background: linear-gradient(135deg,#5865f2,#3498db); color: #fff; font-weight: 800; font-size: .95rem; }
+.fork-title .stepn { display: inline-flex; align-items: center; justify-content: center; width: 1.7rem; height: 1.7rem; border-radius: 50%; background: linear-gradient(135deg,var(--brand-discord),var(--brand-blue)); color: #fff; font-weight: 800; font-size: .95rem; }
 .forksvg { display: block; width: 100%; height: 24px; margin: 0; overflow: visible; }
 .forksvg line { stroke: var(--glass-border); stroke-width: 2; vector-effect: non-scaling-stroke; }
 .paths { display: grid; grid-template-columns: repeat(3, 1fr); gap: .8rem; }
