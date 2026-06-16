@@ -43,6 +43,8 @@ When you run **`/setup`**, Server Assistant sets up channel and role permissions
 - **A clear heads-up.** If a permission can't be applied because the **Server Assistant** role is below another role, the bot messages whoever ran `/setup` (and falls back to the owner) with exactly what to do: drag the **Server Assistant** role above the affected roles in **Server Settings → Roles**, then re-run `/setup`.
 - **Nothing silently skipped.** Everything that *can* be configured still is — you just get told about the one or two bits that need a quick role re-order.
 
+**Privacy policy updated** — we disclosed the image-generation providers used by `/imagine` (Pollinations, Stability AI) and clarified that messages you send us via a support ticket or ban appeal are stored. See the [Privacy Policy]({{ site.url }}{{ site.baseurl }}/privacy/).
+
 
 </details>
 
