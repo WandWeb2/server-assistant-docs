@@ -583,6 +583,28 @@ Where Server Assistant is heading. Priorities are decided by the people who run 
 
   <details class="card"><summary>Multi-language moderation NLP</summary><span class="desc">Native-level moderation, intent detection, and natural-language commands for languages beyond English — e.g. Spanish, French, German, Polish, Hungarian, Czech. Currently exploratory; not on a release path. Voteable once a clear cluster of non-English servers asks for a specific language by name. The work is real (per-language prompts, evals, edge-case discovery) and proportional to the languages we choose to support.</span></details>
 
+  <!-- ── Candidates skimmed from verified-bot listings (DiscordForge), Jun 2026 ── -->
+
+  <details class="card"><summary>🌟 AI server builder &amp; restyle</summary><span class="desc">Describe the server you want in a sentence and the bot builds the whole structure — categories, channels and styled roles — then lets you reshape it in plain language (<em>"add a VIP role", "rename general to main-hangout"</em>). Includes one-base-colour role palettes and deep-cloning another server's layout onto yours. Complements the <code>/setup</code> server-type templates already shipped: templates pick the moderation profile, this builds the rooms.</span></details>
+
+  <details class="card"><summary>Fair inactivity cleanup</summary><span class="desc">Prune dormant members without drama. Each member gets a transparent, explainable <strong>activity score</strong> from signals you choose (messages, reactions, voice, slash commands, threads, event RSVPs) — never message content. Set thresholds for a warning, then an inactive role, then optional auto-kick, with exemptions and slower decay for trusted roles. A staff-only <strong>ghost mode</strong> lets you watch and review before anything member-facing changes, and a <code>/myscore</code> self-check keeps it honest. Same explainable-scoring philosophy as Threat Score.</span></details>
+
+  <details class="card"><summary>🍯 Honeypot spam-trap channel</summary><span class="desc">A decoy <code>#honeypot</code> channel that real members are told to ignore — any account that posts in it is removed instantly (kick / softban / ban, your call) and logged, before it can blast the rest of the server. Catches compromised accounts and spam bots that hit every channel on join. A near-zero-false-positive trip-wire (legitimate members never post there) that complements AltGuard and Threat Score.</span></details>
+
+  <details class="card"><summary>🌟 AI ticket deflection &amp; triage</summary><span class="desc">An AI layer on top of the Ticket Panels already shipped. The bot drafts answers to common tickets from your FAQ and knowledge base — resolving the easy ones, escalating the rest to staff — auto-assigns a priority (low / med / high) from content and sentiment, auto-tags status (<em>waiting on staff / waiting on user</em>), and auto-closes stale tickets after a reminder. Plus a support-analytics view: resolution rate, AI-deflection %, and staff responsiveness.</span></details>
+
+  <details class="card"><summary>🌟 AI application scoring</summary><span class="desc">Extends the staff-reviewed application / join-approval forms with AI triage: every submission gets a quality score against criteria you set, with optional auto-accept / auto-deny thresholds so low-effort applications never reach a human. Add scheduled open/close windows, an accepted-applicant cap, and a cooldown that stops denied users from re-spamming the queue.</span></details>
+
+  <details class="card"><summary>🔊 Temporary voice channels</summary><span class="desc">A "join to create" hub channel spins up a personal voice room for whoever enters, then tidies it away when they leave. The room owner gets a control panel — rename, set a user limit, lock, and kick — so members run their own spaces without staff carving out permanent channels.</span></details>
+
+  <details class="card"><summary>🎉 Giveaways</summary><span class="desc">Run server giveaways end to end: timed draws with multiple winners, reusable templates, reroll, pause/resume and early end — plus instant <strong>drop</strong> giveaways where the first to click wins. Role-gated entry keeps Nitro and event drops fair. One of the most-requested engagement tools we don't yet have.</span></details>
+
+  <details class="card"><summary>📡 Content &amp; social feeds</summary><span class="desc">Auto-post to a channel when something new lands — YouTube uploads, Twitch go-lives, RSS articles, or free-game giveaways — so announcements don't depend on a human catching them. Per-feed destination and message template.</span></details>
+
+  <details class="card"><summary>🗳️ Staff-vote moderation</summary><span class="desc">Optional consensus moderation for teams that want it: put a kick, ban, or timeout to a quick staff vote with a configurable threshold and time limit, so no single mod carries a contentious call alone. Slots into the existing approval / escalation ladder rather than replacing it.</span></details>
+
+  <details class="card"><summary>👻 Ghost-ping detection</summary><span class="desc">Flag the "ping then delete" trick — a message that mentions a user or role and vanishes seconds later. The bot logs who pinged whom for staff, closing a common bait-and-harassment tactic that normal AutoMod misses.</span></details>
+
 </div>
 
   </div>
