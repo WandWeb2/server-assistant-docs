@@ -24,6 +24,20 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 </style>
 
 <details class="doc-sec" markdown="1" open>
+<summary>v5.6.28 — Setup works when staff add the bot</summary>
+
+
+A smoother first five minutes — especially when an admin, not the server owner, is the one who adds the bot.
+
+### Changed
+
+- **Whoever adds the bot can set it up.** Previously only the **server owner** could run `/setup`, so when an admin or staff member added Server Assistant they'd hit a wall and the owner got a setup prompt out of the blue. Now the bot recognises **who installed it** and walks **them** through setup, while giving the owner a friendly heads-up. `/setup` is open to the owner **or** any admin with **Manage Server** — the same permission Discord already requires to add a bot.
+- **White-label, Server backup & restore, and Custom slash commands are now part of full Premium** (no longer on the cheaper Premium **BYOK** plan). The AI-powered premium features stay on BYOK, since your own API key powers them.
+
+
+</details>
+
+<details class="doc-sec" markdown="1">
 <summary>v5.6.27 — The premium toolkit</summary>
 
 
