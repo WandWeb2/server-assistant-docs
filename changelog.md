@@ -34,7 +34,19 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 .doc-sec.tempered .tg-badge { display: inline-block; font-size: .6rem; font-weight: 800; letter-spacing: .09em; text-transform: uppercase; color: #0a1030; background: linear-gradient(135deg, #bcd6ff, #60a5fa); padding: .1rem .45rem; border-radius: 999px; margin-left: .55rem; vertical-align: middle; }
 </style>
 
-<details class="doc-sec tempered" markdown="1" open>
+<details class="doc-sec" markdown="1" open>
+<summary>v5.6.29 — Setup tells you when a permission needs a nudge</summary>
+
+
+When you run **`/setup`**, Server Assistant sets up channel and role permissions for you. If its own role sits too low in your server's role list to apply one of them, it used to finish quietly and leave that permission unset. Now it tells you.
+
+- **A clear heads-up.** If a permission can't be applied because the **Server Assistant** role is below another role, the bot messages whoever ran `/setup` (and falls back to the owner) with exactly what to do: drag the **Server Assistant** role above the affected roles in **Server Settings → Roles**, then re-run `/setup`.
+- **Nothing silently skipped.** Everything that *can* be configured still is — you just get told about the one or two bits that need a quick role re-order.
+
+
+</details>
+
+<details class="doc-sec tempered" markdown="1">
 <summary>✨ Tempered<span class="tg-badge">Quality release</span></summary>
 
 
