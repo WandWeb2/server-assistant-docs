@@ -78,6 +78,8 @@ body {
   .site-nav { float: none !important; line-height: normal; }
   .site-nav .trigger { display: flex; flex-wrap: wrap; justify-content: flex-end; align-items: center; gap: 0.35rem 1.15rem; }
   .site-nav .page-link:not(:last-child) { margin-right: 0 !important; }
+  /* Footer content aligns to the same gutters as the header brand/menu. */
+  .site-footer .wrapper { padding-left: 2rem; padding-right: 2rem; }
 }
 
 /* ── Main content: frosted card ────────────────────────────────────────────── */
@@ -169,18 +171,20 @@ blockquote {
   margin: 2rem 0;
 }
 
-/* ── Footer: frosted card ──────────────────────────────────────────────────── */
+/* ── Footer: full-bleed clean band (matches the header — no glass panel) ─────────
+   Same design language as the top bar: edge-to-edge, transparent over the body
+   gradient, separated by a single hairline divider instead of a frosted card. */
 .site-footer {
-  margin: 0 auto 2rem;
-  max-width: 1280px;
-  background: var(--glass-panel);
-  -webkit-backdrop-filter: blur(14px) saturate(150%);
-  backdrop-filter: blur(14px) saturate(150%);
-  border: 1px solid var(--border);
-  border-radius: var(--r-md);
-  box-shadow: var(--shadow);
+  margin: 0;
+  max-width: none;
+  background: transparent;
+  border: none;
+  border-top: 1px solid var(--border);
+  border-radius: 0;
+  box-shadow: none;
   color: var(--fg-1);
 }
+.site-footer .wrapper { max-width: none; }
 .site-footer .footer-heading { color: var(--fg-0); }
 .site-footer a { color: var(--accent); }
 
@@ -324,7 +328,7 @@ table tbody tr:hover td { background: rgba(60, 193, 240, 0.08); }
 /* ── Mobile: relax padding so cards don't crowd small screens ──────────────── */
 @media (max-width: 600px) {
   .page-content .wrapper { padding: 1.25rem 1.1rem; border-radius: 14px; }
-  .site-footer { margin: 0 0.6rem 1.2rem; }
+  .site-footer { margin: 0; }
   /* Minima's mobile nav dropdown is white by default — dark it so the (light)
      links are visible instead of white-on-white. Solid colour + broad
      selectors so it can't be undercut by Minima's nested elements. */
