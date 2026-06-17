@@ -521,7 +521,7 @@ Where Server Assistant is heading. Priorities are decided by the people who run 
   <div class="band-h band-blue">🔵 Committed<span class="sub">Building regardless of votes</span></div>
   <div class="band" id="band-blue">
 
-    <div class="band-empty">All committed features have shipped 🎉 — the next builds are decided by the community vote above. Got an idea? Run <code>/feedback</code>.</div>
+    <details class="card"><summary>🎁 Vote &amp; review incentives</summary><span class="desc">Thank the community for steering the bot: light perks for servers that take part in the feature votes and members who leave a review on the bot directories (top.gg, DiscordForge, and friends) — think a small bonus AI-token top-up and a reviewer shout-out.</span></details>
 
   </div>
   </div>
