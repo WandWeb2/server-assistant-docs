@@ -48,11 +48,8 @@ Each feature area pairs what you get **free** (the <span style="color:#3cc1f0;fo
   .col { border-radius: 10px; padding: .55rem .7rem .65rem; margin-bottom: .15rem; }
   .col.free { background: rgba(60,193,240,0.10); border: 1px solid rgba(60,193,240,0.30); }
   .col.prem { background: rgba(245,196,34,0.11); border: 1px solid rgba(245,196,34,0.34); }
-}
-/* Hide the coloured section-divider lines under each category heading on small screens. */
-@media (max-width: 600px) {
-  .grp-h { border-bottom: 0; }
-  .col-head { border-bottom: 0; }
+  /* Empty tier cells would otherwise render their coloured border as a stray line. */
+  .col.empty { display: none; }
 }
 </style>
 
