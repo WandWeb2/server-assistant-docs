@@ -104,7 +104,11 @@ body {
 .page-content h4 { color: var(--fg-0); font-weight: 700; letter-spacing: -0.01em; }
 .page-content h2 { margin-top: 1.8rem; padding-top: 0.4rem; }
 a { color: var(--accent); text-decoration: none; }
-a:hover { text-decoration: underline; }
+/* Minima's defaults darken links on :hover/:visited (built for light themes),
+   which goes dark-on-dark and unreadable here. Keep them in the bright accent;
+   hover lightens for affordance. */
+a:visited { color: var(--accent); }
+a:hover { color: #62cef4; text-decoration: underline; }
 
 /* ── Code & pre ────────────────────────────────────────────────────────────── */
 code {
