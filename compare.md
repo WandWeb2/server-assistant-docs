@@ -5,7 +5,7 @@ permalink: /compare/
 description: Honest feature comparisons — Server Assistant vs the bots you might already use. Where each wins, where each loses, and which one fits your server.
 ---
 
-# 🤝 Server Assistant vs MEE6, Wick, Carl-bot & Civora
+# 🤝 Server Assistant — How it compares
 
 <style>
 .cmp-hero { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.3rem 0 1.6rem; }

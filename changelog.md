@@ -5,7 +5,7 @@ permalink: /changelog/
 description: Release history for Server Assistant — v5.x line.
 ---
 
-# 📋 Server Assistant Changelog — Release Notes & Updates
+# 📋 Server Assistant Changelog — v5.x
 
 The current release line.
 

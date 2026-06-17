@@ -5,7 +5,7 @@ permalink: /pricing/
 description: Server Assistant pricing — generous free tier, $7/mo USD Premium with trial-then-bill, and $3/mo BYOK for those with their own AI key.
 ---
 
-# 💸 Server Assistant Pricing — Free Forever + $7/mo Premium AI
+# 💸 Server Assistant Pricing
 
 **Core moderation is free forever.** AI features cost real money to run, so they're metered — subscribe when you want them, and billing only starts once you've used your free tokens.
 

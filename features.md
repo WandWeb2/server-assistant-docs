@@ -5,7 +5,7 @@ permalink: /features/
 description: A tour of Server Assistant's features — AutoMod that learns your team, anti-raid, ban appeals, audit logs, server-health insights, and an optional AI toolkit.
 ---
 
-# ✨ Server Assistant Features — AutoMod, Anti-Raid & AI Moderation
+# ✨ Server Assistant Features
 
 Each feature area pairs what you get **free** (the <span style="color:#3cc1f0;font-weight:700;">blue</span> cards) with what **Trial &amp; Premium** add (the <span style="color:#f5c422;font-weight:700;">gold</span> cards). Tap any card to expand the detail. See also **[Commands]({{ site.url }}{{ site.baseurl }}/commands/)** and **[Pricing]({{ site.url }}{{ site.baseurl }}/pricing/)**.
 
