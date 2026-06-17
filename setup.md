@@ -10,8 +10,8 @@ description: Add Server Assistant to your Discord server in under a minute — i
 You're set up in about a minute. The bot does the work — you just confirm.
 
 <style>
-.cta-inline { display: inline-flex; align-items: center; gap: .6rem; padding: .82rem 1.45rem; border-radius: 999px; font-weight: 700; text-decoration: none !important; background: #5865F2; color: #fff !important; }
-.cta-inline:hover { background: #4752c4; }
+.cta-inline { display: inline-flex; align-items: center; gap: .6rem; padding: .82rem 1.45rem; border-radius: 8px; font-weight: 600; text-decoration: none !important; background: #5865F2; color: #fff !important; box-shadow: 0 8px 22px rgba(88,101,242,.4); }
+.cta-inline:hover { background: #4752c4; transform: translateY(-1px); box-shadow: 0 12px 30px rgba(88,101,242,.5); }
 .cta-inline .dlogo { width: 22px; height: 22px; flex: none; }
 
 .steprow { display: grid; grid-template-columns: 1fr 1fr; gap: 1.6rem; align-items: center; margin: 0; padding: 1.4rem 1.6rem; border-radius: 16px; border: 1px solid var(--glass-border); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
