@@ -40,6 +40,8 @@ body {
   min-height: 56px;
 }
 .site-title, .site-title:visited { color: var(--fg-0) !important; font-weight: 700; }
+/* Diamond-gem gradient on "Assistant" in the top-bar wordmark (top bar only) */
+.site-title .wm-gem { background: linear-gradient(95deg, #62cef4 0%, #3cc1f0 52%, #1786ba 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; }
 .site-nav .page-link { color: #c4cbdb !important; font-weight: 500; }
 .site-nav .page-link:hover { color: var(--accent) !important; }
 

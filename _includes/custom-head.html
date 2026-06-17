@@ -34,3 +34,25 @@
   ]
 }
 </script>
+
+{%- comment -%} Diamond-gem gradient on the word "Assistant" in the top-bar wordmark only. {%- endcomment -%}
+<script>
+(function () {
+  function gem() {
+    var a = document.querySelector('.site-title');
+    if (!a) return;
+    for (var i = 0; i < a.childNodes.length; i++) {
+      var n = a.childNodes[i];
+      if (n.nodeType === 3 && n.textContent.indexOf('Assistant') > -1) {
+        var tmp = document.createElement('span');
+        tmp.innerHTML = n.textContent.replace('Assistant', '<span class="wm-gem">Assistant</span>');
+        while (tmp.firstChild) { a.insertBefore(tmp.firstChild, n); }
+        a.removeChild(n);
+        break;
+      }
+    }
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', gem);
+  else gem();
+})();
+</script>
