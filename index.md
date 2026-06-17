@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Server Assistant — the Discord moderation bot that understands your whole server
-description: Most Discord mod bots react to messages. Server Assistant watches your server's health, learns your team's judgment, gives banned members a fair appeal, and keeps a tamper-proof audit trail. Privacy-first, free to start.
-image: /server-assistant-docs/assets/banner.jpeg
+title: Server Assistant — Discord Moderation & AutoMod Bot
+description: Free Discord moderation bot — AutoMod, anti-raid, audit logs, ban appeals, and AI that watches your server's health and learns your team's judgment. Privacy-first.
+image: /assets/banner.jpeg
 ---
 
 <div align="center">
@@ -25,7 +25,7 @@ image: /server-assistant-docs/assets/banner.jpeg
   "applicationCategory": "Discord Bot",
   "operatingSystem": "Discord",
   "description": "A Discord moderation bot that watches server health (Pulse daily digests), learns your staff's moderation decisions (self-trained AutoMod), reduces false positives with an AI second-opinion, gives banned members a structured appeal, catches ban-evading alts, and keeps an encrypted tamper-proof audit trail. Free AutoMod, anti-raid, verification, ticket panels and image generation, plus a Premium toolkit: reaction roles, custom slash commands, AI Q&A from your FAQ, translation, AI mediation, server backup & restore, and white-label branding.",
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "offers": { "@type": "AggregateOffer", "lowPrice": "0", "highPrice": "7", "priceCurrency": "USD", "offerCount": "3" },
   "url": "https://wandweb2.github.io/server-assistant-docs/",
   "image": "https://wandweb2.github.io/server-assistant-docs/assets/banner.jpeg",
   "author": { "@type": "Organization", "name": "WandWeb2" }

@@ -2,7 +2,7 @@
 layout: default
 title: Setup
 permalink: /setup/
-description: Add Server Assistant to your Discord server in under a minute.
+description: Add Server Assistant to your Discord server in under a minute — invite the bot, run /setup, and get AutoMod, anti-raid, audit logs and welcome flows configured.
 ---
 
 # 🚀 Setup

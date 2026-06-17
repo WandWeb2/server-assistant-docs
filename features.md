@@ -2,7 +2,7 @@
 layout: default
 title: Features
 permalink: /features/
-description: A scannable tour of Server Assistant's flagship features.
+description: A tour of Server Assistant's features — AutoMod that learns your team, anti-raid, ban appeals, audit logs, server-health insights, and an optional AI toolkit.
 ---
 
 # ✨ Features

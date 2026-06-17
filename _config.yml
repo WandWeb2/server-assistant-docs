@@ -12,7 +12,7 @@ baseurl: /server-assistant-docs
 lang: en-GB
 
 # Hero / social-share image (used by Open Graph and Twitter Cards)
-image: /server-assistant-docs/assets/banner.jpeg
+image: /assets/banner.jpeg
 
 # Author — string form so Minima's footer renders it as plain text, not as
 # the YAML hash literal. jekyll-seo-tag still picks this up for og:author.
@@ -64,11 +64,12 @@ defaults:
       type: pages
     values:
       layout: default
-      image: /server-assistant-docs/assets/banner.jpeg
+      image: /assets/banner.jpeg
 
 # Don't include drafts or other Jekyll noise in the build
 exclude:
   - README.md
+  - SECURITY.md
   - MAINTAINING.md
   - Gemfile
   - Gemfile.lock
