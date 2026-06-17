@@ -11,7 +11,7 @@ image: /assets/banner.jpeg
     <img src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant logo" width="200" height="193" fetchpriority="high">
   </picture>
 
-  <h1>Server Assistant</h1>
+  <h1>Server Assistant — Discord Moderation &amp; AutoMod Bot</h1>
 
   <p style="font-size:1.15rem; font-weight:700;">Most Discord mod bots just react to messages.<br>This one understands your whole server.</p>
   <p style="font-size:.95rem; color:var(--ink-soft); margin-top:-.25rem;">Daily health insight · AutoMod that learns your team · fair ban appeals · a tamper-proof audit trail.</p>
