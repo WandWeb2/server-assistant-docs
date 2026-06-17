@@ -69,17 +69,30 @@ body {
   .site-header .wrapper {
     display: flex;
     align-items: center;
-    justify-content: space-between;
     gap: 1rem;
     padding-left: 2rem;
     padding-right: 2rem;
+    /* vertical breathing room so the bar never hugs the top edge */
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
   }
   .site-title { float: none !important; margin: 0 !important; white-space: nowrap; }
   .site-nav { float: none !important; line-height: normal; }
-  .site-nav .trigger { display: flex; flex-wrap: wrap; justify-content: flex-end; align-items: center; gap: 0.35rem 1.15rem; }
+  .site-nav .trigger { display: flex; flex-wrap: wrap; align-items: center; gap: 0.35rem 1.15rem; }
   .site-nav .page-link:not(:last-child) { margin-right: 0 !important; }
   /* Footer content aligns to the same gutters as the header brand/menu. */
   .site-footer .wrapper { padding-left: 2rem; padding-right: 2rem; }
+}
+/* Tablet / narrow window (above the phone hamburger): stack the brand over the
+   menu so the six links don't cram-and-wrap beside the brand. */
+@media screen and (min-width: 601px) and (max-width: 819px) {
+  .site-header .wrapper { flex-direction: column; align-items: flex-start; gap: 0.3rem; }
+  .site-nav .trigger { justify-content: flex-start; }
+}
+/* Desktop: brand on the left, menu hard-right on a single line. */
+@media screen and (min-width: 820px) {
+  .site-header .wrapper { justify-content: space-between; }
+  .site-nav .trigger { justify-content: flex-end; }
 }
 
 /* ── Main content: frosted card ────────────────────────────────────────────── */
