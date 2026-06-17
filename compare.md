@@ -17,6 +17,7 @@ description: Honest feature comparisons — Server Assistant vs the bots you mig
 .cmp-card > summary { cursor: pointer; list-style: none; padding: .8rem 1rem; font-size: 1.12rem; font-weight: 800; color: var(--ink); }
 .cmp-card > summary::-webkit-details-marker { display: none; }
 .cmp-card > summary::before { content: "▸"; color: var(--ink-soft); margin-right: .5rem; font-size: .8em; }
+.cmp-card .vs-logo { width: 1.15em; height: 1.15em; vertical-align: -0.2em; margin-right: .35rem; border-radius: 4px; }
 .cmp-card[open] > summary::before { content: "▾"; }
 .cmp-card[open] > summary { border-bottom: 1px solid var(--glass-border); }
 .cmp-card .vs-sub { display: block; font-weight: 400; font-size: .84rem; color: var(--ink-soft); margin: .25rem 0 0 1.1rem; }
@@ -24,10 +25,10 @@ description: Honest feature comparisons — Server Assistant vs the bots you mig
 .vs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 0 0 .8rem; align-items: start; }
 @media (max-width: 720px) { .vs-grid { grid-template-columns: 1fr; } }
 .vs-col { border-radius: 10px; padding: .8rem 1rem; }
-.vs-col.them { background: rgba(231,76,60,0.08); border: 1px solid rgba(231,76,60,0.25); }
+.vs-col.them { background: rgba(154,161,169,0.08); border: 1px solid rgba(154,161,169,0.28); }
 .vs-col.us { background: rgba(46,204,113,0.09); border: 1px solid rgba(46,204,113,0.28); }
 .vs-col h4 { margin: 0 0 .5rem; font-size: .95rem; }
-.vs-col.them h4 { color: #e98b80; }
+.vs-col.them h4 { color: var(--steel-2); }
 .vs-col.us h4 { color: #56d08a; }
 .vs-col ul { margin: 0; padding-left: 1.1rem; font-size: .88rem; line-height: 1.5; color: var(--ink-soft); }
 .vs-col li { margin-bottom: .35rem; }
@@ -44,11 +45,11 @@ description: Honest feature comparisons — Server Assistant vs the bots you mig
 </div>
 
 <details class="cmp-card">
-<summary>⚔️ vs Civora<span class="vs-sub">"Discord moderation that understands meaning" — a focused AI chat-moderation bot with multi-language NLP, launched early 2026.</span></summary>
+<summary><img class="vs-logo" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant"> vs Civora<span class="vs-sub">"Discord moderation that understands meaning" — a focused AI chat-moderation bot with multi-language NLP, launched early 2026.</span></summary>
 <div class="vs-body">
   <div class="vs-grid">
     <div class="vs-col them">
-      <h4>👎 Where Civora wins</h4>
+      <h4>Where Civora wins</h4>
       <ul>
         <li><strong>Native multi-language NLP.</strong> 30+ languages with native-level tuning for Hungarian, Polish, Czech, Romanian, German, Spanish.</li>
         <li><strong>5 ready-made server templates.</strong> Gaming / Paid / Brand / Study / NSFW presets out of the box.</li>
@@ -56,7 +57,7 @@ description: Honest feature comparisons — Server Assistant vs the bots you mig
       </ul>
     </div>
     <div class="vs-col us">
-      <h4>👍 Where Server Assistant wins</h4>
+      <h4>Where Server Assistant wins</h4>
       <ul>
         <li><strong>The whole moderation suite, not just chat-AI.</strong> Anti-raid, Threat Score, Self-trained AutoMod, Bot Health Insurance, Ticket Panels, baseline admin (<code>/role</code> / <code>/lockdown</code> / <code>/tempban</code> / <code>/altguard</code>).</li>
         <li><strong>Risk-graded enforcement.</strong> Threat Score adjusts actions to the actual threat instead of fixed punishment ladders — with extensive safeguards against false positives.</li>
@@ -75,11 +76,11 @@ description: Honest feature comparisons — Server Assistant vs the bots you mig
 </details>
 
 <details class="cmp-card">
-<summary>⚔️ vs MEE6<span class="vs-sub">The original all-in-one community bot — leveling, music, reaction roles, and basic keyword automod.</span></summary>
+<summary><img class="vs-logo" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant"> vs MEE6<span class="vs-sub">The original all-in-one community bot — leveling, music, reaction roles, and basic keyword automod.</span></summary>
 <div class="vs-body">
   <div class="vs-grid">
     <div class="vs-col them">
-      <h4>👎 Where MEE6 wins</h4>
+      <h4>Where MEE6 wins</h4>
       <ul>
         <li><strong>Mature leveling / XP system</strong> with role rewards and a polished web dashboard.</li>
         <li><strong>Music playback</strong> in voice channels (most users' main reason to install).</li>
@@ -88,7 +89,7 @@ description: Honest feature comparisons — Server Assistant vs the bots you mig
       </ul>
     </div>
     <div class="vs-col us">
-      <h4>👍 Where Server Assistant wins</h4>
+      <h4>Where Server Assistant wins</h4>
       <ul>
         <li><strong>AI-context moderation</strong> instead of keyword regex. Catches sarcasm, slang, and intent that MEE6's filters miss entirely.</li>
         <li><strong>Self-trained AutoMod</strong> learns from your staff's manual decisions and proposes server-specific rules for approval.</li>
@@ -108,11 +109,11 @@ description: Honest feature comparisons — Server Assistant vs the bots you mig
 </details>
 
 <details class="cmp-card">
-<summary>⚔️ vs Wick<span class="vs-sub">The gold standard for anti-nuke and raid protection — trusted by very large servers as their last line of defence.</span></summary>
+<summary><img class="vs-logo" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant"> vs Wick<span class="vs-sub">The gold standard for anti-nuke and raid protection — trusted by very large servers as their last line of defence.</span></summary>
 <div class="vs-body">
   <div class="vs-grid">
     <div class="vs-col them">
-      <h4>👎 Where Wick wins</h4>
+      <h4>Where Wick wins</h4>
       <ul>
         <li><strong>Deepest anti-nuke protection in the category.</strong> Mass-action quarantine, suspect detection, server-snapshot recovery. Battle-tested at scale.</li>
         <li><strong>Premium-grade raid response.</strong> Coordinated multi-account attack detection well beyond what most bots attempt.</li>
@@ -120,7 +121,7 @@ description: Honest feature comparisons — Server Assistant vs the bots you mig
       </ul>
     </div>
     <div class="vs-col us">
-      <h4>👍 Where Server Assistant wins</h4>
+      <h4>Where Server Assistant wins</h4>
       <ul>
         <li><strong>Chat-content moderation.</strong> Wick is built around catastrophic protection (nukes, raids); we're built around day-to-day chat quality (AutoMod, Threat Score, Self-trained rules).</li>
         <li><strong>Onboarding + verification wizard</strong> and right-click context menus for routine mod tasks.</li>
@@ -140,11 +141,11 @@ description: Honest feature comparisons — Server Assistant vs the bots you mig
 </details>
 
 <details class="cmp-card">
-<summary>⚔️ vs Carl-bot<span class="vs-sub">The deepest reaction-roles, tags, and embed builder on Discord — the community-content workhorse.</span></summary>
+<summary><img class="vs-logo" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant"> vs Carl-bot<span class="vs-sub">The deepest reaction-roles, tags, and embed builder on Discord — the community-content workhorse.</span></summary>
 <div class="vs-body">
   <div class="vs-grid">
     <div class="vs-col them">
-      <h4>👎 Where Carl-bot wins</h4>
+      <h4>Where Carl-bot wins</h4>
       <ul>
         <li><strong>Best-in-class reaction roles</strong> — button-based, dropdown, mutually-exclusive groups, the full range.</li>
         <li><strong>Powerful tags system</strong> with arguments, scripting, and inline conditionals.</li>
@@ -153,7 +154,7 @@ description: Honest feature comparisons — Server Assistant vs the bots you mig
       </ul>
     </div>
     <div class="vs-col us">
-      <h4>👍 Where Server Assistant wins</h4>
+      <h4>Where Server Assistant wins</h4>
       <ul>
         <li><strong>AI-context moderation</strong> — Carl-bot's automod is keyword-based and inherits the same blind-spots as every regex filter.</li>
         <li><strong>Risk-based enforcement</strong> via Threat Score with safeguards.</li>

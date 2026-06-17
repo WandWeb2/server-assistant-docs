@@ -27,8 +27,9 @@ description: Server Assistant pricing — generous free tier, $7/mo USD Premium 
 .plan-badge { position: absolute; top: -.55rem; left: 50%; transform: translateX(-50%); background: var(--gold); color: #3a2e00; font-size: .58rem; font-weight: 800; letter-spacing: .05em; padding: .18rem .6rem; border-radius: 999px; text-transform: uppercase; white-space: nowrap; }
 .pcta { display: block; text-align: center; margin-top: .9rem; padding: .5rem; border-radius: 999px; font-weight: 700; font-size: .86rem; text-decoration: none !important; background: rgba(255,255,255,0.1); color: var(--ink) !important; border: 1px solid var(--glass-border); }
 .pcta:hover { filter: brightness(1.15); background: rgba(255,255,255,0.16); }
-.add-cta { display: block; width: 100%; box-sizing: border-box; text-align: center; padding: .85rem 1.7rem; border-radius: 14px; font-weight: 800; font-size: 1.05rem; text-decoration: none !important; background: linear-gradient(135deg,var(--brand-discord),var(--brand-blue)); color: #fff !important; box-shadow: 0 4px 16px rgba(88,101,242,.4); }
-.add-cta:hover { filter: brightness(1.08); }
+.add-cta { display: inline-flex; align-items: center; justify-content: center; gap: .6rem; box-sizing: border-box; text-align: center; padding: .85rem 1.7rem; border-radius: 8px; font-weight: 600; font-size: 1.05rem; text-decoration: none !important; background: #5865F2; color: #fff !important; box-shadow: 0 8px 22px rgba(88,101,242,.4); }
+.add-cta:hover { background: #4752c4; transform: translateY(-1px); box-shadow: 0 12px 30px rgba(88,101,242,.5); }
+.add-cta .dlogo { width: 22px; height: 22px; flex: none; }
 
 .doc-sec { border: 1px solid var(--glass-border); border-radius: 12px; margin: .55rem 0; background: rgba(255,255,255,0.03); }
 .doc-sec > summary { cursor: pointer; font-size: 1.0rem; font-weight: 700; padding: .6rem .85rem; list-style: none; color: var(--ink); }
@@ -93,7 +94,7 @@ description: Server Assistant pricing — generous free tier, $7/mo USD Premium 
 </div>
 
 <div style="text-align:center; margin:.2rem 0 .6rem;">
-  <a class="add-cta" href="https://discord.com/api/oauth2/authorize?client_id=1278486617375510570&permissions=8&scope=bot+applications.commands">➕ Add to Discord</a>
+  <a class="add-cta" href="https://discord.com/api/oauth2/authorize?client_id=1278486617375510570&permissions=8&scope=bot+applications.commands"><svg class="dlogo" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.27 5.33C17.94 4.71 16.5 4.26 15 4a.09.09 0 0 0-.07.03c-.18.33-.39.76-.53 1.09a16.09 16.09 0 0 0-4.8 0C9.46 4.79 9.25 4.36 9.06 4.03A.07.07 0 0 0 9 4c-1.5.26-2.93.71-4.27 1.33a.06.06 0 0 0-.03.02C1.98 9.42 1.23 13.38 1.6 17.3a.1.1 0 0 0 .03.05c1.8 1.32 3.53 2.12 5.24 2.65a.07.07 0 0 0 .07-.02c.4-.55.76-1.13 1.07-1.74a.07.07 0 0 0-.04-.09 12.9 12.9 0 0 1-1.64-.78.07.07 0 0 1-.01-.11l.33-.25a.07.07 0 0 1 .07-.01c3.44 1.57 7.15 1.57 10.55 0a.07.07 0 0 1 .07.01l.33.26c.04.03.04.09-.01.11-.52.31-1.07.56-1.64.78a.07.07 0 0 0-.04.09c.32.61.68 1.19 1.07 1.74a.07.07 0 0 0 .08.03c1.72-.53 3.45-1.33 5.25-2.65a.07.07 0 0 0 .03-.05c.44-4.53-.73-8.46-3.1-11.95a.05.05 0 0 0-.03-.02ZM8.52 14.91c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.91.96 1.89 2.12 0 1.17-.84 2.12-1.89 2.12Zm6.97 0c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.91.96 1.89 2.12 0 1.17-.83 2.12-1.89 2.12Z"/></svg>Add to Discord</a>
 </div>
 
 <p style="font-size:.8rem;color:var(--ink-soft);text-align:center;margin:.2rem 0 1rem;">All prices in USD · tax added at checkout by region · Premium is per-server · cancel anytime.</p>
@@ -188,6 +189,10 @@ Need extra headroom without changing plans? Top-ups never expire and stack on an
 | **AI tokens** | 150K lifetime *(our key)* | **your own key** | 750K/month *(our key)* |
 | **Billing** | no card | charged immediately | trial-then-bill (starts at 150K used) |
 | **SAi chat** (`/sai`) | — | ✅ | ✅ |
+| **🩺 Pulse** daily health report | — | ✅ | ✅ |
+| **🧠 Self-trained AutoMod** | — | ✅ | ✅ |
+| **🩹 Bot Health Insurance** | — | ✅ | ✅ |
+| **📋 Message Report** (right-click AI context) | — | ✅ | ✅ |
 | **AutoMod AI second-opinion** | — | ✅ | ✅ |
 | **Active Threat Score** | — | ✅ | ✅ |
 | **🌟 Decision explainer & guided appeals** | — | ✅ | ✅ |

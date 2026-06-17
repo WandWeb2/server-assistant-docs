@@ -49,6 +49,11 @@ Each feature area pairs what you get **free** (the <span style="color:#3cc1f0;fo
   .col.free { background: rgba(60,193,240,0.10); border: 1px solid rgba(60,193,240,0.30); }
   .col.prem { background: rgba(245,196,34,0.11); border: 1px solid rgba(245,196,34,0.34); }
 }
+/* Hide the coloured section-divider lines under each category heading on small screens. */
+@media (max-width: 600px) {
+  .grp-h { border-bottom: 0; }
+  .col-head { border-bottom: 0; }
+}
 </style>
 
 <p style="font-size:.82rem;color:var(--ink-soft);margin:.2rem 0 0;">Trial features use your AI tokens (free trial included); Premium needs a subscription.</p>
