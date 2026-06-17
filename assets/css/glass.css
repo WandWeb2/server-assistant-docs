@@ -179,12 +179,13 @@ blockquote {
   max-width: none;
   background: transparent;
   border: none;
-  border-top: 1px solid var(--border);
   border-radius: 0;
   box-shadow: none;
   color: var(--fg-1);
 }
 .site-footer .wrapper { max-width: none; }
+/* "Built & maintained" credit: right-aligned beside the links on desktop. */
+.site-footer .footer-credit { text-align: right; }
 .site-footer .footer-heading { color: var(--fg-0); }
 .site-footer a { color: var(--accent); }
 
@@ -329,6 +330,8 @@ table tbody tr:hover td { background: rgba(60, 193, 240, 0.08); }
 @media (max-width: 600px) {
   .page-content .wrapper { padding: 1.25rem 1.1rem; border-radius: 14px; }
   .site-footer { margin: 0; }
+  /* Centre the credit block on its own full-width line on small screens. */
+  .site-footer .footer-credit { text-align: center; flex-basis: 100%; }
   /* Minima's mobile nav dropdown is white by default — dark it so the (light)
      links are visible instead of white-on-white. Solid colour + broad
      selectors so it can't be undercut by Minima's nested elements. */
