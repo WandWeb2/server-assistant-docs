@@ -52,21 +52,27 @@ body {
 .site-logo { width: 32px; height: 32px; border-radius: 9px; object-fit: cover; flex: none; }
 /* Diamond-gem gradient on "Assistant" in the top-bar wordmark (top bar only) */
 .site-title .wm-gem { background: linear-gradient(95deg, #62cef4 0%, #3cc1f0 52%, #1786ba 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; }
-.site-nav .page-link { color: #c4cbdb !important; font-weight: 500; }
+.site-nav .page-link { color: #c4cbdb !important; font-weight: 400; }
 .site-nav .page-link:hover { color: var(--accent) !important; }
 
-/* Header bar spans the same width as page content. Minima's default wrapper is
-   only 800px, which is too narrow for the title + 8 nav links — so the nav was
-   dropping onto a second line even on wide screens. Widening + a flex row keeps
-   the title left and the nav right on one tidy line; Minima's mobile hamburger
-   (≤600px) is untouched. */
-.site-header .wrapper { max-width: 1280px; }
+/* Full-bleed header bar: brand hugs the left gutter, menu hugs the right gutter.
+   Minima caps .wrapper at content-width and centers it, which left the menu
+   floating in from the right edge; for the top bar we want it pushed all the way
+   over, mirroring the brand on the left. The mobile hamburger (≤600px) is
+   untouched. */
+.site-header .wrapper { max-width: none; }
+/* Minima's %clearfix puts an ::after on .wrapper; inside the flex row it becomes
+   a phantom third item that space-between shoves to the right edge, pinning the
+   nav in the middle. Drop it in the header so the menu sits hard-right. */
+.site-header .wrapper::after { content: none; }
 @media screen and (min-width: 601px) {
   .site-header .wrapper {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
   .site-title { float: none !important; margin: 0 !important; white-space: nowrap; }
   .site-nav { float: none !important; line-height: normal; }
