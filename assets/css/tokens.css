@@ -9,14 +9,14 @@
 
 :root {
   /* ── Palette ──────────────────────────────────────────────────────────── */
-  --bg-0:        #0c0f17;
-  --bg-1:        rgba(20, 25, 39, 0.72);
+  --bg-0:        #0d0a0a;
+  --bg-1:        rgba(22, 17, 17, 0.72);
   --surface:     rgba(255, 255, 255, 0.045);
   --surface-2:   rgba(255, 255, 255, 0.085);
   --surface-hi:  rgba(255, 255, 255, 0.13);
   --glass-sheen:  rgba(255, 255, 255, 0.05);   /* was console --glass */
-  --glass-panel:  rgba(28, 34, 48, 0.55);      /* docs --glass-bg */
-  --glass-strong: rgba(20, 25, 39, 0.82);
+  --glass-panel:  rgba(28, 22, 22, 0.58);      /* docs --glass-bg */
+  --glass-strong: rgba(22, 17, 17, 0.84);
 
   --fg-0: #e9ecf7;
   --fg-1: #aeb4cf;
@@ -28,15 +28,27 @@
   --ink-soft:     var(--fg-1);
   --glass-border: var(--border);
 
-  --accent:           #7c9bff;
-  --accent-soft:      rgba(124, 155, 255, 0.15);
-  --accent-container: rgba(124, 155, 255, 0.18);
-  --on-accent:        #0a1030;
+  --accent:           #3cc1f0;
+  --accent-soft:      rgba(60, 193, 240, 0.15);
+  --accent-container: rgba(60, 193, 240, 0.18);
+  --on-accent:        #04121b;
 
-  --warn:     #f1c40f;
+  /* Premium ONLY — billing / subscription / revenue / upgrade */
+  --gold:      #f5c422;
+  --gold-soft: rgba(245, 196, 34, 0.16);
+
+  /* SAi / AI identity ONLY — ambient glass / soft accent */
+  --pink:      #ee5ba2;
+  --pink-soft: rgba(238, 91, 162, 0.16);
+
+  /* Neutral / decorative */
+  --steel:    #9aa1a9;
+  --steel-2:  #646b74;
+
+  --warn:     #e0a13a;
   --high:     #ff9466;
   --critical: #ff6b6b;
-  --ok:       #5fd0a0;
+  --ok:       #54e08e;
 
   /* Deep stops for status gradients + docs-derived status/brand colours */
   --ok-deep:   #1e8449;

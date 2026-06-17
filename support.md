@@ -10,7 +10,7 @@ description: How to get help with Server Assistant — use the /support slash co
 The only support channel is the **`/support`** slash command — alias **`/feedback`** — run from any server that has Server Assistant installed.
 
 <style>
-.sup-cta { display: flex; gap: 1rem; align-items: center; margin: 1.3rem 0; padding: 1.1rem 1.3rem; background: rgba(52,130,225,0.10); border: 1px solid rgba(52,130,225,0.3); border-radius: 12px; font-size: .95rem; line-height: 1.5; }
+.sup-cta { display: flex; gap: 1rem; align-items: center; margin: 1.3rem 0; padding: 1.1rem 1.3rem; background: rgba(60,193,240,0.10); border: 1px solid rgba(60,193,240,0.3); border-radius: 12px; font-size: .95rem; line-height: 1.5; }
 .sup-cta .ico { font-size: 1.8rem; flex-shrink: 0; }
 .sup-cta code { color: var(--accent); }
 .doc-sec { border: 1px solid var(--glass-border); border-radius: 12px; margin: .5rem 0; background: rgba(255,255,255,0.04); }

@@ -368,9 +368,9 @@ You can customise any of this in `/settings → Role Tiers` — grant Mods `/unb
 
 <style>
 .flow { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: stretch; margin: 1rem 0; }
-.flow-step { flex: 1 1 200px; min-width: 180px; padding: 0.75rem 1rem; border-radius: 12px; background: rgba(255,255,255,0.6); border: 1px solid rgba(31,38,135,0.15); box-shadow: 0 4px 16px rgba(31,38,135,0.07); font-size: 0.92rem; }
-.flow-step.act { background: rgba(37,99,235,0.10); border-color: rgba(37,99,235,0.3); }
-.flow-step.approve { background: rgba(241,196,15,0.12); border-color: rgba(201,122,23,0.35); }
+.flow-step { flex: 1 1 200px; min-width: 180px; padding: 0.75rem 1rem; border-radius: 12px; background: rgba(255,255,255,0.6); border: 1px solid rgba(31,38,135,0.15); box-shadow: 0 4px 16px rgba(0,0,0,0.18); font-size: 0.92rem; }
+.flow-step.act { background: rgba(60,193,240,0.10); border-color: rgba(60,193,240,0.3); }
+.flow-step.approve { background: var(--gold-soft); border-color: rgba(245,196,34,0.35); }
 .flow-step.ok { background: rgba(46,204,113,0.12); border-color: rgba(27,142,58,0.35); }
 .flow-arrow { display: flex; align-items: center; justify-content: center; font-size: 1.4rem; color: #6a7280; min-width: 1.6rem; }
 @media (max-width: 700px) { .flow { flex-direction: column; } .flow-arrow { transform: rotate(90deg); } }

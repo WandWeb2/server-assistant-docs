@@ -355,7 +355,7 @@ details.safeguards li { margin-bottom: 0.2rem; }
 details.card { background: rgba(255, 255, 255, 0.045); border-color: rgba(255, 255, 255, 0.10); box-shadow: none; }
 details.card[open] { background: rgba(255, 255, 255, 0.07); }
 details.card > summary { color: #e6e9f0; }
-details.card > summary:hover { color: #7c9bff; }
+details.card > summary:hover { color: #3cc1f0; }
 details.card .desc { color: #c4cbdb; border-top-color: rgba(255, 255, 255, 0.10); }
 
 details.band-shipped > summary { background: rgba(255, 255, 255, 0.06); color: #d4dae6; border-color: rgba(255, 255, 255, 0.14); }
@@ -830,8 +830,8 @@ What ships is what gets requested most clearly. Vague *"add more features"* feed
 <style>
   /* Flash highlight when a community-poll deep-link focuses a feature card. */
   @keyframes cardFlash {
-    0%, 100% { box-shadow: 0 0 0 0 rgba(139, 150, 255, 0); }
-    50%      { box-shadow: 0 0 0 4px rgba(139, 150, 255, 0.65); }
+    0%, 100% { box-shadow: 0 0 0 0 rgba(60, 193, 240, 0); }
+    50%      { box-shadow: 0 0 0 4px rgba(60, 193, 240, 0.65); }
   }
   /* Five slow strobes (~1s each). */
   details.card.card-flash { animation: cardFlash 1s ease-in-out 5; border-radius: 10px; }

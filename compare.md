@@ -9,7 +9,7 @@ description: Honest feature comparisons — Server Assistant vs the bots you mig
 
 <style>
 .cmp-hero { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.3rem 0 1.6rem; }
-.cmp-hero .h { padding: 1rem 1.2rem; border-left: 4px solid #5b8def; background: rgba(52,130,225,0.10); border-radius: 8px; font-size: .92rem; line-height: 1.5; color: var(--ink-soft); }
+.cmp-hero .h { padding: 1rem 1.2rem; border-left: 4px solid var(--accent); background: rgba(60,193,240,0.10); border-radius: 8px; font-size: .92rem; line-height: 1.5; color: var(--ink-soft); }
 .cmp-hero .h strong { color: var(--ink); }
 @media (max-width: 640px) { .cmp-hero { grid-template-columns: 1fr; } }
 
@@ -33,9 +33,9 @@ description: Honest feature comparisons — Server Assistant vs the bots you mig
 .vs-col li { margin-bottom: .35rem; }
 .vs-col li strong { color: var(--ink); }
 .vs-col code { color: var(--accent); font-size: .85em; }
-.pick { padding: .7rem 1rem; background: rgba(241,196,15,0.08); border: 1px dashed rgba(241,196,15,0.35); border-radius: 8px; font-size: .88rem; line-height: 1.5; color: var(--ink-soft); }
+.pick { padding: .7rem 1rem; background: var(--gold-soft); border: 1px dashed rgba(245,196,34,0.35); border-radius: 8px; font-size: .88rem; line-height: 1.5; color: var(--ink-soft); }
 .pick p { margin: .2rem 0; }
-.pick strong { color: #e8c34a; }
+.pick strong { color: var(--gold); }
 </style>
 
 <div class="cmp-hero">

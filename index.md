@@ -77,8 +77,8 @@ image: /server-assistant-docs/assets/banner.jpeg
 .shipped-strip { background: rgba(46,204,113,.10); border-left: 4px solid #2ecc71; border-radius: 10px; padding: .85rem 1.1rem; margin: 1.5rem 0; font-size: .9rem; line-height: 1.55; }
 .shipped-strip strong.lbl { color: #56d08a; }
 .shipped-strip code { font-size: .82em; }
-.upcoming-strip { background: rgba(52,152,219,.10); border-left: 4px solid var(--brand-blue); border-radius: 10px; padding: .85rem 1.1rem; margin: 1.5rem 0; font-size: .9rem; line-height: 1.55; }
-.upcoming-strip strong.lbl { color: #6fa8ff; }
+.upcoming-strip { background: rgba(60,193,240,.10); border-left: 4px solid var(--accent); border-radius: 10px; padding: .85rem 1.1rem; margin: 1.5rem 0; font-size: .9rem; line-height: 1.55; }
+.upcoming-strip strong.lbl { color: #3cc1f0; }
 
 .ways-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin: 1rem 0; }
 .way { background: rgba(255,255,255,0.04); border: 1px solid var(--glass-border); border-radius: 14px; padding: 1rem 1.15rem; }
