@@ -45,7 +45,7 @@ description: Honest feature comparisons — Server Assistant vs the bots you mig
 </div>
 
 <details class="cmp-card">
-<summary><img class="vs-logo" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant"> vs Civora<span class="vs-sub">"Discord moderation that understands meaning" — a focused AI chat-moderation bot with multi-language NLP, launched early 2026.</span></summary>
+<summary><strong>Server Assistant</strong> vs Civora<span class="vs-sub">"Discord moderation that understands meaning" — a focused AI chat-moderation bot with multi-language NLP, launched early 2026.</span></summary>
 <div class="vs-body">
   <div class="vs-grid">
     <div class="vs-col them">
@@ -76,7 +76,7 @@ description: Honest feature comparisons — Server Assistant vs the bots you mig
 </details>
 
 <details class="cmp-card">
-<summary><img class="vs-logo" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant"> vs MEE6<span class="vs-sub">The original all-in-one community bot — leveling, music, reaction roles, and basic keyword automod.</span></summary>
+<summary><strong>Server Assistant</strong> vs MEE6<span class="vs-sub">The original all-in-one community bot — leveling, music, reaction roles, and basic keyword automod.</span></summary>
 <div class="vs-body">
   <div class="vs-grid">
     <div class="vs-col them">
@@ -109,7 +109,7 @@ description: Honest feature comparisons — Server Assistant vs the bots you mig
 </details>
 
 <details class="cmp-card">
-<summary><img class="vs-logo" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant"> vs Wick<span class="vs-sub">The gold standard for anti-nuke and raid protection — trusted by very large servers as their last line of defence.</span></summary>
+<summary><strong>Server Assistant</strong> vs Wick<span class="vs-sub">The gold standard for anti-nuke and raid protection — trusted by very large servers as their last line of defence.</span></summary>
 <div class="vs-body">
   <div class="vs-grid">
     <div class="vs-col them">
@@ -141,7 +141,7 @@ description: Honest feature comparisons — Server Assistant vs the bots you mig
 </details>
 
 <details class="cmp-card">
-<summary><img class="vs-logo" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant"> vs Carl-bot<span class="vs-sub">The deepest reaction-roles, tags, and embed builder on Discord — the community-content workhorse.</span></summary>
+<summary><strong>Server Assistant</strong> vs Carl-bot<span class="vs-sub">The deepest reaction-roles, tags, and embed builder on Discord — the community-content workhorse.</span></summary>
 <div class="vs-body">
   <div class="vs-grid">
     <div class="vs-col them">
