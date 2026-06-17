@@ -56,3 +56,20 @@
   else gem();
 })();
 </script>
+
+{%- comment -%} Top bar: transparent at the very top, frosted glass once scrolled (mirrors the OP Console .topbar.elevated). {%- endcomment -%}
+<script>
+(function () {
+  function bindElevate() {
+    var hdr = document.querySelector('.site-header');
+    if (!hdr) return;
+    var onScroll = function () {
+      hdr.classList.toggle('elevated', (window.scrollY || document.documentElement.scrollTop || 0) > 4);
+    };
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', bindElevate);
+  else bindElevate();
+})();
+</script>
