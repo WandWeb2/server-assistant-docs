@@ -26,20 +26,25 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-/* ── Header: floating frosted bar ──────────────────────────────────────────── */
+/* ── Header: clear top bar (matches the OP Console topbar) ─────────────────────
+   Clean and minimal like the console: transparent background with a subtle
+   backdrop blur and a single hairline divider — no solid fill, no drop shadow. */
 .site-header {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: var(--glass-strong);
-  -webkit-backdrop-filter: blur(14px) saturate(160%);
-  backdrop-filter: blur(14px) saturate(160%);
+  background: transparent;
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+  backdrop-filter: blur(16px) saturate(160%);
   border: none;
   border-bottom: 1px solid var(--border);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.30);
+  box-shadow: none;
   min-height: 56px;
 }
-.site-title, .site-title:visited { color: var(--fg-0) !important; font-weight: 700; }
+/* Brand: 32px rounded logo + wordmark, same proportions as the console topbar. */
+.site-title, .site-title:visited { color: var(--fg-0) !important; font-weight: 700; letter-spacing: -0.01em; }
+.site-title { display: inline-flex; align-items: center; gap: 0.5rem; }
+.site-logo { width: 32px; height: 32px; border-radius: 9px; object-fit: cover; flex: none; }
 /* Diamond-gem gradient on "Assistant" in the top-bar wordmark (top bar only) */
 .site-title .wm-gem { background: linear-gradient(95deg, #62cef4 0%, #3cc1f0 52%, #1786ba 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; }
 .site-nav .page-link { color: #c4cbdb !important; font-weight: 500; }
