@@ -35,8 +35,8 @@ image: /assets/banner.jpeg
 <style>
 .cta-row { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; margin: 1.4rem 0 .5rem; }
 .cta { display: inline-block; padding: .6rem 1.3rem; border-radius: 999px; font-weight: 700; text-decoration: none !important; transition: transform .15s, box-shadow .15s; }
-.cta-primary { display: inline-flex; align-items: center; gap: .6rem; background: #5865F2; color: #fff !important; border-radius: 8px; padding: .82rem 1.45rem; font-weight: 600; box-shadow: 0 8px 22px rgba(88,101,242,.4); }
-.cta-primary:hover { background: #4752c4; transform: translateY(-1px); box-shadow: 0 12px 30px rgba(88,101,242,.5); }
+.cta-primary { display: inline-flex; align-items: center; gap: .6rem; background: #5865F2; color: #fff !important; }
+.cta-primary:hover { background: #4752c4; }
 .cta-primary .dlogo { width: 22px; height: 22px; flex: none; }
 .cta-secondary { background: rgba(255,255,255,0.08); color: var(--ink) !important; border: 1px solid var(--glass-border); }
 .cta-secondary:hover { background: rgba(255,255,255,0.14); }
