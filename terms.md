@@ -4,7 +4,7 @@ title: Server Assistant Terms of Service
 permalink: /terms/
 description: Server Assistant terms of use — permitted use, moderation responsibility, AI features, billing, and no-warranty clause.
 ---
-# Terms of Service — Server Assistant
+# Server Assistant Terms of Service
 
 **Effective date:** May 9, 2026
 **Last updated:** June 2, 2026

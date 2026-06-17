@@ -5,7 +5,7 @@ permalink: /commands/
 description: Full reference of every command Server Assistant supports.
 ---
 
-# 📚 Commands Reference
+# 📚 Server Assistant Commands Reference
 
 Server Assistant supports **three interaction modes**. Most commands are available in all three:
 

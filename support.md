@@ -5,7 +5,7 @@ permalink: /support/
 description: How to get help with Server Assistant — use the /support slash command.
 ---
 
-# 💬 Get Help
+# 💬 Server Assistant — Get Help
 
 The only support channel is the **`/support`** slash command — alias **`/feedback`** — run from any server that has Server Assistant installed.
 

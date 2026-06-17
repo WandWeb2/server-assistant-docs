@@ -4,7 +4,7 @@ title: Server Assistant Privacy Policy
 permalink: /privacy/
 description: How Server Assistant handles your Discord server's data — encrypted storage, per-guild isolation, AI provider data flow, the web portal, and billing.
 ---
-# Privacy Policy — Server Assistant
+# Server Assistant Privacy Policy
 
 **Effective date:** May 9, 2026
 **Last updated:** June 17, 2026

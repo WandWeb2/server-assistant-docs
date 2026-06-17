@@ -5,7 +5,7 @@ permalink: /faq/
 description: Frequently asked questions about Server Assistant.
 ---
 
-# ❓ Frequently Asked Questions
+# ❓ Server Assistant — Frequently Asked Questions
 
 <style>
 .faq-cat-heading { margin: 1.6rem 0 0.6rem; font-size: 1.15rem; font-weight: 700; color: var(--ink); }

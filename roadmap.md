@@ -433,7 +433,7 @@ details.band-shipped > .shipped-scroll { border-color: rgba(255, 255, 255, 0.12)
 
      ════════════════════════════════════════════════════════════════════════════ -->
 
-# 🗺️ Roadmap
+# 🗺️ Server Assistant Roadmap
 
 Where Server Assistant is heading. Priorities are decided by the people who run servers: we send **feature polls straight to every server's staff chat** and tally the votes across the whole fleet — every staff member in every server gets an equal say. Between polls, [`/feedback`]({{ site.url }}{{ site.baseurl }}/support/) or [`/support`]({{ site.url }}{{ site.baseurl }}/support/) reach the dev directly.
 

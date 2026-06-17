@@ -5,7 +5,7 @@ permalink: /setup/
 description: Add Server Assistant to your Discord server in under a minute — invite the bot, run /setup, and get AutoMod, anti-raid, audit logs and welcome flows configured.
 ---
 
-# 🚀 Setup
+# 🚀 Server Assistant Setup
 
 You're set up in about a minute. The bot does the work — you just confirm.
 
