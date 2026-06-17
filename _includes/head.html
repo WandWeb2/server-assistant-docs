@@ -4,14 +4,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   {%- comment -%}
-    Override of Minima's head.html for ONE reason: brand-prefix the <title>.
-    jekyll-seo-tag builds "Page | Server Assistant"; we want "Server Assistant
-    Page". So we suppress seo-tag's own <title> (title=false — it still emits
-    every meta/OG tag) and render our own, prepended with the brand. The home
-    page keeps its full SEO title. Everything else mirrors Minima's head.
+    Override of Minima's head.html for ONE reason: the page <title>.
+    Front-matter titles are brand-prefixed ("Server Assistant Setup"), so the
+    <title> and seo-tag's og:title/twitter:title now agree (parity). We suppress
+    seo-tag's own <title> (title=false — it still emits every meta/OG tag) and
+    render our own = page.title. _includes/header.html strips the "Server
+    Assistant " prefix from nav links so the nav stays short. Else mirrors Minima.
   {%- endcomment -%}
   {%- seo title=false -%}
-  <title>{% if page.url == "/" %}{{ page.title | default: site.title }}{% else %}Server Assistant {{ page.title | default: site.title }}{% endif %}</title>
+  <title>{{ page.title | default: site.title }}</title>
 
   <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
   {%- feed_meta -%}

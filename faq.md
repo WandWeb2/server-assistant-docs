@@ -1,6 +1,6 @@
 ---
 layout: default
-title: FAQ
+title: Server Assistant FAQ
 permalink: /faq/
 description: Frequently asked questions about Server Assistant.
 ---
@@ -21,6 +21,151 @@ details.faq .faq-body p:first-child { margin-top: 0; }
 details.faq .faq-body p:last-child, details.faq .faq-body ul:last-child { margin-bottom: 0; }
 details.faq .faq-body table { margin: .5rem 0; }
 </style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is the bot free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The full moderation toolkit is free forever — no card, no catch. Core moderation, AutoMod, anti-raid, DM verification, audit logs, warnings, the Customisation Hub, and zero-touch /autopilot setup never cost a thing. The AI features (SAi, Message Report, Self-trained AutoMod, Pulse) include a 150,000-token free trial; after that, Premium is $7 USD/month, but you're only charged once your trial tokens run out, so light-use servers may never pay. Premium BYOK (bring your own AI key) is $3 USD/month."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I add the bot to my server?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You'll need the Manage Server permission. Use the invite link, or find Server Assistant on Top.gg or discordbotlist.com. After authorising, the server owner or any admin with Manage Server runs /setup — and whoever invited the bot is DM'd the setup wizard automatically."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who can run /setup?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The server owner or any admin with the Manage Server permission can run /setup — the same permission Discord requires to add the bot in the first place, so whoever installed it can finish onboarding without waiting on the owner. The role-to-tier mapping still gates the genuinely dangerous actions, so opening setup to Manage Server admins is safe."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does setup take?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "About 60 seconds — and you may not even need to run /setup: when the bot joins it DMs the owner the setup wizard, pre-filled, ready to finish in DMs. The bot auto-detects your channels and roles so you mostly just confirm channels, roles, then a server-type + AI step. In a hurry, /autopilot does it all in one command, and /settings opens nine optional panels to fine-tune anything afterwards."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can mods action higher-ranked users?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No — the bot enforces Discord's role hierarchy: a mod can't action anyone whose role is at or above their own. The owner can action anyone except other owners."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does the punishment ladder work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Repeated AutoMod violations auto-escalate. The Standard preset defaults to a 10-minute timeout at 3 auto-warnings, a 1-hour timeout at 5, and a ban at 10. Only AutoMod-issued warnings count toward escalation; manual staff warnings are tracked separately. Change it via /settings → Quick Presets → Punishment Ladder (Gentle 5/10/20, Standard 3/5/10, Strict 2/3/5)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will AutoMod break legitimate conversation?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Filter packs use word boundaries to avoid the Scunthorpe problem — words like assassin, classic and Scunthorpe don't trigger. The default 'Scams + slurs (gaming)' preset deliberately allows casual profanity. Strict mode adds it with higher false-positive risk — use only for child-friendly servers."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does AutoMod scan staff messages?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Staff are completely exempt regardless of tier. Staff means anyone holding a role mapped via /setup or /settings → Role Tiers."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does the verification gate work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Enable it in /settings → Verification. New joiners get a DM with a green Verify button. Clicking it grants the configured verified role, which gates channels via Discord's role permissions. If a user has DMs disabled the failure is logged and they stay unverified."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are AI features free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The free tier includes a 150,000-token lifetime allowance — enough to evaluate every AI feature. Core moderation (AutoMod, anti-raid, warnings, slash commands) is always free regardless of token usage. When your trial tokens run out, Premium ($7 USD/month) gives 750K tokens/month, with your card only charged when tokens deplete. Or bring your own Anthropic/xAI/OpenAI key via /ai-config for Premium BYOK at $3/month."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will I be charged when I subscribe to Premium?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not immediately. On subscribing to Premium ($7/month) your card is saved but not charged. Billing starts only when your 150K free tokens are fully used — light-use servers may never hit that limit and never pay despite being subscribed. Premium BYOK ($3/month) is charged immediately on subscribe, since you're paying for feature access rather than tokens."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What data is sent to the AI provider?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Only what's needed for the request. Message Report sends about 20 messages of context; SAi sends your question plus your server's settings and a recent event summary; /imagine sends just your text prompt. No user metadata, IDs, or persistent identifiers are transmitted. Full details are in the Privacy Policy."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What AI model powers the bot?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The default shared key uses Anthropic Claude (Sonnet) for all AI features — SAi, Message Report, Self-trained AutoMod proposals, and Bot Health Insurance checks. Supply your own key via /ai-config to choose Anthropic, xAI Grok, or OpenAI. Image generation (/imagine) runs on the shared service, with the free trial covering about 30 images and unlimited on Premium."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I disable AI entirely?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — /ai-config → Skip AI disables all AI features for your server, and /imagine and Message Report will decline gracefully. You can also use /privacy to disable individual AI features while keeping others active."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where is data stored?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "On the host's infrastructure, encrypted at rest. Per-server data is isolated. Full details are in the Privacy Policy."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens to my data when I remove the bot?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Your encrypted secrets (your own AI keys etc.) are wiped immediately. Operational data (warnings, notes, audit log) is retained briefly in case you re-add the bot. You can request full manual deletion via /support."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I self-host?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No — Server Assistant is a fully managed, hosted bot. Invite it and configure everything in Discord; there's nothing to install or maintain on your end."
+      }
+    }
+  ]
+}
+</script>
 
 <div class="faq-cat-heading">🚀 Getting started</div>
 

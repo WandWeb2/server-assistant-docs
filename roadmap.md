@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Roadmap
+title: Server Assistant Roadmap
 permalink: /roadmap/
 description: Server Assistant's product roadmap — what's in development, what's next, and where we're exploring.
 ---

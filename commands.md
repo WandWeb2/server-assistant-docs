@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Commands
+title: Server Assistant Commands
 permalink: /commands/
 description: Full reference of every command Server Assistant supports.
 ---

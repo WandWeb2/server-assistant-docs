@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Support
+title: Server Assistant Support
 permalink: /support/
 description: How to get help with Server Assistant — use the /support slash command.
 ---

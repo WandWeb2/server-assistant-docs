@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Compare
+title: Server Assistant Compare
 permalink: /compare/
 description: Honest feature comparisons — Server Assistant vs the bots you might already use. Where each wins, where each loses, and which one fits your server.
 ---

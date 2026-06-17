@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Terms of Service
+title: Server Assistant Terms of Service
 permalink: /terms/
 description: Server Assistant terms of use — permitted use, moderation responsibility, AI features, billing, and no-warranty clause.
 ---

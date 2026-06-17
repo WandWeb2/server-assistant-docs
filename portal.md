@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Portal
+title: Server Assistant Portal
 permalink: /portal/
 description: Open the Server Assistant web portal to manage your server.
 sitemap: false

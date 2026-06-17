@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Changelog
+title: Server Assistant Changelog
 permalink: /changelog/
 description: Release history for Server Assistant — v5.x line.
 ---

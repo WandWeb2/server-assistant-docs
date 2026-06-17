@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Pricing
+title: Server Assistant Pricing
 permalink: /pricing/
 description: Server Assistant pricing — generous free tier, $7/mo USD Premium with trial-then-bill, and $3/mo BYOK for those with their own AI key.
 ---
