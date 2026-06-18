@@ -169,7 +169,9 @@ details.pack {
   overflow: hidden;
 }
 details.pack:hover { box-shadow: 0 3px 8px rgba(0,0,0,0.08); }
-details.pack[open] { box-shadow: 0 3px 10px rgba(0,0,0,0.08); }
+/* An opened pack spans the full backlog width (both columns); closed packs
+   stay in their single column. */
+details.pack[open] { grid-column: 1 / -1; box-shadow: 0 3px 10px rgba(0,0,0,0.08); }
 details.pack > summary.pack-h {
   list-style: none; cursor: pointer; user-select: none;
   display: flex; align-items: center; gap: 0.45rem; flex-wrap: wrap;
