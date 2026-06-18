@@ -156,10 +156,20 @@ details.band-shipped > .shipped-scroll { border: 1px solid #cfd8dc; border-top: 
   gap: 0.75rem; align-items: start;
 }
 @media (max-width: 760px) { #band-pool { grid-template-columns: 1fr; } }
+/* Pack containers mirror the band cards (details.card): grey-glass body, thin
+   border, a 3px coloured LEFT stripe — green here, matching gold/purple/blue. */
 details.pack {
-  margin: 0; border: 1px solid #d5f0e0; border-radius: 10px;
-  background: rgba(46, 204, 113, 0.045); overflow: hidden;
+  margin: 0;
+  background: #fff;
+  border: 1px solid #eee;
+  border-left: 3px solid #1e8449;
+  border-radius: 5px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+  overflow: hidden;
 }
+details.pack:hover { box-shadow: 0 3px 8px rgba(0,0,0,0.08); }
+details.pack[open] { box-shadow: 0 3px 10px rgba(0,0,0,0.08); }
 details.pack > summary.pack-h {
   list-style: none; cursor: pointer; user-select: none;
   display: flex; align-items: center; gap: 0.45rem; flex-wrap: wrap;
@@ -169,7 +179,7 @@ details.pack > summary.pack-h {
 details.pack > summary.pack-h::-webkit-details-marker { display: none; }
 details.pack > summary.pack-h::before { content: "▸"; color: #1e8449; font-size: 0.8em; }
 details.pack[open] > summary.pack-h::before { content: "▾"; }
-details.pack[open] > summary.pack-h { border-bottom: 1px solid #d5f0e0; }
+details.pack[open] > summary.pack-h { border-bottom: 1px solid #f0f0f0; }
 summary.pack-h .pack-count {
   margin-left: auto; font-size: 0.7rem; font-weight: 700; color: #1e8449;
   background: #eafaf1; border: 1px solid #abebc6; border-radius: 999px;
@@ -410,10 +420,11 @@ details.band-shipped > .shipped-scroll { border-color: rgba(255, 255, 255, 0.12)
 .lane { background: rgba(255, 255, 255, 0.04); }
 .lane h3 { color: #e6e9f0; }
 .lane h3 small { color: #9aa3b6; }
-details.pack { border-color: rgba(95, 208, 182, 0.28); background: rgba(46, 204, 113, 0.06); }
+details.pack { background: rgba(255, 255, 255, 0.045); border-color: rgba(255, 255, 255, 0.10); border-left-color: #2ecc71; box-shadow: none; }
+details.pack[open] { background: rgba(255, 255, 255, 0.07); box-shadow: none; }
 details.pack > summary.pack-h { color: #5fd0b6; }
 details.pack > summary.pack-h::before { color: #5fd0b6; }
-details.pack[open] > summary.pack-h { border-bottom-color: rgba(95, 208, 182, 0.28); }
+details.pack[open] > summary.pack-h { border-bottom-color: rgba(255, 255, 255, 0.10); }
 summary.pack-h .pack-count { color: #5fd0b6; background: rgba(46, 204, 113, 0.12); border-color: rgba(46, 204, 113, 0.35); }
 .pack-desc { color: #aab2c5; }
 .new-pill { background: rgba(69, 179, 157, 0.18); border-color: rgba(69, 179, 157, 0.5); color: #76d7c4; }
