@@ -149,11 +149,17 @@ details.band-shipped > .shipped-scroll { border: 1px solid #cfd8dc; border-top: 
 @media (max-width: 560px) { .longterm-grid, .future-grid { grid-template-columns: 1fr; } }
 
 /* ── Feature packs: collapsible themed bundles inside the green backlog ────── */
+/* Two-column masonry-ish grid; align-items:start so each pack sizes to its own
+   content and expanding one doesn't stretch its row-mate. Stacks on mobile. */
+#band-pool {
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem; align-items: start;
+}
+@media (max-width: 760px) { #band-pool { grid-template-columns: 1fr; } }
 details.pack {
-  margin: 0.6rem 0; border: 1px solid #d5f0e0; border-radius: 10px;
+  margin: 0; border: 1px solid #d5f0e0; border-radius: 10px;
   background: rgba(46, 204, 113, 0.045); overflow: hidden;
 }
-#band-pool > details.pack:first-child { margin-top: 0.3rem; }
 details.pack > summary.pack-h {
   list-style: none; cursor: pointer; user-select: none;
   display: flex; align-items: center; gap: 0.45rem; flex-wrap: wrap;
@@ -170,7 +176,8 @@ summary.pack-h .pack-count {
   padding: 0.1rem 0.55rem; white-space: nowrap;
 }
 .pack-desc { padding: 0.7rem 0.9rem 0.15rem; font-size: 0.9rem; line-height: 1.5; color: #555; }
-details.pack > .longterm-grid { padding: 0.5rem 0.9rem 0.9rem; margin: 0; }
+/* Pack is now ~half-width, so its card list stacks in one column. */
+details.pack > .longterm-grid { grid-template-columns: 1fr; padding: 0.5rem 0.9rem 0.9rem; margin: 0; }
 .new-pill {
   display: inline-block; margin-left: 0.4rem; padding: 0.12rem 0.5rem;
   background: #d1f2eb; border: 1px solid #45b39d; border-radius: 999px;
