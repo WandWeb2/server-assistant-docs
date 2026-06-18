@@ -22,6 +22,14 @@ if ! command -v omp >/dev/null 2>&1; then
   exit 127
 fi
 
+# omp authenticates with ANTHROPIC_API_KEY, but this environment provisions the
+# key as OMP_ANTHROPIC_API_KEY. Map it through so omp (and the `omp config` calls
+# below) authenticate without the caller having to export it by hand. This was a
+# recurring foot-gun: a missing key makes omp launch and silently hang.
+if [ -z "${ANTHROPIC_API_KEY:-}" ] && [ -n "${OMP_ANTHROPIC_API_KEY:-}" ]; then
+  export ANTHROPIC_API_KEY="$OMP_ANTHROPIC_API_KEY"
+fi
+
 # Repo root, so omp is scoped correctly no matter where this is invoked from.
 REPO_ROOT="$(git rev-parse --show-toplevel 2>/dev/null || pwd)"
 
