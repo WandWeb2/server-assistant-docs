@@ -19,7 +19,7 @@ command, so it always runs under the contract below, never ad hoc.
 | Tier | Who | Owns |
 | --- | --- | --- |
 | **Director** | the human + the top-level Claude session | intent, scope, the spec, crossing the box boundary (push / PR / merge), merge-safety. Operates at the director level — does not babysit omp directly. |
-| **Foreman** | a Claude **subagent** the Director spawns per build task | driving the omp loop: hand omp the spec, run `scripts/omp-build`, answer omp's questions, iterate, do the first-pass review, and report results up. Keeps omp-wrangling out of the Director's context. **Does not cross the box** either. |
+| **Foreman** | a Claude **subagent** the Director spawns per build task | driving the omp loop **synchronously to completion**: hand omp the spec, run `scripts/omp-build` in the foreground and block until it returns, answer omp's questions, iterate, do the first-pass review, and report results up. Never backgrounds omp and rests. Keeps omp-wrangling out of the Director's context. **Does not cross the box** either. |
 | **Worker** | `omp` | implementing inside the working tree. |
 
 Both Foreman and Worker live **inside the box**. Only the Director pushes, opens
@@ -45,6 +45,35 @@ Director (human): a request
 
 Use the pipeline for substantial, multi-file work. Small changes the Director
 just makes directly.
+
+## Driving the loop — rules learned the hard way
+
+These are non-negotiable. Each one cost a botched run before it was written down.
+
+1. **Never interrupt omp. Let it finish.** Do not `kill`/`pkill`/signal the omp
+   process, and do **not** touch the working tree or run state-changing git
+   (`commit`/`add`/`reset`/`rebase`/`amend`) while omp is running — you share its
+   `.git`, and rewriting history or editing files under it can corrupt a build
+   that was about to succeed. A tree that looks half-written or uncommitted
+   mid-run is **normal progress, not failure**; snapshots taken while omp writes
+   will race. Wait for omp to return.
+2. **omp commits its own work locally — that is success, not a problem.** The
+   expected end state of a run is omp's own local commit. The Director does
+   **not** re-do, re-stage, or re-commit omp's work. If you think omp "produced
+   nothing," check `git log` for its commit before concluding anything — it has
+   probably already committed.
+3. **The Foreman runs omp synchronously and reports once.** Invoke
+   `scripts/omp-build` in the foreground and block until it exits; never launch
+   omp in the background (e.g. via a Monitor / `run_in_background`) and end the
+   turn. Spawn the Foreman subagent **synchronously** so it returns one complete
+   report. A Foreman that backgrounds omp and goes to rest has not done its job.
+4. **After omp returns, the Director's whole job is verify-and-merge.** Review
+   the committed diff against the original intent and the acceptance criteria,
+   run the tests, then push → PR → merge. That's it — don't babysit omp and don't
+   rebuild what it already built.
+5. **Watch GitHub; don't poll or interrupt.** Drive on PR events via the
+   subscription (CI failures, review comments). Don't busy-poll or sit
+   interrupting things while waiting.
 
 ## Onboarding the greenhorn
 
@@ -98,7 +127,9 @@ scripts/omp-build @spec.md
 --no-extensions`, the curated `sa-*` skills, and **unlimited subagents**
 (`task.maxConcurrency = 0`). Pin a specific Claude model with the
 `OMP_BUILD_MODEL` env var; with only the Anthropic key provisioned, omp defaults
-to Claude.
+to Claude. The wrapper also maps `OMP_ANTHROPIC_API_KEY` → `ANTHROPIC_API_KEY`
+automatically, so omp authenticates without the Foreman exporting it by hand (a
+missing key used to make omp launch and silently hang).
 
 ## Preloaded skills (curated, not kitchen-sink)
 

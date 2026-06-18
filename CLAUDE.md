@@ -42,12 +42,17 @@ The short version:
    greenhorn to follow.
 2. **Spawn a Foreman subagent to run the omp loop.** The Foreman invokes
    `scripts/omp-build "<spec>"`, answers omp's questions, iterates in a bounded
-   Q&A loop, and does the first-pass review. `omp` runs autonomously but is
-   contained to the local working tree (auto-approved, unlimited subagents, but
-   **no** github/ssh/browser/web and **no** push/PR/merge). The Foreman does not
-   cross the boundary either.
+   Q&A loop, and does the first-pass review. It drives omp **synchronously to
+   completion** (runs in the foreground and blocks until omp returns) — it never
+   backgrounds omp and rests. `omp` runs autonomously but is contained to the
+   local working tree (auto-approved, unlimited subagents, but **no**
+   github/ssh/browser/web and **no** push/PR/merge). The Foreman does not cross
+   the boundary either. **Never interrupt omp** — don't kill it or touch the
+   working tree / git while it runs; it commits its own work when done.
 3. **You cross the boundary, never the Foreman or `omp`.** You push the branch
-   and open the PR; `omp` only commits locally.
+   and open the PR; `omp` only commits locally — that local commit is the
+   expected successful outcome (check `git log` for it before concluding omp
+   "did nothing"). Your job is to verify it and merge, not to redo it.
 4. **Review independently** — the omp-authored diff against the user's original
    intent and the acceptance criteria.
 5. **Merge = auto-ship guardrails + your validation.** The auto-ship
