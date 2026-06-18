@@ -1083,6 +1083,11 @@ What ships is what gets requested most clearly. Vague *"add more features"* feed
   if (!box) return;
   var API = "https://sa.wandweb.co/api/public/poll-results";
 
+  // Close timestamp of the current active poll (ISO string), or null when no
+  // poll is open / it has closed. Drives the live "closes in 1d 22h" countdown,
+  // kept current by the per-second ticker below between 60s data refreshes.
+  var pollClosesAt = null;
+
   function esc(s) {
     return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
   }
@@ -1183,17 +1188,46 @@ What ships is what gets requested most clearly. Vague *"add more features"* feed
         });
       }
     });
-    var closes = "";
-    if (p.status === "active" && p.closes_at) {
-      var d = new Date(p.closes_at);
-      if (!isNaN(d)) closes = " · closes " + d.toLocaleDateString(undefined, { month: "short", day: "numeric" });
-    }
+    // Remember this poll's close time so the 1s ticker can keep the countdown
+    // live between the (60s) data refreshes.
+    pollClosesAt = (p.status === "active" && p.closes_at) ? p.closes_at : null;
     var meta = box.querySelector("#lp-meta");
-    if (meta) meta.textContent =
-      total + " votes · " + (p.servers || 0) + " server" + (p.servers === 1 ? "" : "s") + closes +
-      (p.status === "active"
-        ? " · 🟢 live — vote from your server's staff chat; every staff member has a voice"
-        : " · ✅ closed — thank you!");
+    if (meta) {
+      // The vote/server counts come from the data refresh; the close countdown
+      // is its own span so the per-second ticker can update only that part.
+      meta.innerHTML =
+        esc(total + " votes · " + (p.servers || 0) + " server" + (p.servers === 1 ? "" : "s")) +
+        '<span id="lp-closes"></span>' +
+        (p.status === "active"
+          ? " · 🟢 live — vote from your server's staff chat; every staff member has a voice"
+          : " · ✅ closed — thank you!");
+      tickCloseCountdown();
+    }
+  }
+
+  // Live countdown to the poll close, e.g. " · closes in 1d 22h", recomputed on
+  // each tick from the close timestamp. Shows " · voting closed" once the close
+  // time has passed; renders nothing when there's no active close time.
+  function formatCountdown(closesAt) {
+    if (!closesAt) return "";
+    var d = new Date(closesAt);
+    if (isNaN(d)) return "";
+    var ms = d.getTime() - Date.now();
+    if (ms <= 0) return " · voting closed";
+    var totalMin = Math.floor(ms / 60000);
+    var days = Math.floor(totalMin / 1440);
+    var hours = Math.floor((totalMin % 1440) / 60);
+    var mins = totalMin % 60;
+    var parts;
+    if (days > 0) parts = days + "d " + hours + "h";
+    else if (hours > 0) parts = hours + "h " + mins + "m";
+    else parts = mins + "m";
+    return " · closes in " + parts;
+  }
+
+  function tickCloseCountdown() {
+    var el = document.getElementById("lp-closes");
+    if (el) el.textContent = formatCountdown(pollClosesAt);
   }
 
   function renderBands(t, total, nAnswers) {
@@ -1286,8 +1320,10 @@ What ships is what gets requested most clearly. Vague *"add more features"* feed
     setTimeout(function () { refresh(); schedule(); }, nextRefreshAt - Date.now());
   }
 
-  // Visible countdown to the next data refresh, ticking every second
+  // Visible countdown to the next data refresh + the live poll-close countdown,
+  // both ticking every second.
   setInterval(function () {
+    tickCloseCountdown();
     var el = document.getElementById("lp-refresh");
     if (!el) return;
     var s = Math.max(0, Math.ceil((nextRefreshAt - Date.now()) / 1000));
