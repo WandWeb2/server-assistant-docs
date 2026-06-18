@@ -1,0 +1,61 @@
+#!/usr/bin/env bash
+# omp-build — delegate a scoped implementation task to the omp coding agent,
+# contained to the local working tree.
+#
+# Part of the "Claude orchestrates, omp implements" pipeline. See OMP.md for the
+# full operating model and rationale.
+#
+# Usage:
+#   scripts/omp-build "<spec text>"
+#   scripts/omp-build @spec.md
+#   echo "<spec>" | scripts/omp-build
+#
+# omp runs autonomously INSIDE the working tree (auto-approved, unlimited
+# subagents) but is given NO boundary-crossing tools: no github, ssh, browser,
+# or web access. The orchestrating Claude session owns everything that leaves
+# the box (push, pull request, merge).
+
+set -euo pipefail
+
+if ! command -v omp >/dev/null 2>&1; then
+  echo "omp-build: 'omp' is not installed in this environment" >&2
+  exit 127
+fi
+
+# Repo root, so omp is scoped correctly no matter where this is invoked from.
+REPO_ROOT="$(git rev-parse --show-toplevel 2>/dev/null || pwd)"
+
+# Only the Anthropic key is provisioned, so omp defaults to Claude. Override
+# with OMP_BUILD_MODEL to pin a specific Claude model.
+MODEL="${OMP_BUILD_MODEL:-}"
+
+# Subagents: completely open. 0 = unlimited concurrent subagents.
+# Config lives in an ephemeral dir, so (re)apply it every run.
+omp config set task.maxConcurrency 0    >/dev/null   # no cap on concurrent subagents
+omp config set task.maxRecursionDepth 5 >/dev/null   # nesting depth; finite only to avoid an infinite spawn loop
+omp config set task.batch true          >/dev/null
+
+# Local-only tool surface: full implementation power + subagents, but nothing
+# that can cross the box boundary. (omp's regex tool is `search`, not `grep`.)
+TOOLS="read,edit,write,search,find,bash,lsp,task,todo"
+
+# Gather the spec from args, an @file, or stdin.
+if [ "$#" -gt 0 ]; then
+  SPEC=("$@")
+elif [ ! -t 0 ]; then
+  SPEC=("$(cat)")
+else
+  echo "omp-build: provide a spec as an argument, @file, or on stdin" >&2
+  exit 2
+fi
+
+echo "omp-build: delegating to omp (cwd=$REPO_ROOT, tools=$TOOLS, subagents=unlimited)" >&2
+
+exec omp -p \
+  ${MODEL:+--model "$MODEL"} \
+  --cwd "$REPO_ROOT" \
+  --no-rules --no-extensions \
+  --skills 'sa-*' \
+  --tools "$TOOLS" \
+  --approval-mode yolo \
+  "${SPEC[@]}"

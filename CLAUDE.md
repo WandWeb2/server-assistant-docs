@@ -24,3 +24,38 @@ sync it first by merging `origin/main` into the branch and re-applying the
 change — never force-push.
 
 _To revoke this, delete this section._
+
+## Multi-agent build pipeline — Claude orchestrates, omp implements
+
+For substantial implementation work this repo uses a **three-tier** model: the
+**Director** (the human + you) sets intent and guards; a **Foreman** (a Claude
+subagent you spawn) manages the worker; the **Worker** (`omp`, the oh-my-pi
+coding agent) implements. You and the human operate at the director level — you
+do not babysit `omp` directly. Treat `omp` as a **capable greenhorn**: fast, but
+new to this project and in need of onboarding. Full operating model and
+rationale: [`OMP.md`](OMP.md).
+
+The short version:
+
+1. **Turn the user's request into a spec** with explicit, testable acceptance
+   criteria (the exact tests/commands that must pass) — generous enough for a
+   greenhorn to follow.
+2. **Spawn a Foreman subagent to run the omp loop.** The Foreman invokes
+   `scripts/omp-build "<spec>"`, answers omp's questions, iterates in a bounded
+   Q&A loop, and does the first-pass review. `omp` runs autonomously but is
+   contained to the local working tree (auto-approved, unlimited subagents, but
+   **no** github/ssh/browser/web and **no** push/PR/merge). The Foreman does not
+   cross the boundary either.
+3. **You cross the boundary, never the Foreman or `omp`.** You push the branch
+   and open the PR; `omp` only commits locally.
+4. **Review independently** — the omp-authored diff against the user's original
+   intent and the acceptance criteria.
+5. **Merge = auto-ship guardrails + your validation.** The auto-ship
+   authorization above still applies, but for any `omp`-authored change your
+   independent review is an additional hard gate: squash-merge only when CI is
+   green, there are no unresolved human reviews, **and** your review is clean.
+   If your review flags anything material, do not merge — report and wait.
+
+Use the pipeline for substantial multi-file work; small changes you make
+directly. `omp` is only ever invoked through `scripts/omp-build`, which keeps it
+boundary-contained — never grant it push, PR, or merge ability.
