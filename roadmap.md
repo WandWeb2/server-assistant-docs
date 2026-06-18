@@ -394,7 +394,12 @@ details.safeguards li { margin-bottom: 0.2rem; }
    ════════════════════════════════════════════════════════════════════════ */
 .roadmap-hero { background: rgba(46, 204, 113, 0.10); border-left-color: #2ecc71; color: #e6e9f0; }
 .lp-q { color: #e6e9f0; }
-.lp-label a { color: #cdd4e3; }
+.lp-label a,
+.lp-label a:link,
+.lp-label a:visited,
+.lp-label a:hover,
+.lp-label a:focus,
+.lp-label a:active { color: #fff; }
 .lp-track { background: rgba(255, 255, 255, 0.12); height: 16px; }
 .lp-fill { background: linear-gradient(90deg, #6c3483, #a569bd); }
 .lp-fill.gold { background: linear-gradient(90deg, #b7950b, #f1c40f); }
