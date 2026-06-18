@@ -173,11 +173,12 @@ details.pack[open] { box-shadow: 0 3px 10px rgba(0,0,0,0.08); }
 details.pack > summary.pack-h {
   list-style: none; cursor: pointer; user-select: none;
   display: flex; align-items: center; gap: 0.45rem; flex-wrap: wrap;
-  font-size: 1.05rem; font-weight: 700; color: #1e8449;
+  font-size: 0.95rem; font-weight: 600;
   padding: 0.7rem 0.9rem;
 }
+details.pack > summary.pack-h:hover { color: var(--accent); }
 details.pack > summary.pack-h::-webkit-details-marker { display: none; }
-details.pack > summary.pack-h::before { content: "▸"; color: #1e8449; font-size: 0.8em; }
+details.pack > summary.pack-h::before { content: "▸"; font-size: 0.8em; }
 details.pack[open] > summary.pack-h::before { content: "▾"; }
 details.pack[open] > summary.pack-h { border-bottom: 1px solid #f0f0f0; }
 summary.pack-h .pack-count {
@@ -422,8 +423,8 @@ details.band-shipped > .shipped-scroll { border-color: rgba(255, 255, 255, 0.12)
 .lane h3 small { color: #9aa3b6; }
 details.pack { background: rgba(255, 255, 255, 0.045); border-color: rgba(255, 255, 255, 0.10); border-left-color: #2ecc71; box-shadow: none; }
 details.pack[open] { background: rgba(255, 255, 255, 0.07); box-shadow: none; }
-details.pack > summary.pack-h { color: #5fd0b6; }
-details.pack > summary.pack-h::before { color: #5fd0b6; }
+details.pack > summary.pack-h { color: #e6e9f0; }
+details.pack > summary.pack-h:hover { color: #3cc1f0; }
 details.pack[open] > summary.pack-h { border-bottom-color: rgba(255, 255, 255, 0.10); }
 summary.pack-h .pack-count { color: #5fd0b6; background: rgba(46, 204, 113, 0.12); border-color: rgba(46, 204, 113, 0.35); }
 .pack-desc { color: #aab2c5; }
