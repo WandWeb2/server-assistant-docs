@@ -7,7 +7,7 @@ description: How Server Assistant handles your Discord server's data — encrypt
 # Server Assistant Privacy Policy
 
 **Effective date:** May 9, 2026
-**Last updated:** June 17, 2026
+**Last updated:** June 18, 2026
 
 This policy describes how the Server Assistant Discord bot ("the Bot") collects, uses, and stores information when installed in a Discord server.
 
@@ -95,6 +95,14 @@ When you message us through a support ticket (via `/support`) or reply to a ban-
 - **Ban appeal:** the appeal reply you send, forwarded to the server's staff
 
 These are messages you choose to send to us or to your server's staff. Ordinary direct messages and private conversations are never read or stored.
+
+### Bot message log
+
+A record of the messages **the Bot itself sends** — to a server channel, a thread, or to a member by direct message (for example a ban-reason DM or a "finish setup" reminder). For each, we keep:
+- The server (guild) ID and which channel it was sent to — or, for a DM, simply that a direct message was sent and to whom
+- A short summary of the message (up to ~140 characters) and the time it was sent
+
+This log covers only messages **the Bot sends** — never messages your members send to one another. It exists for operational reliability and as a safety/audit trail of the Bot's own activity, and is visible only to our operator. It is **not** shown in your server's web portal, and the **content** of a member's private DM is never echoed into any server channel — only a content-free note that the Bot reached out. Entries are automatically deleted after **60 days**.
 
 ---
 
@@ -186,6 +194,7 @@ We do **not** sell your data or share it with advertising or analytics networks.
 | Web-portal session (staff sign-in) | Expires automatically; deleted immediately on sign-out |
 | Push notification subscription | Until the staff member disables notifications, signs out, or the Bot is removed |
 | Server-insight counts (online / voice / member time-series) | Rolling window (~90 days) |
+| Bot message log (messages the Bot sends) | Rolling window (~60 days), then auto-deleted |
 
 ---
 
@@ -216,6 +225,26 @@ We **do not sell or share** personal information (as those terms are defined und
 - All communications use HTTPS/TLS
 - The web portal and its supporting API are the only public endpoints; they sit behind TLS and require authentication (Discord OAuth for staff), and every action is permission-checked server-side against the staff member's Discord role. The Bot otherwise communicates only over Discord's gateway connection
 - Stripe handles payment card data under PCI-DSS compliance — we never see raw card numbers
+
+---
+
+## Discord platform compliance
+
+Server Assistant is a Discord application and operates under Discord's developer agreements. The table below maps the obligations in each Discord policy to where this Privacy Policy meets them.
+
+| Discord policy | The obligation | How Server Assistant complies |
+|---|---|---|
+| [Discord Developer Terms of Service](https://support-dev.discord.com/hc/en-us/articles/8562894815383-Discord-Developer-Terms-of-Service) | Use "Platform Data" (the data obtained through Discord's API) only to operate your application; don't retain it longer than necessary; delete it on user request and when access ends | We store only the Platform Data needed to run the features a server has enabled (*What the Bot stores*), use it solely to provide those features, cap how long every category is kept (*Data retention*), and delete it on request or when the Bot is removed (*Your rights*). |
+| [Discord Developer Policy](https://support-dev.discord.com/hc/en-us/articles/8563934450327-Discord-Developer-Policy) — *publish a privacy policy* | Provide and follow a public privacy policy describing what you access, collect, store, share, and how users can request deletion | This document is public, linked from the Bot via `/support`, and describes exactly that. |
+| Discord Developer Policy — *data minimization* | Only collect and use the data you genuinely need | We list precisely what we store **and** keep an explicit *What the Bot does NOT store* section; features are opt-in and read only what they need (*What each feature reads*). |
+| Discord Developer Policy — *keep data secure* | Protect the data you hold with appropriate security | Encryption at rest (AES-128), restricted key access, TLS in transit, and authenticated, permission-checked endpoints (*Data security*). |
+| Discord Developer Policy — *don't sell data; no ads or profiling* | Don't sell user data, share it with ad/analytics networks, or build profiles of users | We never sell or share data with advertising or analytics networks. Repeat-offender detection (Alt-guard) uses a **local-only** fingerprint that never leaves your host and is never used for cross-server profiling. |
+| [Message Content Intent Review Policy](https://support-dev.discord.com/hc/en-us/articles/5324827539479-Message-Content-Intent-Review-Policy) | Message content is a privileged intent; use it only for the limited, declared purposes and don't retain more than needed | Message content is read only for moderation (AutoMod / anti-raid) and the opt-in features you switch on; it is not stored except in the limited, truncated cases disclosed, and only the minimum context is ever sent to an AI provider (*What each feature reads*, *Third-party AI providers*). |
+| [Discord Terms of Service](https://discord.com/terms) & [Community Guidelines](https://discord.com/guidelines) | Respect Discord's users and platform rules; no spam or unsolicited contact | The Bot messages members only for moderation or operational reasons (e.g. a ban-reason DM or a setup reminder to the person who added it), honours per-server opt-outs, and never sends unsolicited or bulk promotional DMs to members. |
+| [Discord Privacy Policy](https://discord.com/privacy) | Governs the identity data Discord provides during OAuth sign-in | At web-portal sign-in we request only `identify`, `guilds`, and `guilds.members.read`, discard the access token, and keep only the derived access level (*Web portal sign-in*). |
+| Discord minimum-age requirement (13+) | Don't knowingly process data of users under Discord's minimum age | We don't knowingly collect data from anyone under 13 and delete it if found (*Children's privacy*). |
+
+If you believe any part of the Bot's behaviour is inconsistent with these policies, please tell us via [`/support`]({{ site.url }}{{ site.baseurl }}/support/) — we take platform compliance seriously and will correct it.
 
 ---
 
