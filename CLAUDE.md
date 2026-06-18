@@ -27,20 +27,27 @@ _To revoke this, delete this section._
 
 ## Multi-agent build pipeline — Claude orchestrates, omp implements
 
-For substantial implementation work this repo uses a two-agent model: **you
-(Claude Code) plan and guard; `omp` (the oh-my-pi coding agent) implements.**
-Full operating model and rationale: [`OMP.md`](OMP.md).
+For substantial implementation work this repo uses a **three-tier** model: the
+**Director** (the human + you) sets intent and guards; a **Foreman** (a Claude
+subagent you spawn) manages the worker; the **Worker** (`omp`, the oh-my-pi
+coding agent) implements. You and the human operate at the director level — you
+do not babysit `omp` directly. Treat `omp` as a **capable greenhorn**: fast, but
+new to this project and in need of onboarding. Full operating model and
+rationale: [`OMP.md`](OMP.md).
 
 The short version:
 
 1. **Turn the user's request into a spec** with explicit, testable acceptance
-   criteria (the exact tests/commands that must pass).
-2. **Delegate implementation to `omp`** via `scripts/omp-build "<spec>"`. `omp`
-   runs autonomously but is contained to the local working tree (auto-approved,
-   unlimited subagents, but **no** github/ssh/browser/web and **no**
-   push/PR/merge). Iterate with it in a bounded Q&A loop.
-3. **You cross the boundary, never `omp`.** You push the branch and open the PR;
-   `omp` only commits locally.
+   criteria (the exact tests/commands that must pass) — generous enough for a
+   greenhorn to follow.
+2. **Spawn a Foreman subagent to run the omp loop.** The Foreman invokes
+   `scripts/omp-build "<spec>"`, answers omp's questions, iterates in a bounded
+   Q&A loop, and does the first-pass review. `omp` runs autonomously but is
+   contained to the local working tree (auto-approved, unlimited subagents, but
+   **no** github/ssh/browser/web and **no** push/PR/merge). The Foreman does not
+   cross the boundary either.
+3. **You cross the boundary, never the Foreman or `omp`.** You push the branch
+   and open the PR; `omp` only commits locally.
 4. **Review independently** — the omp-authored diff against the user's original
    intent and the acceptance criteria.
 5. **Merge = auto-ship guardrails + your validation.** The auto-ship
