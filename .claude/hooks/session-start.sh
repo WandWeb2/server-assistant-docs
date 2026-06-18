@@ -50,8 +50,16 @@ else
   echo "oh-my-pi: installed $("$INSTALL_DIR/omp" --version 2>/dev/null || echo omp)"
 fi
 
-# omp reads provider credentials from the environment. Never commit the key:
-# set ANTHROPIC_API_KEY as an environment secret in the web environment config.
-if [ -z "${ANTHROPIC_API_KEY:-}" ]; then
-  echo "oh-my-pi: ANTHROPIC_API_KEY not set — add it as an environment secret to use omp."
+# Provider credentials for omp.
+# Claude Code reserves ANTHROPIC_API_KEY for its own account auth and won't pass it
+# through, so the web environment config supplies omp's key as OMP_ANTHROPIC_API_KEY.
+# Map it to the name omp expects (ANTHROPIC_API_KEY) for the rest of the session.
+# Never commit the key — it lives only in the environment config.
+if [ -n "${OMP_ANTHROPIC_API_KEY:-}" ]; then
+  export ANTHROPIC_API_KEY="$OMP_ANTHROPIC_API_KEY"
+  if [ -n "${CLAUDE_ENV_FILE:-}" ]; then
+    echo "export ANTHROPIC_API_KEY=\"$OMP_ANTHROPIC_API_KEY\"" >> "$CLAUDE_ENV_FILE"
+  fi
+elif [ -z "${ANTHROPIC_API_KEY:-}" ]; then
+  echo "oh-my-pi: no omp key found — set OMP_ANTHROPIC_API_KEY in the environment config to use omp."
 fi
