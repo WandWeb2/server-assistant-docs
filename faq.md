@@ -298,6 +298,19 @@ Currently it's fixed wording. Custom verification copy is on the <a href="{{ sit
 <li><strong>AutoMod escalations</strong> — user crosses a punishment threshold (timeout / kick / ban)</li>
 </ul>
 <p>Up to 10 roles per event; empty = silent. Routine single-message blocks don't ping (only escalations do).</p>
+<p>These live under <strong>Instant alerts</strong> in the hub. The other half — <strong>Updates &amp; digests</strong> — is where you set how often <strong>Pulse</strong> arrives (Off / Daily / Weekly / Monthly) and toggle <strong>Milestones</strong> and <strong>Announcements</strong> on or off.</p>
+</div>
+</details>
+
+<details class="faq"><summary>How often does Pulse arrive, and can I change it?</summary>
+<div class="faq-body">
+<p>Your call. In <code>/settings → 🔔 Notifications → Updates &amp; digests</code>, set <strong>Pulse</strong> to <strong>Off / Daily / Weekly / Monthly</strong>. Any cadence you'd already set carries over automatically.</p>
+</div>
+</details>
+
+<details class="faq"><summary>What are Milestones?</summary>
+<div class="faq-body">
+<p>Server Assistant celebrates your community's wins in staff chat with a warm card — member-count landmarks (100, 500, 1k…), server anniversaries, and moderation milestones, framed as <em>your</em> achievement. Capped to at most one a day, and fully toggleable in <code>/settings → 🔔 Notifications</code>.</p>
 </div>
 </details>
 

@@ -35,6 +35,41 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 </style>
 
 <details class="doc-sec" markdown="1" open>
+<summary>v5.6.31 — Share your server + milestone badges, in your portal</summary>
+
+
+Two small touches that help you celebrate — and spread the word about — what you've built.
+
+### Added
+
+- **💛 Share Server Assistant, right from your portal.** Your server's web portal now has a **"Share Server Assistant"** card with your own personal invite link — hand it to a friend's server in one tap, and watch the running count of servers that joined through yours tick up.
+- **🏅 Your milestone badges, in the portal.** The milestones your community has earned — member-count landmarks, anniversaries, moderation streaks — now show as **badges in your portal header**, so the wins you've hit are always in view.
+
+**Privacy policy updated** — small clarifications to keep it matching exactly what the bot does. See the [Privacy Policy]({{ site.url }}{{ site.baseurl }}/privacy/).
+
+
+</details>
+
+<details class="doc-sec" markdown="1">
+<summary>v5.6.30 — Your updates, your cadence — Notifications hub + Milestones</summary>
+
+
+One place for every way Server Assistant keeps you in the loop — set your own pace — plus a warm new way to celebrate your community's wins.
+
+### Added
+
+- **🔔 One place for all your updates — `/settings → Notifications`.** The various ways Server Assistant kept you posted are now a single hub, split in two:
+  - **Updates & digests** — *your* choice of how often. Set **Pulse** to **Off / Daily / Weekly / Monthly**, and toggle **Milestones** and **Announcements** on or off.
+  - **Instant alerts** — the live role-pings for raids, approvals and AutoMod escalations. Unchanged, because you can't put a live raid on a weekly digest.
+
+  Your existing Pulse settings carry over automatically.
+- **🎉 Milestones.** Server Assistant now celebrates your community's wins in staff chat — **member-count landmarks** (100, 500, 1k, 5k, 10k…), **server anniversaries**, and **moderation milestones** — framed as *your* achievement, with the occasional, never-pushy nudge to leave a review or recommend us. Capped to at most one a day, and fully toggleable in the Notifications hub.
+- **🤝 Recommend Server Assistant — `/share`.** A quick way for your staff to hand the bot's install link to another server they help run. Free-tier servers only.
+
+
+</details>
+
+<details class="doc-sec" markdown="1">
 <summary>v5.6.29 — Setup tells you when a permission needs a nudge</summary>
 
 

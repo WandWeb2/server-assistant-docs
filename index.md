@@ -105,8 +105,8 @@ image: /assets/banner.jpeg
 <div class="frow c-green">
   <div class="ftext">
     <h3>🩺 Whole-server health insight</h3>
-    <p>Every other bot waits for a rule to break. Once a day, <strong>Pulse</strong> posts a health report to your staff channel — and flags the slow-burn patterns humans miss.</p>
-    <details class="fmore"><summary>How it works</summary><div class="fbody">Messages, joins, AutoMod activity and warnings, each with a week-over-week trend — like a trickle of joins sitting just under your raid threshold. Read-only: it never acts on its own, it just gives your team x-ray vision.</div></details>
+    <p>Every other bot waits for a rule to break. <strong>Pulse</strong> posts a health report to your staff channel — daily, weekly or monthly, your call — and flags the slow-burn patterns humans miss.</p>
+    <details class="fmore"><summary>How it works</summary><div class="fbody">Messages, joins, AutoMod activity and warnings, each with a week-over-week trend — like a trickle of joins sitting just under your raid threshold. Set the cadence (or turn it off) in <code>/settings → 🔔 Notifications</code>. Read-only: it never acts on its own, it just gives your team x-ray vision.</div></details>
   </div>
   <div class="fshot">
     <div class="dc">

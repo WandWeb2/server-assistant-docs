@@ -303,6 +303,7 @@ Type `/` anywhere to see autocomplete:
 | `/premium` | See your server's premium status + what's included |
 | `/vote` | Vote for the bot (Top.gg + Discord Bot List) |
 | `/invite` | Get the bot's invite URL |
+| `/share` | Hand Server Assistant's install link to another server you help run (free tier) |
 | `/support` *(alias `/feedback`)* | Open a support ticket or send feedback to the dev via DM |
 | `/tickets setup [channel] [support_role] [create_channel]` | Post the ticket panel. Pass `create_channel` to have the bot make a properly-locked channel for you |
 | `/tickets close [reason]` | Close the ticket channel you're in |
@@ -352,7 +353,7 @@ Each role you configure in `/settings → Role Tiers` has **capabilities** (what
 <tr><td>/onboarding, /snippets, /automod, /schedule</td><td class="perm-n">—</td><td class="perm-y">✓</td><td class="perm-y">✓</td></tr>
 <tr><td>/retro</td><td class="perm-n">—</td><td class="perm-y">✓</td><td class="perm-y">✓</td></tr>
 <tr><td>/imagine <em>(or /img)</em>, /translate, /faq, /vote, /premium, /invite</td><td class="perm-y">✓</td><td class="perm-y">✓</td><td class="perm-y">✓</td></tr>
-<tr><td>/whatsnew, /support <em>(/feedback)</em>, /privacy</td><td class="perm-y">✓</td><td class="perm-y">✓</td><td class="perm-y">✓</td></tr>
+<tr><td>/whatsnew, /share, /support <em>(/feedback)</em>, /privacy</td><td class="perm-y">✓</td><td class="perm-y">✓</td><td class="perm-y">✓</td></tr>
 <tr><td>/sai <em>(Premium)</em></td><td class="perm-n">—</td><td class="perm-y">✓</td><td class="perm-y">✓</td></tr>
 <tr><td>/settings</td><td class="perm-n">—</td><td class="perm-y">✓</td><td class="perm-y">✓</td></tr>
 <tr><td>/setup, /autopilot, /ai-config</td><td class="perm-n">—</td><td class="perm-n">—</td><td class="perm-y">✓</td></tr>
