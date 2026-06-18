@@ -1,6 +1,10 @@
 #!/bin/bash
 set -euo pipefail
 
+# Async mode: install in the background so it doesn't block session startup.
+# This directive must be the first line written to stdout.
+echo '{"async": true, "asyncTimeout": 300000}'
+
 # Install the oh-my-pi (`omp`) coding agent on Claude Code on the web sessions.
 # Only runs in the remote (web) environment; no-op locally.
 if [ "${CLAUDE_CODE_REMOTE:-}" != "true" ]; then
