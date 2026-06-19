@@ -111,7 +111,7 @@ image: /assets/banner.jpeg
 <style>
 .partners-band { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.8rem; margin: 1.4rem 0; }
 .partners-band-title { flex: none; margin: 0; font-size: .8rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-soft); white-space: nowrap; }
-.partners-logos { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-start; gap: 1.4rem 2.4rem; }
+.partners-logos { flex: 1 1 0; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 1.4rem 2.4rem; }
 .partner-logo-link { position: relative; display: inline-flex; align-items: center; justify-content: center; transition: transform .15s ease; }
 .partner-logo-link img { height: 72px; width: auto; box-shadow: none; border-radius: 18px; opacity: .9; transition: opacity .15s ease; }
 .partner-logo-link:hover { transform: translateY(-3px); }
