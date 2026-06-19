@@ -45,6 +45,47 @@ comm -13 \
 grep -rnE 'v[0-9]+\.[0-9]' --include='*.md' . | grep -vE 'roadmap.md|changelog'
 ```
 
+## Partnerships page
+
+The partners feature spans four files; the acquisition strategy + outreach
+templates live separately in **`.omp/partnerships-playbook.md`** (internal).
+
+| Piece | File |
+|---|---|
+| The page itself (cards, intro, CTA) + its `<style>` | `partnerships.md` |
+| Homepage "Trusted by" band | `index.md` (the `.partners-band` block) |
+| Footer "Partners" link | `_includes/footer.html` (Product row) |
+| Partner logos | `assets/partners/` (`<name>.svg` wordmark + `<name>-icon.svg` square) |
+
+**Pending vs live.** A partnership that isn't confirmed yet is shown but visibly
+gated, so we never imply a deal that isn't done:
+- *Homepage:* the real logo is wrapped in a `{% comment %}` block and a grey-glass
+  `.partner-placeholder` "+" (links to `/partnerships/`) shows instead.
+- *Partners page:* the card carries the `pending` class and a `.partner-cover`
+  overlay (`<span>In talks</span>`) — frosted glass that also blocks the "Visit"
+  link.
+
+**Add a NEW partner (already confirmed/live):**
+1. Drop logos in `assets/partners/` — a wordmark `name.svg` (used on the page card)
+   and a square `name-icon.svg` (used in the homepage band).
+2. `partnerships.md`: copy a `.partner-card` (no `pending` class, no `.partner-cover`)
+   inside `.partners-grid`; fill name, tag, blurb, `Visit → ` link.
+3. `index.md`: add an `<a class="partner-logo-link" href="…/partnerships/"
+   data-name="Name"><img src="…/name-icon.svg"></a>` to `.partners-logos`
+   (the comment marks the spot).
+4. `.omp/partnerships-playbook.md`: update the status tracker.
+
+**Flip a PENDING partner live:** remove the `{% comment %}`/`{% endcomment %}`
+around its homepage logo and delete the `.partner-placeholder`; on the card, drop
+the `pending` class and the `.partner-cover` div.
+
+**Add a partner as PENDING:** as "Add a NEW partner", but add the `pending` class +
+`.partner-cover` to its card, and keep its homepage logo commented out behind the
+`.partner-placeholder`.
+
+> Keep the top header nav (`header_pages`) out of this — partners stay in the footer
+> + homepage band until there are enough (3+) to justify a nav slot.
+
 ## Conventions that must hold
 
 - **No version numbers** on any page except `roadmap.md` and the changelog pages —
