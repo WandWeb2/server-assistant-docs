@@ -35,6 +35,15 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 </style>
 
 <details class="doc-sec" markdown="1" open>
+<summary>v5.6.36 — Stability & reliability</summary>
+
+
+A quick behind-the-scenes maintenance update — small reliability fixes to keep Server Assistant responsive and dependable. Nothing to do on your end.
+
+
+</details>
+
+<details class="doc-sec" markdown="1">
 <summary>v5.6.35 — Polls: a last-chance nudge + a live countdown</summary>
 
 
