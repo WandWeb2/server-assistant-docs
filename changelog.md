@@ -35,6 +35,58 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 </style>
 
 <details class="doc-sec" markdown="1" open>
+<summary>v5.6.35 — Polls: a last-chance nudge + a live countdown</summary>
+
+
+Small touches so your community never misses a vote.
+
+### Added
+
+- **⏳ A live countdown on community votes.** A vote now shows a **live countdown** to close ("closes in 2 days, 4 hours") instead of a fixed date — so at a glance everyone knows how long is left.
+- **📣 A "last chance to vote" nudge.** Shortly before a vote closes, Server Assistant posts a gentle last-chance reminder. It **replies to the original poll** so the link is right there — and if that message has scrolled far away or was deleted, it **reposts the poll and carries every existing vote across**, so nobody loses their say and no one can vote twice.
+
+
+</details>
+
+<details class="doc-sec" markdown="1">
+<summary>v5.6.34 — Upload a custom brand icon</summary>
+
+
+### Added
+
+- **🖼️ Upload a custom brand icon in `/brand`.** Premium servers can now attach an image file directly to `/brand` (the new **icon** option) instead of hunting for a public image URL — PNG/JPG/GIF/WebP up to 12 MB. The image is hosted on our side so it never expires, and immediately becomes your white-label embed icon. Pasting a URL still works too.
+
+
+</details>
+
+<details class="doc-sec" markdown="1">
+<summary>v5.6.33 — Native-action notifications, your call</summary>
+
+
+### Added
+
+- **🔕 Turn off "done directly in Discord" notices.** When staff moderate directly in Discord (a native ban/kick/timeout), the bot posts a heads-up in your log channel with a tip for the team. Some servers love it, some find it noisy — so it's now a toggle in **`/settings → 🔔 Notifications`**. On by default; flip it off any time. (Your private, tamper-proof audit log still records every native action regardless.)
+
+
+</details>
+
+<details class="doc-sec" markdown="1">
+<summary>v5.6.32 — Achievements, expanded</summary>
+
+
+### Added
+
+- **🏆 A bigger trophy case.** Server Assistant now tracks far more for your community to earn — new tiered ranks for **Guardian** (AutoMod catches), **Bastion** (raids stopped), **Word of Mouth** (servers that joined through your invite link) and **Patron** (months on Premium), plus a set of one-off **Unique Achievements** (Early Adopter, Setup Complete, First Branding, Loyal Companion, First Catch, Held the Line, Spotless, Trendsetter, Fully Loaded, Welcoming Committee and Phoenix). Each is a hand-designed emblem; everything you'd already earned was unlocked for you automatically — quietly, with no wall of notifications. See it all in your portal's trophy case.
+- **📈 Rising & Buzzing stats** in your portal — members gained in the last 30 days, and your peak activity in the period.
+
+### Changed
+
+- _Achievements got a glow-up:_ the emblems are now tiered hex rank-badges (bronze → silver → gold → diamond), and your server's best in each category sits right in your portal header.
+
+
+</details>
+
+<details class="doc-sec" markdown="1">
 <summary>v5.6.31 — Share your server + milestone badges, in your portal</summary>
 
 
