@@ -30,6 +30,31 @@ if [ -z "${ANTHROPIC_API_KEY:-}" ] && [ -n "${OMP_ANTHROPIC_API_KEY:-}" ]; then
   export ANTHROPIC_API_KEY="$OMP_ANTHROPIC_API_KEY"
 fi
 
+# ── Containment: deny omp any path off the box ───────────────────────────────
+# omp is granted `bash`, so its "no ssh/github/web" boundary cannot rely on the
+# tool allow-list alone — a bash-capable agent could call `ssh` / `git push`
+# directly. Run omp under a scrubbed, throwaway HOME that carries NO SSH
+# credentials and a neutered git-over-ssh, so even a deliberate attempt has no
+# key to reach prod (e.g. the `hetzner_bot` key the env may drop in the real
+# ~/.ssh). Containment then holds regardless of the network policy — it no longer
+# depends on port 22 being firewalled. The Director still owns everything that
+# crosses the boundary (push, PR, merge).
+_omp_git_name="$(git config --get user.name 2>/dev/null || echo oh-my-pi)"
+_omp_git_email="$(git config --get user.email 2>/dev/null || echo noreply@anthropic.com)"
+OMP_HOME="$(mktemp -d)"
+trap 'rm -rf "$OMP_HOME"' EXIT
+export HOME="$OMP_HOME"
+# Minimal git identity so omp can still commit locally (its expected outcome),
+# without inheriting any credential helper / token / url-rewrite from the real
+# home that could let a commit reach a remote.
+git config --global user.name  "$_omp_git_name"  >/dev/null
+git config --global user.email "$_omp_git_email" >/dev/null
+git config --global commit.gpgsign false         >/dev/null
+# No SSH identity, no agent, strict host checking: both git-over-ssh and a raw
+# `ssh` have nothing to authenticate with.
+export GIT_SSH_COMMAND='ssh -o IdentitiesOnly=yes -o IdentityFile=/dev/null -o IdentityAgent=none -o StrictHostKeyChecking=yes'
+unset SSH_AUTH_SOCK
+
 # Repo root, so omp is scoped correctly no matter where this is invoked from.
 REPO_ROOT="$(git rev-parse --show-toplevel 2>/dev/null || pwd)"
 

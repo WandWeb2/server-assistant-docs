@@ -18,8 +18,8 @@ command, so it always runs under the contract below, never ad hoc.
 
 | Tier | Who | Owns |
 | --- | --- | --- |
-| **Director** | the human + the top-level Claude session | intent, scope, the spec, crossing the box boundary (push / PR / merge), merge-safety. Operates at the director level — does not babysit omp directly. |
-| **Foreman** | a Claude **subagent** the Director spawns per build task | driving the omp loop **synchronously to completion**: hand omp the spec, run `scripts/omp-build` in the foreground and block until it returns, answer omp's questions, iterate, do the first-pass review, and report results up. Never backgrounds omp and rests. Keeps omp-wrangling out of the Director's context. **Does not cross the box** either. |
+| **Director** | the human + the top-level Claude session | intent, scope, the spec, crossing the box boundary (push / PR / merge), merge-safety. Drives omp by **backgrounding** `scripts/omp-build` (output → a log) and **stays reachable to the human** while it runs, verifying omp's commit when the run wakes it on exit. Operates at the director level — does not babysit omp directly. |
+| **Foreman** *(optional)* | a Claude **subagent** the Director may spawn when it wants omp-wrangling kept out of its own context | driving the omp loop **to completion within its single turn**: hand omp the spec, run `scripts/omp-build`, answer omp's questions, iterate, do the first-pass review, report up. A subagent gets exactly one turn and its children are reaped when it ends, so it must block to completion (or background **and** actively wait) — it must **never** `run_in_background` then rest. **Does not cross the box** either. By default the Director drives omp itself, backgrounded (rule 3). |
 | **Worker** | `omp` | implementing inside the working tree. |
 
 Both Foreman and Worker live **inside the box**. Only the Director pushes, opens
@@ -31,12 +31,15 @@ PRs, or merges.
 Director (human): a request
  └─ Director (Claude): turn it into a SPEC with explicit, testable
                        acceptance criteria (exact tests/commands that must pass)
-     └─ spawn a FOREMAN subagent, hand it the spec
-         └─ Foreman ⇄ omp: implement it  (bounded Q&A loop)
+     └─ Director: launch `scripts/omp-build` in the BACKGROUND (output → log),
+                  then return and STAY REACHABLE; the run wakes the Director
+                  on exit  (or, to isolate context, spawn a Foreman that drives
+                  omp to completion within ONE turn — never background-and-rest)
+         └─ omp: implement it inside the box  (bounded Q&A loop)
             · omp scoped to the repo, auto-approved, UNLIMITED subagents
             · local tools only — no github / ssh / browser / web
             · omp cannot push, open PRs, or merge
-         └─ Foreman: first-pass review of omp's diff; report up to Director
+         └─ on exit: VERIFY omp's commit exists (git log) before anything else
      └─ Director (Claude): push the branch + open the PR
          └─ Director: independent review vs. the user's ORIGINAL intent
                       and the acceptance criteria
@@ -62,16 +65,32 @@ These are non-negotiable. Each one cost a botched run before it was written down
    **not** re-do, re-stage, or re-commit omp's work. If you think omp "produced
    nothing," check `git log` for its commit before concluding anything — it has
    probably already committed.
-3. **The Foreman runs omp synchronously and reports once.** Invoke
-   `scripts/omp-build` in the foreground and block until it exits; never launch
-   omp in the background (e.g. via a Monitor / `run_in_background`) and end the
-   turn. Spawn the Foreman subagent **synchronously** so it returns one complete
-   report. A Foreman that backgrounds omp and goes to rest has not done its job.
-4. **After omp returns, the Director's whole job is verify-and-merge.** Review
+3. **Drive omp without freezing the Director — background it, stay reachable.**
+   The Director (the top-level session) launches `scripts/omp-build` **in the
+   background with its output redirected to a log file**, then returns at once and
+   stays free to talk to the human. The background run wakes the Director when it
+   exits; only then does it verify and review. Redirecting omp's chatter to a log
+   is what keeps the Director's context clean — the job the Foreman used to do —
+   *without* making the Director block. Never run omp so it freezes the Director
+   for the whole build: a long run can outlast the foreground command ceiling, and
+   a blocked Director can't answer the human.
+4. **Whoever launches omp must not end their turn until omp's commit exists.** A
+   subagent gets exactly **one turn**, and its child processes are reaped when it
+   ends — so a Foreman must run omp to completion *within* that turn (foreground-
+   block, or background **and actively wait**, e.g. a Monitor until-loop) and may
+   **never** `run_in_background` and then rest: it will never receive the
+   completion event, and its omp child dies uncommitted. Only the top-level
+   session can safely background a job and be woken later — which is why driving
+   omp from the Director (rule 3) is the default and a Foreman is the exception.
+5. **Verify before declaring done.** Never conclude on a status message ("omp is
+   working autonomously…"). Check `git log` shows a **new omp commit** and
+   `git status` is clean. A clean tree with an unchanged HEAD means omp produced
+   **nothing** — re-drive it; do not report success.
+6. **After omp returns, the Director's whole job is verify-and-merge.** Review
    the committed diff against the original intent and the acceptance criteria,
    run the tests, then push → PR → merge. That's it — don't babysit omp and don't
    rebuild what it already built.
-5. **Watch GitHub; don't poll or interrupt.** Drive on PR events via the
+7. **Watch GitHub; don't poll or interrupt.** Drive on PR events via the
    subscription (CI failures, review comments). Don't busy-poll or sit
    interrupting things while waiting.
 
@@ -106,20 +125,38 @@ These are non-negotiable. Each one cost a botched run before it was written down
 Enforced structurally, not by trust:
 
 1. `omp` is launched (via `scripts/omp-build`) with a local-only `--tools`
-   whitelist — no `github`, `ssh`, `browser`, or `web_search`.
-2. This environment has no `gh` CLI and `omp` is given no push credentials, so
+   whitelist — no dedicated `github`, `ssh`, `browser`, or `web_search` tool.
+2. That whitelist *does* include `bash`, a superset that could otherwise shell
+   out to `ssh` / `git push` / `curl` — so `scripts/omp-build` additionally runs
+   omp under a **scrubbed, throwaway `HOME`** with no SSH credentials and a
+   neutered git-over-ssh. Even a deliberate `bash` attempt has no key to reach
+   prod, so containment holds **regardless of the network policy** (it does not
+   depend on port 22 being firewalled).
+3. This environment has no `gh` CLI and `omp` is given no push credentials, so
    it *cannot* reach GitHub even if it tried.
-3. `omp` runs with `--no-rules --no-extensions`, so it does not ingest this
+4. `omp` runs with `--no-rules --no-extensions`, so it does not ingest this
    repo's `CLAUDE.md` (including the auto-ship authorization) and cannot act on
-   it. Its instructions come only from the spec the Foreman hands it.
+   it. Its instructions come only from the spec the Director (or Foreman) hands it.
 
 ## Invocation
 
-The Foreman invokes `omp` only through the wrapper, never raw:
+The Director (or, optionally, a Foreman) invokes `omp` only through the wrapper,
+never raw:
 
 ```sh
 scripts/omp-build "<spec with acceptance criteria>"
 scripts/omp-build @spec.md
+scripts/omp-build < spec.md          # spec on stdin (most robust for long specs)
+```
+
+**Director default — background it and stay reachable** (rule 3). Run the wrapper
+through the background command runner with its output redirected to a log, so
+omp's chatter never lands in the Director's context and the Director is free to
+keep talking to the human; the run wakes the Director on exit, who then verifies
+the commit (rule 5) and reviews:
+
+```sh
+scripts/omp-build < spec.md > /tmp/omp-run.log 2>&1   # launched in the background
 ```
 
 `scripts/omp-build` bakes in: `--cwd <repo>`, the local-only tool set,

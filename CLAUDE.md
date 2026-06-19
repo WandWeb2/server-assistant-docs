@@ -25,36 +25,50 @@ change — never force-push.
 
 _To revoke this, delete this section._
 
-## Multi-agent build pipeline — Claude orchestrates, omp implements
+## Build pipeline — Director orchestrates, omp implements (omp is default-on for builds)
 
-For substantial implementation work this repo uses a **three-tier** model: the
-**Director** (the human + you) sets intent and guards; a **Foreman** (a Claude
-subagent you spawn) manages the worker; the **Worker** (`omp`, the oh-my-pi
-coding agent) implements. You and the human operate at the director level — you
-do not babysit `omp` directly. Treat `omp` as a **capable greenhorn**: fast, but
-new to this project and in need of onboarding. Full operating model and
-rationale: [`OMP.md`](OMP.md).
+For substantial implementation work this repo uses **omp** (the oh-my-pi coding
+agent) as the implementer **by default**. You — with the human — are the
+**Director**: you set intent, guard the boundary, review, and ship. Treat `omp`
+as a **capable greenhorn**: fast and cheap, contained to the local working tree,
+and it **learns the house rules from the committed `.omp/skills/sa-*` set it
+loads on every run**. Full operating model and rationale: [`OMP.md`](OMP.md).
 
-The short version:
+Two standing principles — the Director session is the expensive one, so protect it:
 
-1. **Turn the user's request into a spec** with explicit, testable acceptance
+- **Read once, don't re-derive.** The durable lessons live in this `CLAUDE.md`
+  and the `.omp/skills/sa-*` skills (omp loads them; you read them). Don't burn
+  Director tokens re-learning what's already written — and when you learn
+  something durable, write it back into a skill so it never has to be learned
+  again.
+- **Keep the Director free.** Default to driving omp **backgrounded** so you stay
+  interactive with the human on the fly, and delegate research to subagents
+  rather than reading large files into the Director context.
+
+The loop:
+
+1. **Spec it.** Turn the request into a spec with explicit, testable acceptance
    criteria (the exact tests/commands that must pass) — generous enough for a
    greenhorn to follow.
-2. **Spawn a Foreman subagent to run the omp loop.** The Foreman invokes
-   `scripts/omp-build "<spec>"`, answers omp's questions, iterates in a bounded
-   Q&A loop, and does the first-pass review. It drives omp **synchronously to
-   completion** (runs in the foreground and blocks until omp returns) — it never
-   backgrounds omp and rests. `omp` runs autonomously but is contained to the
-   local working tree (auto-approved, unlimited subagents, but **no**
-   github/ssh/browser/web and **no** push/PR/merge). The Foreman does not cross
-   the boundary either. **Never interrupt omp** — don't kill it or touch the
-   working tree / git while it runs; it commits its own work when done.
-3. **You cross the boundary, never the Foreman or `omp`.** You push the branch
-   and open the PR; `omp` only commits locally — that local commit is the
-   expected successful outcome (check `git log` for it before concluding omp
-   "did nothing"). Your job is to verify it and merge, not to redo it.
-4. **Review independently** — the omp-authored diff against the user's original
-   intent and the acceptance criteria.
+2. **Drive omp — backgrounded by default.** You (the top-level session) run
+   `scripts/omp-build` in the **background** with output to a log, then return at
+   once and stay reachable. The run wakes you on exit; **verify omp's commit
+   landed** (`git log`) before anything else — an unchanged HEAD with a clean tree
+   means omp produced nothing, so re-drive it. `omp` runs autonomously, contained
+   to the working tree (auto-approved, unlimited subagents) with **no**
+   boundary-crossing tools (no github/ssh/web, no push/PR/merge); `omp-build`
+   runs it under a scrubbed HOME so containment can't be defeated through its
+   `bash` tool. *Optional:* spawn a Foreman subagent to keep omp's chatter out of
+   your context — but a subagent gets **one turn** and its child is reaped when it
+   ends, so it must drive omp to completion within that turn and must **never**
+   `run_in_background` then rest. **Never interrupt omp** — don't kill it or touch
+   the working tree / git while it runs; it commits its own work when done.
+3. **You cross the boundary, never `omp`.** You push the branch and open the PR;
+   `omp` only commits locally — that local commit is the expected successful
+   outcome (check `git log` before concluding omp "did nothing"). Verify and
+   merge, don't redo.
+4. **Review independently** — the omp-authored diff against the original intent
+   and the acceptance criteria.
 5. **Merge = auto-ship guardrails + your validation.** The auto-ship
    authorization above still applies, but for any `omp`-authored change your
    independent review is an additional hard gate: squash-merge only when CI is
