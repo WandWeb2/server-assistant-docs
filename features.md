@@ -53,7 +53,7 @@ Each feature area pairs what you get **free** (the <span style="color:#3cc1f0;fo
 }
 
 /* Premium highlight hero — full-width, above the comparison grid. */
-.prem-hero { margin: 1.4rem 0 1rem; border-radius: 16px; padding: 1.1rem 1.15rem 1.2rem; background: linear-gradient(135deg, rgba(245,196,34,0.16), rgba(245,196,34,0.06) 60%, rgba(20,25,39,0.30)); border: 1px solid rgba(245,196,34,0.42); box-shadow: inset 0 0 0 1px rgba(255,221,128,0.08), 0 10px 30px rgba(90,70,10,0.25); }
+.prem-hero { margin: 1.4rem 0 1rem; border-radius: 16px; padding: .6rem 1.15rem 1.1rem; background: linear-gradient(135deg, rgba(245,196,34,0.16), rgba(245,196,34,0.06) 60%, rgba(20,25,39,0.30)); border: 1px solid rgba(245,196,34,0.42); box-shadow: inset 0 0 0 1px rgba(255,221,128,0.08), 0 10px 30px rgba(90,70,10,0.25); }
 .prem-hero-head { text-align: center; margin-bottom: .9rem; }
 .prem-hero-head h2 { margin: 0 0 .2rem; font-size: 1.4rem; color: var(--ink); border: 0; padding: 0; }
 .prem-hero-head p { margin: 0 auto; max-width: 46rem; color: var(--ink-soft); font-size: .9rem; }
