@@ -109,9 +109,15 @@ image: /assets/banner.jpeg
 </div>
 
 <style>
-.partners-band { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.8rem; margin: 1.4rem 0; }
-.partners-band .partners-band-title { flex: none; margin: 0; padding: 0; line-height: 1.2; font-size: .8rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-soft); white-space: nowrap; }
-.partners-logos { flex: 1 1 0; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 1.4rem 2.4rem; }
+/* 3-column grid: label pinned left, logos in the centre column flanked by
+   equal 1fr gutters so they centre against the full content width (= page
+   centre), not just the space left over after the label. */
+.partners-band { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; column-gap: 1.8rem; margin: 1.4rem 0; }
+.partners-band .partners-band-title { margin: 0; padding: 0; line-height: 1.2; font-size: .8rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-soft); white-space: nowrap; }
+.partners-logos { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 1.4rem 2.4rem; }
+@media (max-width: 600px) {
+  .partners-band { grid-template-columns: 1fr; row-gap: .9rem; justify-items: center; }
+}
 .partner-logo-link { position: relative; display: inline-flex; align-items: center; justify-content: center; transition: transform .15s ease; }
 .partner-logo-link img { height: 72px; width: auto; box-shadow: none; border-radius: 18px; opacity: .9; transition: opacity .15s ease; }
 .partner-logo-link:hover { transform: translateY(-3px); }
