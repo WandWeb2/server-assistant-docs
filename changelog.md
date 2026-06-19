@@ -35,6 +35,15 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 </style>
 
 <details class="doc-sec" markdown="1" open>
+<summary>v5.6.38 — Asking the bot to post a message now reliably sends it</summary>
+
+
+When you told the bot in plain language to post something — e.g. "say hello in the lounge" — it could acknowledge the request without the message actually going out, or post its own paraphrase instead of your words, sometimes in the wrong channel. The bot now sends exactly what you asked, finds the channel by name (#lounge, "lounge", or "the lounge channel" all work), and tells you if it can't find the channel or has nothing to send.
+
+
+</details>
+
+<details class="doc-sec" markdown="1">
 <summary>v5.6.36 — Stability & reliability</summary>
 
 
