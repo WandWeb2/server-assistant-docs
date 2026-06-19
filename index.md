@@ -122,13 +122,13 @@ image: /assets/banner.jpeg
 .partner-logo-link img { height: 72px; width: auto; box-shadow: none; border-radius: 18px; opacity: .9; transition: opacity .15s ease; }
 .partner-logo-link:hover { transform: translateY(-3px); }
 .partner-logo-link:hover img { opacity: 1; }
-/* Name on hover */
+/* Name on hover — centred over the logo */
 .partner-logo-link::after {
   content: attr(data-name);
   position: absolute;
-  top: calc(100% + 9px);
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%) translateY(4px);
+  transform: translate(-50%, -50%) scale(.96);
   background: var(--glass-strong);
   border: 1px solid var(--glass-border);
   color: var(--ink);
@@ -137,7 +137,7 @@ image: /assets/banner.jpeg
   opacity: 0; pointer-events: none;
   transition: opacity .15s ease, transform .15s ease;
 }
-.partner-logo-link:hover::after { opacity: 1; transform: translateX(-50%) translateY(0); }
+.partner-logo-link:hover::after { opacity: 1; transform: translate(-50%, -50%) scale(1); }
 @media (prefers-reduced-motion: reduce) {
   .partner-logo-link, .partner-logo-link::after { transition: none; }
 }
