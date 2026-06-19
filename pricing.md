@@ -85,7 +85,7 @@ description: Server Assistant pricing — generous free tier, $7/mo USD Premium 
       <li>Everything in BYOK, plus:</li>
       <li>⌨️ Custom slash commands</li>
       <li>💾 Server backup &amp; restore</li>
-      <li>🎨 White-label branding</li>
+      <li>🎨 White-label branding — <strong>completely rebrand the bot as your own</strong></li>
       <li>750K tokens / month (our key)</li>
       <li>Trial-then-bill — see below</li>
     </ul>

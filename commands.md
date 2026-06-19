@@ -271,7 +271,7 @@ Type `/` anywhere to see autocomplete:
 | `/translate <text> [language]` | *(Premium)* Translate text into another language |
 | `/mediate` | *(Premium)* AI-facilitated mediation between two members (wizard) |
 | `/backup` | *(Premium)* Snapshot & restore your server's structure (wizard) |
-| `/brand` | *(Premium)* White-label the bot — nickname + embed branding (wizard) |
+| `/brand` | *(Premium)* **Completely rebrand the bot** as your own — nickname, name/icon/colour on every embed (wizard) |
 | `/imagine <prompt>` *(alias `/img`)* | AI image generation |
 | `/info <user>` | User profile (incl. Threat Score if enabled) |
 | `/warn <user> <reason>` | Issue a warning |
