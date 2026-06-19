@@ -1087,6 +1087,9 @@ What ships is what gets requested most clearly. Vague *"add more features"* feed
   // poll is open / it has closed. Drives the live "closes in 1d 22h" countdown,
   // kept current by the per-second ticker below between 60s data refreshes.
   var pollClosesAt = null;
+  // True once the active poll has closed — used to drop the "next update in Ns"
+  // refresh ticker, which is meaningless once results stop changing.
+  var pollClosed = false;
 
   function esc(s) {
     return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
@@ -1200,6 +1203,7 @@ What ships is what gets requested most clearly. Vague *"add more features"* feed
     // Remember this poll's close time so the 1s ticker can keep the countdown
     // live between the (60s) data refreshes.
     pollClosesAt = (!closed && p.closes_at) ? p.closes_at : null;
+    pollClosed = closed;
     var meta = box.querySelector("#lp-meta");
     if (meta) {
       // The vote/server counts come from the data refresh; the close countdown
@@ -1335,6 +1339,9 @@ What ships is what gets requested most clearly. Vague *"add more features"* feed
     tickCloseCountdown();
     var el = document.getElementById("lp-refresh");
     if (!el) return;
+    // Once voting has closed the results are final — drop the refresh ticker.
+    if (pollClosed) { el.textContent = ""; el.style.display = "none"; return; }
+    el.style.display = "";
     var s = Math.max(0, Math.ceil((nextRefreshAt - Date.now()) / 1000));
     el.textContent = "↻ live results — next update in " + s + "s";
   }, 1000);
