@@ -99,7 +99,7 @@ image: /assets/banner.jpeg
 ---
 
 <div class="partners-band">
-  <h2 class="partners-band-title">Our Partners</h2>
+  <h2 class="partners-band-title">Trusted by</h2>
   <div class="partners-logos">
     <a class="partner-logo-link" href="https://discordforge.org" target="_blank" rel="noopener" aria-label="Discord Forge" data-name="Discord Forge">
       <img src="{{ '/assets/partners/discordforge-icon.svg' | relative_url }}" alt="Discord Forge" width="84" height="84" loading="lazy">
@@ -109,9 +109,9 @@ image: /assets/banner.jpeg
 </div>
 
 <style>
-.partners-band { text-align: center; margin: 1.4rem 0; }
+.partners-band { text-align: left; margin: 1.4rem 0; }
 .partners-band-title { font-size: .8rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-soft); margin: 0 0 1.1rem; }
-.partners-logos { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 1.4rem 2.4rem; }
+.partners-logos { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-start; gap: 1.4rem 2.4rem; }
 .partner-logo-link { position: relative; display: inline-flex; align-items: center; justify-content: center; transition: transform .15s ease; }
 .partner-logo-link img { height: 72px; width: auto; box-shadow: none; border-radius: 18px; opacity: .9; transition: opacity .15s ease; }
 .partner-logo-link:hover { transform: translateY(-3px); }
