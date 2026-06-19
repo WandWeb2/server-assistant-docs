@@ -21,5 +21,5 @@ permalinks (`/:title/`).
 - **Build**: if a `Gemfile` is present, validate with `bundle exec jekyll
   build`. Keep internal links relative and working; don't hardcode the
   production domain.
-- **Don't publish noise**: non-page files (`OMP.md`, `scripts/`, `.omp/`) are
+- **Don't publish noise**: non-page files (`scripts/`, `.omp/`) are
   excluded in `_config.yml` — keep them excluded so they never render as pages.

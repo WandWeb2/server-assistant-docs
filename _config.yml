@@ -75,6 +75,5 @@ exclude:
   - Gemfile.lock
   - .gitignore
   - CLAUDE.md
-  - OMP.md
   - scripts/
   - .omp/
