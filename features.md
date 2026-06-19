@@ -74,7 +74,7 @@ Each feature area pairs what you get **free** (the <span style="color:#3cc1f0;fo
 <div class="prem-hero" markdown="0">
   <div class="prem-hero-head">
     <h2>Unlock the full toolkit</h2>
-    <p>Three of the upgrades teams love most — plus 750K AI tokens a month.</p>
+    <p>Get these three popular Premium features, 750K AI tokens a month, plus everything else listed below.</p>
   </div>
   <div class="prem-hero-grid">
     <div class="ph-card">
