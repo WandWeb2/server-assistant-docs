@@ -51,7 +51,54 @@ Each feature area pairs what you get **free** (the <span style="color:#3cc1f0;fo
   /* Empty tier cells would otherwise render their coloured border as a stray line. */
   .col.empty { display: none; }
 }
+
+/* Premium highlight hero — full-width, above the comparison grid. */
+.prem-hero { margin: 1.4rem 0 1rem; border-radius: 16px; padding: 1.1rem 1.15rem 1.2rem; background: linear-gradient(135deg, rgba(245,196,34,0.16), rgba(245,196,34,0.06) 60%, rgba(20,25,39,0.30)); border: 1px solid rgba(245,196,34,0.42); box-shadow: inset 0 0 0 1px rgba(255,221,128,0.08), 0 10px 30px rgba(90,70,10,0.25); }
+.prem-hero-head { text-align: center; margin-bottom: .9rem; }
+.ph-badge { display: inline-block; font-size: .62rem; font-weight: 800; letter-spacing: .09em; text-transform: uppercase; color: #2a2003; background: linear-gradient(135deg, #ffe9a6, #f5c422); padding: .15rem .5rem; border-radius: 999px; }
+.prem-hero-head h2 { margin: .45rem 0 .2rem; font-size: 1.4rem; color: var(--ink); border: 0; padding: 0; }
+.prem-hero-head p { margin: 0 auto; max-width: 46rem; color: var(--ink-soft); font-size: .9rem; }
+.prem-hero-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: .7rem; }
+.ph-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(245,196,34,0.28); border-radius: 12px; padding: .8rem .85rem; }
+.ph-card .ph-ico { font-size: 1.5rem; line-height: 1; }
+.ph-card h3 { margin: .4rem 0 .25rem; font-size: 1rem; color: var(--ink); border: 0; }
+.ph-card p { margin: 0; color: var(--ink-soft); font-size: .85rem; line-height: 1.5; }
+.prem-hero-cta { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: .6rem; margin-top: 1rem; }
+.ph-cta { display: inline-block; font-weight: 800; font-size: .92rem; color: #2a2003; background: linear-gradient(135deg, #ffe9a6, #f5c422); padding: .5rem .95rem; border-radius: 10px; text-decoration: none; }
+.ph-cta:hover { filter: brightness(1.05); text-decoration: none; }
+.ph-how { color: var(--ink-soft); font-size: .85rem; }
+.ph-how code { color: var(--accent); }
+@media (max-width: 760px) { .prem-hero-grid { grid-template-columns: 1fr; } }
 </style>
+
+<div class="prem-hero" markdown="0">
+  <div class="prem-hero-head">
+    <span class="ph-badge">✨ Premium</span>
+    <h2>Unlock the full toolkit</h2>
+    <p>Three of the upgrades teams love most — plus 750K AI tokens a month. Billing only starts when your free trial runs out.</p>
+  </div>
+  <div class="prem-hero-grid">
+    <div class="ph-card">
+      <div class="ph-ico">💬</div>
+      <h3>SAi assistant</h3>
+      <p>Your AI co-pilot — it reads your server's setup and tunes it for you, right from the web portal.</p>
+    </div>
+    <div class="ph-card">
+      <div class="ph-ico">🎨</div>
+      <h3>White-label branding</h3>
+      <p>Completely rebrand the bot as your own — your name, icon and colour on every member-facing embed.</p>
+    </div>
+    <div class="ph-card">
+      <div class="ph-ico">🤖</div>
+      <h3>AutoMod AI second-opinion</h3>
+      <p>Borderline filter hits get an AI confidence check first, so fewer good messages get caught and staff review only the close calls.</p>
+    </div>
+  </div>
+  <div class="prem-hero-cta">
+    <a class="ph-cta" href="{{ site.url }}{{ site.baseurl }}/pricing/">See plans &amp; pricing</a>
+    <span class="ph-how">or run <code>/premium</code> in your server to start your free trial</span>
+  </div>
+</div>
 
 <p style="font-size:.82rem;color:var(--ink-soft);margin:.2rem 0 0;">Trial features use your AI tokens (free trial included); Premium needs a subscription.</p>
 
