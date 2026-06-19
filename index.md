@@ -101,7 +101,7 @@ image: /assets/banner.jpeg
 <div class="partners-band">
   <h2 class="partners-band-title">Trusted by</h2>
   <div class="partners-logos">
-    <a class="partner-logo-link" href="https://discordforge.org" target="_blank" rel="noopener" aria-label="Discord Forge" data-name="Discord Forge">
+    <a class="partner-logo-link" href="{{ site.url }}{{ site.baseurl }}/partnerships/" aria-label="Discord Forge" data-name="Discord Forge">
       <img src="{{ '/assets/partners/discordforge-icon.svg' | relative_url }}" alt="Discord Forge" width="84" height="84" loading="lazy">
     </a>
     <!-- Future partners: add another <a class="partner-logo-link" …> block here. -->
