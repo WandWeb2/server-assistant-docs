@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 84" role="img" aria-label="DiscordForge">
+  <defs>
+    <linearGradient id="df-badge" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#5865f2"/>
+      <stop offset="1" stop-color="#3b45c4"/>
+    </linearGradient>
+    <linearGradient id="df-ember" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffb454"/>
+      <stop offset="1" stop-color="#f5731f"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Emblem: blurple badge + forge anvil + ember spark -->
+  <rect x="6" y="10" width="64" height="64" rx="16" fill="url(#df-badge)"/>
+  <!-- anvil -->
+  <path d="M24 36 h28 v6 h-6 c0 5 -4 8 -8 8 v5 h6 v4 H26 v-4 h6 v-5 c-4 0 -8 -3 -8 -8 h-2 z"
+        fill="#eef0ff" opacity="0.96"/>
+  <!-- ember spark -->
+  <path d="M52 22 l3 6 6 3 -6 3 -3 6 -3 -6 -6 -3 6 -3 z" fill="url(#df-ember)"/>
+
+  <!-- Wordmark -->
+  <text x="86" y="52" font-family="'Segoe UI',Roboto,Helvetica,Arial,sans-serif"
+        font-size="30" font-weight="700" letter-spacing="-0.5">
+    <tspan fill="#e9ecf7">Discord</tspan><tspan fill="#f5901f">Forge</tspan>
+  </text>
+</svg>
