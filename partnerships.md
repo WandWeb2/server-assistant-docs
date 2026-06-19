@@ -8,7 +8,7 @@ image: /assets/banner.jpeg
 
 <div align="center">
   <h1>Partners</h1>
-  <p class="section-lead">We keep this list short on purpose. A partner is someone we'd happily point our own community toward — tools and communities that share our bar for quality, respect your privacy, and genuinely make Discord moderation better.</p>
+  <p class="section-lead">We keep this list short on purpose. A partner is someone we'd happily point our own community toward — tools and communities that share our bar for quality, respect your privacy, and genuinely strive to make Discord better.</p>
 </div>
 
 <style>
