@@ -64,10 +64,8 @@ Each feature area pairs what you get **free** (the <span style="color:#3cc1f0;fo
 .ph-card h3 { margin: .4rem 0 .25rem; font-size: 1rem; color: var(--ink); border: 0; }
 .ph-card p { margin: 0; color: var(--ink-soft); font-size: .85rem; line-height: 1.5; }
 .prem-hero-cta { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: .6rem; margin-top: 1rem; }
-.ph-cta { display: inline-block; font-weight: 800; font-size: .92rem; color: #2a2003; background: linear-gradient(135deg, #ffe9a6, #f5c422); padding: .5rem .95rem; border-radius: 10px; text-decoration: none; }
-.ph-cta:hover { filter: brightness(1.05); text-decoration: none; }
-.ph-how { color: var(--ink-soft); font-size: .85rem; }
-.ph-how code { color: var(--accent); }
+.ph-how { color: var(--ink); font-size: .98rem; font-weight: 600; }
+.ph-how code { color: #2a2003; background: linear-gradient(135deg, #ffe9a6, #f5c422); padding: .12rem .45rem; border-radius: 7px; font-weight: 800; font-size: .95em; }
 @media (max-width: 760px) { .prem-hero-grid { grid-template-columns: 1fr; } }
 </style>
 
@@ -75,7 +73,7 @@ Each feature area pairs what you get **free** (the <span style="color:#3cc1f0;fo
   <div class="prem-hero-head">
     <span class="ph-badge">✨ Premium</span>
     <h2>Unlock the full toolkit</h2>
-    <p>Three of the upgrades teams love most — plus 750K AI tokens a month. Billing only starts when your free trial runs out.</p>
+    <p>Three of the upgrades teams love most — plus 750K AI tokens a month.</p>
   </div>
   <div class="prem-hero-grid">
     <div class="ph-card">
@@ -95,8 +93,7 @@ Each feature area pairs what you get **free** (the <span style="color:#3cc1f0;fo
     </div>
   </div>
   <div class="prem-hero-cta">
-    <a class="ph-cta" href="{{ site.url }}{{ site.baseurl }}/pricing/">See plans &amp; pricing</a>
-    <span class="ph-how">or run <code>/premium</code> in your server to start your free trial</span>
+    <span class="ph-how">Ready to upgrade? Run <code>/premium</code> in your server.</span>
   </div>
 </div>
 
