@@ -99,8 +99,8 @@ image: /assets/banner.jpeg
       <img src="{{ '/assets/partners/discordforge.svg' | relative_url }}" alt="DiscordForge logo" width="300" height="70" loading="lazy">
     </div>
     <h3>DiscordForge</h3>
-    <p class="partner-tag">Community &amp; tooling partner</p>
-    <p class="partner-blurb">DiscordForge builds resources and tooling for people who run Discord communities — the same audience we look after. We're partnering to share what we each do best: their guidance and our moderation suite, pointed at the same goal of healthier, better-run servers.</p>
+    <p class="partner-tag">Bot &amp; server listing site</p>
+    <p class="partner-blurb">DiscordForge is a bot and server listing site built on quality by a small dev team we work closely with. We're aiming at the same goals — helping people find great tools and run healthier communities — so we point our audiences toward each other's best work.</p>
     <a class="partner-link" href="https://discordforge.org" target="_blank" rel="noopener">Visit DiscordForge →</a>
   </div>
 
