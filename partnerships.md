@@ -97,16 +97,17 @@ image: /assets/banner.jpeg
 .partner-cover {
   position: absolute; inset: 0; z-index: 2;
   display: flex; align-items: center; justify-content: center;
-  background: rgba(20,15,15,0.42);
-  backdrop-filter: blur(7px) saturate(120%);
-  -webkit-backdrop-filter: blur(7px) saturate(120%);
+  background: rgba(28,22,22,0.28);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
   border-radius: inherit;
 }
 .partner-cover span {
   font-size: .9rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
   color: var(--fg-0);
-  padding: .45rem .95rem; border-radius: 999px;
-  background: rgba(255,255,255,0.08); border: 1px solid var(--glass-border);
+  padding: .5rem 1rem; border-radius: 999px;
+  background: #1b1514; border: 1px solid var(--border);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.42);
 }
 </style>
 

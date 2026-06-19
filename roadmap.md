@@ -1128,6 +1128,12 @@ What ships is what gets requested most clearly. Vague *"add more features"* feed
   }
 
   function renderHero(p, t, total) {
+    // A poll is effectively CLOSED once its close time passes, even if the
+    // backend still reports status:"active" (the operator finalises the result
+    // later). Derive it from the timestamp so the page auto-closes on schedule
+    // rather than waiting on the backend to flip the flag.
+    var closed = (p.status !== "active") ||
+                 (!!p.closes_at && Date.now() >= new Date(p.closes_at).getTime());
     // Build the row skeleton once; afterwards only update widths/labels so
     // the bars visibly grow/shrink instead of repainting.
     if (box.getAttribute("data-built") !== String(p.answers.length)) {
@@ -1143,6 +1149,9 @@ What ships is what gets requested most clearly. Vague *"add more features"* feed
                       '<div class="lp-refresh" id="lp-refresh"></div>';
       box.setAttribute("data-built", String(p.answers.length));
     }
+    // Title drops the "Live" once voting has closed.
+    var qEl = box.querySelector(".lp-q");
+    if (qEl) qEl.innerHTML = (closed ? "🗳️ Community vote — " : "🗳️ Live community vote — ") + esc(p.question);
     // Bar width is RELATIVE to the leading option (leader = full bar) so the
     // gaps are visible even when every option sits around 10%. The label still
     // shows the true share of all votes.
@@ -1190,7 +1199,7 @@ What ships is what gets requested most clearly. Vague *"add more features"* feed
     });
     // Remember this poll's close time so the 1s ticker can keep the countdown
     // live between the (60s) data refreshes.
-    pollClosesAt = (p.status === "active" && p.closes_at) ? p.closes_at : null;
+    pollClosesAt = (!closed && p.closes_at) ? p.closes_at : null;
     var meta = box.querySelector("#lp-meta");
     if (meta) {
       // The vote/server counts come from the data refresh; the close countdown
@@ -1198,9 +1207,9 @@ What ships is what gets requested most clearly. Vague *"add more features"* feed
       meta.innerHTML =
         esc(total + " votes · " + (p.servers || 0) + " server" + (p.servers === 1 ? "" : "s")) +
         '<span id="lp-closes"></span>' +
-        (p.status === "active"
-          ? " · 🟢 live — vote from your server's staff chat; every staff member has a voice"
-          : " · ✅ closed — thank you!");
+        (closed
+          ? " · ✅ closed — thank you!"
+          : " · 🟢 live — vote from your server's staff chat; every staff member has a voice");
       tickCloseCountdown();
     }
   }
