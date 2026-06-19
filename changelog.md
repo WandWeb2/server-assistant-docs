@@ -35,6 +35,15 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 </style>
 
 <details class="doc-sec" markdown="1" open>
+<summary>v5.6.40 — AI features keep working during maintenance</summary>
+
+
+While our main AI is being upgraded, the AI-powered features on the shared plan — **`/faq`**, **Translate**, and **Message Report** — now switch to a fast temporary backup model instead of pausing, so they keep working. Replies from the backup carry a small note so you know it's temporary, and Server Assistant switches back to the main model automatically once it's restored. Your AI allowance and feature limits are unchanged.
+
+
+</details>
+
+<details class="doc-sec" markdown="1">
 <summary>v5.6.38 — Asking the bot to post a message now reliably sends it</summary>
 
 
