@@ -90,11 +90,29 @@ image: /assets/banner.jpeg
   border: 1px solid var(--glass-border);
 }
 .partner-cta a.contact:hover { background: rgba(255,255,255,0.14); }
+
+/* Pending partner — frosted cover with an "In talks" badge, not yet live. */
+.partner-card.pending { position: relative; overflow: hidden; }
+.partner-card.pending:hover { transform: none; box-shadow: none; border-color: var(--glass-border); }
+.partner-cover {
+  position: absolute; inset: 0; z-index: 2;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(20,15,15,0.42);
+  backdrop-filter: blur(7px) saturate(120%);
+  -webkit-backdrop-filter: blur(7px) saturate(120%);
+  border-radius: inherit;
+}
+.partner-cover span {
+  font-size: .9rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--fg-0);
+  padding: .45rem .95rem; border-radius: 999px;
+  background: rgba(255,255,255,0.08); border: 1px solid var(--glass-border);
+}
 </style>
 
 <div class="partners-grid">
 
-  <div class="partner-card">
+  <div class="partner-card pending">
     <div class="partner-logo">
       <img src="{{ '/assets/partners/discordforge.svg' | relative_url }}" alt="DiscordForge logo" width="300" height="70" loading="lazy">
     </div>
@@ -102,6 +120,7 @@ image: /assets/banner.jpeg
     <p class="partner-tag">Bot &amp; server listing site</p>
     <p class="partner-blurb">DiscordForge is a bot and server listing site built on quality by a small dev team we work closely with. We're aiming at the same goals — helping people find great tools and run healthier communities — so we point our audiences toward each other's best work.</p>
     <a class="partner-link" href="https://discordforge.org" target="_blank" rel="noopener">Visit DiscordForge →</a>
+    <div class="partner-cover" aria-hidden="true"><span>In talks</span></div>
   </div>
 
 </div>

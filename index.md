@@ -101,9 +101,12 @@ image: /assets/banner.jpeg
 <div class="partners-band">
   <h2 class="partners-band-title">Trusted by</h2>
   <div class="partners-logos">
+    {% comment %} Partnership pending approval — restore this DiscordForge logo once confirmed:
     <a class="partner-logo-link" href="{{ site.url }}{{ site.baseurl }}/partnerships/" aria-label="Discord Forge" data-name="Discord Forge">
       <img src="{{ '/assets/partners/discordforge-icon.svg' | relative_url }}" alt="Discord Forge" width="84" height="84" loading="lazy">
     </a>
+    {% endcomment %}
+    <a class="partner-placeholder" href="{{ site.url }}{{ site.baseurl }}/partnerships/" aria-label="Partners">+</a>
     <!-- Future partners: add another <a class="partner-logo-link" …> block here. -->
   </div>
 </div>
@@ -118,6 +121,9 @@ image: /assets/banner.jpeg
 @media (max-width: 600px) {
   .partners-band { grid-template-columns: 1fr; row-gap: .9rem; justify-items: center; }
 }
+/* Placeholder while no partner is confirmed — grey glass square with a + */
+.partner-placeholder { display: inline-flex; align-items: center; justify-content: center; width: 72px; height: 72px; border-radius: 18px; background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); color: var(--fg-2); font-size: 2.1rem; font-weight: 300; line-height: 1; text-decoration: none !important; transition: background .15s ease, color .15s ease, transform .15s ease; }
+.partner-placeholder:hover { background: rgba(255,255,255,0.09); color: var(--fg-0); transform: translateY(-3px); }
 .partner-logo-link { position: relative; display: inline-flex; align-items: center; justify-content: center; transition: transform .15s ease; }
 .partner-logo-link img { height: 72px; width: auto; box-shadow: none; border-radius: 18px; opacity: .9; transition: opacity .15s ease; }
 .partner-logo-link:hover { transform: translateY(-3px); }
