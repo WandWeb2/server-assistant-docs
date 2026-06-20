@@ -213,6 +213,45 @@ pip sibling); populate `_PHISHING_HOSTS`; in `run_automod` (~L8330) check the
 normalized host via set membership, **separate from** the existing ~15-entry substring
 loop; gate behind the `scams` AutoMod pack; refresh the static backstop via `@tasks.loop`.
 
+## Type-1 intelligence sources — research matrix (June 2026)
+
+Deep scout across the four signal-surfaces a Discord mod bot can act on (links,
+user accounts, text, images). **Recurring filter: commercial-use license + privacy
+(does user data leave the box) eliminate most options — live/large ≠ usable.** Clean
+winners are either local MIT/CC data or a free API with clean data-handling.
+
+**Links (malicious URLs/domains):** keep **FishFish + PhishDestroy** (already chosen —
+the only cleanly-free-for-commercial, Discord-tuned feeds). Optional *paid* malware/C2
+add-ons: **Maltiverse (Lumu)** or **Cisco Umbrella Investigate**. Avoid free tiers of
+OpenPhish (non-commercial + no-redistribute), abuse.ch URLhaus/ThreatFox (dropped CC0 →
+paid for commercial), Spamhaus DBL, VirusTotal public, AlienVault/OTX. PhishTank = only
+flatly-commercial-free but stagnant (registration closed since 2020).
+
+**User reputation: SKIP — add no third party.** No clean/broad/licensed/privacy-tolerable
+trust-score API exists: KSoft (dead), DiscordScammers (offline, no license),
+CordCat/discord.bio (PII/“likes”, sends IDs out unhashed), Discord `SPAMMER` flag
+(undocumented, buggy, "no use for bots"), Ravy (winding down + ToS forbids storage +
+plaintext ID leak). → Rely on SA's **own Threat Score**; it's also the privacy-clean choice.
+
+**Text toxicity (clearest new win):**
+- Fast local AutoMod: **LDNOOBW (CC-BY-4.0)** + **dsojevic/profanity-list (MIT, built-in
+  `exceptions` allowlist)**, matched with **word-boundary regex** (Scunthorpe defense). 100% local.
+- AI second-opinion: **OpenAI `omni-moderation-latest`** (free, 13 categories, multilingual) —
+  send only borderline/flagged messages, disclose the hop in the privacy policy. Mistral = EU alt.
+- Avoid: Perspective API (EOL 2026-12-31), HurtLex (non-commercial), HateBase (dead),
+  Detoxify (drags in torch → breaks single-file deploy).
+
+**Images:**
+- NSFW → **local NudeNet** (ONNX ~10 MB, $0, images never leave the box); offload the blocking
+  inference off the event loop. Hosted fallback: Google Vision SafeSearch / Azure Content Safety
+  (privacy-strong); **avoid AWS Rekognition default** (trains on your images unless you opt out).
+- CSAM → **do NOT build.** Discord already scans every uploaded image; a third-party doing CSAM
+  detection is a legal minefield (can't obtain the hashes, possession liability, preservation
+  duty, must not auto-delete). Flag-in-place → route to Discord/NCMEC.
+
+**Build priority:** (1) AutoMod text upgrade (local lexicons + OpenAI review), (2) NSFW NudeNet,
+(3) links as-is + finish FishFish outreach, (4) deliberately skip user-rep & CSAM.
+
 ## Status tracker
 
 Update as outreach progresses.
