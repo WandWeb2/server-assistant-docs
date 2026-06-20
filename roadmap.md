@@ -599,6 +599,8 @@ Where Server Assistant is heading. Priorities are decided by the people who run 
   <div class="band-h band-blue">🔵 Committed<span class="sub">Building regardless of votes</span></div>
   <div class="band" id="band-blue">
 
+    <details class="card"><summary>🪄 Setup &amp; settings wizard overhaul</summary><span class="desc">A top-to-bottom redesign of the setup and <code>/settings</code> wizards for a faster, clearer first run — fewer steps, smarter defaults, and plain-language explanations of what each toggle actually does. Includes a full review of every setting and feature to decide what should be <strong>standard out of the box</strong> versus <strong>opt-in</strong>, so a fresh server is well-protected by default without being buried in choices.</span></details>
+
     <details class="card"><summary>🎁 Vote &amp; review incentives</summary><span class="desc">Thank the community for steering the bot: light perks for servers that take part in the feature votes and members who leave a review on the bot directories (top.gg, DiscordForge, and friends) — think a small bonus AI-token top-up and a reviewer shout-out.</span></details>
 
   </div>
