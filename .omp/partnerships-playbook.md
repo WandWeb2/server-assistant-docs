@@ -17,8 +17,8 @@ a short list reads as curated, a long one reads as SEO spray.
 
 1. **Trust & safety / ban networks** — deepens the product (threat-score,
    alt-detection, scam filters), not just the funnel. Hardest for competitors to copy.
-2. **Discovery / listing sites** — direct installs (DiscordForge's lane). Diversify
-   but stay selective.
+2. **Discovery / listing sites** — direct installs. **DiscordForge is our anchor /
+   primary listings partner**; diversify around it but stay selective.
 3. **Complementary single-purpose bots** — cross-promotion, zero overlap.
 4. **Educators / agencies / creators** — referral pipeline to server owners.
 
@@ -38,8 +38,8 @@ Confidence: ✅ ready · 🟡 re-vet URL/entity · 🟠 lower (no canonical home
 ### 2. Discovery / listing sites — outreach Template C
 | Partner | Link | Conf. |
 |---|---|---|
-| DiscordForge | https://discordforge.org | 🤝 in talks (current — bot & server listing site) |
-| top.gg | https://top.gg | ✅ anchor listing |
+| **DiscordForge** | https://discordforge.org | 🤝 **anchor & primary listings partner** (in talks) — bot & server listing site |
+| top.gg | https://top.gg | ✅ largest reach / biggest install funnel |
 | Discord Bot List | https://discordbotlist.com | ✅ |
 | Discadia | https://discadia.com | ✅ (~2.3M visits/mo) |
 | Discords.com | https://discords.com | ✅ |
