@@ -35,6 +35,15 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 </style>
 
 <details class="doc-sec" markdown="1" open>
+<summary>v5.6.48 — AI that keeps working on every plan</summary>
+
+
+AI features now run on a **fast, free model by default for every server**, so they keep working without burning through an allowance. **Premium servers automatically use our most capable model** (Claude) for the highest-quality results, and **BYOK** servers keep using your own key. Same features everywhere — Premium just turns the quality up.
+
+
+</details>
+
+<details class="doc-sec" markdown="1">
 <summary>v5.6.47 — Sharper AutoMod AI review</summary>
 
 
