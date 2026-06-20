@@ -38,6 +38,7 @@ Confidence: ✅ ready · 🟡 re-vet URL/entity · 🟠 lower (no canonical home
 ### 2. Discovery / listing sites — outreach Template C
 | Partner | Link | Conf. |
 |---|---|---|
+| DiscordForge | https://discordforge.org | 🤝 in talks (current — bot & server listing site) |
 | top.gg | https://top.gg | ✅ anchor listing |
 | Discord Bot List | https://discordbotlist.com | ✅ |
 | Discadia | https://discadia.com | ✅ (~2.3M visits/mo) |
