@@ -7,6 +7,24 @@ page`; this file is the *who and how* of acquisition.
 
 Canonical public page: <https://wandweb2.github.io/server-assistant-docs/partnerships/>
 
+## Partner types — absorb / distribute / recommend
+
+Sort every prospect by **what the user has to do**. Weight the pipeline toward the
+first two; treat the third as the rare exception.
+
+1. **Absorb (intelligence)** — we ingest their data/API; **the user installs nothing**
+   and SA just gets better. *(FishFish, PhishDestroy, scam-links, Beemo's raid logs.)*
+   The best kind: a capability gain disguised as a partnership.
+2. **Distribute (discovery)** — mutual promotion that doesn't touch the product.
+   *(DiscordForge, listing sites.)* Safe and additive.
+3. **Recommend (a bot)** — "run both." *(Tatsu, music, giveaways.)* **Use sparingly,
+   and NEVER in our own lane (moderation/safety)** — it invites "why doesn't Server
+   Assistant just do this?" A partners page that's mostly type-3 reads as a link farm.
+
+Rule of thumb: a type-1 source is worth it only if it also passes a **value test**
+(broad enough audience, not redundant with what we already absorb, worth the runtime
+dependency). Technically-integrable ≠ worth integrating.
+
 ## Bar for a partner
 
 Per the page's own copy: *someone we'd happily point our own community toward* —
@@ -205,3 +223,4 @@ Update as outreach progresses.
 | Beemo | Trust & safety | Outreach sent (2026-06-20) | Emailed hello@beemo.gg — cross-promo + Path A defer + asked re: raid-signal feed. Awaiting reply. |
 | FishFish | Trust & safety (phishing feed) | Chosen primary — outreach sent (2026-06-20) | Emailed (admin@fishfish.gg / akac) — token request + partner mention + write perms to contribute back. Awaiting reply. Token also self-serve via `/key` if the Discord/bot is reachable. |
 | Discord-AntiScam (scam-links) | Trust & safety | Superseded → tertiary | No license + aging; FishFish chosen instead. Optional Discord-gap merge only. |
+| AntiScamBot / ScamGuard | Trust & safety | Evaluated → parked | Per-user lookup API only (api.scamguard.app, key-gated) — no bulk list; niche (art-commission scammers); redundant with FishFish. Revisit only if we target art/creator communities — then on-demand lookup in Research / Threat-Score, never a blocklist or bot-rec. |
