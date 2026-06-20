@@ -162,6 +162,39 @@ Contact **hello@beemo.gg** · small team (3) · org: github.com/beemobot.
   - **Path B — real raid-signal feed:** only if Beemo builds an endpoint on Milk.
     Needs their buy-in — this is the ask in the outreach.
 
+## Phishing-feed landscape & chosen approach (June 2026)
+
+Decided after comparing the live Discord anti-phishing sources. **Verdict: an
+API/websocket feed beats a static list — freshness is what matters for phishing
+(domains burn in hours) — and DAS scam-links drops to tertiary (no license, aging).**
+
+**Chosen architecture — layered, feeding ONE in-memory `_PHISHING_HOSTS` set,
+matched by host membership (+ parent domains), NOT substring:**
+
+1. **Primary — FishFish** (`api.fishfish.gg`, akac's project, confirmed live 2026):
+   pull `GET /domains` on startup, stay current via `wss://api.fishfish.gg/v1/stream`.
+   Discord-tuned; MIT client tooling.
+2. **MIT static backstop — PhishDestroy** (`api.destroy.tools`, MIT, no auth, ~130k+
+   curated) merged in, so no single volunteer feed going dark can blind the bot.
+3. **Bridge/alt — Sinking Yachts** (`phish.sinking.yachts`, live ~42.7k, `wss://…/feed`,
+   needs `X-Identity`) — works today but **officially deprecated → migrating to
+   FishFish**; use only if FishFish onboarding stalls.
+4. **Tertiary — DAS scam-links** (~30k, no license, last push Jan 2026) — optional
+   Discord-gap merge only.
+- **Don't use:** Spheal (dead); Discord's own (no public feed); `anti-fish.com`
+  (NXDOMAIN — real host `anti-fish.bitflow.dev` is per-message lookup only, no local set).
+
+**FishFish access (self-serve token):** join Discord **https://fishfish.gg/discord/**
+→ run **`/key`** → main token → exchange for hourly session tokens via
+`POST /users/@me/tokens`. Contact **admin@fishfish.gg**; maintainer **akac**
+(akacdev@proton.me · X @cz_aka — also runs DAS scam-links). Writes (`POST /domains`,
+to contribute detected domains back) need granted permissions — that's the outreach ask.
+
+**Integration in `bot.py`:** inline ~30-line REST+WS client (single-file deploy — no
+pip sibling); populate `_PHISHING_HOSTS`; in `run_automod` (~L8330) check the
+normalized host via set membership, **separate from** the existing ~15-entry substring
+loop; gate behind the `scams` AutoMod pack; refresh the static backstop via `@tasks.loop`.
+
 ## Status tracker
 
 Update as outreach progresses.
@@ -170,3 +203,5 @@ Update as outreach progresses.
 |---|---|---|---|
 | DiscordForge | Listing | In talks | Live on site as pending (`+` placeholder + "In talks" cover) |
 | Beemo | Trust & safety | Outreach sent (2026-06-20) | Emailed hello@beemo.gg — cross-promo + Path A defer + asked re: raid-signal feed. Awaiting reply. |
+| FishFish | Trust & safety (phishing feed) | Chosen primary — outreach pending | Self-serve token via fishfish.gg/discord `/key`. Outreach = partner mention + write perms to contribute domains back. Same maintainer (akac) as DAS. |
+| Discord-AntiScam (scam-links) | Trust & safety | Superseded → tertiary | No license + aging; FishFish chosen instead. Optional Discord-gap merge only. |
