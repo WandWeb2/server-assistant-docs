@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 84" role="img" aria-label="Beemo">
+  <defs>
+    <linearGradient id="bee-badge" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f7cf3a"/>
+      <stop offset="1" stop-color="#d4a017"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Honeycomb emblem -->
+  <rect x="6" y="10" width="64" height="64" rx="16" fill="url(#bee-badge)"/>
+  <path d="M38 26 L53.6 35 L53.6 53 L38 62 L22.4 53 L22.4 35 Z"
+        fill="none" stroke="#2a2118" stroke-width="4" stroke-linejoin="round"/>
+  <circle cx="38" cy="44" r="5.5" fill="#2a2118"/>
+
+  <!-- Wordmark -->
+  <text x="86" y="52" font-family="'Segoe UI',Roboto,Helvetica,Arial,sans-serif"
+        font-size="30" font-weight="700" letter-spacing="-0.5" fill="#e9ecf7">Beemo</text>
+</svg>
