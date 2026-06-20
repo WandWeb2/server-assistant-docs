@@ -35,6 +35,17 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 </style>
 
 <details class="doc-sec" markdown="1" open>
+<summary>v5.6.46 — A broader AutoMod word filter + custom brand icons</summary>
+
+
+**Optional community profanity lexicon.** AutoMod has a new opt-in filter pack that adds thousands of profanity and slur words drawn from well-maintained public word lists, refreshed automatically every day. It matches **whole words only**, so ordinary words that merely contain a flagged fragment — the classic "Scunthorpe" problem — are never caught. Turn it on under `/automod → Filter Packs`; nothing changes until you enable it, and borderline catches still go through the Premium AI second-opinion like other word filters.
+
+**Custom brand icons.** Premium servers can now upload a brand icon straight to `/brand` (the new **icon** option) — PNG/JPG/GIF/WebP up to 12 MB — instead of hunting for a public image URL. We host it so it never expires, and it becomes your white-label embed icon right away. Pasting a URL still works too.
+
+
+</details>
+
+<details class="doc-sec" markdown="1">
 <summary>v5.6.40 — AI features keep working during maintenance</summary>
 
 
