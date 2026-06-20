@@ -7,7 +7,8 @@ data-source decisions: `partnerships-playbook.md → Type-1 intelligence researc
 
 ## NOW
 
-1. ◐ **AutoMod text upgrade** (bot) — *greenlit, active.*
+1. ☑ **AutoMod text upgrade** (bot) — *SHIPPED v5.6.46* (merged: bot #104, internal +
+   public changelogs). Opt-in "Community profanity lexicon" pack. Deploys on the next bot deploy.
    - Local lexicons, fast path, **no text leaves the box**: **LDNOOBW** (CC-BY-4.0, multilingual)
      + **dsojevic/profanity-list** (MIT, has an `exceptions` allowlist). Runtime-fetch + cache
      into per-language sets (single-file safe — no bundled data). Match with **word-boundary
