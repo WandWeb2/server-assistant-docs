@@ -124,6 +124,28 @@ image: /assets/banner.jpeg
     <div class="partner-cover" aria-hidden="true"><span>In talks</span></div>
   </div>
 
+  <div class="partner-card pending">
+    <div class="partner-logo">
+      <img src="{{ '/assets/partners/beemo.svg' | relative_url }}" alt="Beemo logo" width="300" height="70" loading="lazy">
+    </div>
+    <h3>Beemo</h3>
+    <p class="partner-tag">Anti-raid protection</p>
+    <p class="partner-blurb">Beemo passively detects and bans userbot raids the moment they hit a server — front-line raid protection trusted by some of Discord's largest communities. We're exploring running side by side: Beemo stops raids at the door, Server Assistant handles the moderation around it.</p>
+    <a class="partner-link" href="https://beemo.gg" target="_blank" rel="noopener">Visit Beemo →</a>
+    <div class="partner-cover" aria-hidden="true"><span>In talks</span></div>
+  </div>
+
+  <div class="partner-card pending">
+    <div class="partner-logo">
+      <img src="{{ '/assets/partners/fishfish.svg' | relative_url }}" alt="FishFish logo" width="300" height="70" loading="lazy">
+    </div>
+    <h3>FishFish</h3>
+    <p class="partner-tag">Anti-phishing feed</p>
+    <p class="partner-blurb">FishFish is a community-driven anti-phishing service with a live database of scam and phishing domains. We're exploring using their real-time feed to power Server Assistant's scam-link protection — and contributing the domains we detect back to strengthen it.</p>
+    <a class="partner-link" href="https://fishfish.gg" target="_blank" rel="noopener">Visit FishFish →</a>
+    <div class="partner-cover" aria-hidden="true"><span>In talks</span></div>
+  </div>
+
 </div>
 
 <div class="partner-cta">
