@@ -203,5 +203,5 @@ Update as outreach progresses.
 |---|---|---|---|
 | DiscordForge | Listing | In talks | Live on site as pending (`+` placeholder + "In talks" cover) |
 | Beemo | Trust & safety | Outreach sent (2026-06-20) | Emailed hello@beemo.gg — cross-promo + Path A defer + asked re: raid-signal feed. Awaiting reply. |
-| FishFish | Trust & safety (phishing feed) | Chosen primary — outreach pending | Self-serve token via fishfish.gg/discord `/key`. Outreach = partner mention + write perms to contribute domains back. Same maintainer (akac) as DAS. |
+| FishFish | Trust & safety (phishing feed) | Chosen primary — outreach sent (2026-06-20) | Emailed (admin@fishfish.gg / akac) — token request + partner mention + write perms to contribute back. Awaiting reply. Token also self-serve via `/key` if the Discord/bot is reachable. |
 | Discord-AntiScam (scam-links) | Trust & safety | Superseded → tertiary | No license + aging; FishFish chosen instead. Optional Discord-gap merge only. |
