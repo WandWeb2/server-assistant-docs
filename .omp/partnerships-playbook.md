@@ -142,10 +142,31 @@ chip. `[link]` = <https://wandweb2.github.io/server-assistant-docs/partnerships/
 >
 > — [you] · [link]
 
+## Beemo — integration notes (recon, June 2026)
+
+Contact **hello@beemo.gg** · small team (3) · org: github.com/beemobot.
+
+- **No public API / SDK / feed / downloadable blocklist.** Detection engine ("Tea")
+  is closed-source. The plumbing (`cafe` monorepo) is open-ish **but has no LICENSE
+  → all-rights-reserved; do NOT reuse their code.**
+- Only public endpoint: `GET logs.beemo.gg/antispam/:id` — plain text, **one raid at
+  a time**, opaque id, no index/list/feed. Their "Milk" service DB *does* store the
+  per-raid raiding user IDs (so the data you'd want exists; it's just not exposed).
+- **Integration tiers:**
+  - **Path A — coexist/defer** (no dependency): detect Beemo in-guild, stand down
+    SA's own join-raid escalation. Scoped in `bot.py` `on_member_join` (~L6699).
+    Audit already captures Beemo's bans, attributed correctly — no change. ✅ do regardless.
+  - **Path A.5 — ingest Beemo's Discord raid logs** (no Beemo cooperation needed):
+    read the antispam-log embeds (as the 3rd-party BeemoHelper does) → feed banned
+    IDs into Threat Score / alt-detection. Tradeoff: brittle (their format changes).
+  - **Path B — real raid-signal feed:** only if Beemo builds an endpoint on Milk.
+    Needs their buy-in — this is the ask in the outreach.
+
 ## Status tracker
 
-Update as outreach progresses. (Current: DiscordForge is the only one in flight.)
+Update as outreach progresses.
 
 | Partner | Lane | Status | Notes |
 |---|---|---|---|
 | DiscordForge | Listing | In talks | Live on site as pending (`+` placeholder + "In talks" cover) |
+| Beemo | Trust & safety | Outreach sent (2026-06-20) | Emailed hello@beemo.gg — cross-promo + Path A defer + asked re: raid-signal feed. Awaiting reply. |
