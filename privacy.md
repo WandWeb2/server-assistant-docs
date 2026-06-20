@@ -144,7 +144,7 @@ You control all of this via the `/privacy` panel. AutoMod and anti-raid are requ
 AI features transmit data to third-party providers **only when explicitly invoked by staff or when an enabled, opt-in feature fires** (e.g., right-click Message Report, `/imagine`, Self-trained AutoMod, SAi, or — if you've turned it on — AutoMod AI second-opinion). The default shared-key providers are:
 
 - **Anthropic** (https://anthropic.com) — powers SAi, Message Report context summaries, Self-trained AutoMod, and (if enabled) AutoMod AI second-opinion. Approximately 20 messages of surrounding context are sent for Message Report; only your question is sent for SAi sessions; only the **single borderline message** + matching filter name is sent for AutoMod AI second-opinion (never confident hits, never clear misses). No Discord user IDs or account identifiers are transmitted (a member's display name may appear within the message context that is sent).
-- **OpenAI** (https://openai.com) — when AutoMod AI second-opinion is enabled, borderline **word-filter** hits are scored by OpenAI's dedicated content-moderation model (`omni-moderation-latest`); only the **single borderline message** is sent (no user IDs or account identifiers). This is the only feature that uses OpenAI under our shared key — every other AI feature uses Anthropic.
+- **Groq** (https://groq.com) — a fast backup model that keeps the AI features above working when the primary (Anthropic) service is temporarily unavailable, and — when AutoMod AI second-opinion is enabled — scores borderline **word-filter** hits so they don't spend your AI allowance. Only the minimal content already described is sent (for the word-filter check, just the **single borderline message**); no Discord user IDs or account identifiers.
 
 If you've configured your own key via `/ai-config`:
 - **xAI Grok** (https://x.ai) — same scope as above when selected
@@ -170,7 +170,8 @@ We rely on a small set of vetted third parties to run the service:
 |---|---|---|
 | **Hetzner Online GmbH** | Server hosting (United States) | [hetzner.com](https://www.hetzner.com/legal/privacy-policy) |
 | **Anthropic** | Default AI features (SAi, Message Report, etc.) | [anthropic.com](https://www.anthropic.com/legal/privacy) |
-| **OpenAI / xAI** | AutoMod AI second-opinion (word-filter moderation, our shared key); all other AI features only if you supply your own key (BYOK) | [openai.com](https://openai.com/policies/privacy-policy) · [x.ai](https://x.ai/legal/privacy-policy) |
+| **Groq** | Fast backup AI model when Anthropic is unavailable, and the AutoMod word-filter moderation second-opinion (our shared key) | [groq.com](https://groq.com/privacy-policy/) |
+| **OpenAI / xAI** | AI features — only if you supply your own key (BYOK) | [openai.com](https://openai.com/policies/privacy-policy) · [x.ai](https://x.ai/legal/privacy-policy) |
 | **Pollinations · Stability AI** | Image generation (`/imagine`) | [pollinations.ai](https://pollinations.ai) · [stability.ai](https://stability.ai/legal/privacy-policy) |
 | **Stripe** | Payment processing for Premium subscriptions | [stripe.com/privacy](https://stripe.com/privacy) |
 | **Browser push services** (Google / Mozilla / Apple, depending on the staff member's browser) | Delivering web-portal push notifications to staff who opt in | per-vendor |

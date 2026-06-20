@@ -38,7 +38,7 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 <summary>v5.6.47 — Sharper AutoMod AI review</summary>
 
 
-When AutoMod's optional **AI second-opinion** is switched on, borderline word-filter catches are now scored by a **dedicated content-moderation model** — better at telling genuine violations from innocent false positives, faster, and it **no longer uses any of your AI allowance**. Nothing else changes; the feature stays Premium and opt-in. (Our privacy policy has been updated to note the provider used for this one check.)
+When AutoMod's optional **AI second-opinion** is switched on, borderline word-filter catches are now scored by a fast backup model that **no longer uses any of your AI allowance** — same careful false-positive handling, at no cost to your AI budget. Nothing else changes; the feature stays Premium and opt-in. (Our privacy policy has been updated to note the provider used for this check.)
 
 
 </details>
