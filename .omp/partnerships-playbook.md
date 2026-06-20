@@ -241,16 +241,17 @@ plaintext ID leak). → Rely on SA's **own Threat Score**; it's also the privacy
 - Avoid: Perspective API (EOL 2026-12-31), HurtLex (non-commercial), HateBase (dead),
   Detoxify (drags in torch → breaks single-file deploy).
 
-**Images:**
-- NSFW → **local NudeNet** (ONNX ~10 MB, $0, images never leave the box); offload the blocking
-  inference off the event loop. Hosted fallback: Google Vision SafeSearch / Azure Content Safety
-  (privacy-strong); **avoid AWS Rekognition default** (trains on your images unless you opt out).
-- CSAM → **do NOT build.** Discord already scans every uploaded image; a third-party doing CSAM
-  detection is a legal minefield (can't obtain the hashes, possession liability, preservation
-  duty, must not auto-delete). Flag-in-place → route to Discord/NCMEC.
+**Images — route to Discord by default.** Discord already scans every upload for CSAM and
+runs platform-wide sensitive-media (NSFW) filters, so we don't duplicate that.
+- NSFW *active removal* (the one cheap better-than-Discord option): **local NudeNet** (ONNX
+  ~10 MB, $0, images never leave the box) — only if a server wants offending images actually
+  **deleted** (Discord merely blurs/age-gates). Offload inference off the event loop.
+- CSAM → **never build.** Discord handles it platform-wide; a third party doing it is a legal
+  minefield (can't obtain the hashes, possession/preservation liability). Flag-in-place → Discord.
 
-**Build priority:** (1) AutoMod text upgrade (local lexicons + OpenAI review), (2) NSFW NudeNet,
-(3) links as-is + finish FishFish outreach, (4) deliberately skip user-rep & CSAM.
+**Build priority:** (1) AutoMod text upgrade (local lexicons + OpenAI review), (2) Threat Score
+dossier upgrade, (3) website live stats, (4) FishFish links, (5) images → Discord (NudeNet only
+if a server wants active NSFW removal), (6) skip user-rep & CSAM. Full sequence: `action-plan.md`.
 
 ## Status tracker
 
