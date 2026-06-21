@@ -154,15 +154,21 @@ explicit owner reversal.
 3. **Retention: 12 months rolling from the last signal → hard-delete.** Each
    contribution's clock resets on a new signal for that subject; once 12 months
    elapse with no new signal, the record is hard-deleted.
-4. **Legal basis = legitimate interest, backed by a written LIA**
-   (Legitimate Interests Assessment).
+4. **Legal basis (layered).** PRIMARY = Australian Privacy Act 1988 (Cth) + the
+   13 APPs (the operator is in Queensland, Australia); there is no
+   legitimate-interest basis under Australian law, so collection/use/disclosure is
+   assessed APP-by-APP. SECONDARY = EU/UK GDPR (applies extraterritorially to
+   EU/UK users), under which the basis is **legitimate interest** backed by a
+   written LIA. Both are documented in the combined PIA+LIA (see below).
 5. **All servers contribute; the rich dossier view is Premium.** The contribution
    layer is free/standard (every server participates so the network is maximally
    valuable); the detailed dossier surface is a Premium feature.
 
 **Legal documentation.** The P0 legal documentation is drafted in **PR #130**
-(`privacy.md` + `terms.md`). The written **LIA** lives at
-`.omp/threat-network-LIA.md`.
+(`privacy.md` + `terms.md`). The combined internal assessment — **PIA (Australian
+Privacy Act + APPs) + LIA (GDPR)** — lives at `.omp/threat-network-PIA-LIA.md`,
+and the residual-risk register at `.omp/RISK-REGISTER.md`. Both are
+build-excluded/internal.
 
 ### Remaining open (non-blocking)
 

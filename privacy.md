@@ -13,9 +13,16 @@ This policy describes how the Server Assistant Discord bot ("the Bot") collects,
 
 ## Who is responsible
 
-Server Assistant is built and maintained by **Wandering Webmaster** ([wandweb.co](https://wandweb.co)). Contact us via the [`/support`]({{ site.url }}{{ site.baseurl }}/support/) slash command from any Discord server with the Bot installed.
+Server Assistant is built and maintained by **Wandering Webmaster** ([wandweb.co](https://wandweb.co)), based in **Queensland, Australia**, serving Discord communities **worldwide**. Contact us via the [`/support`]({{ site.url }}{{ site.baseurl }}/support/) slash command from any Discord server with the Bot installed.
 
-Wandering Webmaster is the **data controller** for the information described in this policy. Where we process moderation records about a server's members **on that server's behalf**, the server owner is the controller and we act as a **processor** carrying out the owner's instructions. There is one important exception: for the **Cross-Server Threat Network** (see that section below), where we pool minimized signals from many servers into a shared safety dataset, **we act as the data controller** of that cross-server dataset.
+Because we are in Australia and serve users everywhere, more than one privacy law can apply to the same information. We aim to handle your data in line with:
+- the **Australian Privacy Act 1988 (Cth)** and the **13 Australian Privacy Principles (APPs)** — our primary framework;
+- the **EU and UK GDPR**, where they apply to users in the EU/UK (a cross-server safety signal can involve monitoring the behaviour of those users); and
+- the **CCPA**, for California residents.
+
+Where these regimes use different language for the same idea, we have written this policy to meet the stronger expectation in plain terms.
+
+Wandering Webmaster is the **data controller** (and, in Australian terms, the **APP entity**) for the information described in this policy. Where we process moderation records about a server's members **on that server's behalf**, the server owner is the controller and we act as a **processor** carrying out the owner's instructions. There is one important exception: for the **Cross-Server Threat Network** (see that section below), where we pool minimized signals from many servers into a shared safety dataset, **we act as the data controller** of that cross-server dataset.
 
 ---
 
@@ -144,7 +151,7 @@ You control all of this via the `/privacy` panel. AutoMod and anti-raid are requ
 
 Server Assistant operates a **Cross-Server Threat Network**: a shared safety signal that helps every protected server recognise users who have a serious, corroborated history of abuse (scams, raids, ban-evasion) on *other* protected servers — ideally **before** they cause harm on yours. This is a **core, defining feature** of Server Assistant, not an add-on, and it is described here in full.
 
-<!-- LEGAL REVIEW: This entire section describes cross-server pooling of personal data (Discord user IDs + minimized abuse signals) under a legitimate-interest basis with no server- or user-level opt-out, only a case-by-case rights-request route. A qualified data-protection lawyer should review the section as a whole against UK GDPR / EU GDPR Art. 6(1)(f), Art. 21 (right to object), and Art. 17 (erasure), and confirm the disclosure is adequate before launch. The written Legitimate Interest Assessment (LIA) supporting this basis is held internally and must be finalised and signed off before any cross-server data moves. -->
+<!-- LEGAL REVIEW (PARTIALLY RESOLVED — RESIDUAL RISK REMAINS): This section pools personal information (Discord user IDs + minimized abuse signals) across servers with no opt-out, only a case-by-case rights route. Re-based 2026-06: assessed APP-by-APP under the Australian Privacy Act 1988 (primary) and as a GDPR legitimate-interest basis (secondary, EU/UK). Internal assessment: .omp/threat-network-PIA-LIA.md; residual-risk register: .omp/RISK-REGISTER.md. TWO ITEMS STILL GENUINELY NEED A LAWYER and CANNOT be cured by drafting: (1) whether the "scam/financial" / "repeat offender" signals are "sensitive information" (criminal-record limb, s6(1)) — if so APP 3.3 generally needs CONSENT, which the locked no-opt-out decision cannot give, so collection must rest on an APP 3.4 exception (serious-threat-to-safety / suspected-serious-misconduct) whose fit with a standing pooled scoring network is uncertain; and (2) the GDPR Art. 10 parallel (criminal-offence data), which is even stricter and needs official authority or Member-State-law authorisation that a private operator lacks. Cheapest mitigations (see register): server-admin notice/consent at onboarding, and tightening/generalizing which signals cross the boundary to stay below the sensitive threshold. Do NOT launch cross-server data flows before a qualified privacy lawyer signs off these two items. -->
 
 ### What this means for our role
 
@@ -169,7 +176,13 @@ A server's local moderation record keeps its full detail for that server's own s
 
 ### Why we do this (legal basis)
 
-Our legal basis for the Threat Network is **legitimate interest** (UK GDPR and EU GDPR, Article 6(1)(f)) — specifically the legitimate interest of Wandering Webmaster, every protected server, and their communities in **platform and community safety**: preventing fraud, scams, raids, and ban-evasion across the servers we protect. We have carried out and documented a written **Legitimate Interest Assessment (LIA)** weighing this interest against the rights and interests of the individuals whose signals are pooled, and we keep the safeguards described in this section (strict minimization, the rights-request route below, advisory-only use, anti-abuse corroboration, and a hard retention cap) as the mitigations that keep this basis appropriate. <!-- LEGAL REVIEW: Confirm legitimate interest (not consent) is the correct lawful basis given there is no opt-out, and that the LIA's balancing conclusion is defensible. Confirm whether any contributed signal could be "special category" data (Art. 9) — design intent is that none is. -->
+We operate the Threat Network for one purpose: **platform and community safety** — preventing fraud, scams, raids, and ban-evasion across the servers we protect. How that purpose is justified depends on which law applies to you.
+
+**Under Australian law (our primary framework).** Australia's Privacy Act does not have a "legitimate interest" basis like the GDPR's. Instead, we assess the network against the **Australian Privacy Principles** directly: we collect only what is **reasonably necessary** for this safety function (APP 3), share it only for that closely-related security purpose with the prominent notice in this policy (APP 6), keep it secure and destroy it when it is no longer needed (APP 11), and let you access and correct your record (APP 12 and APP 13). The safeguards in this section — strict minimization, the rights-request route below, advisory-only use, anti-abuse corroboration, and a hard 12-month retention cap — are what keep this handling proportionate.
+
+**Under the EU/UK GDPR (where it applies to you).** Our legal basis is **legitimate interest** (Article 6(1)(f)) — the interest of Wandering Webmaster, every protected server, and their communities in safety and anti-abuse. We have carried out and documented a written **Legitimate Interest Assessment (LIA)** weighing this interest against the rights and freedoms of the individuals whose signals are pooled, kept internally and reviewed before any cross-server data moves.
+
+We are candid that some of these signals (for example, that a user was actioned for "scam/financial" abuse, or matches a repeat-offender pattern) sit close to the line of **"sensitive information"** under Australian law and **criminal-offence data** under the GDPR. We minimize deliberately to stay on the right side of that line, and we are completing the legal review described in *Your rights* before the network goes live. <!-- LEGAL REVIEW (PARTIALLY RESOLVED): GDPR-only framing re-based to Australian-primary + GDPR-secondary (no "legitimate interest" basis exists in AU law). RESIDUAL: the sensitive-information (s6(1) criminal-record) / GDPR Art. 10 classification of the offence-type signals, and whether collection can rest on an APP 3.4 exception given no consent (no opt-out). See .omp/threat-network-PIA-LIA.md §A-RISK / §B3 and .omp/RISK-REGISTER.md. Needs a lawyer; cheapest mitigation is to drop/generalize the offence-type category band and add a server-admin onboarding notice. -->
 
 ### No opt-out — and why
 
@@ -189,12 +202,19 @@ Network signals are retained on a **rolling 12-month window measured from the la
 
 ### Your rights in the Threat Network
 
-The Threat Network has **no opt-out toggle**, but individuals are **not** without recourse. If you are an individual whose data is in the network, you may make a **rights request** — including a request for **erasure** of your network record or an **objection** to its processing — by contacting us via the [`/support`]({{ site.url }}{{ site.baseurl }}/support/) slash command (from any server with the Bot installed) or via [wandweb.co](https://wandweb.co). We handle each request **case by case**:
+The Threat Network has **no opt-out toggle**, but individuals are **not** without recourse. If you are an individual whose data is in the network, you may contact us via the [`/support`]({{ site.url }}{{ site.baseurl }}/support/) slash command (from any server with the Bot installed) or via [wandweb.co](https://wandweb.co) to exercise the rights below. You can come **directly** to us — you do not have to go through a server owner.
 
-- We will **honour** the request (erase or stop processing your network record), **unless**
-- We can demonstrate **compelling legitimate grounds** that override your interests, rights, and freedoms — for example a clear, corroborated safety or fraud-prevention need to retain the signal — in which case we will **refuse and tell you why**, documenting those grounds.
+**What you can always do (these are your rights, everywhere):**
 
-This case-by-case route is how we keep the network's legitimate-interest basis fair: your right to object is real and is assessed on its merits every time. <!-- LEGAL REVIEW: This implements Art. 21(1) — the right to object to legitimate-interest processing, where the controller must stop unless it shows compelling legitimate grounds. Confirm the "compelling legitimate grounds" standard is being applied correctly and that refusals are properly documented and communicated, and that an erasure refusal under Art. 17(1)(c)/(3) is similarly justified. -->
+- **Access (APP 12 / GDPR Art. 15).** Ask what network record we hold about you. Because the record is minimized to counts, recency, and bands, we can show you the drivers (for example, "flagged in 6 networked servers, 2 bans, last 9 days ago").
+- **Correction (APP 13 / GDPR Art. 16).** If a signal about you is **wrong, out of date, or misleading** — for example a bad-faith ban — ask us to correct or remove it. We will take reasonable steps to fix it. This is the main route by which an unfair flag gets put right.
+
+**Deletion / objection.** Australian privacy law does not give a general "right to erasure" or "right to object" the way the GDPR does — but we go beyond the legal floor and offer a deletion path to everyone as a matter of good practice, and we are independently required to **destroy your record once it is no longer needed** (and in any case at the 12-month retention cap below). So you may **request deletion of, or object to, the processing of your network record**, and we handle each request **case by case**:
+
+- We will **honour** the request (delete or stop processing your network record), **unless**
+- we can demonstrate a **clear, corroborated safety or fraud-prevention need** to retain the signal — in which case we will **refuse and tell you why**, documenting those grounds.
+
+**If you are in the EU or UK**, this same route services your GDPR **right to object** to legitimate-interest processing (Article 21) and your **right to erasure** (Article 17): we stop or erase unless we can show **compelling legitimate grounds** (the corroborated safety/fraud need above). <!-- LEGAL REVIEW (RESOLVED — DRAFTING): Re-based onto APP 12 (access) + APP 13 (correction) + APP 11.2 destruction-when-no-longer-needed as the AU framing (no standalone AU erasure/objection right), with the voluntary case-by-case deletion offered above the statutory floor; GDPR Art. 21/17 layered for EU/UK. The only residual is operational, not drafting: the "compelling/corroborated grounds" standard must be applied consistently and refusals documented when the /support route runs — tracked in .omp/threat-network-PIA-LIA.md Part C and .omp/RISK-REGISTER.md. -->
 
 ### Contribution vs visibility
 
@@ -229,7 +249,7 @@ Each AI provider has their own privacy policy governing how they handle data. We
 
 Server Assistant runs on dedicated infrastructure hosted by **Hetzner Online GmbH** in the **United States (Oregon)**. All data described above is stored there.
 
-Because Discord and our users are global, using the Bot from outside the United States involves an **international transfer** of the limited data described in this policy to the US. Where required, we rely on appropriate safeguards (such as Standard Contractual Clauses) for those transfers. Our sub-processors may handle data in other regions under their own policies.
+Because Discord and our users are global, using the Bot from outside the United States involves an **international transfer** (in Australian terms, a **cross-border disclosure** under **APP 8**) of the limited data described in this policy to the US, and the Threat Network discloses minimized signals to protected servers in many countries. Where required, we rely on appropriate safeguards (such as Standard Contractual Clauses and data-processing agreements) for those transfers. Under APP 8 we **remain accountable** for how our overseas hosting providers and sub-processors handle Australian personal information. Our sub-processors may handle data in other regions under their own policies.
 
 ### Sub-processors
 
@@ -281,11 +301,24 @@ We do **not** sell your data or share it with advertising or analytics networks.
 
 **Individual members** wishing to have personal moderation records erased should contact their server owner first. If unresponsive, contact us directly via `/support`.
 
-**Cross-Server Threat Network:** because we are the controller of the cross-server safety dataset (not a per-server processor), an individual can come **directly** to us — without going through any server owner — to request **erasure** of their network record or to **object** to its processing, via [`/support`]({{ site.url }}{{ site.baseurl }}/support/) or [wandweb.co](https://wandweb.co). We assess each request case by case and will honour it unless we can show **compelling legitimate grounds** (such as a corroborated safety or fraud-prevention need) to retain the signal, in which case we will explain our reasons. See **Cross-Server Threat Network → Your rights in the Threat Network** above for the full mechanism.
+**Cross-Server Threat Network:** because we are the controller (Australian: APP entity) of the cross-server safety dataset — not a per-server processor — an individual can come **directly** to us, without going through any server owner, to **access** their network record (APP 12), **correct** it (APP 13), or **request deletion of / object to** its processing, via [`/support`]({{ site.url }}{{ site.baseurl }}/support/) or [wandweb.co](https://wandweb.co). We assess deletion/objection requests case by case and will honour them unless we can show a **clear, corroborated safety or fraud-prevention need** (for EU/UK users, **compelling legitimate grounds** under GDPR) to retain the signal, in which case we explain our reasons. See **Cross-Server Threat Network → Your rights in the Threat Network** above for the full mechanism.
+
+### Australian Privacy Act 1988 / Australian Privacy Principles (primary)
+
+We are based in Queensland, Australia and treat the **Privacy Act 1988 (Cth)** and the **13 Australian Privacy Principles (APPs)** as our primary framework. Under the APPs you can:
+
+- **Be informed** about how we handle your personal information (APP 1, APP 5) — this policy is that notice.
+- **Access** the personal information we hold about you (**APP 12**), including your Cross-Server Threat Network record.
+- **Correct** personal information that is inaccurate, out of date, incomplete, or misleading (**APP 13**).
+- Rely on our obligations to collect only what is **reasonably necessary** (APP 3), use and disclose it only for the purpose we collected it or a closely related purpose you'd reasonably expect (APP 6), keep it **secure** (APP 11), and **destroy or de-identify** it once it is no longer needed (APP 11.2).
+
+Australian privacy law does **not** include a general "right to erasure" or standalone "right to object" of the kind the GDPR provides. Where you want a record removed, the routes above (correction under APP 13, and our destruction-when-no-longer-needed obligation) apply — and for the Threat Network we additionally offer a **voluntary, case-by-case deletion path** that goes beyond what the APPs strictly require (see *Cross-Server Threat Network → Your rights in the Threat Network*).
+
+To exercise any of these, contact us via [`/support`]({{ site.url }}{{ site.baseurl }}/support/) or [wandweb.co](https://wandweb.co). If you are not satisfied with our response, you can complain to the **Office of the Australian Information Commissioner (OAIC)** at [oaic.gov.au](https://www.oaic.gov.au/) — see *Complaints* below.
 
 ### GDPR (EEA / UK)
 
-If you're in the European Economic Area or the UK, you have the right to **access, correct, delete, restrict, or object to** our processing of your personal data, and the right to **data portability**. Our legal bases for processing are: **performance of the service** (running the features a server has enabled), our **legitimate interests** (security, anti-abuse, service integrity, and the **Cross-Server Threat Network** described above — platform and community safety, supported by a written Legitimate Interest Assessment), and **consent** for opt-in AI features. Where we rely on legitimate interest — including for the Threat Network — you have the right to **object** under Article 21; for the Threat Network specifically, exercise it via the **case-by-case rights-request route** described in *Cross-Server Threat Network → Your rights in the Threat Network*. To exercise any of these rights, contact us via [`/support`]({{ site.url }}{{ site.baseurl }}/support/) or [wandweb.co](https://wandweb.co). You also have the right to lodge a complaint with your local data-protection supervisory authority.
+If you're in the European Economic Area or the UK, the GDPR also applies to our processing of your personal data, and you have the right to **access, correct, delete, restrict, or object to** that processing, and the right to **data portability**. Our legal bases for processing are: **performance of the service** (running the features a server has enabled), our **legitimate interests** (security, anti-abuse, service integrity, and the **Cross-Server Threat Network** described above — platform and community safety, supported by a written Legitimate Interest Assessment), and **consent** for opt-in AI features. Where we rely on legitimate interest — including for the Threat Network — you have the right to **object** under Article 21 and to seek **erasure** under Article 17; for the Threat Network specifically, exercise these via the **case-by-case rights-request route** described in *Cross-Server Threat Network → Your rights in the Threat Network*. To exercise any of these rights, contact us via [`/support`]({{ site.url }}{{ site.baseurl }}/support/) or [wandweb.co](https://wandweb.co). You also have the right to lodge a complaint with your local data-protection **supervisory authority** (in the EU, your national Data Protection Authority; in the UK, the **Information Commissioner's Office (ICO)** at [ico.org.uk](https://ico.org.uk/)).
 
 ### CCPA (California)
 
@@ -332,6 +365,17 @@ The Bot doesn't knowingly collect data from anyone under 13 (Discord's minimum a
 ## Changes to this policy
 
 Material changes will be announced via the Bot's release notes and posted in the staff-chat of each configured guild. The "Last updated" date above reflects the most recent revision.
+
+---
+
+## Complaints
+
+If you have a privacy concern, please raise it with us first via [`/support`]({{ site.url }}{{ site.baseurl }}/support/) or [wandweb.co](https://wandweb.co) — we take it seriously and will try to resolve it.
+
+If you are not satisfied with our response, you can complain to the relevant regulator for where you are:
+- **Australia:** the **Office of the Australian Information Commissioner (OAIC)** — [oaic.gov.au](https://www.oaic.gov.au/) (our primary regulator).
+- **United Kingdom:** the **Information Commissioner's Office (ICO)** — [ico.org.uk](https://ico.org.uk/).
+- **EU / EEA:** your national **Data Protection Authority** (supervisory authority).
 
 ---
 
