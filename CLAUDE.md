@@ -47,3 +47,12 @@ from the old pipeline and still matter:
   durable, write it back into a skill so it never has to be learned again.
 - **Keep the session free.** Delegate broad research to subagents rather than
   reading large files into the main context.
+
+## Background agents — hygiene (standing rule)
+
+Subagents and background tasks are easy to leak. A prior session left **13 research agents running for 10–22h**, quietly burning tokens, because they were spawned and never reaped. To prevent recurrence:
+
+- **Bound every background/research agent with a finite, focused task** (and a timeout where the tool allows) — never an open-ended "research X" that can loop indefinitely. Prefer one focused agent over a large parallel swarm.
+- **Reap on completion.** When the work is done, confirm no background tasks are still running and stop any straggler. Never end a session with live background agents you no longer need.
+- **If something feels slow, check `/tasks` (or the Background tasks panel).** A task running far longer than its work warrants is stuck — kill it and redo the work directly.
+- Tasks spawned in an earlier context may not be stoppable from a later one programmatically; the operator can stop them from the `/tasks` panel.
