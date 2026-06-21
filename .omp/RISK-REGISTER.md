@@ -20,46 +20,64 @@ compliance pass — **NOT a lawyer.**
 Severity scale: **CRITICAL** (could block launch / unlawful as designed) ·
 **HIGH** · **MEDIUM** · **LOW**.
 
+> **Ordering note (updated 2026-06-21).** Risk **IDs are stable** (other docs
+> cross-reference "R1" etc.), but the register is no longer led by R1. After the
+> owner's **severity-only design lock**, **R1 re-rates CRITICAL → LOW/MEDIUM**, so
+> the current severity ordering is:
+> **R2 (HIGH) ≈ R3 (HIGH) ≈ R4 (HIGH) > R5 (MEDIUM) ≈ R6 (MEDIUM) > R8 (LOW/MEDIUM)
+> ≈ R1 (LOW/MEDIUM) > R7 (LOW).**
+> The top live exposures are now R2/R3/R4 (exemption-loss assumption, DPIA/PIA
+> sign-off, and the unbound-third-party/ACL point), **not** R1.
+
 ---
 
-## R1 — Sensitive-information / criminal-offence data vs no-opt-out (no consent) — **CRITICAL**
+## R1 — Sensitive-information / criminal-offence data — **LOW/MEDIUM** (was CRITICAL; de-risked by the severity-only design)
 
-**What it is.** The shared signals ("scam/financial" actioning, "repeat offender",
-serious-AutoMod-category hits) **plausibly are "sensitive information" (criminal-
-record limb, s6(1) Privacy Act)** and **criminal-offence data under GDPR Art. 10**.
-If so:
-- **AU:** APP 3.3 generally requires the individual's **consent** to collect
-  sensitive information. The **locked no-opt-out decision means there is no
-  consent.** Collection must then rest on an **APP 3.4 exception** (serious-threat-
-  to-safety / suspected-unlawful-activity-or-serious-misconduct), whose fit with a
-  **standing, always-on, pooled scoring network** (rather than a specific
-  situational action) is **uncertain**.
-- **GDPR:** Art. 10 is **stricter** than Art. 9 — criminal-offence data may be
-  processed only **under official authority** or where **authorised by Union/
-  Member-State law**. A private Discord operator has **neither**. Legitimate
-  interest (Art. 6(1)(f)) does **not** by itself unlock Art. 10 data.
+**What it is.** The original CRITICAL risk: the shared signals included an
+offence-type **category band** ("scam/financial") and an offence-tied "repeat
+offender" label, which **plausibly were "sensitive information" (criminal-record
+limb, s6(1) Privacy Act)** and **criminal-offence data under GDPR Art. 10**. If so,
+**AU APP 3.3 would require consent** (which the locked no-opt-out decision cannot
+give), and **GDPR Art. 10** would need official authority/Member-State authorisation
+a private operator lacks — a potential hard blocker.
 
-**What I did to mitigate (drafting).** Documented the tension prominently and
-honestly in `privacy.md` (legal-basis section + a candid "sit close to the line"
-acknowledgement), in `terms.md` (member-notice obligation + residual flag), and in
-the PIA+LIA (§A-RISK, §B3.1/B3.5). Did **not** paper it over. Re-based the whole
-analysis to APP-first so the consent question is visible rather than hidden behind
-"legitimate interest."
+**Why it re-rates DOWN to LOW/MEDIUM — a DESIGN change, not wording.** The owner
+**locked a severity-only design (2026-06-21)**:
+- The **offence type/category no longer crosses servers** — only a **generic
+  severity level** (minor / serious) does. A severity level conveys *how serious*,
+  never *what the person did*.
+- **AI-generated and human-written offence summaries are local-only** — no
+  free-text describing alleged wrongdoing is ever pooled.
 
-**What still needs a lawyer or a product change (drafting cannot cure this):**
-1. **Lawyer:** is the offence-type signal "sensitive information" / Art. 10 data,
-   and can an APP 3.4 exception lawfully carry a standing pooled network without
-   consent? This is the single biggest open question.
-2. **Product (cheapest real mitigation):** **drop or generalize the offence-type
-   category band** ("scam/financial") so the shared signal reads as a generic risk
-   level, not "this person committed offence X" — materially weakening the
-   sensitive/Art. 10 argument.
-3. **Product (cheap):** add a **server-admin notice + member acknowledgement at
-   onboarding**, pushing notice/consent to the point of collection without giving
-   servers a network opt-out.
-4. **Decision the owner owns:** the no-opt-out lock is the root cause of the
-   consent gap. No drafting removes it; only consent, an exception that genuinely
-   fits, or signal-tightening does.
+On this design the cross-server dataset (pseudonymous user ID + counts + recency +
+severity level + fingerprint-match boolean + account-age modifier) is **assessed
+NON-sensitive** under s6(1) — not a "criminal record." **APP 3.3 is not engaged, so
+no consent is required**; collection rests on **APP 3.2** (reasonably necessary) +
+**APP 5** notice + **APP 6** limits. The no-opt-out lock is **no longer in tension**
+with a consent requirement, because none arises. Under GDPR, **Art. 10 is now very
+unlikely** to be engaged for the same structural reason, so legitimate interest
+(Art. 6(1)(f)) per the LIA is a sufficient basis. **This is the durable kind of fix:
+the data that crosses the boundary changed, not just the description of it.**
+
+**What was done (in the docs).** Propagated the severity-only design through
+`privacy.md` (signals list, what-never-crosses list, data-minimisation, legal-basis
+section), `terms.md` §6, the PIA+LIA (§A2, §A-RISK, §A4, §B3.1, §B3.5), and this
+register. Reframed the lawful basis as APP 3.2 + APP 5 + APP 6 (AU) and operator's
+own legitimate interest per the LIA (EU/UK) — **not** server-owner consent. Added the
+"minimum necessary personal information" framing (a pseudonymous user ID **is**
+personal info — pseudonymous, not anonymous — so the docs no longer claim "no
+personal information is shared").
+
+**Residual (honest, LOW/MEDIUM, mostly EU/UK):**
+1. **Keep the severity band genuinely generic** — if an offence label ever leaked
+   into/alongside it, the sensitive/Art. 10 argument would return. Enforce in
+   implementation.
+2. **EU/UK Art. 10 boundary is regulator-testable** — a severity signal is *very
+   unlikely* to be criminal-offence data, but the line is one a supervisory
+   authority could probe. Keep under review; minimise further if challenged. **Not
+   a launch blocker on the current design.**
+3. **Server-admin onboarding notice** still recommended as good-practice
+   transparency (supports APP 5) — now a nice-to-have, no longer a consent patch.
 
 ---
 
@@ -176,20 +194,30 @@ refusal-documentation + SLA before launch.
 
 ---
 
-## Bottom line for the owner (the 2-3 things no drafting can cure)
+## Bottom line for the owner (what changed, and what still bites)
 
-1. **The no-opt-out lock + (likely) sensitive/criminal-offence signals = a consent
-   gap** that drafting cannot close (R1). Realistic fixes are a **product change**
-   (drop/generalize the offence-type band; add a server-admin onboarding notice) or
-   a **lawyer's confirmation** that an APP 3.4 exception fits. Under GDPR, Art. 10
-   may need authority the operator simply doesn't have.
-2. **Exposure to a wrongly-flagged individual** isn't disclaimed by Terms that
-   individual never signed (R4); the cure is accuracy/correction in the product,
-   not wording.
-3. **Launch is gated** on a real DPIA/PIA sign-off and (likely) on the Act applying
-   despite small size (R2, R3) — both point to getting at least a one-off legal
-   review of R1 before any cross-server data moves.
+**The biggest single risk (R1) has been retired by design, not wording.** The
+owner's **severity-only lock** — offence type/category off the cross-server wire,
+offence summaries local-only — moves the sensitive-information / criminal-offence
+question from CRITICAL to a managed LOW/MEDIUM residual. The consent gap that the
+no-opt-out lock used to create **no longer arises**, because the cross-server data
+is non-sensitive (AU) and very unlikely to be Art. 10 data (GDPR), so no consent is
+required; the basis is APP 3.2 + APP 5 + APP 6 (AU) and the operator's own
+legitimate interest per the LIA (EU/UK).
 
-This pass makes the documentation **honest, consistent, and APP-correct**, and
-surfaces every load-bearing risk — but it is **not** a substitute for the lawyer
-review on R1–R3.
+**What still bites (now the top live items):**
+1. **DPIA/PIA sign-off (R3)** and the **small-business-exemption-loss assumption
+   (R2)** remain HIGH — the prudent posture is still a one-off legal review and
+   completing the DPIA before launch, though the review is no longer dominated by an
+   unresolved consent gap.
+2. **Exposure to a wrongly-flagged individual (R4)** isn't disclaimed by Terms that
+   individual never signed; the cure is accuracy/correction in the product (advisory
+   only, conservative tuning, APP 13), not wording. Still HIGH.
+3. **Operational follow-through** — DPAs/SCCs (R6), the `/support` rights workflow
+   (R8), and keeping the severity band genuinely generic (R1 residual) — are the
+   live to-dos.
+
+This pass makes the documentation **honest, consistent, and APP-correct**, reflects
+the severity-only design throughout, and **does not overclaim**: it still notes the
+residual EU/UK Art. 10 review point and flags R2–R4 plainly. It remains a
+**best-effort, non-lawyer** review, not certified compliance.

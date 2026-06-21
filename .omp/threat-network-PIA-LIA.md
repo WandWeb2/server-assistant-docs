@@ -8,7 +8,11 @@ any "passes"/"likely" judgement here as certified compliance.
 
 **Controller / APP entity:** Wandering Webmaster (the "operator"), located in
 **Queensland, Australia**, serving Discord servers **worldwide**.
-**Drafted:** 2026-06-21 (re-based from a UK/EU-GDPR-only draft to Australian-primary).
+**Drafted:** 2026-06-21 (re-based from a UK/EU-GDPR-only draft to Australian-primary;
+updated 2026-06-21 for the owner's **severity-only** design lock — offence
+type/category no longer crosses servers and AI/free-text offence summaries are
+local-only, which re-rates the central sensitive-information finding down from
+CRITICAL to LOW/MEDIUM, see A-RISK / R1).
 **Scope:** The Cross-Server Threat Network feature of Server Assistant — pooling
 minimized moderation signals across protected Discord servers to produce an
 advisory cross-server risk score about Discord users.
@@ -102,23 +106,29 @@ network. The minimization design (aggregates/bands only, N≥2 corroboration,
 no free-text, no originating-server identity) supports "reasonably necessary."
 **Likely satisfies APP 3 for non-sensitive elements.**
 
-**Sensitive information — THE CENTRAL RISK (see A-RISK below).** "Sensitive
-information" under s6(1) expressly includes **criminal record**. A signal that a
-user was **banned/actioned for "scam/financial" abuse** or is a **repeat
-offender** is information/opinion about alleged wrongdoing tied to an identifiable
-user — it **plausibly engages the "criminal record" limb** even though these are
-platform-rule violations, not court convictions. If any shared signal is
-sensitive information, **APP 3.3 requires consent** — which the **locked
-no-opt-out decision cannot provide** — unless an **APP 3.4 exception** carries it.
+**Sensitive information — SUBSTANTIALLY DE-RISKED BY THE SEVERITY-ONLY DESIGN
+(see A-RISK below).** "Sensitive information" under s6(1) expressly includes
+**criminal record**. The earlier draft shared an offence-type **category band**
+(e.g. "scam/financial") — a signal that read as "this user was actioned for
+offence X," which **plausibly engaged the "criminal record" limb.** The locked
+**severity-only design (2026-06-21) removes that signal from the boundary
+entirely**: what now crosses servers is a pseudonymous user ID, counts, recency,
+a **generic severity level** (e.g. minor / serious), a fingerprint-match boolean,
+and an account-age modifier — **no offence type or category, and no free-text or
+AI-generated summary** (summaries are local-only). A generic severity level does
+not describe *what* a person allegedly did; on this design the cross-server data
+is **assessed as NON-sensitive** — it is not a "criminal record" within s6(1).
 
-The candidate APP 3.4 exceptions are the "permitted general situations":
-**lessening/preventing a serious threat to safety**, and **taking appropriate
-action in relation to suspected unlawful activity or serious misconduct**. These
-are real and arguable for a safety network, BUT they are framed for **specific,
-situational** action — not obviously for a **standing, pooled, always-on scoring
-dataset about every actioned user**. This is the **sharpest Australian exposure
-in the whole design** and is the item most in need of legal advice. See A-RISK
-and the residual-risk register.
+Because the shared signals are **not** sensitive information, the higher **APP 3.3
+bar does not apply** and **no consent is required** to collect them. Collection
+rests on **APP 3.2** (reasonably necessary for the operator's safety function),
+with **APP 5** notice (the privacy policy) and **APP 6** use/disclosure limits.
+The locked no-opt-out decision is therefore **no longer in tension with a consent
+requirement**, because no consent requirement is engaged. The APP 3.4 "permitted
+general situations" (serious-threat-to-safety; suspected serious misconduct)
+remain available as a **belt-and-braces** argument if a regulator took a broader
+view of a severity signal, but the design no longer *depends* on them. **Residual:
+keep the severity band genuinely generic so an offence label cannot leak back in.**
 
 ## A3. APP 5 — Notification of collection
 
@@ -154,9 +164,11 @@ servers may reasonably expect *some* cross-server consequence, but a centralized
 pooled dataset held by one operator is **less obviously expected**. The
 disclosure is defensible as a related security/anti-fraud secondary purpose
 **only with strong, prominent notice** (now in `privacy.md`/`terms.md`) and the
-minimization safeguards. If the signal is **sensitive information**, the bar is
-higher (directly related + reasonably expected, or consent/exception) — see A2.
-**Defensible with the disclosed safeguards; tightest where signals are sensitive.**
+minimization safeguards. Because the severity-only design means the signals are
+**not sensitive information** (A2), the higher directly-related/consent bar for
+sensitive info does **not** apply — the ordinary reasonably-expected-and-related
+secondary-purpose test governs, which the safety/anti-fraud purpose plus prominent
+notice and minimization satisfy. **Defensible with the disclosed safeguards.**
 
 ## A5. APP 8 — Cross-border disclosure
 
@@ -237,43 +249,52 @@ just should not imply a *statutory* Australian erasure right that doesn't exist.
 For **EU/UK** users the same `/support` route additionally services the **GDPR
 Art. 21 objection** and **Art. 17 erasure** rights (Part B).
 
-## A-RISK. Sensitive-information / criminal-record exposure (HIGH) — the central PIA finding
+## A-RISK. Sensitive-information / criminal-record exposure (LOW/MEDIUM) — de-risked by the severity-only design
 
-**Finding.** The "scam/financial" / "repeat offender" / serious-AutoMod-category
-signals **plausibly are "sensitive information" (criminal-record limb) under
-s6(1)**. If so, **APP 3.3 generally requires consent** to collect them — which is
-in **direct tension with the LOCKED no-opt-out decision** (no opt-out ⇒ no
-consent). Lawful collection would then have to rest on an **APP 3.4 exception**
-(serious-threat-to-safety / suspected-unlawful-activity-or-serious-misconduct),
-whose fit with a **standing pooled scoring network** is **uncertain**. Under GDPR
-the parallel is even harsher: **Art. 10 criminal-offence data** may be processed
-only under official authority or specific Member-State-law authorisation — neither
-of which a private Discord operator has (Part B).
+**Finding (re-rated 2026-06-21: was HIGH/CRITICAL → now LOW/MEDIUM).** The central
+PIA risk was that the offence-type **category band** ("scam/financial") and an
+offence-tied "repeat offender" label were **"sensitive information" (criminal-record
+limb, s6(1))**, which would trigger the **APP 3.3 consent** bar — in direct tension
+with the locked no-opt-out decision. **The owner's locked severity-only design
+change (2026-06-21) removes the cause of that risk** rather than merely re-wording
+it:
+- The **offence type/category no longer crosses servers.** Only a **generic
+  severity level** (minor / serious) travels — it conveys *how serious*, never
+  *what the person did*.
+- **AI-generated and human-written offence summaries are local-only** and never
+  cross the boundary, so no free-text describing alleged wrongdoing is pooled.
 
-**This tension cannot be fully cured by drafting.** It is documented here
-prominently and surfaced (in plain language) in `privacy.md`. The cheapest
-realistic mitigations, in rough order of value:
-1. **Server-admin notice + consent at onboarding.** Have the server admin present
-   members with a clear notice (and, ideally, an acknowledgement) that the server
-   participates in the network and what is shared. This pushes an APP-5-style
-   notice — and a possible consent layer — to the point of collection, partially
-   addressing both APP 3.3 consent and APP 5 notification without giving servers a
-   network opt-out. **Cheapest, highest-value; recommended.**
-2. **Tighten which signals cross the boundary to stay below the sensitive
-   threshold.** e.g. share only a generic risk *band* and counts/recency, and
-   **drop or further generalize the offence-type category band** ("scam/financial")
-   that most clearly evokes a "criminal record." The less the shared signal reads
-   as "this person committed offence X," the weaker the sensitive-information /
-   Art. 10 argument. **Product change; high value for de-risking.**
-3. **Frame and operate strictly as a safety/security exception.** Document the
-   network's reliance on the serious-threat-to-safety / suspected-serious-
-   misconduct limbs (APP 3.4) and only let genuinely serious signals contribute —
-   keeping the design within the spirit of those exceptions. **Supports the legal
-   argument but does not by itself resolve the consent gap.**
-4. **Get legal advice specifically on the APP 3.4 fit and the GDPR Art. 10 point
-   before launch.** This is the one item no drafting removes.
+On that design the cross-server dataset (pseudonymous user ID + counts + recency +
+severity level + fingerprint-match boolean + account-age modifier) is **assessed
+NON-sensitive** under s6(1): it is not a "criminal record." **APP 3.3 is therefore
+not engaged and no consent is required**; collection rests on **APP 3.2**
+(reasonably necessary for the safety function) + **APP 5** notice + **APP 6** limits.
+The no-opt-out decision is **no longer in tension** with a consent requirement,
+because none is engaged. Under **GDPR**, the parallel **Art. 10 criminal-offence
+data** classification is now **very unlikely** for the same structural reason — a
+generic severity level is not "data relating to criminal offences." (See B3.1.)
 
-**Do NOT paper over this.** It is the single most important finding of this PIA.
+**Why this is a DESIGN de-risk, not a drafting one.** The risk dropped because the
+*data that crosses the boundary changed*, not because the words changed. That is
+the durable kind of mitigation. The earlier register listed "drop/generalize the
+offence-type band" and "summaries local-only" as the cheapest real fixes; the owner
+has now **implemented both**.
+
+**Residual (kept honestly, LOW/MEDIUM, mostly EU/UK):**
+1. **Keep the severity band genuinely generic.** If an implementation ever let an
+   offence label leak into or alongside the severity level, the sensitive/Art. 10
+   argument would return. Enforce that only an abstract severity travels.
+2. **EU/UK Art. 10 boundary is a regulator-testable line.** A severity signal
+   derived from moderation outcomes is *very unlikely* to be Art. 10 data, but the
+   boundary between "generic risk severity" and "criminal-offence data" is one a
+   supervisory authority could probe. Keep the design under review; minimise
+   further if challenged. **Not a launch blocker on the current design, but a
+   standing review item.**
+3. **Server-admin onboarding notice** still recommended as good practice (supports
+   APP 5 and transparency) — now a *nice-to-have*, no longer a consent-gap patch.
+
+This finding is **no longer the single biggest blocker**; with offence-type off the
+wire and summaries local-only, R1 is a managed LOW/MEDIUM residual, not a CRITICAL.
 
 ---
 
@@ -323,19 +344,24 @@ intrusive and is deliberately not built. **Necessity test passes.**
 ## B3. Balancing test — interest vs the individual's rights
 
 ### B3.1 Nature of the data
-- Discord **user ID** + **minimized behavioural signals** (counts, recency, bands,
-  match booleans) about moderation outcomes. No message content, no free-text, no
-  contact/financial data.
-- **Special-category data (Art. 9):** design intent is none — bands describe the
-  abuse *type* ("scam/financial"), not protected characteristics.
-- **Criminal-offence data (Art. 10) — RAISED, not dismissed.** A signal that a
-  user was banned for "scam/financial" abuse or is a "repeat offender" **plausibly
-  engages Art. 10** (data relating to criminal offences), which is **stricter than
-  Art. 9**: it may be processed **only under the control of official authority or
-  where authorised by Union/Member-State law with appropriate safeguards.** A
-  private Discord operator has **neither**. **This is a HIGH GDPR exposure and is
-  NOT resolved** — mitigations are the same as A-RISK (tighten/generalize the
-  offence-type signal; legal advice). See residual-risk register.
+- A **pseudonymous Discord user ID** + **minimized behavioural signals** (counts,
+  recency, a generic **severity level**, fingerprint-match boolean, account-age
+  modifier) about moderation outcomes. No message content, no free-text, no
+  AI-generated summary, no offence type/category, no contact/financial data.
+- **Special-category data (Art. 9):** none — a generic severity level describes
+  *how serious*, not a protected characteristic, and no offence type crosses.
+- **Criminal-offence data (Art. 10) — RAISED, now VERY UNLIKELY after the
+  severity-only design.** The earlier draft shared an offence-type band
+  ("scam/financial") that **plausibly engaged Art. 10** (data relating to criminal
+  offences), which is stricter than Art. 9 and needs official authority or
+  Member-State-law authorisation a private operator lacks. The locked
+  **severity-only design (2026-06-21) takes the offence type/category off the wire
+  entirely** and keeps offence summaries **local-only**. A **generic severity
+  level** is not "data relating to criminal offences," so on the current design
+  Art. 10 is **very unlikely to be engaged** — the GDPR exposure drops from HIGH to
+  a LOW/MEDIUM residual. **Residual (honest):** the line between a generic severity
+  signal and criminal-offence data is regulator-testable; keep the band abstract
+  and the design under review. See A-RISK and the residual-risk register R1.
 
 ### B3.2 Reasonable expectations
 Discord users generally expect abusive behaviour to have consequences and that
@@ -365,13 +391,19 @@ weighting, and explainability.
 6. No opt-out disclosed plainly as the cost of a core, network-effect feature.
 
 ### B3.5 Balancing conclusion
-On balance the legitimate interest is **not overridden**, **provided the §B3.4
-safeguards hold AND the Art. 10 criminal-offence-data question is resolved in the
-operator's favour or designed around.** The Art. 10 point is a potential **hard
-blocker** that the balancing test cannot cure by itself: if the shared signal is
-Art. 10 data and no authority/authorisation exists, legitimate interest is not
-enough under GDPR. **This conclusion is the most legally load-bearing judgement in
-the document and requires qualified sign-off.**
+On balance the legitimate interest is **not overridden**, given the §B3.4
+safeguards **and** the severity-only design that takes the Art. 10 trigger off the
+wire. The earlier draft flagged Art. 10 as a potential **hard blocker** — if the
+shared signal were criminal-offence data, legitimate interest alone could not carry
+it. The locked **severity-only design (2026-06-21) has been designed around that**:
+with the offence type/category no longer crossing and summaries local-only, the
+shared signal is **very unlikely to be Art. 10 data**, so the balancing test is no
+longer hostage to that question. The legitimate-interest basis here is **the
+operator's own**, documented in this LIA — it does **not** rely on a server owner
+consenting on members' behalf. **Residual:** keep the severity band generic and the
+EU/UK boundary under review (B3.1); this remains the most load-bearing GDPR
+judgement and benefits from qualified sign-off, but it is **no longer a hard
+blocker** on the current design.
 
 ## B4. DPIA (GDPR Art. 35) — likely MANDATORY
 
@@ -387,13 +419,18 @@ document is the first draft of both.
 
 # PART C — Outstanding items before launch (P0)
 
-- [ ] **Qualified privacy-lawyer sign-off** on: the small-business-exemption-loss
-      conclusion (A0), the sensitive-information/criminal-record classification and
-      APP 3.4 fit (A-RISK), the GDPR Art. 10 position (B3.1/B3.5), and the
-      legitimate-interest balancing conclusion (B3.5).
-- [ ] **Decide the sensitive-info mitigation** before launch: at minimum implement
-      the server-admin onboarding notice (A-RISK #1) and seriously consider
-      dropping/generalizing the offence-type category band (A-RISK #2).
+- [x] **Severity-only design lock (2026-06-21)** — offence type/category removed
+      from the cross-server boundary; AI/free-text offence summaries kept
+      local-only. This is the product mitigation that re-rates the sensitive-info
+      finding down (A-RISK / R1). Enforce in implementation: only a generic
+      severity level crosses; no offence label may leak in.
+- [ ] **Qualified privacy-lawyer sign-off** (still prudent, no longer a hard
+      blocker on the current design) on: the small-business-exemption-loss
+      conclusion (A0), confirmation that a **generic severity level** is
+      non-sensitive under s6(1) / not GDPR Art. 10 data (A2 / A-RISK / B3.1), and
+      the legitimate-interest balancing conclusion (B3.5).
+- [ ] **(Recommended, good practice)** server-admin onboarding notice to members
+      (A-RISK #3) — now a transparency nice-to-have, not a consent-gap patch.
 - [ ] Complete the **GDPR DPIA** (Art. 35) and finalize this **PIA** (Part A).
 - [ ] Confirm **cross-border safeguards** (DPAs/SCCs) for US hosting and overseas
       sub-processors, and the APP 8 / s16C accountability posture for worldwide

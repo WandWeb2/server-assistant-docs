@@ -48,19 +48,27 @@ of their moderation records and we are a **processor** acting on their instructi
 a controller** of a cross-server safety dataset about Discord users. That requires, as
 first-class parts of this spec (not afterthoughts):
 
-1. **Legal basis** — legitimate interest in platform/community safety, documented, with a
-   balancing test. (Safety/anti-abuse is a well-trodden legitimate-interest case, but it
-   must be written down.)
+1. **Legal basis (layered)** — AU primary: collection of the **non-sensitive**
+   severity-only signals is reasonably necessary for the safety function (APP 3.2),
+   under the privacy-policy notice (APP 5) and APP 6 use/disclosure limits — **no
+   consent required** because the severity-only data is not sensitive information.
+   EU/UK secondary: **legitimate interest** in platform/community safety, documented
+   with a balancing test in the LIA — the operator's own basis, **not** server-owner
+   consent. (The severity-only design is what keeps the AU signals non-sensitive and
+   the GDPR Art. 10 risk very unlikely — see `.omp/RISK-REGISTER.md` R1.)
 2. **Disclosure before launch** — privacy policy **and** terms updates describing the
    threat network: what's shared, why, retention, and rights. The deploy gate + docs-first
    rule already force docs ahead of code; this is bigger — treat the policy/terms PR as a
    **blocking dependency** of any network ingestion.
 3. **Data minimization across the boundary** — servers must **not** see each other's raw
-   moderation text. The network exposes **aggregates and bands**, never another server's
-   free-text reasons or which server acted. Example dossier line:
+   moderation text, **nor the offence type/category**. The network exposes **aggregates
+   plus a generic severity level**, never another server's free-text reasons, never an
+   offence label, never an AI-generated summary (those are **local-only**), and never
+   which server acted. Example dossier line:
    > 🔴 **Network: High** — flagged in **6** networked servers (2 bans, 4 warns, last 9d ago)
-   …not "Server X banned them for 'scamming in #market'." This protects the user *and*
-   the originating server's operational confidentiality.
+   …not "Server X banned them for 'scamming in #market'." The severity level says *how
+   serious*, never *what they did*. This protects the user *and* the originating server's
+   operational confidentiality.
 4. **Data-subject rights** — access/erasure path for an individual (today's flow routes
    members to their server owner; a cross-server record needs a direct route via `/support`,
    already referenced in privacy.md:209).
@@ -75,16 +83,28 @@ first-class parts of this spec (not afterthoughts):
 
 Aggregated across participating guilds, each time-decayed, each minimized to counts/bands:
 
+**SEVERITY-ONLY boundary (locked 2026-06-21).** The cross-server network is
+**severity-only**. What crosses the boundary, per user: a **pseudonymous Discord
+user ID**, **counts**, **recency**, a single **severity level** (e.g. minor /
+serious), the **AltGuard fingerprint-match boolean**, and the **account-age /
+join-velocity modifier**. The **offence type/category does NOT cross** — no
+"scam/financial" or any other offence label travels between servers; it is folded
+into the generic severity level only. This is the v1 signal set.
+
 | Signal | Source today | Network form |
 |---|---|---|
+| Discord user ID | mod actions | pseudonymous user ID (the match key — minimum necessary PII) |
 | Bans / kicks | mod actions | count of distinct servers + recency |
-| Warnings (manual / AutoMod) | `staff_warnings.json` | counts by type, decayed |
-| AutoMod serious-category hits | automod | count, category band (no text) |
-| AltGuard fingerprint matches | `offenders.json` | "matches known-offender fingerprint in network" boolean/band |
+| Warnings (manual / AutoMod) | `staff_warnings.json` | counts by type, decayed — folded into severity |
+| AutoMod serious-category hits | automod | contributes to the **severity level** only — **never the category/type, never text** |
+| Severity level | derived | a single generic band (e.g. minor / serious) — **no offence type** |
+| AltGuard fingerprint matches | `offenders.json` | "matches known-offender fingerprint in network" **boolean** |
 | Account age / join velocity | Discord | risk modifier (already available, unused) |
 
-Raw reasons/free-text **never cross the boundary**. Local view keeps full detail; network
-view is aggregate-only.
+Raw reasons/free-text, the **offence type/category**, and **AI-generated offence
+summaries never cross the boundary** — AI summaries are **local-only** (shown only
+to the originating server's staff). Local view keeps full detail; network view is
+aggregate + severity-only.
 
 ## 5. Scoring model
 
@@ -116,7 +136,8 @@ Cross-server data **cannot** live in per-guild JSON. The **relay** is the natura
 it already spans the fleet and has sqlite. Proposed split:
 
 - **Bot → relay**: emit minimized moderation events (`ban|kick|warn|automod`, user_id,
-  decayed weight, category band — no free-text) via an authenticated relay endpoint.
+  decayed weight, **severity level — no offence type/category, no free-text, no AI
+  summary**) via an authenticated relay endpoint.
 - **Relay**: stores network events, computes `network_score(user_id)` with standing +
   corroboration, exposes `GET /threat/{user_id}` (operator/bot auth).
 - **Bot ← relay**: dossier assembly fetches the network component; degrades gracefully to
@@ -172,8 +193,13 @@ build-excluded/internal.
 
 ### Remaining open (non-blocking)
 
-- **Which signals cross the boundary.** Start minimal (bans/kicks + serious-category
-  AutoMod + AltGuard match) and expand; confirm the v1 set.
+- **Which signals cross the boundary — RESOLVED (severity-only, locked 2026-06-21).**
+  The v1 set is fixed: pseudonymous user ID, counts, recency, a generic **severity
+  level**, AltGuard fingerprint-match boolean, and account-age/join-velocity modifier.
+  **The offence type/category does NOT cross**, and **AI offence summaries are
+  local-only.** This is the design that de-risks the sensitive-information /
+  GDPR Art. 10 exposure (see `.omp/RISK-REGISTER.md` R1, re-rated to LOW/MEDIUM). Any
+  expansion of the signal set must re-run the PIA+LIA before shipping.
 
 ## 10. Risks
 
