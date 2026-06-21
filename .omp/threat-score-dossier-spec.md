@@ -136,19 +136,37 @@ it already spans the fleet and has sqlite. Proposed split:
 - **P3 — (deferred) action assist:** optional, server-defined thresholds → *suggest* (DM
   check-ins / raid-alert weighting), still never silent auto-bans. Separate spec + safeguards.
 
-## 9. Open decisions (need owner call)
+## 9. Decisions (LOCKED)
 
-- **A. Participation default.** **DECIDED → default-on for every server, with opt-out**
-  (owner: "strongest for all under our wing" + the strengthen-SA principle). This carries the
-  heaviest disclosure/consent burden, so it makes P0 (privacy + terms + prominent disclosure +
-  easy opt-out, advisory-only) a hard blocking dependency. Remaining sub-question: is opt-out
-  per-server only, or also a per-user (data-subject) suppression?
-- **B. Free vs Premium.** Advisory Threat Score is marketed "free for every server"
-  (features.md:170) yet listed under Premium unlocks in the relay (relay.py:5576). Resolve
-  before the dossier ships — the network is most valuable when *every* server participates,
-  which argues for the contribution layer being free/standard even if the rich dossier view
-  is Premium.
-- **C. Which signals cross the boundary.** Start minimal (bans/kicks + serious-category
+These were open owner calls; they are now settled. Do not re-litigate without an
+explicit owner reversal.
+
+1. **No server opt-out.** Participation is **default-on for every server with NO
+   opt-out** — the network is **core functionality**, not a toggle. Every server
+   contributes. (Owner: "strongest for all under our wing" + the strengthen-SA
+   principle.) This carries the heaviest disclosure/consent burden, so it makes
+   P0 (privacy + terms + prominent disclosure, advisory-only) a hard blocking
+   dependency.
+2. **Individual erasure/objection is case-by-case via `/support`** — there is no
+   opt-out UI. A data subject's erasure or objection request is handled
+   individually and either **honoured or refused with documented compelling
+   legitimate grounds** for refusal.
+3. **Retention: 12 months rolling from the last signal → hard-delete.** Each
+   contribution's clock resets on a new signal for that subject; once 12 months
+   elapse with no new signal, the record is hard-deleted.
+4. **Legal basis = legitimate interest, backed by a written LIA**
+   (Legitimate Interests Assessment).
+5. **All servers contribute; the rich dossier view is Premium.** The contribution
+   layer is free/standard (every server participates so the network is maximally
+   valuable); the detailed dossier surface is a Premium feature.
+
+**Legal documentation.** The P0 legal documentation is drafted in **PR #130**
+(`privacy.md` + `terms.md`). The written **LIA** lives at
+`.omp/threat-network-LIA.md`.
+
+### Remaining open (non-blocking)
+
+- **Which signals cross the boundary.** Start minimal (bans/kicks + serious-category
   AutoMod + AltGuard match) and expand; confirm the v1 set.
 
 ## 10. Risks
