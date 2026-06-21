@@ -48,22 +48,33 @@ of their moderation records and we are a **processor** acting on their instructi
 a controller** of a cross-server safety dataset about Discord users. That requires, as
 first-class parts of this spec (not afterthoughts):
 
-1. **Legal basis** — legitimate interest in platform/community safety, documented, with a
-   balancing test. (Safety/anti-abuse is a well-trodden legitimate-interest case, but it
-   must be written down.)
+1. **Legal basis (layered)** — AU primary: collection of the **non-sensitive**
+   severity-only signals is reasonably necessary for the safety function (APP 3.2),
+   under the privacy-policy notice (APP 5) and APP 6 use/disclosure limits — **no
+   consent required** because the severity-only data is not sensitive information.
+   EU/UK secondary: **legitimate interest** in platform/community safety, documented
+   with a balancing test in the LIA — the operator's own basis, **not** server-owner
+   consent. (The severity-only design is what keeps the AU signals non-sensitive and
+   the GDPR Art. 10 risk very unlikely — see `.omp/RISK-REGISTER.md` R1.)
 2. **Disclosure before launch** — privacy policy **and** terms updates describing the
    threat network: what's shared, why, retention, and rights. The deploy gate + docs-first
    rule already force docs ahead of code; this is bigger — treat the policy/terms PR as a
    **blocking dependency** of any network ingestion.
 3. **Data minimization across the boundary** — servers must **not** see each other's raw
-   moderation text. The network exposes **aggregates and bands**, never another server's
-   free-text reasons or which server acted. Example dossier line:
+   moderation text, **nor the offence type/category**. The network exposes **aggregates
+   plus a generic severity level**, never another server's free-text reasons, never an
+   offence label, never an AI-generated summary (those are **local-only**), and never
+   which server acted. Example dossier line:
    > 🔴 **Network: High** — flagged in **6** networked servers (2 bans, 4 warns, last 9d ago)
-   …not "Server X banned them for 'scamming in #market'." This protects the user *and*
-   the originating server's operational confidentiality.
-4. **Data-subject rights** — access/erasure path for an individual (today's flow routes
-   members to their server owner; a cross-server record needs a direct route via `/support`,
-   already referenced in privacy.md:209).
+   …not "Server X banned them for 'scamming in #market'." The severity level says *how
+   serious*, never *what they did*. This protects the user *and* the originating server's
+   operational confidentiality.
+4. **Data-subject rights** — access/correction/erasure path for an individual, plus a
+   **qualified opt-out from profiling** (see §9.2): direct route via `/support` now,
+   self-service portal toggle on the roadmap. Today's ordinary-moderation flow routes
+   members to their server owner; the cross-server record needs the direct `/support`
+   route (referenced in privacy.md). The opt-out is subject to the §9.2 safety
+   exception (compelling legitimate grounds → most serious signals may be retained).
 5. **Anti-poisoning safeguards** — a malicious or sloppy server could mass-warn to poison
    the network. Mitigations: weight contributions by **server standing** (age, fleet
    tenure, volume sanity), require **independent corroboration** (signal only "counts" at
@@ -75,16 +86,28 @@ first-class parts of this spec (not afterthoughts):
 
 Aggregated across participating guilds, each time-decayed, each minimized to counts/bands:
 
+**SEVERITY-ONLY boundary (locked 2026-06-21).** The cross-server network is
+**severity-only**. What crosses the boundary, per user: a **pseudonymous Discord
+user ID**, **counts**, **recency**, a single **severity level** (e.g. minor /
+serious), the **AltGuard fingerprint-match boolean**, and the **account-age /
+join-velocity modifier**. The **offence type/category does NOT cross** — no
+"scam/financial" or any other offence label travels between servers; it is folded
+into the generic severity level only. This is the v1 signal set.
+
 | Signal | Source today | Network form |
 |---|---|---|
+| Discord user ID | mod actions | pseudonymous user ID (the match key — minimum necessary PII) |
 | Bans / kicks | mod actions | count of distinct servers + recency |
-| Warnings (manual / AutoMod) | `staff_warnings.json` | counts by type, decayed |
-| AutoMod serious-category hits | automod | count, category band (no text) |
-| AltGuard fingerprint matches | `offenders.json` | "matches known-offender fingerprint in network" boolean/band |
+| Warnings (manual / AutoMod) | `staff_warnings.json` | counts by type, decayed — folded into severity |
+| AutoMod serious-category hits | automod | contributes to the **severity level** only — **never the category/type, never text** |
+| Severity level | derived | a single generic band (e.g. minor / serious) — **no offence type** |
+| AltGuard fingerprint matches | `offenders.json` | "matches known-offender fingerprint in network" **boolean** |
 | Account age / join velocity | Discord | risk modifier (already available, unused) |
 
-Raw reasons/free-text **never cross the boundary**. Local view keeps full detail; network
-view is aggregate-only.
+Raw reasons/free-text, the **offence type/category**, and **AI-generated offence
+summaries never cross the boundary** — AI summaries are **local-only** (shown only
+to the originating server's staff). Local view keeps full detail; network view is
+aggregate + severity-only.
 
 ## 5. Scoring model
 
@@ -116,7 +139,8 @@ Cross-server data **cannot** live in per-guild JSON. The **relay** is the natura
 it already spans the fleet and has sqlite. Proposed split:
 
 - **Bot → relay**: emit minimized moderation events (`ban|kick|warn|automod`, user_id,
-  decayed weight, category band — no free-text) via an authenticated relay endpoint.
+  decayed weight, **severity level — no offence type/category, no free-text, no AI
+  summary**) via an authenticated relay endpoint.
 - **Relay**: stores network events, computes `network_score(user_id)` with standing +
   corroboration, exposes `GET /threat/{user_id}` (operator/bot auth).
 - **Bot ← relay**: dossier assembly fetches the network component; degrades gracefully to
@@ -147,27 +171,50 @@ explicit owner reversal.
    principle.) This carries the heaviest disclosure/consent burden, so it makes
    P0 (privacy + terms + prominent disclosure, advisory-only) a hard blocking
    dependency.
-2. **Individual erasure/objection is case-by-case via `/support`** — there is no
-   opt-out UI. A data subject's erasure or objection request is handled
-   individually and either **honoured or refused with documented compelling
-   legitimate grounds** for refusal.
+2. **Individuals get a QUALIFIED opt-out from profiling (locked 2026-06-21,
+   supersedes the old "no opt-out UI" line).** Distinct from §9.1: **servers do
+   NOT get an opt-out** (participation is core, mandatory functionality), but an
+   **individual** (the person being scored) **may opt out of threat-network
+   profiling**. The opt-out is available **on request via `/support` now**; a
+   **self-service portal toggle is planned (roadmap) — NOT yet live, do not claim
+   it is.** Each erasure/objection/opt-out request is handled individually via
+   `/support`.
+   - **Safety exception (the balance):** where there are **compelling legitimate
+     grounds** — preventing serious harm such as verified raids, scams, or
+     ban-evasion — the **most serious, corroborated signals may still be
+     retained/shared despite an opt-out**, so a known bad actor cannot opt out to
+     evade detection. This maps to **GDPR Art. 21(1) compelling-legitimate-grounds**
+     plus the safety/fraud exception, and to the APP framework (APP 13 correction +
+     APP 11.2 destruction-when-no-longer-needed, with the voluntary opt-out offered
+     above the statutory floor). A refusal is **documented** with its grounds.
 3. **Retention: 12 months rolling from the last signal → hard-delete.** Each
    contribution's clock resets on a new signal for that subject; once 12 months
    elapse with no new signal, the record is hard-deleted.
-4. **Legal basis = legitimate interest, backed by a written LIA**
-   (Legitimate Interests Assessment).
+4. **Legal basis (layered).** PRIMARY = Australian Privacy Act 1988 (Cth) + the
+   13 APPs (the operator is in Queensland, Australia); there is no
+   legitimate-interest basis under Australian law, so collection/use/disclosure is
+   assessed APP-by-APP. SECONDARY = EU/UK GDPR (applies extraterritorially to
+   EU/UK users), under which the basis is **legitimate interest** backed by a
+   written LIA. Both are documented in the combined PIA+LIA (see below).
 5. **All servers contribute; the rich dossier view is Premium.** The contribution
    layer is free/standard (every server participates so the network is maximally
    valuable); the detailed dossier surface is a Premium feature.
 
 **Legal documentation.** The P0 legal documentation is drafted in **PR #130**
-(`privacy.md` + `terms.md`). The written **LIA** lives at
-`.omp/threat-network-LIA.md`.
+(`privacy.md` + `terms.md`). The combined internal assessment — **PIA (Australian
+Privacy Act + APPs) + LIA (GDPR)** — lives at `.omp/threat-network-PIA-LIA.md`,
+and the residual-risk register at `.omp/RISK-REGISTER.md`. Both are
+build-excluded/internal.
 
 ### Remaining open (non-blocking)
 
-- **Which signals cross the boundary.** Start minimal (bans/kicks + serious-category
-  AutoMod + AltGuard match) and expand; confirm the v1 set.
+- **Which signals cross the boundary — RESOLVED (severity-only, locked 2026-06-21).**
+  The v1 set is fixed: pseudonymous user ID, counts, recency, a generic **severity
+  level**, AltGuard fingerprint-match boolean, and account-age/join-velocity modifier.
+  **The offence type/category does NOT cross**, and **AI offence summaries are
+  local-only.** This is the design that de-risks the sensitive-information /
+  GDPR Art. 10 exposure (see `.omp/RISK-REGISTER.md` R1, re-rated to LOW/MEDIUM). Any
+  expansion of the signal set must re-run the PIA+LIA before shipping.
 
 ## 10. Risks
 

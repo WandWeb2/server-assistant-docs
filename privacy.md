@@ -7,15 +7,26 @@ description: How Server Assistant handles your Discord server's data — encrypt
 # Server Assistant Privacy Policy
 
 **Effective date:** May 9, 2026
-**Last updated:** June 18, 2026
+**Last updated:** June 21, 2026
 
 This policy describes how the Server Assistant Discord bot ("the Bot") collects, uses, and stores information when installed in a Discord server.
 
 ## Who is responsible
 
-Server Assistant is built and maintained by **Wandering Webmaster** ([wandweb.co](https://wandweb.co)). Contact us via the [`/support`]({{ site.url }}{{ site.baseurl }}/support/) slash command from any Discord server with the Bot installed.
+Server Assistant is built and maintained by **Wandering Webmaster** ([wandweb.co](https://wandweb.co)), based in **Queensland, Australia**, serving Discord communities **worldwide**. Contact us via the [`/support`]({{ site.url }}{{ site.baseurl }}/support/) slash command from any Discord server with the Bot installed.
 
-Wandering Webmaster is the **data controller** for the information described in this policy. Where we process moderation records about a server's members **on that server's behalf**, the server owner is the controller and we act as a **processor** carrying out the owner's instructions.
+Because we are in Australia and serve users everywhere, more than one privacy law can apply to the same information. We aim to handle your data in line with:
+- the **Australian Privacy Act 1988 (Cth)** and the **13 Australian Privacy Principles (APPs)** — our primary framework;
+- the **EU and UK GDPR**, where they apply to users in the EU/UK (a cross-server safety signal can involve monitoring the behaviour of those users); and
+- the **CCPA**, for California residents.
+
+Where these regimes use different language for the same idea, we have written this policy to meet the stronger expectation in plain terms.
+
+Wandering Webmaster is the **data controller** (and, in Australian terms, the **APP entity**) for the information described in this policy. Where we process moderation records about a server's members **on that server's behalf**, the server owner is the controller and we act as a **processor** carrying out the owner's instructions. There is one important exception: for the **Cross-Server Threat Network** (see that section below), where we pool minimized signals from many servers into a shared safety dataset, **we act as the data controller** of that cross-server dataset.
+
+### Our approach to your privacy
+
+Server Assistant is run by a **small independent operator** who takes a **privacy-by-design, data-minimisation** approach: we collect only what each feature genuinely needs, share the minimum necessary, and prefer aggregates and severity levels over raw content wherever a feature allows. If you ever have a privacy concern — about the Threat Network or anything else — you can reach us directly through the [`/support`]({{ site.url }}{{ site.baseurl }}/support/) slash command from any server with the Bot installed, and we will respond. We **review and update this policy periodically** as the Bot's features evolve, and the "Last updated" date above reflects the most recent revision.
 
 ---
 
@@ -129,13 +140,131 @@ You control all of this via the `/privacy` panel. AutoMod and anti-raid are requ
 | **Natural-language commands** | Messages in your staff-chat channel | Off (new servers) |
 | **Message Report** | ~20 messages around the one you right-click | Off (new servers) |
 | **🤔 AutoMod AI second-opinion** *(Premium, opt-in)* | The text of a single borderline AutoMod-flagged message + which filter matched. Confident hits and clear misses are never sent | Off (opt-in via `/automod → AI Review`) |
-| **🕵️ Alt-guard / repeat-offender detection** | **Local-only fingerprint** of users your staff ban or kick (avatar hash, name fragments, account-age bucket) plus the same for each new joiner. **Nothing leaves your host** — no AI, no third party, no cross-server lookup | Off (opt-in via `/altguard on`) |
+| **🕵️ Alt-guard / repeat-offender detection** | **Local-only fingerprint** of users your staff ban or kick (avatar hash, name fragments, account-age bucket) plus the same for each new joiner. The fingerprint **itself** never leaves your host; a **match indicator** may feed the Cross-Server Threat Network (see below) | Off (opt-in via `/altguard on`) |
+| **🛡️ Cross-Server Threat Network** | Minimized abuse signals (a pseudonymous Discord user ID, ban/kick counts + recency, a **severity level** — e.g. minor / serious, AltGuard fingerprint-match indicator, account-age/join-velocity) shared across protected servers as **aggregates and a severity level only** — never the offence type/category, never reasons, never message text, never which server acted. See **Cross-Server Threat Network** below | On (core feature — no *server* opt-out; individuals may opt out of profiling, subject to a safety exception) |
 | **📩 Ban-reason DMs + appeals** | The staff-supplied ban reason is sent in a DM to the banned member; the member's **single** appeal reply (if they send one) is forwarded to your staff channel verbatim. No AI is invoked unless staff press **Research** (which runs Message Report on the member's last message) | On (opt-out per server) |
 | **🩺 Pulse** | Aggregate counts only — no message content stored | On |
 | **🟢 Live server insights** *(Pulse + web-portal dashboard)* | Member **presence** (online / idle / DND vs offline) and **voice-channel membership**, read live to show **aggregate counts only** (e.g. "42 online · 6 in voice"). Never which member, never which channel; only the running totals are stored, as time-series numbers for the growth/activity charts | On |
 | **🧠 Self-trained AutoMod** | Messages your staff delete or report | Off |
 | **🩹 Bot Health Insurance** | The bot's own action counts | On |
 | **💬 SAi** | Your settings + recent event summary + your typed question | On-demand |
+
+---
+
+## Cross-Server Threat Network
+
+Server Assistant operates a **Cross-Server Threat Network**: a shared safety signal that helps every protected server recognise users who have a serious, corroborated history of abuse (scams, raids, ban-evasion) on *other* protected servers — ideally **before** they cause harm on yours. This is a **core, defining feature** of Server Assistant, not an add-on, and it is described here in full.
+
+<!-- LEGAL REVIEW (SEVERITY-ONLY DESIGN — RESIDUAL LOW/MEDIUM): This section pools the MINIMUM necessary personal information (a pseudonymous Discord user ID + counts/recency + a generic severity level + a fingerprint-match boolean + an account-age modifier) across servers. SERVERS get NO opt-out (core functionality); INDIVIDUALS get a QUALIFIED opt-out from profiling (via /support now; self-service portal toggle forward-referenced to roadmap, NOT live) with a safety exception — compelling legitimate grounds (GDPR Art. 21(1) + safety/fraud) let the most serious corroborated signals be retained/shared despite an opt-out so bad actors can't evade detection. Plus access/correction/deletion via /support. Assessed APP-by-APP under the Australian Privacy Act 1988 (primary) and as a GDPR legitimate-interest basis (secondary, EU/UK). DESIGN CHANGE (locked 2026-06-21): the offence TYPE/CATEGORY no longer crosses servers (only a severity level does) and AI/free-text offence summaries are LOCAL-ONLY. On that design the cross-server dataset is assessed NON-sensitive under the Privacy Act (not a criminal-record per s6(1)) and very unlikely to be GDPR Art. 10 criminal-offence data, so APP 3.2 (reasonably necessary, non-sensitive, NO consent required) + APP 5 notice + APP 6 limits carry collection; EU/UK rests on legitimate interest per the LIA, NOT server-owner consent. R1 re-rated CRITICAL → LOW/MEDIUM in .omp/RISK-REGISTER.md on the strength of the design. Residual: keep the severity band genuinely generic (no offence label leaking in) and keep the EU/UK Art. 10 boundary under review. Internal assessment: .omp/threat-network-PIA-LIA.md §A2/§A-RISK/§B3; register: .omp/RISK-REGISTER.md R1. -->
+
+### What this means for our role
+
+For ordinary moderation records, the server owner is the controller and we act as a processor on their instructions (see *Who is responsible* above). The Threat Network is different. Because we **pool minimized signals from many servers** to build a shared, cross-server picture of a user's risk, **Wandering Webmaster is the data controller** of that cross-server safety dataset. We take on the controller's obligations for it — including the legal basis, retention limits, and data-subject rights described below.
+
+### What data is shared across servers
+
+Every protected server **contributes** minimized abuse signals to the network and is, in turn, **protected by** it. The network is **severity-only**: only a small, **minimized aggregate plus a single severity level** ever crosses the boundary between servers. Specifically, the network may hold, per Discord user:
+
+- **A pseudonymous Discord user ID** — the identifier needed to match signals to the right person. This is the **minimum necessary personal information**; it is pseudonymous, not anonymous, but it is never accompanied by a name, message, or any free-text content.
+- **Bans / kicks:** a count of how many *distinct* protected servers have actioned the user, and how recently — never which servers, never the reasons
+- **A severity level** (e.g. *minor* / *serious*) summarising how serious the corroborated activity is — **never the offence type or category**. No "scam", "financial", or any other offence label crosses servers; only the severity level does.
+- **Repeat-offender fingerprint match (AltGuard):** a **yes/no** indicator that the user matches a known-offender fingerprint seen elsewhere in the network — never the underlying fingerprint detail
+- **Account-age / join-velocity modifier:** a risk modifier derived from data Discord already exposes
+
+What **never** crosses the boundary:
+
+- The **offence type or category** of any action — only a severity level travels, never a "scam/financial"-style label
+- Raw moderation reasons or any free-text a staff member wrote
+- **AI-generated offence summaries** — these are **local-only** and never leave the originating server (see below)
+- **Which specific server** took an action (originating servers stay confidential)
+- Message content of any kind
+- Any name, username, avatar, or other Discord account identifier beyond the user ID needed to match signals
+
+A server's local moderation record keeps its full detail for that server's own staff (governed by the rest of this policy); only the minimized, severity-only signals above feed the network. The **local** score (this server only) and the **network** score (everywhere else) are always shown as **separate bands** and are never silently combined.
+
+**AI summaries are local-only.** Where an AI feature generates a short summary of an offence for your staff, that summary stays on the originating server and is shown only to that server's staff. **It never crosses into the network.** No free-text about an individual — AI-generated or human-written — ever crosses the server boundary; the network is aggregate and severity-only by design. This is data minimisation built into the architecture, not a wording promise.
+
+### What we do NOT collect, keep, or share in the network
+
+To be unambiguous, here is what the Cross-Server Threat Network **never** does. The network does **not**:
+
+- **Share message or DM content** of any kind across servers — not your members' messages, not their direct messages.
+- **Share cross-server free-text** — no staff-written moderation reasons and **no AI-generated offence summaries** ever cross the boundary (AI summaries are local-only).
+- **Share the offence type or category** across servers — no "scam", "financial", or any other offence label travels; only a generic severity level does.
+- **Share names or Discord profile data** — no username, display name, avatar, banner, or any other Discord account identifier crosses, beyond the **pseudonymous user ID** needed to match signals to the right person.
+- **Reveal which server acted** — originating servers stay confidential across the network.
+- **Sell your data, or use it for advertising or profiling for ads** — the network exists for safety only; we never sell data or share it with advertising or analytics networks.
+
+### Why we do this (legal basis)
+
+We operate the Threat Network for one purpose: **platform and community safety** — preventing fraud, scams, raids, and ban-evasion across the servers we protect. How that purpose is justified depends on which law applies to you.
+
+**Under Australian law (our primary framework).** Australia's Privacy Act does not have a "legitimate interest" basis like the GDPR's. Instead, we assess the network against the **Australian Privacy Principles** directly:
+
+- We collect this information because it is **reasonably necessary** for the network's safety function (**APP 3.2**). Because the cross-server signals are **not sensitive information** (see below), we do not need consent to collect them.
+- This policy is your **collection notice** (**APP 5**): it tells you what we collect, why, and how to access, correct, or complain.
+- We use and disclose the signals **only** for that safety purpose — a security purpose closely related to the moderation context in which they arise — and never for marketing, profiling for advertising, or any unrelated use (**APP 6**).
+- We keep the data secure and destroy it when it is no longer needed (APP 11), and let you access and correct your record (APP 12 and APP 13).
+
+The safeguards in this section — strict severity-only minimization, the qualified individual opt-out and rights-request route below, advisory-only use, anti-abuse corroboration, and a hard 12-month retention cap — are what keep this handling proportionate.
+
+**How we give you notice.** Providing notice of the network is **our** responsibility, not something we push onto server owners. This published Privacy Policy is your standing notice now. In addition, the Bot delivers an **in-Discord notice when it is installed in a server**, and an **on-demand command that surfaces this disclosure on request is on our roadmap** (planned, not yet live). Server owners are welcome to tell their members that the server takes part — and we encourage it as good practice — but it is **not their obligation**; the duty to give notice rests with us as the operator.
+
+**Under the EU/UK GDPR (where it applies to you).** Our legal basis is **legitimate interest** (Article 6(1)(f)) — the interest of Wandering Webmaster, every protected server, and their communities in safety and anti-abuse — backed by a written **Legitimate Interest Assessment (LIA)** weighing that interest against the rights and freedoms of the individuals whose signals are pooled. This legitimate-interest basis is **our own**, assessed and documented by us; it does **not** rest on a server owner "consenting" on their members' behalf. Server-owner notice to members is good practice and helps transparency, but the lawful basis for the cross-server processing is the legitimate interest set out in the LIA.
+
+**On sensitive information.** We have deliberately designed the network so that the cross-server data is **not** a "criminal record" or other **sensitive information** under the Australian Privacy Act, and is **very unlikely** to be **criminal-offence data** under GDPR Article 10. The reason is structural, not just careful wording: the **offence type or category never crosses servers** (only a generic severity level does), and **AI-generated and human-written offence summaries are local-only**. What travels is a pseudonymous user ID, counts, recency, a severity level, a fingerprint-match boolean, and an account-age modifier — none of which describes *what* a person allegedly did. For EU/UK users we keep a brief, honest residual note: the boundary between a generic severity signal and criminal-offence data is one a regulator could still test, so we keep the design under review and minimise further if needed. <!-- LEGAL REVIEW (CALIBRATED DOWN — DESIGN CHANGE): offence type/category no longer crosses servers (severity-only band) and AI/free-text summaries are local-only, so the cross-server dataset is assessed as NON-sensitive under the Privacy Act and very unlikely to be GDPR Art. 10 data. R1 re-rated CRITICAL → LOW/MEDIUM in .omp/RISK-REGISTER.md on the strength of the DESIGN, not wording. AU basis is APP 3.2 (non-sensitive, no consent) + APP 5 notice + APP 6; EU/UK basis is legitimate interest per the LIA, NOT server-owner consent. Residual EU/UK note retained honestly. See .omp/threat-network-PIA-LIA.md §A2/§A-RISK/§B3 and .omp/RISK-REGISTER.md R1. -->
+
+### Opt-out: servers vs individuals
+
+There are two different questions here, and they have different answers.
+
+**Servers cannot opt out.** The Threat Network is core, defining functionality — it only works when **every** protected server participates, so that a user banned for scams across six servers lights up on the seventh. So **there is no server-level opt-out, and participation is on by default for every server, across the fleet.** A server cannot use Server Assistant's protection while withholding its own contribution; contribution and protection are two sides of the same network. We disclose this plainly here and in our [Terms of Service]({{ site.url }}{{ site.baseurl }}/terms/) so that server owners understand it when they invite the Bot.
+
+**Individuals can opt out of profiling — with one safety-based exception.** Although a server cannot opt out, **you, as an individual, can ask us to stop profiling you in the network.** This is a **qualified opt-out**:
+
+- **How to opt out — now.** Contact us via the [`/support`]({{ site.url }}{{ site.baseurl }}/support/) slash command (from any server with the Bot installed) or via [wandweb.co](https://wandweb.co) and ask to opt out of Threat Network profiling. You come **directly** to us — you do not have to go through any server owner. A **self-service opt-out toggle in the web portal is planned** (see our roadmap); until it ships, the `/support` route above is how you opt out, and we action requests individually.
+- **The safety exception.** Because the whole point of the network is to stop serious cross-server harm, we keep one narrow exception: where we have **compelling legitimate grounds** — preventing serious harm such as a **verified raid, scam, or ban-evasion** — the **most serious, corroborated signals about you may still be retained or shared despite your opt-out**. This stops a known bad actor from opting out simply to evade detection. Outside that exception, an opt-out is honoured. If we rely on the exception, we will **tell you** and document our reasons.
+
+This balance maps onto the law: under the **GDPR** it is the **Article 21(1)** right to object to legitimate-interest processing, which we honour **unless we can demonstrate compelling legitimate grounds** (the safety/fraud need above); under the **Australian Privacy Act** we offer this opt-out as a voluntary measure above the statutory floor, alongside your **correction** right (APP 13) and our duty to **destroy data once it is no longer needed** (APP 11.2).
+
+### Advisory only — never automatic
+
+The network score is **advisory**. In its current version it **never auto-actions** — it does not ban, kick, or sanction anyone on its own. It surfaces a risk picture to a server's human staff, who decide what (if anything) to do. The score is **explainable** (it shows what drove it — e.g. "flagged in 6 networked servers, 2 bans, last 9 days ago") and **appealable** (see your rights below). Bands are tuned conservatively to favour false-negatives over false-positives.
+
+### Data minimization
+
+Minimization is engineered into the network, not bolted on: only counts, recency, a **severity level**, and a boolean fingerprint-match indicator ever leave a server. **No offence type or category**, no free-text, **no AI-generated summaries**, no message content, no originating-server identity, and no Discord account identifiers beyond the **pseudonymous user ID** needed to match signals to the right person. We share the **minimum necessary personal information** — that pseudonymous user ID plus aggregate counts and a severity level; never names, messages, or content. This protects both the individual and the operational confidentiality of the server that originally acted.
+
+### Retention
+
+Network signals are retained on a **rolling 12-month window measured from the last signal** for that user. When 12 months pass with no new contributing signal, the user's network record is **hard-deleted**. A new signal restarts the window.
+
+### Your rights in the Threat Network
+
+If you are an individual whose data is in the network, you may contact us via the [`/support`]({{ site.url }}{{ site.baseurl }}/support/) slash command (from any server with the Bot installed) or via [wandweb.co](https://wandweb.co) to exercise the rights below — including the **qualified opt-out from profiling** described above. You can come **directly** to us — you do not have to go through a server owner. (A self-service opt-out toggle in the web portal is **planned** — see our roadmap — but is **not yet live**; the `/support` route is how you opt out today.)
+
+**What you can always do (these are your rights, everywhere):**
+
+- **Access (APP 12 / GDPR Art. 15).** Ask what network record we hold about you. Because the record is minimized to counts, recency, and a severity level, we can show you the drivers (for example, "flagged in 6 networked servers, 2 bans, last 9 days ago").
+- **Correction (APP 13 / GDPR Art. 16).** If a signal about you is **wrong, out of date, or misleading** — for example a bad-faith ban — ask us to correct or remove it. We will take reasonable steps to fix it. This is the main route by which an unfair flag gets put right.
+
+**Opt-out / deletion / objection.** You may **opt out of network profiling**, and **request deletion of, or object to, the processing of, your network record**. Australian privacy law does not give a general "right to erasure" or "right to object" the way the GDPR does — but we go beyond the legal floor and offer this opt-out and deletion path to everyone as a matter of good practice, and we are independently required to **destroy your record once it is no longer needed** (and in any case at the 12-month retention cap below). We handle each request **individually**:
+
+- We will **honour** the request (opt you out, delete, or stop processing your network record), **unless**
+- we have **compelling legitimate grounds** — a **clear, corroborated safety or fraud-prevention need** (a verified raid, scam, or ban-evasion) — to retain the **most serious** signals, so that a known bad actor cannot opt out to evade detection. In that case we will **tell you and document why**. Outside that narrow exception, your opt-out is honoured.
+
+**How to opt out today:** via the [`/support`]({{ site.url }}{{ site.baseurl }}/support/) route above. A **self-service portal toggle is planned (roadmap), not yet live.**
+
+**If you are in the EU or UK**, this same route services your GDPR **right to object** to legitimate-interest processing (Article 21) and your **right to erasure** (Article 17): we stop, opt you out, or erase **unless we can demonstrate compelling legitimate grounds** under **Article 21(1)** (the corroborated safety/fraud need above). <!-- LEGAL REVIEW (RESOLVED — DRAFTING): Re-based onto APP 12 (access) + APP 13 (correction) + APP 11.2 destruction-when-no-longer-needed as the AU framing (no standalone AU erasure/objection right), with the voluntary case-by-case deletion offered above the statutory floor; GDPR Art. 21/17 layered for EU/UK. The only residual is operational, not drafting: the "compelling/corroborated grounds" standard must be applied consistently and refusals documented when the /support route runs — tracked in .omp/threat-network-PIA-LIA.md Part C and .omp/RISK-REGISTER.md. -->
+
+### Contribution vs visibility
+
+To be clear about what each server *sees* versus what it *contributes*:
+
+- **Every** protected server (free, standard, or Premium) **contributes** signals to and is **protected by** the network.
+- The **rich dossier view** — the detailed per-user breakdown of network drivers — is a **Premium** feature. Free and standard servers receive only a **basic network band** (a low/elevated/high indicator) rather than the full breakdown.
+
+Participation in the network itself does not depend on plan tier; only the depth of what staff can *view* does.
 
 ---
 
@@ -161,7 +290,7 @@ Each AI provider has their own privacy policy governing how they handle data. We
 
 Server Assistant runs on dedicated infrastructure hosted by **Hetzner Online GmbH** in the **United States (Oregon)**. All data described above is stored there.
 
-Because Discord and our users are global, using the Bot from outside the United States involves an **international transfer** of the limited data described in this policy to the US. Where required, we rely on appropriate safeguards (such as Standard Contractual Clauses) for those transfers. Our sub-processors may handle data in other regions under their own policies.
+Because Discord and our users are global, using the Bot from outside the United States involves an **international transfer** (in Australian terms, a **cross-border disclosure** under **APP 8**) of the limited data described in this policy to the US, and the Threat Network discloses minimized signals to protected servers in many countries. Where required, we rely on appropriate safeguards (such as Standard Contractual Clauses and data-processing agreements) for those transfers. Under APP 8 we **remain accountable** for how our overseas hosting providers and sub-processors handle Australian personal information. Our sub-processors may handle data in other regions under their own policies.
 
 ### Sub-processors
 
@@ -199,6 +328,7 @@ We do **not** sell your data or share it with advertising or analytics networks.
 | Push notification subscription | Until the staff member disables notifications, signs out, or the Bot is removed |
 | Server-insight counts (online / voice / member time-series) | Rolling window (~90 days) |
 | Bot message log (messages the Bot sends) | Rolling window (~60 days), then auto-deleted |
+| Cross-Server Threat Network signals | Rolling 12 months from the **last** signal, then hard-deleted |
 
 ---
 
@@ -212,9 +342,24 @@ We do **not** sell your data or share it with advertising or analytics networks.
 
 **Individual members** wishing to have personal moderation records erased should contact their server owner first. If unresponsive, contact us directly via `/support`.
 
+**Cross-Server Threat Network:** because we are the controller (Australian: APP entity) of the cross-server safety dataset — not a per-server processor — an individual can come **directly** to us, without going through any server owner, to **access** their network record (APP 12), **correct** it (APP 13), **opt out of profiling**, or **request deletion of / object to** its processing, via [`/support`]({{ site.url }}{{ site.baseurl }}/support/) or [wandweb.co](https://wandweb.co). We handle these requests individually and will honour them unless we have a **clear, corroborated safety or fraud-prevention need** (for EU/UK users, **compelling legitimate grounds** under GDPR **Article 21(1)**) to retain the **most serious** signals, in which case we explain our reasons. The opt-out is available via `/support` now; a **self-service portal toggle is planned (roadmap), not yet live.** See **Cross-Server Threat Network → Opt-out: servers vs individuals** and **→ Your rights in the Threat Network** above for the full mechanism.
+
+### Australian Privacy Act 1988 / Australian Privacy Principles (primary)
+
+We are based in Queensland, Australia and treat the **Privacy Act 1988 (Cth)** and the **13 Australian Privacy Principles (APPs)** as our primary framework. Under the APPs you can:
+
+- **Be informed** about how we handle your personal information (APP 1, APP 5) — this policy is that notice.
+- **Access** the personal information we hold about you (**APP 12**), including your Cross-Server Threat Network record.
+- **Correct** personal information that is inaccurate, out of date, incomplete, or misleading (**APP 13**).
+- Rely on our obligations to collect only what is **reasonably necessary** (APP 3), use and disclose it only for the purpose we collected it or a closely related purpose you'd reasonably expect (APP 6), keep it **secure** (APP 11), and **destroy or de-identify** it once it is no longer needed (APP 11.2).
+
+Australian privacy law does **not** include a general "right to erasure" or standalone "right to object" of the kind the GDPR provides. Where you want a record removed, the routes above (correction under APP 13, and our destruction-when-no-longer-needed obligation) apply — and for the Threat Network we additionally offer a **voluntary, case-by-case deletion path** that goes beyond what the APPs strictly require (see *Cross-Server Threat Network → Your rights in the Threat Network*).
+
+To exercise any of these, contact us via [`/support`]({{ site.url }}{{ site.baseurl }}/support/) or [wandweb.co](https://wandweb.co). If you are not satisfied with our response, you can complain to the **Office of the Australian Information Commissioner (OAIC)** at [oaic.gov.au](https://www.oaic.gov.au/) — see *Complaints* below.
+
 ### GDPR (EEA / UK)
 
-If you're in the European Economic Area or the UK, you have the right to **access, correct, delete, restrict, or object to** our processing of your personal data, and the right to **data portability**. Our legal bases for processing are: **performance of the service** (running the features a server has enabled), our **legitimate interests** (security, anti-abuse, and service integrity), and **consent** for opt-in AI features. To exercise any of these rights, contact us via [`/support`]({{ site.url }}{{ site.baseurl }}/support/) or [wandweb.co](https://wandweb.co). You also have the right to lodge a complaint with your local data-protection supervisory authority.
+If you're in the European Economic Area or the UK, the GDPR also applies to our processing of your personal data, and you have the right to **access, correct, delete, restrict, or object to** that processing, and the right to **data portability**. Our legal bases for processing are: **performance of the service** (running the features a server has enabled), our **legitimate interests** (security, anti-abuse, service integrity, and the **Cross-Server Threat Network** described above — platform and community safety, supported by a written Legitimate Interest Assessment), and **consent** for opt-in AI features. Where we rely on legitimate interest — including for the Threat Network — you have the right to **object** under Article 21 and to seek **erasure** under Article 17; for the Threat Network specifically, you can **opt out of profiling** and exercise these rights via the route described in *Cross-Server Threat Network → Opt-out: servers vs individuals*. We honour an objection/opt-out unless we can demonstrate **compelling legitimate grounds** under **Article 21(1)** (a corroborated safety/fraud need) to retain the most serious signals. To exercise any of these rights, contact us via [`/support`]({{ site.url }}{{ site.baseurl }}/support/) or [wandweb.co](https://wandweb.co). You also have the right to lodge a complaint with your local data-protection **supervisory authority** (in the EU, your national Data Protection Authority; in the UK, the **Information Commissioner's Office (ICO)** at [ico.org.uk](https://ico.org.uk/)).
 
 ### CCPA (California)
 
@@ -261,6 +406,17 @@ The Bot doesn't knowingly collect data from anyone under 13 (Discord's minimum a
 ## Changes to this policy
 
 Material changes will be announced via the Bot's release notes and posted in the staff-chat of each configured guild. The "Last updated" date above reflects the most recent revision.
+
+---
+
+## Complaints
+
+If you have a privacy concern, please raise it with us first via [`/support`]({{ site.url }}{{ site.baseurl }}/support/) or [wandweb.co](https://wandweb.co) — we take it seriously and will try to resolve it.
+
+If you are not satisfied with our response, you can complain to the relevant regulator for where you are:
+- **Australia:** the **Office of the Australian Information Commissioner (OAIC)** — [oaic.gov.au](https://www.oaic.gov.au/) (our primary regulator).
+- **United Kingdom:** the **Information Commissioner's Office (ICO)** — [ico.org.uk](https://ico.org.uk/).
+- **EU / EEA:** your national **Data Protection Authority** (supervisory authority).
 
 ---
 

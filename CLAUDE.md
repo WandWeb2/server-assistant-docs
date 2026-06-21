@@ -56,3 +56,7 @@ Subagents and background tasks are easy to leak. A prior session left **13 resea
 - **Reap on completion.** When the work is done, confirm no background tasks are still running and stop any straggler. Never end a session with live background agents you no longer need.
 - **If something feels slow, check `/tasks` (or the Background tasks panel).** A task running far longer than its work warrants is stuck — kill it and redo the work directly.
 - Tasks spawned in an earlier context may not be stoppable from a later one programmatically; the operator can stop them from the `/tasks` panel.
+
+## Core-pillar changes — direct owner liaison required (standing rule)
+
+The product's **core legal/compliance pillars** — the **privacy policy, terms of service, the threat-network opt-out model, what data is collected/kept/shared, the lawful basis, and whether the small-business exemption is relied upon** — must **never be changed on assumption**. Any change that touches these pillars requires **extensive direct liaison with the owner: explicit questioning AND double-checking before the change goes live.** Never guess on a core pillar — surface it and confirm. Origin: a session where the individual opt-out stance shifted; it was caught and confirmed with the owner before it reached live policy.
