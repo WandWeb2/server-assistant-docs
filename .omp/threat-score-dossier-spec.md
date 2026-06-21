@@ -69,9 +69,12 @@ first-class parts of this spec (not afterthoughts):
    …not "Server X banned them for 'scamming in #market'." The severity level says *how
    serious*, never *what they did*. This protects the user *and* the originating server's
    operational confidentiality.
-4. **Data-subject rights** — access/erasure path for an individual (today's flow routes
-   members to their server owner; a cross-server record needs a direct route via `/support`,
-   already referenced in privacy.md:209).
+4. **Data-subject rights** — access/correction/erasure path for an individual, plus a
+   **qualified opt-out from profiling** (see §9.2): direct route via `/support` now,
+   self-service portal toggle on the roadmap. Today's ordinary-moderation flow routes
+   members to their server owner; the cross-server record needs the direct `/support`
+   route (referenced in privacy.md). The opt-out is subject to the §9.2 safety
+   exception (compelling legitimate grounds → most serious signals may be retained).
 5. **Anti-poisoning safeguards** — a malicious or sloppy server could mass-warn to poison
    the network. Mitigations: weight contributions by **server standing** (age, fleet
    tenure, volume sanity), require **independent corroboration** (signal only "counts" at
@@ -168,10 +171,22 @@ explicit owner reversal.
    principle.) This carries the heaviest disclosure/consent burden, so it makes
    P0 (privacy + terms + prominent disclosure, advisory-only) a hard blocking
    dependency.
-2. **Individual erasure/objection is case-by-case via `/support`** — there is no
-   opt-out UI. A data subject's erasure or objection request is handled
-   individually and either **honoured or refused with documented compelling
-   legitimate grounds** for refusal.
+2. **Individuals get a QUALIFIED opt-out from profiling (locked 2026-06-21,
+   supersedes the old "no opt-out UI" line).** Distinct from §9.1: **servers do
+   NOT get an opt-out** (participation is core, mandatory functionality), but an
+   **individual** (the person being scored) **may opt out of threat-network
+   profiling**. The opt-out is available **on request via `/support` now**; a
+   **self-service portal toggle is planned (roadmap) — NOT yet live, do not claim
+   it is.** Each erasure/objection/opt-out request is handled individually via
+   `/support`.
+   - **Safety exception (the balance):** where there are **compelling legitimate
+     grounds** — preventing serious harm such as verified raids, scams, or
+     ban-evasion — the **most serious, corroborated signals may still be
+     retained/shared despite an opt-out**, so a known bad actor cannot opt out to
+     evade detection. This maps to **GDPR Art. 21(1) compelling-legitimate-grounds**
+     plus the safety/fraud exception, and to the APP framework (APP 13 correction +
+     APP 11.2 destruction-when-no-longer-needed, with the voluntary opt-out offered
+     above the statutory floor). A refusal is **documented** with its grounds.
 3. **Retention: 12 months rolling from the last signal → hard-delete.** Each
    contribution's clock resets on a new signal for that subject; once 12 months
    elapse with no new signal, the record is hard-deleted.

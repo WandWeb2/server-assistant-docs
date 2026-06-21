@@ -128,11 +128,25 @@ contract, so the §9 cap may not hold against an Australian consumer.
 **What I did to mitigate.** Flagged both points candidly in `terms.md` §6 and noted
 that the **real** mitigations are the product design (advisory-only, conservative
 tuning, N≥2 corroboration, anti-poisoning) and the **APP 13 correction right**, not
-the disclaimer wording.
+the disclaimer wording. **Strengthened 2026-06-21 by the qualified individual
+opt-out:** a wrongly-flagged individual now has an **affirmative, advertised way to
+stop profiling** (opt-out via `/support` now; self-service portal toggle on the
+roadmap), in addition to correction (APP 13) and erasure — honoured unless we have
+compelling legitimate grounds (a corroborated safety/fraud need) to retain the most
+serious signals. This gives the third party real, exercisable recourse that does not
+depend on Terms they never signed, **reducing the practical exposure** even though
+the *legal* point (Terms don't bind a non-signatory; the ACL cap may not hold)
+stands.
+
+**Net rating: still HIGH, but the residual is meaningfully reduced.** The opt-out
+plus correction/erasure is a stronger answer to a flagged individual than the
+case-by-case-only stance was. The HIGH stays because the unbound-third-party and ACL
+points are legal questions a lawyer should still confirm; the durable fixes remain
+product-side (accuracy, correction, appeal, opt-out).
 
 **What still needs a lawyer / product.** Confirm the residual liability exposure to
 flagged third parties; the durable fixes are product-side (accuracy, correction,
-appeal), not drafting.
+appeal, opt-out), not drafting.
 
 ---
 
@@ -142,11 +156,21 @@ appeal), not drafting.
 see the privacy policy, so the APP 5 "notify at collection" obligation is hard to
 meet in full.
 
-**What I did to mitigate.** `privacy.md` serves as the standing notice; `terms.md`
-now obliges the **server owner to tell members** about the network and policy.
+**What I did to mitigate (NOTICE REFRAME, 2026-06-21).** `privacy.md` serves as the
+standing notice. Notice is now framed as the **operator's** responsibility, **not**
+the server owner's: the Bot delivers an **in-Discord notice on install**, with an
+**on-demand disclosure command forthcoming (roadmap, not yet live)**; server owners
+are **encouraged but no longer obliged** to tell members. This replaces the earlier
+"owner must notify members" framing in `terms.md`.
 
-**What still needs work (product).** Implement the **server-admin onboarding
-notice** (also mitigates R1). Document the "reasonable steps" taken.
+**Net rating: still MEDIUM, slightly improved.** Operator-delivered notice on install
+is a better "reasonable steps" answer than relying on owners to notify, but subjects
+are still collected-about indirectly (the flagged user may never see any notice), so
+the gap is reduced, not closed.
+
+**What still needs work (product).** Ship the **bot-delivered install notice** and
+the **on-demand disclosure command** per the roadmap. Document the "reasonable steps"
+taken.
 
 ---
 
@@ -182,15 +206,20 @@ into implying a statutory AU erasure right.
 
 ## R8 — Operationalising `/support` rights handling — **LOW/MEDIUM** (operational)
 
-**What it is.** The access (APP 12), correction (APP 13), and case-by-case deletion/
-objection promises only protect the owner if they are **actually serviced** with a
-consistent standard and **documented refusals**.
+**What it is.** The access (APP 12), correction (APP 13), **qualified opt-out**, and
+deletion/objection promises only protect the data subject if they are **actually
+serviced** with a consistent standard and **documented refusals**. The qualified
+opt-out (locked 2026-06-21) **raises the operational bar slightly**: opt-out requests
+must be honoured promptly, and the **compelling-grounds safety exception** must be
+applied **consistently and documented** each time it is invoked — otherwise the
+opt-out is a promise on paper only.
 
-**What I did to mitigate.** Documented the required workflow in the PIA Part C
-checklist.
+**What I did to mitigate.** Documented the required workflow (including the
+compelling-grounds standard) in the PIA Part C checklist.
 
 **What still needs work (operational).** Build the triage + decision-standard +
-refusal-documentation + SLA before launch.
+opt-out handling + refusal-documentation + SLA before launch; ship the self-service
+portal opt-out toggle per the roadmap.
 
 ---
 
@@ -205,17 +234,33 @@ is non-sensitive (AU) and very unlikely to be Art. 10 data (GDPR), so no consent
 required; the basis is APP 3.2 + APP 5 + APP 6 (AU) and the operator's own
 legitimate interest per the LIA (EU/UK).
 
+**Second improvement — the qualified individual opt-out (locked 2026-06-21).**
+Servers still cannot opt out (core functionality), but the **individual** can now
+opt out of profiling (via `/support` now; self-service portal toggle on the
+roadmap), subject to a **compelling-grounds safety exception** (verified
+raid/scam/ban-evasion → most serious signals may be retained, so bad actors can't
+opt out to evade detection). This **supersedes the old "no opt-out UI / case-by-case
+erasure only" stance** and strengthens the data-subject posture across the board:
+it is the GDPR **Art. 21(1)** objection right implemented affirmatively (improves
+the LIA balance, B3.4/B3.5), gives a wrongly-flagged individual real recourse
+(reduces the **R4** residual, though R4 stays HIGH on the unbound-third-party/ACL
+legal points), and — with the **notice reframe** (operator-delivered notice, no
+longer an owner obligation) — slightly improves **R5**. Severity ratings are
+unchanged, but R4/R5/R8 residuals are reduced.
+
 **What still bites (now the top live items):**
 1. **DPIA/PIA sign-off (R3)** and the **small-business-exemption-loss assumption
    (R2)** remain HIGH — the prudent posture is still a one-off legal review and
    completing the DPIA before launch, though the review is no longer dominated by an
    unresolved consent gap.
 2. **Exposure to a wrongly-flagged individual (R4)** isn't disclaimed by Terms that
-   individual never signed; the cure is accuracy/correction in the product (advisory
-   only, conservative tuning, APP 13), not wording. Still HIGH.
-3. **Operational follow-through** — DPAs/SCCs (R6), the `/support` rights workflow
-   (R8), and keeping the severity band genuinely generic (R1 residual) — are the
-   live to-dos.
+   individual never signed; the cure is accuracy/correction/**opt-out** in the
+   product (advisory only, conservative tuning, APP 13, qualified opt-out), not
+   wording. Still HIGH, residual reduced.
+3. **Operational follow-through** — DPAs/SCCs (R6), the `/support` rights + **opt-out
+   handling** workflow with consistent compelling-grounds application (R8), shipping
+   the bot-delivered install notice + roadmap portal opt-out toggle, and keeping the
+   severity band genuinely generic (R1 residual) — are the live to-dos.
 
 This pass makes the documentation **honest, consistent, and APP-correct**, reflects
 the severity-only design throughout, and **does not overclaim**: it still notes the
