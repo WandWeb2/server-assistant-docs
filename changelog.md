@@ -35,6 +35,15 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 </style>
 
 <details class="doc-sec" markdown="1" open>
+<summary>v5.6.50 — A full trial on our best AI, then AI that keeps working</summary>
+
+
+Every free server now starts with a full trial on our **most capable AI**, then keeps core AI features running on our **fast free model** — so the AI never just stops. **Premium** servers stay on our most capable AI with a generous monthly allowance, and **BYOK** servers keep using your own key (now reserved for the AI that writes and replies, while routine moderation checks run on our free model at no cost to you). Tap `/premium` any time to keep everything flowing without limits.
+
+
+</details>
+
+<details class="doc-sec" markdown="1">
 <summary>v5.6.49 — Friendlier responses to mistyped commands</summary>
 
 
