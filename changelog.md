@@ -35,6 +35,15 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 </style>
 
 <details class="doc-sec" markdown="1" open>
+<summary>v5.6.49 — Friendlier responses to mistyped commands</summary>
+
+
+When a command can't find the user or role you named — a typo, or someone who has already left — Server Assistant now replies with a clear, friendly note instead of a confusing error. You can also `/ban`, `/softban`, and `/tempban` someone who has already left the server by passing their ID or mention.
+
+
+</details>
+
+<details class="doc-sec" markdown="1">
 <summary>v5.6.48 — AI that keeps working on every plan</summary>
 
 
