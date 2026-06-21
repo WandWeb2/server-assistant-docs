@@ -7,7 +7,7 @@ description: How Server Assistant handles your Discord server's data — encrypt
 # Server Assistant Privacy Policy
 
 **Effective date:** May 9, 2026
-**Last updated:** June 18, 2026
+**Last updated:** June 21, 2026
 
 This policy describes how the Server Assistant Discord bot ("the Bot") collects, uses, and stores information when installed in a Discord server.
 
@@ -15,7 +15,7 @@ This policy describes how the Server Assistant Discord bot ("the Bot") collects,
 
 Server Assistant is built and maintained by **Wandering Webmaster** ([wandweb.co](https://wandweb.co)). Contact us via the [`/support`]({{ site.url }}{{ site.baseurl }}/support/) slash command from any Discord server with the Bot installed.
 
-Wandering Webmaster is the **data controller** for the information described in this policy. Where we process moderation records about a server's members **on that server's behalf**, the server owner is the controller and we act as a **processor** carrying out the owner's instructions.
+Wandering Webmaster is the **data controller** for the information described in this policy. Where we process moderation records about a server's members **on that server's behalf**, the server owner is the controller and we act as a **processor** carrying out the owner's instructions. There is one important exception: for the **Cross-Server Threat Network** (see that section below), where we pool minimized signals from many servers into a shared safety dataset, **we act as the data controller** of that cross-server dataset.
 
 ---
 
@@ -129,13 +129,81 @@ You control all of this via the `/privacy` panel. AutoMod and anti-raid are requ
 | **Natural-language commands** | Messages in your staff-chat channel | Off (new servers) |
 | **Message Report** | ~20 messages around the one you right-click | Off (new servers) |
 | **🤔 AutoMod AI second-opinion** *(Premium, opt-in)* | The text of a single borderline AutoMod-flagged message + which filter matched. Confident hits and clear misses are never sent | Off (opt-in via `/automod → AI Review`) |
-| **🕵️ Alt-guard / repeat-offender detection** | **Local-only fingerprint** of users your staff ban or kick (avatar hash, name fragments, account-age bucket) plus the same for each new joiner. **Nothing leaves your host** — no AI, no third party, no cross-server lookup | Off (opt-in via `/altguard on`) |
+| **🕵️ Alt-guard / repeat-offender detection** | **Local-only fingerprint** of users your staff ban or kick (avatar hash, name fragments, account-age bucket) plus the same for each new joiner. The fingerprint **itself** never leaves your host; a **match indicator** may feed the Cross-Server Threat Network (see below) | Off (opt-in via `/altguard on`) |
+| **🛡️ Cross-Server Threat Network** | Minimized abuse signals (ban/kick counts + recency, serious-category AutoMod count + band, AltGuard match indicator, account-age/join-velocity) shared across protected servers as **aggregates and bands only** — never reasons, never message text, never which server acted. See **Cross-Server Threat Network** below | On (core feature, no opt-out) |
 | **📩 Ban-reason DMs + appeals** | The staff-supplied ban reason is sent in a DM to the banned member; the member's **single** appeal reply (if they send one) is forwarded to your staff channel verbatim. No AI is invoked unless staff press **Research** (which runs Message Report on the member's last message) | On (opt-out per server) |
 | **🩺 Pulse** | Aggregate counts only — no message content stored | On |
 | **🟢 Live server insights** *(Pulse + web-portal dashboard)* | Member **presence** (online / idle / DND vs offline) and **voice-channel membership**, read live to show **aggregate counts only** (e.g. "42 online · 6 in voice"). Never which member, never which channel; only the running totals are stored, as time-series numbers for the growth/activity charts | On |
 | **🧠 Self-trained AutoMod** | Messages your staff delete or report | Off |
 | **🩹 Bot Health Insurance** | The bot's own action counts | On |
 | **💬 SAi** | Your settings + recent event summary + your typed question | On-demand |
+
+---
+
+## Cross-Server Threat Network
+
+Server Assistant operates a **Cross-Server Threat Network**: a shared safety signal that helps every protected server recognise users who have a serious, corroborated history of abuse (scams, raids, ban-evasion) on *other* protected servers — ideally **before** they cause harm on yours. This is a **core, defining feature** of Server Assistant, not an add-on, and it is described here in full.
+
+<!-- LEGAL REVIEW: This entire section describes cross-server pooling of personal data (Discord user IDs + minimized abuse signals) under a legitimate-interest basis with no server- or user-level opt-out, only a case-by-case rights-request route. A qualified data-protection lawyer should review the section as a whole against UK GDPR / EU GDPR Art. 6(1)(f), Art. 21 (right to object), and Art. 17 (erasure), and confirm the disclosure is adequate before launch. The written Legitimate Interest Assessment (LIA) supporting this basis is held internally and must be finalised and signed off before any cross-server data moves. -->
+
+### What this means for our role
+
+For ordinary moderation records, the server owner is the controller and we act as a processor on their instructions (see *Who is responsible* above). The Threat Network is different. Because we **pool minimized signals from many servers** to build a shared, cross-server picture of a user's risk, **Wandering Webmaster is the data controller** of that cross-server safety dataset. We take on the controller's obligations for it — including the legal basis, retention limits, and data-subject rights described below.
+
+### What data is shared across servers
+
+Every protected server **contributes** minimized abuse signals to the network and is, in turn, **protected by** it. Only a small, **minimized aggregate** ever crosses the boundary between servers. Specifically, the network may hold, per Discord user:
+
+- **Bans / kicks:** a count of how many *distinct* protected servers have actioned the user, and how recently — never which servers, never the reasons
+- **Serious-category AutoMod hits:** a count and a broad **category band** (e.g. "scam/financial") — never the message text
+- **Repeat-offender fingerprint match (AltGuard):** a **yes/no (or band)** indicator that the user matches a known-offender fingerprint seen elsewhere in the network — never the underlying fingerprint detail
+- **Account-age / join-velocity modifier:** a risk modifier derived from data Discord already exposes
+
+What **never** crosses the boundary:
+
+- Raw moderation reasons or any free-text a staff member wrote
+- **Which specific server** took an action (originating servers stay confidential)
+- Message content of any kind
+
+A server's local moderation record keeps its full detail for that server's own staff (governed by the rest of this policy); only the minimized aggregates above feed the network. The **local** score (this server only) and the **network** score (everywhere else) are always shown as **separate bands** and are never silently combined.
+
+### Why we do this (legal basis)
+
+Our legal basis for the Threat Network is **legitimate interest** (UK GDPR and EU GDPR, Article 6(1)(f)) — specifically the legitimate interest of Wandering Webmaster, every protected server, and their communities in **platform and community safety**: preventing fraud, scams, raids, and ban-evasion across the servers we protect. We have carried out and documented a written **Legitimate Interest Assessment (LIA)** weighing this interest against the rights and interests of the individuals whose signals are pooled, and we keep the safeguards described in this section (strict minimization, the rights-request route below, advisory-only use, anti-abuse corroboration, and a hard retention cap) as the mitigations that keep this basis appropriate. <!-- LEGAL REVIEW: Confirm legitimate interest (not consent) is the correct lawful basis given there is no opt-out, and that the LIA's balancing conclusion is defensible. Confirm whether any contributed signal could be "special category" data (Art. 9) — design intent is that none is. -->
+
+### No opt-out — and why
+
+Because the Threat Network is core, defining functionality — it only works when **every** protected server participates, so that a user banned for scams across six servers lights up on the seventh — **there is no server-level opt-out, and participation is on by default for every server, across the fleet.** A server cannot use Server Assistant's protection while withholding its own contribution; contribution and protection are two sides of the same network. We disclose this plainly here and in our [Terms of Service]({{ site.url }}{{ site.baseurl }}/terms/) so that server owners understand it when they invite the Bot.
+
+### Advisory only — never automatic
+
+The network score is **advisory**. In its current version it **never auto-actions** — it does not ban, kick, or sanction anyone on its own. It surfaces a risk picture to a server's human staff, who decide what (if anything) to do. The score is **explainable** (it shows what drove it — e.g. "flagged in 6 networked servers, 2 bans, last 9 days ago") and **appealable** (see your rights below). Bands are tuned conservatively to favour false-negatives over false-positives.
+
+### Data minimization
+
+Minimization is engineered into the network, not bolted on: only counts, recency, category **bands**, and boolean/band fingerprint-match indicators ever leave a server. No free-text, no message content, no originating-server identity, and no Discord account identifiers beyond the user ID needed to match signals to the right person. This protects both the individual and the operational confidentiality of the server that originally acted.
+
+### Retention
+
+Network signals are retained on a **rolling 12-month window measured from the last signal** for that user. When 12 months pass with no new contributing signal, the user's network record is **hard-deleted**. A new signal restarts the window.
+
+### Your rights in the Threat Network
+
+The Threat Network has **no opt-out toggle**, but individuals are **not** without recourse. If you are an individual whose data is in the network, you may make a **rights request** — including a request for **erasure** of your network record or an **objection** to its processing — by contacting us via the [`/support`]({{ site.url }}{{ site.baseurl }}/support/) slash command (from any server with the Bot installed) or via [wandweb.co](https://wandweb.co). We handle each request **case by case**:
+
+- We will **honour** the request (erase or stop processing your network record), **unless**
+- We can demonstrate **compelling legitimate grounds** that override your interests, rights, and freedoms — for example a clear, corroborated safety or fraud-prevention need to retain the signal — in which case we will **refuse and tell you why**, documenting those grounds.
+
+This case-by-case route is how we keep the network's legitimate-interest basis fair: your right to object is real and is assessed on its merits every time. <!-- LEGAL REVIEW: This implements Art. 21(1) — the right to object to legitimate-interest processing, where the controller must stop unless it shows compelling legitimate grounds. Confirm the "compelling legitimate grounds" standard is being applied correctly and that refusals are properly documented and communicated, and that an erasure refusal under Art. 17(1)(c)/(3) is similarly justified. -->
+
+### Contribution vs visibility
+
+To be clear about what each server *sees* versus what it *contributes*:
+
+- **Every** protected server (free, standard, or Premium) **contributes** signals to and is **protected by** the network.
+- The **rich dossier view** — the detailed per-user breakdown of network drivers — is a **Premium** feature. Free and standard servers receive only a **basic network band** (a low/elevated/high indicator) rather than the full breakdown.
+
+Participation in the network itself does not depend on plan tier; only the depth of what staff can *view* does.
 
 ---
 
@@ -199,6 +267,7 @@ We do **not** sell your data or share it with advertising or analytics networks.
 | Push notification subscription | Until the staff member disables notifications, signs out, or the Bot is removed |
 | Server-insight counts (online / voice / member time-series) | Rolling window (~90 days) |
 | Bot message log (messages the Bot sends) | Rolling window (~60 days), then auto-deleted |
+| Cross-Server Threat Network signals | Rolling 12 months from the **last** signal, then hard-deleted |
 
 ---
 
@@ -212,9 +281,11 @@ We do **not** sell your data or share it with advertising or analytics networks.
 
 **Individual members** wishing to have personal moderation records erased should contact their server owner first. If unresponsive, contact us directly via `/support`.
 
+**Cross-Server Threat Network:** because we are the controller of the cross-server safety dataset (not a per-server processor), an individual can come **directly** to us — without going through any server owner — to request **erasure** of their network record or to **object** to its processing, via [`/support`]({{ site.url }}{{ site.baseurl }}/support/) or [wandweb.co](https://wandweb.co). We assess each request case by case and will honour it unless we can show **compelling legitimate grounds** (such as a corroborated safety or fraud-prevention need) to retain the signal, in which case we will explain our reasons. See **Cross-Server Threat Network → Your rights in the Threat Network** above for the full mechanism.
+
 ### GDPR (EEA / UK)
 
-If you're in the European Economic Area or the UK, you have the right to **access, correct, delete, restrict, or object to** our processing of your personal data, and the right to **data portability**. Our legal bases for processing are: **performance of the service** (running the features a server has enabled), our **legitimate interests** (security, anti-abuse, and service integrity), and **consent** for opt-in AI features. To exercise any of these rights, contact us via [`/support`]({{ site.url }}{{ site.baseurl }}/support/) or [wandweb.co](https://wandweb.co). You also have the right to lodge a complaint with your local data-protection supervisory authority.
+If you're in the European Economic Area or the UK, you have the right to **access, correct, delete, restrict, or object to** our processing of your personal data, and the right to **data portability**. Our legal bases for processing are: **performance of the service** (running the features a server has enabled), our **legitimate interests** (security, anti-abuse, service integrity, and the **Cross-Server Threat Network** described above — platform and community safety, supported by a written Legitimate Interest Assessment), and **consent** for opt-in AI features. Where we rely on legitimate interest — including for the Threat Network — you have the right to **object** under Article 21; for the Threat Network specifically, exercise it via the **case-by-case rights-request route** described in *Cross-Server Threat Network → Your rights in the Threat Network*. To exercise any of these rights, contact us via [`/support`]({{ site.url }}{{ site.baseurl }}/support/) or [wandweb.co](https://wandweb.co). You also have the right to lodge a complaint with your local data-protection supervisory authority.
 
 ### CCPA (California)
 

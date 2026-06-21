@@ -7,7 +7,7 @@ description: Server Assistant terms of use — permitted use, moderation respons
 # Server Assistant Terms of Service
 
 **Effective date:** May 9, 2026
-**Last updated:** June 2, 2026
+**Last updated:** June 21, 2026
 
 Server Assistant is built and maintained by **Wandering Webmaster** ([wandweb.co](https://wandweb.co)) ("we", "us", "our"). These terms govern your use of the Server Assistant Discord bot ("the Bot"). By inviting the Bot to a server, the server owner agrees to these terms on behalf of that server.
 
@@ -63,7 +63,23 @@ The Bot offers optional AI features (SAi, Message Report, Self-trained AutoMod, 
 
 ---
 
-## 6. Billing and subscriptions
+## 6. Cross-Server Threat Network
+
+The Bot operates a **Cross-Server Threat Network** — a shared safety signal that helps protected servers recognise users with a serious, corroborated history of abuse on other protected servers. It is a **core, defining feature** of the Bot. Full detail of what is shared and how individual rights are handled is in the [Privacy Policy]({{ site.url }}{{ site.baseurl }}/privacy/).
+
+- **Participation is core functionality, not optional.** By inviting the Bot, your server **contributes** minimized abuse signals to the network and is **protected by** it. **There is no server-level opt-out** — the network only works when every protected server participates, and contribution and protection are inseparable. Only minimized aggregates (counts, recency, category bands, match indicators) are shared — never your staff's free-text reasons, never your members' message content, and never which server acted. <!-- LEGAL REVIEW: Confirm a server owner can validly bind their server to mandatory, no-opt-out cross-server contribution by accepting these Terms, and that this is consistent with our controller-role disclosure and the legitimate-interest basis in the Privacy Policy. -->
+
+- **Advisory only — no automatic action.** The network score is **advisory**. In its current version it **never auto-actions**: it does not ban, kick, or sanction any user on its own. It surfaces a risk picture to human staff, who decide what (if anything) to do. Final accountability for any moderation action rests with the staff member who takes it (see *Server-owner responsibility*).
+
+- **Anti-abuse and integrity.** You must not attempt to **poison, game, or manipulate** the network — for example by issuing bad-faith bans, kicks, or warnings to inflate another user's network signal, or by automating moderation actions to that end. We weight contributions by server standing, require corroboration across **independent** servers before a signal counts, and may **discount, suspend, or remove** a server's contributions (and the server's access) if we detect manipulation.
+
+- **Appeals.** Because the score can affect how a user is treated by participating servers, the network is **explainable and appealable**. An individual may request review, erasure, or object to the processing of their network record via [`/support`]({{ site.url }}{{ site.baseurl }}/support/); requests are handled case by case as described in the Privacy Policy.
+
+- **No warranty of accuracy.** The network score is a **probabilistic, advisory signal** and is **not guaranteed to be accurate, complete, or infallible**. It may produce false positives or false negatives. You are responsible for reviewing it and applying your own judgement before relying on it for any moderation decision. Our liability for the network is subject to *No warranty* and *Limitation of liability* below. <!-- LEGAL REVIEW: Confirm the no-warranty / no-infallibility language for an advisory cross-server risk signal is sufficient to disclaim liability for a wrongly-flagged user, in combination with §8 (No warranty) and §9 (Limitation of liability). -->
+
+---
+
+## 7. Billing and subscriptions
 
 **Free tier:** The core moderation toolkit is free with no subscription required. AI features include a lifetime allowance of 150,000 tokens.
 
@@ -87,7 +103,7 @@ The Bot offers optional AI features (SAi, Message Report, Self-trained AutoMod, 
 
 ---
 
-## 7. No warranty
+## 8. No warranty
 
 The Bot is provided **"as-is"** without warranty of any kind. We make no representations that:
 - The Bot will be uninterrupted, secure, or error-free
@@ -99,7 +115,7 @@ You use the Bot at your own risk.
 
 ---
 
-## 8. Limitation of liability
+## 9. Limitation of liability
 
 To the maximum extent permitted by law, we won't be liable for any direct, indirect, incidental, special, consequential, or exemplary damages arising from your use of the Bot, including:
 
@@ -112,7 +128,7 @@ Our total liability won't exceed the greater of (a) the amount you paid for Prem
 
 ---
 
-## 9. Termination
+## 10. Termination
 
 You may stop using the Bot at any time by removing it from your server. We may terminate or suspend the Bot's access to your server at any time, with or without notice, for:
 - Violation of these terms
@@ -124,19 +140,19 @@ On removal, encrypted credentials for your server are wiped immediately. Other d
 
 ---
 
-## 10. Changes to these terms
+## 11. Changes to these terms
 
 We may update these terms to reflect changes in the Bot's features, legal requirements, or industry practice. Material changes will be announced via the Bot's release notes (see [Changelog]({{ site.url }}{{ site.baseurl }}/changelog/)) and posted in the staff-chat of each configured guild. Continued use after changes take effect constitutes acceptance.
 
 ---
 
-## 11. Governing law
+## 12. Governing law
 
 These terms are governed by the laws of Australia. Any disputes shall be resolved in Australian courts.
 
 ---
 
-## 12. Severability
+## 13. Severability
 
 If any provision of these terms is held invalid or unenforceable, the remaining provisions remain in full force.
 
