@@ -34,6 +34,15 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 .doc-sec.tempered .tg-badge { display: inline-block; font-size: .6rem; font-weight: 800; letter-spacing: .09em; text-transform: uppercase; color: #0a1030; background: linear-gradient(135deg, #bcd6ff, #60a5fa); padding: .1rem .45rem; border-radius: 999px; margin-left: .55rem; vertical-align: middle; }
 </style>
 
+<details class="doc-sec" markdown="1">
+<summary>Portal sign-in reliability fix</summary>
+
+
+Fixed an issue where signing in to the web dashboard could show **"Invalid or expired state. Try again"** — most often on mobile, or after refreshing or tapping back during sign-in — even though the sign-in had actually gone through. Signing in is now reliable: open the portal and you're straight in.
+
+
+</details>
+
 <details class="doc-sec" markdown="1" open>
 <summary>v5.6.50 — A full trial on our best AI, then AI that keeps working</summary>
 
