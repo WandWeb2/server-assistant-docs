@@ -31,3 +31,9 @@ categories:
       - { label: "Quick actions", url: "/wiki/moderation/#quick-actions" }
       - { label: "Removals", url: "/wiki/moderation/#removals" }
       - { label: "Bulk & raid response", url: "/wiki/moderation/#bulk-raid" }
+
+  - title: "Settings & dashboards"
+    icon: "⚙️"
+    items:
+      - { label: "Settings hub & configuration", url: "/wiki/settings/" }
+      - { label: "AutoMod", url: "/wiki/automod/" }
