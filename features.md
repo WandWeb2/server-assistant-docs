@@ -167,7 +167,19 @@ Each feature area pairs what you get **free** (the <span style="color:#3cc1f0;fo
       <details class="x"><summary>🩺 <strong>Pulse</strong> <span class="t">— health report, your cadence</span> <span class="tier-badge tier-trial">Free trial</span></summary><div class="b">A one-embed health report — messages, joins/leaves, AutoMod blocks, warnings — with week-over-week deltas and flags for the quiet patterns humans miss. Choose how often it arrives — <strong>Off / Daily / Weekly / Monthly</strong> — in <code>/settings → 🔔 Notifications → Updates &amp; digests</code>.</div></details>
       <details class="x"><summary>🎉 <strong>Milestones</strong> <span class="t">— celebrate your wins</span></summary><div class="b">Server Assistant celebrates your community's wins in staff chat with a warm card — <strong>member-count landmarks</strong> (100, 500, 1k, 5k, 10k…), <strong>server anniversaries</strong>, and <strong>moderation milestones</strong> — framed as <em>your</em> achievement. Capped to at most one a day, and fully toggleable in <code>/settings → 🔔 Notifications</code>.</div></details>
       <details class="x"><summary>🩹 <strong>Bot Health Insurance</strong> <span class="t">— it watches itself</span> <span class="tier-badge tier-trial">Free trial</span></summary><div class="b">The bot watches its <em>own</em> footprint. If it gets heavy-handed, it suggests tuning — at most once every 14 days, so the anti-noise feature never becomes noise. Toggle in <code>/settings → Behavior</code>.</div></details>
-      <details class="x"><summary>🛡️ <strong>Threat Score</strong> <span class="t">— per-user risk read</span></summary><div class="b">At-a-glance per-user risk — 🟢 Low / 🟠 Elevated / 🔴 High — in user profiles, weighted by severity and decaying over time. <strong>The advisory view is free for every server</strong>; the <strong>active, score-driven action</strong> phase (Premium) uses the score to drive moderation, with the safeguards listed on the roadmap.</div></details>
+      <details class="x"><summary>🛡️ <strong>Threat Score</strong> <span class="t">— per-user risk read (this server)</span></summary><div class="b">At-a-glance per-user risk — 🟢 Low / 🟠 Elevated / 🔴 High — in user profiles, weighted by severity and decaying over time. <strong>The advisory view is free for every server</strong>; the <strong>active, score-driven action</strong> phase (Premium) uses the score to drive moderation, with the safeguards listed on the roadmap. (For cross-server history, see <strong>ThreatNet</strong> below.)</div></details>
+    </div>
+  </div>
+
+  <div class="grp-h">🌐 Cross-server safety (ThreatNet)</div>
+  <div class="col free">
+    <div class="xgrid">
+      <details class="x"><summary>🌐 <strong>ThreatNet</strong> <span class="t">— cross-server threat network</span></summary><div class="b">Every protected server shares <strong>minimized, severity-only</strong> abuse signals, so a user with a serious, corroborated history of scams, raids or ban-evasion on <em>other</em> servers lights up on yours — ideally <strong>before</strong> they cause harm. Shared as aggregates and a generic severity level only — <strong>never</strong> the offence type, your staff's reasons, message content, or which server acted. A <strong>core, on-by-default</strong> safety feature for every server; individuals can opt out of profiling in the <a href="https://serverassistant.wandweb.co">web portal</a>, subject to a published safety exception. The advisory band is free for every server.</div></details>
+    </div>
+  </div>
+  <div class="col prem">
+    <div class="xgrid">
+      <details class="x"><summary>🌐 <strong>ThreatNet — rich view</strong> <span class="t">— Premium</span></summary><div class="b">Premium servers see the <strong>richer cross-server dossier</strong> — severity band, how many distinct servers corroborate it, and recency — surfaced alongside (never merged with) the local Threat Score on user profiles.</div></details>
     </div>
   </div>
 
