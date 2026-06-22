@@ -85,3 +85,54 @@
   });
 })();
 </script>
+
+<script>
+/* Click-to-highlight for in-page anchor links, site-wide (incl. the wiki).
+   When a link targets an element on the same page, scroll it to the CENTRE of
+   the viewport — never behind the sticky top bar — open it if it's a <details>,
+   and flash a blue ring (see .sa-flash in glass.css). The roadmap keeps its own
+   bespoke focus logic, so we bail there. Cross-page #links navigate normally;
+   the destination page flashes the target on load. */
+(function () {
+  if (document.querySelector(".build-queue")) return;   // roadmap handles its own
+  var FLASH_MS = 4200;
+
+  function flash(el) {
+    if (!el) return;
+    if (el.tagName === "DETAILS") el.open = true;
+    el.scrollIntoView({ behavior: "smooth", block: "center" });
+    el.classList.remove("sa-flash");
+    void el.offsetWidth;                 // reflow so the animation can re-trigger
+    el.classList.add("sa-flash");
+    window.setTimeout(function () { el.classList.remove("sa-flash"); }, FLASH_MS);
+  }
+
+  function elFromHash() {
+    var id = decodeURIComponent((location.hash || "").replace(/^#/, ""));
+    return id ? document.getElementById(id) : null;
+  }
+
+  // Same-page anchor clicks: take over so re-clicking the same link re-flashes
+  // and the target always lands centred (default jump would tuck it under the bar).
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest ? e.target.closest('a[href*="#"]') : null;
+    if (!a) return;
+    var url;
+    try { url = new URL(a.href, location.href); } catch (_) { return; }
+    if (url.pathname !== location.pathname || url.search !== location.search) return; // other page
+    var id = decodeURIComponent(url.hash.replace(/^#/, ""));
+    if (!id) return;
+    var el = document.getElementById(id);
+    if (!el) return;                     // unknown target → leave default behaviour
+    e.preventDefault();
+    if (location.hash !== "#" + id && history.pushState) history.pushState(null, "", "#" + id);
+    flash(el);
+  }, false);
+
+  // Back/forward or programmatic hash changes.
+  window.addEventListener("hashchange", function () { flash(elFromHash()); });
+
+  // Arriving with a hash (e.g. a cross-page deep link): flash once laid out.
+  if (location.hash) window.setTimeout(function () { flash(elFromHash()); }, 80);
+})();
+</script>
