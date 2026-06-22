@@ -318,6 +318,27 @@ image: /assets/banner.jpeg
   </div>
 </div>
 
+<div class="frow c-blue">
+  <div class="ftext">
+    <h3>🌐 Knows the raiders before they arrive — ThreatNet</h3>
+    <p><strong>ThreatNet</strong>, our <strong>Cross-Server Threat Network</strong>, shares <strong>severity-only</strong> abuse signals across every protected server — so a scammer or raider with a serious, corroborated history elsewhere lights up on yours <strong>before</strong> they strike. A core, on-by-default safety net.</p>
+    <details class="fmore"><summary>How it works</summary><div class="fbody">Servers contribute minimized, pseudonymous signals — counts, recency and a generic severity level — <strong>never</strong> the offence type, your staff's reasons, message content, or which server acted. The advisory band is free for every server; Premium adds the richer cross-server view. Individuals can opt out of profiling in the web portal, subject to a published safety exception.</div></details>
+  </div>
+  <div class="fshot">
+    <div class="dc">
+      <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+        <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">👤 Info → Threat Network</span></div>
+        <div class="dc-embed amber">
+          <div class="dc-title">🛡️ Threat Network — @driftwood</div>
+          <div class="dc-desc">🟠 <strong>Elevated</strong> · corroborated across <strong>3 servers</strong> — advisory cross-server safety signal.</div>
+          <div class="dc-fname">Most recent</div><div class="dc-fval">serious · 6 days ago</div>
+          <div class="dc-foot">Severity-only · never which server acted</div>
+        </div>
+      </div></div>
+    </div>
+  </div>
+</div>
+
 ---
 
 ## 📸 What your staff actually sees

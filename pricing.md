@@ -195,6 +195,7 @@ Need extra headroom without changing plans? Top-ups never expire and stack on an
 | **📋 Message Report** (right-click AI context) | — | ✅ | ✅ |
 | **AutoMod AI second-opinion** | — | ✅ | ✅ |
 | **Active Threat Score** | — | ✅ | ✅ |
+| **🌐 ThreatNet** — cross-server safety (advisory) | ✅ | ✅ | ✅ |
 | **🌟 Decision explainer & guided appeals** | — | ✅ | ✅ |
 | **🎭 Reaction roles** (`/rolepanel`) | — | ✅ | ✅ |
 | **❓ AI Q&A from your FAQ** (`/faq`) | — | ✅ | ✅ |
@@ -210,6 +211,8 @@ Need extra headroom without changing plans? Top-ups never expire and stack on an
 **Ticket Panels — premium features:** up to 4 custom intake questions, custom welcome + close messages, and `/tickets add @user` for mid-ticket access.
 
 > **Threat Score:** the **advisory** view (a per-user risk pill in profiles) is free for every server — it's just visibility. The Premium **active** version drives actions, with all the safeguards on the [Roadmap]({{ site.url }}{{ site.baseurl }}/roadmap/).
+
+> **🌐 ThreatNet (Cross-Server Threat Network):** a **core, on-by-default** safety feature — the **advisory band is free for every server**; Premium adds the **richer cross-server view**. Severity-only sharing (never the offence type, reasons, content, or which server acted); individuals can opt out of profiling in the [web portal](https://serverassistant.wandweb.co).
 
 </details>
 
