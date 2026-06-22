@@ -40,9 +40,9 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 
 **Premium servers can now have ThreatNet ban the worst actors automatically — as they join, before they act.**
 
-Turn on **auto-protect** and a user who joins carrying a **serious, corroborated** cross-server record — the **highest band only** (serious *and* corroborated across **2+ independent** servers) — is **banned automatically on join**.
+Turn on **auto-protect** and a user who joins meeting a **cross-server risk threshold you choose** is **banned automatically on join**. The default — and safest — level is the **highest band** (serious *and* corroborated across **2+ independent** servers); you can set a broader level if you want a wider net (it acts on weaker signals, with more chance of a mistake).
 
-It's **off by default** and **opt-in per server** — an admin enables it with `/threatnet autoban on`. Because it's an **automated** action, it ships with safeguards: anyone who has **opted out** of network profiling is **never** auto-banned; the banned user is **told the decision was automated** and **how to appeal** (human review); and **every auto-ban is in your audit log**. Only the most serious, multi-server-corroborated records ever trigger it, and you stay responsible for moderation in your own server.
+It's **off by default** and **opt-in per server** — an admin enables it with `/threatnet autoban on` and picks the level. Because it's an **automated** action, it ships with safeguards: anyone who has **opted out** of network profiling is **never** auto-banned; **every auto-ban is in your audit log**; and although the ban is **silent** (the bot doesn't message the banned user), it's disclosed in our Privacy Policy and stays **appealable** via the web portal (human review). You choose the threshold and stay responsible for moderation in your own server.
 
 Prefer advisory-only? Nothing changes unless you switch this on.
 
