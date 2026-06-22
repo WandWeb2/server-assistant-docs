@@ -34,7 +34,22 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 .doc-sec.tempered .tg-badge { display: inline-block; font-size: .6rem; font-weight: 800; letter-spacing: .09em; text-transform: uppercase; color: #0a1030; background: linear-gradient(135deg, #bcd6ff, #60a5fa); padding: .1rem .45rem; border-radius: 999px; margin-left: .55rem; vertical-align: middle; }
 </style>
 
-<details class="doc-sec tempered" markdown="1" open>
+<details class="doc-sec" markdown="1" open>
+<summary>v5.9.0 — ThreatNet auto-protect (Premium): close the gate on join</summary>
+
+
+**Premium servers can now have ThreatNet ban the worst actors automatically — as they join, before they act.**
+
+Turn on **auto-protect** and a user who joins meeting a **cross-server risk threshold you choose** is **banned automatically on join**. The default — and safest — level is the **highest band** (serious *and* corroborated across **2+ independent** servers); you can set a broader level if you want a wider net (it acts on weaker signals, with more chance of a mistake).
+
+It's **off by default** and **opt-in per server** — an admin enables it with `/threatnet autoban on` and picks the level. Because it's an **automated** action, it ships with safeguards: anyone who has **opted out** of network profiling is **never** auto-banned; **every auto-ban is in your audit log**; and although the ban is **silent** (the bot doesn't message the banned user), it's disclosed in our Privacy Policy and stays **appealable** via the web portal (human review). You choose the threshold and stay responsible for moderation in your own server.
+
+Prefer advisory-only? Nothing changes unless you switch this on.
+
+
+</details>
+
+<details class="doc-sec tempered" markdown="1">
 <summary>v5.8.0 — ThreatNet: cross-server safety, on by default<span class="tg-badge">ThreatNet</span></summary>
 
 
