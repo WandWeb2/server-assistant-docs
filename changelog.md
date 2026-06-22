@@ -34,7 +34,22 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 .doc-sec.tempered .tg-badge { display: inline-block; font-size: .6rem; font-weight: 800; letter-spacing: .09em; text-transform: uppercase; color: #0a1030; background: linear-gradient(135deg, #bcd6ff, #60a5fa); padding: .1rem .45rem; border-radius: 999px; margin-left: .55rem; vertical-align: middle; }
 </style>
 
-<details class="doc-sec tempered" markdown="1" open>
+<details class="doc-sec" markdown="1" open>
+<summary>v5.9.0 — ThreatNet auto-protect (Premium): close the gate on join</summary>
+
+
+**Premium servers can now have ThreatNet ban the worst actors automatically — as they join, before they act.**
+
+Turn on **auto-protect** and a user who joins carrying a **serious, corroborated** cross-server record — the **highest band only** (serious *and* corroborated across **2+ independent** servers) — is **banned automatically on join**.
+
+It's **off by default** and **opt-in per server** — an admin enables it with `/threatnet autoban on`. Because it's an **automated** action, it ships with safeguards: anyone who has **opted out** of network profiling is **never** auto-banned; the banned user is **told the decision was automated** and **how to appeal** (human review); and **every auto-ban is in your audit log**. Only the most serious, multi-server-corroborated records ever trigger it, and you stay responsible for moderation in your own server.
+
+Prefer advisory-only? Nothing changes unless you switch this on.
+
+
+</details>
+
+<details class="doc-sec tempered" markdown="1">
 <summary>v5.8.0 — ThreatNet: cross-server safety, on by default<span class="tg-badge">ThreatNet</span></summary>
 
 

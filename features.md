@@ -180,6 +180,7 @@ Each feature area pairs what you get **free** (the <span style="color:#3cc1f0;fo
   <div class="col prem">
     <div class="xgrid">
       <details class="x"><summary>🌐 <strong>ThreatNet — rich view</strong> <span class="t">— Premium</span></summary><div class="b">Premium servers see the <strong>richer cross-server dossier</strong> — severity band, how many distinct servers corroborate it, and recency — surfaced alongside (never merged with) the local Threat Score on user profiles.</div></details>
+      <details class="x"><summary>🛡️ <strong>ThreatNet auto-protect</strong> <span class="t">— Premium · opt-in</span></summary><div class="b"><strong>Close the gate before they act.</strong> Turn on auto-protect and a user who joins carrying a <strong>serious, corroborated</strong> cross-server record — the <strong>highest band only</strong> (serious <em>and</em> corroborated across 2+ independent servers) — is <strong>banned automatically on join</strong>. <strong>Off by default</strong>, enabled per server with <code>/threatnet autoban on</code> (Manage Server). Because it's an <strong>automated</strong> action it ships with safeguards: opted-out users are never auto-banned, the banned user is told it was automated and how to <strong>appeal</strong> (human review), and every auto-ban is in your audit log. You stay in control and remain responsible for moderation in your server.</div></details>
     </div>
   </div>
 
