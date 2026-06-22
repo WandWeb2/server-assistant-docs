@@ -31,39 +31,42 @@ description: The complete Server Assistant reference — every command, wizard a
     <p>Walk through every screen of first-time setup — channels, roles, permissions and AI — one state at a time.</p>
   </a>
 
-  <div class="card soon">
+  <a class="card" href="{{ '/wiki/moderation/' | relative_url }}">
     <h3>🛡️ Moderation &amp; safety</h3>
     <p>Warnings, mutes, bans, lockdown, purge and the anti-raid toolkit — every command with its output.</p>
-  </div>
+  </a>
 
-  <div class="card soon">
+  <a class="card" href="{{ '/wiki/settings/' | relative_url }}">
     <h3>⚙️ Settings &amp; dashboards</h3>
-    <p>The Settings hub, AutoMod, onboarding, tickets and every configuration panel.</p>
-  </div>
+    <p>The Settings hub, autopilot, onboarding, schedules, privacy and every configuration panel.</p>
+  </a>
 
-  <div class="card soon">
+  <a class="card" href="{{ '/wiki/automod/' | relative_url }}">
+    <h3>🧹 AutoMod</h3>
+    <p>AI review, self-training, filters, link blocklists and the punishment ladder — the full AutoMod dashboard.</p>
+  </a>
+
+  <a class="card" href="{{ '/wiki/ai/' | relative_url }}">
     <h3>🤖 AI &amp; intelligence</h3>
-    <p>SAi chat, image generation, translation, mediation and how AI tiers work.</p>
-  </div>
+    <p>SAi concierge chat, image generation, translation, mediation, retrospectives and stats.</p>
+  </a>
 
-  <div class="card soon">
+  <a class="card" href="{{ '/wiki/tickets/' | relative_url }}">
     <h3>🎫 Tickets &amp; support</h3>
-    <p>The ticket panel, intake questions and the full support flow.</p>
-  </div>
+    <p>The ticket panel, intake questions, the FAQ and the full support flow.</p>
+  </a>
 
-  <div class="card soon">
+  <a class="card" href="{{ '/wiki/members/' | relative_url }}">
     <h3>✨ Member experience</h3>
-    <p>Welcome DMs, role panels, verification and the flows new members see.</p>
-  </div>
+    <p>Welcome DMs, verification, ban appeals, role panels and custom commands.</p>
+  </a>
 
-  <div class="card soon">
+  <a class="card" href="{{ '/wiki/account/' | relative_url }}">
     <h3>💎 Account &amp; premium</h3>
-    <p>Premium status, billing, privacy controls and account commands.</p>
-  </div>
+    <p>Premium status, billing, backups, white-label branding and account commands.</p>
+  </a>
 
 </div>
-
-> **This wiki is growing.** We're adding every command and flow area by area. Live sections are linked above and listed in the sidebar; the rest are on the way.
 
 ## How to read the examples
 
