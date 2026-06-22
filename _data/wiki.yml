@@ -52,3 +52,8 @@ categories:
     icon: "✨"
     items:
       - { label: "Member experience", url: "/wiki/members/" }
+
+  - title: "Account & premium"
+    icon: "💎"
+    items:
+      - { label: "Account & premium", url: "/wiki/account/" }
