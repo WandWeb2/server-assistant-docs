@@ -37,3 +37,8 @@ categories:
     items:
       - { label: "Settings hub & configuration", url: "/wiki/settings/" }
       - { label: "AutoMod", url: "/wiki/automod/" }
+
+  - title: "AI & intelligence"
+    icon: "🤖"
+    items:
+      - { label: "AI & intelligence", url: "/wiki/ai/" }
