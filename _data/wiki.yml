@@ -22,3 +22,12 @@ categories:
     items:
       - { label: "Wiki home", url: "/wiki/" }
       - { label: "The /setup wizard", url: "/wiki/setup/" }
+
+  - title: "Moderation & safety"
+    icon: "🛡️"
+    items:
+      - { label: "Moderation & safety", url: "/wiki/moderation/" }
+      - { label: "Warnings & notes", url: "/wiki/moderation/#warnings-notes" }
+      - { label: "Quick actions", url: "/wiki/moderation/#quick-actions" }
+      - { label: "Removals", url: "/wiki/moderation/#removals" }
+      - { label: "Bulk & raid response", url: "/wiki/moderation/#bulk-raid" }
