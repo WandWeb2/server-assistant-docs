@@ -44,6 +44,9 @@ image: /assets/banner.jpeg
 .fleet-stats { text-align: center; font-size: .92rem; font-weight: 600; color: var(--ink-soft); margin: .1rem 0 .2rem; min-height: 1.2em; }
 .fleet-stats[hidden] { display: none; }
 .fleet-stats strong { color: var(--ink); }
+.threatnet-stat { min-height: 0; }
+.threatnet-stat a { color: var(--ink-soft); text-decoration: none; border-bottom: 1px dotted currentColor; padding-bottom: 1px; transition: color .15s ease; }
+.threatnet-stat a:hover { color: var(--ink); }
 .section-lead { text-align: center; font-size: 1rem; color: var(--ink-soft); max-width: 720px; margin: .6rem auto 1.3rem; line-height: 1.55; }
 
 /* Full-width coloured-glass feature rows: text (brief + expand) on one side, screenshot on the other. */
@@ -98,15 +101,17 @@ image: /assets/banner.jpeg
 </div>
 
 <p class="fleet-stats" id="fleet-stats" hidden></p>
+<p class="fleet-stats threatnet-stat" id="threatnet-stat" hidden></p>
 
 <script>
 /* Live fleet numbers — fetches the relay's PUBLIC, aggregate-only endpoint and
-   shows "Protecting N servers and M members". Stays hidden (renders nothing) if
-   JS is off, the fetch fails, or the data is empty — purely additive, never a
-   broken or zero line. Aggregate totals only; no per-server detail. */
+   shows "Protecting N servers and M members" plus a "captured in ThreatNet"
+   figure that links to the ThreatNet section. Both stay hidden (render nothing)
+   if JS is off, the fetch fails, or the data is empty/zero — purely additive,
+   never a broken or zero line. Aggregate totals only; no per-server detail. */
 (function () {
   var box = document.getElementById("fleet-stats");
-  if (!box) return;
+  var tnBox = document.getElementById("threatnet-stat");
   var API = "https://sa.wandweb.co/api/public/fleet-stats";
   fetch(API)
     .then(function (r) { return r.ok ? r.json() : null; })
@@ -114,13 +119,21 @@ image: /assets/banner.jpeg
       if (!d) return;
       var g = Number(d.guild_count) || 0;
       var m = Number(d.member_count) || 0;
-      if (g <= 0) return;
-      var gtxt = g.toLocaleString();
-      var mtxt = m.toLocaleString();
-      var parts = "Protecting <strong>" + gtxt + "</strong> server" + (g === 1 ? "" : "s");
-      if (m > 0) parts += " and <strong>" + mtxt + "</strong> member" + (m === 1 ? "" : "s");
-      box.innerHTML = parts;
-      box.hidden = false;
+      if (box && g > 0) {
+        var gtxt = g.toLocaleString();
+        var mtxt = m.toLocaleString();
+        var parts = "Protecting <strong>" + gtxt + "</strong> server" + (g === 1 ? "" : "s");
+        if (m > 0) parts += " and <strong>" + mtxt + "</strong> member" + (m === 1 ? "" : "s");
+        box.innerHTML = parts;
+        box.hidden = false;
+      }
+      var tn = Number(d.threatnet_captured) || 0;
+      if (tnBox && tn > 0) {
+        var ttxt = tn.toLocaleString();
+        tnBox.innerHTML = '<a href="#threatnet"><strong>' + ttxt + '</strong> account' +
+          (tn === 1 ? "" : "s") + ' captured in ThreatNet →</a>';
+        tnBox.hidden = false;
+      }
     })
     .catch(function () {});
 })();
@@ -318,7 +331,7 @@ image: /assets/banner.jpeg
   </div>
 </div>
 
-<div class="frow c-blue">
+<div class="frow c-blue" id="threatnet">
   <div class="ftext">
     <h3>🌐 Knows the raiders before they arrive — ThreatNet</h3>
     <p><strong>ThreatNet</strong>, our <strong>Cross-Server Threat Network</strong>, shares <strong>severity-only</strong> abuse signals across every protected server — so a scammer or raider with a serious, corroborated history elsewhere lights up on yours <strong>before</strong> they strike. A core, on-by-default safety net.</p>
