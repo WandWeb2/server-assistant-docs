@@ -1,0 +1,18 @@
+---
+permalink: /wiki/search.json
+layout: null
+sitemap: false
+---
+[
+{%- assign wikipages = site.pages | where: "wiki", true -%}
+{%- for p in wikipages -%}
+{
+"title": {{ p.title | remove_first: "Server Assistant " | jsonify }},
+"url": {{ p.url | relative_url | jsonify }},
+"category": {{ p.wiki_category | default: "" | jsonify }},
+"summary": {{ p.summary | default: "" | jsonify }},
+"keywords": {{ p.wiki_keywords | default: "" | jsonify }},
+"body": {{ p.content | strip_html | normalize_whitespace | truncatewords: 120 | jsonify }}
+}{%- unless forloop.last -%},{%- endunless -%}
+{%- endfor -%}
+]

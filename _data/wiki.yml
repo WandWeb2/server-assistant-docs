@@ -1,0 +1,24 @@
+# ============================================================================
+# Server Assistant Wiki — sidebar navigation (single source of truth).
+#
+# This drives the wiki sidebar (rendered in _layouts/wiki.html) and the order
+# pages appear in. Add a page here when you create it under /wiki/.
+#
+#   categories:
+#     - title:  group heading shown in the sidebar
+#       icon:   optional emoji shown before the heading
+#       items:
+#         - label:   link text
+#           url:     the page's permalink (must match the page front matter)
+#           premium: true   # optional — shows a small PREMIUM tag
+#
+# Only list pages that actually exist — every url here renders as a link, so a
+# url with no page behind it is a broken link. The wiki is built in phases
+# (one category per PR); each phase appends its group(s) here.
+# ============================================================================
+categories:
+  - title: Getting started
+    icon: "🚀"
+    items:
+      - { label: "Wiki home", url: "/wiki/" }
+      - { label: "The /setup wizard", url: "/wiki/setup/" }
