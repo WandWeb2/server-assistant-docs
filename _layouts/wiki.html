@@ -1,0 +1,57 @@
+---
+layout: default
+---
+{%- comment -%}
+  Wiki layout — a two-column reference shell (category sidebar + content) layered
+  on top of Minima's `default` layout, so the site top-bar and footer stay
+  identical to the rest of the docs. Sidebar order is driven by _data/wiki.yml;
+  search + the wizard step-through come from assets/js/wiki.js. Pages opt in with
+  `layout: wiki` and `wiki: true` front matter (see any page under /wiki/).
+{%- endcomment -%}
+
+<link rel="stylesheet" href="{{ '/assets/css/wiki.css' | relative_url }}?v={{ site.time | date: '%s' }}">
+
+<div class="wiki-shell">
+
+  <input type="checkbox" id="wiki-nav-toggle" class="wiki-nav-toggle" hidden>
+  <label for="wiki-nav-toggle" class="wiki-nav-open" aria-label="Open wiki menu">☰ Wiki menu</label>
+
+  <aside class="wiki-side" aria-label="Wiki navigation">
+    <form class="wiki-search" role="search" onsubmit="return false;">
+      <input type="search" id="wiki-search-input" class="wiki-search-input"
+             placeholder="Search the wiki…" autocomplete="off"
+             aria-label="Search the wiki" aria-controls="wiki-search-results">
+      <ul id="wiki-search-results" class="wiki-search-results" hidden></ul>
+    </form>
+
+    <nav class="wiki-nav">
+      {%- for cat in site.data.wiki.categories -%}
+      <div class="wiki-nav-group">
+        <div class="wiki-nav-title">{% if cat.icon %}<span class="wiki-nav-ic">{{ cat.icon }}</span>{% endif %}{{ cat.title }}</div>
+        <ul>
+          {%- for item in cat.items -%}
+          {%- assign item_url = item.url | relative_url -%}
+          <li><a href="{{ item_url }}"{% if page.url == item.url %} class="active" aria-current="page"{% endif %}>{{ item.label }}{% if item.premium %} <span class="wiki-prem" title="Premium feature">PREMIUM</span>{% endif %}</a></li>
+          {%- endfor -%}
+        </ul>
+      </div>
+      {%- endfor -%}
+    </nav>
+  </aside>
+
+  <main class="wiki-main">
+    {%- if page.wiki_category -%}
+    <div class="wiki-crumbs"><a href="{{ '/wiki/' | relative_url }}">Wiki</a> <span>›</span> {{ page.wiki_category }}</div>
+    {%- endif -%}
+
+    {{ content }}
+
+    <div class="wiki-foot-nav">
+      <a href="{{ '/wiki/' | relative_url }}" class="wiki-foot-home">← Wiki home</a>
+      <a href="https://github.com/{{ site.repository }}/edit/main/{{ page.path }}" class="wiki-foot-edit" rel="nofollow">Suggest an edit</a>
+    </div>
+  </main>
+
+</div>
+
+<script src="{{ '/assets/js/wiki.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>
