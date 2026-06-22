@@ -135,7 +135,7 @@ communities. None of these change anything in your server.
     <tr><td colspan="3"><em>No arguments.</em></td></tr>
   </table>
   <div class="dc" style="margin-top:1rem;">
-    <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+    <div class="dc-row"><img class="dc-av you" src="{{ '/assets/avatar-you.jpg' | relative_url }}" alt="You" loading="lazy"><div class="dc-body">
       <div class="dc-head"><span class="dc-name">You</span><span class="dc-time">today</span></div>
       <div class="dc-slash"><span class="cmd">/invite</span></div>
     </div></div>
@@ -160,7 +160,7 @@ communities. None of these change anything in your server.
     <tr><td colspan="3"><em>No arguments.</em></td></tr>
   </table>
   <div class="dc" style="margin-top:1rem;">
-    <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+    <div class="dc-row"><img class="dc-av you" src="{{ '/assets/avatar-you.jpg' | relative_url }}" alt="You" loading="lazy"><div class="dc-body">
       <div class="dc-head"><span class="dc-name">You</span><span class="dc-time">today</span></div>
       <div class="dc-slash"><span class="cmd">/portal</span></div>
     </div></div>
@@ -189,7 +189,7 @@ communities. None of these change anything in your server.
     <tr><td colspan="3"><em>No arguments.</em></td></tr>
   </table>
   <div class="dc" style="margin-top:1rem;">
-    <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+    <div class="dc-row"><img class="dc-av you" src="{{ '/assets/avatar-you.jpg' | relative_url }}" alt="You" loading="lazy"><div class="dc-body">
       <div class="dc-head"><span class="dc-name">You</span><span class="dc-time">today</span></div>
       <div class="dc-slash"><span class="cmd">/vote</span></div>
     </div></div>
@@ -218,7 +218,7 @@ communities. None of these change anything in your server.
     <tr><td colspan="3"><em>No arguments.</em></td></tr>
   </table>
   <div class="dc" style="margin-top:1rem;">
-    <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+    <div class="dc-row"><img class="dc-av you" src="{{ '/assets/avatar-you.jpg' | relative_url }}" alt="You" loading="lazy"><div class="dc-body">
       <div class="dc-head"><span class="dc-name">You</span><span class="dc-time">today</span></div>
       <div class="dc-slash"><span class="cmd">/share</span></div>
     </div></div>
@@ -250,7 +250,7 @@ are private to you.
     <tr><td colspan="3"><em>No arguments.</em></td></tr>
   </table>
   <div class="dc" style="margin-top:1rem;">
-    <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+    <div class="dc-row"><img class="dc-av you" src="{{ '/assets/avatar-you.jpg' | relative_url }}" alt="You" loading="lazy"><div class="dc-body">
       <div class="dc-head"><span class="dc-name">You</span><span class="dc-time">today</span></div>
       <div class="dc-slash"><span class="cmd">/help</span></div>
     </div></div>
@@ -277,7 +277,7 @@ are private to you.
     <tr><td colspan="3"><em>No arguments.</em></td></tr>
   </table>
   <div class="dc" style="margin-top:1rem;">
-    <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+    <div class="dc-row"><img class="dc-av you" src="{{ '/assets/avatar-you.jpg' | relative_url }}" alt="You" loading="lazy"><div class="dc-body">
       <div class="dc-head"><span class="dc-name">You</span><span class="dc-time">today</span></div>
       <div class="dc-slash"><span class="cmd">/whatsnew</span></div>
     </div></div>
@@ -316,7 +316,7 @@ so you can see the result as you go.
     <tr><td><code>icon</code> <span class="opt">optional</span></td><td>file</td><td>Upload a custom brand icon (PNG/JPG/GIF/WebP, under 12 MB) — or paste a URL in the panel instead.</td></tr>
   </table>
   <div class="dc" style="margin-top:1rem;">
-    <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+    <div class="dc-row"><img class="dc-av you" src="{{ '/assets/avatar-you.jpg' | relative_url }}" alt="You" loading="lazy"><div class="dc-body">
       <div class="dc-head"><span class="dc-name">You</span><span class="dc-time">today</span></div>
       <div class="dc-slash"><span class="cmd">/brand</span></div>
     </div></div>
@@ -462,7 +462,7 @@ safety record.
     <tr><td colspan="3"><em>No arguments.</em></td></tr>
   </table>
   <div class="dc" style="margin-top:1rem;">
-    <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+    <div class="dc-row"><img class="dc-av you" src="{{ '/assets/avatar-you.jpg' | relative_url }}" alt="You" loading="lazy"><div class="dc-body">
       <div class="dc-head"><span class="dc-name">You</span><span class="dc-time">today</span></div>
       <div class="dc-slash"><span class="cmd">/threatnet status</span></div>
     </div></div>
@@ -490,7 +490,7 @@ safety record.
     <tr><td><code>level</code> <span class="opt">optional</span></td><td>choice</td><td>Minimum band that triggers a ban: <code>high</code> (safest — serious + corroborated), <code>elevated</code> (broader), or <code>low</code> (widest; higher false-positive risk). Defaults to <code>high</code>.</td></tr>
   </table>
   <div class="dc" style="margin-top:1rem;">
-    <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+    <div class="dc-row"><img class="dc-av you" src="{{ '/assets/avatar-you.jpg' | relative_url }}" alt="You" loading="lazy"><div class="dc-body">
       <div class="dc-head"><span class="dc-name">You</span><span class="dc-time">today</span></div>
       <div class="dc-slash"><span class="cmd">/threatnet autoban</span> <span class="arg">action:</span> on <span class="arg">level:</span> high</div>
     </div></div>

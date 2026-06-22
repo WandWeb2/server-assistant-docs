@@ -135,7 +135,7 @@ and its saved transcript.
     <tr><td><code>create_channel</code> <span class="opt">optional</span></td><td>text</td><td>Create a brand-new locked channel with this name and post the panel there instead.</td></tr>
   </table>
   <div class="dc" style="margin-top:1rem;">
-    <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+    <div class="dc-row"><img class="dc-av you" src="{{ '/assets/avatar-you.jpg' | relative_url }}" alt="You" loading="lazy"><div class="dc-body">
       <div class="dc-head"><span class="dc-name">You</span><span class="dc-time">today</span></div>
       <div class="dc-slash"><span class="cmd">/tickets setup</span> <span class="arg">support_role:</span> @Support <span class="arg">create_channel:</span> get-help</div>
     </div></div>
@@ -161,7 +161,7 @@ and its saved transcript.
     <tr><td><code>reason</code> <span class="opt">optional</span></td><td>text</td><td>Optional close reason — saved into the transcript and the close summary.</td></tr>
   </table>
   <div class="dc" style="margin-top:1rem;">
-    <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+    <div class="dc-row"><img class="dc-av you" src="{{ '/assets/avatar-you.jpg' | relative_url }}" alt="You" loading="lazy"><div class="dc-body">
       <div class="dc-head"><span class="dc-name">You</span><span class="dc-time">today</span></div>
       <div class="dc-slash"><span class="cmd">/tickets close</span> <span class="arg">reason:</span> Resolved — role re-applied</div>
     </div></div>
@@ -234,7 +234,7 @@ and its saved transcript.
     <tr><td><code>user</code> <span class="req">required</span></td><td>member</td><td>The user to add to this ticket.</td></tr>
   </table>
   <div class="dc" style="margin-top:1rem;">
-    <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+    <div class="dc-row"><img class="dc-av you" src="{{ '/assets/avatar-you.jpg' | relative_url }}" alt="You" loading="lazy"><div class="dc-body">
       <div class="dc-head"><span class="dc-name">You</span><span class="dc-time">today</span></div>
       <div class="dc-slash"><span class="cmd">/tickets add</span> <span class="arg">user:</span> @Specialist</div>
     </div></div>

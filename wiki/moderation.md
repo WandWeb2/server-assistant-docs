@@ -49,7 +49,7 @@ you can refer back to — or tidy up — individual entries later.
     <tr><td><code>reason</code> <span class="req">required</span></td><td>text</td><td>Reason for the warning.</td></tr>
   </table>
   <div class="dc" style="margin-top:1rem;">
-    <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+    <div class="dc-row"><img class="dc-av you" src="{{ '/assets/avatar-you.jpg' | relative_url }}" alt="You" loading="lazy"><div class="dc-body">
       <div class="dc-head"><span class="dc-name">You</span><span class="dc-time">today</span></div>
       <div class="dc-slash"><span class="cmd">/warn</span> <span class="arg">user:</span> @Troublemaker <span class="arg">reason:</span> Spamming in #general</div>
     </div></div>
@@ -78,7 +78,7 @@ you can refer back to — or tidy up — individual entries later.
     <tr><td><code>user</code> <span class="req">required</span></td><td>member</td><td>The user to look up.</td></tr>
   </table>
   <div class="dc" style="margin-top:1rem;">
-    <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+    <div class="dc-row"><img class="dc-av you" src="{{ '/assets/avatar-you.jpg' | relative_url }}" alt="You" loading="lazy"><div class="dc-body">
       <div class="dc-head"><span class="dc-name">You</span><span class="dc-time">today</span></div>
       <div class="dc-slash"><span class="cmd">/warnings</span> <span class="arg">user:</span> @Troublemaker</div>
     </div></div>
@@ -108,7 +108,7 @@ you can refer back to — or tidy up — individual entries later.
     <tr><td><code>text</code> <span class="req">required</span></td><td>text</td><td>The note to record.</td></tr>
   </table>
   <div class="dc" style="margin-top:1rem;">
-    <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+    <div class="dc-row"><img class="dc-av you" src="{{ '/assets/avatar-you.jpg' | relative_url }}" alt="You" loading="lazy"><div class="dc-body">
       <div class="dc-head"><span class="dc-name">You</span><span class="dc-time">today</span></div>
       <div class="dc-slash"><span class="cmd">/note</span> <span class="arg">user:</span> @NewMember <span class="arg">text:</span> Joined from the partner server — vouched by @friend</div>
     </div></div>
@@ -135,7 +135,7 @@ you can refer back to — or tidy up — individual entries later.
     <tr><td><code>user</code> <span class="req">required</span></td><td>member</td><td>The user to look up.</td></tr>
   </table>
   <div class="dc" style="margin-top:1rem;">
-    <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+    <div class="dc-row"><img class="dc-av you" src="{{ '/assets/avatar-you.jpg' | relative_url }}" alt="You" loading="lazy"><div class="dc-body">
       <div class="dc-head"><span class="dc-name">You</span><span class="dc-time">today</span></div>
       <div class="dc-slash"><span class="cmd">/notes</span> <span class="arg">user:</span> @NewMember</div>
     </div></div>
@@ -247,7 +247,7 @@ hand out a role. None of these remove anyone; they're the lighter touch.
     <tr><td><code>reason</code> <span class="opt">optional</span></td><td>text</td><td>Optional reason for the log.</td></tr>
   </table>
   <div class="dc" style="margin-top:1rem;">
-    <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+    <div class="dc-row"><img class="dc-av you" src="{{ '/assets/avatar-you.jpg' | relative_url }}" alt="You" loading="lazy"><div class="dc-body">
       <div class="dc-head"><span class="dc-name">You</span><span class="dc-time">today</span></div>
       <div class="dc-slash"><span class="cmd">/mute</span> <span class="arg">user:</span> @Troublemaker <span class="arg">minutes:</span> 30 <span class="arg">reason:</span> Needs to cool off</div>
     </div></div>
@@ -275,7 +275,7 @@ hand out a role. None of these remove anyone; they're the lighter touch.
     <tr><td><code>user</code> <span class="req">required</span></td><td>member</td><td>User to unmute.</td></tr>
   </table>
   <div class="dc" style="margin-top:1rem;">
-    <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+    <div class="dc-row"><img class="dc-av you" src="{{ '/assets/avatar-you.jpg' | relative_url }}" alt="You" loading="lazy"><div class="dc-body">
       <div class="dc-head"><span class="dc-name">You</span><span class="dc-time">today</span></div>
       <div class="dc-slash"><span class="cmd">/unmute</span> <span class="arg">user:</span> @Troublemaker</div>
     </div></div>
@@ -303,7 +303,7 @@ hand out a role. None of these remove anyone; they're the lighter touch.
     <tr><td><code>channel</code> <span class="opt">optional</span></td><td>channel</td><td>Which channel — defaults to the one you're in.</td></tr>
   </table>
   <div class="dc" style="margin-top:1rem;">
-    <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+    <div class="dc-row"><img class="dc-av you" src="{{ '/assets/avatar-you.jpg' | relative_url }}" alt="You" loading="lazy"><div class="dc-body">
       <div class="dc-head"><span class="dc-name">You</span><span class="dc-time">today</span></div>
       <div class="dc-slash"><span class="cmd">/slowmode</span> <span class="arg">seconds:</span> 10</div>
     </div></div>
@@ -330,7 +330,7 @@ hand out a role. None of these remove anyone; they're the lighter touch.
     <tr><td><code>channel</code> <span class="opt">optional</span></td><td>channel</td><td>Which channel to lock or unlock — defaults to the one you're in.</td></tr>
   </table>
   <div class="dc" style="margin-top:1rem;">
-    <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+    <div class="dc-row"><img class="dc-av you" src="{{ '/assets/avatar-you.jpg' | relative_url }}" alt="You" loading="lazy"><div class="dc-body">
       <div class="dc-head"><span class="dc-name">You</span><span class="dc-time">today</span></div>
       <div class="dc-slash"><span class="cmd">/lock</span></div>
     </div></div>
@@ -358,7 +358,7 @@ hand out a role. None of these remove anyone; they're the lighter touch.
     <tr><td><code>nickname</code> <span class="opt">optional</span></td><td>text</td><td>The new nickname — leave blank to reset.</td></tr>
   </table>
   <div class="dc" style="margin-top:1rem;">
-    <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+    <div class="dc-row"><img class="dc-av you" src="{{ '/assets/avatar-you.jpg' | relative_url }}" alt="You" loading="lazy"><div class="dc-body">
       <div class="dc-head"><span class="dc-name">You</span><span class="dc-time">today</span></div>
       <div class="dc-slash"><span class="cmd">/nick</span> <span class="arg">user:</span> @Member <span class="arg">nickname:</span> Hex</div>
     </div></div>
@@ -386,7 +386,7 @@ hand out a role. None of these remove anyone; they're the lighter touch.
     <tr><td><code>role</code> <span class="req">required</span></td><td>role</td><td>The role to add or remove.</td></tr>
   </table>
   <div class="dc" style="margin-top:1rem;">
-    <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+    <div class="dc-row"><img class="dc-av you" src="{{ '/assets/avatar-you.jpg' | relative_url }}" alt="You" loading="lazy"><div class="dc-body">
       <div class="dc-head"><span class="dc-name">You</span><span class="dc-time">today</span></div>
       <div class="dc-slash"><span class="cmd">/role</span> <span class="arg">action:</span> add <span class="arg">user:</span> @Member <span class="arg">role:</span> @Verified</div>
     </div></div>
@@ -421,7 +421,7 @@ rejoin. Every removal is logged with a one-tap **reversal** where it makes sense
     <tr><td><code>reason</code> <span class="opt">optional</span></td><td>text</td><td>Optional reason for the log.</td></tr>
   </table>
   <div class="dc" style="margin-top:1rem;">
-    <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+    <div class="dc-row"><img class="dc-av you" src="{{ '/assets/avatar-you.jpg' | relative_url }}" alt="You" loading="lazy"><div class="dc-body">
       <div class="dc-head"><span class="dc-name">You</span><span class="dc-time">today</span></div>
       <div class="dc-slash"><span class="cmd">/kick</span> <span class="arg">user:</span> @Troublemaker <span class="arg">reason:</span> Ignoring staff warnings</div>
     </div></div>
@@ -451,7 +451,7 @@ rejoin. Every removal is logged with a one-tap **reversal** where it makes sense
     <tr><td><code>delete_days</code> <span class="opt">optional</span></td><td>number</td><td>Days of their messages to delete (0–7). Defaults to 0.</td></tr>
   </table>
   <div class="dc" style="margin-top:1rem;">
-    <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+    <div class="dc-row"><img class="dc-av you" src="{{ '/assets/avatar-you.jpg' | relative_url }}" alt="You" loading="lazy"><div class="dc-body">
       <div class="dc-head"><span class="dc-name">You</span><span class="dc-time">today</span></div>
       <div class="dc-slash"><span class="cmd">/ban</span> <span class="arg">user:</span> @Raider <span class="arg">reason:</span> Posting scam links <span class="arg">delete_days:</span> 1</div>
     </div></div>
@@ -481,7 +481,7 @@ rejoin. Every removal is logged with a one-tap **reversal** where it makes sense
     <tr><td><code>reason</code> <span class="opt">optional</span></td><td>text</td><td>Optional reason for the log.</td></tr>
   </table>
   <div class="dc" style="margin-top:1rem;">
-    <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+    <div class="dc-row"><img class="dc-av you" src="{{ '/assets/avatar-you.jpg' | relative_url }}" alt="You" loading="lazy"><div class="dc-body">
       <div class="dc-head"><span class="dc-name">You</span><span class="dc-time">today</span></div>
       <div class="dc-slash"><span class="cmd">/unban</span> <span class="arg">user_id:</span> 123456789012345678</div>
     </div></div>
@@ -509,7 +509,7 @@ rejoin. Every removal is logged with a one-tap **reversal** where it makes sense
     <tr><td><code>reason</code> <span class="opt">optional</span></td><td>text</td><td>Optional reason for the log.</td></tr>
   </table>
   <div class="dc" style="margin-top:1rem;">
-    <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+    <div class="dc-row"><img class="dc-av you" src="{{ '/assets/avatar-you.jpg' | relative_url }}" alt="You" loading="lazy"><div class="dc-body">
       <div class="dc-head"><span class="dc-name">You</span><span class="dc-time">today</span></div>
       <div class="dc-slash"><span class="cmd">/softban</span> <span class="arg">user:</span> @Spammer <span class="arg">reason:</span> Flood of links</div>
     </div></div>
@@ -540,7 +540,7 @@ rejoin. Every removal is logged with a one-tap **reversal** where it makes sense
     <tr><td><code>delete_days</code> <span class="opt">optional</span></td><td>number</td><td>Days of their messages to delete (0–7). Defaults to 0.</td></tr>
   </table>
   <div class="dc" style="margin-top:1rem;">
-    <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+    <div class="dc-row"><img class="dc-av you" src="{{ '/assets/avatar-you.jpg' | relative_url }}" alt="You" loading="lazy"><div class="dc-body">
       <div class="dc-head"><span class="dc-name">You</span><span class="dc-time">today</span></div>
       <div class="dc-slash"><span class="cmd">/tempban</span> <span class="arg">user:</span> @Troublemaker <span class="arg">duration:</span> 7d <span class="arg">reason:</span> Cooling-off period</div>
     </div></div>
@@ -579,7 +579,7 @@ when it spots a raid in progress.
     <tr><td><code>mode</code> <span class="opt">optional</span></td><td>choice</td><td><strong>All recent messages</strong> (default) or <strong>Smart</strong> — AI removes only the problematic ones. The <span class="cmd-tag ai">AI</span> tag applies to Smart mode only.</td></tr>
   </table>
   <div class="dc" style="margin-top:1rem;">
-    <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+    <div class="dc-row"><img class="dc-av you" src="{{ '/assets/avatar-you.jpg' | relative_url }}" alt="You" loading="lazy"><div class="dc-body">
       <div class="dc-head"><span class="dc-name">You</span><span class="dc-time">today</span></div>
       <div class="dc-slash"><span class="cmd">/purge</span> <span class="arg">count:</span> 50</div>
     </div></div>
@@ -611,7 +611,7 @@ log channel for review.
 
   <div class="wiz-step on" data-step="You ask for a Smart purge">
     <div class="dc">
-      <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+      <div class="dc-row"><img class="dc-av you" src="{{ '/assets/avatar-you.jpg' | relative_url }}" alt="You" loading="lazy"><div class="dc-body">
         <div class="dc-head"><span class="dc-name">You</span><span class="dc-time">today</span></div>
         <div class="dc-slash"><span class="cmd">/purge</span> <span class="arg">count:</span> 50 <span class="arg">mode:</span> Smart — AI removes only the problematic ones</div>
       </div></div>
@@ -667,7 +667,7 @@ log channel for review.
     <tr><td><code>reason</code> <span class="opt">optional</span></td><td>text</td><td>Optional reason for the log.</td></tr>
   </table>
   <div class="dc" style="margin-top:1rem;">
-    <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+    <div class="dc-row"><img class="dc-av you" src="{{ '/assets/avatar-you.jpg' | relative_url }}" alt="You" loading="lazy"><div class="dc-body">
       <div class="dc-head"><span class="dc-name">You</span><span class="dc-time">today</span></div>
       <div class="dc-slash"><span class="cmd">/lockdown</span> <span class="arg">action:</span> start <span class="arg">reason:</span> Raid in progress</div>
     </div></div>
@@ -695,7 +695,7 @@ log channel for review.
     <tr><td><code>mode</code> <span class="req">required</span></td><td>choice</td><td><code>on</code>, <code>off</code> or <code>status</code>.</td></tr>
   </table>
   <div class="dc" style="margin-top:1rem;">
-    <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+    <div class="dc-row"><img class="dc-av you" src="{{ '/assets/avatar-you.jpg' | relative_url }}" alt="You" loading="lazy"><div class="dc-body">
       <div class="dc-head"><span class="dc-name">You</span><span class="dc-time">today</span></div>
       <div class="dc-slash"><span class="cmd">/altguard</span> <span class="arg">mode:</span> on</div>
     </div></div>

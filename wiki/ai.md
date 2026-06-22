@@ -58,7 +58,7 @@ single tap. Admins get the same insights in a read-only view.
     <tr><td><code>question</code> <span class="req">required</span></td><td>text</td><td>What you'd like help with — a question or an instruction.</td></tr>
   </table>
   <div class="dc" style="margin-top:1rem;">
-    <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+    <div class="dc-row"><img class="dc-av you" src="{{ '/assets/avatar-you.jpg' | relative_url }}" alt="You" loading="lazy"><div class="dc-body">
       <div class="dc-head"><span class="dc-name">You</span><span class="dc-time">today</span></div>
       <div class="dc-slash"><span class="cmd">/sai</span> <span class="arg">question:</span> Things feel noisy — can we tighten up spam filtering a bit?</div>
     </div></div>
@@ -103,7 +103,7 @@ a short cooldown between generations on the free trial; Premium servers skip it.
     <tr><td><code>prompt</code> <span class="req">required</span></td><td>text</td><td>Describe what you'd like to see (up to 1000 characters).</td></tr>
   </table>
   <div class="dc" style="margin-top:1rem;">
-    <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+    <div class="dc-row"><img class="dc-av you" src="{{ '/assets/avatar-you.jpg' | relative_url }}" alt="You" loading="lazy"><div class="dc-body">
       <div class="dc-head"><span class="dc-name">You</span><span class="dc-time">today</span></div>
       <div class="dc-slash"><span class="cmd">/imagine</span> <span class="arg">prompt:</span> a cosy cabin in a snowy pine forest at dusk, warm light in the windows</div>
     </div></div>
@@ -167,7 +167,7 @@ language.
     <tr><td><code>language</code> <span class="opt">optional</span></td><td>text</td><td>Target language, e.g. Spanish, Japanese. Defaults to your own Discord language.</td></tr>
   </table>
   <div class="dc" style="margin-top:1rem;">
-    <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+    <div class="dc-row"><img class="dc-av you" src="{{ '/assets/avatar-you.jpg' | relative_url }}" alt="You" loading="lazy"><div class="dc-body">
       <div class="dc-head"><span class="dc-name">You</span><span class="dc-time">today</span></div>
       <div class="dc-slash"><span class="cmd">/translate</span> <span class="arg">text:</span> Where is the nearest station? <span class="arg">language:</span> Japanese</div>
     </div></div>
@@ -314,7 +314,7 @@ for a weekly staff catch-up.
     <tr><td colspan="3">No arguments — covers the last 7 days automatically.</td></tr>
   </table>
   <div class="dc" style="margin-top:1rem;">
-    <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+    <div class="dc-row"><img class="dc-av you" src="{{ '/assets/avatar-you.jpg' | relative_url }}" alt="You" loading="lazy"><div class="dc-body">
       <div class="dc-head"><span class="dc-name">You</span><span class="dc-time">today</span></div>
       <div class="dc-slash"><span class="cmd">/retro</span></div>
     </div></div>
@@ -358,7 +358,7 @@ glance. No AI, no plan needed.
     <tr><td colspan="3">No arguments — reports on the current server.</td></tr>
   </table>
   <div class="dc" style="margin-top:1rem;">
-    <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+    <div class="dc-row"><img class="dc-av you" src="{{ '/assets/avatar-you.jpg' | relative_url }}" alt="You" loading="lazy"><div class="dc-body">
       <div class="dc-head"><span class="dc-name">You</span><span class="dc-time">today</span></div>
       <div class="dc-slash"><span class="cmd">/stats</span></div>
     </div></div>

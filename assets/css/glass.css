@@ -250,7 +250,7 @@ table tbody tr:hover td { background: rgba(60, 193, 240, 0.08); }
 .dc { background:#313338; border-radius:10px; padding:.7rem .8rem; font-family:"gg sans","Segoe UI",system-ui,sans-serif; color:#dbdee1; font-size:.84rem; line-height:1.4; box-shadow:0 8px 30px rgba(0,0,0,.40); }
 .dc + .dc { margin-top:.5rem; }
 .dc-row { display:flex; gap:.6rem; align-items:flex-start; }
-.dc-av { width:38px; height:38px; border-radius:50%; flex:0 0 38px; object-fit:cover; background:#fff; }
+.dc-av { width:38px; height:38px; border-radius:50%; flex:0 0 38px; object-fit:cover; background:transparent; }
 .mock-pair { display:flex; gap:.8rem; flex-wrap:wrap; justify-content:center; }
 .mock-pair > .dc { flex:1 1 320px; }
 .dc-body { flex:1; min-width:0; }
