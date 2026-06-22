@@ -42,3 +42,8 @@ categories:
     icon: "🤖"
     items:
       - { label: "AI & intelligence", url: "/wiki/ai/" }
+
+  - title: "Tickets & support"
+    icon: "🎫"
+    items:
+      - { label: "Tickets & support", url: "/wiki/tickets/" }
