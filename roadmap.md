@@ -603,6 +603,8 @@ Where Server Assistant is heading. Priorities are decided by the people who run 
 
     <details class="card"><summary>🎁 Vote &amp; review incentives</summary><span class="desc">Thank the community for steering the bot: light perks for servers that take part in the feature votes and members who leave a review on the bot directories (top.gg, DiscordForge, and friends) — think a small bonus AI-token top-up and a reviewer shout-out.</span></details>
 
+    <details class="card"><summary>🌐 Member Portal &amp; streamlined commands</summary><span class="desc">Opening the web portal to <strong>every member</strong>, not just staff: a self-service home for your own settings, two-way records &amp; forms between you and the team, and privacy opt-outs (including the threat network) — all in one place. Alongside it, a leaner set of bot commands: every ability stays listed for discoverability, but the heavy lifting moves to easy in-browser wizards, with each command deep-linking straight to the exact setting or form in the portal. The bot also delivers its privacy notice automatically on install and on demand.</span></details>
+
   </div>
   </div>
   </div>

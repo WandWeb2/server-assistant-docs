@@ -34,7 +34,27 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 .doc-sec.tempered .tg-badge { display: inline-block; font-size: .6rem; font-weight: 800; letter-spacing: .09em; text-transform: uppercase; color: #0a1030; background: linear-gradient(135deg, #bcd6ff, #60a5fa); padding: .1rem .45rem; border-radius: 999px; margin-left: .55rem; vertical-align: middle; }
 </style>
 
-<details class="doc-sec" markdown="1" open>
+<details class="doc-sec tempered" markdown="1" open>
+<summary>v5.8.0 — ThreatNet: cross-server safety, on by default<span class="tg-badge">ThreatNet</span></summary>
+
+
+Server Assistant now protects every server with **ThreatNet**, our **Cross-Server Threat Network**. When someone with a serious, corroborated history of scams, raids or ban-evasion on *other* protected servers turns up on yours, your staff see an **advisory cross-server risk signal** on their profile — often **before** any harm is done.
+
+It's **severity-only** by design: never the offence type, your staff's reasons, message content, or which server acted — just a generic risk band, how many servers corroborate it, and recency. ThreatNet is a **core, on-by-default** safety feature for every server; **Premium** adds the richer cross-server view. You stay in control of your own data — **opt out of profiling anytime in the [web portal](https://serverassistant.wandweb.co)**, subject to a published safety exception.
+
+
+</details>
+
+<details class="doc-sec" markdown="1">
+<summary>Portal sign-in reliability fix</summary>
+
+
+Fixed an issue where signing in to the web dashboard could show **"Invalid or expired state. Try again"** — most often on mobile, or after refreshing or tapping back during sign-in — even though the sign-in had actually gone through. Signing in is now reliable: open the portal and you're straight in.
+
+
+</details>
+
+<details class="doc-sec" markdown="1">
 <summary>v5.6.50 — A full trial on our best AI, then AI that keeps working</summary>
 
 

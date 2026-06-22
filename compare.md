@@ -94,6 +94,7 @@ description: Honest feature comparisons — Server Assistant vs the bots you mig
         <li><strong>AI-context moderation</strong> instead of keyword regex. Catches sarcasm, slang, and intent that MEE6's filters miss entirely.</li>
         <li><strong>Self-trained AutoMod</strong> learns from your staff's manual decisions and proposes server-specific rules for approval.</li>
         <li><strong>Threat Score</strong> — risk-based actions instead of one-size-fits-all punishment ladders.</li>
+        <li><strong>ThreatNet (cross-server threat network)</strong> — recognises scammers and raiders with a serious, corroborated history on <em>other</em> protected servers, before they reach yours. No major competitor shares a cross-server safety signal.</li>
         <li><strong>Ban reasons + one-reply appeals</strong> built in. MEE6's ban flow is silent.</li>
         <li><strong>Bot Health Insurance</strong> — the bot watches its own noisiness and suggests tuning before staff get fed up and mute it.</li>
         <li><strong>Real anti-raid</strong> with auto-actions, not just join logging.</li>
