@@ -47,3 +47,8 @@ categories:
     icon: "🎫"
     items:
       - { label: "Tickets & support", url: "/wiki/tickets/" }
+
+  - title: "Member experience"
+    icon: "✨"
+    items:
+      - { label: "Member experience", url: "/wiki/members/" }
