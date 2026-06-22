@@ -101,6 +101,7 @@ image: /assets/banner.jpeg
 </div>
 
 <p class="fleet-stats" id="fleet-stats" hidden></p>
+<p class="fleet-stats" id="scanned-stat" hidden></p>
 <p class="fleet-stats threatnet-stat" id="threatnet-stat" hidden></p>
 
 <script>
@@ -111,6 +112,7 @@ image: /assets/banner.jpeg
    never a broken or zero line. Aggregate totals only; no per-server detail. */
 (function () {
   var box = document.getElementById("fleet-stats");
+  var scBox = document.getElementById("scanned-stat");
   var tnBox = document.getElementById("threatnet-stat");
   var API = "https://sa.wandweb.co/api/public/fleet-stats";
   fetch(API)
@@ -126,6 +128,11 @@ image: /assets/banner.jpeg
         if (m > 0) parts += " and <strong>" + mtxt + "</strong> member" + (m === 1 ? "" : "s");
         box.innerHTML = parts;
         box.hidden = false;
+      }
+      var sc = Number(d.messages_scanned) || 0;
+      if (scBox && sc > 0) {
+        scBox.innerHTML = "<strong>" + sc.toLocaleString() + "</strong> messages scanned for your safety";
+        scBox.hidden = false;
       }
       var tn = Number(d.threatnet_captured) || 0;
       if (tnBox && tn > 0) {
