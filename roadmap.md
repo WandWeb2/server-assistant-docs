@@ -532,7 +532,7 @@ Where Server Assistant is heading. Priorities are decided by the people who run 
 
 <div class="build-queue">
 
-  <div class="band-h band-gold">🥇 v6.0 — confirmed by our community<span class="sub">The three most-voted features, built together as the next major update.</span></div>
+  <div class="band-h band-gold">🥇 v6.0 — confirmed by our community<span class="sub">The community's most-voted features. 🚨 Anti-nuke shipped first in v6.0.0 — Verification and Leveling are up next.</span></div>
   <div class="band" id="band-gold">
 
   <details class="card" id="card-verification-gate">
@@ -543,11 +543,6 @@ Where Server Assistant is heading. Priorities are decided by the people who run 
   <details class="card" id="card-leveling-xp">
     <summary>🏅 Leveling &amp; XP — portal-hosted</summary>
     <span class="desc">Server XP with combined lifetime + seasonal leaderboards, hosted primarily on the <strong>web portal</strong>. Anti-spam built in, per-user opt-out, privacy-first boards. <strong>SAi hands out weekly/monthly awards</strong> (your cadence), Pulse suggests an event when things go quiet, reputation tracks reaction counts, and XP doubles as a trust signal. Spend XP on rewards and fun perks — with room for cross-server, SA-hosted competitions. Opt-in per server.</span>
-  </details>
-
-  <details class="card" id="card-anti-nuke">
-    <summary>🚨 Anti-nuke / rogue-admin guard</summary>
-    <span class="desc">Proactive protection against a compromised admin or malicious insider: community-aware rate limits on destructive actions, confident-burst <strong>auto-quarantine</strong> + owner alert, and <strong>exact-permission restore</strong>. Adds a guided bot-whitelist at setup, a two-person rule for catastrophic actions, compromise-likelihood scoring, AI incident reports, and smart permission suggestions (<em>"Fred's bans keep getting approved — grant him the ban perm?"</em>). Core security → free forever.</span>
   </details>
 
   </div>
@@ -802,6 +797,11 @@ Where Server Assistant is heading. Priorities are decided by the people who run 
   <details class="band-shipped">
     <summary>✅ Shipped — the full history (tap to expand)</summary>
     <div class="shipped-scroll">
+
+    <details class="card">
+      <summary>🚨 Anti-nuke / rogue-admin guard <span class="shipped-pill">✅ Shipped v6.0.0</span></summary>
+      <span class="desc">A smoke alarm for a server nuke or a compromised admin: it watches for catastrophic bursts (mass channel/role deletes, mass bans/kicks, permission grabs) and responds on a ladder — observe, alert staff, or <strong>auto-quarantine</strong> the account (owner-immune, <strong>one-tap revert</strong>). Keeps a snapshot so it can <strong>restore your roles &amp; channels exactly</strong> and recreate deleted channels, with a trusted-actor whitelist and a two-person rule. Local-only; the first of the community-voted v6.0 features. <a href="{{ site.url }}{{ site.baseurl }}/wiki/anti-nuke/">Full guide →</a></span>
+    </details>
 
     <details class="card">
       <summary>🎭 Reaction roles <span class="premium-pill">💎 Premium</span> <span class="shipped-pill">✅ Shipped v5.6.27</span></summary>
