@@ -12,7 +12,7 @@ description: Server Assistant pricing — generous free tier, $7/mo USD Premium 
 <style>
 .plans { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin: 1.5rem 0 1rem; align-items: start; }
 .plan { border-radius: 14px; border: 1px solid var(--glass-border); padding: 1.1rem 1.1rem 1.2rem; backdrop-filter: blur(7px); -webkit-backdrop-filter: blur(7px); position: relative; }
-.plan.free { background: rgba(52,130,225,0.10); border-color: rgba(52,130,225,0.32); }
+.plan.free { background: rgba(84,224,142,0.10); border-color: rgba(84,224,142,0.32); }
 .plan.byok { background: rgba(255,255,255,0.05); }
 .plan.prem { background: var(--gold-soft); border-color: rgba(245,196,34,0.42); }
 .plan-name { font-size: 1.1rem; font-weight: 800; color: var(--ink); }
