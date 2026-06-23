@@ -483,7 +483,7 @@ safety record.
     <span class="cmd-tag premium">PREMIUM</span>
     <span class="cmd-tag perm">ADMIN</span>
   </div>
-  <p class="cmd-desc">Auto-protect: automatically ban users who join your server carrying a cross-server safety record at or above a trigger level you choose. Needs Premium and Manage Server. Use <code>status</code> to check the current setting, or <code>off</code> to turn it off.</p>
+  <p class="cmd-desc">Auto-protect: automatically ban users who join your server carrying a cross-server safety record at or above a trigger level you choose. Needs Premium and Manage Server. Use <code>status</code> to check the current setting, or <code>off</code> to turn it off. A triggered ban is <strong>silent</strong> — no DM and <strong>no in-server appeal ticket</strong> (unlike a normal ban); the automated decision is disclosed in the <a href="{{ '/privacy/' | relative_url }}">Privacy Policy</a> and stays contestable via the web portal.</p>
   <table class="cmd-args">
     <tr><th>Argument</th><th>Type</th><th>Notes</th></tr>
     <tr><td><code>action</code> <span class="req">required</span></td><td>choice</td><td><code>on</code>, <code>off</code> or <code>status</code>.</td></tr>
