@@ -463,7 +463,7 @@ summary.pack-h .pack-count { color: #5fd0b6; background: rgba(46, 204, 113, 0.12
                          title matches the poll answer text). Each card
                          carries data-poll-answer="N" (0-based index into the
                          poll's answers) and an empty
-                         <span class="vote-badge"></span> at the end of its
+                          at the end of its
                          summary. Page JS fills the badges, sorts ALL tagged
                          cards by live tallies, promotes the top 3 to gold,
                          and keeps the rest here. NO ver-pills in this band.
@@ -532,63 +532,64 @@ Where Server Assistant is heading. Priorities are decided by the people who run 
 
 <div class="build-queue">
 
-  <div class="band-h band-gold">🥇 v5.7 — confirmed by our community<span class="sub">The top 3 most-voted features all ship together as the next update. If features tie for the final spot, none is picked over another — they carry to the next vote.</span></div>
+  <div class="band-h band-gold">🥇 v6.0 — confirmed by our community<span class="sub">The three most-voted features, built together as the next major update.</span></div>
   <div class="band" id="band-gold">
-    <div class="band-empty">Waiting for the first votes — the live top 3 appear here, and when the poll closes they become the next five releases. Vote from your server's staff chat!</div>
+
+  <details class="card" id="card-verification-gate">
+    <summary>🛡️ Verification &amp; join-approval — portal-based</summary>
+    <span class="desc">Risk-scored joiners are held in a no-access <em>pending</em> state and sent to complete verification on the <strong>web portal</strong> (no fragile DM or in-server buttons). Higher-risk joins route to staff as a one-tap <strong>Approve / Kick / Ban</strong> review with a full report; the member is DM'd the outcome, with a portal <strong>appeal form always available</strong>. Self-learning — it adapts to your staff's decisions and feeds setting suggestions. Builds on the Ticket Panels intake engine and the existing verification gate.</span>
+  </details>
+
+  <details class="card" id="card-leveling-xp">
+    <summary>🏅 Leveling &amp; XP — portal-hosted</summary>
+    <span class="desc">Server XP with combined lifetime + seasonal leaderboards, hosted primarily on the <strong>web portal</strong>. Anti-spam built in, per-user opt-out, privacy-first boards. <strong>SAi hands out weekly/monthly awards</strong> (your cadence), Pulse suggests an event when things go quiet, reputation tracks reaction counts, and XP doubles as a trust signal. Spend XP on rewards and fun perks — with room for cross-server, SA-hosted competitions. Opt-in per server.</span>
+  </details>
+
+  <details class="card" id="card-anti-nuke">
+    <summary>🚨 Anti-nuke / rogue-admin guard</summary>
+    <span class="desc">Proactive protection against a compromised admin or malicious insider: community-aware rate limits on destructive actions, confident-burst <strong>auto-quarantine</strong> + owner alert, and <strong>exact-permission restore</strong>. Adds a guided bot-whitelist at setup, a two-person rule for catastrophic actions, compromise-likelihood scoring, AI incident reports, and smart permission suggestions (<em>"Fred's bans keep getting approved — grant him the ban perm?"</em>). Core security → free forever.</span>
+  </details>
+
   </div>
+
 
   <div class="band-row">
   <div class="band-col">
   <div class="band-h band-purple">🟣 In the running<span class="sub">The rest of the current vote — every vote can push a card up into gold</span></div>
   <div class="band" id="band-purple">
 
-  <details class="card" id="card-ai-command" data-poll-answer="0">
-    <summary>🤖 <code>/ai</code> for your community + AI Access panel<span class="vote-badge"></span></summary>
+  <details class="card" id="card-ai-command">
+    <summary>🤖 <code>/ai</code> for your community + AI Access panel</summary>
     <span class="desc">A Premium-only command any member can use in opted-in servers: <code>/ai &lt;your question&gt;</code> and Server Assistant replies under its own name with a Claude-powered answer. Default <strong>off</strong>. Useful for "what time is it in Berlin?", "explain this Discord setting", "draft a server rule for X". Image generation stays on <code>/imagine</code> separately so the free-tier Pollinations fallback isn't lost. <strong>Ships with its owner-facing control panel</strong> — <code>/settings → 🤖 AI Access</code>: enable toggle, allowed channels, reply visibility (public/ephemeral), per-user and per-channel rate limits, content strictness, and a query log.</span>
   </details>
 
-  <details class="card" id="card-rule-explainer" data-poll-answer="1">
-    <summary>🧠 AI rule explainer<span class="vote-badge"></span></summary>
+  <details class="card" id="card-rule-explainer">
+    <summary>🧠 AI rule explainer</summary>
     <span class="desc">AutoMod DMs the user not just which filter matched, but why this rule exists, in plain language. Cuts the "I have no idea why I got warned" complaint at the root.</span>
   </details>
 
-  <details class="card" id="card-native-coaching" data-poll-answer="2">
-    <summary>🧭 Native-action coaching <span class="admin-pill">Baseline admin</span><span class="vote-badge"></span></summary>
+  <details class="card" id="card-native-coaching">
+    <summary>🧭 Native-action coaching <span class="admin-pill">Baseline admin</span></summary>
     <span class="desc"><strong>Logging</strong> of native Discord actions (right-click ban/kick/timeout) <strong>shipped in v5.1</strong>. What's coming next: when a staff member moderates from Discord's own UI, they get a gentle one-line tip on doing the same thing through Server Assistant (so you keep your escalation ladder, approvals, and undo window intact). Read-only; never blocks the action.</span>
   </details>
 
-  <details class="card" id="card-coverage-map" data-poll-answer="3">
-    <summary>📊 Staff insights — coverage map + shared tips<span class="vote-badge"></span></summary>
+  <details class="card" id="card-coverage-map">
+    <summary>📊 Staff insights — coverage map + shared tips</summary>
     <span class="desc">Two staff-intelligence features that ship as one bundle. <strong>Staff coverage map</strong> — time-zone-aware visualisation of when each mod is typically active; flags coverage gaps for raid-prone hours. <strong>Community-of-practice sharing</strong> — <em>"servers like yours configure X this way"</em> recommendations based on similar community profiles; privacy-first — patterns only, no per-server identifying data.</span>
   </details>
 
-  <details class="card" id="card-verification-gate" data-poll-answer="4">
-    <summary>🛡️ Verification gate + application forms<span class="vote-badge"></span></summary>
-    <span class="desc">Two complementary join-gates that ship together. <strong>Verification gate</strong> — holds new members in a quarantine role until they prove they're human, then auto-grants your member role. Three modes so friction matches your threat level: <strong>DM-button</strong> (one tap, the sensible default), <strong>web captcha</strong> (hosted challenge page for raid-prone servers), and <strong>risk-targeted</strong> — verify <em>only</em> accounts Threat Score and AltGuard already flag, while trusted regulars walk straight in; fail or time out → auto-kick, staff alerted. Friction scales with risk instead of taxing every legitimate joiner. <strong>Application / join-approval forms</strong> — a staff-reviewed application step: owners define the questions (<em>why are you here, age-gate confirmation, rules agreement</em>), applicants answer a short form on join, and each submission lands in staff chat with one-tap <strong>Approve</strong> / <strong>Deny</strong> and an optional reason DM'd back. Builds on the Ticket Panels intake engine shipped in v5.2.</span>
-  </details>
-
-  <details class="card" id="card-anti-nuke" data-poll-answer="5">
-    <summary>🚨 Anti-nuke / rogue-admin guard<span class="vote-badge"></span></summary>
-    <span class="desc">Proactive protection against a compromised admin account or a malicious insider — the gap between today's <em>manual</em> <code>/lockdown</code> and a real attack. Rate-limits destructive admin actions (mass channel/role deletions, mass bans/kicks, mass webhook creation) and, on a confident burst, <strong>auto-strips the actor's roles into a powerless quarantine</strong> mid-attack and alerts the owner with exactly what was attempted. Reuses the exact-permission restore engine already shipped in <code>/lockdown end</code>, so reversing the damage isn't a best-guess. Core security → free forever.</span>
-  </details>
-
-  <details class="card" id="card-bot-on-bot" data-poll-answer="6">
-    <summary>🔍 Bot-on-bot detection<span class="vote-badge"></span></summary>
+  <details class="card" id="card-bot-on-bot">
+    <summary>🔍 Bot-on-bot detection</summary>
     <span class="desc">Flag suspicious automation pretending to be human — relevant for mass-marketing raids that evade text filters.</span>
   </details>
 
-  <details class="card" id="card-byo-media" data-poll-answer="7">
-    <summary>🎨 Bring your own AI media credits<span class="vote-badge"></span></summary>
+  <details class="card" id="card-byo-media">
+    <summary>🎨 Bring your own AI media credits</summary>
     <span class="desc">Connect your own <a href="https://pollinations.ai" target="_blank" rel="noopener">Pollinations</a> account to power AI media generation — <code>/imagine</code> images today, plus video, text-to-speech, and voice over time — on your <strong>own</strong> balance, with no shared limits. A one-time approve-in-browser flow links your account; you set your own budget, restrict allowed models, and revoke access any time. Media runs at your pace, independent of the built-in allowance.</span>
   </details>
 
-  <details class="card" id="card-leveling-xp" data-poll-answer="8">
-    <summary>🏅 Leveling / XP<span class="vote-badge"></span></summary>
-    <span class="desc">Server-wide XP with level-up roles and a leaderboard. Opt-in per server, opt-out per user.</span>
-  </details>
-
-  <details class="card" id="card-embed-builder" data-poll-answer="9">
-    <summary>🪄 Embed builder<span class="vote-badge"></span></summary>
+  <details class="card" id="card-embed-builder">
+    <summary>🪄 Embed builder</summary>
     <span class="desc">Interactive wizard for crafting rich announcements with fields, images, and buttons.</span>
   </details>
 
