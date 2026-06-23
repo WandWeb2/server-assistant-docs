@@ -24,7 +24,15 @@
   overflow-y: auto;
   padding-right: .4rem;
   font-size: .9rem;
+  /* Subtle thin scrollbar, matching the rest of the site (the roadmap's). */
+  scrollbar-width: thin;
+  scrollbar-color: #cfd8dc transparent;
 }
+.wiki-side::-webkit-scrollbar, .wiki-search-results::-webkit-scrollbar             { width: 6px; }
+.wiki-side::-webkit-scrollbar-track, .wiki-search-results::-webkit-scrollbar-track { background: transparent; }
+.wiki-side::-webkit-scrollbar-thumb, .wiki-search-results::-webkit-scrollbar-thumb { background: #cfd8dc; border-radius: 3px; }
+.wiki-side::-webkit-scrollbar-thumb:hover, .wiki-search-results::-webkit-scrollbar-thumb:hover { background: #b0bec5; }
+.wiki-search-results { scrollbar-width: thin; scrollbar-color: #cfd8dc transparent; }
 .wiki-nav-group { margin-bottom: 1.25rem; }
 .wiki-nav-title {
   display: flex; align-items: center; gap: .45rem;
