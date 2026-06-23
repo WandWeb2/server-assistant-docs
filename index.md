@@ -46,8 +46,7 @@ image: /assets/banner.jpeg
 .fleet-stats strong { color: var(--ink); }
 .threatnet-stat { min-height: 0; }
 /* Plain-text styling: the → arrow is the only affordance, no underline/colour. */
-.threatnet-stat a { color: inherit; text-decoration: none; }
-.threatnet-stat a:hover { color: inherit; }
+.threatnet-stat a, .threatnet-stat a:visited, .threatnet-stat a:hover { color: inherit; text-decoration: none; }
 .section-lead { text-align: center; font-size: 1rem; color: var(--ink-soft); max-width: 720px; margin: .6rem auto 1.3rem; line-height: 1.55; }
 
 /* Full-width coloured-glass feature rows: text (brief + expand) on one side, screenshot on the other. */
