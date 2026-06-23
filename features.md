@@ -7,17 +7,17 @@ description: A tour of Server Assistant's features — AutoMod that learns your 
 
 # ✨ Server Assistant Features
 
-Each feature area pairs what you get **free** (the <span style="color:#3cc1f0;font-weight:700;">blue</span> cards) with what **Trial &amp; Premium** add (the <span style="color:#f5c422;font-weight:700;">gold</span> cards). Tap any card to expand the detail. See also **[Commands]({{ site.url }}{{ site.baseurl }}/commands/)** and **[Pricing]({{ site.url }}{{ site.baseurl }}/pricing/)**.
+Each feature area pairs what you get **free** (the <span style="color:#54e08e;font-weight:700;">green</span> cards) with what **Trial &amp; Premium** add (the <span style="color:#f5c422;font-weight:700;">gold</span> cards). Tap any card to expand the detail. See also **[Commands]({{ site.url }}{{ site.baseurl }}/commands/)** and **[Pricing]({{ site.url }}{{ site.baseurl }}/pricing/)**.
 
 <style>
 /* Continuous coloured-glass columns behind an aligned per-group grid. */
 .cmp-wrap { position: relative; margin: 1.3rem 0; }
 .cmp-bg { position: absolute; top: 0; bottom: 0; border-radius: 14px; z-index: 0; backdrop-filter: blur(7px); -webkit-backdrop-filter: blur(7px); }
-.cmp-bg.free { left: 0; right: calc(50% + .55rem); background: rgba(60,193,240,0.10); border: 1px solid rgba(60,193,240,0.30); }
+.cmp-bg.free { left: 0; right: calc(50% + .55rem); background: rgba(84,224,142,0.10); border: 1px solid rgba(84,224,142,0.30); }
 .cmp-bg.prem { left: calc(50% + .55rem); right: 0; background: rgba(245,196,34,0.11); border: 1px solid rgba(245,196,34,0.34); }
 .cmp { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1fr; column-gap: 1.1rem; row-gap: .4rem; align-items: start; }
 .col-head { font-size: 1.25rem; font-weight: 800; color: var(--ink); padding: .65rem .85rem .35rem; border-bottom: 2px solid var(--glass-border); margin-bottom: .15rem; }
-.col-head.free { border-bottom-color: rgba(60,193,240,0.5); }
+.col-head.free { border-bottom-color: rgba(84,224,142,0.5); }
 .col-head.prem { border-bottom-color: rgba(245,196,34,0.55); }
 .grp-h { grid-column: 1 / -1; display: flex; align-items: center; gap: .45rem; font-size: 1.02rem; font-weight: 800; color: var(--ink); margin: .7rem 0 0; padding: .45rem .35rem .3rem; border-bottom: 2px solid var(--glass-border); }
 .col { padding: .15rem .85rem .7rem; }
@@ -46,7 +46,7 @@ Each feature area pairs what you get **free** (the <span style="color:#3cc1f0;fo
   .cmp-bg, .col-head { display: none; }
   .grp-h { grid-column: auto; margin-top: 1rem; }
   .col { border-radius: 10px; padding: .55rem .7rem .65rem; margin-bottom: .15rem; }
-  .col.free { background: rgba(60,193,240,0.10); border: 1px solid rgba(60,193,240,0.30); }
+  .col.free { background: rgba(84,224,142,0.10); border: 1px solid rgba(84,224,142,0.30); }
   .col.prem { background: rgba(245,196,34,0.11); border: 1px solid rgba(245,196,34,0.34); }
   /* Empty tier cells would otherwise render their coloured border as a stray line. */
   .col.empty { display: none; }
