@@ -22,14 +22,27 @@ description: The complete Server Assistant reference — every command, wizard a
 
 # 📖 Server Assistant Wiki
 
-<p class="wiki-lead">The full reference for Server Assistant — <strong>every command, every setup wizard, and every automatic flow</strong>, each shown with a live mock-up of exactly what you'll see in Discord. Search above, or browse by area below.</p>
+<p class="wiki-lead">The full reference for Server Assistant — <strong>every feature, command, wizard and flow</strong>, each shown with a live mock-up of exactly what you'll see in Discord. Search above, or browse below.</p>
+
+## Start here
 
 <div class="wiki-hub">
 
-  <a class="card" href="{{ '/wiki/setup/' | relative_url }}">
-    <h3>🚀 The /setup wizard</h3>
-    <p>Walk through every screen of first-time setup — channels, roles, permissions and AI — one state at a time.</p>
+  <a class="card" href="{{ '/wiki/features/' | relative_url }}">
+    <h3>🌟 Main features</h3>
+    <p>A guided tour of everything the bot does — what each feature is, how to switch it on, and where to read more.</p>
   </a>
+
+  <a class="card" href="{{ '/wiki/setup/' | relative_url }}">
+    <h3>🚀 Setup</h3>
+    <p>Configured in about a minute — a quick-start flow, then every screen of the <code>/setup</code> wizard, one state at a time.</p>
+  </a>
+
+</div>
+
+## Browse by area
+
+<div class="wiki-hub">
 
   <a class="card" href="{{ '/wiki/moderation/' | relative_url }}">
     <h3>🛡️ Moderation &amp; safety</h3>
@@ -68,6 +81,37 @@ description: The complete Server Assistant reference — every command, wizard a
 
 </div>
 
+## Feature deep-dives
+
+<div class="wiki-hub">
+
+  <a class="card" href="{{ '/wiki/pulse/' | relative_url }}">
+    <h3>🩺 Pulse</h3>
+    <p>Read-only whole-server health digests, posted to your staff channel on the cadence you choose.</p>
+  </a>
+
+  <a class="card" href="{{ '/wiki/ban-appeals/' | relative_url }}">
+    <h3>📩 Ban appeals</h3>
+    <p>The DM-the-reason, one-reply staff appeal ticket flow — Unban / Deny / Research, and Premium multi-round.</p>
+  </a>
+
+  <a class="card" href="{{ '/wiki/audit-log/' | relative_url }}">
+    <h3>📜 Audit log</h3>
+    <p>The tamper-proof record of every moderation action, and how to set your log channel.</p>
+  </a>
+
+  <a class="card" href="{{ '/wiki/altguard/' | relative_url }}">
+    <h3>🕵️ Alt / ban-evasion</h3>
+    <p>Catches someone you banned coming back on a new account — local to your server, distinct from ThreatNet.</p>
+  </a>
+
+  <a class="card" href="{{ '/wiki/threatnet/' | relative_url }}">
+    <h3>🌐 ThreatNet</h3>
+    <p>The cross-server safety network — advisory band, Premium auto-protect, what's shared, and how to opt out.</p>
+  </a>
+
+</div>
+
 ## How to read the examples
 
 Every screen on this wiki is a faithful recreation of the real Discord interface — the same embeds, buttons and dropdowns you'll see in your server. Where a feature is a multi-step **wizard**, you'll find a step-through like the one on the [setup page]({{ '/wiki/setup/' | relative_url }}): use **Next ›** and **‹ Back** to walk each state.
@@ -79,4 +123,4 @@ Commands are tagged so you know what you're looking at:
 <span class="cmd-tag perm">ADMIN</span> requires a staff role or permission &nbsp;·&nbsp;
 <span class="cmd-tag ai">AI</span> uses AI tokens
 
-<p style="margin-top:2rem;">New here? Start with <a href="{{ '/setup/' | relative_url }}">the quick setup guide</a>, then come back for the full reference.</p>
+<p style="margin-top:2rem;">New here? Start with <a href="{{ '/wiki/features/' | relative_url }}">Main features</a> for the tour, or jump straight into <a href="{{ '/wiki/setup/' | relative_url }}">Setup</a>.</p>
