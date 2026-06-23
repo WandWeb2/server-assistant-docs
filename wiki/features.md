@@ -56,7 +56,7 @@ description: A tour of Server Assistant's headline features, what each one does,
   <h3>🛡️ A tamper-proof audit trail <span class="feat-tag free">Free</span></h3>
   <p>A clean, reliable log of moderation activity that can't be quietly wiped — so you always have the record of who did what.</p>
   <p class="how"><b>How to use:</b> pick a log channel during <code>/setup</code> (or change it later in <code>/settings</code>).</p>
-  <a class="more" href="{{ '/wiki/setup/' | relative_url }}">Setup guide →</a>
+  <a class="more" href="{{ '/wiki/audit-log/' | relative_url }}">Audit log guide →</a>
 </div>
 
 ## 🚪 Join-time protection
@@ -81,14 +81,14 @@ description: A tour of Server Assistant's headline features, what each one does,
   <h3>🕵️ Alt / ban-evasion detection (altguard) <span class="feat-tag free">Free</span></h3>
   <p>Catches someone <strong>you</strong> banned coming back under a new account. On join it fingerprints against <em>your own server's</em> ban/kick history (reused avatar, similar name, fresh account) and either flags the account for review or auto-bans a strong match. <b>This is local to your server</b> — it never consults the cross-server network.</p>
   <p class="how"><b>How to use:</b> <code>/altguard</code> to enable and set flag-only or auto-ban.</p>
-  <a class="more" href="{{ '/wiki/moderation/#bulk-raid' | relative_url }}">Raid response →</a>
+  <a class="more" href="{{ '/wiki/altguard/' | relative_url }}">Alt / ban-evasion guide →</a>
 </div>
 
 <div class="feat umbrella">
   <h3>🌐 ThreatNet <span class="feat-tag free">Free</span> <span class="feat-tag premium">Premium auto-ban</span></h3>
   <p>The opposite of altguard: it flags accounts carrying a serious, corroborated safety record <strong>on other servers</strong>, before they've done anything on yours. It shares only severity signals across the opt-in network — never offence details or which server acted — and members can opt out in the web portal. Premium can auto-ban the worst matches on join — that auto-ban is <strong>silent</strong> and opens <strong>no in-server appeal ticket</strong>, but the decision is disclosed in our Privacy Policy and stays contestable via the web portal.</p>
   <p class="how"><b>How to use:</b> <code>/threatnet status</code> to check your own status; <code>/threatnet autoban</code> (Premium) to enable join-time auto-ban. How the data and opt-out work lives on the Privacy page.</p>
-  <a class="more" href="{{ '/wiki/account/' | relative_url }}">ThreatNet on the Account page →</a>
+  <a class="more" href="{{ '/wiki/threatnet/' | relative_url }}">ThreatNet guide →</a>
 </div>
 
 > **Altguard vs ThreatNet at a glance:** altguard = *"the person I banned is back"* (your server's records, free). ThreatNet = *"this person is trouble elsewhere"* (cross-server network, opt-out, Premium auto-ban). A ThreatNet alert may also note when an account matches a local known-offender fingerprint, but the two systems stay separate.
@@ -97,16 +97,16 @@ description: A tour of Server Assistant's headline features, what each one does,
 
 <div class="feat">
   <h3>📩 Fair ban appeals <span class="feat-tag free">Free</span></h3>
-  <p>A ban isn't a silent door-slam. The member is DM'd <strong>exactly why</strong>, and one reply opens a staff appeal ticket with one-tap <b>Unban</b>, <b>Deny</b> and <b>Research</b> (an AI report on their recent messages — no tokens spent unless you press it). <em>One exception: a <a href="{{ '/wiki/account/' | relative_url }}">ThreatNet auto-ban</a> is silent and opens no appeal ticket — that automated decision is contested via the web portal instead.</em></p>
+  <p>A ban isn't a silent door-slam. The member is DM'd <strong>exactly why</strong>, and one reply opens a staff appeal ticket with one-tap <b>Unban</b>, <b>Deny</b> and <b>Research</b> (an AI report on their recent messages — no tokens spent unless you press it). <em>One exception: a <a href="{{ '/wiki/threatnet/' | relative_url }}">ThreatNet auto-ban</a> is silent and opens no appeal ticket — that automated decision is contested via the web portal instead.</em></p>
   <p class="how"><b>How to use:</b> on by default once a log/staff channel is set; tune it in <code>/settings</code>.</p>
-  <a class="more" href="{{ '/wiki/members/' | relative_url }}">Member experience guide →</a>
+  <a class="more" href="{{ '/wiki/ban-appeals/' | relative_url }}">Ban appeals guide →</a>
 </div>
 
 <div class="feat">
   <h3>🩺 Pulse — whole-server health insight <span class="feat-tag free">Free</span></h3>
   <p>Instead of waiting for a rule to break, Pulse posts a health report to your staff channel — daily, weekly or monthly — surfacing slow-burn trends humans miss, like a trickle of joins sitting just under your raid threshold. Read-only: it never acts on its own.</p>
   <p class="how"><b>How to use:</b> <code>/settings</code> → <b>🔔 Notifications / Pulse</b> to set the cadence (or turn it off).</p>
-  <a class="more" href="{{ '/wiki/settings/' | relative_url }}">Settings hub guide →</a>
+  <a class="more" href="{{ '/wiki/pulse/' | relative_url }}">Pulse guide →</a>
 </div>
 
 <div class="feat">
