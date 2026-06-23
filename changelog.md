@@ -48,6 +48,23 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 Open it from **Main Features** in the top menu, or jump straight in at [the wiki]({{ '/wiki/' | relative_url }}). Setup and the full command reference now live there too.
 </details>
 
+<details class="doc-sec" markdown="1" open>
+<summary>v6.0.0 — Anti-nuke / rogue-admin guard: a smoke alarm for your server</summary>
+
+
+**One of the three features you voted for in v6.0 is here — protection against a server "nuke" or a compromised admin account.**
+
+Server Assistant now watches for the tell-tale signs of a server nuke: **one account suddenly deleting channels or roles, mass-banning or kicking members, or grabbing dangerous permissions** in a tight burst. When that happens, it works out how likely it is to be an attack and responds straight away:
+
+- **It stops the damage.** At high confidence it **automatically quarantines** the offending account — stripping the roles giving it power — then alerts you and your staff with a short, plain-language summary of what happened. If it was a false alarm, **one tap puts everything back**.
+- **You're always safe.** The **server owner is never affected**, and you can add trusted staff, roles or bots to a **whitelist** so their normal admin work is never flagged.
+- **Tuned to your community.** Sensitivity is set automatically from your server type (busier servers get more headroom; locked-down servers are stricter), and you can adjust it yourself.
+- **Put your server back exactly.** Server Assistant keeps a regular snapshot of your roles' permissions and channel settings, so it can **restore them precisely** — and even **recreate deleted channels** — after an incident.
+- **Two-person rule.** Optionally require **two different admins** to undo a quarantine, so a single compromised account can't quietly switch your protection off.
+
+Everything stays **local to your server** — nothing is shared anywhere. It's **on by default** (detection and alerts don't change anything on their own), and you'll get a one-time heads-up in your staff channel before the automatic protection can act. Manage it all under **`/settings → Anti-nuke`**.
+</details>
+
 <details class="doc-sec" markdown="1">
 <summary>v5.9.0 — ThreatNet auto-protect (Premium): close the gate on join</summary>
 

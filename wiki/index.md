@@ -105,6 +105,11 @@ description: The complete Server Assistant reference — every command, wizard a
     <p>Catches someone you banned coming back on a new account — local to your server, distinct from ThreatNet.</p>
   </a>
 
+  <a class="card" href="{{ '/wiki/anti-nuke/' | relative_url }}">
+    <h3>🛡️ Anti-nuke / rogue-admin</h3>
+    <p>Stops a server nuke or compromised admin — auto-quarantine with one-tap revert, exact permission restore, and a trusted-actor whitelist.</p>
+  </a>
+
   <a class="card" href="{{ '/wiki/threatnet/' | relative_url }}">
     <h3>🌐 ThreatNet</h3>
     <p>The cross-server safety network — advisory band, Premium auto-protect, what's shared, and how to opt out.</p>

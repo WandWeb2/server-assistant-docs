@@ -31,6 +31,7 @@ categories:
       - { label: "Ban appeals", url: "/wiki/ban-appeals/" }
       - { label: "Audit log", url: "/wiki/audit-log/" }
       - { label: "Alt / ban-evasion", url: "/wiki/altguard/" }
+      - { label: "Anti-nuke / rogue-admin", url: "/wiki/anti-nuke/" }
       - { label: "ThreatNet", url: "/wiki/threatnet/" }
 
   - title: "Moderation & safety"
