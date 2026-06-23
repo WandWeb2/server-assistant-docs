@@ -227,7 +227,7 @@ image: /assets/banner.jpeg
   <div class="ftext">
     <h3>📩 Fair ban appeals</h3>
     <p>A ban shouldn't be a silent door-slam. The member is DM'd <strong>exactly why</strong>, and one reply opens a staff appeal ticket — so you decide with context, not vibes.</p>
-    <details class="fmore"><summary>How it works</summary><div class="fbody">The appeal ticket has one-tap <strong>Unban</strong>, <strong>Deny</strong>, and <strong>Research</strong> — which runs an AI report on the member's last message. No DM noise, no per-incident tickets, no AI token spent unless you press Research.</div></details>
+    <details class="fmore"><summary>How it works</summary><div class="fbody">The appeal ticket has one-tap <strong>Unban</strong>, <strong>Deny</strong>, and <strong>Research</strong> — which runs an AI report on the member's last message. No DM noise, no per-incident tickets, no AI token spent unless you press Research. (A <strong>ThreatNet auto-ban</strong> is the exception — it's silent and opens no appeal ticket; that automated decision is contested via the web portal.)</div></details>
   </div>
   <div class="fshot">
     <div class="dc">
@@ -336,7 +336,7 @@ image: /assets/banner.jpeg
   <div class="ftext">
     <h3>🌐 Knows the raiders before they arrive — ThreatNet</h3>
     <p><strong>ThreatNet</strong>, our <strong>Cross-Server Threat Network</strong>, shares <strong>severity-only</strong> abuse signals across every protected server — so a scammer or raider with a serious, corroborated history elsewhere lights up on yours <strong>before</strong> they strike. A core, on-by-default safety net.</p>
-    <details class="fmore"><summary>How it works</summary><div class="fbody">Servers contribute minimized, pseudonymous signals — counts, recency and a generic severity level — <strong>never</strong> the offence type, your staff's reasons, message content, or which server acted. The advisory band is free for every server; Premium adds the richer cross-server view. Individuals can opt out of profiling in the web portal, subject to a published safety exception.</div></details>
+    <details class="fmore"><summary>How it works</summary><div class="fbody">Servers contribute minimized, pseudonymous signals — counts, recency and a generic severity level — <strong>never</strong> the offence type, your staff's reasons, message content, or which server acted. The advisory band is free for every server; Premium adds the richer cross-server view. Individuals can opt out of profiling in the web portal, subject to a published safety exception. Premium auto-protect can ban a qualifying account on join; that ban is <strong>silent</strong> and opens <strong>no appeal ticket</strong> — it's disclosed in our Privacy Policy and stays contestable via the web portal.</div></details>
   </div>
   <div class="fshot">
     <div class="dc">
