@@ -24,6 +24,15 @@ categories:
       - { label: "Main features", url: "/wiki/features/" }
       - { label: "The /setup wizard", url: "/wiki/setup/" }
 
+  - title: "Feature guides"
+    icon: "🌟"
+    items:
+      - { label: "Pulse", url: "/wiki/pulse/" }
+      - { label: "Ban appeals", url: "/wiki/ban-appeals/" }
+      - { label: "Audit log", url: "/wiki/audit-log/" }
+      - { label: "Alt / ban-evasion", url: "/wiki/altguard/" }
+      - { label: "ThreatNet", url: "/wiki/threatnet/" }
+
   - title: "Moderation & safety"
     icon: "🛡️"
     items:
