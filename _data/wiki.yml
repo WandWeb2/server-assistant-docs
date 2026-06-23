@@ -21,6 +21,7 @@ categories:
     icon: "🚀"
     items:
       - { label: "Wiki home", url: "/wiki/" }
+      - { label: "Main features", url: "/wiki/features/" }
       - { label: "The /setup wizard", url: "/wiki/setup/" }
 
   - title: "Moderation & safety"
