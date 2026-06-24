@@ -115,6 +115,37 @@ description: The complete Server Assistant reference — every command, wizard a
     <p>The cross-server safety network — advisory band, Premium auto-protect, what's shared, and how to opt out.</p>
   </a>
 
+  <a class="card" href="{{ '/wiki/leveling/' | relative_url }}">
+    <h3>🏅 XP &amp; leveling</h3>
+    <p>Members earn XP just by taking part — levels, the <code>/rank</code> card, the leaderboard and level-up announcements.</p>
+  </a>
+
+  <a class="card" href="{{ '/wiki/crestbound/' | relative_url }}">
+    <h3>🛡️ Crestbound</h3>
+    <p>The Crest-collecting game in the portal — spend earned XP on booster packs, complete the Chapter, and burn spares back into XP.</p>
+  </a>
+
+</div>
+
+## Changelogs
+
+<div class="wiki-hub">
+
+  <a class="card" href="{{ '/changelog/' | relative_url }}">
+    <h3>📋 SA Bot changelog</h3>
+    <p>Release history for the bot — every feature and improvement, version by version.</p>
+  </a>
+
+  <a class="card" href="{{ '/wiki/changelog-portal/' | relative_url }}">
+    <h3>🗂️ Portal changelog</h3>
+    <p>What's changed in the web portal you sign into with Discord.</p>
+  </a>
+
+  <a class="card" href="{{ '/wiki/changelog-crestbound/' | relative_url }}">
+    <h3>🛡️ Crestbound changelog</h3>
+    <p>The XP game's release notes — the Chapter, booster packs, collection and burning.</p>
+  </a>
+
 </div>
 
 ## How to read the examples

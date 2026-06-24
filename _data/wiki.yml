@@ -64,7 +64,20 @@ categories:
     items:
       - { label: "Member experience", url: "/wiki/members/" }
 
+  - title: "XP & leveling"
+    icon: "🏅"
+    items:
+      - { label: "XP & leveling", url: "/wiki/leveling/" }
+      - { label: "Crestbound", url: "/wiki/crestbound/" }
+
   - title: "Account & premium"
     icon: "💎"
     items:
       - { label: "Account & premium", url: "/wiki/account/" }
+
+  - title: "Changelogs"
+    icon: "📋"
+    items:
+      - { label: "SA Bot changelog", url: "/changelog/" }
+      - { label: "Portal changelog", url: "/wiki/changelog-portal/" }
+      - { label: "Crestbound changelog", url: "/wiki/changelog-crestbound/" }
