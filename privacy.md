@@ -299,11 +299,9 @@ In short: by participating in a server with the Bot installed, a member's userna
 
 ### Why we process it, and how long we keep it
 
-<!-- OWNER REVIEW REQUIRED — lawful basis is a placeholder pending sign-off. -->
-We process XP and leveling data to provide the leveling feature itself — ranking, the leaderboard, level-up progress — and to power the Crestbound game economy in the portal. **[OWNER DECISION — LAWFUL BASIS NOT YET CONFIRMED:** under the Australian Privacy Act this would be assessed as collection that is *reasonably necessary* for the feature a server has enabled (APP 3) and used only for that purpose (APP 6); under the EU/UK GDPR the most likely basis is **legitimate interest** (Article 6(1)(f)) in providing the community-engagement feature the server installed. This basis must be confirmed by the owner before publication — do not treat the foregoing as settled.**]**
+We process XP and leveling data to provide the leveling feature itself — ranking, the leaderboard, level-up progress — and to power the Crestbound game economy in the portal. Under the Australian Privacy Act, this collection is reasonably necessary for the feature a server has enabled (APP 3) and is used only for that purpose (APP 6). For members in the EU and UK, we rely on our **legitimate interests** (Article 6(1)(f) GDPR) in providing the community-engagement feature the server chose to install.
 
-<!-- OWNER REVIEW REQUIRED — retention period is a placeholder pending sign-off. -->
-**Retention. [OWNER DECISION — RETENTION PERIOD NOT YET CONFIRMED:** XP, level, message counts, reputation and the account-wide XP wallet are currently retained **for as long as the member's account-wide wallet exists / until the data is deleted on request** — we did not find an automatic expiry for XP data. The owner must confirm the intended retention period (e.g. a rolling activity window, or "kept while the wallet is in use") before this is published; the placeholder wording here is conservative and must not be treated as a committed policy.**]** You may contact us via [`/support`]({{ site.url }}{{ site.baseurl }}/support/) to request access to, or deletion of, the XP data we hold about you.
+**Retention.** XP, level, message counts, reputation and the account-wide XP wallet are retained for as long as the member's account-wide wallet is in use — that is, until the data is deleted on request. There is no automatic expiry for XP data. You may contact us via [`/support`]({{ site.url }}{{ site.baseurl }}/support/) to request access to, or deletion of, the XP data we hold about you.
 
 ---
 
@@ -368,7 +366,7 @@ We do **not** sell your data or share it with advertising or analytics networks.
 | Server-insight counts (online / voice / member time-series) | Rolling window (~90 days) |
 | Bot message log (messages the Bot sends) | Rolling window (~60 days), then auto-deleted |
 | Cross-Server Threat Network signals | Rolling 12 months from the **last** signal, then hard-deleted |
-| XP, level, message counts, reputation & account-wide XP wallet | **[OWNER DECISION — pending sign-off]** Currently retained while the member's wallet exists / until deleted on request; no automatic expiry found |
+| XP, level, message counts, reputation & account-wide XP wallet | Retained while the member's account-wide wallet is in use, until deleted on request; no automatic expiry |
 
 ---
 
