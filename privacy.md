@@ -303,6 +303,14 @@ We process XP and leveling data to provide the leveling feature itself — ranki
 
 **Retention.** XP, level, message counts, reputation and the account-wide XP wallet are retained for as long as the member's account-wide wallet is in use — that is, until the data is deleted on request. There is no automatic expiry for XP data. You may contact us via [`/support`]({{ site.url }}{{ site.baseurl }}/support/) to request access to, or deletion of, the XP data we hold about you.
 
+## Crest artwork & attribution
+
+**Crestbound** Crest artwork is **crowdsourced and shared**. The first member to reveal a particular Crest's art triggers its one-time generation by a third-party image generator (**Pollinations**, [pollinations.ai](https://pollinations.ai)); the resulting image is then **stored by us and shown to every player, permanently**. The image prompt is generated automatically from the Crest's name and type — **no personal data is sent** to the image generator.
+
+The member who first reveals a Crest's art is **credited publicly by their Discord display name** on that Crest ("Art discovered by …"), visible to anyone who views it. To provide this we store the Crest's id, your Discord user ID and display name, and the generated image. We rely on the same **legitimate-interest** basis as the XP feature above (providing the community-engagement feature the server installed); for members in Australia this is collection reasonably necessary for that feature (APP 3) used only for that purpose (APP 6).
+
+**One-time opt-out (irreversible).** From the customer portal you may opt out of art attribution. This is a **one-time, permanent** action: all of your existing art credits are **removed**, the Crests you discovered are **re-illustrated by the next member who reveals them**, and any future discoveries are recorded **without your name**. It cannot be undone. Art-attribution data is otherwise retained while the credited art exists.
+
 ---
 
 ## Third-party AI providers
