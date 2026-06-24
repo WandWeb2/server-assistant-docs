@@ -74,3 +74,10 @@ categories:
     icon: "💎"
     items:
       - { label: "Account & premium", url: "/wiki/account/" }
+
+  - title: "Changelogs"
+    icon: "📋"
+    items:
+      - { label: "SA Bot changelog", url: "/changelog/" }
+      - { label: "Portal changelog", url: "/wiki/changelog-portal/" }
+      - { label: "Crestbound changelog", url: "/wiki/changelog-crestbound/" }

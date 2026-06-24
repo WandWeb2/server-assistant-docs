@@ -127,6 +127,27 @@ description: The complete Server Assistant reference — every command, wizard a
 
 </div>
 
+## Changelogs
+
+<div class="wiki-hub">
+
+  <a class="card" href="{{ '/changelog/' | relative_url }}">
+    <h3>📋 SA Bot changelog</h3>
+    <p>Release history for the bot — every feature and improvement, version by version.</p>
+  </a>
+
+  <a class="card" href="{{ '/wiki/changelog-portal/' | relative_url }}">
+    <h3>🗂️ Portal changelog</h3>
+    <p>What's changed in the web portal you sign into with Discord.</p>
+  </a>
+
+  <a class="card" href="{{ '/wiki/changelog-crestbound/' | relative_url }}">
+    <h3>🛡️ Crestbound changelog</h3>
+    <p>The XP game's release notes — the set, booster packs, collection and burning.</p>
+  </a>
+
+</div>
+
 ## How to read the examples
 
 Every screen on this wiki is a faithful recreation of the real Discord interface — the same embeds, buttons and dropdowns you'll see in your server. Where a feature is a multi-step **wizard**, you'll find a step-through like the one on the [setup page]({{ '/wiki/setup/' | relative_url }}): use **Next ›** and **‹ Back** to walk each state.
