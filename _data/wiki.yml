@@ -64,6 +64,12 @@ categories:
     items:
       - { label: "Member experience", url: "/wiki/members/" }
 
+  - title: "XP & leveling"
+    icon: "🏅"
+    items:
+      - { label: "XP & leveling", url: "/wiki/leveling/" }
+      - { label: "Crestbound", url: "/wiki/crestbound/" }
+
   - title: "Account & premium"
     icon: "💎"
     items:
