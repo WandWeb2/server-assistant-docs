@@ -122,7 +122,7 @@ description: The complete Server Assistant reference — every command, wizard a
 
   <a class="card" href="{{ '/wiki/crestbound/' | relative_url }}">
     <h3>🛡️ Crestbound</h3>
-    <p>The Crest-collecting game in the portal — spend earned XP on booster packs, complete the set, and burn spares back into XP.</p>
+    <p>The Crest-collecting game in the portal — spend earned XP on booster packs, complete the Chapter, and burn spares back into XP.</p>
   </a>
 
 </div>
@@ -143,7 +143,7 @@ description: The complete Server Assistant reference — every command, wizard a
 
   <a class="card" href="{{ '/wiki/changelog-crestbound/' | relative_url }}">
     <h3>🛡️ Crestbound changelog</h3>
-    <p>The XP game's release notes — the set, booster packs, collection and burning.</p>
+    <p>The XP game's release notes — the Chapter, booster packs, collection and burning.</p>
   </a>
 
 </div>

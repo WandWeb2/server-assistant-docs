@@ -24,9 +24,9 @@ and for the Crest-collecting game see the
 - **🎮 XP Games on the portal.** The portal home now has an **XP Games** section,
   with **[Crestbound]({{ '/wiki/crestbound/' | relative_url }})** — the Crest-collecting
   game — as its first entry. Open it to jump straight into your collection.
-- **My Collection.** A new full-set view shows every Crest in the current set, with
-  the ones you've found in full and the ones you haven't as placeholders, plus your
-  spendable XP and a set-completion counter at the top.
+- **My Collection.** A new view shows every Crest in the current Chapter, with the
+  ones you've found in full and the ones you haven't as placeholders, plus your
+  spendable XP and a collection counter at the top.
 
 ## 2026 — Always up to date {#auto-update}
 
