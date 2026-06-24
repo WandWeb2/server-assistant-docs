@@ -4,9 +4,9 @@ title: "Crestbound"
 permalink: /wiki/crestbound/
 wiki: true
 wiki_category: "XP & leveling"
-summary: Crestbound is the Crest-collecting game in the Server Assistant portal. Spend the XP you earn in Discord on booster packs, collect the Crests of the first Chapter — Embers of the First War — across four rarities, complete your collection, and burn spare Crests back into XP. A full player guide to My Collection, booster packs and burning.
-wiki_keywords: [crestbound, crests, crest, chapter, wardeck, card game, tcg, collection, booster, booster pack, pack, burn, disenchant, rarity, common, uncommon, rare, mythic, embers of the first war, xp games, portal]
-description: A player guide to Crestbound — the XP-powered Crest-collecting game in the Server Assistant portal. Earn XP in Discord, open booster packs, collect the Crests of the first Chapter, Embers of the First War, and burn spare Crests back into XP.
+summary: Crestbound is the Crest-collecting game in the Server Assistant portal. Spend the XP you earn in Discord on booster packs, collect the Crests of the first Chapter — Embers of the First War — across four rarities, discover brand-new Crests and bring their art to light, complete your collection, and burn spare Crests back into XP. A full player guide to My Collection, booster packs, discovering Crests and burning.
+wiki_keywords: [crestbound, crests, crest, chapter, wardeck, card game, tcg, collection, booster, booster pack, pack, burn, disenchant, rarity, common, uncommon, rare, mythic, embers of the first war, xp games, portal, discover, discovery, kindle, illuminate, grand reveal, unveil, first light, achievement, crest art, artwork, discovered by, credit, share]
+description: A player guide to Crestbound — the XP-powered Crest-collecting game in the Server Assistant portal. Earn XP in Discord, open booster packs, discover brand-new Crests and bring their artwork to light, collect the Crests of the first Chapter, Embers of the First War, and burn spare Crests back into XP.
 ---
 
 # 🛡️ Crestbound
@@ -139,6 +139,89 @@ Crests are added to your collection.
 </div>
 
 <p style="color:var(--fg-1);font-size:.9rem;line-height:1.55;">Land a Crest you already have and the extra copy isn't wasted — duplicates stack in your collection, and you can always turn spares back into XP by <strong>burning</strong> them (below).</p>
+
+---
+
+## Discovering a new Crest {#discovery}
+
+Most Crests already carry their artwork — drawn back to light by whoever found them
+first. But every Crest is found by *somebody* first, and when that somebody is **you**,
+the discovery is yours to make.
+
+When you pull a Crest that **no player anywhere has found before**, it doesn't arrive
+finished. It arrives **sealed** — its sigil unkindled, waiting for a hand to wake it.
+
+<div class="dc">
+  <div class="dc-row"><div class="dc-body" style="padding:0;">
+    <div class="dc-embed" style="border-left-color:#6b7280;">
+      <div class="dc-title">✦ Unkindled</div>
+      <div class="dc-desc">You're first to hold this one — <strong>tap to reveal</strong>.</div>
+    </div>
+  </div></div>
+</div>
+
+**Kindle it.** Tap the sealed Crest and the **heralds begin illuminating your sigil** —
+its artwork is being drawn back to light, just for that Crest, and kept forever. It
+takes a short moment; the Crest shows a countdown while the heralds work.
+
+**You'll get a DM when it's ready.** Server Assistant sends you a direct message the
+moment your sigil is illuminated — so you don't have to wait on the page. The message
+keeps the surprise: it tells you the Crest is ready and invites you back to unveil it,
+but the artwork itself is saved for the reveal.
+
+<div class="dc">
+  <div class="dc-row"><div class="dc-body" style="padding:0;">
+    <div class="dc-embed blue">
+      <div class="dc-title">✦ Your Crest is illuminated</div>
+      <div class="dc-desc">The sigil you kindled — <strong>Soul Rekindling</strong> — is ready. <span style="color:#5865f2;">Open Crestbound</span> to unveil what you brought back to light.</div>
+    </div>
+  </div></div>
+</div>
+
+**The grand reveal.** Back in Crestbound the Crest waits with a **✦ Unveil** prompt.
+Tap it for the **grand reveal** — the full Crest turning over for the very first time,
+art and all. *This* is the first time the Crest is ever seen — nothing about it is shown
+before you unveil it.
+
+**The art you summon is permanent — and shared.** Once you've discovered a Crest, that
+artwork becomes *the* artwork for that Crest, for **every** player. Anyone who finds it
+after you sees the same image, with a quiet line of credit:
+
+<div class="dc">
+  <div class="dc-row"><div class="dc-body" style="padding:0;">
+    <div class="dc-embed" style="border-left-color:#f59e0b;">
+      <div class="dc-title">🔥 First Light</div>
+      <div class="dc-desc">You were the first to illuminate a Crest. The art you brought back is now part of Crestbound for everyone.</div>
+      <div class="dc-foot">discovered 24-06-26 by your name</div>
+    </div>
+  </div></div>
+</div>
+
+- **🔥 First Light** — a one-time achievement, awarded the first time you illuminate a
+  Crest that no one had found before.
+- **Your credit** — every Crest you discover carries a small *"discovered DD-MM-YY by
+  {your name}"* line, shown to everyone who views it.
+
+**Found at the same time as someone else?** If two players pull the same brand-new Crest
+close together, only the **first** to kindle it discovers it — they get the DM, the
+grand reveal and the credit. For everyone else it simply settles into their collection,
+fully revealed, once the heralds finish illuminating it (with a note that it's on its
+way) — no countdown to babysit, nothing to miss.
+
+### Sharing your Crests {#sharing}
+
+Any revealed Crest has a subtle **share** option in its detail view. Use it to share the
+framed Crest however you like — through your device's native share sheet, or by having
+Server Assistant **send it to your DMs** so you've got the image to hand.
+
+### Removing your credit {#art-optout}
+
+Your discovery credits are tied to your account, and you're always in control of them.
+The portal has a **one-time** option to **remove your name from every Crest you've
+discovered**. It's permanent and it can't be undone: your credits are scrubbed, and
+those Crests re-open to be discovered afresh by the next player to find them. How your
+discovery credit and the public leaderboard work with your data is covered in the
+[Privacy Policy]({{ '/privacy/' | relative_url }}).
 
 ---
 
