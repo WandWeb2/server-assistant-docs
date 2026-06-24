@@ -272,6 +272,39 @@ Participation in the network itself does not depend on plan tier; only the depth
 
 ---
 
+## XP, leveling & the public leaderboard
+
+Server Assistant includes an **XP and leveling** system. Members earn **XP** ("experience points") simply by taking part — every message adds a small amount, and members climb through **levels** as it accumulates. This is an **always-on, mainline feature**: it is part of every plan, runs automatically for every server, and there is **no opt-in or opt-out** for XP tracking itself. (The only related control is a staff toggle for whether *level-up announcements* are posted in the channel — it does not change whether XP is counted.)
+
+### What we collect and derive
+
+For each member, to run XP and leveling we process:
+
+- **Message-activity signal:** the fact that a member posted, a count of how many messages they have sent in a server, and a message's **length** (used to weight a small length bonus). We do **not** store the **content** of those messages for this feature — only the activity counts and the derived XP. A short-lived, in-memory check prevents the same message being counted twice and caps how much XP can be earned in any 60-second burst; that anti-spam window is not retained.
+- **XP balance (the "XP wallet"):** a member's **account-wide** XP total. XP is tied to the **member, not to a single server** — chat activity across every server they share with the Bot, plus voting rewards (below), add up into **one account-wide balance** held centrally.
+- **Level** and **progress** derived from that XP total.
+- **Reputation:** a per-server reputation count derived from reactions.
+- **Voting-reward XP:** if a member votes for Server Assistant on a bot-listing site, we record that they voted (to grant the reward XP and to enforce the ~12-hour cooldown between votes) and credit the reward to their XP balance. We send the member a confirmation direct message and a later "you can vote again" reminder.
+- The member's **Discord user ID** and **username** (the username is cached so it can be shown on the leaderboard and rank card).
+
+### What is exposed publicly
+
+XP and leveling make a member's **identity and standing visible to others**:
+
+- **`/leaderboard`** posts a ranked list of a server's most active members **publicly in the channel**, where everyone present can see it. Each entry shows the member's **username, their position/rank, their level, and their XP total**.
+- **`/rank`** shows a member's level, rank, XP and progress; this reply is private to the person who runs it, but it can be run to look up **another** member's standing.
+- A member's XP **wallet** (their account-wide balance) is also visible to them in the **customer portal** at [serverassistant.wandweb.co](https://serverassistant.wandweb.co), where it powers the **Crestbound** game economy (XP is the currency spent to collect in-game Crests). The same account-wide XP total drives both the leaderboard and Crestbound.
+
+In short: by participating in a server with the Bot installed, a member's username and their activity standing (rank, level, XP) can be **shown publicly to other members of that server**, and their XP balance is available to them in the portal.
+
+### Why we process it, and how long we keep it
+
+We process XP and leveling data to provide the leveling feature itself — ranking, the leaderboard, level-up progress — and to power the Crestbound game economy in the portal. Under the Australian Privacy Act, this collection is reasonably necessary for the feature a server has enabled (APP 3) and is used only for that purpose (APP 6). For members in the EU and UK, we rely on our **legitimate interests** (Article 6(1)(f) GDPR) in providing the community-engagement feature the server chose to install.
+
+**Retention.** XP, level, message counts, reputation and the account-wide XP wallet are retained for as long as the member's account-wide wallet is in use — that is, until the data is deleted on request. There is no automatic expiry for XP data. You may contact us via [`/support`]({{ site.url }}{{ site.baseurl }}/support/) to request access to, or deletion of, the XP data we hold about you.
+
+---
+
 ## Third-party AI providers
 
 AI features transmit data to third-party providers **only when explicitly invoked by staff or when an enabled, opt-in feature fires** (e.g., right-click Message Report, `/imagine`, Self-trained AutoMod, SAi, or — if you've turned it on — AutoMod AI second-opinion). The default shared-key providers are:
@@ -333,6 +366,7 @@ We do **not** sell your data or share it with advertising or analytics networks.
 | Server-insight counts (online / voice / member time-series) | Rolling window (~90 days) |
 | Bot message log (messages the Bot sends) | Rolling window (~60 days), then auto-deleted |
 | Cross-Server Threat Network signals | Rolling 12 months from the **last** signal, then hard-deleted |
+| XP, level, message counts, reputation & account-wide XP wallet | Retained while the member's account-wide wallet is in use, until deleted on request; no automatic expiry |
 
 ---
 
