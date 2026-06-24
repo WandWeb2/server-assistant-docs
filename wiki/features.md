@@ -64,9 +64,9 @@ description: A tour of Server Assistant's headline features, what each one does,
 <p class="feat-lead">Four independent layers that keep known-bad actors out at the door. They're separate systems with <strong>different data sources</strong> — worth understanding so you know exactly what each one checks.</p>
 
 <div class="feat">
-  <h3>Verification gate <span class="feat-tag free">Free</span></h3>
-  <p>New members confirm themselves before they can participate — a simple speed bump against drive-by spam and bots.</p>
-  <p class="how"><b>How to use:</b> <code>/settings</code> → <b>Verification</b>.</p>
+  <h3>Smart join verification <span class="feat-tag free">Free</span></h3>
+  <p>Scores each new member and only gets in the way of the risky ones. <strong>Intelligent</strong> mode (the default) waves regulars straight through and holds only suspicious joins — brand-new accounts, no avatar, cross-server or alt signals; <strong>On</strong> verifies everyone. Lower-risk holds <strong>self-serve</strong> on a quick web page (Discord sign-in → confirm → access); higher-risk ones come to staff as a one-tap <strong>Approve / Kick / Ban</strong> card. You set the cut-off. Local to your server.</p>
+  <p class="how"><b>How to use:</b> <code>/settings</code> → <b>Verification</b> (mode, sensitivity, self-serve ceiling).</p>
   <a class="more" href="{{ '/wiki/settings/' | relative_url }}">Settings hub guide →</a>
 </div>
 

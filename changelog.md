@@ -49,6 +49,32 @@ Open it from **Main Features** in the top menu, or jump straight in at [the wiki
 </details>
 
 <details class="doc-sec" markdown="1" open>
+<summary>v6.1.0 — Smart join verification: hold the risky joins, wave the rest straight through</summary>
+
+
+**The second feature you voted for in v6.0 is here — verification that only gets in the way of suspicious joins.**
+
+Server Assistant now scores every new member as they join and decides whether they need a quick check. There are three modes:
+
+- **Intelligent (the new default)** — regular members **walk straight in**. Only **risk-scored joins** — brand-new accounts, no profile picture, or accounts carrying cross-server or ban-evasion signals — are held for a quick check. The right balance of safety and zero friction for real members.
+- **On** — everyone completes verification before they get access.
+- **Off** — no verification.
+
+When someone is held, what happens next depends on how risky they look:
+
+- **Lower-risk → self-serve.** They get a link to a quick **web page**: sign in with Discord, confirm you're a real person, done — access is granted automatically, no staff needed. They're pointed there from a tidy, read-only **#verify** channel.
+- **Higher-risk → your call.** Your staff get a one-tap **Approve / Kick / Ban** card with the reasons, so a human decides. You set where that line sits.
+
+A few things worth knowing:
+
+- **It's tuned to be safe by default.** New servers start on Intelligent. Existing servers are only switched on automatically **if you already had a verified-access role set up** — otherwise it stays off until you choose to turn it on. You'll get a one-time heads-up in your staff channel either way.
+- **Everything stays on your server** — verification answers and decisions are never shared anywhere.
+- Manage it all under **`/settings → Verification`** — the mode, how sensitive it is, and the self-serve cut-off.
+
+**Also in this release:** an **unban now clears the slate** — if you unban someone (or lift a ban directly in Discord), it no longer counts against them in alt-detection or join risk-scoring. An overturned ban shouldn't follow someone around.
+</details>
+
+<details class="doc-sec" markdown="1">
 <summary>v6.0.0 — Anti-nuke / rogue-admin guard: a smoke alarm for your server</summary>
 
 
