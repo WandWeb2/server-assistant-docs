@@ -40,17 +40,30 @@ contributor is always rewarded ahead of someone spamming one-word messages, and
 posting the same line over and over doesn't earn anything. In short: **take part in
 the conversation and your XP grows naturally.**
 
-**By voting for Server Assistant.** If you give the bot a vote on one of the bot-list
-sites, you earn a chunk of XP as a thank-you — and you can vote again every 12 hours.
-The bot sends you a quick DM confirming the XP you earned, and a nudge later on when
-you're able to vote again.
+**By voting for Server Assistant.** Give the bot a vote on
+[**DiscordForge**](https://discordforge.org/bot/1278486617375510570) and you earn
+**75 XP** as a thank-you — **doubled to 150 XP** if you're in a server that has Server
+Assistant. You can vote again every **8 hours**. The bot DMs you to confirm the XP and
+nudges you when you can vote again; if you're not in a server with SA (so it can't DM
+you), the [Crestbound](https://wandweb2.github.io/server-assistant-docs/wiki/crestbound/)
+page shows a **live countdown** to your next vote instead.
 
 <div class="dc">
   <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
     <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">Direct Message</span></div>
-    <div class="dc-desc" style="color:#dbdee1;line-height:1.5;">🗳️ <strong>Thanks for voting for Server Assistant!</strong> You earned <strong>100 XP</strong>.<br><br>You can vote again in 12 hours — I'll give you a nudge.</div>
+    <div class="dc-desc" style="color:#dbdee1;line-height:1.5;">🗳️ <strong>Thanks for voting for Server Assistant!</strong> You earned <strong>150 XP</strong>.<br><br>You can vote again in 8 hours — I'll give you a nudge.</div>
   </div></div>
 </div>
+
+**Double-XP events.** When a server's been quiet, the bot may offer its staff a
+**48-hour Double-XP event**. While one is running, **every member earns 2× XP for
+chatting** (voting rewards stay the same), and the staff get a recap of the total XP
+earned when it ends. Only a server manager can start one — there's no way for a server
+to grant itself double XP otherwise.
+
+**Your weekly recap.** Once a week, if you earned any XP, the bot DMs you a quick summary
+— how much came from **being active** versus **voting** — so you can see your progress at
+a glance (and grab a vote link for more).
 
 <p style="color:var(--fg-1);font-size:.9rem;line-height:1.55;"><strong>One wallet, everywhere.</strong> Your XP is tied to <em>you</em>, not to a single server — chat XP from every server you're in, plus your voting rewards, all add up into one account-wide total. That same total is what you spend in <a href="{{ '/wiki/crestbound/' | relative_url }}">Crestbound</a>, the Crest-collecting game in the portal.</p>
 
