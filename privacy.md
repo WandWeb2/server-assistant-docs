@@ -332,6 +332,7 @@ AI features transmit data to third-party providers **only when explicitly invoke
 - **Groq** (https://groq.com) — a fast backup model that keeps the AI features above working when the primary (Anthropic) service is temporarily unavailable, and acts as the fallback scorer for the AutoMod word-filter check above. Only the minimal content already described is sent (for the word-filter check, just the **single borderline message**); no Discord user IDs or account identifiers.
 
 If you've configured your own key via `/ai-config`:
+- **Anthropic** (https://anthropic.com) — same scope as the default Anthropic processing above, when you supply your own Anthropic key
 - **xAI Grok** (https://x.ai) — same scope as above when selected
 - **OpenAI** (https://openai.com) — same scope as above when selected
 
@@ -354,7 +355,7 @@ We rely on a small set of vetted third parties to run the service:
 | Sub-processor | Purpose | Privacy policy |
 |---|---|---|
 | **Hetzner Online GmbH** | Server hosting (United States) | [hetzner.com](https://www.hetzner.com/legal/privacy-policy) |
-| **Anthropic** | Default AI features (SAi, Message Report, etc.) | [anthropic.com](https://www.anthropic.com/legal/privacy) |
+| **Anthropic** | Default AI features (SAi, Message Report, etc.); also available with your own key (BYOK) | [anthropic.com](https://www.anthropic.com/legal/privacy) |
 | **OpenAI** | AutoMod word-filter moderation second-opinion (our shared key); other AI features only if you supply your own key (BYOK) | [openai.com](https://openai.com/policies/privacy-policy) |
 | **Groq** | Fast backup AI model when Anthropic is unavailable, and fallback scorer for the AutoMod word-filter second-opinion | [groq.com](https://groq.com/privacy-policy/) |
 | **xAI** | AI features — only if you supply your own key (BYOK) | [x.ai](https://x.ai/legal/privacy-policy) |
