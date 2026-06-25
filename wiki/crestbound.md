@@ -178,10 +178,12 @@ but the artwork itself is saved for the reveal.
   </div></div>
 </div>
 
-**The grand reveal.** Back in Crestbound the Crest waits with a **✦ Unveil** prompt.
-Tap it for the **grand reveal** — the full Crest turning over for the very first time,
-art and all. *This* is the first time the Crest is ever seen — nothing about it is shown
-before you unveil it.
+**The grand reveal.** Back in Crestbound, once your whole batch has finished illuminating,
+a single **✦ Unveil the Crests** button appears. Tap it for the **grand reveal** — the
+heralds' scene shifts as your Crests are presented together, each turning over for the
+very first time, art and all. *This* is the first time those Crests are ever seen —
+nothing about them is shown before you unveil. (Because the button only appears once every
+Crest's art is finished, you never see a half-drawn card.)
 
 **The art you summon is permanent — and shared.** Once you've discovered a Crest, that
 artwork becomes *the* artwork for that Crest, for **every** player. Anyone who finds it
