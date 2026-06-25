@@ -65,6 +65,15 @@ It's the biggest upgrade to ThreatNet yet — turning every server that flags a 
 </details>
 
 <details class="doc-sec" markdown="1">
+<summary>v6.2.7 — Bring your own Anthropic (Claude) key</summary>
+
+
+**You can now bring your own Anthropic (Claude) key.** Anthropic has long been listed as a supported bring-your-own-key provider, but the key-entry form only accepted OpenAI and xAI keys — so an `sk-ant-…` key was turned away. That's fixed: in **`/setup`** and **`/ai-config`**, the form now accepts your **Anthropic** key alongside OpenAI and xAI.
+
+Just paste the key — the provider is **auto-detected from it** (`sk-ant-…` → Anthropic, `sk-…` → OpenAI, `xai-…` → xAI), so the provider box stays optional, and you can leave the model blank for a sensible default. As with any BYOK key, your server runs AI on your own account (no trial limit) once you're on **Premium BYOK ($3/month)**.
+</details>
+
+<details class="doc-sec" markdown="1">
 <summary>v6.2.6 — Setup: bringing your own AI key no longer gets stuck</summary>
 
 
