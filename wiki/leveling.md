@@ -48,6 +48,8 @@ nudges you when you can vote again; if you're not in a server with SA (so it can
 you), the [Crestbound](https://wandweb2.github.io/server-assistant-docs/wiki/crestbound/)
 page shows a **live countdown** to your next vote instead.
 
+<p style="margin:.8rem 0 1rem;"><a class="cmd-btn-link" href="https://discordforge.org/bot/1278486617375510570" target="_blank" rel="noopener" style="display:inline-block;padding:.6rem 1.1rem;border-radius:8px;background:var(--accent);color:#fff;text-decoration:none;font-weight:700;">🗳️ Vote on DiscordForge →</a></p>
+
 <div class="dc">
   <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
     <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">Direct Message</span></div>

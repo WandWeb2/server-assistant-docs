@@ -183,7 +183,7 @@ communities. None of these change anything in your server.
     <span class="cmd-name">/vote</span>
     <span class="cmd-tag free">FREE</span>
   </div>
-  <p class="cmd-desc">Vote for the bot on the listing sites — it helps the bot rank higher and reach more communities. Takes a few seconds, and you can vote again every 12 hours on each site.</p>
+  <p class="cmd-desc">Vote for the bot on <strong>DiscordForge</strong> to earn <strong>75 XP</strong> (150 if you're in a server with SA) and help it rank higher. Takes a few seconds, and you can vote again every 8 hours.</p>
   <table class="cmd-args">
     <tr><th>Argument</th><th>Type</th><th>Notes</th></tr>
     <tr><td colspan="3"><em>No arguments.</em></td></tr>
@@ -197,10 +197,11 @@ communities. None of these change anything in your server.
       <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">today</span></div>
       <div class="dc-embed green">
         <div class="dc-title">⬆️ Vote for Server Assistant</div>
-        <div class="dc-desc">Voting helps the bot rank higher and reach more communities. It takes 5 seconds and you can vote again every 12 hours on <strong>each</strong> site below.<br><br>Thanks for the support! 💚</div>
+        <div class="dc-desc">Vote on <strong>DiscordForge</strong> to earn <strong>75 XP</strong> — doubled to <strong>150</strong> if you're in a server that has SA — and help the bot rank higher. Takes 5 seconds; you can vote again every 8 hours.<br><br>Thanks for the support! 💚</div>
         <div class="dc-btns">
-          <span class="dc-btn blurple">⬆️ Vote on Top.gg</span>
-          <span class="dc-btn blurple">⬆️ Vote on Discord Bot List</span>
+          <span class="dc-btn blurple">🗳️ Vote on DiscordForge (+75/150 XP)</span>
+          <span class="dc-btn blurple">⬆️ Top.gg</span>
+          <span class="dc-btn blurple">⬆️ Discord Bot List</span>
         </div>
       </div>
     </div></div>
