@@ -65,6 +65,15 @@ It's the biggest upgrade to ThreatNet yet — turning every server that flags a 
 </details>
 
 <details class="doc-sec" markdown="1">
+<summary>v6.2.5 — Setup: the permission-review buttons respond reliably</summary>
+
+
+**A smoother permission review during `/setup`.** When the wizard asks you to review permission changes, applying them can take a few seconds — a series of role and channel edits. Previously, on a slow apply, the **Approve & Apply**, **Re-check** and **Generate fresh** buttons could appear to do nothing, leaving you to click again.
+
+Those buttons now acknowledge your click straight away and then apply the changes, so the wizard moves on reliably no matter how long the apply takes.
+</details>
+
+<details class="doc-sec" markdown="1">
 <summary>v6.2.4 — Setup-first: commands point you to /setup</summary>
 
 
