@@ -65,6 +65,15 @@ It's the biggest upgrade to ThreatNet yet — turning every server that flags a 
 </details>
 
 <details class="doc-sec" markdown="1">
+<summary>v6.2.6 — Setup: bringing your own AI key no longer gets stuck</summary>
+
+
+**A smoother "use my own key" step in `/setup`.** If you chose **🔑 Enter my own key** and then closed the form, or typed the provider in a way the bot didn't recognise, the wizard could get stuck — every **Finish** said *"you didn't fill the form"* with no obvious way forward, even when you'd pasted a perfectly good key.
+
+Now the bot **auto-detects the provider from your key** (an `sk-…` key is OpenAI, an `xai-…` key is xAI), so the provider box is optional. If you change your mind or close the form, the included **free trial** (150k tokens) stays selected and **Finish** just works. And if you paste a key the bot can't use here, it tells you plainly — the built-in AI already runs on Claude, so no key is needed for the free trial.
+</details>
+
+<details class="doc-sec" markdown="1">
 <summary>v6.2.5 — Setup: the permission-review buttons respond reliably</summary>
 
 
