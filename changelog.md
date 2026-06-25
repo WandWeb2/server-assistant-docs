@@ -48,6 +48,22 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 Open it from **Main Features** in the top menu, or jump straight in at [the wiki]({{ '/wiki/' | relative_url }}). Setup and the full command reference now live there too.
 </details>
 
+<details class="doc-sec" markdown="1" open>
+<summary>v6.3.0 — ThreatNet now stops scam <em>images</em>, not just scam text</summary>
+
+
+**Sick of seeing scams like this?** An account joins, posts a screenshot of a fake "withdrawal received" or a too-good-to-be-true trading profit, and vanishes — and because the whole pitch is inside a *picture*, ordinary word filters never see it.
+
+ThreatNet now recognises scam **images**. The moment a scam screenshot is flagged anywhere on the network, **every server is protected from it** — Server Assistant spots the same image and removes it automatically, before your members fall for it.
+
+- **It just works — on by default, for everyone, on every plan.** Nothing to set up. Known scam images are removed the moment they're posted, and the person who posted one is timed out.
+- **It catches brand-new scams too.** On AI-enabled servers, images dropped by brand-new members are checked for never-seen-before scams — and once spotted, the whole network learns to block them.
+- **You're in control.** Prefer to review instead of auto-remove? Switch it to quarantine or flag-only under **`/settings`**.
+- **Privacy-first.** Servers only ever share a small, irreversible *fingerprint* of a flagged scam image — never the image itself, and never anything tied to a person. The same opt-out that covers the rest of ThreatNet covers this too.
+
+It's the biggest upgrade to ThreatNet yet — turning every server that flags a scam into protection for all the others.
+</details>
+
 <details class="doc-sec" markdown="1">
 <summary>v6.2.4 — Setup-first: commands point you to /setup</summary>
 
