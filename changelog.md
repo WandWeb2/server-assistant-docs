@@ -49,6 +49,30 @@ Open it from **Main Features** in the top menu, or jump straight in at [the wiki
 </details>
 
 <details class="doc-sec" markdown="1" open>
+<summary>v6.2.3 — The XP Update: Crestbound, Double-XP & better vote rewards</summary>
+
+
+**Your members earn XP just by being part of the conversation — and now there's a whole game to spend it on.**
+
+Server Assistant quietly tracks how active your members are: every message earns a little **XP**, members climb through **levels**, and a server **leaderboard** shows who's most involved. It's built in, on by default, and needs nothing to set up — see **[XP &amp; leveling]({{ '/wiki/leveling/' | relative_url }})** for `/rank`, `/leaderboard` and level-up announcements.
+
+🎴 **Crestbound — the headline.** The XP you earn is a currency you can spend in **[Crestbound]({{ '/wiki/crestbound/' | relative_url }})**, the Crest-collecting game in the web portal:
+
+- **Open booster packs** with your XP and collect the Crests of the first Chapter, *Embers of the First War*, across four rarities.
+- **Discover brand-new Crests.** The first person to open an undiscovered Crest summons its **artwork** — drawn once and then **shared with every player, forever**, with a line of credit to the discoverer.
+- **The grand reveal.** When your batch finishes illuminating, one **✦ Unveil the Crests** moment turns them all over at once — the heralds present your Crests, art and all, seen for the very first time.
+- **Burn** spare Crests back into XP, and complete your collection.
+
+⚡ **Double-XP events.** When a server has gone quiet, the bot offers your staff a one-tap **48-hour Double-XP event** — while it runs, **every member earns 2× XP for chatting**. Only a server manager can start one, and the staff chat gets a recap of the total XP earned when it ends.
+
+🗳️ **Better vote rewards.** A vote for Server Assistant on **DiscordForge** now earns **75 XP** — **doubled to 150** if you're in a server that has SA — and you can vote again every **8 hours**. The thank-you and reminder DMs got a refresh, and the Crestbound page shows a **live countdown** to your next vote.
+
+📊 **Weekly recap.** Once a week, if you earned any XP, the bot sends you a friendly DM with your total — split into how much came from **being active** versus **voting**.
+
+**A note on fairness:** XP is tied to *you*, not a single server — chat XP from every server you're in, plus your voting rewards, add up into one account-wide total that you spend in Crestbound.
+</details>
+
+<details class="doc-sec" markdown="1">
 <summary>v6.1.0 — Smart join verification: hold the risky joins, wave the rest straight through</summary>
 
 
