@@ -141,7 +141,7 @@ You control all of this via the `/privacy` panel. AutoMod and anti-raid are requ
 | **Message Report** | ~20 messages around the one you right-click | Off (new servers) |
 | **🤔 AutoMod AI second-opinion** *(Premium, opt-in)* | The text of a single borderline AutoMod-flagged message + which filter matched. Confident hits and clear misses are never sent | Off (opt-in via `/automod → AI Review`) |
 | **🕵️ Alt-guard / repeat-offender detection** | **Local-only fingerprint** of users your staff ban or kick (avatar hash, name fragments, account-age bucket) plus the same for each new joiner. The fingerprint **itself** never leaves your host; a **match indicator** may feed the Cross-Server Threat Network (see below) | Off (opt-in via `/altguard on`) |
-| **🛡️ Cross-Server Threat Network** | Minimized abuse signals (a pseudonymous Discord user ID, ban/kick counts + recency, a **severity level** — e.g. minor / serious, AltGuard fingerprint-match indicator, account-age/join-velocity) shared across protected servers as **aggregates and a severity level only** — never the offence type/category, never reasons, never message text, never which server acted. See **Cross-Server Threat Network** below | On (core feature — no *server* opt-out; individuals may opt out of profiling, subject to a safety exception) |
+| **🛡️ Cross-Server Threat Network** | Minimized abuse signals (a pseudonymous Discord user ID, ban/kick counts + recency, a **severity level** — e.g. minor / serious, AltGuard fingerprint-match indicator, account-age/join-velocity) shared across protected servers as **aggregates and a severity level only** — never the offence type/category, never reasons, never message text, never which server acted. Also includes **irreversible perceptual fingerprints of known scam images** (not linked to any user; the image itself never leaves the originating server). See **Cross-Server Threat Network** below | On (core feature — no *server* opt-out; individuals may opt out of profiling, subject to a safety exception) |
 | **📩 Ban-reason DMs + appeals** | The staff-supplied ban reason is sent in a DM to the banned member; the member's **single** appeal reply (if they send one) is forwarded to your staff channel verbatim. No AI is invoked unless staff press **Research** (which runs Message Report on the member's last message) | On (opt-out per server) |
 | **🩺 Pulse** | Aggregate counts only — no message content stored | On |
 | **🟢 Live server insights** *(Pulse + web-portal dashboard)* | Member **presence** (online / idle / DND vs offline) and **voice-channel membership**, read live to show **aggregate counts only** (e.g. "42 online · 6 in voice"). Never which member, never which channel; only the running totals are stored, as time-series numbers for the growth/activity charts | On |
@@ -178,11 +178,20 @@ What **never** crosses the boundary:
 - **AI-generated offence summaries** — these are **local-only** and never leave the originating server (see below)
 - **Which specific server** took an action (originating servers stay confidential)
 - Message content of any kind
+- The **scam image itself** — only an irreversible perceptual fingerprint travels, never the image, a thumbnail, a copy, or any text read from it
 - Any name, username, avatar, or other Discord account identifier beyond the user ID needed to match signals
 
 A server's local moderation record keeps its full detail for that server's own staff (governed by the rest of this policy); only the minimized, severity-only signals above feed the network. The **local** score (this server only) and the **network** score (everywhere else) are always shown as **separate bands** and are never silently combined.
 
 **AI summaries are local-only.** Where an AI feature generates a short summary of an offence for your staff, that summary stays on the originating server and is shown only to that server's staff. **It never crosses into the network.** No free-text about an individual — AI-generated or human-written — ever crosses the server boundary; the network is aggregate and severity-only by design. This is data minimisation built into the architecture, not a wording promise.
+
+**Scam-image fingerprints.** Separately from the per-user signals above, the network also holds a list of **perceptual fingerprints of known scam images** — short, **irreversible** hashes of screenshots that have been flagged as scams (for example, the fake "withdrawal received" or investment-profit images scammers post to defraud members). For each fingerprint the network keeps only:
+
+- the **irreversible perceptual hash** itself — a short fingerprint from which the original image **cannot be reconstructed or viewed**;
+- a **severity level** (advisory, or auto-remove) and whether the fingerprint was curated by us or reported by servers in the network;
+- counts of how many distinct servers have reported it and how often it has been blocked.
+
+Crucially, a scam-image fingerprint is **not linked to any Discord user** — it describes the *image*, not the person who posted it. The image itself, any text inside it, and any thumbnail or copy **never** leave the originating server; only the irreversible fingerprint is shared. When the bot removes a known scam image and actions whoever posted it, that enforcement produces an **ordinary severity signal** about the poster on exactly the same terms as any other moderation action (above) — but the shared *fingerprint* carries no user identity, and is matched against the *image*, not the person.
 
 ### What we do NOT collect, keep, or share in the network
 
@@ -192,6 +201,7 @@ To be unambiguous, here is what the Cross-Server Threat Network **never** does. 
 - **Share cross-server free-text** — no staff-written moderation reasons and **no AI-generated offence summaries** ever cross the boundary (AI summaries are local-only).
 - **Share the offence type or category** across servers — no "scam", "financial", or any other offence label travels; only a generic severity level does.
 - **Share names or Discord profile data** — no username, display name, avatar, banner, or any other Discord account identifier crosses, beyond the **pseudonymous user ID** needed to match signals to the right person.
+- **Share scam images themselves** — for the scam-image fingerprints described above, only an **irreversible perceptual hash** crosses; never the image, a thumbnail, a copy, or any text read from it, and the fingerprint is **not linked to any user**.
 - **Reveal which server acted** — originating servers stay confidential across the network.
 - **Sell your data, or use it for advertising or profiling for ads** — the network exists for safety only; we never sell data or share it with advertising or analytics networks.
 
@@ -237,7 +247,7 @@ Because that ban can be a **decision based solely on automated processing that s
 
 ### Data minimization
 
-Minimization is engineered into the network, not bolted on: only counts, recency, a **severity level**, and a boolean fingerprint-match indicator ever leave a server. **No offence type or category**, no free-text, **no AI-generated summaries**, no message content, no originating-server identity, and no Discord account identifiers beyond the **pseudonymous user ID** needed to match signals to the right person. We share the **minimum necessary personal information** — that pseudonymous user ID plus aggregate counts and a severity level; never names, messages, or content. This protects both the individual and the operational confidentiality of the server that originally acted.
+Minimization is engineered into the network, not bolted on: only counts, recency, a **severity level**, and a boolean fingerprint-match indicator ever leave a server. **No offence type or category**, no free-text, **no AI-generated summaries**, no message content, no originating-server identity, and no Discord account identifiers beyond the **pseudonymous user ID** needed to match signals to the right person. We share the **minimum necessary personal information** — that pseudonymous user ID plus aggregate counts and a severity level; never names, messages, or content. This protects both the individual and the operational confidentiality of the server that originally acted. The scam-image blocklist follows the same principle: only an **irreversible perceptual fingerprint** of a flagged scam image is shared — never the image, a thumbnail, a copy, or any text read from it — and the fingerprint is **not linked to any Discord user**.
 
 ### Retention
 
