@@ -48,6 +48,15 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 Open it from **Main Features** in the top menu, or jump straight in at [the wiki]({{ '/wiki/' | relative_url }}). Setup and the full command reference now live there too.
 </details>
 
+<details class="doc-sec" markdown="1">
+<summary>v6.2.4 — Setup-first: commands point you to /setup</summary>
+
+
+**A clearer first run.** If you add Server Assistant and start using commands before running setup, they used to quietly do nothing — which can look like the bot is broken.
+
+Now, in a server that hasn't been set up yet, commands point you to **`/setup`** so it's obvious what to do first. The getting-started and personal commands still work right away — `/setup`, `/help`, `/invite`, `/portal`, `/whatsnew`, `/support`, `/premium`, plus your account ones like `/rank`, `/vote` and `/leaderboard` (your XP follows *you*, not a single server, so those work everywhere). Everything else unlocks the moment setup is complete.
+</details>
+
 <details class="doc-sec" markdown="1" open>
 <summary>v6.2.3 — The XP Update: Crestbound, Double-XP & better vote rewards</summary>
 
