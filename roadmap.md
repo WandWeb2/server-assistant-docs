@@ -986,7 +986,20 @@ Where Server Assistant is heading. Priorities are decided by the people who run 
 
     <details class="card" open>
       <summary>📊 2026-06-20 — the v6.0 feature round</summary>
-      <span class="desc">The community staff-chat poll that set the <strong>v6.0</strong> release. <strong>Winners — now shipped:</strong> 🚨 Anti-nuke (v6.0.0), 🛡️ Verification &amp; join-approval (v6.1), 🏅 Leveling &amp; XP (v6.2.3).<br><br><strong>Also on the ballot</strong> — these carried forward into the backlog feature groups and are in the running for a future round: 🤖 <code>/ai</code> for your community, 🧠 AI rule explainer, 🧭 Native-action coaching, 📊 Staff coverage map &amp; shared tips, 🔍 Bot-on-bot detection, 🎨 Bring your own AI media credits, and 🪄 Embed builder.</span>
+      <div class="desc">
+        <div class="lp-q" style="margin-bottom:.5rem;">🗳️ “Which features should Server Assistant build first? Vote for all you'd use!”</div>
+        <div class="lp-row"><span class="lp-label">🛡️ Verification gate + application forms 🥇</span><span class="lp-track"><span class="lp-fill gold" style="width:100%"></span></span><span class="lp-pct">13% (10)</span></div>
+        <div class="lp-row"><span class="lp-label">🏅 Leveling / XP 🥇</span><span class="lp-track"><span class="lp-fill gold" style="width:100%"></span></span><span class="lp-pct">13% (10)</span></div>
+        <div class="lp-row"><span class="lp-label">🚨 Anti-nuke / rogue-admin guard 🥇</span><span class="lp-track"><span class="lp-fill gold" style="width:90%"></span></span><span class="lp-pct">11% (9)</span></div>
+        <div class="lp-row"><span class="lp-label">🤖 /ai for your community + AI Access panel</span><span class="lp-track"><span class="lp-fill" style="width:80%"></span></span><span class="lp-pct">10% (8)</span></div>
+        <div class="lp-row"><span class="lp-label">🪄 Embed builder</span><span class="lp-track"><span class="lp-fill" style="width:80%"></span></span><span class="lp-pct">10% (8)</span></div>
+        <div class="lp-row"><span class="lp-label">🧠 AI rule explainer</span><span class="lp-track"><span class="lp-fill" style="width:70%"></span></span><span class="lp-pct">9% (7)</span></div>
+        <div class="lp-row"><span class="lp-label">🧭 Native-action coaching</span><span class="lp-track"><span class="lp-fill" style="width:70%"></span></span><span class="lp-pct">9% (7)</span></div>
+        <div class="lp-row"><span class="lp-label">📊 Staff insights — coverage map + shared tips</span><span class="lp-track"><span class="lp-fill" style="width:70%"></span></span><span class="lp-pct">9% (7)</span></div>
+        <div class="lp-row"><span class="lp-label">🔍 Bot-on-bot detection</span><span class="lp-track"><span class="lp-fill" style="width:70%"></span></span><span class="lp-pct">9% (7)</span></div>
+        <div class="lp-row"><span class="lp-label">🎨 Bring your own AI media credits</span><span class="lp-track"><span class="lp-fill" style="width:60%"></span></span><span class="lp-pct">8% (6)</span></div>
+        <div class="lp-meta" style="margin-top:.6rem;">14 voters · 13 servers · ✅ closed 2026-06-20. <strong>🥇 Top 3 shipped:</strong> Verification (v6.1), Leveling &amp; XP (v6.2.3), Anti-nuke (v6.0.0). The other seven carried into the backlog feature groups for a future round.</div>
+      </div>
     </details>
 
     </div>
