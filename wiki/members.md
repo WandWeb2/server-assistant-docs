@@ -76,6 +76,40 @@ server.
 
 <p style="color:var(--fg-1);font-size:.9rem;line-height:1.55;"><strong>One click, done.</strong> Tapping <strong>✅ Verify</strong> grants the verified role you chose in settings and replies <em>“✅ Verified! Welcome to The Hangout.”</em> The button keeps working even after the bot restarts, so a member can verify whenever they get round to it. If their DMs are closed, the bot quietly flags it in your log channel so a moderator can verify them by hand.</p>
 
+### Auto-configure channels for verification
+
+A verification gate only works if unverified members actually *can't* see your
+server until they pass it — which normally means editing channel permissions by
+hand. The **Auto-configure channels** button in
+[`/settings → 👥 Members → Verification`]({{ '/wiki/settings/' | relative_url }})
+does that part for you.
+
+Tap it and the bot proposes a sensible set of channels to keep visible to
+unverified members — the **verify channel** plus your server's **rules, system
+and announcements** channels — and lets you add any others you want to leave open
+with a picker. You see the full preview *before* anything changes. On
+**Apply**, it hides every other channel **and category** from unverified members
+and opens them to your verified role, while keeping the bot's own access intact.
+
+<div class="dc">
+  <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+    <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">only you can see this</span></div>
+    <div class="dc-embed blue">
+      <div class="dc-title">🔐 Auto-configure channels — preview</div>
+      <div class="dc-desc">Here's what unverified members will see. Everything else gets hidden from them and opened to <strong>@Verified</strong>. Review, tweak, then Apply.</div>
+      <div class="dc-fname">Stay visible to unverified</div>
+      <div class="dc-fval">#verify · #rules · #announcements · #system</div>
+      <div class="dc-select">Keep extra channels visible…</div>
+      <div class="dc-btns">
+        <span class="dc-btn green">✅ Apply</span>
+        <span class="dc-btn grey">← Back</span>
+      </div>
+    </div>
+  </div></div>
+</div>
+
+<p style="color:var(--fg-1);font-size:.9rem;line-height:1.55;"><strong>Reversible by design.</strong> Before it touches anything, the bot snapshots your current permissions — so the one-tap <strong>↩️ Undo</strong> puts every channel and category back exactly as it was. <strong>Prerequisites:</strong> you need a <strong>verified role set</strong> first (the same one the gate hands out), and the bot needs <strong>Manage Channels</strong> and <strong>Manage Roles</strong> to apply the changes.</p>
+
 ---
 
 ## Ban appeals {#ban-appeals}

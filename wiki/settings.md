@@ -12,9 +12,22 @@ description: Every Server Assistant configuration dashboard — the /settings hu
 # ⚙️ Settings hub & configuration
 
 Once Server Assistant is set up, **`/settings`** is your control panel. It opens a
-single hub with a tab for every part of the bot — branding, quick presets,
-behaviour, new members, verification and more — so you can fine-tune one thing
-without re-running the whole wizard.
+single hub, now organised into **four sections** so you can jump straight to the
+area you want without scrolling past everything else:
+
+- **⚙️ Settings** — branding, quick presets, behaviour, role tiers, AI config,
+  white-label, snippets, custom commands and FAQ.
+- **👥 Members** — new members, verification, onboarding and role panels.
+- **🔔 Notifications** — event role-pings and the Pulse digest.
+- **🛡️ Security** — AutoMod, anti-nuke, scam images, the channel allowlist,
+  privacy and backups.
+
+Several tools used to live *only* behind their own slash command — AutoMod, AI
+config, onboarding, privacy, backups, white-label, snippets, custom commands, FAQ
+and role panels. They're now **also reachable from the matching `/settings`
+section**, so you can configure everything from one place. Those slash commands
+still work exactly as before, and every Premium or permission requirement is
+unchanged — the section is just another door to the same tool.
 
 This page covers the **Settings hub** and the handful of standalone commands that
 sit alongside it: `/autopilot`, `/privacy`, `/onboarding`, `/snippets`,
@@ -31,7 +44,7 @@ sit alongside it: `/autopilot`, `/privacy`, `/onboarding`, `/snippets`,
     <span class="cmd-tag free">FREE</span>
     <span class="cmd-tag perm">ADMIN</span>
   </div>
-  <p class="cmd-desc">Open the settings hub — one panel with a tab for every part of the bot. Takes no arguments; everything is done with buttons and dropdowns.</p>
+  <p class="cmd-desc">Open the settings hub — four sections covering every part of the bot. Takes no arguments; everything is done with buttons and dropdowns.</p>
   <table class="cmd-args">
     <tr><th>Argument</th><th>Type</th><th>Notes</th></tr>
     <tr><td colspan="3" style="color:var(--fg-2)">No arguments — the hub is fully interactive.</td></tr>
@@ -41,21 +54,14 @@ sit alongside it: `/autopilot`, `/privacy`, `/onboarding`, `/snippets`,
       <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">only you can see this</span></div>
       <div class="dc-embed blue">
         <div class="dc-title">⚙️ Settings</div>
-        <div class="dc-desc">Pick an area to configure. Changes save instantly.</div>
+        <div class="dc-desc">Pick a section to configure. Changes save instantly.</div>
         <div class="dc-btns">
-          <span class="dc-btn grey">🎨 Branding</span>
-          <span class="dc-btn grey">⚡ Quick Presets</span>
-          <span class="dc-btn grey">🛡️ Behavior</span>
+          <span class="dc-btn grey">⚙️ Settings</span>
+          <span class="dc-btn grey">👥 Members</span>
         </div>
         <div class="dc-btns">
-          <span class="dc-btn grey">👋 New Members</span>
-          <span class="dc-btn grey">🔐 Verification</span>
-          <span class="dc-btn grey">📍 Channel Allowlist</span>
-        </div>
-        <div class="dc-btns">
-          <span class="dc-btn grey">🛂 Role Tiers</span>
           <span class="dc-btn grey">🔔 Notifications</span>
-          <span class="dc-btn grey">🩺 Pulse</span>
+          <span class="dc-btn grey">🛡️ Security</span>
         </div>
         <div class="dc-btns">
           <span class="dc-btn blurple">Done</span>
@@ -64,6 +70,8 @@ sit alongside it: `/autopilot`, `/privacy`, `/onboarding`, `/snippets`,
     </div></div>
   </div>
 </div>
+
+<p style="color:var(--fg-1);font-size:.9rem;line-height:1.55;">Each button opens that section's own panel of tools. <strong>⚙️ Settings</strong> holds branding, quick presets, behaviour, role tiers, AI config, white-label, snippets, custom commands and FAQ; <strong>👥 Members</strong> covers new members, verification, onboarding and role panels; <strong>🔔 Notifications</strong> is event role-pings and the Pulse digest; and <strong>🛡️ Security</strong> gathers AutoMod, anti-nuke, scam images, the channel allowlist, privacy and backups. The tools shown below appear under whichever section fits them.</p>
 
 ### Step through every tab
 
@@ -272,7 +280,7 @@ forms that open from some of them.
         </div>
       </div></div>
     </div>
-    <p class="wiz-caption"><strong>Notifications.</strong> Sets the Pulse digest cadence (Off, Daily, Weekly or Monthly) and toggles celebratory milestone cards, product announcements and service notices, and native-action alerts (logging when staff moderate directly in Discord). <strong>🚨 Instant alerts →</strong> opens the next screen.</p>
+    <p class="wiz-caption"><strong>Notifications.</strong> Opening this section now drops you straight onto the notification options — no extra menu step in between. Sets the Pulse digest cadence (Off, Daily, Weekly or Monthly) and toggles celebratory milestone cards, product announcements and service notices, and native-action alerts (logging when staff moderate directly in Discord). <strong>🚨 Instant alerts →</strong> opens the role-ping screen.</p>
   </div>
 
   <div class="wiz-step" data-step="🚨 Instant alerts">

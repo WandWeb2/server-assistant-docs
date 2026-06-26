@@ -112,7 +112,7 @@ description: The complete Server Assistant reference — every command, wizard a
 
   <a class="card" href="{{ '/wiki/threatnet/' | relative_url }}">
     <h3>🌐 ThreatNet</h3>
-    <p>The cross-server safety network — advisory band, Premium auto-protect, what's shared, and how to opt out.</p>
+    <p>The cross-server safety network — advisory band, scam-image defense, Premium auto-protect, what's shared, and how to opt out.</p>
   </a>
 
   <a class="card" href="{{ '/wiki/leveling/' | relative_url }}">
