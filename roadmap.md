@@ -70,6 +70,8 @@ details.band-shipped > summary { cursor: pointer; font-weight: 700; padding: .55
 details.band-shipped > summary::-webkit-details-marker { display: none; }
 details.band-shipped[open] > summary { border-radius: 6px 6px 0 0; }
 details.band-shipped > .shipped-scroll { border: 1px solid #cfd8dc; border-top: 0; border-radius: 0 0 6px 6px; padding: .6rem; }
+/* Previous-votes archive: short content — expand to fit, no inner scroll/cap. */
+details.band-shipped.pv > .shipped-scroll { max-height: none; overflow: visible; }
 
 .roadmap-hint {
   font-size: 0.82rem;
@@ -980,7 +982,7 @@ Where Server Assistant is heading. Priorities are decided by the people who run 
     </div>
   </details>
 
-  <details class="band-shipped">
+  <details class="band-shipped pv">
     <summary>🗳️ Previous votes — closed poll results</summary>
     <div class="shipped-scroll">
 
