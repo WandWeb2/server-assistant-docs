@@ -555,7 +555,7 @@ Where Server Assistant is heading. Priorities are decided by the people who run 
   <div class="band-h band-blue">🔵 Committed<span class="sub">Building regardless of votes</span></div>
   <div class="band" id="band-blue">
 
-    <details class="card"><summary>🎁 Vote &amp; review incentives</summary><span class="desc">Thank the community for steering the bot: light perks for servers that take part in the feature votes and members who leave a review on the bot directories (top.gg, DiscordForge, and friends) — think a small bonus AI-token top-up and a reviewer shout-out.</span></details>
+    <details class="card"><summary>🎁 Review incentives</summary><span class="desc">Thank the community for spreading the word: light perks for members who leave a review on the bot directories (top.gg, DiscordForge, and friends) — think a small bonus AI-token top-up and a reviewer shout-out. <em>(Vote rewards already ship — voting for Server Assistant grants XP toward <a href="{{ site.url }}{{ site.baseurl }}/wiki/crestbound/">Crestbound</a>; this card is the remaining review-reward half, still to be built.)</em></span></details>
 
     <details class="card"><summary>🌐 Member Portal &amp; streamlined commands</summary><span class="desc">Opening the web portal to <strong>every member</strong>, not just staff: a self-service home for your own settings, two-way records &amp; forms between you and the team, and privacy opt-outs (including the threat network) — all in one place. Alongside it, a leaner set of bot commands: every ability stays listed for discoverability, but the heavy lifting moves to easy in-browser wizards, with each command deep-linking straight to the exact setting or form in the portal. The bot also delivers its privacy notice automatically on install and on demand.</span></details>
 
@@ -779,6 +779,11 @@ Where Server Assistant is heading. Priorities are decided by the people who run 
     <details class="card">
       <summary>🏅 Leveling &amp; XP <span class="shipped-pill">✅ Shipped v6.2.3</span></summary>
       <span class="desc">Server XP earned from real participation, with level-up announcements you control (<code>/leveling</code>), <strong>Double-XP events</strong>, anti-spam and per-user opt-out. XP doubles as a trust signal and is spent in <strong>Crestbound</strong>, the Crest-collecting game in the web portal. The third of the community-voted v6.0 features. <a href="{{ site.url }}{{ site.baseurl }}/wiki/leveling/">Full guide →</a></span>
+    </details>
+
+    <details class="card">
+      <summary>🛡️ Crestbound — the XP collecting game <span class="shipped-pill">✅ Shipped v6.2.3</span></summary>
+      <span class="desc">The XP your members earn in Discord becomes a <strong>spendable currency</strong> in <strong>Crestbound</strong>, the Crest-collecting game in the web portal (under 🎮 XP Games). Spend XP on <strong>booster packs</strong> to collect the Crests of the first Chapter — <em>Embers of the First War</em> — across four rarities; the <strong>first player anywhere</strong> to pull a brand-new Crest illuminates its artwork for everyone and keeps a permanent discovery credit (the <strong>🔥 First Light</strong> achievement). Burn spare duplicates back into XP. No purchase and no Premium — if you've earned XP, you can play. A <strong>Wardeck</strong> battle mode is on the way. <a href="{{ site.url }}{{ site.baseurl }}/wiki/crestbound/">Full guide →</a></span>
     </details>
 
     <details class="card">
