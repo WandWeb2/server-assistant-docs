@@ -35,6 +35,16 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 </style>
 
 <details class="doc-sec" markdown="1" open>
+<summary>v6.6.1 — Emotes that show the action, with natural captions</summary>
+
+**Emotes now show what you're actually doing.** `/laugh` posts a *laughing* GIF, `/cry` a *crying* one — the search leads with the action and prefers clips whose title or tags match it, so you get a relevant reaction instead of a generic theme image. Add a theme on top (`/cry anime`) and it still applies; if nothing in that theme fits the action, you get a plain matching GIF and a small note saying so.
+
+- **Captions read like a sentence.** Posts now say **`@User is crying`**, **`@User hugs @Target`**, or **`@User waves at @Target`** — instead of just the emote's name.
+
+GIFs by KLIPY.
+</details>
+
+<details class="doc-sec" markdown="1">
 <summary>v6.6.0 — Emote commands: post the perfect reaction GIF</summary>
 
 **React with a GIF in one tap.** New **`/emote`** (and the shortcut **`/e`**), plus **`/cry`**, **`/hug`** and **`/dance`**, drop a fitting GIF straight into chat — with autocomplete over hundreds of emotes (cry, dance, laugh, facepalm, wave… and aliases like `lol`, `ty`, `congrats`).
