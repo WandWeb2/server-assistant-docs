@@ -35,20 +35,6 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 </style>
 
 <details class="doc-sec" markdown="1" open>
-<summary>📖 New — the Server Assistant Wiki: every feature &amp; command, with live examples</summary>
-
-
-**There's now a full wiki for Server Assistant** — a complete, browsable reference that shows a live mock-up of exactly what you'll see in Discord for every command, wizard and flow.
-
-- **Main features** — a guided tour of what the bot does, with deep-dive pages for Pulse, ban appeals, the audit log, alt / ban-evasion detection and ThreatNet.
-- **Every command** — grouped by area (moderation, AutoMod, AI, tickets, member experience, account &amp; premium), each shown the way it appears in Discord.
-- **Step-through wizards** — walk the `/setup` wizard and other multi-step flows one screen at a time.
-- **Search** — find any command or feature in seconds.
-
-Open it from **Main Features** in the top menu, or jump straight in at [the wiki]({{ '/wiki/' | relative_url }}). Setup and the full command reference now live there too.
-</details>
-
-<details class="doc-sec" markdown="1" open>
 <summary>v6.3.0 — ThreatNet now stops scam <em>images</em>, not just scam text</summary>
 
 
@@ -62,6 +48,20 @@ ThreatNet now recognises scam **images**. The moment a scam screenshot is flagge
 - **Privacy-first.** Servers only ever share a small, irreversible *fingerprint* of a flagged scam image — never the image itself, and never anything tied to a person. The same opt-out that covers the rest of ThreatNet covers this too.
 
 It's the biggest upgrade to ThreatNet yet — turning every server that flags a scam into protection for all the others.
+</details>
+
+<details class="doc-sec" markdown="1">
+<summary>📖 New — the Server Assistant Wiki: every feature &amp; command, with live examples</summary>
+
+
+**There's now a full wiki for Server Assistant** — a complete, browsable reference that shows a live mock-up of exactly what you'll see in Discord for every command, wizard and flow.
+
+- **Main features** — a guided tour of what the bot does, with deep-dive pages for Pulse, ban appeals, the audit log, alt / ban-evasion detection and ThreatNet.
+- **Every command** — grouped by area (moderation, AutoMod, AI, tickets, member experience, account &amp; premium), each shown the way it appears in Discord.
+- **Step-through wizards** — walk the `/setup` wizard and other multi-step flows one screen at a time.
+- **Search** — find any command or feature in seconds.
+
+Open it from **Main Features** in the top menu, or jump straight in at [the wiki]({{ '/wiki/' | relative_url }}). Setup and the full command reference now live there too.
 </details>
 
 <details class="doc-sec" markdown="1">
