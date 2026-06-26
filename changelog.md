@@ -35,6 +35,17 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 </style>
 
 <details class="doc-sec" markdown="1" open>
+<summary>v6.6.3 — <code>/meme</code> now captions the moment</summary>
+
+**`/meme` now reads like an emote.** Instead of just echoing your search, the bot adds a caption describing what the meme says about you — `/meme this is fine` → **"@User has decided everything is fine"**, `/meme drake` → **"@User has notes"**, `/meme woman yelling at cat` → **"@User is losing an argument to a cat"**.
+
+- **Smart, in-context captions** — on AI-enabled servers (your **AI allowance, free trial included** — not Premium-only) the caption is written to fit the meme *and* the conversation, accurate and a little funny. It's governed by the same **AI theme-pick** toggle as emotes in `/settings → Emotes`.
+- **Always works** — when AI isn't available it falls back to a built-in library of well-known memes for a witty caption, and an unrecognised meme just posts the image. No dead ends.
+
+GIFs &amp; memes by KLIPY.
+</details>
+
+<details class="doc-sec" markdown="1">
 <summary>v6.6.2 — New <code>/meme</code> command</summary>
 
 **Drop the perfect meme into chat.** New **`/meme <search>`** posts a meme image matching your search — `/meme distracted boyfriend`, `/meme this is fine`, `/meme success kid`. Memes come from **KLIPY**.
