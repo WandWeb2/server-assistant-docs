@@ -35,6 +35,21 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 </style>
 
 <details class="doc-sec" markdown="1" open>
+<summary>v6.3.2 — One-tap verification channel setup</summary>
+
+
+**Setting up verification just got a lot easier.** Verification works by hiding your channels from people who haven't been verified yet and revealing them once they pass — but wiring that up by hand, channel by channel, is tedious.
+
+Now there's a **"Auto-configure channels"** button in **`/settings → Members → Verification`**. It proposes which channels stay public (your verify channel, plus rules / announcements), lets you keep any extras visible with a quick picker, and then — in one tap — hides everything else from unverified members and opens it to your verified role.
+
+- **Nothing is guessed blindly** — you see exactly what will change before you confirm.
+- **One-tap Undo** — it snapshots your current setup first, so you can revert instantly if it's not what you wanted.
+- You'll need a verified role set and the bot's Manage Channels/Roles permission.
+
+**Also:** the **Notifications** settings menu is flatter — it opens straight to your notification options (with Instant alerts and Pulse inside), instead of an extra step.
+</details>
+
+<details class="doc-sec" markdown="1">
 <summary>v6.3.1 — Settings, reorganised into four clear sections</summary>
 
 
