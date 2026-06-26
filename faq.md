@@ -96,7 +96,7 @@ details.faq .faq-body table { margin: .5rem 0; }
       "name": "How does the verification gate work?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Enable it in /settings → Verification. New joiners get a DM with a green Verify button. Clicking it grants the configured verified role, which gates channels via Discord's role permissions. If a user has DMs disabled the failure is logged and they stay unverified."
+        "text": "Enable it in /settings → Members → Verification. New joiners get a DM with a green Verify button. Clicking it grants the configured verified role, which gates channels via Discord's role permissions. If a user has DMs disabled the failure is logged and they stay unverified. To set up the gated channels without editing permissions by hand, use the Auto-configure channels button in the same Verification panel: it proposes which channels stay visible to unverified members (verify, rules, system, announcements), lets you keep extra ones visible, then on Apply hides everything else and opens it to your verified role — with a one-tap Undo. It needs a verified role set and the bot to have Manage Channels and Manage Roles."
       }
     },
     {
@@ -271,7 +271,8 @@ Yes — DM explaining which rule fired and their warning count. If their DMs are
 
 <details class="faq"><summary>How does the verification gate work?</summary>
 <div class="faq-body">
-Enable in <code>/settings → Verification</code>. New joiners get a DM with a green <strong>Verify</strong> button. Clicking it grants the configured verified role, which gates channels via Discord's role permissions.
+<p>Enable in <code>/settings → 👥 Members → Verification</code>. New joiners get a DM with a green <strong>Verify</strong> button. Clicking it grants the configured verified role, which gates channels via Discord's role permissions.</p>
+<p>To set up those gated channels without editing permissions by hand, use the <strong>Auto-configure channels</strong> button in the same Verification panel: it proposes which channels stay visible to unverified members (your verify, rules, system and announcements channels), lets you keep extra ones visible, then on Apply hides everything else and opens it to your verified role. There's a one-tap <strong>Undo</strong>. It needs a verified role set and the bot to have <strong>Manage Channels</strong> + <strong>Manage Roles</strong>.</p>
 </div>
 </details>
 

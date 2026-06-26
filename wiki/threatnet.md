@@ -33,6 +33,12 @@ level, how many independent servers corroborate it, and recency. ThreatNet
 **never** shares the offence type, your staff's reasons, message content, or
 **which server acted**.
 
+When [scam-image defense](#scam-image-defense) flags a picture, the only thing
+that crosses the network is an **opaque, one-way fingerprint** of that image — a
+short string of numbers it can't be turned back into. The picture itself is
+**never** shared, and the fingerprint isn't tied to any user. It's covered by the
+same opt-out as the rest of ThreatNet.
+
 <div class="dc" style="margin-top:1rem;">
   <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
     <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">👤 Info → Threat Network</span></div>
@@ -54,6 +60,56 @@ anything) to do. Bands are tuned conservatively to favour false-negatives over
 false-positives, and the read is **explainable** (it shows what drove it). The
 advisory band is free for every server; Premium adds the richer cross-server
 dossier (how many distinct servers corroborate a signal, and recency).
+
+## Scam-image defense <span class="cmd-tag free">FREE</span> {#scam-image-defense}
+
+A lot of scams don't say a word — they're a **picture**. A throwaway account
+joins and posts a screenshot: a fake "withdrawal received" or investment-profit
+payout, a "you won the giveaway" notice, a staged testimonial. The whole pitch
+lives inside the image, so plain text filters never see it.
+
+ThreatNet now reads those attachments. When an image is posted, the bot takes a
+**perceptual fingerprint** of it — a compact signature that still matches even if
+the picture is cropped, re-saved or lightly edited — and checks it against a
+**cross-server scam-image blocklist** built from confirmed reports. A match means
+the same scam image has been caught on other servers already.
+
+**It's on by default for every server, on every plan.** When an image matches a
+known scam, the default response is to **remove the image and time the poster
+out**. Each server can soften that in settings to suit its community:
+
+- **Remove + time-out** *(default)* — the strongest response for a confirmed match.
+- **Quarantine** — pull the image and hold it for staff to review, without
+  actioning the poster automatically.
+- **Advisory (flag only)** — leave the image up and just flag it to staff so a
+  human decides.
+
+<div class="dc" style="margin-top:1rem;">
+  <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+    <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">today</span></div>
+    <div class="dc-embed amber">
+      <div class="dc-title">🖼️ Scam image removed</div>
+      <div class="dc-desc">An image @driftwood posted matched a <strong>known scam image</strong> seen on other servers — it's been removed and the poster timed out.</div>
+      <div class="dc-fname">Match</div><div class="dc-fval">Cross-server blocklist · "withdrawal received" payout screenshot</div>
+      <div class="dc-foot">Only an opaque fingerprint is shared — never the image, never linked to a user</div>
+    </div>
+  </div></div>
+</div>
+
+### Catching never-seen scams <span class="cmd-tag ai">AI</span>
+
+A blocklist only knows the scams it has already seen. On **AI-enabled plans**, an
+image from a **brand-new member** that *isn't* on the blocklist gets an extra
+**AI vision check** for the tell-tale signs of a never-seen scam. When the same
+new pattern is corroborated across several servers, it **teaches the network** —
+so the scam that slips past one server is on the blocklist by the time it reaches
+the next.
+
+> **Privacy.** Only an irreversible **perceptual fingerprint** of a flagged image
+> ever leaves your server — never the image itself, and it isn't linked to any
+> user. The same [opt-out](#opting-out) that covers the rest of ThreatNet applies
+> here too; the full data model is on the
+> [Privacy page]({{ '/privacy/' | relative_url }}).
 
 ## Premium auto-protect — close the gate on join <span class="cmd-tag premium">PREMIUM</span>
 
