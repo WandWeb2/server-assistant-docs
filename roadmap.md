@@ -767,8 +767,8 @@ Where Server Assistant is heading. Priorities are decided by the people who run 
     <div class="shipped-scroll">
 
     <details class="card">
-      <summary>🎁 Review rewards <span class="shipped-pill">✅ Shipped v6.5.0</span></summary>
-      <span class="desc">Leave a genuine review on a bot directory (Top.gg, DiscordForge, Discord Bot List, Trustpilot, G2…), run <code>/review</code> with the link, and the bot <strong>AI-verifies the live review on the real directory page</strong> (not a forgeable screenshot) and grants <strong>500 XP</strong> plus <strong>1 month of Double XP</strong>. The Double-XP buff is personal — it follows you across <strong>every server you share with SA</strong> (capped at 2×, and a second review on another platform <strong>banks</strong> another month). <strong>Once per platform.</strong> The committed companion (vote rewards) already shipped with the XP system. <a href="{{ site.url }}{{ site.baseurl }}/wiki/leveling/">Full guide →</a></span>
+      <summary>🎁 Review rewards <span class="shipped-pill">✅ Shipped v6.5.1</span></summary>
+      <span class="desc">Run <code>/review</code> for a personal code, add it to a review you write on a bot directory (Top.gg, DiscordForge, Discord Bot List, discord.bots.gg), then submit the link — the bot confirms your code is on the <strong>live page</strong> (not a forgeable screenshot; only your own review carries your code) and grants <strong>500 XP</strong> plus <strong>1 month of Double XP</strong>. The Double-XP buff is personal — it follows you across <strong>every server you share with SA</strong> (capped at 2×, and a second review on another platform <strong>banks</strong> another month). <strong>Once per platform.</strong> The committed companion (vote rewards) already shipped with the XP system. <a href="{{ site.url }}{{ site.baseurl }}/wiki/leveling/">Full guide →</a></span>
     </details>
 
     <details class="card">
