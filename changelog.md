@@ -35,6 +35,20 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 </style>
 
 <details class="doc-sec" markdown="1" open>
+<summary>v6.3.1 — Settings, reorganised into four clear sections</summary>
+
+
+**`/settings` is tidier.** As Server Assistant has grown, the settings list got long — so it's now grouped into four sections:
+
+- **⚙️ Settings** — branding, presets, behavior, role tiers, AI, white-label, snippets, custom commands, FAQ
+- **👥 Members** — new-member handling, verification, onboarding, role panels
+- **🔔 Notifications** — event pings and the daily Pulse digest
+- **🛡️ Security** — AutoMod, anti-nuke, scam-image protection, channel allowlist, privacy, backups
+
+Tools that used to only have their own command — like AutoMod, AI config, onboarding, backups and more — can now also be opened straight from the matching section of `/settings`. Their commands still work exactly as before, and nothing about who can use what has changed.
+</details>
+
+<details class="doc-sec" markdown="1">
 <summary>v6.3.0 — ThreatNet now stops scam <em>images</em>, not just scam text</summary>
 
 
