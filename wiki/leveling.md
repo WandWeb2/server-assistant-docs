@@ -57,12 +57,13 @@ page shows a **live countdown** to your next vote instead.
   </div></div>
 </div>
 
-**By reviewing Server Assistant.** Leave an honest review on any bot directory
-(Top.gg, DiscordForge, Discord Bot List, Trustpilot, G2…), then run **`/review`** with
-the **link** to your review. The bot **verifies your live review on the real directory
-page** (not a screenshot — that can't be faked) and grants **500 XP** plus **1 month of
-Double XP**. It's **once per platform**, so you can claim it again on a different
-directory — and each extra month is **added on** to your buff, not wasted. If a
+**By reviewing Server Assistant.** Run **`/review`** to get your **personal code**, add
+it anywhere in a review you write on a bot directory (Top.gg, DiscordForge, Discord Bot
+List, discord.bots.gg), then run **`/review`** again with the **link** to your published
+review. The bot checks your code is on the **live page** (not a screenshot — that can't
+be faked, and only *your* review carries *your* code) and grants **500 XP** plus **1
+month of Double XP**. It's **once per platform**, so you can claim it again on a
+different directory — and each extra month is **added on** to your buff, not wasted. If a
 directory hides reviews from automated checks, your link is sent to our team for a quick
 manual confirmation and you're rewarded by DM.
 

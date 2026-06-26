@@ -213,11 +213,10 @@ communities. None of these change anything in your server.
     <span class="cmd-name">/review</span>
     <span class="cmd-tag free">FREE</span>
   </div>
-  <p class="cmd-desc">Leave a review on a bot directory (Top.gg, DiscordForge, Discord Bot List, Trustpilot, G2…), then run <code>/review</code> with the <strong>link</strong> to your review. The bot <strong>AI-verifies your live review on the real page</strong> (not a screenshot — that can't be faked) and grants <strong>500 XP</strong> plus <strong>1 month of Double XP</strong> across every server you share with SA. <strong>Once per platform.</strong> Run it with no options to see where to review us.</p>
+  <p class="cmd-desc">Run <code>/review</code> to get your <strong>personal code</strong>, add it to a review you write on a bot directory (Top.gg, DiscordForge, Discord Bot List, discord.bots.gg), then run <code>/review</code> with the <strong>link</strong> to your published review. The bot checks your code is on the <strong>live page</strong> (not a screenshot — that can't be faked) and grants <strong>500 XP</strong> plus <strong>1 month of Double XP</strong> across every server you share with SA. <strong>Once per platform.</strong> Run it with no options to get your code and see where to review us.</p>
   <table class="cmd-args">
     <tr><th>Argument</th><th>Type</th><th>Notes</th></tr>
-    <tr><td>link</td><td>text</td><td>A direct link to your published review.</td></tr>
-    <tr><td>platform</td><td>text</td><td>Where you reviewed us (e.g. Top.gg, Trustpilot).</td></tr>
+    <tr><td>link</td><td>text</td><td>A direct link to your published review (after you've added your code to it).</td></tr>
   </table>
 </div>
 
