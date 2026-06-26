@@ -35,6 +35,19 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 </style>
 
 <details class="doc-sec" markdown="1" open>
+<summary>v6.6.0 — Emote commands: post the perfect reaction GIF</summary>
+
+**React with a GIF in one tap.** New **`/emote`** (and the shortcut **`/e`**), plus **`/cry`**, **`/hug`** and **`/dance`**, drop a fitting GIF straight into chat — with autocomplete over hundreds of emotes (cry, dance, laugh, facepalm, wave… and aliases like `lol`, `ty`, `congrats`).
+
+- **Smart by default.** Just run `/cry` and the bot picks a theme that fits your server and the moment, then grabs a **random** matching GIF — so it's fresh each time. Prefer your own flavour? Add it: `/cry anime`, `/cry wow`, `/cry naruto`.
+- **Make it yours.** `/emotestyle anime` sets your personal default theme so your emotes lean your way across every server; `/hug @member` aims a reaction at someone.
+- **Powered by your AI allowance — free trial included.** The auto-theme uses your server's AI (the free 150K trial counts); once that's used up it simply falls back to a plain random GIF, so the commands always work. It's **not** Premium-only.
+- **Server controls in `/settings → Emotes`.** Turn emotes on/off, limit them to certain channels, set a per-minute rate limit, allow spicier GIFs only in NSFW channels, and toggle an off-by-default "flavor pack." Safe-search is on by default.
+
+GIFs by KLIPY.
+</details>
+
+<details class="doc-sec" markdown="1">
 <summary>v6.5.3 — Reward messages now show your spendable XP</summary>
 
 **The "you now have **X** XP" line in vote and review thank-you messages now matches Crestbound.** Your wallet has two numbers: the **lifetime XP** that ranks you on the leaderboard (it only ever goes up), and your **spendable XP** — the balance you spend on Booster Packs in [Crestbound]({{ '/wiki/crestbound/' | relative_url }}), which drops each time you open a pack. Both go up together when you earn, so they match until you spend.
