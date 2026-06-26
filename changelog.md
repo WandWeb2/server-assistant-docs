@@ -35,6 +35,15 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 </style>
 
 <details class="doc-sec" markdown="1" open>
+<summary>v6.5.3 — Reward messages now show your spendable XP</summary>
+
+**The "you now have **X** XP" line in vote and review thank-you messages now matches Crestbound.** Your wallet has two numbers: the **lifetime XP** that ranks you on the leaderboard (it only ever goes up), and your **spendable XP** — the balance you spend on Booster Packs in [Crestbound]({{ '/wiki/crestbound/' | relative_url }}), which drops each time you open a pack. Both go up together when you earn, so they match until you spend.
+
+Those reward messages were showing the lifetime number, so after you'd opened a pack it could read higher than the balance Crestbound actually shows. Since the message is telling you to go spend it, it now quotes your **spendable** balance — the same figure you see in Crestbound. Nothing changed about how much you earn or can spend; only the number in the message.
+
+</details>
+
+<details class="doc-sec" markdown="1">
 <summary>v6.5.1 — Earn rewards for reviewing Server Assistant</summary>
 
 
