@@ -101,9 +101,9 @@ Step through the three things `/premium` does — **check your status**, **upgra
           <div class="dc-fname">Available packs</div>
           <div class="dc-fval">• Splash · • Surge · • Stockpile</div>
           <div class="dc-btns">
-            <span class="dc-btn grey">Splash — $X</span>
-            <span class="dc-btn grey">Surge — $X</span>
-            <span class="dc-btn grey">Stockpile — $X</span>
+            <span class="dc-btn grey">Splash — $3 · 300K</span>
+            <span class="dc-btn grey">Surge — $10 · 1.25M</span>
+            <span class="dc-btn grey">Stockpile — $25 · 3.4M</span>
           </div>
           <div class="dc-foot">Top-ups appear when they're available — buy one without changing your subscription</div>
         </div>
