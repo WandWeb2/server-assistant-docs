@@ -5,7 +5,7 @@ permalink: /wiki/account/
 wiki: true
 wiki_category: "Account & premium"
 summary: Manage your plan and AI tokens with /premium, spread the word and gather support, stay up to date, and unlock the Premium extras — white-label branding, server backups and ThreatNet auto-protect.
-wiki_keywords: [premium, billing, upgrade, byok, top-up, tokens, invite, portal, vote, share, help, whatsnew, changelog, brand, white-label, backup, restore, threatnet, account]
+wiki_keywords: [premium, billing, upgrade, byok, top-up, tokens, invite, portal, vote, review, /review, review rewards, share, help, whatsnew, changelog, brand, white-label, backup, restore, threatnet, account]
 description: Every account, billing and premium command in Server Assistant — /premium, /invite, /portal, /vote, /share, /help, /whatsnew, /brand, /backup and /threatnet — each shown exactly as it appears in Discord.
 ---
 
@@ -206,6 +206,19 @@ communities. None of these change anything in your server.
       </div>
     </div></div>
   </div>
+</div>
+
+<div class="cmd-card">
+  <div class="cmd-head">
+    <span class="cmd-name">/review</span>
+    <span class="cmd-tag free">FREE</span>
+  </div>
+  <p class="cmd-desc">Leave a review on a bot directory (Top.gg, DiscordForge, Discord Bot List, Trustpilot, G2…), then run <code>/review</code> with the <strong>link</strong> to your review. The bot <strong>AI-verifies your live review on the real page</strong> (not a screenshot — that can't be faked) and grants <strong>500 XP</strong> plus <strong>1 month of Double XP</strong> across every server you share with SA. <strong>Once per platform.</strong> Run it with no options to see where to review us.</p>
+  <table class="cmd-args">
+    <tr><th>Argument</th><th>Type</th><th>Notes</th></tr>
+    <tr><td>link</td><td>text</td><td>A direct link to your published review.</td></tr>
+    <tr><td>platform</td><td>text</td><td>Where you reviewed us (e.g. Top.gg, Trustpilot).</td></tr>
+  </table>
 </div>
 
 <div class="cmd-card">
