@@ -141,7 +141,7 @@ Those buttons now acknowledge your click straight away and then apply the change
 Now, in a server that hasn't been set up yet, commands point you to **`/setup`** so it's obvious what to do first. The getting-started and personal commands still work right away — `/setup`, `/help`, `/invite`, `/portal`, `/whatsnew`, `/support`, `/premium`, plus your account ones like `/rank`, `/vote` and `/leaderboard` (your XP follows *you*, not a single server, so those work everywhere). Everything else unlocks the moment setup is complete.
 </details>
 
-<details class="doc-sec" markdown="1" open>
+<details class="doc-sec" markdown="1">
 <summary>v6.2.3 — The XP Update: Crestbound, Double-XP & better vote rewards</summary>
 
 
