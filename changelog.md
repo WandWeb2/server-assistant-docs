@@ -35,6 +35,20 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 </style>
 
 <details class="doc-sec" markdown="1" open>
+<summary>v6.5.0 — Earn rewards for reviewing Server Assistant</summary>
+
+
+**Leave us a review, get rewarded.** Reviewed Server Assistant on a bot directory? Run **`/review`** with the **link** to your review and you'll earn **500 XP** plus **1 month of Double XP**.
+
+- **Double XP that follows you.** For a month, you earn XP **twice as fast in every server you share with Server Assistant** — then spend it in [Crestbound]({{ '/wiki/crestbound/' | relative_url }}). Earn it again on another directory and the month is **added on**, not wasted.
+- **Any directory counts** — Top.gg, DiscordForge, Discord Bot List, Trustpilot, G2 and more. **One reward per platform.**
+- **Verified on the live page.** The bot checks your **actual review on the directory** — not a screenshot — so it can't be faked. If a site hides reviews from automated checks, your link goes to our team for a quick manual confirmation and you're rewarded by DM.
+
+Thanks for helping more communities find the bot! 💚
+
+</details>
+
+<details class="doc-sec" markdown="1">
 <summary>v6.4.0 — ThreatNet cross-server protection is now live</summary>
 
 

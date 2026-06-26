@@ -5,7 +5,7 @@ permalink: /wiki/leveling/
 wiki: true
 wiki_category: "XP & leveling"
 summary: How members earn XP just by being part of the conversation, level up over time, and climb the server leaderboard. Covers /rank, /leaderboard, level-up announcements, and how voting for Server Assistant earns extra XP — all shown exactly as they appear in Discord.
-wiki_keywords: [xp, levels, leveling, levelling, rank, /rank, leaderboard, /leaderboard, level up, level-up, levelling up, vote, voting, rewards, reputation, points, ranks, /leveling]
+wiki_keywords: [xp, levels, leveling, levelling, rank, /rank, leaderboard, /leaderboard, level up, level-up, levelling up, vote, voting, review, /review, review rewards, double xp, rewards, reputation, points, ranks, /leveling]
 description: A member-facing reference for Server Assistant's XP and leveling system — earning XP from chat and voting, the /rank card, the leaderboard, and level-up announcements, each shown one state at a time exactly as it appears in Discord.
 ---
 
@@ -57,11 +57,25 @@ page shows a **live countdown** to your next vote instead.
   </div></div>
 </div>
 
+**By reviewing Server Assistant.** Leave an honest review on any bot directory
+(Top.gg, DiscordForge, Discord Bot List, Trustpilot, G2…), then run **`/review`** with
+the **link** to your review. The bot **verifies your live review on the real directory
+page** (not a screenshot — that can't be faked) and grants **500 XP** plus **1 month of
+Double XP**. It's **once per platform**, so you can claim it again on a different
+directory — and each extra month is **added on** to your buff, not wasted. If a
+directory hides reviews from automated checks, your link is sent to our team for a quick
+manual confirmation and you're rewarded by DM.
+
 **Double-XP events.** When a server's been quiet, the bot may offer its staff a
 **48-hour Double-XP event**. While one is running, **every member earns 2× XP for
 chatting** (voting rewards stay the same), and the staff get a recap of the total XP
 earned when it ends. Only a server manager can start one — there's no way for a server
 to grant itself double XP otherwise.
+
+**Your personal Double-XP buff.** The month of Double XP from a review is **yours** — it
+follows you across **every server you share with Server Assistant**, doubling the XP you
+earn from chatting. If a server-wide Double-XP event is also running, your XP still
+doubles (never quadruples) — the boost is capped at 2×.
 
 **Your weekly recap.** Once a week, if you earned any XP, the bot DMs you a quick summary
 — how much came from **being active** versus **voting** — so you can see your progress at

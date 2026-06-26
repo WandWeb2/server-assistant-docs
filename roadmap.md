@@ -557,8 +557,6 @@ Where Server Assistant is heading. Priorities are decided by the people who run 
 
     <details class="card"><summary>🎚️ Deeper community-type presets</summary><span class="desc">Today, picking a community type in <code>/setup</code> tunes your <strong>AutoMod pack, punishment ladder and anti-raid</strong> sensitivity. Next: presets that configure <strong>more of the server out of the box</strong> — sensible per-community feature defaults (e.g. age-gate verification for NSFW, scam-strict link rules for crypto, gentler enforcement for education) — with the wizard <strong>automatically appending any setup a chosen feature needs</strong> (a verified role, gated channels) so everything a preset turns on is genuinely <strong>ready to use</strong>, never enabled-but-unconfigured. Still opt-in and confirmed in the wizard: a preset never silently switches on a feature you didn't see.</span></details>
 
-    <details class="card"><summary>🎁 Review incentives</summary><span class="desc">Thank the community for spreading the word: light perks for members who leave a review on the bot directories (top.gg, DiscordForge, and friends) — think a small bonus AI-token top-up and a reviewer shout-out. <em>(Vote rewards already ship — voting for Server Assistant grants XP toward <a href="{{ site.url }}{{ site.baseurl }}/wiki/crestbound/">Crestbound</a>; this card is the remaining review-reward half, still to be built.)</em></span></details>
-
     <details class="card"><summary>🌐 Member Portal &amp; streamlined commands</summary><span class="desc">Opening the web portal to <strong>every member</strong>, not just staff: a self-service home for your own settings, two-way records &amp; forms between you and the team, and privacy opt-outs (including the threat network) — all in one place. Alongside it, a leaner set of bot commands: every ability stays listed for discoverability, but the heavy lifting moves to easy in-browser wizards, with each command deep-linking straight to the exact setting or form in the portal. The bot also delivers its privacy notice automatically on install and on demand.</span></details>
 
   </div>
@@ -767,6 +765,11 @@ Where Server Assistant is heading. Priorities are decided by the people who run 
   <details class="band-shipped">
     <summary>✅ Shipped — the full history (tap to expand)</summary>
     <div class="shipped-scroll">
+
+    <details class="card">
+      <summary>🎁 Review rewards <span class="shipped-pill">✅ Shipped v6.5.0</span></summary>
+      <span class="desc">Leave a genuine review on a bot directory (Top.gg, DiscordForge, Discord Bot List, Trustpilot, G2…), run <code>/review</code> with the link, and the bot <strong>AI-verifies the live review on the real directory page</strong> (not a forgeable screenshot) and grants <strong>500 XP</strong> plus <strong>1 month of Double XP</strong>. The Double-XP buff is personal — it follows you across <strong>every server you share with SA</strong> (capped at 2×, and a second review on another platform <strong>banks</strong> another month). <strong>Once per platform.</strong> The committed companion (vote rewards) already shipped with the XP system. <a href="{{ site.url }}{{ site.baseurl }}/wiki/leveling/">Full guide →</a></span>
+    </details>
 
     <details class="card">
       <summary>🌐 ThreatNet — cross-server threat network <span class="shipped-pill">✅ Shipped v6.4.0</span></summary>
