@@ -196,6 +196,7 @@ Need extra headroom without changing plans? Top-ups never expire and stack on an
 | **AutoMod AI second-opinion** | — | ✅ | ✅ |
 | **Active Threat Score** | — | ✅ | ✅ |
 | **🌐 ThreatNet** — cross-server safety (advisory) | ✅ | ✅ | ✅ |
+| **🛡️ ThreatNet auto-protect** — auto-ban known cross-server bad actors on join | — | ✅ | ✅ |
 | **🌟 Decision explainer & guided appeals** | — | ✅ | ✅ |
 | **🎭 Reaction roles** (`/rolepanel`) | — | ✅ | ✅ |
 | **❓ AI Q&A from your FAQ** (`/faq`) | — | ✅ | ✅ |
@@ -212,7 +213,7 @@ Need extra headroom without changing plans? Top-ups never expire and stack on an
 
 > **Threat Score:** the **advisory** view (a per-user risk pill in profiles) is free for every server — it's just visibility. The Premium **active** version drives actions, with all the safeguards on the [Roadmap]({{ site.url }}{{ site.baseurl }}/roadmap/).
 
-> **🌐 ThreatNet (Cross-Server Threat Network):** a **core, on-by-default** safety feature — the **advisory band is free for every server**; Premium adds the **richer cross-server view**. Severity-only sharing (never the offence type, reasons, content, or which server acted); individuals can opt out of profiling in the [web portal](https://serverassistant.wandweb.co).
+> **🌐 ThreatNet (Cross-Server Threat Network):** a **core, on-by-default** safety feature — the **advisory band is free for every server** (your staff decide what to do; it never auto-acts). **Premium** adds the **richer cross-server view** and, optionally, **ThreatNet auto-protect** — automatically banning a joining user who meets a cross-server risk threshold you choose (off by default; turn it on with `/threatnet autoban on` or in `/settings → Security → ThreatNet`). Severity-only sharing (never the offence type, reasons, content, or which server acted); individuals can opt out of profiling in the [web portal](https://serverassistant.wandweb.co), and auto-protect never acts on anyone who has opted out.
 
 </details>
 

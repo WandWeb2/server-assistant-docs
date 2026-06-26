@@ -119,6 +119,10 @@ The default is the **highest band** (serious *and* corroborated across two or
 more independent servers — the safest); you can set a broader level, which acts
 on weaker signals and carries more risk of a mistake.
 
+Turn it on with **`/threatnet autoban on`** (optionally pass a `level`), or from
+**`/settings → Security → ThreatNet`** — both set the same per-server control.
+It's **off by default**.
+
 Because it's an **automated** action, it ships with safeguards:
 
 - **Opted-out users are never auto-banned.**

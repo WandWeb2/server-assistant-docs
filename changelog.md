@@ -35,6 +35,18 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 </style>
 
 <details class="doc-sec" markdown="1" open>
+<summary>v6.4.0 — ThreatNet cross-server protection is now live</summary>
+
+
+**ThreatNet is now live.** When a user with a serious, corroborated history of abuse on *other* protected servers joins yours, your staff now see a clear **advisory flag** on them — **free, on every server** — and decide what to do. The flag never bans or sanctions anyone on its own; your team stays in control.
+
+- **Premium servers can go further with ThreatNet auto-protect.** Switch it on and the bot will **automatically ban** a joining user whose account meets a cross-server risk threshold **you choose** — closing the gate before they can act. It's **off by default**; turn it on with **`/threatnet autoban on`**, or in **`/settings → Security → ThreatNet`**. The safest **`high`** threshold (serious *and* corroborated across two or more independent servers) is the default; you can set a broader one, and you choose the level.
+- **Privacy-first and severity-only.** Only a minimized, generic **severity** signal is ever shared across servers — **never** the offence type, your staff's reasons, AI summaries, or message content. Individuals can opt out of profiling at any time. Full detail is in our [Privacy Policy]({{ '/privacy/' | relative_url }}).
+- **Never acts on opt-outs.** Auto-protect never bans anyone who has opted out of network profiling.
+
+</details>
+
+<details class="doc-sec" markdown="1">
 <summary>v6.3.2 — One-tap verification channel setup</summary>
 
 
