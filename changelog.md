@@ -35,6 +35,16 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 </style>
 
 <details class="doc-sec" markdown="1" open>
+<summary>v6.6.2 — New <code>/meme</code> command</summary>
+
+**Drop the perfect meme into chat.** New **`/meme <search>`** posts a meme image matching your search — `/meme distracted boyfriend`, `/meme this is fine`, `/meme success kid`. Memes come from **KLIPY**.
+
+- **Shares your emote controls.** The same `/settings → Emotes` panel governs memes — channel allowlist, per-minute rate limit, and NSFW safe-search all apply — plus a new **Memes** on/off toggle (on by default).
+
+GIFs &amp; memes by KLIPY.
+</details>
+
+<details class="doc-sec" markdown="1">
 <summary>v6.6.1 — Emotes that show the action, with natural captions</summary>
 
 **Emotes now show what you're actually doing.** `/laugh` posts a *laughing* GIF, `/cry` a *crying* one — the search leads with the action and prefers clips whose title or tags match it, so you get a relevant reaction instead of a generic theme image. Add a theme on top (`/cry anime`) and it still applies; if nothing in that theme fits the action, you get a plain matching GIF and a small note saying so.
