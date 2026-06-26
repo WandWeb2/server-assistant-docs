@@ -741,13 +741,11 @@ Where Server Assistant is heading. Priorities are decided by the people who run 
   </details>
 
   <details class="pack">
-  <summary class="pack-h">🌐 Cross-Server Network <span class="pack-count">2 cards</span></summary>
-  <div class="pack-desc">Opt-in trust shared between communities — negative (shared banlists) and positive (portable reputation). Powerful, but operationally complex, so both stay gated on real demand.</div>
+  <summary class="pack-h">🌐 Cross-Server Network <span class="pack-count">1 card</span></summary>
+  <div class="pack-desc">Opt-in trust shared between communities. The negative side — cross-server abuse signals — has shipped as <strong>ThreatNet</strong> (see ✅ Shipped below); what remains here is the positive, portable-reputation counterpart, held until there's clear demand.</div>
   <div class="longterm-grid">
 
-  <details class="card"><summary>Federated moderation network</summary><span class="desc">Opt-in cross-server ban / warn data sharing for trusted communities. Solves cross-server raid coordination.</span></details>
-
-  <details class="card"><summary>Cross-server reputation</summary><span class="desc">Opt-in positive reputation that follows trusted users between partner servers — the inverse of federated banlists. Conceptually strong, operationally complex (cross-tenant trust, abuse vectors). Held here until two communities ask for it by name with a use case.</span></details>
+  <details class="card"><summary>Cross-server reputation</summary><span class="desc">Opt-in positive reputation that follows trusted users between partner servers — the inverse of ThreatNet's cross-server risk signals. Conceptually strong, operationally complex (cross-tenant trust, abuse vectors). Held here until two communities ask for it by name with a use case.</span></details>
 
   </div>
   </details>
@@ -769,6 +767,11 @@ Where Server Assistant is heading. Priorities are decided by the people who run 
   <details class="band-shipped">
     <summary>✅ Shipped — the full history (tap to expand)</summary>
     <div class="shipped-scroll">
+
+    <details class="card">
+      <summary>🌐 ThreatNet — cross-server threat network <span class="shipped-pill">✅ Shipped v6.4.0</span></summary>
+      <span class="desc">Opt-in cross-server protection against users with a serious, corroborated history of scams, raids or ban-evasion on <em>other</em> protected servers. Every protected server shares <strong>minimized, severity-only</strong> signals — never the offence type, your staff's reasons, message content, or which server acted — so a risky joiner lights up as a free advisory <strong>Threat Network</strong> flag on their profile (advisory band is free for every server; it never auto-acts). <strong>Scam-image defense</strong> fingerprints posted images and removes ones matching a cross-server scam-image blocklist. <strong>Premium auto-protect</strong> (opt-in, off by default) can ban a user automatically on join when they meet a cross-server risk threshold you choose. A core, on-by-default safety feature; individuals can opt out of profiling in the web portal, subject to a published safety exception. <em>Go-live v5.8; scam-image defense v6.3.0; Premium auto-protect v6.4.0.</em> <a href="{{ site.url }}{{ site.baseurl }}/wiki/threatnet/">Full guide →</a></span>
+    </details>
 
     <details class="card">
       <summary>🪄 Setup &amp; settings wizard overhaul <span class="shipped-pill">✅ Shipped v6.3</span></summary>
