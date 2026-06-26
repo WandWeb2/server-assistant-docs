@@ -515,7 +515,10 @@ summary.pack-h .pack-count { color: #5fd0b6; background: rgba(46, 204, 113, 0.12
 
 Where Server Assistant is heading. Priorities are decided by the people who run servers: we send **feature polls straight to every server's staff chat** and tally the votes across the whole fleet — every staff member in every server gets an equal say. Between polls, [`/feedback`]({{ site.url }}{{ site.baseurl }}/support/) or [`/support`]({{ site.url }}{{ site.baseurl }}/support/) reach the dev directly.
 
-<div class="roadmap-hero" id="live-poll">
+<!-- Hidden by default; the live-poll JS reveals it only when an ACTIVE poll is
+     running (renderHero sets display:"" ), and re-hides it when the poll closes
+     or there's no poll. So between rounds the finished vote does not linger. -->
+<div class="roadmap-hero" id="live-poll" style="display:none">
   <p>🗳️ <strong>Community votes decide what we build.</strong> Feature polls arrive in every server's staff chat — live results appear here.</p>
 </div>
 
@@ -1134,6 +1137,11 @@ What ships is what gets requested most clearly. Vague *"add more features"* feed
     // rather than waiting on the backend to flip the flag.
     var closed = (p.status !== "active") ||
                  (!!p.closes_at && Date.now() >= new Date(p.closes_at).getTime());
+    // Vote finished → HIDE the whole hero rather than leave a stale "closed"
+    // results banner up. It auto-returns the moment the next active poll opens
+    // (closed === false), so no manual edit is needed for the next round.
+    if (closed) { pollClosed = true; pollClosesAt = null; box.style.display = "none"; return; }
+    box.style.display = "";
     // Build the row skeleton once; afterwards only update widths/labels so
     // the bars visibly grow/shrink instead of repainting.
     if (box.getAttribute("data-built") !== String(p.answers.length)) {
@@ -1315,7 +1323,7 @@ What ships is what gets requested most clearly. Vague *"add more features"* feed
       .then(function (r) { return r.ok ? r.json() : null; })
       .then(function (data) {
         var p = data && data.poll;
-        if (!p || !p.answers || !p.answers.length) return;
+        if (!p || !p.answers || !p.answers.length) { if (box) box.style.display = "none"; return; }
         var t = p.tallies || {};
         var total = 0;
         Object.keys(t).forEach(function (k) { total += Number(t[k]) || 0; });
