@@ -2,6 +2,18 @@
 
 Working notes for Claude Code sessions in this repository.
 
+## The SA skeleton — verify doc claims against the code
+
+This is the **public docs** repo; its claims must match the shipped product.
+The durable map of how the product actually works — commands, plan/tier gating,
+prices & caps, and the ThreatNet model — lives in the **`sa-architecture`**
+skill in the **`server-assistant`** repo (`.omp/skills/sa-architecture/`). Before
+asserting a price, a cap, a command's syntax, or a feature's plan in the docs,
+check it there (or grep `bot.py` / `relay.py`). Sources of truth: `BOT_VERSION`
+(bot), prices/caps (relay constants, mirrored in `pricing.md`), policy posture
+(`privacy.md` / `terms.md`, which must match the relay schema). Verified by the
+2026-06-26 cross-service conflict audit.
+
 ## PR workflow — auto-ship (standing authorization)
 
 The repo owner has authorized Claude to **merge the PRs it opens automatically,

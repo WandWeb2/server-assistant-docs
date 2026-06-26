@@ -216,7 +216,7 @@ Discord requires the <strong>bot's</strong> role to be higher than the target's 
 
 <details class="faq"><summary>Can I undo a ban?</summary>
 <div class="faq-body">
-Yes, within 24 hours. <code>undo</code> reverses your most recent reversible action — bans, mutes, channel deletions, nickname changes.
+Yes, within 24 hours. Press the <strong>↩️ Undo</strong> button on the action's confirmation message to reverse your most recent reversible action — bans, mutes, channel deletions, nickname changes.
 </div>
 </details>
 

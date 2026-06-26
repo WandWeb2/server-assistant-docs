@@ -39,8 +39,8 @@ description: A tour of Server Assistant's headline features, what each one does,
 </div>
 
 <div class="feat">
-  <h3>🤔 AutoMod that asks before it over-reacts <span class="feat-tag free">Free</span></h3>
-  <p>Clear violations are actioned instantly; borderline messages get an AI confidence check first (the classic "I love visiting Scunthorpe" problem) and are left up for staff with one-tap <b>Delete &amp; warn</b> or <b>Allow</b> — so the innocent aren't punished by a blunt keyword filter.</p>
+  <h3>🤔 AutoMod that asks before it over-reacts <span class="feat-tag free">Free</span> <span class="feat-tag premium">Premium AI review</span></h3>
+  <p>Clear violations are actioned instantly on every plan; on Premium, borderline messages get an AI confidence check first (the classic "I love visiting Scunthorpe" problem) and are left up for staff with one-tap <b>Delete &amp; warn</b> or <b>Allow</b> — so the innocent aren't punished by a blunt keyword filter.</p>
   <p class="how"><b>How to use:</b> <code>/automod</code> → <b>AI review</b>. The setup wizard seeds sensible defaults from your community type.</p>
   <a class="more" href="{{ '/wiki/automod/' | relative_url }}">AutoMod guide →</a>
 </div>

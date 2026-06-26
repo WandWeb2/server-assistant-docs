@@ -149,7 +149,7 @@ everyone to see. A friendly bit of bragging rights for your most active regulars
 
 When a member crosses into a new level, the bot can post a little celebration so the
 whole server sees it. This is the one part of leveling you control — staff can switch
-the announcement on or off with `/leveling`. **The XP itself always keeps running;
+the announcement on or off with `/leveling` (pick the mode from the dropdown). **The XP itself always keeps running;
 this only changes whether level-ups are announced.**
 
 <div class="cmd-card">
@@ -158,12 +158,10 @@ this only changes whether level-ups are announced.**
     <span class="cmd-tag free">FREE</span>
     <span class="cmd-tag perm">ADMIN</span>
   </div>
-  <p class="cmd-desc">Turn level-up announcements on or off, or check the current state. Staff-only. XP and ranks keep running either way — this only affects the celebratory post. The reply is private to you (ephemeral).</p>
+  <p class="cmd-desc">Turn level-up announcements on or off, or check the current state. Staff-only. XP and ranks keep running either way — this only affects the celebratory post. The reply is private to you (ephemeral). Pick what you want from the <code>mode</code> dropdown when you run the command.</p>
   <table class="cmd-args">
     <tr><th>Argument</th><th>Type</th><th>Notes</th></tr>
-    <tr><td><code>announcements-on</code></td><td>—</td><td>Post a message when a member levels up.</td></tr>
-    <tr><td><code>announcements-off</code></td><td>—</td><td>Keep level-ups quiet (XP still counts).</td></tr>
-    <tr><td><code>status</code></td><td>—</td><td>See whether announcements are currently on.</td></tr>
+    <tr><td><code>mode</code></td><td>choice</td><td>Choose one: <code>announcements-on</code> (post on level-up), <code>announcements-off</code> (keep level-ups quiet — XP still counts), or <code>status</code> (see whether announcements are on).</td></tr>
   </table>
 </div>
 
@@ -176,7 +174,7 @@ this only changes whether level-ups are announced.**
   </div></div>
 </div>
 
-<p style="color:var(--fg-1);font-size:.9rem;line-height:1.55;">Running <code>/leveling status</code> tells you how many members are being tracked and whether announcements are on; <code>announcements-off</code> keeps the channel tidy while members keep earning XP behind the scenes.</p>
+<p style="color:var(--fg-1);font-size:.9rem;line-height:1.55;">Running <code>/leveling</code> with mode <code>status</code> tells you how many members are being tracked and whether announcements are on; the <code>announcements-off</code> mode keeps the channel tidy while members keep earning XP behind the scenes.</p>
 
 ---
 
