@@ -125,6 +125,11 @@ description: The complete Server Assistant reference — every command, wizard a
     <p>The Crest-collecting game in the portal — spend earned XP on booster packs, complete the Chapter, and burn spares back into XP.</p>
   </a>
 
+  <a class="card" href="{{ '/wiki/emotes/' | relative_url }}">
+    <h3>😄 Emote commands</h3>
+    <p>React with the perfect GIF — <code>/emote</code>, <code>/cry</code>, <code>/hug</code>, <code>/dance</code> and more, plus <code>/meme</code>, with autocomplete and an AI-picked theme.</p>
+  </a>
+
 </div>
 
 ## Changelogs
