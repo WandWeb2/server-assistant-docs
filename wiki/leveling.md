@@ -210,5 +210,6 @@ leaderboard.
 ## See also
 
 - [Crestbound]({{ '/wiki/crestbound/' | relative_url }}) — spend your XP collecting Crests in the portal
+- [Emote commands]({{ '/wiki/emotes/' | relative_url }}) — react with the perfect GIF (and `/meme`)
 - [Member experience]({{ '/wiki/members/' | relative_url }}) — what your members see day to day
 - [Back to the Wiki hub]({{ '/wiki/' | relative_url }})

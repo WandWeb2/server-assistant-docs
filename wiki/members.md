@@ -390,4 +390,5 @@ act, and the reply is only ever visible to you.
 
 - [The `/setup` wizard]({{ '/wiki/setup/' | relative_url }}) — configure channels, staff roles, onboarding and verification
 - [Moderation &amp; safety]({{ '/wiki/moderation/' | relative_url }}) — warnings, notes, bans and the tools behind a ban appeal
+- [Emote commands]({{ '/wiki/emotes/' | relative_url }}) — react with the perfect GIF (and `/meme`)
 - [Back to the Wiki hub]({{ '/wiki/' | relative_url }})
