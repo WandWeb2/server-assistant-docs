@@ -50,6 +50,13 @@ boyfriend`, `/meme this is fine`, `/meme success kid`. Memes are sourced from **
 They share the emote feature's server controls (channel allowlist, rate limit and
 NSFW safe-search) and have their own on/off toggle in `/settings → Emotes`.
 
+Like emotes, `/meme` adds a **natural caption** that says what the meme conveys about you
+— `/meme this is fine` → "@User has decided everything is fine", `/meme drake` → "@User has
+notes". On AI-enabled servers (your **AI allowance, free trial included** — not Premium-only)
+the caption is written to fit the meme *and* the recent conversation, using the same
+**AI theme-pick** toggle as emotes. When AI isn't available it falls back to a built-in
+library of well-known memes, and an unrecognised meme simply posts the image.
+
 ## Server controls — `/settings → ⚙️ Settings → Emotes`
 
 Owners and admins can:
