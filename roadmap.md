@@ -525,87 +525,38 @@ Where Server Assistant is heading. Priorities are decided by the people who run 
 </div>
 
 <!-- ════════════════════════════════════════════════════════════════════════
-     THE BUILD QUEUE — one container, banded by status, most votes on top.
-     Band order is fixed (gold → purple → blue → green → grey → shipped);
-     cards inside the purple band re-sort LIVE from poll tallies (JS below).
+     THE BUILD QUEUE — one container, banded by status.
+     CURRENT STATE (between rounds, 2026-06-26): the v6.0 vote winners have all
+     shipped, and the NEXT vote will be over whole FEATURE GROUPS (the themed
+     packs), not individual cards — staged but NOT live yet ("coming soon").
+     So the order here is now: gold (last round, shipped) → blue (Committed) →
+     purple "In the running — next vote (coming soon)" holding the feature-group
+     packs in #band-pool → ✅ Shipped → 🗳️ Previous votes (archive).
+     When the next poll opens, individual options get promoted back into a
+     re-sortable purple #band-purple band per the lifecycle rules below; the
+     live-vote JS is null-safe while #band-purple is absent.
      ════════════════════════════════════════════════════════════════════════ -->
 
 <div class="build-queue">
 
-  <div class="band-h band-gold">🥇 v6.0 — confirmed by our community<span class="sub">The community's most-voted features. 🚨 Anti-nuke shipped first in v6.0.0 — Verification and Leveling are up next.</span></div>
+  <div class="band-h band-gold">🥇 v6.0 — confirmed by our community, now fully shipped ✅<span class="sub">All three community-voted features have landed: 🚨 Anti-nuke (v6.0.0), 🛡️ Verification (v6.1), and 🏅 Leveling &amp; XP (v6.2.3). The next round is open for votes — the winners will appear here.</span></div>
   <div class="band" id="band-gold">
 
-  <details class="card" id="card-verification-gate">
-    <summary>🛡️ Verification &amp; join-approval — portal-based</summary>
-    <span class="desc">Risk-scored joiners are held in a no-access <em>pending</em> state and sent to complete verification on the <strong>web portal</strong> (no fragile DM or in-server buttons). Higher-risk joins route to staff as a one-tap <strong>Approve / Kick / Ban</strong> review with a full report; the member is DM'd the outcome, with a portal <strong>appeal form always available</strong>. Self-learning — it adapts to your staff's decisions and feeds setting suggestions. Builds on the Ticket Panels intake engine and the existing verification gate.</span>
-  </details>
-
-  <details class="card" id="card-leveling-xp">
-    <summary>🏅 Leveling &amp; XP — portal-hosted</summary>
-    <span class="desc">Server XP with combined lifetime + seasonal leaderboards, hosted primarily on the <strong>web portal</strong>. Anti-spam built in, per-user opt-out, privacy-first boards. <strong>SAi hands out weekly/monthly awards</strong> (your cadence), Pulse suggests an event when things go quiet, reputation tracks reaction counts, and XP doubles as a trust signal. Spend XP on rewards and fun perks — with room for cross-server, SA-hosted competitions. Opt-in per server.</span>
-  </details>
+  <div class="band-empty">🎉 The v6.0 community-voted set has shipped in full. The next round's winners appear here once the current vote closes — cast yours when the poll lands in your staff chat.</div>
 
   </div>
 
 
-  <div class="band-row">
-  <div class="band-col">
-  <div class="band-h band-purple">🟣 In the running<span class="sub">The rest of the current vote — every vote can push a card up into gold</span></div>
-  <div class="band" id="band-purple">
-
-  <details class="card" id="card-ai-command">
-    <summary>🤖 <code>/ai</code> for your community + AI Access panel</summary>
-    <span class="desc">A Premium-only command any member can use in opted-in servers: <code>/ai &lt;your question&gt;</code> and Server Assistant replies under its own name with a Claude-powered answer. Default <strong>off</strong>. Useful for "what time is it in Berlin?", "explain this Discord setting", "draft a server rule for X". Image generation stays on <code>/imagine</code> separately so the free-tier Pollinations fallback isn't lost. <strong>Ships with its owner-facing control panel</strong> — <code>/settings → 🤖 AI Access</code>: enable toggle, allowed channels, reply visibility (public/ephemeral), per-user and per-channel rate limits, content strictness, and a query log.</span>
-  </details>
-
-  <details class="card" id="card-rule-explainer">
-    <summary>🧠 AI rule explainer</summary>
-    <span class="desc">AutoMod DMs the user not just which filter matched, but why this rule exists, in plain language. Cuts the "I have no idea why I got warned" complaint at the root.</span>
-  </details>
-
-  <details class="card" id="card-native-coaching">
-    <summary>🧭 Native-action coaching <span class="admin-pill">Baseline admin</span></summary>
-    <span class="desc"><strong>Logging</strong> of native Discord actions (right-click ban/kick/timeout) <strong>shipped in v5.1</strong>. What's coming next: when a staff member moderates from Discord's own UI, they get a gentle one-line tip on doing the same thing through Server Assistant (so you keep your escalation ladder, approvals, and undo window intact). Read-only; never blocks the action.</span>
-  </details>
-
-  <details class="card" id="card-coverage-map">
-    <summary>📊 Staff insights — coverage map + shared tips</summary>
-    <span class="desc">Two staff-intelligence features that ship as one bundle. <strong>Staff coverage map</strong> — time-zone-aware visualisation of when each mod is typically active; flags coverage gaps for raid-prone hours. <strong>Community-of-practice sharing</strong> — <em>"servers like yours configure X this way"</em> recommendations based on similar community profiles; privacy-first — patterns only, no per-server identifying data.</span>
-  </details>
-
-  <details class="card" id="card-bot-on-bot">
-    <summary>🔍 Bot-on-bot detection</summary>
-    <span class="desc">Flag suspicious automation pretending to be human — relevant for mass-marketing raids that evade text filters.</span>
-  </details>
-
-  <details class="card" id="card-byo-media">
-    <summary>🎨 Bring your own AI media credits</summary>
-    <span class="desc">Connect your own <a href="https://pollinations.ai" target="_blank" rel="noopener">Pollinations</a> account to power AI media generation — <code>/imagine</code> images today, plus video, text-to-speech, and voice over time — on your <strong>own</strong> balance, with no shared limits. A one-time approve-in-browser flow links your account; you set your own budget, restrict allowed models, and revoke access any time. Media runs at your pace, independent of the built-in allowance.</span>
-  </details>
-
-  <details class="card" id="card-embed-builder">
-    <summary>🪄 Embed builder</summary>
-    <span class="desc">Interactive wizard for crafting rich announcements with fields, images, and buttons.</span>
-  </details>
-
-  </div>
-  </div>
-
-  <div class="band-col">
   <div class="band-h band-blue">🔵 Committed<span class="sub">Building regardless of votes</span></div>
   <div class="band" id="band-blue">
-
-    <details class="card"><summary>🪄 Setup &amp; settings wizard overhaul</summary><span class="desc">A top-to-bottom redesign of the setup and <code>/settings</code> wizards for a faster, clearer first run — fewer steps, smarter defaults, and plain-language explanations of what each toggle actually does. Includes a full review of every setting and feature to decide what should be <strong>standard out of the box</strong> versus <strong>opt-in</strong>, so a fresh server is well-protected by default without being buried in choices.</span></details>
 
     <details class="card"><summary>🎁 Vote &amp; review incentives</summary><span class="desc">Thank the community for steering the bot: light perks for servers that take part in the feature votes and members who leave a review on the bot directories (top.gg, DiscordForge, and friends) — think a small bonus AI-token top-up and a reviewer shout-out.</span></details>
 
     <details class="card"><summary>🌐 Member Portal &amp; streamlined commands</summary><span class="desc">Opening the web portal to <strong>every member</strong>, not just staff: a self-service home for your own settings, two-way records &amp; forms between you and the team, and privacy opt-outs (including the threat network) — all in one place. Alongside it, a leaner set of bot commands: every ability stays listed for discoverability, but the heavy lifting moves to easy in-browser wizards, with each command deep-linking straight to the exact setting or form in the portal. The bot also delivers its privacy notice automatically on install and on demand.</span></details>
 
   </div>
-  </div>
-  </div>
 
-  <div class="band-h band-green">🟢 The backlog — grouped into feature packs<span class="sub">Themed bundles we draw future vote rounds from · a strong /feedback case pulls a card into the next poll</span></div>
+  <div class="band-h band-purple">🟣 In the running — next vote (coming soon)<span class="sub">The next community vote picks a whole <strong>feature group</strong> to build next — every themed group below is in the running. Voting isn't open yet; the poll lands in your staff chat soon.</span></div>
   <div class="band" id="band-pool">
 
 <!-- Feature packs — collapsible themed bundles (details.pack, collapsed by
@@ -617,9 +568,13 @@ Where Server Assistant is heading. Priorities are decided by the people who run 
      Keep each .pack-count roughly in sync (e.g. "5 cards · 2 upgrades"). -->
 
   <details class="pack">
-  <summary class="pack-h">🎉 Engagement &amp; Community <span class="pack-count">8 cards · 3 new · 1 upgrade</span></summary>
+  <summary class="pack-h">🎉 Engagement &amp; Community <span class="pack-count">10 cards · 3 new · 1 upgrade</span></summary>
   <div class="pack-desc">Reasons to show up that aren't moderation: currency, giveaways, events and highlights that reward real participation. Built to share one progression system with the Leveling/XP groundwork rather than bolting on separate economies.</div>
   <div class="longterm-grid">
+
+  <details class="card"><summary>🤖 <code>/ai</code> for your community + AI Access panel</summary><span class="desc">A Premium-only command any member can use in opted-in servers: <code>/ai &lt;your question&gt;</code> and Server Assistant replies under its own name with a Claude-powered answer. Default <strong>off</strong>. Useful for "what time is it in Berlin?", "explain this Discord setting", "draft a server rule for X". Image generation stays on <code>/imagine</code> separately so the free-tier Pollinations fallback isn't lost. <strong>Ships with its owner-facing control panel</strong> — <code>/settings → 🤖 AI Access</code>: enable toggle, allowed channels, reply visibility (public/ephemeral), per-user and per-channel rate limits, content strictness, and a query log.</span></details>
+
+  <details class="card"><summary>🪄 Embed builder</summary><span class="desc">Interactive wizard for crafting rich announcements with fields, images, and buttons.</span></details>
 
   <details class="card"><summary>Economy &amp; rewards <span class="new-pill">🆕 New</span></summary><span class="desc">Server currency members earn from real participation — coins for messages, voice time, and daily check-in streaks — spent in an owner-defined shop on roles, perks, or custom rewards. Opt-in per server, opt-out per user, with anti-farming caps so spam doesn't pay. Designed to share one progression system with <strong>Leveling / XP</strong> and <strong>Giveaways</strong> instead of bolting on three separate economies.</span></details>
 
@@ -657,9 +612,11 @@ Where Server Assistant is heading. Priorities are decided by the people who run 
   </details>
 
   <details class="pack">
-  <summary class="pack-h">🛡️ Threat &amp; Raid Defense <span class="pack-count">3 cards · 1 new</span></summary>
+  <summary class="pack-h">🛡️ Threat &amp; Raid Defense <span class="pack-count">4 cards · 1 new</span></summary>
   <div class="pack-desc">Proactive security for the attacks the text AutoMod can't see — decoy traps, ghost-pings, and DM-blast raids — sitting on top of the shipped AltGuard and Threat Score.</div>
   <div class="longterm-grid">
+
+  <details class="card"><summary>🔍 Bot-on-bot detection</summary><span class="desc">Flag suspicious automation pretending to be human — relevant for mass-marketing raids that evade text filters.</span></details>
 
   <details class="card"><summary>Honeypot spam-trap channel</summary><span class="desc">A decoy <code>#honeypot</code> channel that real members are told to ignore — any account that posts in it is removed instantly (kick / softban / ban, your call) and logged, before it can blast the rest of the server. Catches compromised accounts and spam bots that hit every channel on join. A near-zero-false-positive trip-wire (legitimate members never post there) that complements AltGuard and Threat Score.</span></details>
 
@@ -671,9 +628,11 @@ Where Server Assistant is heading. Priorities are decided by the people who run 
   </details>
 
   <details class="pack">
-  <summary class="pack-h">🎚️ Adaptive Moderation <span class="pack-count">5 cards · 2 upgrades</span></summary>
+  <summary class="pack-h">🎚️ Adaptive Moderation <span class="pack-count">6 cards · 2 upgrades</span></summary>
   <div class="pack-desc">Context-aware, soft-touch enforcement — the right response, not just the harshest. Two cards upgrade the shipped AutoMod engine; the rest are gentler alternatives to deletion.</div>
   <div class="longterm-grid">
+
+  <details class="card"><summary>🧠 AI rule explainer</summary><span class="desc">AutoMod DMs the user not just which filter matched, but why this rule exists, in plain language. Cuts the "I have no idea why I got warned" complaint at the root.</span></details>
 
   <details class="card"><summary>Persona / role-based moderation <span class="upgrade-pill">⬆️ Upgrade</span></summary><span class="desc">Upgrades the shipped <strong>AutoMod engine</strong> with per-role-tier filter aggressiveness — community norms scale with trust, so verified members get more latitude and unverified get less.</span></details>
 
@@ -717,9 +676,13 @@ Where Server Assistant is heading. Priorities are decided by the people who run 
   </details>
 
   <details class="pack">
-  <summary class="pack-h">👥 Staff &amp; Team Operations <span class="pack-count">4 cards · 2 upgrades</span></summary>
+  <summary class="pack-h">👥 Staff &amp; Team Operations <span class="pack-count">6 cards · 2 upgrades</span></summary>
   <div class="pack-desc">Tools for the people running the server, not just the members — scheduling, coaching and shared decisions that build on the shipped retrospectives and approval ladder.</div>
   <div class="longterm-grid">
+
+  <details class="card"><summary>🧭 Native-action coaching <span class="admin-pill">Baseline admin</span></summary><span class="desc"><strong>Logging</strong> of native Discord actions (right-click ban/kick/timeout) <strong>shipped in v5.1</strong>. What's coming next: when a staff member moderates from Discord's own UI, they get a gentle one-line tip on doing the same thing through Server Assistant (so you keep your escalation ladder, approvals, and undo window intact). Read-only; never blocks the action.</span></details>
+
+  <details class="card"><summary>📊 Staff insights — coverage map + shared tips</summary><span class="desc">Two staff-intelligence features that ship as one bundle. <strong>Staff coverage map</strong> — time-zone-aware visualisation of when each mod is typically active; flags coverage gaps for raid-prone hours. <strong>Community-of-practice sharing</strong> — <em>"servers like yours configure X this way"</em> recommendations based on similar community profiles; privacy-first — patterns only, no per-server identifying data.</span></details>
 
   <details class="card"><summary>Predictive mod scheduling</summary><span class="desc">Operational intelligence: <em>"Sunday evenings see 3× your average AutoMod hits — adjust on-call rotation?"</em></span></details>
 
@@ -757,9 +720,11 @@ Where Server Assistant is heading. Priorities are decided by the people who run 
   </details>
 
   <details class="pack">
-  <summary class="pack-h">🔌 Platform &amp; Integrations <span class="pack-count">2 cards · 1 upgrade</span></summary>
+  <summary class="pack-h">🔌 Platform &amp; Integrations <span class="pack-count">3 cards · 1 upgrade</span></summary>
   <div class="pack-desc">Take Server Assistant's data and controls beyond Discord — deeper browser tooling on the shipped web portal, plus a read-only API for your own builds.</div>
   <div class="longterm-grid">
+
+  <details class="card"><summary>🎨 Bring your own AI media credits</summary><span class="desc">Connect your own <a href="https://pollinations.ai" target="_blank" rel="noopener">Pollinations</a> account to power AI media generation — <code>/imagine</code> images today, plus video, text-to-speech, and voice over time — on your <strong>own</strong> balance, with no shared limits. A one-time approve-in-browser flow links your account; you set your own budget, restrict allowed models, and revoke access any time. Media runs at your pace, independent of the built-in allowance.</span></details>
 
   <details class="card"><summary>Web portal — advanced settings &amp; analytics <span class="upgrade-pill">⬆️ Upgrade</span></summary><span class="desc">Extends the shipped <strong>web portal</strong> with the deeper tools that still live in Discord today: <strong>full AutoMod editing in the browser</strong> — escalation ladders, server-type templates and live previews; <strong>threat-score trend charts</strong>; and <strong>undo windows</strong> surfaced right in the portal.</span></details>
 
@@ -797,6 +762,21 @@ Where Server Assistant is heading. Priorities are decided by the people who run 
   <details class="band-shipped">
     <summary>✅ Shipped — the full history (tap to expand)</summary>
     <div class="shipped-scroll">
+
+    <details class="card">
+      <summary>🪄 Setup &amp; settings wizard overhaul <span class="shipped-pill">✅ Shipped v6.3</span></summary>
+      <span class="desc">A top-to-bottom refresh of the setup and <code>/settings</code> wizards: <code>/settings</code> reorganised into four clear sections (Settings · Members · Notifications · Security, v6.3.1), a faster guided <code>/setup</code> that pre-fills your current config rather than starting blank, plain-language permission review, and a full pass over which features are <strong>standard out of the box</strong> versus <strong>opt-in</strong> — so a fresh server is well-protected by default without being buried in choices.</span>
+    </details>
+
+    <details class="card">
+      <summary>🏅 Leveling &amp; XP <span class="shipped-pill">✅ Shipped v6.2.3</span></summary>
+      <span class="desc">Server XP earned from real participation, with level-up announcements you control (<code>/leveling</code>), <strong>Double-XP events</strong>, anti-spam and per-user opt-out. XP doubles as a trust signal and is spent in <strong>Crestbound</strong>, the Crest-collecting game in the web portal. The third of the community-voted v6.0 features. <a href="{{ site.url }}{{ site.baseurl }}/wiki/leveling/">Full guide →</a></span>
+    </details>
+
+    <details class="card">
+      <summary>🛡️ Verification &amp; join-approval <span class="shipped-pill">✅ Shipped v6.1</span></summary>
+      <span class="desc">Risk-scored joiners are held in a no-access <em>pending</em> state and wave the safe ones straight through; higher-risk joins route to staff as a one-tap <strong>Approve / Kick / Ban</strong> review with a full report, and the member is DM'd the outcome with a portal appeal form. A one-tap <strong>Auto-configure channels</strong> helper (v6.3.2) wires the hidden/visible channels for you. The second of the community-voted v6.0 features.</span>
+    </details>
 
     <details class="card">
       <summary>🚨 Anti-nuke / rogue-admin guard <span class="shipped-pill">✅ Shipped v6.0.0</span></summary>
@@ -994,6 +974,18 @@ Where Server Assistant is heading. Priorities are decided by the people who run 
       <summary>Pulse <span class="shipped-pill">✅ Shipped v3.5</span></summary>
       <span class="desc">Always-on AI server-health analyst. Daily digests, leading-indicator flags, channel-tone shifts. Never auto-actions — just gives staff x-ray vision. <strong>v1 shipped 2026-05-28</strong> — 24-hour summary, week-over-week deltas, two leading-indicator flags (AutoMod-rate spike, sub-raid join spike). Channel-tone analysis lands in a later iteration.</span>
     </details>
+    </div>
+  </details>
+
+  <details class="band-shipped">
+    <summary>🗳️ Previous votes — closed poll results</summary>
+    <div class="shipped-scroll">
+
+    <details class="card" open>
+      <summary>📊 2026-06-20 — the v6.0 feature round</summary>
+      <span class="desc">The community staff-chat poll that set the <strong>v6.0</strong> release. <strong>Winners — now shipped:</strong> 🚨 Anti-nuke (v6.0.0), 🛡️ Verification &amp; join-approval (v6.1), 🏅 Leveling &amp; XP (v6.2.3).<br><br><strong>Also on the ballot</strong> — these carried forward into the backlog feature groups and are in the running for a future round: 🤖 <code>/ai</code> for your community, 🧠 AI rule explainer, 🧭 Native-action coaching, 📊 Staff coverage map &amp; shared tips, 🔍 Bot-on-bot detection, 🎨 Bring your own AI media credits, and 🪄 Embed builder.</span>
+    </details>
+
     </div>
   </details>
 
