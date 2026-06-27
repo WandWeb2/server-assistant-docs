@@ -133,7 +133,7 @@ You're set up in about a minute — the bot does the work, you just confirm.
     <div class="ptag">Same wizard</div>
     <div class="pico">🧭</div>
     <h4><code>/setup</code></h4>
-    <p>Rather do it in-server? Run it any time.</p>
+    <p>Rather do it in-server? Run it any time — or tap the <strong>🚀 Run setup</strong> button the bot shows on any command before you're set up.</p>
   </div>
   <div class="path c-amber">
     <div class="ptag">In a browser</div>

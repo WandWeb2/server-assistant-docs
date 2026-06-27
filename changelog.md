@@ -35,14 +35,11 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 </style>
 
 <details class="doc-sec" markdown="1" open>
-<summary>v6.6.3 — <code>/meme</code> now captions the moment</summary>
+<summary>v6.7.2 — Finishing setup just got easier</summary>
 
-**`/meme` now reads like an emote.** Instead of just echoing your search, the bot adds a caption describing what the meme says about you — `/meme this is fine` → **"@User has decided everything is fine"**, `/meme drake` → **"@User has notes"**, `/meme woman yelling at cat` → **"@User is losing an argument to a cat"**.
+**A one-tap way back into setup.** If someone tries a command before your server is set up, the bot now shows a **🚀 Run setup** button right there — one tap opens the setup wizard, so you never have to remember the `/setup` command. The button keeps working even if the original welcome message has scrolled away or the bot has restarted since you added it.
 
-- **Smart, in-context captions** — on AI-enabled servers (your **AI allowance, free trial included** — not Premium-only) the caption is written to fit the meme *and* the conversation, accurate and a little funny. It's governed by the same **AI theme-pick** toggle as emotes in `/settings → Emotes`.
-- **Always works** — when AI isn't available it falls back to a built-in library of well-known memes for a witty caption, and an unrecognised meme just posts the image. No dead ends.
-
-GIFs &amp; memes by KLIPY.
+- **A quicker nudge if you get stuck.** If setup is left unfinished, the friendly reminder to wrap it up now arrives sooner rather than a day later — it only takes about a minute to finish.
 </details>
 
 <details class="doc-sec" markdown="1">
@@ -53,6 +50,17 @@ GIFs &amp; memes by KLIPY.
 - **It rewards being *present*, not just connected.** You earn while you're actually in the conversation — sitting muted to listen on a movie or study night still counts. You **won't** earn while you're parked in the server's AFK channel, deafened, or alone in a channel, so nobody can farm levels by idling overnight.
 - **Double-XP events apply here too.** If your server's running a Double-XP event (or you've got a personal Double-XP buff from leaving a review), your voice time earns at 2× as well.
 - **Free for everyone.** Like chat XP, voice XP is on for all servers — no Premium needed.
+</details>
+
+<details class="doc-sec" markdown="1">
+<summary>v6.6.3 — <code>/meme</code> now captions the moment</summary>
+
+**`/meme` now reads like an emote.** Instead of just echoing your search, the bot adds a caption describing what the meme says about you — `/meme this is fine` → **"@User has decided everything is fine"**, `/meme drake` → **"@User has notes"**, `/meme woman yelling at cat` → **"@User is losing an argument to a cat"**.
+
+- **Smart, in-context captions** — on AI-enabled servers (your **AI allowance, free trial included** — not Premium-only) the caption is written to fit the meme *and* the conversation, accurate and a little funny. It's governed by the same **AI theme-pick** toggle as emotes in `/settings → Emotes`.
+- **Always works** — when AI isn't available it falls back to a built-in library of well-known memes for a witty caption, and an unrecognised meme just posts the image. No dead ends.
+
+GIFs &amp; memes by KLIPY.
 </details>
 
 <details class="doc-sec" markdown="1">
