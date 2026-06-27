@@ -35,6 +35,15 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 </style>
 
 <details class="doc-sec" markdown="1" open>
+<summary>v6.7.5 — Every way to set up now lands in the same place</summary>
+
+**However you set up, you get the same result.** The `/setup` wizard, the one-tap **`/autopilot`**, and the **web portal** now all finish identically — your channels and roles configured, a moderation profile matched to your community, and the free AI trial on.
+
+- **`/autopilot` is fixed.** It now fully completes setup and switches your commands on, instead of leaving the server half-configured.
+- **If you set up earlier and the bot still acted "not set up,"** that's now corrected automatically — no need to run setup again.
+</details>
+
+<details class="doc-sec" markdown="1">
 <summary>v6.7.4 — Setup in one tap</summary>
 
 **Setup is now as fast as a single tap.** The first screen of `/setup` has a new **✅ Looks good — finish now** button: the bot fills in your channels, a sensible moderation profile for your community type, and your AI — you just confirm. No need to walk every screen unless you want to fine-tune.
