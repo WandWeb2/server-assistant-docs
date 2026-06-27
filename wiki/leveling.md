@@ -31,7 +31,7 @@ Commands on this page are tagged so you know what you're looking at:
 
 ## How XP is earned {#earning-xp}
 
-There are two ways to earn XP, and both happen on their own.
+Most ways to earn XP happen on their own — just by taking part.
 
 **By chatting.** Every message a member posts earns a small amount of XP, with a
 little extra for putting thought into a longer message. To keep things fair, there's
@@ -39,6 +39,15 @@ a gentle limit on how much you can earn in any short burst — so a steady, genu
 contributor is always rewarded ahead of someone spamming one-word messages, and
 posting the same line over and over doesn't earn anything. In short: **take part in
 the conversation and your XP grows naturally.**
+
+**By hanging out in voice.** Time spent **actively** in a voice channel earns XP too,
+into the same balance as chatting. The busier the channel, the more it's worth per
+minute — a lively call with several people pays more than a quiet two-person chat. It
+rewards being genuinely *present*: sitting muted to listen on a movie or study night
+still counts, but you **won't** earn while you're parked in the server's AFK channel,
+deafened, or alone in a channel — so nobody can farm levels by idling overnight. A
+gentle hourly limit keeps long sessions fair. In short: **join a call and your XP grows
+as you hang out.**
 
 **By voting for Server Assistant.** Give the bot a vote on
 [**DiscordForge**](https://discordforge.org/bot/1278486617375510570) and you earn
@@ -69,20 +78,20 @@ manual confirmation and you're rewarded by DM.
 
 **Double-XP events.** When a server's been quiet, the bot may offer its staff a
 **48-hour Double-XP event**. While one is running, **every member earns 2× XP for
-chatting** (voting rewards stay the same), and the staff get a recap of the total XP
+chatting and voice time** (voting rewards stay the same), and the staff get a recap of the total XP
 earned when it ends. Only a server manager can start one — there's no way for a server
 to grant itself double XP otherwise.
 
 **Your personal Double-XP buff.** The month of Double XP from a review is **yours** — it
 follows you across **every server you share with Server Assistant**, doubling the XP you
-earn from chatting. If a server-wide Double-XP event is also running, your XP still
+earn from chatting and voice time. If a server-wide Double-XP event is also running, your XP still
 doubles (never quadruples) — the boost is capped at 2×.
 
 **Your weekly recap.** Once a week, if you earned any XP, the bot DMs you a quick summary
 — how much came from **being active** versus **voting** — so you can see your progress at
 a glance (and grab a vote link for more).
 
-<p style="color:var(--fg-1);font-size:.9rem;line-height:1.55;"><strong>One wallet, everywhere.</strong> Your XP is tied to <em>you</em>, not to a single server — chat XP from every server you're in, plus your voting rewards, all add up into one account-wide total. That same total is what you spend in <a href="{{ '/wiki/crestbound/' | relative_url }}">Crestbound</a>, the Crest-collecting game in the portal.</p>
+<p style="color:var(--fg-1);font-size:.9rem;line-height:1.55;"><strong>One wallet, everywhere.</strong> Your XP is tied to <em>you</em>, not to a single server — chat and voice XP from every server you're in, plus your voting rewards, all add up into one account-wide total. That same total is what you spend in <a href="{{ '/wiki/crestbound/' | relative_url }}">Crestbound</a>, the Crest-collecting game in the portal.</p>
 
 ---
 

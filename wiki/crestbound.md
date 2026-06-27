@@ -17,7 +17,7 @@ open **booster packs**, collect ornate **Crests**, and chase a complete Chapter.
 a reward for taking part, with nothing extra to buy.
 
 > **Powered by your XP.** Crestbound runs on the same account-wide XP you earn from
-> chatting and from [voting for Server Assistant]({{ '/wiki/leveling/' | relative_url }}#earning-xp).
+> chatting, voice time, and from [voting for Server Assistant]({{ '/wiki/leveling/' | relative_url }}#earning-xp).
 > Opening a pack spends that XP; there's no separate purchase and no Premium
 > required — if you've earned XP, you can play.
 
