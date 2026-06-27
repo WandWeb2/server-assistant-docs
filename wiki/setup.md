@@ -176,7 +176,7 @@ You're set up in about a minute — the bot does the work, you just confirm.
   </div>
 </div>
 
-<p style="text-align:center; font-size:.85rem; color:var(--ink-soft); margin:1.1rem 0 0;">💡 In a real hurry? <code>/autopilot</code> skips the step-by-step wizard and applies the detected defaults in one tap — a faster <em>style</em> of setup, not a separate place to start (fine-tune anything later in <code>/settings</code>).</p>
+<p style="text-align:center; font-size:.85rem; color:var(--ink-soft); margin:1.1rem 0 0;">💡 In a real hurry? <code>/autopilot</code> skips the step-by-step wizard and applies the detected defaults in one tap — a faster <em>style</em> of setup, not a separate place to start (fine-tune anything later in <code>/settings</code>). <strong>However you set up</strong> — the wizard, <code>/autopilot</code>, or the <a href="https://serverassistant.wandweb.co">web portal</a> — you land in the same place: channels and roles configured, a moderation profile matched to your community, and the free AI trial on.</p>
 
 ### Nice first touches
 
