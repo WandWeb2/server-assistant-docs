@@ -53,7 +53,7 @@ portal as a whole see the [Portal changelog]({{ '/wiki/changelog-portal/' | rela
   full, the ones still out there as placeholders — so you can always see what's left to
   find.
 - **Powered by your XP.** Crestbound runs on the same account-wide XP you earn from
-  chatting and from voting for Server Assistant — no separate purchase, no Premium
+  chatting, voice time, and from voting for Server Assistant — no separate purchase, no Premium
   required.
 
 ---

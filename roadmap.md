@@ -763,9 +763,18 @@ Where Server Assistant is heading. Priorities are decided by the people who run 
 
   </div>
 
-  <details class="band-shipped">
-    <summary>✅ Shipped — the full history (tap to expand)</summary>
+  <details class="band-shipped" id="band-shipped" open>
+    <summary>✅ Shipped — the full history</summary>
     <div class="shipped-scroll">
+
+    <!-- LATEST FIRST. The newest release is auto-expanded on page load (and the
+         rest auto-collapsed) by the shipped-latest script at the foot of this
+         file — so adding a new card at the TOP is all that's needed; no `open`
+         attribute to move. The `open` below is a no-JS fallback only. -->
+    <details class="card" open>
+      <summary>🎙️ Voice time earns XP <span class="shipped-pill">✅ Shipped v6.7.0</span></summary>
+      <span class="desc">Hanging out in voice now counts toward your level. While you're <strong>actively</strong> in a voice channel you earn XP into the same balance as chatting, and the busier the channel the more it's worth per minute. It rewards being <em>present</em> — sitting muted to listen on a movie or study night still counts — but <strong>not</strong> idling: you earn nothing while parked in the AFK channel, deafened, or alone in a channel, so levels can't be farmed overnight. <strong>Double-XP events and buffs apply</strong> in voice too, and like all XP it's <strong>free for every server</strong>. <a href="{{ site.url }}{{ site.baseurl }}/wiki/leveling/">Full guide →</a></span>
+    </details>
 
     <details class="card">
       <summary>😄 Emote commands &amp; <code>/meme</code> <span class="shipped-pill">✅ Shipped v6.6.3</span></summary>
@@ -1387,5 +1396,19 @@ What ships is what gets requested most clearly. Vague *"add more features"* feed
 
   refresh();
   schedule();
+})();
+</script>
+
+<script>
+(function () {
+  // Shipped history: surface the LATEST release on page load — open the section
+  // and expand its newest card (the first in the list), collapsing the rest so
+  // exactly one is open. Driven off list position, not a hardcoded `open`, so a
+  // new release just needs its card added at the TOP — nothing else to toggle.
+  var sec = document.getElementById("band-shipped");
+  if (!sec) return;
+  sec.open = true;
+  var cards = sec.querySelectorAll(".shipped-scroll > details.card");
+  cards.forEach(function (c, i) { c.open = (i === 0); });
 })();
 </script>
