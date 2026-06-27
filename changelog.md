@@ -46,6 +46,16 @@ GIFs &amp; memes by KLIPY.
 </details>
 
 <details class="doc-sec" markdown="1">
+<summary>v6.7.0 — Hanging out in voice now earns XP</summary>
+
+**Time spent together in voice chat now counts toward your level.** While you're actively in a voice channel, you earn XP for it — feeding the same balance as chatting. The busier the channel, the more it's worth: a lively call with several people pays more per minute than a quiet two-person chat.
+
+- **It rewards being *present*, not just connected.** You earn while you're actually in the conversation — sitting muted to listen on a movie or study night still counts. You **won't** earn while you're parked in the server's AFK channel, deafened, or alone in a channel, so nobody can farm levels by idling overnight.
+- **Double-XP events apply here too.** If your server's running a Double-XP event (or you've got a personal Double-XP buff from leaving a review), your voice time earns at 2× as well.
+- **Free for everyone.** Like chat XP, voice XP is on for all servers — no Premium needed.
+</details>
+
+<details class="doc-sec" markdown="1">
 <summary>v6.6.2 — New <code>/meme</code> command</summary>
 
 **Drop the perfect meme into chat.** New **`/meme <search>`** posts a meme image matching your search — `/meme distracted boyfriend`, `/meme this is fine`, `/meme success kid`. Memes come from **KLIPY**.
