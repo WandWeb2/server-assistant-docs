@@ -35,6 +35,15 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 </style>
 
 <details class="doc-sec" markdown="1" open>
+<summary>v6.7.4 — Setup in one tap</summary>
+
+**Setup is now as fast as a single tap.** The first screen of `/setup` has a new **✅ Looks good — finish now** button: the bot fills in your channels, a sensible moderation profile for your community type, and your AI — you just confirm. No need to walk every screen unless you want to fine-tune.
+
+- **No AI key to enter.** Your **free 150,000-token AI trial is just on** — there's nothing to set up. Want to run on your own AI key with no trial limit instead? Run **`/ai-config`** any time.
+- **Still fully customisable.** Prefer to pick everything yourself? The step-by-step wizard is still there — the one-tap button just skips to the end with smart defaults.
+</details>
+
+<details class="doc-sec" markdown="1">
 <summary>v6.7.2 — Finishing setup just got easier</summary>
 
 **A one-tap way back into setup.** If someone tries a command before your server is set up, the bot now shows a **🚀 Run setup** button right there — one tap opens the setup wizard, so you never have to remember the `/setup` command. The button keeps working even if the original welcome message has scrolled away or the bot has restarted since you added it.
