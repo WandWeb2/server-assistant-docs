@@ -35,6 +35,18 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 </style>
 
 <details class="doc-sec" markdown="1" open>
+<summary>v6.7.11 — Raid, AutoMod-review & Double-XP buttons keep working too</summary>
+
+**More alert buttons that don't go stale.** Following the anti-nuke fix, the buttons on three more alerts now keep working even if the bot updates or restarts after the alert was posted — so you're never left tapping a dead button on something time-sensitive:
+
+- **Raid alerts** — **Lock down** and **Dismiss**.
+- **The Double-XP offer** — **Start the event** and **Not now** (this one can sit for days, so it was the most likely to go stale).
+- **AutoMod "needs review" cards** — **Delete & warn** and **Allow**.
+
+As before, tapping one of these on an older message just works now instead of showing "This interaction failed."
+</details>
+
+<details class="doc-sec" markdown="1">
 <summary>v6.7.10 — Anti-nuke buttons keep working after an update</summary>
 
 **Your security controls don't go stale.** The buttons on an anti-nuke alert — **Quarantine**, **Undo quarantine**, **Restore server**, **Trust this actor** — now keep working even if the bot updates or restarts after the alert was posted. Previously, tapping one later could show "This interaction failed"; now it just works, so you're never left unable to act during an incident. (The two-person confirmation for undoing a quarantine survives a restart too.)
