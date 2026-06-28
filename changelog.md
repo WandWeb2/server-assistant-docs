@@ -35,6 +35,12 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 </style>
 
 <details class="doc-sec" markdown="1" open>
+<summary>v6.7.9 — Expired buttons now say so</summary>
+
+**No more silent "This interaction failed."** If you tap a button on an older message — for example a security alert — after the bot has updated, those buttons are no longer connected. Instead of failing silently, the bot now tells you the button has expired and how to get fresh controls (re-run the command, or act from the web portal, where your controls stay live).
+</details>
+
+<details class="doc-sec" markdown="1">
 <summary>v6.7.5 — Every way to set up now lands in the same place</summary>
 
 **However you set up, you get the same result.** The `/setup` wizard, the one-tap **`/autopilot`**, and the **web portal** now all finish identically — your channels and roles configured, a moderation profile matched to your community, and the free AI trial on.
