@@ -35,6 +35,12 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 </style>
 
 <details class="doc-sec" markdown="1" open>
+<summary>v6.7.10 — Anti-nuke buttons keep working after an update</summary>
+
+**Your security controls don't go stale.** The buttons on an anti-nuke alert — **Quarantine**, **Undo quarantine**, **Restore server**, **Trust this actor** — now keep working even if the bot updates or restarts after the alert was posted. Previously, tapping one later could show "This interaction failed"; now it just works, so you're never left unable to act during an incident. (The two-person confirmation for undoing a quarantine survives a restart too.)
+</details>
+
+<details class="doc-sec" markdown="1">
 <summary>v6.7.9 — Expired buttons now say so</summary>
 
 **No more silent "This interaction failed."** If you tap a button on an older message — for example a security alert — after the bot has updated, those buttons are no longer connected. Instead of failing silently, the bot now tells you the button has expired and how to get fresh controls (re-run the command, or act from the web portal, where your controls stay live).
