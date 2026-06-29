@@ -5,7 +5,7 @@ permalink: /wiki/crestbound/
 wiki: true
 wiki_category: "XP & leveling"
 summary: Crestbound is the Crest-collecting game in the Server Assistant portal. Spend the XP you earn in Discord on booster packs, collect the Crests of the first Chapter — Embers of the First War — across four rarities, discover brand-new Crests and bring their art to light, complete your collection, and burn spare Crests back into XP. A full player guide to My Collection, booster packs, discovering Crests and burning.
-wiki_keywords: [crestbound, crests, crest, chapter, wardeck, card game, tcg, collection, booster, booster pack, pack, burn, disenchant, rarity, common, uncommon, rare, mythic, embers of the first war, xp games, portal, discover, discovery, kindle, illuminate, grand reveal, unveil, first light, achievement, crest art, artwork, discovered by, credit, share]
+wiki_keywords: [crestbound, crests, crest, chapter, wardeck, wardecks, battle mode, five crests, faction, factions, warsworn, undertow, bonereave, ragefire, grimwild, card game, tcg, collection, booster, booster pack, pack, burn, disenchant, rarity, common, uncommon, rare, mythic, embers of the first war, xp games, portal, discover, discovery, kindle, illuminate, grand reveal, unveil, first light, achievement, crest art, artwork, discovered by, credit, share]
 description: A player guide to Crestbound — the XP-powered Crest-collecting game in the Server Assistant portal. Earn XP in Discord, open booster packs, discover brand-new Crests and bring their artwork to light, collect the Crests of the first Chapter, Embers of the First War, and burn spare Crests back into XP.
 ---
 
@@ -46,6 +46,15 @@ of them across the four rarities. Future Chapters carry the story on.
 > is on the way, where you'll assemble a **Wardeck** — a 50-Crest battle group drawn
 > from your collection — and put it to the test. That part isn't here yet; for now,
 > Crestbound is all about building your collection.
+
+<figure style="margin:1.75rem auto;max-width:560px;text-align:center;">
+  <img src="{{ '/assets/crestbound/the-five-crests.jpg' | relative_url }}" alt="The Five Crests — Warsworn, Undertow, Bonereave, Ragefire and Grimwild arranged around a pentagram of runes." loading="lazy" style="width:100%;height:auto;border-radius:14px;border:1px solid var(--border);box-shadow:0 10px 34px rgba(0,0,0,.5);">
+  <figcaption style="color:var(--fg-2);font-size:.85rem;line-height:1.55;margin-top:.7rem;">
+    <strong style="color:var(--fg-1);">The Five Crests.</strong> When Wardecks arrives, every Crest will answer to one of five rival sigils —
+    <strong>Warsworn</strong>, <strong>Undertow</strong>, <strong>Bonereave</strong>, <strong>Ragefire</strong> and <strong>Grimwild</strong>.
+    The outer ring binds allies; the star crosses enemies. <em>A first glimpse of the battle mode to come — names and lore may still shift before it lands.</em>
+  </figcaption>
+</figure>
 
 ---
 
