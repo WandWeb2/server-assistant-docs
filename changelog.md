@@ -35,6 +35,12 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 </style>
 
 <details class="doc-sec" markdown="1" open>
+<summary>v6.7.12 — Scam-image protection now catches more scammers</summary>
+
+**Scam screenshots get caught even from older accounts.** Server Assistant already fingerprints scam images and blocks them across servers. Now the AI check for brand-new scam images also looks at posts from **members who just joined your server** — not only those on brand-new Discord accounts. Scammers often join on an older account and post their fake "withdrawal received" or crypto-giveaway screenshot straight away, and this closes that gap. Known scam images are still blocked instantly for everyone, and ordinary members posting normal images are unaffected. It's on by default wherever scam-image protection is enabled.
+</details>
+
+<details class="doc-sec" markdown="1">
 <summary>v6.7.11 — Raid, AutoMod-review & Double-XP buttons keep working too</summary>
 
 **More alert buttons that don't go stale.** Following the anti-nuke fix, the buttons on three more alerts now keep working even if the bot updates or restarts after the alert was posted — so you're never left tapping a dead button on something time-sensitive:
