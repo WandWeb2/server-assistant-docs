@@ -28,6 +28,14 @@ portal as a whole see the [Portal changelog]({{ '/wiki/changelog-portal/' | rela
   no server or member ever gains a gameplay advantage. Parked until enough
   communities are battling; watch this page.
 
+## 2026 — Make it yours: Card Backs {#card-backs}
+
+- **🎴 Card Backs arrive.** The Shop now has a cosmetics shelf: pick the free
+  **Banked Ember**, one of five **faction backs** (300 XP each), or the prestige
+  **Vault Gilt** (150 ✦ Cinders). Your equipped back is shown everywhere a Crest sits
+  face-down — collection placeholders and deck faces. Purely cosmetic: no card back
+  ever changes how the game plays.
+
 ## 2026 — A fullscreen home &amp; the Shop {#fullscreen-shop}
 
 - **🖥️ Crestbound goes fullscreen.** The game now opens into its own full-screen home:
