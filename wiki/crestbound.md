@@ -5,8 +5,8 @@ permalink: /wiki/crestbound/
 wiki: true
 wiki_category: "XP & leveling"
 summary: Crestbound is the Crest-collecting game in the Server Assistant portal. Spend the XP you earn in Discord on booster packs, collect the Crests of the first Chapter — Embers of the First War — across four rarities, discover brand-new Crests and bring their art to light, complete your collection, and burn spare Crests back into XP. A full player guide to My Collection, booster packs, discovering Crests and burning.
-wiki_keywords: [crestbound, crests, crest, chapter, wardeck, wardecks, battle mode, five crests, faction, factions, warsworn, undertow, bonereave, ragefire, grimwild, card game, tcg, collection, booster, booster pack, pack, burn, disenchant, rarity, common, uncommon, rare, mythic, embers of the first war, xp games, portal, discover, discovery, kindle, illuminate, grand reveal, unveil, first light, achievement, crest art, artwork, discovered by, credit, share]
-description: A player guide to Crestbound — the XP-powered Crest-collecting game in the Server Assistant portal. Earn XP in Discord, open booster packs, discover brand-new Crests and bring their artwork to light, collect the Crests of the first Chapter, Embers of the First War, and burn spare Crests back into XP.
+wiki_keywords: [crestbound, crests, crest, chapter, wardeck, wardecks, battle mode, five crests, faction, factions, warsworn, undertow, bonereave, ragefire, grimwild, card game, tcg, collection, booster, booster pack, pack, burn, rarity, common, uncommon, rare, mythic, embers of the first war, xp games, portal, discover, discovery, kindle, illuminate, grand reveal, unveil, first light, achievement, crest art, artwork, discovered by, credit, share, cinders, ember vault, card backs, cosmetics, shop, quests, daily quests, main menu, fullscreen, sort, filter]
+description: A player guide to Crestbound — the XP-powered Crest-collecting game in the Server Assistant portal. Earn XP in Discord, open booster packs, discover brand-new Crests and bring their artwork to light, collect the Crests of the first Chapter, Embers of the First War, burn spare Crests back into XP, and gear up the Shop's card backs and Ember Vault.
 ---
 
 # 🛡️ Crestbound
@@ -45,13 +45,15 @@ a reward for taking part, with nothing extra to buy.
 > after Crest toward an end not yet written.
 
 That hand is yours. The first Chapter, **Chapter I: Embers of the First War**, holds
-a sweeping cast of **Crests** to track down — each Chapter brings roughly **150–200**
-of them across the four rarities. Future Chapters carry the story on.
+a sweeping cast of **450 Crests** to track down across the four rarities. Future
+Chapters carry the story on.
 
-> **Coming later — Wardecks.** Collecting is just the start. A future **battle mode**
-> is on the way, where you'll assemble a **Wardeck** — a 50-Crest battle group drawn
-> from your collection — and put it to the test. That part isn't here yet; for now,
-> Crestbound is all about building your collection.
+> **Coming later — Wardecks &amp; Quests.** Collecting is just the start. A future
+> **battle mode** is on the way, where you'll assemble a **Wardeck** — a 30-Crest
+> battle group drawn from your collection — and put it to the test. Battle mode
+> brings a **Quests** screen with it too, the way you'll earn **✦ Cinders** for the
+> Ember Vault (see [below](#cinders)). That part isn't here yet; for now, Crestbound
+> is all about building your collection.
 
 <figure style="margin:1.75rem auto;max-width:560px;text-align:center;">
   <img src="{{ '/assets/crestbound/the-five-crests.jpg' | relative_url }}" alt="The Five Crests — Warsworn, Undertow, Bonereave, Ragefire and Grimwild arranged around a pentagram of runes." loading="lazy" style="width:100%;height:auto;border-radius:14px;border:1px solid var(--border);box-shadow:0 10px 34px rgba(0,0,0,.5);">
@@ -81,6 +83,23 @@ straight into your collection.
 
 ---
 
+## The main menu {#menu}
+
+Crestbound opens into its own **fullscreen home** — the game takes over the screen
+with a full-art backdrop, rather than sitting in a small portal panel. A HUD across
+the top keeps your **🟡 XP** and **✦ Cinders** balances in view wherever you are, and
+a menu of illustrated tiles is your way around:
+
+- **🗃️ Collection** — your Crests, always available.
+- **🛒 Shop** — packs, the Ember Vault and card backs, always available.
+- **🛠️ Wardecks**, **⚔️ Battle** and **🗓️ Quests** — the battle mode features described
+  above. Their tiles show as **coming soon** until battle mode launches.
+
+Use the **back arrow** in the top corner to move between a screen and the menu, or to
+exit Crestbound entirely from the menu itself.
+
+---
+
 ## Your collection {#collection}
 
 The **My Collection** view shows the whole Chapter at once. Crests you own appear in
@@ -98,7 +117,9 @@ A counter at the top tracks your progress and shows your spendable XP.
   </div></div>
 </div>
 
-<p style="color:var(--fg-1);font-size:.9rem;line-height:1.55;"><strong>Rarest first.</strong> The grid is ordered with the most prized Crests at the top — <strong>mythic</strong>, then <strong>rare</strong>, then <strong>uncommon</strong>, then <strong>common</strong> — so the headline pieces of your collection are always front and centre. The <strong>collected</strong> counter tracks how much of the Chapter you've found; the <strong>🟡 245 XP</strong> is the XP you have to spend.</p>
+<p style="color:var(--fg-1);font-size:.9rem;line-height:1.55;"><strong>Rarest first.</strong> By default the grid is ordered with the most prized Crests at the top — <strong>mythic</strong>, then <strong>rare</strong>, then <strong>uncommon</strong>, then <strong>common</strong> — so the headline pieces of your collection are always front and centre. The <strong>collected</strong> counter tracks how much of the Chapter you've found; the <strong>🟡 245 XP</strong> is the XP you have to spend.</p>
+
+<p style="color:var(--fg-1);font-size:.9rem;line-height:1.55;"><strong>Sorting &amp; filtering.</strong> A toolbar above the grid lets you take control of the view: <strong>Sort</strong> by Rarity (the default), Cost, Name or Faction, and <strong>filter</strong> down to one faction, one rarity, or just the Crests you own or are still missing. Your picks stick for the session as you move between screens.</p>
 
 ### Looking at a Crest {#crest-detail}
 
@@ -156,6 +177,48 @@ collection.
 </div>
 
 <p style="color:var(--fg-1);font-size:.9rem;line-height:1.55;">Land a Crest you already have and the extra copy isn't wasted — duplicates stack in your collection, and you can always turn spares back into XP by <strong>burning</strong> them (below).</p>
+
+---
+
+## Card backs {#card-backs}
+
+Every Crest you haven't turned face-up yet — a collection placeholder, or (once
+battle mode lands) a face-down Crest in a deck — shows a **card back**, and the
+Shop has a cosmetics shelf for dressing yours up:
+
+<table class="cmd-args" style="max-width:560px;">
+  <tr><th>Card back</th><th>Cost</th></tr>
+  <tr><td><strong>Banked Ember</strong></td><td>Free — everyone's starting back</td></tr>
+  <tr><td>Warsworn Aegis / Undertow Sigil / Bonereave Mark / Ragefire Brand / Grimwild Knot</td><td>300 XP each</td></tr>
+  <tr><td><strong>Vault Gilt</strong></td><td>150 ✦ Cinders</td></tr>
+</table>
+
+Buy a back and it equips right away. **Purely cosmetic** — a card back is a look, never
+an advantage; nothing about how the game plays changes because of which one you've
+equipped.
+
+---
+
+## The Ember Vault {#ember-vault}
+
+Alongside the Chapter Booster and the five faction packs, the Shop carries a premium
+pack: the **Ember Vault**. It costs **200 ✦ Cinders** and always contains **5 Crests** —
+the first **4 guaranteed rare**, the last a **guaranteed mythic**. It's the surest way
+to land a mythic Crest — the five faction packs never include one, and the classic
+Chapter Booster's guaranteed rare-or-better slot only rarely turns up a mythic instead
+of a rare.
+
+---
+
+## Cinders {#cinders}
+
+**✦ Cinders** are Crestbound's second currency, separate from the XP that buys
+boosters — they're what the Ember Vault and the Vault Gilt card back cost. They're
+earned by completing **Quests**, both **daily** (account-bound, resetting each day)
+and **seasonal** (global, running the length of a season) — a `🗓️ Quests` screen
+tracks your progress and live Cinders balance. Quests launch alongside battle mode
+(see [above](#menu)), so Cinders aren't earnable through ordinary play just yet —
+the Ember Vault and Vault Gilt are visible in the Shop today, ready for when they are.
 
 ---
 

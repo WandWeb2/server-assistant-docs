@@ -20,7 +20,7 @@ portal as a whole see the [Portal changelog]({{ '/wiki/changelog-portal/' | rela
 ## Coming soon — Wardecks &amp; battles {#upcoming}
 
 - **⚔️ Battle mode is on the way.** A future update will let you assemble a
-  **Wardeck** — a 50-Crest battle group drawn from your collection — and put it to the
+  **Wardeck** — a 30-Crest battle group drawn from your collection — and put it to the
   test. It isn't here yet; for now, Crestbound is all about building your collection.
 - **🏰 Server Wars — on the far horizon.** A community-versus-community season:
   your Discord server is your banner, your members' duels bank points for it, and
@@ -32,9 +32,10 @@ portal as a whole see the [Portal changelog]({{ '/wiki/changelog-portal/' | rela
 
 - **🎴 Card Backs arrive.** The Shop now has a cosmetics shelf: pick the free
   **Banked Ember**, one of five **faction backs** (300 XP each), or the prestige
-  **Vault Gilt** (150 ✦ Cinders). Your equipped back is shown everywhere a Crest sits
-  face-down — collection placeholders and deck faces. Purely cosmetic: no card back
-  ever changes how the game plays.
+  **Vault Gilt** (150 ✦ Cinders — the same quest currency that unlocks the Ember
+  Vault, below). Your equipped back is shown everywhere a Crest sits face-down —
+  collection placeholders and deck faces. Purely cosmetic: no card back ever changes
+  how the game plays.
 
 ## 2026 — A fullscreen home &amp; the Shop {#fullscreen-shop}
 
@@ -72,9 +73,8 @@ portal as a whole see the [Portal changelog]({{ '/wiki/changelog-portal/' | rela
 ## 2026 — Crestbound launches {#launch}
 
 - **The game arrives.** Crestbound launched in the portal with its first Chapter,
-  **“Chapter I: Embers of the First War”** — a sweeping cast of Crests (around
-  **150–200** per Chapter) to collect across four rarities: common, uncommon, rare and
-  mythic.
+  **“Chapter I: Embers of the First War”** — a sweeping cast of **450 Crests** to
+  collect across four rarities: common, uncommon, rare and mythic.
 - **Booster packs.** Spend **200 XP** to open a booster pack of **5 Crests**, with the
   last Crest in every pack **guaranteed to be rare or better**.
 - **My Collection.** Every Crest in the Chapter shown in one place — the ones you own in
