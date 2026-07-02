@@ -178,7 +178,7 @@ details.faq .faq-body table { margin: .5rem 0; }
 
 <details class="faq"><summary>How do I add the bot to my server?</summary>
 <div class="faq-body">
-You'll need <strong>Manage Server</strong> permission. Use the <a href="{{ site.url }}{{ site.baseurl }}/setup/#step-1--invite-the-bot">invite link</a>, or find Server Assistant on <a href="https://top.gg/bot/1278486617375510570">Top.gg</a> or <a href="https://discordbotlist.com/bots/server-assistant">discordbotlist.com</a>. After authorising, the <strong>server owner or any admin with Manage&nbsp;Server</strong> runs <code>/setup</code> — and whoever invited the bot is DM'd the setup wizard automatically.
+You'll need <strong>Manage Server</strong> permission. Use the <a href="{{ site.url }}{{ site.baseurl }}/wiki/setup/">invite link</a>, or find Server Assistant on <a href="https://top.gg/bot/1278486617375510570">Top.gg</a> or <a href="https://discordbotlist.com/bots/server-assistant">discordbotlist.com</a>. After authorising, the <strong>server owner or any admin with Manage&nbsp;Server</strong> runs <code>/setup</code> — and whoever invited the bot is DM'd the setup wizard automatically.
 </div>
 </details>
 
