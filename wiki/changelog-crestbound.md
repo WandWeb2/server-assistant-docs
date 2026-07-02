@@ -23,6 +23,21 @@ portal as a whole see the [Portal changelog]({{ '/wiki/changelog-portal/' | rela
   **Wardeck** — a 50-Crest battle group drawn from your collection — and put it to the
   test. It isn't here yet; for now, Crestbound is all about building your collection.
 
+## 2026 — A fullscreen home &amp; the Shop {#fullscreen-shop}
+
+- **🖥️ Crestbound goes fullscreen.** The game now opens into its own full-screen home:
+  a main menu of illustrated panels — your Collection, the Shop, and the battle
+  features as they arrive — with your 🟡 XP balance always in view at the top.
+- **🛒 A proper Shop.** Packs have moved out of the collection page into a dedicated
+  **Shop**: pick one of the five **faction packs** (5 Crests from a single faction — no
+  Mythics there), open the classic **Chapter Booster**, or eye up the **Ember Vault** —
+  a premium pack of guaranteed rares crowned by a Mythic, opened with **✦ Cinders**, a
+  currency earned from quests arriving alongside battle mode. Your collection keeps a
+  🛒 shortcut straight to the Shop.
+- **🎨 Hand-illustrated everywhere.** The home screen, its menu panels and every pack
+  in the Shop now carry rich HD artwork in the same style as the Crests themselves —
+  each piece fades in as it's ready.
+
 ## 2026 — Tidy your collection {#burning}
 
 - **🔥 Burn spare Crests for XP.** Got duplicates? You can now **burn** a spare Crest

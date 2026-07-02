@@ -132,10 +132,12 @@ The four rarities, from most common to most prized:
   <tr><td><strong>Mythic</strong></td><td><span style="color:#f59e0b;">gold</span></td><td>The rarest and most sought-after Crests.</td></tr>
 </table>
 
-**Opening a pack.** Press the booster button in your collection. The button only lights
-up when you have enough XP — if you're short, it tells you so (you'll need 200 XP).
-You'll be asked to confirm the spend, the pack opens with a little reveal, and the five
-Crests are added to your collection.
+**Opening a pack.** Head to the **Shop** from Crestbound's main menu (your collection
+also keeps a 🛒 shortcut to it). Pick a pack — one of the five **faction packs** for
+5 Crests from a single faction, or the classic **Chapter Booster** — and if you're
+short on XP the Shop tells you so (you'll need 200 XP). You'll be asked to confirm the
+spend, the pack opens with a little reveal, and the five Crests are added to your
+collection.
 
 <div class="dc">
   <div class="dc-row"><div class="dc-body" style="padding:0;">
