@@ -11,6 +11,12 @@ description: A player guide to Crestbound — the XP-powered Crest-collecting ga
 
 # 🛡️ Crestbound
 
+> 🎇 **Where is Crestbound going?** See the full
+> [**Crestbound Vision**]({{ '/crestbound-vision.html' | relative_url }}) — a live
+> presentation of the game's future: discovered cards, cards that remember, named
+> opponents, and a story written by the players.
+
+
 **Crestbound** is the collecting game built into the Server Assistant portal. The
 **XP** you earn just by being active in Discord becomes a currency you can spend —
 open **booster packs**, collect ornate **Crests**, and chase a complete Chapter. It's
