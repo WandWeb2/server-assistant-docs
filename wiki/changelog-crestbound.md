@@ -22,6 +22,11 @@ portal as a whole see the [Portal changelog]({{ '/wiki/changelog-portal/' | rela
 - **⚔️ Battle mode is on the way.** A future update will let you assemble a
   **Wardeck** — a 50-Crest battle group drawn from your collection — and put it to the
   test. It isn't here yet; for now, Crestbound is all about building your collection.
+- **🏰 Server Wars — on the far horizon.** A community-versus-community season:
+  your Discord server is your banner, your members' duels bank points for it, and
+  fleet-wide standings crown a champion server each season. Cosmetic glory only —
+  no server or member ever gains a gameplay advantage. Parked until enough
+  communities are battling; watch this page.
 
 ## 2026 — A fullscreen home &amp; the Shop {#fullscreen-shop}
 
