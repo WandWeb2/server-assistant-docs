@@ -89,6 +89,7 @@ portal as a whole see the [Portal changelog]({{ '/wiki/changelog-portal/' | rela
 ## See also
 
 - [Crestbound]({{ '/wiki/crestbound/' | relative_url }}) — the full player guide
+- [Crestbound Vision]({{ '/crestbound-vision.html' | relative_url }}) — where the game is going
 - [XP &amp; leveling]({{ '/wiki/leveling/' | relative_url }}) — how you earn the XP that powers it
 - [Portal changelog]({{ '/wiki/changelog-portal/' | relative_url }}) — what's changed across the portal
 - [Back to the Wiki hub]({{ '/wiki/' | relative_url }})

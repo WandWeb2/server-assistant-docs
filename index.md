@@ -504,5 +504,5 @@ image: /assets/banner.jpeg
 </div>
 
 <p style="text-align: center; color: var(--ink-soft); font-size: .88rem; margin-top: 1.5rem;">
-  Server Assistant · <a href="{{ site.url }}{{ site.baseurl }}/features/">Features</a> · <a href="{{ site.url }}{{ site.baseurl }}/compare/">Compare</a> · <a href="{{ site.url }}{{ site.baseurl }}/pricing/">Pricing</a> · <a href="{{ site.url }}{{ site.baseurl }}/roadmap/">Roadmap</a> · <a href="{{ site.url }}{{ site.baseurl }}/support/">Support</a>
+  Server Assistant · <a href="{{ site.url }}{{ site.baseurl }}/features/">Features</a> · <a href="{{ site.url }}{{ site.baseurl }}/crestbound-vision.html">Crestbound&nbsp;Vision</a> · <a href="{{ site.url }}{{ site.baseurl }}/compare/">Compare</a> · <a href="{{ site.url }}{{ site.baseurl }}/pricing/">Pricing</a> · <a href="{{ site.url }}{{ site.baseurl }}/roadmap/">Roadmap</a> · <a href="{{ site.url }}{{ site.baseurl }}/support/">Support</a>
 </p>

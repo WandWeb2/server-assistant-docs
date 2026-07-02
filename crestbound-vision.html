@@ -1,0 +1,480 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Crestbound — A World Being Found</title>
+<meta name="description" content="The Crestbound vision: the first card game discovered into existence by its players — generated art, sound and story under an engineered design constitution, living inside real Discord communities.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0d0a08; --panel:#171009; --ink:#f5ead6;
+    --ink2:#cbb693; --dim:#8d7f66; --ember:#f59e0b; --flame:#fb923c; --hot:#ff6a3c;
+    --good:#5fbf72; --line:rgba(245,158,11,.28);
+    --W:#e8e2d2; --U:#3b82f6; --B:#8b5cf6; --R:#ef4444; --G:#22c55e;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%}
+  body{background:var(--bg);color:var(--ink);font-family:Inter,system-ui,sans-serif;overflow-x:hidden}
+  main{height:100vh;overflow-y:auto;scroll-snap-type:y mandatory;scroll-behavior:smooth}
+  section{min-height:100vh;scroll-snap-align:start;position:relative;display:flex;align-items:center;justify-content:center;padding:5.5rem 1.4rem 4.5rem;overflow:hidden}
+  .in{position:relative;z-index:3;max-width:1060px;width:100%}
+  .bg{position:absolute;inset:0;background:center/cover no-repeat;filter:brightness(.32) saturate(1.05);z-index:0}
+  .vig{position:absolute;inset:0;z-index:1;background:radial-gradient(115% 85% at 50% 32%,rgba(13,10,8,.18),rgba(13,10,8,.94) 82%)}
+  h1,h2,h3,.serif{font-family:Cinzel,serif}
+  h1{font-size:clamp(2.6rem,7vw,5.2rem);font-weight:900;letter-spacing:.05em;color:#fff;
+     text-shadow:0 0 34px rgba(251,146,60,.55),0 6px 16px rgba(0,0,0,.8)}
+  h2{font-size:clamp(1.6rem,4vw,2.7rem);font-weight:900;color:#fff;margin-bottom:1.1rem;letter-spacing:.03em;
+     text-shadow:0 0 22px rgba(251,146,60,.35),0 4px 12px rgba(0,0,0,.7)}
+  h3{font-size:1.02rem;color:var(--ember);letter-spacing:.14em;text-transform:uppercase;margin-bottom:.5rem}
+  p.lead{font-size:clamp(1.02rem,1.9vw,1.28rem);line-height:1.62;color:var(--ink)}
+  p.sub{font-size:.95rem;line-height:1.6;color:var(--ink2)}
+  .kicker{display:inline-block;font-size:.74rem;font-weight:800;letter-spacing:.22em;text-transform:uppercase;
+     color:var(--flame);border:1px solid var(--line);border-radius:999px;padding:.4rem 1rem;margin-bottom:1.2rem;
+     background:rgba(13,10,8,.55);backdrop-filter:blur(4px)}
+  .grid{display:grid;gap:1rem;margin-top:1.6rem}
+  .g2{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+  .g3{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+  .card{background:linear-gradient(165deg,rgba(30,21,12,.92),rgba(16,11,8,.94));border:1px solid var(--line);
+     border-radius:16px;padding:1.15rem 1.2rem;box-shadow:0 14px 40px rgba(0,0,0,.5)}
+  .card h4{font-family:Cinzel,serif;font-weight:700;color:#ffd9a0;font-size:1.02rem;margin-bottom:.45rem}
+  .card p{font-size:.9rem;line-height:1.55;color:var(--ink2)}
+  .card .em{color:var(--ink);font-weight:600}
+  .big{font-family:Cinzel,serif;font-weight:900;font-size:2.4rem;color:#fff;line-height:1}
+  .big small{display:block;font-family:Inter;font-weight:600;font-size:.72rem;color:var(--dim);letter-spacing:.12em;text-transform:uppercase;margin-top:.45rem}
+  .flow{display:flex;flex-wrap:wrap;gap:.55rem;align-items:center;justify-content:center;margin:1.6rem 0}
+  .step{background:rgba(245,158,11,.1);border:1px solid var(--line);border-radius:12px;padding:.7rem 1rem;
+     font-size:.86rem;font-weight:600;color:#ffd9a0;text-align:center}
+  .arrow{color:var(--flame);font-size:1.15rem;font-weight:800}
+  .tag{display:inline-block;font-size:.66rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;border-radius:7px;
+     padding:.18rem .5rem;margin-left:.5rem;vertical-align:middle}
+  .tag.live{background:rgba(95,191,114,.16);color:var(--good);border:1px solid rgba(95,191,114,.45)}
+  .tag.next{background:rgba(245,158,11,.15);color:var(--ember);border:1px solid var(--line)}
+  .tag.later{background:rgba(141,127,102,.14);color:var(--dim);border:1px solid rgba(141,127,102,.4)}
+  .rule{border:0;border-top:1px solid var(--line);margin:1.4rem 0}
+  .quote{font-family:Cinzel,serif;font-size:clamp(1.25rem,2.8vw,1.9rem);color:#ffd9a0;line-height:1.5;
+     border-left:3px solid var(--ember);padding-left:1.2rem;margin:1.4rem 0;text-shadow:0 2px 12px rgba(0,0,0,.7)}
+  ul.tick{list-style:none;margin-top:.8rem}
+  ul.tick li{padding:.42rem 0 .42rem 1.9rem;position:relative;font-size:.94rem;line-height:1.5;color:var(--ink2)}
+  ul.tick li::before{content:"✦";position:absolute;left:.3rem;color:var(--ember)}
+  ul.tick li b{color:var(--ink)}
+  .worry{border-color:rgba(95,191,114,.4)}
+  .worry h4{color:var(--good)}
+  .worry h4::before{content:"✓ ";font-weight:900}
+  .packrow{display:flex;gap:.7rem;justify-content:center;flex-wrap:wrap;margin-top:1.4rem}
+  .packrow img{width:120px;height:120px;object-fit:cover;border-radius:14px;border:1px solid var(--line);
+     box-shadow:0 12px 30px rgba(0,0,0,.6);transition:transform .25s}
+  .packrow img:hover{transform:translateY(-6px) scale(1.05)}
+  .facline{display:flex;gap:.4rem;justify-content:center;flex-wrap:wrap;margin-top:1rem}
+  .fac{font-family:Cinzel,serif;font-weight:700;font-size:.8rem;padding:.35rem .8rem;border-radius:999px;border:1px solid}
+  .credit{font-size:.72rem;color:var(--dim);margin-top:1.2rem;text-align:center}
+  .dots{position:fixed;right:1.05rem;top:50%;transform:translateY(-50%);z-index:50;display:flex;flex-direction:column;gap:.55rem}
+  .dots a{width:9px;height:9px;border-radius:50%;background:rgba(245,158,11,.25);border:1px solid rgba(245,158,11,.4);transition:all .2s}
+  .dots a.on{background:var(--ember);box-shadow:0 0 10px rgba(245,158,11,.8)}
+  .navhint{position:fixed;bottom:1rem;left:50%;transform:translateX(-50%);z-index:50;font-size:.7rem;color:var(--dim);
+     letter-spacing:.14em;text-transform:uppercase;animation:bob 2.6s ease-in-out infinite}
+  @keyframes bob{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(-6px)}}
+  .embers{position:absolute;inset:0;z-index:2;pointer-events:none;overflow:hidden}
+  .embers span{position:absolute;bottom:-12px;width:4px;height:4px;border-radius:50%;
+     background:radial-gradient(circle,#ffd9a0,#fb923c 60%,transparent);opacity:0;animation:rise linear infinite}
+  @keyframes rise{0%{opacity:0;transform:translateY(0) scale(.6)}10%{opacity:.8}100%{opacity:0;transform:translateY(-105vh) scale(1.15)}}
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.8,.25,1)}
+  .reveal.on{opacity:1;transform:none}
+  td,th{font-size:.86rem;padding:.5rem .7rem;text-align:left;border-bottom:1px solid rgba(245,158,11,.14);color:var(--ink2)}
+  th{color:var(--ember);font-weight:800;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase}
+  table{border-collapse:collapse;width:100%;margin-top:1rem}
+  .num{color:#fff;font-weight:800}
+  @media(max-width:640px){.dots{display:none}}
+</style>
+</head>
+<body>
+<nav class="dots" id="dots"></nav>
+<div class="navhint">scroll · ↓</div>
+<main id="main">
+
+<!-- 1 · TITLE -->
+<section id="s1">
+  <div class="bg" style="background-image:url('https://sa.wandweb.co/api/portal/crestbound/ui-art/menu-bg?v=1')"></div>
+  <div class="vig"></div><div class="embers" data-embers="26"></div>
+  <div class="in" style="text-align:center">
+    <div class="reveal">
+      <svg viewBox="0 0 64 64" width="76" height="76" style="margin:0 auto 1rem;display:block;filter:drop-shadow(0 0 18px rgba(251,146,60,.7))">
+        <path d="M32 4 L56 12 v18 c0 14-10 24-24 30 C18 54 8 44 8 30 V12 Z" fill="#1d1409" stroke="#f59e0b" stroke-width="2.5"/>
+        <path d="M32 18 c4 6 7 9 7 14 a7 7 0 0 1 -14 0 c0-5 3-8 7-14 Z" fill="#fb923c"/>
+      </svg>
+      <h1>CRESTBOUND</h1>
+      <p class="lead serif" style="color:#ffd9a0;margin-top:.7rem;font-size:clamp(1.1rem,2.6vw,1.6rem)">A world being found.</p>
+    </div>
+    <div class="reveal" style="margin-top:2.2rem">
+      <p class="lead" style="max-width:680px;margin:0 auto">Every card game ever made sells you a <b>finished world</b>.
+      Crestbound is the first one that is <b style="color:var(--flame)">discovered into existence by its players</b> —
+      card by card, image by image, story by story.</p>
+    </div>
+    <div class="reveal" style="margin-top:2rem">
+      <span class="kicker">The Crestbound vision · live build v1.8</span>
+    </div>
+  </div>
+</section>
+
+<!-- 2 · WHERE IT LIVES -->
+<section id="s2">
+  <div class="vig"></div>
+  <div class="in">
+    <div class="reveal"><h3>The unfair starting position</h3>
+    <h2>It doesn't need players. It already has communities.</h2>
+    <p class="lead">Crestbound isn't an app begging for installs. It lives inside <b>Server Assistant</b> — a Discord
+    moderation platform already embedded in real communities. The game's currency is XP earned by <b>being active
+    where you already belong</b>: chatting, voice time, voting. Play is downstream of belonging.</p></div>
+    <div class="grid g3 reveal">
+      <div class="card"><div class="big">0<small>customer acquisition cost — the bot is the funnel</small></div></div>
+      <div class="card"><div class="big">450+<small>Crests live in Chapter I · five factions · full battle engine</small></div></div>
+      <div class="card"><div class="big">100%<small>of art, music &amp; SFX generated — zero content payroll</small></div></div>
+    </div>
+    <div class="flow reveal">
+      <div class="step">Member is active in their Discord</div><div class="arrow">→</div>
+      <div class="step">Earns XP</div><div class="arrow">→</div>
+      <div class="step">Opens packs, duels, discovers</div><div class="arrow">→</div>
+      <div class="step">Comes back to the server for more XP</div><div class="arrow">↺</div>
+    </div>
+    <p class="sub reveal" style="text-align:center">That last arrow is the business: <b style="color:var(--ink)">the game drives healthy community activity — which is the core product's entire value proposition.</b> The game and the bot sell each other.</p>
+  </div>
+</section>
+
+<!-- 3 · THE PROBLEM WITH TCGs -->
+<section id="s3">
+  <div class="vig"></div>
+  <div class="in">
+    <div class="reveal"><h3>Why not just be a better MTG?</h3>
+    <h2>You cannot out-Magic Magic. So we changed what a card <em>is</em>.</h2>
+    <p class="lead">Every TCG — paper or digital — ships the same way: a design team finishes a set, an art team
+    illustrates it, and players <b>consume</b> it. The set is a catalog. Completion is a checklist.
+    Crestbound's entire architecture breaks that assumption:</p></div>
+    <div class="grid g2 reveal">
+      <div class="card"><h4>Them: the finished world</h4>
+        <p>Sets designed years ahead · art commissioned per card · every player opens identical, pre-existing product ·
+        story written in a boardroom · your name appears nowhere.</p></div>
+      <div class="card" style="border-color:rgba(251,146,60,.55)"><h4 style="color:var(--flame)">Crestbound: the found world</h4>
+        <p>Cards exist <span class="em">sealed and unwritten</span> until a player pulls them into being · the finder's
+        name is printed on them <span class="em">forever, fleet-wide</span> · the story is written by last season's
+        battles · the world literally does not exist until the community finds it.</p></div>
+    </div>
+    <div class="quote reveal">“Long before Aldermarch knew quiet… now the Crests are warming again — and somewhere a hand
+    moves among them.” <span style="font-size:.7em;color:var(--dim)">— the founding lore. The hand is the player. That was always the design.</span></div>
+  </div>
+</section>
+
+<!-- 4 · THE DISCOVERY (flagship) -->
+<section id="s4">
+  <div class="bg" style="background-image:url('https://sa.wandweb.co/api/portal/crestbound/ui-art/tile-collection?v=1')"></div>
+  <div class="vig"></div><div class="embers" data-embers="18"></div>
+  <div class="in">
+    <div class="reveal"><h3>The flagship · centerpiece of everything</h3>
+    <h2>The Discovery <span class="tag live">stage 1 live</span><span class="tag next">stage 2 next</span></h2>
+    <p class="lead"><b>Stage 1 — shipping today:</b> every Crest's illustration doesn't exist until the first player in
+    the world opens that card. At that moment the art is generated once, locked in <b>permanently for every player</b>,
+    and publicly credited — <i>“discovered 02-07-26 by Dan”</i> — forever. Players aren't collecting our art.
+    They're <b>authoring the game's canon</b>, one find at a time.</p></div>
+    <div class="reveal" style="margin-top:1.2rem">
+    <p class="lead"><b style="color:var(--flame)">Stage 2 — the leap no other game can follow:</b> future chapters ship
+    with <b>sealed Crests — silhouettes with no name, no text, no stats.</b> The first player to pull one triggers its
+    actual <em>creation</em>: the AI writes the card inside our design constitution, the engine validates it, the art
+    is drawn, its sound sting is composed — and that player's name is on the card in every collection, in every duel,
+    in every future deck, forever.</p></div>
+    <div class="flow reveal">
+      <div class="step">🂠 Sealed Crest pulled</div><div class="arrow">→</div>
+      <div class="step">AI writes it <em>inside the Law</em></div><div class="arrow">→</div>
+      <div class="step">Engine + QA validate</div><div class="arrow">→</div>
+      <div class="step">Art &amp; audio generated</div><div class="arrow">→</div>
+      <div class="step">⭐ Finder credited for eternity</div>
+    </div>
+    <div class="grid g3 reveal">
+      <div class="card"><h4>Hall of Finders</h4><p>A public leaderboard of the great discoverers. Their finds carry a
+      signature “first light” foil. Collectors don't chase completion — they chase <span class="em">immortality</span>.</p></div>
+      <div class="card"><h4>Every set is an expedition</h4><p>Chapter openings become live community events: hundreds of
+      players racing to be first into the unknown. No spoiler season on earth competes with a set <span class="em">nobody has seen — because it doesn't exist yet</span>.</p></div>
+      <div class="card"><h4>Infinite content, zero payroll</h4><p>Generation costs are measured in <span class="em">fractions of a cent per card, paid once ever</span> — then cached and served forever. The content engine scales with players, not headcount.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 5 · WORRY-FREE: THE LAW -->
+<section id="s5">
+  <div class="vig"></div>
+  <div class="in">
+    <div class="reveal"><h3>“AI-generated cards” — and why that should not scare you</h3>
+    <h2>Creativity is generated. Safety is engineered.</h2>
+    <p class="lead">Nothing here is “let the AI improvise and hope.” Every generated Crest passes through a
+    <b>constitution that already exists in the codebase and runs in CI today</b>:</p></div>
+    <div class="grid g2 reveal">
+      <div class="card worry"><h4>Balance is a compiler, not a hope</h4>
+        <p>The <span class="em">Design Law</span> restricts every card to a fixed vocabulary of tribes, keywords,
+        triggers and scaling ops the engine actually executes. The <span class="em">island lint</span> rejects any card
+        that plugs into no shared axis; the <span class="em">colour-pie lint</span> rejects off-faction verbs. A card
+        that can't compile against the engine <b>cannot be born</b>.</p></div>
+      <div class="card worry"><h4>Quality has a gatekeeper</h4>
+        <p>Every image already runs a <span class="em">vision-model QA loop</span> before it's locked in fleet-wide —
+        it redraws until brand rules pass (live today, iterating up to 10× per card). Stage 2 extends the same gate to
+        card text. Operators keep one-click reroll &amp; regen tooling — <b>nothing is irreversible</b>.</p></div>
+      <div class="card worry"><h4>No prompt-injection surface</h4>
+        <p>Players never type anything. Discovery is a <span class="em">pull</span>; all prompts are server-side
+        templates. There is no path from a player's keyboard into the generator.</p></div>
+      <div class="card worry"><h4>Cost &amp; provider risk: capped and cached</h4>
+        <p>Assets generate <span class="em">once ever</span>, then live in our database — if the AI provider vanished
+        tomorrow, every existing card survives untouched. Generation spend is pennies per <em>thousand</em> cards, wallet-guarded
+        and rate-limited in code (already battle-tested in production this week).</p></div>
+      <div class="card worry"><h4>Power creep is structurally capped</h4>
+        <p>Generated cards draw from the same stat/cost budgets and rarity targets as the hand-tuned set — the Law fixes
+        the <span class="em">shape of the set</span> (enabler/payoff ratios, vanilla caps, mythic rules) so a lucky pull
+        is a famous card, never a broken one.</p></div>
+      <div class="card worry"><h4>Fairness is doctrine</h4>
+        <p>One rule everywhere, enforced in review: <b>nothing generated may advantage a specific player or server.</b>
+        Discovery grants fame — a name on a card — never power. (More on this doctrine two slides down.)</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 5b · WEB-NATIVE & SECURE -->
+<section id="s5b">
+  <div class="vig"></div>
+  <div class="in">
+    <div class="reveal"><h3>For the technical seats</h3>
+    <h2>Web-native by design. Secure by architecture. <span class="tag live">all in production</span></h2>
+    <p class="lead">Crestbound is not a client you install — it's a <b>browser game served from the platform's own
+    web portal</b>, playable in seconds on any phone or desktop, behind the same door customers already use to manage
+    their servers. That choice is also the security model:</p></div>
+    <div class="grid g2 reveal">
+      <div class="card worry"><h4>Zero-install, instant distribution</h4>
+        <p>Pure web (HTTPS, single-page portal): no launcher, no app-store gatekeeper, no patch day. Every release this
+        week reached 100% of players on their next page load. Fully responsive — the screenshots in this deck are a
+        phone.</p></div>
+      <div class="card worry"><h4>The server is the only authority</h4>
+        <p>Every pack roll, XP spend, battle action and quest tick is <span class="em">resolved server-side</span>;
+        the browser is a renderer. A tampered client can change its own pixels — it cannot mint a card, fake a win, or
+        spend a balance it doesn't have. Battles are validated move-by-move against server state.</p></div>
+      <div class="card worry"><h4>Identity without passwords</h4>
+        <p>Sign-in is <span class="em">Discord OAuth</span> — no credentials stored, sessions are bearer-token scoped,
+        and a player only ever sees their own wallet and collection. Admin/operator surfaces are separately
+        token-gated and never exposed to players.</p></div>
+      <div class="card worry"><h4>Generation keys never touch the browser</h4>
+        <p>All AI generation runs <span class="em">server-side behind our API</span>: the provider key lives only on the
+        server, prompts are code-owned templates, outputs pass the QA gate, and finished assets are served from our own
+        database with immutable caching — the client consumes art; it can't commission it.</p></div>
+      <div class="card worry"><h4>Abuse-hardened economy</h4>
+        <p>Currency mutations are atomic, race-safe transactions (concurrent discovery is reservation-locked); spend
+        endpoints re-validate balances server-side; generation is queued, paced, rate-limit-aware and
+        <span class="em">wallet-guarded in code</span> — proven this week in production.</p></div>
+      <div class="card worry"><h4>Ships like infrastructure, not like a game studio</h4>
+        <p>One-file service deploys through a pipeline with <span class="em">compile gates, health checks and automatic
+        rollback</span>; data collection is minimal and governed by a published privacy policy the platform already
+        stands behind. Boring where it should be boring.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 6 · CARDS THAT REMEMBER -->
+<section id="s6">
+  <div class="bg" style="background-image:url('https://sa.wandweb.co/api/portal/crestbound/ui-art/tile-wardecks?v=1')"></div>
+  <div class="vig"></div>
+  <div class="in">
+    <div class="reveal"><h3>Provenance without the blockchain nonsense</h3>
+    <h2>Cards that remember <span class="tag next">next</span></h2>
+    <p class="lead">In every other game, your thousandth win with a card looks identical to your first. In Crestbound,
+    <b>each copy keeps its own chronicle</b> — and shows it.</p></div>
+    <div class="grid g3 reveal">
+      <div class="card"><h4>How it works (it's small)</h4>
+        <p>Each owned copy carries per-copy counters — duels fought, victories, mythics slain, seasons survived —
+        incremented by the battle engine we already run. A few integers per card. That's the whole cost.</p></div>
+      <div class="card"><h4>What players see</h4>
+        <p>Visual <span class="em">patina tiers</span>: a veteran card's frame weathers, then gilds. Earned epithets
+        appear on the card: <span class="em">“Oathsworn Paladin, the Unbroken — 214 victories.”</span> Purely cosmetic,
+        rendered as overlay layers on the existing card chrome.</p></div>
+      <div class="card"><h4>Why it matters</h4>
+        <p>The moment a duplicate has a <span class="em">biography</span>, every card becomes sentimental and every
+        collection becomes a memoir. And if trading ever ships, history travels with the card — provenance creates
+        markets, and markets create stories.</p></div>
+    </div>
+    <p class="sub reveal">Zero balance impact — the chronicle never touches stats. It composes with The Discovery
+    beautifully: the most coveted object in the game becomes <i>a famous card with a famous history, found by a named player</i>.</p>
+  </div>
+</section>
+
+<!-- 7 · EVENT-BORN CRESTS + FAIRNESS DOCTRINE -->
+<section id="s7">
+  <div class="vig"></div>
+  <div class="in">
+    <div class="reveal"><h3>The platform's history becomes the game's canon</h3>
+    <h2>Event-born Crests — commemorated, never privileged <span class="tag next">next</span></h2>
+    <p class="lead">Server Assistant stops real raids and protects real communities. Those moments can mint Crests:
+    a genuine milestone on the platform seals a new commemorative Crest into the <b>global</b> pool —
+    <i>“The Siege Repelled,”</i> art and flavour born from the shape of the event itself.</p></div>
+    <div class="card reveal" style="border-color:rgba(95,191,114,.45);margin-top:1.2rem">
+      <h4 style="color:var(--good)">The Fairness Doctrine — one rule, applied everywhere</h4>
+      <p style="font-size:.95rem"><b>No feature may ever preferentiate a guild or a member.</b> It is a design law with
+      the same standing as the colour pie:</p>
+      <ul class="tick">
+        <li><b>Event Crests enter the global pool for everyone, simultaneously</b> — same odds, same quests, same price.
+            The event server gets no exclusive copy, no head start, no discount.</li>
+        <li><b>The commemoration lives in lore, not access</b> — the flavour text remembers the event; the card itself
+            is standard-power, standard-rarity, findable by any player anywhere.</li>
+        <li><b>Discovery grants a name, never an edge</b> — a finder's credit is fame; the card plays identically for all.</li>
+        <li><b>Chronicle &amp; cosmetics never touch stats</b> — everything earnable is visible, nothing earnable is power.</li>
+      </ul>
+      <p style="margin-top:.7rem">Why investors should care: this doctrine is what keeps a UGC-flavoured game
+      <span class="em">rating-safe, community-safe and regulator-boring</span> — while still selling the dream.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 8 · NAMED OPPONENTS -->
+<section id="s8">
+  <div class="bg" style="background-image:url('https://sa.wandweb.co/api/portal/crestbound/ui-art/tile-battle?v=1')"></div>
+  <div class="vig"></div>
+  <div class="in">
+    <div class="reveal"><h3>“vs NPC” becomes “vs <em>her</em> again”</h3>
+    <h2>Wardens &amp; Trolls — opponents with names, voices and grudges <span class="tag next">next</span></h2>
+    <p class="lead">The battle engine, the AI opponent, per-player match history and generated voice are all
+    <b>already in production</b>. Stage next simply gives them a face:</p></div>
+    <div class="grid g3 reveal">
+      <div class="card"><h4>Personas</h4><p>Each faction demo deck becomes a named character — a stern Warsworn
+        warden, a cackling Grimwild troll — with generated portrait, title and a distinct play style (the mono-faction
+        decks already encode this).</p></div>
+      <div class="card"><h4>Voice &amp; memory</h4><p>A spoken line on entry via the audio pipeline we shipped this week
+        — and a grudge memory from stored match history: <span class="em">“You again. Last time your Grimwild overran
+        me.”</span> Nobody screenshots a queue button; everybody screenshots that.</p></div>
+      <div class="card"><h4>They learn</h4><p>Campaign bosses adapt deck choices to what's been beating them locally —
+        a living difficulty curve with zero live-ops staffing, riding the demo-deck registry that already exists.</p></div>
+    </div>
+    <p class="sub reveal">This is also the on-ramp for the modes players saw greyed out this week: Friendly Match and
+    Ranked launch into a world that already has characters worth ranking against.</p>
+  </div>
+</section>
+
+<!-- 9 · LIVING CHRONICLE -->
+<section id="s9">
+  <div class="bg" style="background-image:url('https://sa.wandweb.co/api/portal/crestbound/ui-art/shop-hero?v=1')"></div>
+  <div class="vig"></div><div class="embers" data-embers="14"></div>
+  <div class="in">
+    <div class="reveal"><h3>The meta writes the story — on film</h3>
+    <h2>The Living Chronicle <span class="tag next">next</span></h2>
+    <p class="lead">MTG's story is written two years in advance by a committee. Crestbound's is written by
+    <b>last month's ladder</b>. Every season closes with the faction standings decided by real duels — and the winning
+    faction “wins the war” in canon.</p></div>
+    <div class="grid g2 reveal">
+      <div class="card"><h4>Every month, automatically</h4>
+        <ul class="tick">
+          <li>Season ends → faction victory tallies are read from the battle log we already keep.</li>
+          <li>The AI writes the next chapter beat <b>from those results</b>, inside the established lore.</li>
+          <li>An <b>AI-generated story video</b> (~30–60s, generated via the same API family that draws our art) renders
+              the chapter: the fall of a bastion, a troll horde breaking through, a warden's last stand.</li>
+          <li>Premiered in the portal and pushed to community Discords — a monthly episode of a show
+              <b>the players themselves scripted by playing</b>.</li>
+        </ul></div>
+      <div class="card"><h4>And the world answers back</h4>
+        <p>The next chapter's card pool responds to the outcome: the victorious faction's tribes surge in the new sealed
+        pool, the defeated faction gets its vengeance arc. Playing the game <span class="em">is</span> voting on the
+        story — retention becomes narrative gravity, and every season finale is a marketing beat that produces its own
+        trailer for free.</p>
+        <p style="margin-top:.6rem">Fairness doctrine applies here too: the <span class="em">faction</span> wins, never
+        a server or a player — the chronicle celebrates a colour, and every player of every server shapes it equally.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 10 · COSMETICS & ECONOMY -->
+<section id="s10">
+  <div class="vig"></div>
+  <div class="in">
+    <div class="reveal"><h3>How it pays — without ever selling power</h3>
+    <h2>A cosmetics-first economy <span class="tag live">card backs live now</span></h2>
+    <p class="lead">Because power is never for sale (doctrine), the monetizable surface is <b>identity</b> — and
+    Crestbound generates identity assets at near-zero cost:</p></div>
+    <div class="grid g3 reveal">
+      <div class="card"><h4>Now: Card Backs</h4><p>Seven card backs in the Shop today — a free default, five faction designs, one Cinders prestige piece —
+        generated art, owned and equipped per player, shown on every face-down card. The first cosmetic sink, shipped.</p></div>
+      <div class="card"><h4>Next: patina, frames, foils</h4><p>Chronicle tiers, discoverer foils, seasonal chapter
+        frames — every one an overlay on chrome we already render, every one earned or bought with in-game currency.</p></div>
+      <div class="card"><h4>The currencies already exist</h4><p><b>XP</b> (earned by community activity) and
+        <b>✦ Cinders</b> (earned by quests) already gate packs and the Ember Vault. Cosmetics deepen both sinks before
+        any real-money layer is even considered — and premium bot tiers remain the platform's actual revenue line.</p></div>
+    </div>
+    <div class="packrow reveal">
+      <img src="https://sa.wandweb.co/api/portal/crestbound/ui-art/pack-W?v=1" alt="Warsworn">
+      <img src="https://sa.wandweb.co/api/portal/crestbound/ui-art/pack-U?v=1" alt="Undertow">
+      <img src="https://sa.wandweb.co/api/portal/crestbound/ui-art/pack-B?v=1" alt="Bonereave">
+      <img src="https://sa.wandweb.co/api/portal/crestbound/ui-art/pack-R?v=1" alt="Ragefire">
+      <img src="https://sa.wandweb.co/api/portal/crestbound/ui-art/pack-G?v=1" alt="Grimwild">
+    </div>
+    <div class="facline reveal">
+      <span class="fac" style="color:var(--W);border-color:var(--W)">Warsworn</span>
+      <span class="fac" style="color:var(--U);border-color:var(--U)">Undertow</span>
+      <span class="fac" style="color:var(--B);border-color:var(--B)">Bonereave</span>
+      <span class="fac" style="color:var(--R);border-color:var(--R)">Ragefire</span>
+      <span class="fac" style="color:var(--G);border-color:var(--G)">Grimwild</span>
+    </div>
+    <p class="credit">↑ Actual in-game pack art, generated by the pipeline this deck describes — loaded live from production.</p>
+  </div>
+</section>
+
+<!-- 11 · ROADMAP -->
+<section id="s11">
+  <div class="vig"></div>
+  <div class="in">
+    <div class="reveal"><h3>Sequencing</h3>
+    <h2>Everything above rides rails that already exist</h2>
+    <table class="reveal">
+      <tr><th>Phase</th><th>Ships</th><th>Rides on</th></tr>
+      <tr><td class="num">Live today</td><td>Fullscreen game, Shop, battle engine, art discovery with credit, generated art + full soundscape pipeline, <b>card-back cosmetics</b></td><td>Design Law · QA gate · generation queue · wallet guards — all in production</td></tr>
+      <tr><td class="num">Next</td><td><b>The Discovery stage 2</b> (sealed, generated Crests) · Chronicle counters &amp; patina · named Wardens &amp; Trolls · event-born Crests (fair-by-doctrine)</td><td>Same queue + lints extended from art to text · battle history · TTS shipped this week</td></tr>
+      <tr><td class="num">Then</td><td><b>The Living Chronicle</b>: seasonal story + monthly AI story video · Ranked &amp; Friendly</td><td>Battle log · seasonal quest clock · video via the same generation API</td></tr>
+      <tr><td class="num">In planning</td><td><b>Crestbound as its own Discord bot</b> — its own listing and invite, earning XP in any server it joins (boosted where Server Assistant runs alongside), with pack opens and discovery announcements right in Discord</td><td>Full-separation spec agreed; the game backend, portal and pipelines carry over intact</td></tr>
+      <tr><td class="num">Banked</td><td>Server Wars (community-vs-community seasons) — deliberately parked until the player base earns it; already documented on the public roadmap</td><td>Guild = the Discord server itself</td></tr>
+    </table></div>
+    <p class="sub reveal" style="margin-top:1.1rem">Nothing on this slide requires a hire. The content engine is
+    generative, the guardrails are code, and the whole game deploys as a single file with compile gates, health checks
+    and auto-rollback — the same pipeline that shipped seven releases <i>this week</i>.</p>
+  </div>
+</section>
+
+<!-- 12 · CLOSE -->
+<section id="s12">
+  <div class="bg" style="background-image:url('https://sa.wandweb.co/api/portal/crestbound/ui-art/pack-vault?v=1')"></div>
+  <div class="vig"></div><div class="embers" data-embers="30"></div>
+  <div class="in" style="text-align:center">
+    <div class="reveal">
+      <h2 style="font-size:clamp(1.9rem,5vw,3.4rem)">MTG sells you a finished world.<br>
+      <span style="color:var(--flame)">Crestbound is a world being found.</span></h2>
+      <p class="lead" style="max-width:720px;margin:1.4rem auto 0">A card game whose set is an expedition, whose cards
+      keep diaries, whose villains hold grudges, whose story is written by its own ladder and premiered as a monthly
+      film — living inside communities that already exist, on a content engine that costs pennies and never sleeps.</p>
+      <div class="quote" style="border:0;padding:0;margin-top:2rem;text-align:center">Somewhere, a hand moves among the Crests.</div>
+      <p class="sub" style="margin-top:2rem"><a href="https://serverassistant.wandweb.co" style="color:var(--flame);font-weight:800">▶ Play Crestbound</a> &nbsp;·&nbsp; <a href="wiki/crestbound/" style="color:var(--ember)">Player guide</a> &nbsp;·&nbsp; <a href="wiki/changelog-crestbound/" style="color:var(--ember)">Game changelog</a> &nbsp;·&nbsp; <a href="./" style="color:var(--ember)">Server Assistant docs</a></p>
+    </div>
+  </div>
+</section>
+
+</main>
+<script>
+  const main=document.getElementById('main'), secs=[...document.querySelectorAll('section')];
+  const dots=document.getElementById('dots');
+  secs.forEach((s,i)=>{const a=document.createElement('a');a.href='#'+s.id;dots.appendChild(a);});
+  const das=[...dots.children];
+  const io=new IntersectionObserver(es=>es.forEach(e=>{
+    if(e.isIntersecting){const i=secs.indexOf(e.target);das.forEach((d,j)=>d.classList.toggle('on',j===i));
+      e.target.querySelectorAll('.reveal').forEach((r,k)=>setTimeout(()=>r.classList.add('on'),120+k*140));}
+  }),{root:main,threshold:.45});
+  secs.forEach(s=>io.observe(s));
+  document.querySelectorAll('.embers').forEach(box=>{
+    const n=+box.dataset.embers||16;
+    for(let i=0;i<n;i++){const sp=document.createElement('span');
+      sp.style.left=Math.random()*100+'%';sp.style.animationDuration=(4+Math.random()*7)+'s';
+      sp.style.animationDelay=(Math.random()*8)+'s';sp.style.transform='scale('+(0.5+Math.random()*1.4)+')';
+      box.appendChild(sp);}});
+  addEventListener('keydown',e=>{
+    const i=das.findIndex(d=>d.classList.contains('on'));
+    if(e.key==='ArrowDown'||e.key==='PageDown'||e.key===' '){e.preventDefault();secs[Math.min(secs.length-1,i+1)].scrollIntoView();}
+    if(e.key==='ArrowUp'||e.key==='PageUp'){e.preventDefault();secs[Math.max(0,i-1)].scrollIntoView();}
+  });
+</script>
+</body>
+</html>
