@@ -17,6 +17,36 @@ portal as a whole see the [Portal changelog]({{ '/wiki/changelog-portal/' | rela
 
 ---
 
+## v1.5 — The bot rounds out {#v1-5}
+
+- **World-first discovery announcements.** Server admins can pick a channel with
+  `/setup`; when a member makes a genuine world-first discovery, the server hears
+  about it the moment the art comes to light. Announcement only — no reward ever
+  differs by server.
+- **`/duel`** — see your active Wardeck and jump straight onto the Battle screen.
+- **Battles preload every Crest's art** so nothing pops in mid-duel.
+
+## v1.1–v1.4 — A cleaner, calmer Crestbound {#v1-1}
+
+- **Discoverers are branded onto their Crests.** The discoverer's name now reads
+  as a hot brand seared into the card — and you'll see it burn in live the moment
+  a Crest is revealed.
+- **Rarity now reads from the cost stamp alone** — the shaped, coloured seal on
+  the art. The old rarity-coloured borders are gone everywhere.
+- **A quieter, cleaner interface**: decorative emoji swept out of the game's
+  menus, shop and messages; placeholder battle sounds removed (real, generated
+  audio arrives as it's created); the Starter Decks gallery and the Deck Builder
+  rebuilt to match the rest of the game's look.
+
+## v1.0 — Crestbound stands alone {#v1-0}
+
+- **The game moved into its own home** at
+  [crestbound.wandweb.co](https://crestbound.wandweb.co) — its own sign-in, its
+  own Discord bot, the same game. **Your collection, XP, Cinders, decks and
+  discoveries all came with it**; old links carry you to the new address.
+- Everything you know — packs, discovery, Wardecks &amp; battles, quests, the
+  Shop — is unchanged, just faster on its own foundations.
+
 ## Coming soon — Wardecks &amp; battles {#upcoming}
 
 - **⚔️ Battle mode is on the way.** A future update will let you assemble a
