@@ -17,10 +17,32 @@ description: A player guide to Crestbound — the XP-powered Crest-collecting ga
 > opponents, and a story written by the players.
 
 
-**Crestbound** is the collecting game built into the Server Assistant portal. The
-**XP** you earn just by being active in Discord becomes a currency you can spend —
-open **booster packs**, collect ornate **Crests**, and chase a complete Chapter. It's
-a reward for taking part, with nothing extra to buy.
+> 🏠 **Crestbound has its own home now.** The game is a standalone product at
+> **[crestbound.wandweb.co](https://crestbound.wandweb.co)** with its **own Discord
+> bot** — sign in with Discord and your collection, XP and Cinders are exactly where
+> you left them. Links to the game from the Server Assistant portal carry you there.
+
+**Crestbound** is a collecting game powered by the **XP** you earn just by being
+active in Discord. That XP becomes a currency you can spend — open **booster
+packs**, collect ornate **Crests**, and chase a complete Chapter. It's a reward for
+taking part, with nothing extra to buy.
+
+## The Crestbound Discord bot {#bot}
+
+Crestbound's own bot brings the game into your server:
+
+| Command | What it does |
+|---|---|
+| `/crestbound` | Your collection and balances at a glance, and the way into the game |
+| `/open` | Open a faction pack or the Ember Vault right in the channel |
+| `/duel` | Your active Wardeck + a jump straight onto the Battle screen |
+| `/quests` | Daily and seasonal quests and your Cinders |
+| `/balance` | XP and Cinders at a glance |
+| `/setup` | Admin: pick a channel for world-first discovery announcements |
+
+With an announcements channel set, your server hears it first when one of your
+members makes a **world-first discovery** — "*{player} just discovered {Crest} —
+first in the world.*" (An announcement only: no server gets better pulls, ever.)
 
 > **Powered by your XP.** Crestbound runs on the same account-wide XP you earn from
 > chatting, voice time, and from [voting for Server Assistant]({{ '/wiki/leveling/' | relative_url }}#earning-xp).
