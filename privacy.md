@@ -45,11 +45,17 @@ When a server owner runs `/setup` or `/autopilot`, the Bot stores:
 
 ### Moderation records
 
-When staff issue warnings, notes, or moderation actions:
+**Warnings & notes.** When staff issue a warning or note:
 - Discord user ID of the affected member
-- Timestamp, acting staff member's user ID, action type, and reason text
+- Timestamp, acting staff member's user ID, and the note/reason text
 
 Retained until manually removed by staff or until the Bot is removed from the server.
+
+**Moderation-actions log.** A server-side record of moderation *actions* taken in your server — both those issued by staff and those the Bot takes automatically (for example an automated scam-image removal or timeout), including actions taken directly in Discord (native bans, kicks, timeouts). Each entry records **only**:
+- The affected member's Discord user ID
+- The action type (e.g. ban, kick, timeout, delete, flag), the actor (a staff member, or an automated system such as "ThreatNet"), a timestamp, and a short reason label
+
+This log is **always on** and is **visible to your server's admins in the web dashboard**. Because it lives on our servers, it cannot be edited or deleted from within Discord — so a moderation action is never left without a record, even if you have not set up a Discord log channel (or a channel entry is deleted). It does **not** store the message content or any image that triggered the action — only the fields listed above. Entries are automatically deleted after **180 days**.
 
 ### Audit log
 
@@ -376,6 +382,7 @@ We do **not** sell your data or share it with advertising or analytics networks.
 | Server configuration and settings | Until Bot is removed from the server |
 | Encrypted API keys | Wiped immediately on Bot removal |
 | Warnings and notes | Until manually removed by staff |
+| Moderation-actions log (actions taken in your server) | Rolling window (180 days), then auto-deleted |
 | Audit log | Rolling window; older entries auto-purged |
 | Scheduled tasks | Deleted when fired or cancelled |
 | AI token ledger | Retained for billing and analytics; deleted on request |
