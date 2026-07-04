@@ -35,6 +35,12 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 </style>
 
 <details class="doc-sec" markdown="1" open>
+<summary>v6.7.17 — Scam-image removals now appear in your dashboard log</summary>
+
+**A permanent record for every scam-image action.** Scam-image removals and timeouts are now saved to your moderation log in the web dashboard, alongside all your other moderation actions — a tamper-proof record that can't be edited or deleted, even by admins. This works even if you haven't set up a Discord log channel (or if a channel entry gets deleted), so a removal is never left without a record. Only the action is recorded — who acted, what they did, when, and the reason — **never** the message content or the image itself.
+</details>
+
+<details class="doc-sec" markdown="1">
 <summary>v6.7.13 — Scam-image alerts now always reach your staff</summary>
 
 **You'll always see a record when a scam image is removed.** If your server hasn't set a mod-log channel, ThreatNet scam-image actions used to be applied without a visible record. Now, when there's no log channel set, the alert is posted to your **staff chat** instead (with a reminder to set a log channel), so a removal never happens silently. Servers that already have a log channel are unaffected.

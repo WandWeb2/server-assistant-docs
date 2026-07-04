@@ -4,7 +4,7 @@ title: Server Assistant Audit Log
 permalink: /wiki/audit-log/
 wiki: true
 wiki_category: Feature guides
-summary: How Server Assistant keeps a reliable, tamper-proof record of every moderation action — written to your log channel and backed by a separate encrypted record staff can't quietly wipe.
+summary: How Server Assistant keeps a reliable, tamper-proof record of every moderation action — an always-on log in your web dashboard, an optional Discord log channel, and a separate encrypted record staff can't quietly wipe.
 wiki_keywords: [audit, audit log, audit trail, log, logging, log channel, mod-log, moderation history, accountability, tamper-proof, native actions, command usage]
 description: A deep dive into Server Assistant's tamper-proof audit log — what gets recorded, why it can't be quietly wiped, and how to set your log channel.
 ---
@@ -18,17 +18,23 @@ was banned. It runs on every plan, with nothing to switch on.
 
 <span class="cmd-tag free">FREE</span> &nbsp;The audit log is part of every plan.
 
-There are two halves to it, working together:
+There are three parts to it, working together:
 
-- A **visible log channel** in your own server (you choose it during `/setup`),
-  where each action lands as a tidy embed your whole team can read.
+- A **permanent moderation log in your web dashboard** — always on, on every plan.
+  It records every moderation action on our servers, so it **can't be edited or
+  deleted from within Discord**, and your admins can read it any time by signing in
+  to the dashboard. Even if you never set up a Discord log channel, this record is
+  always there.
+- A **visible log channel** in your own server (optional — you can pick one during
+  `/setup`), where each action *also* lands as a tidy embed your whole team can read
+  at a glance.
 - A **separate, encrypted record** kept off to one side that **staff cannot read,
-  edit, or erase** — so even if someone tidies up the visible channel, the real
-  history is still there.
+  edit, or erase** — so even the underlying trail survives whatever happens to the
+  visible channel.
 
-> **In short:** the log channel is the window your team looks through; the
-> encrypted record is the safe behind the glass. You can break the window — you
-> can't open the safe.
+> **In short:** the log channel is the window your team looks through; the dashboard
+> log and the encrypted record are the safe behind the glass. You can break the
+> window — you can't open the safe.
 
 ## What gets logged
 
@@ -102,6 +108,20 @@ above) are skipped, so you never see the same thing twice:
 
 You can turn these compact command-usage lines on or off in `/settings` →
 **Behaviour** — the detailed moderation entries above always log regardless.
+
+## What's recorded — and what isn't
+
+The dashboard moderation log is deliberately minimal. Each entry keeps **only**:
+
+- The affected member's Discord user ID
+- The **action type** (ban, kick, timeout, delete, flag, …)
+- **Who did it** — a staff member, or an automated system such as **ThreatNet** (for
+  an automatic scam-image removal)
+- A **timestamp** and a short **reason**
+
+It does **not** store the message content, or any image that triggered the action —
+only the fields above. Entries are automatically removed after **180 days**. (The
+full detail lives in our [Privacy Policy]({{ '/privacy/' | relative_url }}).)
 
 ## Why it's tamper-proof
 
