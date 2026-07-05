@@ -35,6 +35,12 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 </style>
 
 <details class="doc-sec" markdown="1" open>
+<summary>v6.7.18 — Your Discord log channel is now optional</summary>
+
+**Skip the Discord log channel if you like.** Setting a Discord mod-log channel is now optional — in `/setup`, pick **📋 Portal only** and carry on. Your permanent moderation log in the web dashboard is always on regardless, so you still have a complete, tamper-proof record of every action. Already have a log channel and want to drop it? Re-run `/setup` — it loads your current setup, so you can switch to **Portal only** in a couple of taps.
+</details>
+
+<details class="doc-sec" markdown="1">
 <summary>v6.7.17 — Scam-image removals now appear in your dashboard log</summary>
 
 **A permanent record for every scam-image action.** Scam-image removals and timeouts are now saved to your moderation log in the web dashboard, alongside all your other moderation actions — a tamper-proof record that can't be edited or deleted, even by admins. This works even if you haven't set up a Discord log channel (or if a channel entry gets deleted), so a removal is never left without a record. Only the action is recorded — who acted, what they did, when, and the reason — **never** the message content or the image itself.
