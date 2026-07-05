@@ -157,10 +157,13 @@ on untouched the whole time.
 
 ## Setting your log channel
 
-Your log channel is chosen during the **`/setup`** wizard, on the **Channels**
-step. The bot detects a likely candidate (often `#mod-log`) and fills it in for
-you — accept it, pick a different channel from the dropdown, or have the bot
-**🆕 Create for me** a fresh, locked-down one that only it can write to.
+A Discord log channel is **optional** — the dashboard moderation log above is always
+on either way, so you have a complete record whether or not you mirror it to Discord.
+If you'd like the Discord mirror too, choose it during the **`/setup`** wizard on the
+**Channels** step. The bot detects a likely candidate (often `#mod-log`) and fills it
+in for you — accept it, pick a different channel from the dropdown, have the bot
+**🆕 Create for me** a fresh locked-down one, or choose **📋 Portal only** to skip the
+Discord channel entirely.
 
 <div class="dc">
   <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
@@ -169,14 +172,15 @@ you — accept it, pick a different channel from the dropdown, or have the bot
       <div class="dc-title">🧭 Welcome — let's get you set up</div>
       <div class="dc-desc">I've filled in your channels and roles. <strong>Step 1 of 3</strong> — looks right?</div>
       <div class="dc-fname">Staff chat <span style="color:#949ba4;font-weight:400">(where I listen for commands)</span></div><div class="dc-fval">#staff-chat ✓ <span style="color:#949ba4">(detected)</span></div>
-      <div class="dc-fname">Log channel <span style="color:#949ba4;font-weight:400">(your audit trail)</span></div><div class="dc-fval">#mod-log ✓ <span style="color:#949ba4">(detected)</span></div>
-      <div class="dc-foot">Pick a different channel from the dropdown, or create a fresh one</div>
+      <div class="dc-fname">Log channel <span style="color:#949ba4;font-weight:400">(optional — dashboard log is always on)</span></div><div class="dc-fval">#mod-log ✓ <span style="color:#949ba4">(detected)</span></div>
+      <div class="dc-foot">Pick a different channel, create a fresh one, or choose 📋 Portal only</div>
     </div>
   </div></div>
 </div>
 
 Want to change it later? Re-run **`/setup`** any time — it loads your current
-configuration, so you can swap the log channel without starting over. For the
+configuration, so you can swap the log channel, or switch to **📋 Portal only** to
+turn the Discord channel off entirely (your dashboard log stays on). For the
 finer controls — how chatty the log is, and whether those compact command-usage
 lines appear — open **`/settings`** and look under **Behaviour**.
 

@@ -231,7 +231,7 @@ bot needs them.
           <div class="dc-title">🧭 Welcome — let's get you set up</div>
           <div class="dc-desc">I've filled in your channels and roles. <strong>Confirm and you're done</strong> — or step through to fine-tune.</div>
           <div class="dc-fname">Staff chat <span style="color:#949ba4;font-weight:400">(where I listen for commands)</span></div><div class="dc-fval">#staff-chat ✓ <span style="color:#949ba4">(detected)</span></div>
-          <div class="dc-fname">Log channel <span style="color:#949ba4;font-weight:400">(your audit trail)</span></div><div class="dc-fval">#mod-log ✓ <span style="color:#949ba4">(detected)</span></div>
+          <div class="dc-fname">Log channel <span style="color:#949ba4;font-weight:400">(optional — dashboard log is always on)</span></div><div class="dc-fval">#mod-log ✓ <span style="color:#949ba4">(detected)</span></div>
           <div class="dc-select">Pick a different staff chat…</div>
           <div class="dc-btns">
             <span class="dc-btn green">✅ Looks good — finish now</span>
@@ -244,7 +244,7 @@ bot needs them.
         </div>
       </div></div>
     </div>
-    <p class="wiz-caption"><strong>Channels — and a one-tap finish.</strong> Pick the <em>staff chat</em> (the command listening post) and a <em>log channel</em> (the audit trail); the bot pre-fills both from what it detected. In a hurry? <strong>✅ Looks good — finish now</strong> applies the detected channels, a moderation profile for your community type, and your free AI trial in a single tap. Prefer to fine-tune? <strong>Next: pick roles →</strong> steps you through. Use <strong>🆕 Create for me</strong> to make fresh channels. Tags read <code>(detected)</code> on a new server, or <code>(current)</code> if you're re-running setup.</p>
+    <p class="wiz-caption"><strong>Channels — and a one-tap finish.</strong> Pick the <em>staff chat</em> (the command listening post); a <em>log channel</em> is optional — your dashboard moderation log is always on either way, so choose <strong>📋 Portal only</strong> to skip it. The bot pre-fills what it detected. In a hurry? <strong>✅ Looks good — finish now</strong> applies the detected channels, a moderation profile for your community type, and your free AI trial in a single tap. Prefer to fine-tune? <strong>Next: pick roles →</strong> steps you through. Use <strong>🆕 Create for me</strong> to make fresh channels. Tags read <code>(detected)</code> on a new server, or <code>(current)</code> if you're re-running setup.</p>
   </div>
 
   <div class="wiz-step" data-step="Step 2 · Roles">
