@@ -178,11 +178,12 @@ Discord channel entirely.
   </div></div>
 </div>
 
-Want to change it later? Re-run **`/setup`** any time — it loads your current
-configuration, so you can swap the log channel, or switch to **📋 Portal only** to
-turn the Discord channel off entirely (your dashboard log stays on). For the
-finer controls — how chatty the log is, and whether those compact command-usage
-lines appear — open **`/settings`** and look under **Behaviour**.
+Want to change it later? Open **`/settings` → Behaviour → 📋 Log channel** any time
+to pick a different channel, or switch to **📋 Portal only** to turn the Discord
+channel off entirely (your dashboard log stays on). Re-running **`/setup`** works too
+— it loads your current configuration so you can swap the log channel there as well.
+For the finer controls — how chatty the log is, and whether those compact
+command-usage lines appear — the same **`/settings` → Behaviour** section has them.
 
 ## See also
 
