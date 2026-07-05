@@ -35,6 +35,12 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 </style>
 
 <details class="doc-sec" markdown="1" open>
+<summary>v6.7.19 — Manage your log channel in /settings</summary>
+
+**Change or remove your log channel any time.** Open **/settings → Behavior → 📋 Log channel** to pick a channel to mirror your moderation actions to, or choose **Portal only** to turn the Discord channel off — your dashboard moderation log stays on either way. Setup also walks all the way through now: we removed the Step-1 “finish now” shortcut, so every server that starts `/setup` completes the quick 3-step wizard and ends up correctly configured.
+</details>
+
+<details class="doc-sec" markdown="1">
 <summary>v6.7.18 — Your Discord log channel is now optional</summary>
 
 **Skip the Discord log channel if you like.** Setting a Discord mod-log channel is now optional — in `/setup`, pick **📋 Portal only** and carry on. Your permanent moderation log in the web dashboard is always on regardless, so you still have a complete, tamper-proof record of every action. Already have a log channel and want to drop it? Re-run `/setup` — it loads your current setup, so you can switch to **Portal only** in a couple of taps.

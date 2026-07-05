@@ -234,8 +234,7 @@ bot needs them.
           <div class="dc-fname">Log channel <span style="color:#949ba4;font-weight:400">(optional — dashboard log is always on)</span></div><div class="dc-fval">#mod-log ✓ <span style="color:#949ba4">(detected)</span></div>
           <div class="dc-select">Pick a different staff chat…</div>
           <div class="dc-btns">
-            <span class="dc-btn green">✅ Looks good — finish now</span>
-            <span class="dc-btn blurple">Next: pick roles →</span>
+            <span class="dc-btn green">✅ Looks good — pick roles</span>
           </div>
           <div class="dc-btns">
             <span class="dc-btn grey">🆕 Create for me</span>
@@ -244,7 +243,7 @@ bot needs them.
         </div>
       </div></div>
     </div>
-    <p class="wiz-caption"><strong>Channels — and a one-tap finish.</strong> Pick the <em>staff chat</em> (the command listening post); a <em>log channel</em> is optional — your dashboard moderation log is always on either way, so choose <strong>📋 Portal only</strong> to skip it. The bot pre-fills what it detected. In a hurry? <strong>✅ Looks good — finish now</strong> applies the detected channels, a moderation profile for your community type, and your free AI trial in a single tap. Prefer to fine-tune? <strong>Next: pick roles →</strong> steps you through. Use <strong>🆕 Create for me</strong> to make fresh channels. Tags read <code>(detected)</code> on a new server, or <code>(current)</code> if you're re-running setup.</p>
+    <p class="wiz-caption"><strong>Channels.</strong> Pick the <em>staff chat</em> (the command listening post); a <em>log channel</em> is optional — your dashboard moderation log is always on either way, so choose <strong>📋 Portal only</strong> to skip it. The bot pre-fills what it detected. <strong>✅ Looks good — pick roles</strong> moves you on to the quick, three-step wizard (channels → roles → AI); use <strong>🆕 Create for me</strong> to make fresh channels. Tags read <code>(detected)</code> on a new server, or <code>(current)</code> if you're re-running setup.</p>
   </div>
 
   <div class="wiz-step" data-step="Step 2 · Roles">
