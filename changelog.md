@@ -35,6 +35,12 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 </style>
 
 <details class="doc-sec" markdown="1" open>
+<summary>v6.7.20 — 🎲 /roll — group loot rolls, WoW-style</summary>
+
+**Settle it with a roll.** The new **`/roll`** command starts a timed group roll — great for giveaways, prizes, or deciding who gets the drop. Everyone taps **Need**, **Greed** or **Pass**, and each person gets a hidden 1–100 roll. When the timer's up, **Need beats Greed** and the highest roll in the winning tier wins (ties are re-rolled), with the results revealed in a little dice-roll flourish. Add an item name and timer if you like — **`/roll [item] [seconds]`** (10–300s, default 60). Anyone can start one; one roll runs per channel at a time.
+</details>
+
+<details class="doc-sec" markdown="1">
 <summary>v6.7.19 — Manage your log channel in /settings</summary>
 
 **Change or remove your log channel any time.** Open **/settings → Behavior → 📋 Log channel** to pick a channel to mirror your moderation actions to, or choose **Portal only** to turn the Discord channel off — your dashboard moderation log stays on either way. Setup also walks all the way through now: we removed the Step-1 “finish now” shortcut, so every server that starts `/setup` completes the quick 3-step wizard and ends up correctly configured.

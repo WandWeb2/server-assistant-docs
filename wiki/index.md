@@ -130,6 +130,11 @@ description: The complete Server Assistant reference — every command, wizard a
     <p>React with the perfect GIF — <code>/emote</code>, <code>/cry</code>, <code>/hug</code>, <code>/dance</code> and more, plus <code>/meme</code>, with autocomplete and an AI-picked theme.</p>
   </a>
 
+  <a class="card" href="{{ '/wiki/roll/' | relative_url }}">
+    <h3>🎲 Group rolls</h3>
+    <p>Settle giveaways and loot with <code>/roll</code> — a timed Need / Greed / Pass group roll where the highest roll wins, WoW-style.</p>
+  </a>
+
 </div>
 
 ## Changelogs
