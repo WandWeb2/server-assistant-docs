@@ -38,6 +38,11 @@ description: The complete Server Assistant reference — every command, wizard a
     <p>Configured in about a minute — a quick-start flow, then every screen of the <code>/setup</code> wizard, one state at a time.</p>
   </a>
 
+  <a class="card" href="{{ '/wiki/commands/' | relative_url }}">
+    <h3>⌨️ All commands</h3>
+    <p>The full list of every slash command and right-click menu, grouped by area — a one-page reference.</p>
+  </a>
+
 </div>
 
 ## Browse by area
