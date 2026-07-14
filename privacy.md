@@ -433,8 +433,8 @@ We **do not sell or share** personal information (as those terms are defined und
 
 ## Data security
 
-- Credentials stored encrypted at rest (AES-128)
-- Encryption master key restricted to file-owner access only
+- **All stored data is encrypted at rest** on an encrypted (LUKS/AES) volume
+- Credentials are additionally encrypted at the application layer (AES-128), with the encryption master key stored separately and restricted to file-owner access only
 - All communications use HTTPS/TLS
 - The web portal and its supporting API are the only public endpoints; they sit behind TLS and require authentication (Discord OAuth for staff), and every action is permission-checked server-side against the staff member's Discord role. The Bot otherwise communicates only over Discord's gateway connection
 - Stripe handles payment card data under PCI-DSS compliance — we never see raw card numbers
