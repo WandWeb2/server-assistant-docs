@@ -35,6 +35,12 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 </style>
 
 <details class="doc-sec" markdown="1" open>
+<summary>v6.7.21 — AutoMod custom filters now apply reliably</summary>
+
+**Your custom AutoMod filters now always take effect.** Custom word filters and blocked links you add are now reliably enforced — including any you'd added before. If you'd set up a custom filter that didn't seem to be catching messages, it'll start working automatically. Nothing for you to do.
+</details>
+
+<details class="doc-sec" markdown="1">
 <summary>v6.7.20 — 🎲 /roll — group loot rolls, WoW-style</summary>
 
 **Settle it with a roll.** The new **`/roll`** command starts a timed group roll — great for giveaways, prizes, or deciding who gets the drop. Everyone taps **Need**, **Greed** or **Pass**, and each person gets a hidden 1–100 roll. When the timer's up, **Need beats Greed** and the highest roll in the winning tier wins (ties are re-rolled), with the results revealed in a little dice-roll flourish. Add an item name and timer if you like — **`/roll [item] [seconds]`** (10–300s, default 60). Anyone can start one; one roll runs per channel at a time.
