@@ -35,6 +35,12 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 </style>
 
 <details class="doc-sec" markdown="1" open>
+<summary>v6.7.22 — AutoMod & ticket reliability fixes</summary>
+
+**A handful of fixes so configured features always take effect.** Setting up AutoMod through the `/automod` panel now reliably turns it on; adding a filter or blocked link whose text happens to contain words like "off" or "on" no longer misfires; borderline AI-review flags are no longer dropped on servers without a log channel; and a custom ticket **close message** now reaches the person who opened the ticket. Nothing for you to do.
+</details>
+
+<details class="doc-sec" markdown="1">
 <summary>v6.7.21 — AutoMod custom filters now apply reliably</summary>
 
 **Your custom AutoMod filters now always take effect.** Custom word filters and blocked links you add are now reliably enforced — including any you'd added before. If you'd set up a custom filter that didn't seem to be catching messages, it'll start working automatically. Nothing for you to do.
