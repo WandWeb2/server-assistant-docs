@@ -35,6 +35,12 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 </style>
 
 <details class="doc-sec" markdown="1" open>
+<summary>v6.7.24 — Mediation reliability fix</summary>
+
+**Mediations hold up when both people reply at once.** If two members in a `/mediate` session responded at nearly the same moment, one side's reply could previously be lost and the staff summary might not post. Both accounts are now always captured and the summary is generated exactly once. Nothing for you to do.
+</details>
+
+<details class="doc-sec" markdown="1">
 <summary>v6.7.23 — More "it now actually works" fixes</summary>
 
 **A sweep of fixes so configured features reliably take effect.** Blocked links are now caught even when posted without `https://`; setting up AutoMod through the panel reliably switches it on (even after a previous disable); the `onboarding` / `welcome` command's **set**, **test** and status views work again; snippets named things like "playlist" post correctly instead of showing the list; turning **Pulse** off in the Privacy panel now actually stops the digest; and the Verification panel shows the right status on new servers. Nothing for you to do.
