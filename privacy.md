@@ -433,11 +433,23 @@ We **do not sell or share** personal information (as those terms are defined und
 
 ## Data security
 
-- Credentials stored encrypted at rest (AES-128)
-- Encryption master key restricted to file-owner access only
+- **All stored data is encrypted at rest** on an encrypted (LUKS/AES) volume
+- Credentials are additionally encrypted at the application layer (AES-128), with the encryption master key stored separately and restricted to file-owner access only
 - All communications use HTTPS/TLS
 - The web portal and its supporting API are the only public endpoints; they sit behind TLS and require authentication (Discord OAuth for staff), and every action is permission-checked server-side against the staff member's Discord role. The Bot otherwise communicates only over Discord's gateway connection
 - Stripe handles payment card data under PCI-DSS compliance — we never see raw card numbers
+
+---
+
+## Privileged Gateway Intents
+
+Discord gates three "privileged" gateway intents behind review. Server Assistant requests all three, each for a specific, minimal purpose — and requests no privileged data it does not use:
+
+- **Message Content** — read to run **AutoMod and anti-raid**, **scam-image detection**, and the staff-invoked AI assists (**Message Report**, **SAi**, optional **AutoMod AI second-opinion**, and opt-in **Self-trained AutoMod**). Message content is **not stored** except in the limited, truncated cases set out under *What the Bot stores* and *What the Bot does NOT store*, and is **never used to train or fine-tune any AI model** — the AI assists send only the minimum necessary context to our AI providers for **real-time inference**, and those providers' commercial API terms exclude that data from model training.
+- **Server Members** — used for **join-time safety** (anti-raid, repeat-offender/AltGuard screening, new-joiner verification, and opt-in ThreatNet auto-protect), the **XP / leveling** system, and mapping your Discord **roles to the Bot's permission tiers** (Moderator / Admin / Owner). These need the member gateway events and member list because they must act the moment a member joins or a role changes.
+- **Presence** — read **live only** to show an **aggregate** activity count (for example "42 online · 6 in voice") in **Pulse** and the web dashboard. We **never store which member is online** and never profile an individual's presence — only the running totals are kept, as the aggregate time-series described under *Live server insights*. (Live voice state is read on the same aggregate-only basis — a count of how many members are in voice, never which member is in which channel.)
+
+We request the Presence and Server Members data for no purpose beyond those above, and retain only what *What the Bot stores* and *Data retention* describe.
 
 ---
 
