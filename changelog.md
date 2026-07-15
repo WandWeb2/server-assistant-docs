@@ -35,6 +35,12 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 </style>
 
 <details class="doc-sec" markdown="1" open>
+<summary>v6.7.27 — Notices link to the web portal</summary>
+
+**Update and maintenance notices now link to the web portal.** When Server Assistant posts a Dev Update or Service Notice in your staff chat, its header is now a clickable link to the web portal, and the portal address is shown in the footer — so you can jump straight from a notice to managing your server on the web.
+</details>
+
+<details class="doc-sec" markdown="1">
 <summary>v6.7.26 — /stats shows live Online & In-voice counts</summary>
 
 **`/stats` now shows how many members are online and in voice, live.** Run `/stats` and you'll see a 🟢 Online and 🔊 In voice count alongside the usual server totals — read at the moment you run it, so they're always current. The web portal's "Online now" and "In voice" cards now refresh about every 5 minutes (up from hourly) — note these are a periodic snapshot, not live to the second, so for an exact live count use `/stats` in Discord.
