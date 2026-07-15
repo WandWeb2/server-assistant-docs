@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /server-assistant-docs/intent-evidence/
+Disallow: /server-assistant-docs/assets/intent-evidence/
 
 Sitemap: https://wandweb2.github.io/server-assistant-docs/sitemap.xml
