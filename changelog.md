@@ -35,6 +35,12 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 </style>
 
 <details class="doc-sec" markdown="1" open>
+<summary>v6.7.29 — Ban appeals & tickets: reliability under heavy activity</summary>
+
+**Ban appeals and tickets are now safe when several things happen at once.** Two fixes for busy servers: a ban appeal can no longer lose a reply (or step on another member's appeal) when replies and staff actions arrive together, and two members opening a ticket at the same instant now always get separate ticket numbers instead of colliding. Nothing to configure — it just holds up better under load.
+</details>
+
+<details class="doc-sec" markdown="1">
 <summary>v6.7.28 — Scam-image "Quarantine" & verification threshold fixes</summary>
 
 **Scam-image "Quarantine" now really skips the timeout.** If you set the scam-image defense to **Quarantine** (remove the image, no timeout — staff review the log), it was still timing the poster out for an hour on a confirmed match, the same as "Delete + timeout." Quarantine now removes the image without the timeout, exactly as described.
