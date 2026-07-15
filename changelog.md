@@ -35,6 +35,12 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 </style>
 
 <details class="doc-sec" markdown="1" open>
+<summary>v6.7.32 — Add or remove staff tiers from the web portal</summary>
+
+**The web portal's "Staff permissions" editor now does everything the Discord one does** — including **adding** a new staff tier (pick a Discord role) and **removing** one, not just editing existing tiers. Owner-only, as before. (This needed the bot to send your server's role list to the portal, so it activates on your next update.)
+</details>
+
+<details class="doc-sec" markdown="1">
 <summary>v6.7.31 — Fine-tune staff permissions, action by action</summary>
 
 **Owners can now fine-tune exactly what each staff tier can do.** Previously you assigned a role a whole template (Admin / Moderator); now, in **`/settings → Role Tiers → 🔧 Fine-tune`**, the server owner can grant or revoke **individual** actions (e.g. give Moderators `unban`, or take `ban` off a role), set a tier's level, and toggle whether it can approve dangerous actions. Owner-only, so no one can widen their own access. **The same controls are also in the web portal** — server owners get a "Staff permissions" editor under Settings.
