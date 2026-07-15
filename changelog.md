@@ -35,6 +35,12 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 </style>
 
 <details class="doc-sec" markdown="1" open>
+<summary>v6.7.26 — /stats shows live Online & In-voice counts</summary>
+
+**`/stats` now shows how many members are online and in voice, live.** Run `/stats` and you'll see a 🟢 Online and 🔊 In voice count alongside the usual server totals — read at the moment you run it, so they're always current. The web portal's "Online now" and "In voice" cards now refresh about every 5 minutes (up from hourly) — note these are a periodic snapshot, not live to the second, so for an exact live count use `/stats` in Discord.
+</details>
+
+<details class="doc-sec" markdown="1">
 <summary>v6.7.25 — Fix /setup on servers with lots of channels</summary>
 
 **`/setup` works again on larger servers.** On a server with 25 or more channels, running `/setup` failed with a generic error because the log-channel dropdown ran past Discord's 25-option limit per menu. That's fixed. Nothing for you to do.
