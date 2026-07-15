@@ -35,6 +35,19 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 </style>
 
 <details class="doc-sec" markdown="1" open>
+<summary>v6.8.0 — SAi is your notification hub, with DM call-ups</summary>
+
+**SAi now gathers everything that needs you in one place — and makes sure nothing slips.**
+
+- **One badge for everything that needs you.** In the web portal, the SAi chat bubble shows a red badge with the number of things waiting on you. Open SAi and it greets you and lays them out — approvals a moderator has asked for, ban appeals, AutoMod reviews, raid responses — each with one-tap **Approve / Deny** buttons.
+- **Act by chat, too.** Instead of tapping buttons you can just tell SAi in plain English — *"approve both appeals"*, *"deny the purge"* — and it handles them (and updates Discord as well).
+- **No more two people doing the same job.** When a staff member starts handling something, everyone else sees it's **being handled by them**, with a **Take over** option. Whoever acts first wins, and the others are told who did it.
+- **SAi will call you if something's ignored.** If a decision sits with no one acting for about an hour, SAi starts sending **Discord DMs** — one staff member at a time, ten minutes apart — beginning with whoever's most likely to be around (starting with your moderators, online first) and working up to you, so the whole team isn't pinged at once. Every staff member can turn these DM call-ups off for themselves in the portal (they're on by default).
+- **SAi wears your bot's face** — its picture in the portal is now your Server Assistant bot's own Discord avatar.
+
+</details>
+
+<details class="doc-sec" markdown="1">
 <summary>v6.7.33 — Co-owners can manage staff permissions</summary>
 
 **Co-owners can now manage staff permissions, just like you.** If you've granted someone a co-owner role (full owner-level power), they can now open the "Staff permissions" editor — in Discord and the web portal — to edit, add, and remove staff tiers, and grant or remove co-owners, exactly as the server owner can. Admins and moderators still can't (only owners and co-owners shape the permission structure).
