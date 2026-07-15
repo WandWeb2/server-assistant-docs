@@ -35,6 +35,12 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 </style>
 
 <details class="doc-sec" markdown="1" open>
+<summary>v6.7.30 — Admins can /purge without owner approval</summary>
+
+**Admins can now run `/purge` directly.** `/purge` was the one moderation command that asked the owner to approve it — even when an admin ran it. Now admins (and the owner) purge directly; every other action already ran immediately for whoever's role allows it.
+</details>
+
+<details class="doc-sec" markdown="1">
 <summary>v6.7.29 — Ban appeals & tickets: reliability under heavy activity</summary>
 
 **Ban appeals and tickets are now safe when several things happen at once.** Two fixes for busy servers: a ban appeal can no longer lose a reply (or step on another member's appeal) when replies and staff actions arrive together, and two members opening a ticket at the same instant now always get separate ticket numbers instead of colliding. Nothing to configure — it just holds up better under load.
