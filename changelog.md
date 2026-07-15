@@ -35,6 +35,12 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 </style>
 
 <details class="doc-sec" markdown="1" open>
+<summary>v6.7.25 — Fix /setup on servers with lots of channels</summary>
+
+**`/setup` works again on larger servers.** On a server with 25 or more channels, running `/setup` failed with a generic error because the log-channel dropdown ran past Discord's 25-option limit per menu. That's fixed. Nothing for you to do.
+</details>
+
+<details class="doc-sec" markdown="1">
 <summary>v6.7.24 — Mediation reliability fix</summary>
 
 **Mediations hold up when both people reply at once.** If two members in a `/mediate` session responded at nearly the same moment, one side's reply could previously be lost and the staff summary might not post. Both accounts are now always captured and the summary is generated exactly once. Nothing for you to do.
