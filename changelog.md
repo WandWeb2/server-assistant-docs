@@ -37,7 +37,7 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 <details class="doc-sec" markdown="1" open>
 <summary>v6.7.31 — Fine-tune staff permissions, action by action</summary>
 
-**Owners can now fine-tune exactly what each staff tier can do.** Previously you assigned a role a whole template (Admin / Moderator); now, in **`/settings → Role Tiers → 🔧 Fine-tune`**, the server owner can grant or revoke **individual** actions (e.g. give Moderators `unban`, or take `ban` off a role), set a tier's level, and toggle whether it can approve dangerous actions. Owner-only, so no one can widen their own access. (The same controls are coming to the web portal next.)
+**Owners can now fine-tune exactly what each staff tier can do.** Previously you assigned a role a whole template (Admin / Moderator); now, in **`/settings → Role Tiers → 🔧 Fine-tune`**, the server owner can grant or revoke **individual** actions (e.g. give Moderators `unban`, or take `ban` off a role), set a tier's level, and toggle whether it can approve dangerous actions. Owner-only, so no one can widen their own access. **The same controls are also in the web portal** — server owners get a "Staff permissions" editor under Settings.
 </details>
 
 <details class="doc-sec" markdown="1">
