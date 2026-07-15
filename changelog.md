@@ -37,7 +37,7 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 <details class="doc-sec" markdown="1" open>
 <summary>v6.7.27 — Notices link to the web portal</summary>
 
-**Update and maintenance notices now link to the web portal.** When Server Assistant posts a Dev Update or Service Notice in your staff chat, its header is now a clickable link to the web portal, and the portal address is shown in the footer — so you can jump straight from a notice to managing your server on the web.
+**Update and maintenance notices now link to the web portal.** When Server Assistant posts a Dev Update or Service Notice in your staff chat, its header is now a clickable link to the web portal — so you can jump straight from a notice to managing your server on the web.
 </details>
 
 <details class="doc-sec" markdown="1">
