@@ -35,6 +35,14 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 </style>
 
 <details class="doc-sec" markdown="1" open>
+<summary>v6.7.28 — Scam-image "Quarantine" & verification threshold fixes</summary>
+
+**Scam-image "Quarantine" now really skips the timeout.** If you set the scam-image defense to **Quarantine** (remove the image, no timeout — staff review the log), it was still timing the poster out for an hour on a confirmed match, the same as "Delete + timeout." Quarantine now removes the image without the timeout, exactly as described.
+
+**Verification: a hold threshold of `0` now holds every join.** In intelligent mode, setting the hold threshold to `0` (review every join) was being treated as the default instead — so lower-risk joins came straight in. Setting `0` now does what it says, and the same fix applies to the self-serve risk ceiling.
+</details>
+
+<details class="doc-sec" markdown="1">
 <summary>v6.7.27 — Notices link to the web portal</summary>
 
 **Update and maintenance notices now link to the web portal.** When Server Assistant posts a Dev Update or Service Notice in your staff chat, its header is now a clickable link to the web portal — so you can jump straight from a notice to managing your server on the web.
