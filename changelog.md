@@ -35,6 +35,12 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 </style>
 
 <details class="doc-sec" markdown="1" open>
+<summary>v6.7.33 — Co-owners can manage staff permissions</summary>
+
+**Co-owners can now manage staff permissions, just like you.** If you've granted someone a co-owner role (full owner-level power), they can now open the "Staff permissions" editor — in Discord and the web portal — to edit, add, and remove staff tiers, and grant or remove co-owners, exactly as the server owner can. Admins and moderators still can't (only owners and co-owners shape the permission structure).
+</details>
+
+<details class="doc-sec" markdown="1">
 <summary>v6.7.32 — Add or remove staff tiers from the web portal</summary>
 
 **The web portal's "Staff permissions" editor now does everything the Discord one does** — including **adding** a new staff tier (pick a Discord role) and **removing** one, not just editing existing tiers. Owner-only, as before. (This needed the bot to send your server's role list to the portal, so it activates on your next update.)
