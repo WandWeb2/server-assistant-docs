@@ -35,6 +35,19 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 </style>
 
 <details class="doc-sec" markdown="1" open>
+<summary>v6.11.1 — Your personal settings now live under Settings → Personalization</summary>
+
+**A tidier home for the settings that are just *yours*.** The web portal's **Settings** tab now opens with a new **Personalization** section at the top — your own preferences, separate from the server-wide settings below it:
+
+- **Call me by DM** — whether SAi nudges *you* when something sits unactioned (~1h).
+- **Pulse in my DMs** — your personal Pulse cadence (Off / Weekly / Monthly).
+- **Notifications on this device** — turn on push notifications for the browser you're using.
+
+These used to live in the SAi chat panel; they're easier to find in Settings now. And the Insights → Pulse card has a quick link straight to it. (We also removed the "Send me a sample" button — that was only ever a testing tool.)
+
+</details>
+
+<details class="doc-sec" markdown="1">
 <summary>v6.11.0 — One digest to rule them all: Weekly digest folds into Pulse</summary>
 
 **Cleaning up the last bit of overlap.** The old **Weekly digest** — a weekly activity summary the bot posted to your log channel — did the same job Pulse now does (and better: Pulse covers server activity *and* your mod-team recap, lives always-current in your portal, and can DM each staffer on their own schedule). So we've retired the standalone Weekly digest and its `/settings → Behaviour` toggles. Nothing to do — it's all in Pulse now. Your **Digests & health** settings are simpler for it.
