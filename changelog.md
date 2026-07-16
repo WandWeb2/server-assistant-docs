@@ -35,6 +35,17 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 </style>
 
 <details class="doc-sec" markdown="1" open>
+<summary>v6.9.0 — Pulse now includes your mod‑team recap</summary>
+
+**Your Daily Pulse and the Weekly mod recap are now one thing: Pulse.** One clean digest that covers both how your *server* is doing and how your *team* is doing — server activity (messages, joins/leaves, AutoMod blocks, warnings, early‑warning flags) **plus** your mod‑team recap (cases handled and the week's trend, a breakdown by action, who's been most active) and a new **itemised list of recent moderation actions** so you can see exactly what happened at a glance.
+
+- **Always in your portal, for every server.** Your Pulse now shows live in the web portal for every server, on any plan — no setup required. Open Insights and it's there, current.
+- **Choose how often you're posted to Discord.** The Pulse posted to your server channel is now **weekly or monthly** (whichever you prefer), set in `/settings → Notifications`.
+- **The weekly recap is folded in.** No more separate recap — it rides along with Pulse. `/retro` still gives you an on‑demand team view any time.
+
+</details>
+
+<details class="doc-sec" markdown="1">
 <summary>v6.8.1 — See a sample of SAi's notifications</summary>
 
 **Curious what SAi's DMs look like before one ever fires? Now you can see for yourself.** The SAi panel in the web portal has a new **"✨ Send me a sample"** button — tap it and SAi sends a few example notifications straight to your Discord DMs: the "a decision needs staff" call-up, a Daily Pulse briefing, and an all-clear. Each one is clearly marked as a sample, and it only ever DMs you (if your Discord DMs are closed, the button lets you know). A no-pressure way to see how SAi keeps you in the loop.
