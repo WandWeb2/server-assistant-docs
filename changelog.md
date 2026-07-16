@@ -35,6 +35,13 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 </style>
 
 <details class="doc-sec" markdown="1" open>
+<summary>v6.11.0 — One digest to rule them all: Weekly digest folds into Pulse</summary>
+
+**Cleaning up the last bit of overlap.** The old **Weekly digest** — a weekly activity summary the bot posted to your log channel — did the same job Pulse now does (and better: Pulse covers server activity *and* your mod-team recap, lives always-current in your portal, and can DM each staffer on their own schedule). So we've retired the standalone Weekly digest and its `/settings → Behaviour` toggles. Nothing to do — it's all in Pulse now. Your **Digests & health** settings are simpler for it.
+
+</details>
+
+<details class="doc-sec" markdown="1">
 <summary>v6.10.1 — Tidied-up Pulse settings</summary>
 
 **A small follow-up to the Pulse update.** Now that Pulse lives in your web portal (always up to date) and can be DM'd to each staff member on their own schedule, the old **Pulse settings** in Discord `/settings → Notifications` — the "how often to post to a channel" menu and the channel/hour panel — no longer did anything, so we've cleared them away. Nothing you need to do; your Pulse is right where it should be. Set your personal Pulse DM cadence anytime from the SAi panel in the portal.
