@@ -35,6 +35,13 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 </style>
 
 <details class="doc-sec" markdown="1" open>
+<summary>v6.10.1 — Tidied-up Pulse settings</summary>
+
+**A small follow-up to the Pulse update.** Now that Pulse lives in your web portal (always up to date) and can be DM'd to each staff member on their own schedule, the old **Pulse settings** in Discord `/settings → Notifications` — the "how often to post to a channel" menu and the channel/hour panel — no longer did anything, so we've cleared them away. Nothing you need to do; your Pulse is right where it should be. Set your personal Pulse DM cadence anytime from the SAi panel in the portal.
+
+</details>
+
+<details class="doc-sec" markdown="1">
 <summary>v6.10.0 — Get your Pulse in your DMs, on your schedule</summary>
 
 **Want your server's Pulse sent straight to you? Now each staff member can opt in — on their own schedule.** In the web portal's SAi panel there's a new **"🩺 Pulse in my DMs"** option: choose **weekly** or **monthly** and SAi will DM you the Pulse (server activity **and** your mod‑team recap) at that cadence — just for you, no setup for anyone else.
