@@ -35,6 +35,17 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 </style>
 
 <details class="doc-sec" markdown="1" open>
+<summary>v6.10.0 — Get your Pulse in your DMs, on your schedule</summary>
+
+**Want your server's Pulse sent straight to you? Now each staff member can opt in — on their own schedule.** In the web portal's SAi panel there's a new **"🩺 Pulse in my DMs"** option: choose **weekly** or **monthly** and SAi will DM you the Pulse (server activity **and** your mod‑team recap) at that cadence — just for you, no setup for anyone else.
+
+- **It's per‑person.** Your cadence is yours; a teammate can pick a different one, or none at all. Off by default.
+- **The channel post is retired.** Pulse now lives where it's most useful — always live in your portal, and in your DMs if you want it — instead of posting to a server channel.
+- **SAi sounds like a person now.** SAi's DMs — the "something needs the team" nudges and your Pulse — are warmer and address you by name, less like a robot ticking a box.
+
+</details>
+
+<details class="doc-sec" markdown="1">
 <summary>v6.9.0 — Pulse now includes your mod‑team recap</summary>
 
 **Your Daily Pulse and the Weekly mod recap are now one thing: Pulse.** One clean digest that covers both how your *server* is doing and how your *team* is doing — server activity (messages, joins/leaves, AutoMod blocks, warnings, early‑warning flags) **plus** your mod‑team recap (cases handled and the week's trend, a breakdown by action, who's been most active) and a new **itemised list of recent moderation actions** so you can see exactly what happened at a glance.
