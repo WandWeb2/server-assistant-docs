@@ -35,6 +35,35 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 </style>
 
 <details class="doc-sec" markdown="1" open>
+<summary>v6.12.0 — Meet Reception: a warm front door that keeps bad actors out</summary>
+
+**Verification just got a friendly face.** Turn on **Reception** and new members arrive at a
+branded welcome desk instead of a cold gate — a banner, a greeting, and a one-tap **🔓 Verify
+me** button. Tap it, answer a quick "are you a real person?" question, and the server opens right
+up. Get it wrong? No problem — it's a friendly retry, never a ban.
+
+- **Make it yours.** Every server can customize the **greeting**. On **Premium**, you can also
+  generate (or upload) a **banner image** and give your receptionist its own **name and
+  personality**.
+- **A quiet trap for the bad guys.** The only thing to *do* at Reception is tap Verify — so if a
+  brand-new account skips that and starts posting spam, it's shown the door automatically. Real
+  members never notice; scammers don't get a second message. During a raid, the desk tightens up
+  on its own.
+- **Always a real check.** The welcome question works even if other systems are busy — Reception
+  never just swings the gate open.
+- **Ask the receptionist anything (Premium).** Verified members can chat with SAi right at the
+  desk for help with the server or a general question.
+- **See it working.** Your weekly **Pulse** now includes a Reception summary — who arrived, who
+  verified, who got turned away, and how quickly people get in.
+- **A safer internet, shown at the door.** The banner carries a live **🛡️ Protected by
+  ThreatNet** badge — the network's running tally of bad actors and scam images stopped across
+  every protected server.
+
+Find it under **`/settings → Verification → Reception`**. It's off until you switch it on.
+
+</details>
+
+<details class="doc-sec" markdown="1">
 <summary>v6.11.1 — Your personal settings now live under Settings → Personalization</summary>
 
 **A tidier home for the settings that are just *yours*.** The web portal's **Settings** tab now opens with a new **Personalization** section at the top — your own preferences, separate from the server-wide settings below it:
