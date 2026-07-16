@@ -35,6 +35,13 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 </style>
 
 <details class="doc-sec" markdown="1" open>
+<summary>v6.8.1 — See a sample of SAi's notifications</summary>
+
+**Curious what SAi's DMs look like before one ever fires? Now you can see for yourself.** The SAi panel in the web portal has a new **"✨ Send me a sample"** button — tap it and SAi sends a few example notifications straight to your Discord DMs: the "a decision needs staff" call-up, a Daily Pulse briefing, and an all-clear. Each one is clearly marked as a sample, and it only ever DMs you (if your Discord DMs are closed, the button lets you know). A no-pressure way to see how SAi keeps you in the loop.
+
+</details>
+
+<details class="doc-sec" markdown="1">
 <summary>v6.8.0 — SAi is your notification hub, with DM call-ups</summary>
 
 **SAi now gathers everything that needs you in one place — and makes sure nothing slips.**
