@@ -91,12 +91,12 @@ The v2.x line: the warnings system, persistent state, audit logs. **Tap a releas
 .doc-sec.superseded[data-kind] > summary::after { content: none; }
 .doc-sec.superseded { opacity: .82; }
 /* Version navigation */
-.changelog-nav { display: flex; gap: 0.4rem; flex-wrap: wrap; margin: 0.6rem 0 1.2rem; padding: 0.5rem; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; }
-.changelog-nav strong { font-size: 0.78rem; color: var(--accent); font-weight: 700; padding: 0.35rem 0.6rem 0.35rem 0; align-self: center; }
-.changelog-nav a { display: inline-block; padding: 0.35rem 0.85rem; border-radius: 999px; font-size: 0.85rem; font-weight: 600; text-decoration: none; color: var(--fg-1); background: var(--surface-2); border: 1px solid var(--border); transition: all 0.15s; }
-.changelog-nav a:hover { background: var(--accent); color: var(--on-accent); border-color: var(--accent); text-decoration: none; }
-.changelog-nav a.current { background: var(--accent); color: var(--on-accent); border-color: var(--accent); }
-.changelog-nav .latest-tag { font-size: 0.65rem; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; opacity: 0.8; margin-left: 0.3rem; }
+.changelog-nav { display: flex; gap: 0.6rem; flex-wrap: wrap; align-items: baseline; margin: 1.6rem 0 0.4rem; padding-top: 0.85rem; border-top: 1px solid var(--glass-border); font-size: 0.8rem; opacity: 0.7; }
+.changelog-nav strong { font-size: 0.68rem; font-weight: 600; color: var(--ink-soft); text-transform: uppercase; letter-spacing: 0.05em; }
+.changelog-nav a { color: var(--ink-soft); text-decoration: none; border-bottom: 1px dotted var(--ink-soft); padding-bottom: 1px; transition: color 0.15s, border-color 0.15s; }
+.changelog-nav a:hover { color: var(--accent); border-bottom-color: var(--accent); text-decoration: none; }
+.changelog-nav a.current { color: var(--ink); border-bottom-style: solid; }
+.changelog-nav .latest-tag { font-size: 0.58rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; opacity: 0.7; margin-left: 0.25rem; }
 </style>
 
 <div class="changelog-nav">

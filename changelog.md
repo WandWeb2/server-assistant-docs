@@ -692,24 +692,24 @@ Everything stays **local to your server**: nothing is shared anywhere. It's **on
 <p class="cl-intro">What's changed in the <strong>Server Assistant portal</strong>: the web dashboard you sign into with your Discord account.</p>
 
 <details class="doc-sec" markdown="1" data-kind="fix">
-<summary>A simpler leveling toggle</summary>
+<summary>v1.3: A simpler leveling toggle</summary>
 - **One "Level-up messages" switch.** The portal's leveling section now has a single **Level-up messages** on/off toggle in place of the old, confusing pair. Turn it off and the celebratory level-up messages stop; members still earn XP exactly as before, they just do it quietly.
 </details>
 
 <details class="doc-sec" markdown="1" data-kind="feature">
-<summary>Crestbound joins the portal</summary>
+<summary>v1.2: Crestbound joins the portal</summary>
 - **XP Games on the portal.** The portal home now has an **XP Games** section, with **[Crestbound]({{ '/wiki/crestbound/' | relative_url }})**, the Crest-collecting game, as its first entry. Open it to jump straight into your collection.
 - **My Collection.** A new view shows every Crest in the current Chapter: the ones you've found in full and the ones you haven't as placeholders, plus your spendable XP and a collection counter at the top.
 </details>
 
 <details class="doc-sec" markdown="1" data-kind="update">
-<summary>Always up to date</summary>
+<summary>v1.1: Always up to date</summary>
 - **Automatic updates.** The portal now refreshes itself in the background, so you always see the latest version without needing to hard-reload the page.
 - **Wiki link in the footer.** A link to the [Server Assistant Wiki]({{ '/wiki/' | relative_url }}) now sits in the portal footer, so the full feature and command reference is always one tap away.
 </details>
 
 <details class="doc-sec" markdown="1" data-kind="feature">
-<summary>The customer portal launches</summary>
+<summary>v1.0: The customer portal launches</summary>
 - **Sign in with Discord.** The customer portal launched as a web dashboard you reach by signing in with your Discord account, a home for the parts of Server Assistant that live on the web rather than in chat.
 </details>
 
@@ -746,31 +746,31 @@ Everything stays **local to your server**: nothing is shared anywhere. It's **on
 </details>
 
 <details class="doc-sec" markdown="1" data-kind="feature">
-<summary>Make it yours: Card Backs</summary>
+<summary>v0.5: Make it yours: Card Backs</summary>
 - **Card Backs arrive.** The Shop now has a cosmetics shelf: pick the free **Banked Ember**, one of five **faction backs** (300 XP each), or the prestige **Vault Gilt** (150 Cinders, the same quest currency that unlocks the Ember Vault). Your equipped back is shown everywhere a Crest sits face-down, collection placeholders and deck faces. Purely cosmetic: no card back ever changes how the game plays.
 </details>
 
 <details class="doc-sec" markdown="1" data-kind="feature">
-<summary>A fullscreen home and the Shop</summary>
+<summary>v0.4: A fullscreen home and the Shop</summary>
 - **Crestbound goes fullscreen.** The game now opens into its own full-screen home: a main menu of illustrated panels, your Collection, the Shop, and the battle features as they arrive, with your XP balance always in view at the top.
 - **A proper Shop.** Packs have moved out of the collection page into a dedicated **Shop**: pick one of the five **faction packs** (5 Crests from a single faction, no Mythics there), open the classic **Chapter Booster**, or eye up the **Ember Vault**, a premium pack of guaranteed rares crowned by a Mythic, opened with **Cinders**, a currency earned from quests. Your collection keeps a shortcut straight to the Shop.
 - **Hand-illustrated everywhere.** The home screen, its menu panels and every pack in the Shop now carry rich HD artwork in the same style as the Crests themselves, each piece fades in as it's ready.
 </details>
 
 <details class="doc-sec" markdown="1" data-kind="feature">
-<summary>Tidy your collection: burn spare Crests</summary>
+<summary>v0.3: Tidy your collection: burn spare Crests</summary>
 - **Burn spare Crests for XP.** Got duplicates? You can now **burn** a spare Crest to recover some XP, common **5**, uncommon **12**, rare **30**, mythic **75**, and spend it on more packs. There's a confirmation every time, with an extra warning if you're about to burn your only copy of a Crest.
 </details>
 
 <details class="doc-sec" markdown="1" data-kind="update">
-<summary>A more polished collection</summary>
+<summary>v0.2: A more polished collection</summary>
 - **Rarest first.** Your collection now sorts with the most prized Crests at the top, mythic, then rare, then uncommon, then common, so the headline pieces are always front and centre.
 - **Reveal animations.** Opening a booster pack now plays a short reveal, with the Crests turning over one by one, and rare and mythic Crests catch the light with a subtle sheen.
 - **Collection counter.** My Collection now shows how many Crests of the Chapter you've found at a glance.
 </details>
 
 <details class="doc-sec" markdown="1" data-kind="feature">
-<summary>Crestbound launches</summary>
+<summary>v0.1: Crestbound launches</summary>
 - **The game arrives.** Crestbound launched in the portal with its first Chapter, **"Chapter I: Embers of the First War"**: a sweeping cast of **450 Crests** to collect across four rarities: common, uncommon, rare and mythic.
 - **Booster packs.** Spend **200 XP** to open a booster pack of **5 Crests**, with the last Crest in every pack **guaranteed to be rare or better**.
 - **My Collection.** Every Crest in the Chapter shown in one place, the ones you own in full, the ones still out there as placeholders, so you can always see what's left to find.
