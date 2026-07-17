@@ -22,7 +22,7 @@ description: The complete Server Assistant reference, every command, wizard and 
 
 # Server Assistant Wiki
 
-<p class="wiki-lead">The full reference for Server Assistant, <strong>every feature, command, wizard and flow</strong>, each shown with a live mock-up of exactly what you'll see in Discord. Search above, or browse below.</p>
+<p class="wiki-lead">Every <strong>feature, command and wizard</strong>, each shown as a live mock-up of what you'll see in Discord. Search above, or browse below.</p>
 
 ## Start here
 
@@ -30,17 +30,17 @@ description: The complete Server Assistant reference, every command, wizard and 
 
   <a class="card" href="{{ '/wiki/features/' | relative_url }}">
     <h3>Main features</h3>
-    <p>A guided tour of everything the bot does, what each feature is, how to switch it on, and where to read more.</p>
+    <p>Every feature: what it does, how to switch it on, where to read more.</p>
   </a>
 
   <a class="card" href="{{ '/wiki/setup/' | relative_url }}">
     <h3>Setup</h3>
-    <p>Configured in about a minute, a quick-start flow, then every screen of the <code>/setup</code> wizard, one state at a time.</p>
+    <p>Get configured in about a minute, then every screen of the <code>/setup</code> wizard, one state at a time.</p>
   </a>
 
   <a class="card" href="{{ '/wiki/commands/' | relative_url }}">
     <h3>All commands</h3>
-    <p>The full list of every slash command and right-click menu, grouped by area, a one-page reference.</p>
+    <p>Every slash command and right-click menu, grouped by area.</p>
   </a>
 
 </div>
@@ -51,7 +51,7 @@ description: The complete Server Assistant reference, every command, wizard and 
 
   <a class="card" href="{{ '/wiki/moderation/' | relative_url }}">
     <h3>Moderation &amp; safety</h3>
-    <p>Warnings, mutes, bans, lockdown, purge and the anti-raid toolkit, every command with its output.</p>
+    <p>Warnings, mutes, bans, lockdown, purge and the anti-raid toolkit.</p>
   </a>
 
   <a class="card" href="{{ '/wiki/settings/' | relative_url }}">
@@ -61,7 +61,7 @@ description: The complete Server Assistant reference, every command, wizard and 
 
   <a class="card" href="{{ '/wiki/automod/' | relative_url }}">
     <h3>AutoMod</h3>
-    <p>AI review, self-training, filters, link blocklists and the punishment ladder, the full AutoMod dashboard.</p>
+    <p>AI review, self-training, filters, link blocklists and the punishment ladder.</p>
   </a>
 
   <a class="card" href="{{ '/wiki/ai/' | relative_url }}">
@@ -71,7 +71,7 @@ description: The complete Server Assistant reference, every command, wizard and 
 
   <a class="card" href="{{ '/wiki/tickets/' | relative_url }}">
     <h3>Tickets &amp; support</h3>
-    <p>The ticket panel, intake questions, the FAQ and the full support flow.</p>
+    <p>The ticket panel, intake questions, the FAQ and the support flow.</p>
   </a>
 
   <a class="card" href="{{ '/wiki/members/' | relative_url }}">
@@ -92,52 +92,52 @@ description: The complete Server Assistant reference, every command, wizard and 
 
   <a class="card" href="{{ '/wiki/pulse/' | relative_url }}">
     <h3>Pulse</h3>
-    <p>Read-only whole-server health digests, posted to your staff channel on the cadence you choose.</p>
+    <p>Read-only whole-server health digests, in the portal and DM'd on your own cadence.</p>
   </a>
 
   <a class="card" href="{{ '/wiki/ban-appeals/' | relative_url }}">
     <h3>Ban appeals</h3>
-    <p>The DM-the-reason, one-reply staff appeal ticket flow, Unban / Deny / Research, and Premium multi-round.</p>
+    <p>DM-the-reason, one-reply staff appeal tickets: Unban / Deny / Research, plus Premium multi-round.</p>
   </a>
 
   <a class="card" href="{{ '/wiki/audit-log/' | relative_url }}">
     <h3>Audit log</h3>
-    <p>The tamper-proof record of every moderation action, and how to set your log channel.</p>
+    <p>A tamper-proof record of every moderation action, and how to set your log channel.</p>
   </a>
 
   <a class="card" href="{{ '/wiki/altguard/' | relative_url }}">
     <h3>Alt / ban-evasion</h3>
-    <p>Catches someone you banned coming back on a new account, local to your server, distinct from ThreatNet.</p>
+    <p>Catches someone you banned returning on a new account. Local to your server, distinct from ThreatNet.</p>
   </a>
 
   <a class="card" href="{{ '/wiki/anti-nuke/' | relative_url }}">
     <h3>Anti-nuke / rogue-admin</h3>
-    <p>Stops a server nuke or compromised admin, auto-quarantine with one-tap revert, exact permission restore, and a trusted-actor whitelist.</p>
+    <p>Stops a server nuke or compromised admin: auto-quarantine with one-tap revert, exact permission restore, trusted-actor whitelist.</p>
   </a>
 
   <a class="card" href="{{ '/wiki/threatnet/' | relative_url }}">
     <h3>ThreatNet</h3>
-    <p>The cross-server safety network, advisory band, scam-image defense, Premium auto-protect, what's shared, and how to opt out.</p>
+    <p>The cross-server safety network: advisory band, scam-image defense, Premium auto-protect, what's shared, how to opt out.</p>
   </a>
 
   <a class="card" href="{{ '/wiki/leveling/' | relative_url }}">
     <h3>XP &amp; leveling</h3>
-    <p>Members earn XP just by taking part, levels, the <code>/rank</code> card, the leaderboard and level-up announcements.</p>
+    <p>Members earn XP just by taking part: levels, the <code>/rank</code> card, the leaderboard and level-up announcements.</p>
   </a>
 
   <a class="card" href="{{ '/wiki/crestbound/' | relative_url }}">
     <h3>Crestbound</h3>
-    <p>The Crest-collecting game in the portal, spend earned XP on booster packs, complete the Chapter, and burn spares back into XP.</p>
+    <p>The Crest-collecting game in the portal: spend earned XP on booster packs, complete the Chapter, burn spares back into XP.</p>
   </a>
 
   <a class="card" href="{{ '/wiki/emotes/' | relative_url }}">
     <h3>Emote commands</h3>
-    <p>React with the perfect GIF, <code>/emote</code>, <code>/cry</code>, <code>/hug</code>, <code>/dance</code> and more, plus <code>/meme</code>, with autocomplete and an AI-picked theme.</p>
+    <p>React with the perfect GIF: <code>/emote</code>, <code>/cry</code>, <code>/hug</code>, <code>/dance</code> and more, plus <code>/meme</code>.</p>
   </a>
 
   <a class="card" href="{{ '/wiki/roll/' | relative_url }}">
     <h3>Group rolls</h3>
-    <p>Settle giveaways and loot with <code>/roll</code>, a timed Need / Greed / Pass group roll where the highest roll wins, WoW-style.</p>
+    <p>Settle giveaways and loot with <code>/roll</code>: a timed Need / Greed / Pass roll, highest wins, WoW-style.</p>
   </a>
 
 </div>
@@ -148,26 +148,26 @@ description: The complete Server Assistant reference, every command, wizard and 
 
   <a class="card" href="{{ '/changelog/' | relative_url }}">
     <h3>SA Bot changelog</h3>
-    <p>Release history for the bot, every feature and improvement, version by version.</p>
+    <p>Release history for the bot, version by version.</p>
   </a>
 
   <a class="card" href="{{ '/wiki/changelog-portal/' | relative_url }}">
     <h3>Portal changelog</h3>
-    <p>What's changed in the web portal you sign into with Discord.</p>
+    <p>What's changed in the web portal.</p>
   </a>
 
   <a class="card" href="{{ '/wiki/changelog-crestbound/' | relative_url }}">
     <h3>Crestbound changelog</h3>
-    <p>The XP game's release notes, the Chapter, booster packs, collection and burning.</p>
+    <p>Release notes for the Crest-collecting game.</p>
   </a>
 
 </div>
 
 ## How to read the examples
 
-Every screen on this wiki is a faithful recreation of the real Discord interface, the same embeds, buttons and dropdowns you'll see in your server. Where a feature is a multi-step **wizard**, you'll find a step-through like the one on the [setup page]({{ '/wiki/setup/' | relative_url }}): use **Next ›** and **‹ Back** to walk each state.
+Every screen here recreates the real Discord interface: the same embeds, buttons and dropdowns you'll see in your server. Multi-step **wizards** (like the [setup page]({{ '/wiki/setup/' | relative_url }})) have a step-through, use **Next ›** and **‹ Back** to walk each state.
 
-Commands are tagged so you know what you're looking at:
+Commands are tagged:
 
 <span class="cmd-tag free">FREE</span> available on every plan &nbsp;·&nbsp;
 <span class="cmd-tag premium">PREMIUM</span> needs Premium &nbsp;·&nbsp;
