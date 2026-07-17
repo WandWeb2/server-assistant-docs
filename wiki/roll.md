@@ -3,7 +3,7 @@ layout: wiki
 title: "Group rolls (/roll)"
 permalink: /wiki/roll/
 wiki: true
-wiki_category: "Engagement"
+wiki_category: "Features"
 summary: Settle giveaways and loot with /roll, a timed group roll where everyone taps Need, Greed or Pass, each gets a hidden 1 to 100 roll, and (WoW-style) Need beats Greed with the highest roll winning.
 wiki_keywords: [roll, /roll, group roll, loot roll, need, greed, pass, need before greed, dice, giveaway, raffle, random, winner, wow, world of warcraft]
 description: How Server Assistant's /roll command works, start a timed Need/Greed/Pass group roll for a prize or drop; Need beats Greed, highest roll wins, ties are re-rolled, and results are revealed in the embed.

@@ -3,7 +3,7 @@ layout: wiki
 title: Server Assistant Main Features
 permalink: /wiki/features/
 wiki: true
-wiki_category: Getting started
+wiki_category: "Getting Started"
 summary: A tour of Server Assistant's headline features, moderation, AutoMod, join-time protection, ban appeals, Pulse, tickets and AI, with how to use each and where to learn more.
 wiki_keywords: [features, overview, automod, pulse, threatnet, altguard, ban appeals, anti-raid, verification, audit log, tickets, ai, moderation, what does it do]
 description: A tour of Server Assistant's headline features, what each one does, how to turn it on, and where to read the full guide.

@@ -3,7 +3,7 @@ layout: wiki
 title: "Server Assistant Ban Appeals"
 permalink: /wiki/ban-appeals/
 wiki: true
-wiki_category: "Feature guides"
+wiki_category: "Moderation"
 summary: A deep-dive on ban appeals, the ban DM that tells the member exactly why, the single reply that opens a staff appeal ticket, the one-tap Unban / Deny / Research / Info / Warnings / Notes buttons, and the Premium guided multi-round flow. Shown one state at a time exactly as it appears in Discord.
 wiki_keywords: [ban, appeal, unban, deny, research, recovery, dm, ban appeal, multi-round, ban appeals]
 description: How Server Assistant's ban appeals work end to end, the reason DM, the member's one reply, the staff appeal ticket with its review buttons, the Premium multi-round conversation, and why a ThreatNet auto-ban is the silent exception that's contested via the web portal instead.

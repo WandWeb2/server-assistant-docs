@@ -3,7 +3,7 @@ layout: wiki
 title: AutoMod
 permalink: /wiki/automod/
 wiki: true
-wiki_category: "Settings & dashboards"
+wiki_category: "Moderation"
 summary: The /automod dashboard, filter packs, AI review, self-training, custom filters, link blocks, the punishment ladder and spam thresholds. How community-type presets seed it, shown panel by panel as it appears in Discord.
 wiki_keywords: [automod, automoderation, auto-moderation, filters, filter packs, ai review, self-train, self-training, custom filters, link blocklist, punishment ladder, spam, slurs, scams, presets, moderation]
 description: Server Assistant's AutoMod dashboard, panel by panel, filter packs, AI second-opinion review, self-training, custom filters, link blocks, the punishment ladder and spam thresholds, plus how community-type presets seed it.

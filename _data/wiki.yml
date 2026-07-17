@@ -11,62 +11,47 @@
 #           url:     the page's permalink (must match the page front matter)
 #           premium: true   # optional — shows a small PREMIUM tag
 #
+# Usage-first structure: five sections (Getting Started, Features, Moderation,
+# Settings, Premium). Each page's `wiki_category` front matter must match its
+# section title here (it drives the breadcrumb). The changelog is no longer a
+# sidebar section: it lives at /changelog/ with SA Bot / Portal / Crestbound tabs.
+#
 # Only list pages that actually exist — every url here renders as a link, so a
-# url with no page behind it is a broken link. The wiki is built in phases
-# (one category per PR); each phase appends its group(s) here.
+# url with no page behind it is a broken link.
 # ============================================================================
 categories:
-  - title: Getting started
+  - title: "Getting Started"
     items:
-      - { label: "Wiki home", url: "/wiki/" }
+      - { label: "Overview", url: "/wiki/" }
       - { label: "Main features", url: "/wiki/features/" }
       - { label: "The /setup wizard", url: "/wiki/setup/" }
+      - { label: "Commands", url: "/wiki/commands/" }
 
-  - title: "Feature guides"
+  - title: "Features"
     items:
       - { label: "Pulse", url: "/wiki/pulse/" }
+      - { label: "SAi (AI assistant)", url: "/wiki/ai/" }
+      - { label: "Welcome & verification", url: "/wiki/members/" }
+      - { label: "Tickets & support", url: "/wiki/tickets/" }
+      - { label: "XP & leveling", url: "/wiki/leveling/" }
+      - { label: "Crestbound", url: "/wiki/crestbound/" }
+      - { label: "Emotes & fun", url: "/wiki/emotes/" }
+      - { label: "Roll", url: "/wiki/roll/" }
+
+  - title: "Moderation"
+    items:
+      - { label: "Moderation & safety", url: "/wiki/moderation/" }
+      - { label: "AutoMod", url: "/wiki/automod/" }
       - { label: "Ban appeals", url: "/wiki/ban-appeals/" }
-      - { label: "Audit log", url: "/wiki/audit-log/" }
       - { label: "Alt / ban-evasion", url: "/wiki/altguard/" }
       - { label: "Anti-nuke / rogue-admin", url: "/wiki/anti-nuke/" }
       - { label: "ThreatNet", url: "/wiki/threatnet/" }
+      - { label: "Audit log", url: "/wiki/audit-log/" }
 
-  - title: "Moderation & safety"
+  - title: "Settings"
     items:
-      - { label: "Moderation & safety", url: "/wiki/moderation/" }
-      - { label: "Warnings & notes", url: "/wiki/moderation/#warnings-notes" }
-      - { label: "Quick actions", url: "/wiki/moderation/#quick-actions" }
-      - { label: "Removals", url: "/wiki/moderation/#removals" }
-      - { label: "Bulk & raid response", url: "/wiki/moderation/#bulk-raid" }
+      - { label: "Settings & configuration", url: "/wiki/settings/" }
 
-  - title: "Settings & dashboards"
+  - title: "Premium"
     items:
-      - { label: "Settings hub & configuration", url: "/wiki/settings/" }
-      - { label: "AutoMod", url: "/wiki/automod/" }
-
-  - title: "AI & intelligence"
-    items:
-      - { label: "AI & intelligence", url: "/wiki/ai/" }
-
-  - title: "Tickets & support"
-    items:
-      - { label: "Tickets & support", url: "/wiki/tickets/" }
-
-  - title: "Member experience"
-    items:
-      - { label: "Member experience", url: "/wiki/members/" }
-
-  - title: "XP & leveling"
-    items:
-      - { label: "XP & leveling", url: "/wiki/leveling/" }
-      - { label: "Crestbound", url: "/wiki/crestbound/" }
-
-  - title: "Account & premium"
-    items:
-      - { label: "Account & premium", url: "/wiki/account/" }
-
-  - title: "Changelogs"
-    items:
-      - { label: "SA Bot changelog", url: "/changelog/" }
-      - { label: "Portal changelog", url: "/wiki/changelog-portal/" }
-      - { label: "Crestbound changelog", url: "/wiki/changelog-crestbound/" }
+      - { label: "Account & Premium", url: "/wiki/account/" }

@@ -3,7 +3,7 @@ layout: wiki
 title: "XP &amp; leveling"
 permalink: /wiki/leveling/
 wiki: true
-wiki_category: "XP & leveling"
+wiki_category: "Features"
 summary: How members earn XP just by being part of the conversation, level up over time, and climb the server leaderboard. Covers /rank, /leaderboard, level-up announcements, and how voting for Server Assistant earns extra XP, all shown exactly as they appear in Discord.
 wiki_keywords: [xp, levels, leveling, levelling, rank, /rank, leaderboard, /leaderboard, level up, level-up, levelling up, vote, voting, review, /review, review rewards, double xp, rewards, reputation, points, ranks, /leveling]
 description: A member-facing reference for Server Assistant's XP and leveling system, earning XP from chat and voting, the /rank card, the leaderboard, and level-up announcements, each shown one state at a time exactly as it appears in Discord.

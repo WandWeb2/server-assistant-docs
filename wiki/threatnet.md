@@ -3,7 +3,7 @@ layout: wiki
 title: Server Assistant ThreatNet
 permalink: /wiki/threatnet/
 wiki: true
-wiki_category: Feature guides
+wiki_category: "Moderation"
 summary: The cross-server safety network, how it spots accounts with a serious, corroborated record on other servers, what it shares, the advisory band, Premium auto-protect, and how to opt out.
 wiki_keywords: [threatnet, cross-server, threat network, safety, raiders, scammers, ban evasion, auto-protect, autoban, opt out, band]
 description: How ThreatNet, Server Assistant's cross-server safety network, works, the advisory band, Premium auto-protect, what's shared, and how members opt out.

@@ -3,7 +3,7 @@ layout: wiki
 title: Server Assistant Pulse
 permalink: /wiki/pulse/
 wiki: true
-wiki_category: Feature guides
+wiki_category: "Features"
 summary: Pulse is a read-only, whole-server health digest, activity counts, a mod-team recap, a Reception summary and an optional AI narrative. It's always on in the web portal, and each staff member can have it DM'd to them Weekly or Monthly.
 wiki_keywords: [pulse, health, insight, digest, report, trends, portal, dm, analytics]
 description: How Server Assistant's Pulse digest works, a read-only whole-server health report, always on in the web portal, with an optional per-staff DM on a Weekly or Monthly cadence.

@@ -3,7 +3,7 @@ layout: wiki
 title: "All commands"
 permalink: /wiki/commands/
 wiki: true
-wiki_category: "Getting started"
+wiki_category: "Getting Started"
 summary: The full list of Server Assistant commands, every slash command grouped by area (setup, moderation, channels, community & fun, AI & Premium, info & account) plus the right-click menus. marks Premium.
 wiki_keywords: [commands, command list, all commands, command reference, slash commands, /commands, help, cheat sheet, roll, ban, kick, mute, warn, purge, setup, settings, emote, imagine, sai, translate]
 description: A complete reference of every Server Assistant slash command and right-click menu, grouped by area, with a short description of each. marks Premium features.

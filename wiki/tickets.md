@@ -3,7 +3,7 @@ layout: wiki
 title: Tickets & support
 permalink: /wiki/tickets/
 wiki: true
-wiki_category: Tickets & support
+wiki_category: "Features"
 summary: Private support tickets end to end, post a panel, members open a ticket, you answer it in its own channel, then close with a saved transcript. Plus the AI FAQ and the right-click Message Report.
 wiki_keywords: [tickets, ticket panel, support, intake, transcript, close, faq, message report, report, help, questions, premium]
 description: How Server Assistant's ticket system works, posting a panel, the intake modal, the private ticket channel and closing with a transcript, alongside the AI FAQ and the Message Report context menu, each shown exactly as it appears in Discord.

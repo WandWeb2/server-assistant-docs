@@ -3,7 +3,7 @@ layout: wiki
 title: Settings hub & configuration
 permalink: /wiki/settings/
 wiki: true
-wiki_category: "Settings & dashboards"
+wiki_category: "Settings"
 summary: The /settings hub and every configuration command, branding, presets, behaviour, new members, verification, notifications and Pulse, plus autopilot, privacy, onboarding, snippets, timezone and schedule. Each shown as it appears in Discord.
 wiki_keywords: [settings, configuration, branding, presets, behaviour, behavior, verification, allowlist, role tiers, notifications, pulse, autopilot, privacy, onboarding, snippets, timezone, schedule, dashboard]
 description: Every Server Assistant configuration dashboard, the /settings hub and its tabs, plus the standalone setup commands, shown one panel at a time exactly as it looks in Discord.

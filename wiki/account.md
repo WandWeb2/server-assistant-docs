@@ -3,7 +3,7 @@ layout: wiki
 title: "Account & premium"
 permalink: /wiki/account/
 wiki: true
-wiki_category: "Account & premium"
+wiki_category: "Premium"
 summary: Manage your plan and AI tokens with /premium, spread the word and gather support, stay up to date, and unlock the Premium extras, white-label branding, server backups and ThreatNet auto-protect.
 wiki_keywords: [premium, billing, upgrade, byok, top-up, tokens, invite, portal, vote, review, /review, review rewards, share, help, whatsnew, changelog, brand, white-label, backup, restore, threatnet, account]
 description: Every account, billing and premium command in Server Assistant, /premium, /invite, /portal, /vote, /share, /help, /whatsnew, /brand, /backup and /threatnet, each shown exactly as it appears in Discord.
