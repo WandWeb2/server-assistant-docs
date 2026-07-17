@@ -26,15 +26,17 @@ layout: default
 
     <nav class="wiki-nav">
       {%- for cat in site.data.wiki.categories -%}
-      <div class="wiki-nav-group">
-        <div class="wiki-nav-title">{% if cat.icon %}<span class="wiki-nav-ic">{{ cat.icon }}</span>{% endif %}{{ cat.title }}</div>
+      {%- assign cat_active = false -%}
+      {%- for item in cat.items -%}{%- if page.url == item.url -%}{%- assign cat_active = true -%}{%- endif -%}{%- endfor -%}
+      <details class="wiki-nav-group"{% if cat_active %} open{% endif %}>
+        <summary class="wiki-nav-title">{{ cat.title }}<span class="wiki-nav-chev" aria-hidden="true">▾</span></summary>
         <ul>
           {%- for item in cat.items -%}
           {%- assign item_url = item.url | relative_url -%}
           <li><a href="{{ item_url }}"{% if page.url == item.url %} class="active" aria-current="page"{% endif %}>{{ item.label }}{% if item.premium %} <span class="wiki-prem" title="Premium feature">PREMIUM</span>{% endif %}</a></li>
           {%- endfor -%}
         </ul>
-      </div>
+      </details>
       {%- endfor -%}
     </nav>
   </aside>
