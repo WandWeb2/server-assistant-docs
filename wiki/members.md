@@ -11,17 +11,14 @@ description: A member-facing reference for Server Assistant, the welcome DM, the
 
 # Member experience
 
-Most of Server Assistant works quietly in the background, but a few things land
-directly in front of your members, the welcome they get on the way in, the
-Reception desk where they verify, and the conversation that opens if someone is
-ever banned and wants to appeal. This page walks through everything a newcomer or an
-ordinary member sees, plus the two Premium self-service tools (**role panels**
-and **custom commands**) and the staff **profile lookup**.
+A few parts of Server Assistant land directly in front of your members: the welcome on
+the way in, the Reception desk where they verify, and the ban-appeal conversation. This
+page covers everything a member sees, plus the two Premium self-service tools (**role
+panels** and **custom commands**) and the staff **profile lookup**.
 
-> **Most of this is automatic.** The welcome DM, the Reception desk and the
-> ban-appeal flow all fire on their own once they're switched on in
-> [`/settings`]({{ '/wiki/' | relative_url }}), there's nothing for a member to
-> install or learn.
+> **Most of this is automatic.** The welcome DM, the Reception desk and the ban-appeal
+> flow all fire on their own once switched on in
+> [`/settings`]({{ '/wiki/' | relative_url }}), with nothing for a member to install.
 
 Commands on this page are tagged so you know what you're looking at:
 
@@ -33,19 +30,17 @@ Commands on this page are tagged so you know what you're looking at:
 
 ## Welcome &amp; verification {#welcome-verification}
 
-When someone joins, the bot can greet them with a welcome DM and, if you've
-turned it on, send them to **Reception**, an in-server welcome desk where they
-**verify** before they get full access. Both are optional: the welcome DM is set
-in the onboarding panel, and Reception in
-[`/settings → Verification`]({{ '/wiki/settings/' | relative_url }}). Here we're
-just showing what the *member* sees.
+When someone joins, the bot can greet them with a welcome DM and, if you've turned it
+on, send them to **Reception**, an in-server desk where they **verify** before getting
+full access. Both are optional: the welcome DM is set in the onboarding panel, Reception
+in [`/settings → Verification`]({{ '/wiki/settings/' | relative_url }}). Here's what the
+*member* sees.
 
 ### The welcome DM
 
-If you've written a welcome message, the bot sends it to each new member as a
-friendly DM. The wording is entirely yours, you write it once in the onboarding
-panel and the bot fills in placeholders like the member's name and your server's
-name for each person. Here's the shape of a typical one:
+If you've written a welcome message, the bot DMs it to each new member. The wording is
+yours; the bot fills in placeholders like the member's name and your server's name. A
+typical one:
 
 <div class="dc">
   <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
@@ -54,13 +49,13 @@ name for each person. Here's the shape of a typical one:
   </div></div>
 </div>
 
-<p style="color:var(--fg-1);font-size:.9rem;line-height:1.55;"><strong>It's your message, in your voice.</strong> The welcome DM is plain text you author yourself, there's no fixed template to fight with. If a member has DMs closed, the bot simply skips it (no error, no fuss). Don't want a welcome DM at all? Leave the message blank and nothing is sent.</p>
+<p style="color:var(--fg-1);font-size:.9rem;line-height:1.55;"><strong>It's your message, in your voice.</strong> The welcome DM is plain text you write yourself. If a member has DMs closed, the bot skips it. Leave the message blank and nothing is sent.</p>
 
 ### Reception: the verification desk
 
-With verification switched on, newcomers don't get a cryptic DM, they land in
-your **#reception** channel and see a branded welcome desk: a pinned banner, a
-short greeting, and a single **Verify me** button.
+With verification switched on, newcomers land in your **#reception** channel and see a
+branded welcome desk: a pinned banner, a short greeting, and a single **Verify me**
+button.
 
 <div class="dc">
   <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
@@ -88,22 +83,21 @@ short greeting, and a single **Verify me** button.
   </div></div>
 </div>
 
-<p style="color:var(--fg-1);font-size:.9rem;line-height:1.55;"><strong>Pass and you're in.</strong> A correct answer grants the verified role you chose in settings a moment later and welcomes them to the server; a wrong answer is just a friendly retry, Reception <strong>never bans</strong> someone for fumbling the question. And because the <em>only</em> thing to do at the desk is verify, it doubles as a <strong>honeypot</strong>: an unverified account that starts posting instead of verifying is removed automatically (brand-new, untrusted accounts are banned outright, and the trap tightens during a raid). <strong>Free</strong> servers get the desk and a greeting you can word yourself; <strong>Premium</strong> adds a generated or uploaded <strong>banner image</strong>, a custom <strong>receptionist name and persona</strong>, and a <strong>concierge</strong>, verified members can chat with SAi right there at the desk.</p>
+<p style="color:var(--fg-1);font-size:.9rem;line-height:1.55;"><strong>Pass and you're in.</strong> A correct answer grants the verified role you chose in settings; a wrong answer is a friendly retry, Reception <strong>never bans</strong> someone for fumbling the question. Because the <em>only</em> thing to do at the desk is verify, it doubles as a <strong>honeypot</strong>: an unverified account that posts instead of verifying is removed automatically (brand-new, untrusted accounts are banned outright, and the trap tightens during a raid). <strong>Free</strong> servers get the desk and a greeting you word yourself; <strong>Premium</strong> adds a generated or uploaded <strong>banner image</strong>, a custom <strong>receptionist name and persona</strong>, and a <strong>concierge</strong> (verified members can chat with SAi right at the desk).</p>
 
 ### Auto-configure channels for verification
 
-A verification gate only works if unverified members actually *can't* see your
-server until they pass it, which normally means editing channel permissions by
-hand. The **Auto-configure channels** button in
-[`/settings → Verification`]({{ '/wiki/settings/' | relative_url }})
-does that part for you.
+A verification gate only works if unverified members *can't* see your server until they
+pass it, which normally means editing channel permissions by hand. The **Auto-configure
+channels** button in [`/settings → Verification`]({{ '/wiki/settings/' | relative_url }})
+does that for you.
 
-Tap it and the bot proposes a sensible set of channels to keep visible to
-unverified members, the **reception channel** plus your server's **rules, system
-and announcements** channels, and lets you add any others you want to leave open
-with a picker. You see the full preview *before* anything changes. On
-**Apply**, it hides every other channel **and category** from unverified members
-and opens them to your verified role, while keeping the bot's own access intact.
+Tap it and the bot proposes a sensible set of channels to keep visible to unverified
+members, the **reception channel** plus your **rules, system and announcements**
+channels, and lets you add others with a picker. You see the full preview *before*
+anything changes. On **Apply**, it hides every other channel **and category** from
+unverified members and opens them to your verified role, keeping the bot's own access
+intact.
 
 <div class="dc">
   <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
@@ -128,11 +122,10 @@ and opens them to your verified role, while keeping the bot's own access intact.
 
 ## Ban appeals {#ban-appeals}
 
-If you switch on **ban appeals**, anyone you ban gets a DM explaining what
-happened and inviting them to put their case, and your staff get a tidy review
-ticket with one-tap **Unban**, **Deny** and (on Premium) **More info** buttons.
-The whole thing happens in DMs and your log channel; nobody has to dig through
-audit logs. Step through it below.
+Switch on **ban appeals** and anyone you ban gets a DM explaining what happened and
+inviting them to put their case, while your staff get a review ticket with one-tap
+**Unban**, **Deny** and (on Premium) **More info** buttons. It all happens in DMs and
+your log channel. Step through it below.
 
 <div class="wiz" data-wiz>
   <div class="wiz-bar">
@@ -154,7 +147,7 @@ audit logs. Step through it below.
         </div>
       </div></div>
     </div>
-    <p class="wiz-caption"><strong>The ban DM.</strong> The banned member is told why, and invited to appeal by <em>replying</em> to the DM, no button to find. On the free plan they get a single reply; on Premium the bot can ask a follow-up question or two first to gather the full picture. If no reason was recorded, it reads “No reason was provided.”</p>
+    <p class="wiz-caption"><strong>The ban DM.</strong> The banned member is told why and invited to appeal by <em>replying</em> to the DM. On the free plan they get a single reply; on Premium the bot can ask a follow-up question or two first. If no reason was recorded, it reads "No reason was provided."</p>
   </div>
 
   <div class="wiz-step" data-step="They reply with their case">
@@ -168,7 +161,7 @@ audit logs. Step through it below.
         <div class="dc-desc" style="color:#dbdee1;line-height:1.5;">Your appeal has been submitted to the staff team, that was your one reply. You'll get a message here if there's a decision.</div>
       </div></div>
     </div>
-    <p class="wiz-caption"><strong>The member appeals.</strong> They reply once, and the bot confirms it's gone to the staff team. They can't spam it, a second reply just gets <em>“Your appeal is in with the staff team.”</em></p>
+    <p class="wiz-caption"><strong>The member appeals.</strong> They reply once, and the bot confirms it's gone to the staff team. They can't spam it: a second reply just gets <em>"Your appeal is in with the staff team."</em></p>
   </div>
 
   <div class="wiz-step" data-step="Staff get a review ticket">
@@ -193,7 +186,7 @@ audit logs. Step through it below.
         </div>
       </div></div>
     </div>
-    <p class="wiz-caption"><strong>The staff ticket.</strong> The appeal lands in your log channel with the member's words, their ID and the original ban reason. <strong>Unban</strong> lifts the ban and tells them the good news; <strong>Deny</strong> closes it and lets them know the ban stands. The <strong>Info</strong>, <strong>Warnings</strong> and <strong>Notes</strong> buttons pull up the member's history right there so you can decide with the full context. Only staff with the ban capability can press any of them.</p>
+    <p class="wiz-caption"><strong>The staff ticket.</strong> The appeal lands in your log channel with the member's words, their ID and the original ban reason. <strong>Unban</strong> lifts the ban and tells them; <strong>Deny</strong> closes it and says the ban stands. The <strong>Info</strong>, <strong>Warnings</strong> and <strong>Notes</strong> buttons pull up the member's history so you can decide with full context. Only staff with the ban capability can press any of them.</p>
   </div>
 
   <div class="wiz-step" data-step="Asking for more info (Premium)">
@@ -208,7 +201,7 @@ audit logs. Step through it below.
         </div>
       </div></div>
     </div>
-    <p class="wiz-caption"><strong>More info <span class="cmd-tag premium">PREMIUM</span>.</strong> Not ready to decide? On Premium, <strong>More info</strong> opens this short form. Type a question, the bot DMs it to the member, and the ticket pauses, a fresh one returns the moment they reply. The member's follow-up reply doesn't count against their one-reply limit.</p>
+    <p class="wiz-caption"><strong>More info <span class="cmd-tag premium">PREMIUM</span>.</strong> On Premium, <strong>More info</strong> opens this form. Type a question, the bot DMs it to the member, and the ticket pauses; a fresh one returns when they reply. That follow-up doesn't count against their one-reply limit.</p>
   </div>
 
   <div class="wiz-step" data-step="The member hears back">
@@ -218,22 +211,21 @@ audit logs. Step through it below.
         <div class="dc-desc" style="color:#dbdee1;line-height:1.5;">Good news, your ban appeal for <strong>The Hangout</strong> was <strong>approved</strong> and you've been unbanned. Please review the rules before rejoining.</div>
       </div></div>
     </div>
-    <p class="wiz-caption"><strong>The outcome.</strong> Whatever staff decide, the member is told in their DMs, an approval comes with the unban and a nudge to read the rules; a denial says the ban stands. No chasing, no “did you get my appeal?” messages.</p>
+    <p class="wiz-caption"><strong>The outcome.</strong> Whatever staff decide, the member is told in their DMs: an approval comes with the unban and a nudge to read the rules; a denial says the ban stands.</p>
   </div>
 </div>
 
-> **“Why was I actioned?”** Separately, when Premium is on, the DM a member gets
-> for a *warning or other action* carries a **Why was I actioned?** button. One
-> tap and the bot writes them a short, plain-English explanation of what the
-> action was for, heading off a lot of confused replies to your staff.
+> **"Why was I actioned?"** On Premium, the DM a member gets for a *warning or other
+> action* carries a **Why was I actioned?** button. One tap and the bot writes a short,
+> plain-English explanation, heading off confused replies to your staff.
 
 ---
 
 ## Self-service roles {#self-service-roles}
 
-Let members pick their own roles, pronouns, colours, game pings, notification
-opt-ins, from a tidy panel of buttons, instead of asking a moderator every time.
-Build it once with `/rolepanel` and the panel does the rest.
+Let members pick their own roles (pronouns, colours, game pings, notification opt-ins)
+from a panel of buttons, instead of asking a moderator. Build it once with `/rolepanel`
+and the panel does the rest.
 
 <div class="cmd-card">
   <div class="cmd-head">
@@ -268,13 +260,13 @@ Build it once with `/rolepanel` and the panel does the rest.
   </div>
 </div>
 
-<p style="color:var(--fg-1);font-size:.9rem;line-height:1.55;">In the builder you choose the roles from a dropdown (up to <strong>24</strong>), give the panel a <strong>Title</strong> and an optional <strong>intro</strong> with <strong>Edit Text</strong>, then <strong>Post panel</strong>. The bot only offers roles it can actually manage, anything above its own top role, or a managed/integration role, is skipped automatically. You can re-open the builder later to edit or delete an existing panel.</p>
+<p style="color:var(--fg-1);font-size:.9rem;line-height:1.55;">In the builder you choose the roles from a dropdown (up to <strong>24</strong>), give the panel a <strong>Title</strong> and optional <strong>intro</strong> with <strong>Edit Text</strong>, then <strong>Post panel</strong>. The bot only offers roles it can manage: anything above its own top role, or a managed/integration role, is skipped. Re-open the builder later to edit or delete a panel.</p>
 
 ### What members see
 
-The posted panel is a row of role buttons plus a **My roles** button. Tapping a
-role button toggles it on or off instantly; tapping **My roles** opens a
-private checklist where a tick (`✓`) shows the roles you already have.
+The posted panel is a row of role buttons plus a **My roles** button. Tapping a role
+button toggles it instantly; **My roles** opens a private checklist where a tick (`✓`)
+shows the roles you already have.
 
 <div class="dc">
   <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
@@ -293,16 +285,15 @@ private checklist where a tick (`✓`) shows the roles you already have.
   </div></div>
 </div>
 
-<p style="color:var(--fg-1);font-size:.9rem;line-height:1.55;"><strong>Self-service, no staff needed.</strong> A member taps <strong>Blue</strong> and gets a quiet <em>“Added Blue.”</em> just for them; tap it again for <em>“Removed Blue.”</em>. <strong>My roles</strong> shows every role on the panel as a toggle, with a green <strong>✓</strong> next to the ones they already hold, handy when there are a lot of options. The buttons keep working forever, including after a bot restart.</p>
+<p style="color:var(--fg-1);font-size:.9rem;line-height:1.55;"><strong>Self-service, no staff needed.</strong> A member taps <strong>Blue</strong> and gets a quiet <em>"Added Blue."</em>; tap again for <em>"Removed Blue."</em> <strong>My roles</strong> shows every role on the panel as a toggle, with a green <strong>✓</strong> next to the ones they hold. The buttons keep working after a bot restart.</p>
 
 ---
 
 ## Custom commands {#custom-commands}
 
-Turn your most-repeated answers into real slash commands. Build a `/rules`,
-`/socials` or `/serverinfo` once and members can call it any time, as plain text
-or a styled embed, with optional **live updates** that edit every posted copy when
-you change the wording.
+Turn your most-repeated answers into real slash commands. Build a `/rules`, `/socials`
+or `/serverinfo` once and members can call it any time, as plain text or a styled embed,
+with optional **live updates** that edit every posted copy when you change the wording.
 
 <div class="cmd-card">
   <div class="cmd-head">
@@ -335,7 +326,7 @@ you change the wording.
   </div>
 </div>
 
-<p style="color:var(--fg-1);font-size:.9rem;line-height:1.55;"><strong>New text</strong> or <strong>New embed</strong> opens a short form: pick a name (lowercase, no slash), write the reply, and for embeds add a title and optionally switch on <strong>live updates</strong>. The new <code>/command</code> goes live within about a minute. Names must be unique and can't clash with the bot's built-in commands.</p>
+<p style="color:var(--fg-1);font-size:.9rem;line-height:1.55;"><strong>New text</strong> or <strong>New embed</strong> opens a form: pick a name (lowercase, no slash), write the reply, and for embeds add a title and optionally switch on <strong>live updates</strong>. The new <code>/command</code> goes live within about a minute. Names must be unique and can't clash with the bot's built-in commands.</p>
 
 <div class="dc">
   <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
@@ -355,15 +346,15 @@ you change the wording.
   </div></div>
 </div>
 
-<p style="color:var(--fg-1);font-size:.9rem;line-height:1.55;"><strong>Live updates.</strong> Switch them on for an embed command and every copy already posted in your server updates automatically whenever you edit the wording, perfect for a <code>/rules</code> or <code>/socials</code> you want to keep current in one place. Edit or remove any command later from the same <code>/customcmd</code> manager.</p>
+<p style="color:var(--fg-1);font-size:.9rem;line-height:1.55;"><strong>Live updates.</strong> Switch them on for an embed command and every copy already posted in your server updates automatically when you edit the wording, ideal for a <code>/rules</code> or <code>/socials</code> kept current in one place. Edit or remove any command later from the same <code>/customcmd</code> manager.</p>
 
 ---
 
 ## Member info {#member-info}
 
-A quick, private look-up of a member's profile, account age, join date, roles
-and their record at a glance. It's the fastest way to size someone up before you
-act, and the reply is only ever visible to you.
+A quick, private look-up of a member's profile: account age, join date, roles and their
+record at a glance. The fastest way to size someone up before you act, and the reply is
+only ever visible to you.
 
 <div class="cmd-card">
   <div class="cmd-head">
@@ -396,7 +387,7 @@ act, and the reply is only ever visible to you.
   </div>
 </div>
 
-<p style="color:var(--fg-1);font-size:.9rem;line-height:1.55;"><strong>Context at a glance.</strong> A young account that joined minutes ago with a warning on file reads very differently from a long-standing member, <code>/info</code> puts that side by side in one private embed. If the person has left or been banned it says so; their warning and note counts are always shown. The same profile card sits behind the <strong>Info</strong> button on a ban-appeal ticket.</p>
+<p style="color:var(--fg-1);font-size:.9rem;line-height:1.55;"><strong>Context at a glance.</strong> A young account that joined minutes ago with a warning on file reads very differently from a long-standing member; <code>/info</code> puts that side by side in one private embed. If the person has left or been banned it says so, and warning and note counts are always shown. The same profile card sits behind the <strong>Info</strong> button on a ban-appeal ticket.</p>
 
 ---
 

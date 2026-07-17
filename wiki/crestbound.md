@@ -22,10 +22,9 @@ description: A player guide to Crestbound, the XP-powered Crest-collecting game 
 > bot**: sign in with Discord and your collection, XP and Cinders are exactly where
 > you left them. Links to the game from the Server Assistant portal carry you there.
 
-**Crestbound** is a collecting game powered by the **XP** you earn just by being
-active in Discord. That XP becomes a currency you can spend, open **booster
-packs**, collect ornate **Crests**, and chase a complete Chapter. It's a reward for
-taking part, with nothing extra to buy.
+**Crestbound** is a collecting game powered by the **XP** you earn by being active in
+Discord. Spend that XP to open **booster packs**, collect ornate **Crests**, and chase
+a complete Chapter. Nothing extra to buy.
 
 ## The Crestbound Discord bot {#bot}
 
@@ -40,14 +39,13 @@ Crestbound's own bot brings the game into your server:
 | `/balance` | XP and Cinders at a glance |
 | `/setup` | Admin: pick a channel for world-first discovery announcements |
 
-With an announcements channel set, your server hears it first when one of your
-members makes a **world-first discovery**: "*{player} just discovered {Crest},
-first in the world.*" (An announcement only: no server gets better pulls, ever.)
+With an announcements channel set, your server hears it first when one of your members
+makes a **world-first discovery**: "*{player} just discovered {Crest}, first in the
+world.*" (An announcement only: no server ever gets better pulls.)
 
-> **Powered by your XP.** Crestbound runs on your **XP**: the account-wide spendable
-> balance you build up from chatting, voice time, and from [voting for Server Assistant]({{ '/wiki/leveling/' | relative_url }}#earning-xp).
-> Opening a pack spends that XP; there's no separate purchase and no Premium
-> required, if you've earned XP, you can play.
+> **Powered by your XP.** Crestbound runs on the account-wide **XP** you build from
+> chatting, voice time, and [voting for Server Assistant]({{ '/wiki/leveling/' | relative_url }}#earning-xp).
+> Opening a pack spends that XP: no separate purchase, no Premium required.
 
 ---
 
@@ -67,15 +65,13 @@ first in the world.*" (An announcement only: no server gets better pulls, ever.)
 > after Crest toward an end not yet written.
 
 That hand is yours. The first Chapter, **Chapter I: Embers of the First War**, holds
-a sweeping cast of **450 Crests** to track down across the four rarities. Future
-Chapters carry the story on.
+**450 Crests** to track down across the four rarities. Future Chapters carry the story on.
 
-> **Coming later, Wardecks &amp; Quests.** Collecting is just the start. A future
-> **battle mode** is on the way, where you'll assemble a **Wardeck**: a 30-Crest
-> battle group drawn from your collection, and put it to the test. Battle mode
-> brings a **Quests** screen with it too, the way you'll earn **Cinders** for the
-> Ember Vault (see [below](#cinders)). That part isn't here yet; for now, Crestbound
-> is all about building your collection.
+> **Coming later, Wardecks &amp; Quests.** A future **battle mode** is on the way,
+> where you'll assemble a **Wardeck** (a 30-Crest battle group from your collection)
+> and put it to the test. It brings a **Quests** screen too, the way you'll earn
+> **Cinders** for the Ember Vault (see [below](#cinders)). That isn't here yet; for
+> now, Crestbound is all about building your collection.
 
 <figure style="margin:1.75rem auto;max-width:560px;text-align:center;">
   <img src="{{ '/assets/crestbound/the-five-crests.jpg' | relative_url }}" alt="The Five Crests, Warsworn, Undertow, Bonereave, Ragefire and Grimwild arranged around a pentagram of runes." loading="lazy" style="width:100%;height:auto;border-radius:14px;border:1px solid var(--border);box-shadow:0 10px 34px rgba(0,0,0,.5);">
@@ -90,9 +86,9 @@ Chapters carry the story on.
 
 ## Where to find it {#where}
 
-Crestbound lives in the **customer portal**. Sign in with Discord, and you'll find
-**Crestbound** under the **XP Games** section of the portal, open it to jump
-straight into your collection.
+Crestbound lives in the **customer portal**. Sign in with Discord and find
+**Crestbound** under the portal's **XP Games** section; open it to jump straight into
+your collection.
 
 <div class="dc">
   <div class="dc-row"><div class="dc-body" style="padding:0;">
@@ -107,27 +103,26 @@ straight into your collection.
 
 ## The main menu {#menu}
 
-Crestbound opens into its own **fullscreen home**: the game takes over the screen
-with a full-art backdrop, rather than sitting in a small portal panel. A HUD across
-the top keeps your **XP** and **Cinders** balances in view wherever you are, and
-a menu of illustrated tiles is your way around:
+Crestbound opens into a **fullscreen home** with a full-art backdrop. A HUD across the
+top keeps your **XP** and **Cinders** balances in view, and a menu of illustrated tiles
+is your way around:
 
 - **Collection**: your Crests, always available.
 - **Shop**: packs, the Ember Vault and card backs, always available.
-- **Wardecks**, **Battle** and **Quests**: the battle mode features described
-  above. Their tiles show as **coming soon** until battle mode launches.
+- **Wardecks**, **Battle** and **Quests**: the battle mode features above; their tiles
+  show as **coming soon** until battle mode launches.
 
 Use the **back arrow** in the top corner to move between a screen and the menu, or to
-exit Crestbound entirely from the menu itself.
+exit Crestbound from the menu.
 
 ---
 
 ## Your collection {#collection}
 
 The **My Collection** view shows the whole Chapter at once. Crests you own appear in
-full, framed by a colour that marks their rarity; Crests you haven't found yet sit in
-their place as a grey **“?”**, so you can always see exactly what's still out there.
-A counter at the top tracks your progress and shows your spendable XP.
+full, framed by a colour marking their rarity; Crests you haven't found yet sit as a
+grey **"?"**, so you can see what's still out there. A counter at the top tracks your
+progress and shows your spendable XP.
 
 <div class="dc">
   <div class="dc-row"><div class="dc-body" style="padding:0;">
@@ -139,16 +134,16 @@ A counter at the top tracks your progress and shows your spendable XP.
   </div></div>
 </div>
 
-<p style="color:var(--fg-1);font-size:.9rem;line-height:1.55;"><strong>Rarest first.</strong> By default the grid is ordered with the most prized Crests at the top, <strong>mythic</strong>, then <strong>rare</strong>, then <strong>uncommon</strong>, then <strong>common</strong>, so the headline pieces of your collection are always front and centre. The <strong>collected</strong> counter tracks how much of the Chapter you've found; the <strong>245 XP</strong> is the XP you have to spend.</p>
+<p style="color:var(--fg-1);font-size:.9rem;line-height:1.55;"><strong>Rarest first.</strong> By default the grid runs <strong>mythic</strong>, then <strong>rare</strong>, <strong>uncommon</strong>, <strong>common</strong>, so your headline pieces are front and centre. The <strong>collected</strong> counter tracks how much of the Chapter you've found; the <strong>245 XP</strong> is what you have to spend.</p>
 
-<p style="color:var(--fg-1);font-size:.9rem;line-height:1.55;"><strong>Sorting &amp; filtering.</strong> A toolbar above the grid lets you take control of the view: <strong>Sort</strong> by Rarity (the default), Cost, Name or Faction, and <strong>filter</strong> down to one faction, one rarity, or just the Crests you own or are still missing. Your picks stick for the session as you move between screens.</p>
+<p style="color:var(--fg-1);font-size:.9rem;line-height:1.55;"><strong>Sorting &amp; filtering.</strong> A toolbar above the grid lets you <strong>Sort</strong> by Rarity (default), Cost, Name or Faction, and <strong>filter</strong> to one faction, one rarity, or just the Crests you own or are missing. Your picks stick for the session.</p>
 
 ### Looking at a Crest {#crest-detail}
 
-Tap any Crest you own to see it up close, its name, its rarity, its artwork, a line
-of ability text and a touch of flavour. **Creature** Crests carry an attack and
-health value; **Spell** Crests don't fight, so they show their type instead of
-stats. Rare and mythic Crests catch the light with a subtle sheen.
+Tap any Crest you own to see it up close: name, rarity, artwork, a line of ability text
+and a touch of flavour. **Creature** Crests carry an attack and health value; **Spell**
+Crests don't fight, so they show their type instead of stats. Rare and mythic Crests
+catch the light with a subtle sheen.
 
 <div class="dc">
   <div class="dc-row"><div class="dc-body" style="padding:0;">
@@ -181,12 +176,10 @@ The four rarities, from most common to most prized:
   <tr><td><strong>Mythic</strong></td><td><span style="color:#f59e0b;">gold</span></td><td>The rarest and most sought-after Crests.</td></tr>
 </table>
 
-**Opening a pack.** Head to the **Shop** from Crestbound's main menu (your collection
-also keeps a shortcut to it). Pick a pack, one of the five **faction packs** for
-5 Crests from a single faction, or the classic **Chapter Booster**, and if you're
-short on XP the Shop tells you so (you'll need 200 XP). You'll be asked to confirm the
-spend, the pack opens with a little reveal, and the five Crests are added to your
-collection.
+**Opening a pack.** Head to the **Shop** (your collection keeps a shortcut too). Pick a
+pack, one of the five **faction packs** for 5 Crests from a single faction, or the
+classic **Chapter Booster**. Confirm the spend (you'll need 200 XP), the pack opens with
+a reveal, and the five Crests are added to your collection.
 
 <div class="dc">
   <div class="dc-row"><div class="dc-body" style="padding:0;">
@@ -198,15 +191,15 @@ collection.
   </div></div>
 </div>
 
-<p style="color:var(--fg-1);font-size:.9rem;line-height:1.55;">Land a Crest you already have and the extra copy isn't wasted, duplicates stack in your collection, and you can always turn spares back into XP by <strong>burning</strong> them (below).</p>
+<p style="color:var(--fg-1);font-size:.9rem;line-height:1.55;">Land a Crest you already have and the copy isn't wasted: duplicates stack, and you can turn spares back into XP by <strong>burning</strong> them (below).</p>
 
 ---
 
 ## Card backs {#card-backs}
 
-Every Crest you haven't turned face-up yet, a collection placeholder, or (once
-battle mode lands) a face-down Crest in a deck, shows a **card back**, and the
-Shop has a cosmetics shelf for dressing yours up:
+Every Crest you haven't turned face-up yet, a collection placeholder, or (once battle
+mode lands) a face-down Crest in a deck, shows a **card back**. The Shop has a cosmetics
+shelf for dressing yours up:
 
 <table class="cmd-args" style="max-width:560px;">
   <tr><th>Card back</th><th>Cost</th></tr>
@@ -216,41 +209,38 @@ Shop has a cosmetics shelf for dressing yours up:
 </table>
 
 Buy a back and it equips right away. **Purely cosmetic**: a card back is a look, never
-an advantage; nothing about how the game plays changes because of which one you've
-equipped.
+an advantage.
 
 ---
 
 ## The Ember Vault {#ember-vault}
 
-Alongside the Chapter Booster and the five faction packs, the Shop carries a premium
-pack: the **Ember Vault**. It costs **200 Cinders** and always contains **5 Crests**,
-the first **4 guaranteed rare**, the last a **guaranteed mythic**. It's the surest way
-to land a mythic Crest, the five faction packs never include one, and the classic
-Chapter Booster's guaranteed rare-or-better slot only rarely turns up a mythic instead
-of a rare.
+The Shop's premium pack, the **Ember Vault**, costs **200 Cinders** and always contains
+**5 Crests**: the first **4 guaranteed rare**, the last a **guaranteed mythic**. It's
+the surest way to land a mythic, the five faction packs never include one, and the
+Chapter Booster's guaranteed rare-or-better slot only rarely turns up a mythic.
 
 ---
 
 ## Cinders {#cinders}
 
-**Cinders** are Crestbound's second currency, separate from the XP that buys
-boosters, they're what the Ember Vault and the Vault Gilt card back cost. They're
-earned by completing **Quests**, both **daily** (account-bound, resetting each day)
-and **seasonal** (global, running the length of a season), a `Quests` screen
-tracks your progress and live Cinders balance. Quests launch alongside battle mode
-(see [above](#menu)), so Cinders aren't earnable through ordinary play just yet,
-the Ember Vault and Vault Gilt are visible in the Shop today, ready for when they are.
+**Cinders** are Crestbound's second currency, separate from the XP that buys boosters;
+they're what the Ember Vault and the Vault Gilt card back cost. They're earned by
+completing **Quests**, both **daily** (account-bound, resetting each day) and
+**seasonal** (global, running the length of a season), with a `Quests` screen tracking
+progress and your live balance. Quests launch alongside battle mode (see
+[above](#menu)), so Cinders aren't earnable through ordinary play just yet; the Ember
+Vault and Vault Gilt are visible in the Shop today, ready for when they are.
 
 ---
 
 ## Discovering a new Crest {#discovery}
 
-Most Crests already carry their artwork, drawn back to light by whoever found them
-first. But every Crest is found by *somebody* first, and when that somebody is **you**,
-the discovery is yours to make.
+Most Crests already carry artwork, drawn back to light by whoever found them first. But
+every Crest is found by *somebody* first, and when that somebody is **you**, the
+discovery is yours.
 
-When you pull a Crest that **no player anywhere has found before**, it doesn't arrive
+Pull a Crest that **no player anywhere has found before** and it doesn't arrive
 finished. It arrives **sealed**: its sigil unkindled, waiting for a hand to wake it.
 
 <div class="dc">
@@ -262,14 +252,14 @@ finished. It arrives **sealed**: its sigil unkindled, waiting for a hand to wake
   </div></div>
 </div>
 
-**Kindle it.** Tap the sealed Crest and the **heralds begin illuminating your sigil**,
-its artwork is being drawn back to light, just for that Crest, and kept forever. It
-takes a short moment; the Crest shows a countdown while the heralds work.
+**Kindle it.** Tap the sealed Crest and the **heralds begin illuminating your sigil**:
+its artwork is drawn back to light, just for that Crest, and kept forever. The Crest
+shows a countdown while they work.
 
-**You'll get a DM when it's ready.** Server Assistant sends you a direct message the
-moment your sigil is illuminated, so you don't have to wait on the page. The message
-keeps the surprise: it tells you the Crest is ready and invites you back to unveil it,
-but the artwork itself is saved for the reveal.
+**You'll get a DM when it's ready.** Server Assistant DMs you the moment your sigil is
+illuminated, so you don't have to wait on the page. It keeps the surprise: the message
+says the Crest is ready and invites you back to unveil it, but saves the artwork for the
+reveal.
 
 <div class="dc">
   <div class="dc-row"><div class="dc-body" style="padding:0;">
@@ -280,12 +270,11 @@ but the artwork itself is saved for the reveal.
   </div></div>
 </div>
 
-**The grand reveal.** Back in Crestbound, once your whole batch has finished illuminating,
-a single **Unveil the Crests** button appears. Tap it for the **grand reveal**: the
-heralds' scene shifts as your Crests are presented together, each turning over for the
-very first time, art and all. *This* is the first time those Crests are ever seen,
-nothing about them is shown before you unveil. (Because the button only appears once every
-Crest's art is finished, you never see a half-drawn card.)
+**The grand reveal.** Once your whole batch has finished illuminating, a single **Unveil
+the Crests** button appears. Tap it and your Crests are presented together, each turning
+over for the very first time, art and all. Nothing is shown before you unveil, and
+because the button only appears once every Crest's art is finished, you never see a
+half-drawn card.
 
 **The art you summon is permanent, and shared.** Once you've discovered a Crest, that
 artwork becomes *the* artwork for that Crest, for **every** player. Anyone who finds it
@@ -307,24 +296,23 @@ after you sees the same image, with a quiet line of credit:
   {your name}"* line, shown to everyone who views it.
 
 **Found at the same time as someone else?** If two players pull the same brand-new Crest
-close together, only the **first** to kindle it discovers it, they get the DM, the
-grand reveal and the credit. For everyone else it simply settles into their collection,
-fully revealed, once the heralds finish illuminating it (with a note that it's on its
-way), no countdown to babysit, nothing to miss.
+close together, only the **first** to kindle it discovers it: they get the DM, the grand
+reveal and the credit. For everyone else it settles into their collection fully
+revealed once the heralds finish (with a note that it's on its way), nothing to miss.
 
 ### Sharing your Crests {#sharing}
 
-Any revealed Crest has a subtle **share** option in its detail view. Use it to share the
-framed Crest however you like, through your device's native share sheet, or by having
-Server Assistant **send it to your DMs** so you've got the image to hand.
+Any revealed Crest has a subtle **share** option in its detail view: share the framed
+Crest through your device's native share sheet, or have Server Assistant **send it to
+your DMs**.
 
 ### Removing your credit {#art-optout}
 
-Your discovery credits are tied to your account, and you're always in control of them.
-The portal has a **one-time** option to **remove your name from every Crest you've
-discovered**. It's permanent and it can't be undone: your credits are scrubbed, and
-those Crests re-open to be discovered afresh by the next player to find them. How your
-discovery credit and the public leaderboard work with your data is covered in the
+Your discovery credits are tied to your account and you control them. The portal has a
+**one-time** option to **remove your name from every Crest you've discovered**. It's
+permanent and can't be undone: your credits are scrubbed, and those Crests re-open to be
+discovered afresh by the next player to find them. How your discovery credit and the
+public leaderboard work with your data is covered in the
 [Privacy Policy]({{ '/privacy/' | relative_url }}).
 
 ---
@@ -332,10 +320,8 @@ discovery credit and the public leaderboard work with your data is covered in th
 ## Burning spare Crests {#burning}
 
 Got duplicates piling up? **Burn** a spare Crest to recover some XP. Open a Crest you
-own and tap **Burn for N XP**: the copy leaves your collection and the XP lands
-back in your balance, ready to spend on more packs.
-
-The XP you get back depends on the rarity:
+own and tap **Burn for N XP**: the copy leaves your collection and the XP lands back in
+your balance. The amount depends on the rarity:
 
 <table class="cmd-args" style="max-width:420px;">
   <tr><th>Rarity</th><th>XP recovered</th></tr>
@@ -345,7 +331,7 @@ The XP you get back depends on the rarity:
   <tr><td>Mythic</td><td>75 XP</td></tr>
 </table>
 
-<p style="color:var(--fg-1);font-size:.9rem;line-height:1.55;"><strong>Burning is for spares, not for farming.</strong> The XP you get back is well below a pack's price, so it's a way to tidy up duplicates, not a shortcut to free packs. There's a confirmation step every time, and if you're about to burn your <em>only</em> copy of a Crest the game warns you first, so you won't lose one by accident.</p>
+<p style="color:var(--fg-1);font-size:.9rem;line-height:1.55;"><strong>Burning is for spares, not farming.</strong> The XP back is well below a pack's price, so it tidies up duplicates rather than shortcutting to free packs. There's a confirmation every time, and if you're about to burn your <em>only</em> copy the game warns you first.</p>
 
 <div class="dc">
   <div class="dc-row"><div class="dc-body" style="padding:0;">

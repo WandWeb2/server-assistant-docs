@@ -11,50 +11,38 @@ description: How Server Assistant's Pulse digest works, a read-only whole-server
 
 # Pulse: whole-server health insight
 
-Most bots wait for a rule to break and then react. **Pulse** does the opposite:
-it quietly watches the shape of your server and rolls it into a single **health
-digest**, so your team spots the slow-burn patterns that never trip a single
-filter. A trickle of joins sitting just under your raid threshold. AutoMod hits
-creeping up day after day. The kind of thing a human only notices in hindsight.
+**Pulse** rolls the shape of your server into a single **health digest**, so your
+team spots slow-burn patterns that never trip a single filter: a trickle of joins
+sitting just under your raid threshold, AutoMod hits creeping up day after day.
 
-Pulse lives **always-on in the web portal** as a live card, for every server,
-on every plan, and each staff member can also have it **DM'd to them** on their
-own cadence. There's no scheduled Discord channel post any more; the digest
-comes to the portal continuously, and to your DMs if you ask for it.
+Pulse is **always-on in the web portal** as a live card, for every server on every
+plan, and each staff member can also have it **DM'd to them** on their own cadence.
+There's no scheduled Discord channel post.
 
-> **Pulse is read-only.** It surfaces patterns so your staff can decide what to
-> do, it **never acts on its own**. No mutes, no bans, no auto-actions. Just a
-> clear picture.
+> **Pulse is read-only.** It surfaces patterns for your staff to act on. It **never
+> mutes, bans, or auto-acts**, just a clear picture.
 
-Pulse is tagged like everything else in the wiki so you know what you're looking at:
-
-<span class="cmd-tag free">FREE</span> the health card is on for every server, every plan &nbsp;·&nbsp;
+<span class="cmd-tag free">FREE</span> the health card, every server, every plan &nbsp;·&nbsp;
 <span class="cmd-tag premium">PREMIUM</span> the optional AI "notable patterns" narrative
 
 ---
 
 ## What Pulse reports {#what-pulse-reports}
 
-Each Pulse rolls up the last period into one tidy digest. It pulls together four
-things:
+Each digest rolls up the last period into four sections:
 
-- **Server activity**: **counts only; no message content is ever stored.** How
-  chatty the server was (messages), joins &amp; leaves, your total head-count,
-  AutoMod blocks and warnings issued, each with a **week-over-week trend** so
-  every number arrives with context rather than sitting there bare.
-- **Mod-team recap**: how your staff handled the period: **cases handled**, a
-  **by-action breakdown** (warns / timeouts / kicks / bans), your **most-active
-  staff**, and an **itemised list** of the most recent actions.
-- **Reception**: a one-line summary of join-time protection: how many members
-  **arrived**, how many **verified**, and how many were **caught**.
-- **Notable patterns** *(Premium, opt-in)*: a short **AI narrative** that calls
-  out what's worth a glance: an AutoMod spike well above the average, or a run of
-  joins above the recent baseline but *below* your raid threshold (exactly the
-  quiet creep a raid alert won't catch). It's added only to a digest that's
-  actually delivered, and if nothing stands out it simply says so.
+- **Server activity** (counts only; no message content is ever stored): messages,
+  joins &amp; leaves, head-count, AutoMod blocks and warnings, each with a
+  **week-over-week trend**.
+- **Mod-team recap**: **cases handled**, a **by-action breakdown** (warns / timeouts /
+  kicks / bans), your **most-active staff**, and an **itemised list** of recent actions.
+- **Reception**: how many members **arrived**, **verified**, and were **caught**.
+- **Notable patterns** *(Premium, opt-in)*: a short **AI narrative** flagging what's
+  worth a glance, such as an AutoMod spike or a run of joins above baseline but below
+  your raid threshold. Added only to a digest that's actually delivered; if nothing
+  stands out, it says so.
 
-Here's a representative weekly digest, the same content whether you read it on
-the portal card or receive it as a DM:
+A representative weekly digest, the same content on the portal card or as a DM:
 
 <div class="dc">
   <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
@@ -74,49 +62,34 @@ the portal card or receive it as a DM:
   </div></div>
 </div>
 
-When the period is quiet, that last field flips to a calm **“Nothing
-notable, no leading indicators tripped.”** Weekly and monthly digests read the
-same way, just over a longer window.
+When the period is quiet, that last field reads **"Nothing notable, no leading
+indicators tripped."** Monthly digests read the same way over a longer window.
 
 ---
 
 ## Where Pulse lives &amp; getting it DM'd {#where-it-lives}
 
-Pulse needs no setup to exist. The **live card is always on in the web portal**, 
-for every server, on every plan, so you can open the portal any time and see the
-current picture, refreshed continuously. Nothing to toggle, no channel to pick.
+The **live card is always on in the web portal** for every server, refreshed
+continuously. Nothing to toggle, no channel to pick.
 
-If you'd rather have it come to you, **each staff member can opt in to a personal
-Pulse DM** on their own schedule:
+To have it come to you, **each staff member can opt in to a personal Pulse DM**:
 
 1. Open the **[web portal]({{ '/portal/' | relative_url }})** and go to
    **Settings → Personalization**.
-2. Set your **Pulse DM cadence**, **Off**, **Weekly** or **Monthly**. (Weekly is
-   the shortest cadence, there's no daily.)
-3. That's it. Server Assistant DMs you the digest on your schedule.
+2. Set your **Pulse DM cadence**: **Off**, **Weekly** or **Monthly** (there's no daily).
 
-It's **per person**: your cadence is yours alone. Changing it doesn't affect what
-any other staffer gets, and it doesn't touch the always-on portal card.
+Your cadence is **yours alone**: it doesn't affect any other staffer or the always-on
+portal card.
 
-> **Long-time users:** the old Discord `/settings` Pulse wizard, the on/off
-> toggle, the "set hour", the destination channel and "Send a sample now", plus
-> the scheduled channel post itself, has been **retired**. Pulse now lives in the
-> portal, with optional per-staff DMs on a Weekly / Monthly cadence.
-
----
-
-## Good to know {#good-to-know}
-
-- **Read-only, always.** Pulse only ever *reports*. It will never mute, ban, lock or change anything: every footer says so, and it's true by design.
-- **Always on, free on every plan.** The portal health card is part of the free toolkit: there for every server, with no setup and no cadence to pick.
-- **Counts only.** Pulse reports numbers, never message content: nothing you say is stored to build it.
-- **The AI narrative is a Premium extra.** The "notable patterns" write-up is opt-in on Premium, and only ever added to a digest that's actually delivered.
-- **Your DM cadence is personal.** Off / Weekly / Monthly, set in the portal, independent of every other staffer and of the always-on card.
+> **Long-time users:** the old Discord `/settings` Pulse wizard, its on/off toggle,
+> "set hour", destination channel, "Send a sample now", and the scheduled channel post
+> itself have all been **retired**. Pulse is now the portal card plus optional
+> per-staff DMs.
 
 ---
 
 ## See also
 
-- [The web portal]({{ '/portal/' | relative_url }}): where the always-on Pulse card lives and where you set your personal DM cadence
+- [The web portal]({{ '/portal/' | relative_url }}): where the always-on Pulse card lives and where you set your DM cadence
 - [Settings &amp; configuration]({{ '/wiki/settings/' | relative_url }}): the full Settings hub
 - [Back to the Wiki hub]({{ '/wiki/' | relative_url }})

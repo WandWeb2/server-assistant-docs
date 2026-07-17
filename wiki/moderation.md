@@ -11,18 +11,15 @@ description: A full reference for Server Assistant's moderation and safety comma
 
 # Moderation &amp; safety
 
-This is the everyday toolkit for keeping your server in order, logging
-warnings, timing people out, removing troublemakers, and slamming the doors shut
-when a raid hits. Every command here runs as a Discord **slash command**, works
-in any channel, and writes to your **log channel** so you always have an audit
-trail.
+The everyday toolkit: warnings, notes, timeouts, removals, bulk purge and raid
+response. Every command is a Discord **slash command**, works in any channel, and
+writes to your **log channel** for an audit trail.
 
-> **Who can run these:** the server **owner**, anyone with a matching **staff
-> role**, or anyone holding the equivalent Discord permission. Where a command
-> needs a specific capability (like *warn* or *ban*), the bot checks that before
-> acting and politely refuses if you're missing it.
+> **Who can run these:** the server **owner**, a matching **staff role**, or the
+> equivalent Discord permission. The bot checks the specific capability (e.g.
+> *warn*, *ban*) before acting, and refuses if you're missing it.
 
-Commands are tagged so you know what you're looking at:
+Command tags:
 
 <span class="cmd-tag free">FREE</span> available on every plan &nbsp;·&nbsp;
 <span class="cmd-tag perm">ADMIN</span> requires a staff role or permission &nbsp;·&nbsp;
@@ -32,9 +29,9 @@ Commands are tagged so you know what you're looking at:
 
 ## Warnings &amp; notes {#warnings-notes}
 
-Build a paper trail. **Warnings** are on-the-record and the member is told;
-**notes** are private staff context the member never sees. Both are numbered so
-you can refer back to, or tidy up, individual entries later.
+**Warnings** are on the record and the member is told; **notes** are private
+staff context the member never sees. Both are numbered, so you can refer back to
+or remove individual entries later.
 
 <div class="cmd-card">
   <div class="cmd-head">
@@ -152,10 +149,8 @@ you can refer back to, or tidy up, individual entries later.
 
 ### Tidying up: `/manage-warnings` &amp; `/manage-notes`
 
-Need to remove an old entry? These open a small private panel with a
-**dropdown** of the member's warnings (or notes). Tick the ones to remove and
-the list updates instantly, handy when a warning was a mistake or has simply
-aged out.
+These open a private panel with a **dropdown** of the member's warnings (or
+notes). Tick the ones to remove and the list updates in place.
 
 <div class="cmd-card">
   <div class="cmd-head">
@@ -230,8 +225,8 @@ aged out.
 
 ## Quick actions {#quick-actions}
 
-The fast everyday tools, calm a channel, cool someone down, tweak a nickname or
-hand out a role. None of these remove anyone; they're the lighter touch.
+The lighter touch: calm a channel, cool someone down, change a nickname or hand
+out a role. None of these remove anyone.
 
 <div class="cmd-card">
   <div class="cmd-head">
@@ -239,7 +234,7 @@ hand out a role. None of these remove anyone; they're the lighter touch.
     <span class="cmd-tag free">FREE</span>
     <span class="cmd-tag perm">ADMIN</span>
   </div>
-  <p class="cmd-desc">Time a member out for a set number of minutes, they can't talk or react until it lifts. Works in any channel.</p>
+  <p class="cmd-desc">Time a member out for a set number of minutes, they can't talk or react until it lifts.</p>
   <table class="cmd-args">
     <tr><th>Argument</th><th>Type</th><th>Notes</th></tr>
     <tr><td><code>user</code> <span class="req">required</span></td><td>member</td><td>User to mute.</td></tr>
@@ -269,7 +264,7 @@ hand out a role. None of these remove anyone; they're the lighter touch.
     <span class="cmd-tag free">FREE</span>
     <span class="cmd-tag perm">ADMIN</span>
   </div>
-  <p class="cmd-desc">Lift a member's timeout early. Works in any channel.</p>
+  <p class="cmd-desc">Lift a member's timeout early.</p>
   <table class="cmd-args">
     <tr><th>Argument</th><th>Type</th><th>Notes</th></tr>
     <tr><td><code>user</code> <span class="req">required</span></td><td>member</td><td>User to unmute.</td></tr>
@@ -296,7 +291,7 @@ hand out a role. None of these remove anyone; they're the lighter touch.
     <span class="cmd-tag free">FREE</span>
     <span class="cmd-tag perm">ADMIN</span>
   </div>
-  <p class="cmd-desc">Set how long members must wait between messages in a channel, great for slowing a busy chat. Works in any channel.</p>
+  <p class="cmd-desc">Set how long members must wait between messages in a channel, great for slowing a busy chat.</p>
   <table class="cmd-args">
     <tr><th>Argument</th><th>Type</th><th>Notes</th></tr>
     <tr><td><code>seconds</code> <span class="req">required</span></td><td>number</td><td>Seconds between messages (0 to disable, max 21600).</td></tr>
@@ -324,7 +319,7 @@ hand out a role. None of these remove anyone; they're the lighter touch.
     <span class="cmd-tag free">FREE</span>
     <span class="cmd-tag perm">ADMIN</span>
   </div>
-  <p class="cmd-desc">Stop (or restore) <code>@everyone</code> being able to send messages in a single channel. Use it to pause a heated thread, then reopen it. Works in any channel.</p>
+  <p class="cmd-desc">Stop (or restore) <code>@everyone</code> being able to send messages in a single channel. Use it to pause a heated thread, then reopen it.</p>
   <table class="cmd-args">
     <tr><th>Argument</th><th>Type</th><th>Notes</th></tr>
     <tr><td><code>channel</code> <span class="opt">optional</span></td><td>channel</td><td>Which channel to lock or unlock, defaults to the one you're in.</td></tr>
@@ -351,7 +346,7 @@ hand out a role. None of these remove anyone; they're the lighter touch.
     <span class="cmd-tag free">FREE</span>
     <span class="cmd-tag perm">ADMIN</span>
   </div>
-  <p class="cmd-desc">Change a member's nickname, or leave it blank to reset them to their username. Works in any channel.</p>
+  <p class="cmd-desc">Change a member's nickname, or leave it blank to reset them to their username.</p>
   <table class="cmd-args">
     <tr><th>Argument</th><th>Type</th><th>Notes</th></tr>
     <tr><td><code>user</code> <span class="req">required</span></td><td>member</td><td>The member to rename.</td></tr>
@@ -404,9 +399,9 @@ hand out a role. None of these remove anyone; they're the lighter touch.
 
 ## Removals {#removals}
 
-When a warning won't cut it. From the gentle nudge of a kick, through temporary
-and permanent bans, to a soft-ban that clears recent messages but lets the person
-rejoin. Every removal is logged with a one-tap **reversal** where it makes sense.
+When a warning won't cut it: a kick, a temporary or permanent ban, or a soft-ban
+that clears recent messages but lets the person rejoin. Every removal is logged
+with a one-tap **reversal** where it makes sense.
 
 <div class="cmd-card">
   <div class="cmd-head">
@@ -414,7 +409,7 @@ rejoin. Every removal is logged with a one-tap **reversal** where it makes sense
     <span class="cmd-tag free">FREE</span>
     <span class="cmd-tag perm">ADMIN</span>
   </div>
-  <p class="cmd-desc">Remove a member from the server. They can rejoin with a fresh invite, it's the lightest removal. Works in any channel.</p>
+  <p class="cmd-desc">Remove a member from the server. They can rejoin with a fresh invite, it's the lightest removal.</p>
   <table class="cmd-args">
     <tr><th>Argument</th><th>Type</th><th>Notes</th></tr>
     <tr><td><code>user</code> <span class="req">required</span></td><td>member</td><td>User to kick.</td></tr>
@@ -474,7 +469,7 @@ rejoin. Every removal is logged with a one-tap **reversal** where it makes sense
     <span class="cmd-tag free">FREE</span>
     <span class="cmd-tag perm">ADMIN</span>
   </div>
-  <p class="cmd-desc">Lift a ban by the user's ID. Works in any channel.</p>
+  <p class="cmd-desc">Lift a ban by the user's ID.</p>
   <table class="cmd-args">
     <tr><th>Argument</th><th>Type</th><th>Notes</th></tr>
     <tr><td><code>user_id</code> <span class="req">required</span></td><td>text</td><td>The banned user's numeric ID.</td></tr>
@@ -502,7 +497,7 @@ rejoin. Every removal is logged with a one-tap **reversal** where it makes sense
     <span class="cmd-tag free">FREE</span>
     <span class="cmd-tag perm">ADMIN</span>
   </div>
-  <p class="cmd-desc">Ban then immediately unban, a quick way to clear a member's recent messages and boot them while still letting them rejoin. Works in any channel.</p>
+  <p class="cmd-desc">Ban then immediately unban, a quick way to clear a member's recent messages and boot them while still letting them rejoin.</p>
   <table class="cmd-args">
     <tr><th>Argument</th><th>Type</th><th>Notes</th></tr>
     <tr><td><code>user</code> <span class="req">required</span></td><td>user</td><td>User to soft-ban.</td></tr>
@@ -531,7 +526,7 @@ rejoin. Every removal is logged with a one-tap **reversal** where it makes sense
     <span class="cmd-tag free">FREE</span>
     <span class="cmd-tag perm">ADMIN</span>
   </div>
-  <p class="cmd-desc">Ban a user for a set time, then auto-unban them. The timer survives a bot restart. Works in any channel.</p>
+  <p class="cmd-desc">Ban a user for a set time, then auto-unban them. The timer survives a bot restart.</p>
   <table class="cmd-args">
     <tr><th>Argument</th><th>Type</th><th>Notes</th></tr>
     <tr><td><code>user</code> <span class="req">required</span></td><td>user</td><td>User to ban.</td></tr>
@@ -560,9 +555,9 @@ rejoin. Every removal is logged with a one-tap **reversal** where it makes sense
 
 ## Bulk &amp; raid response {#bulk-raid}
 
-The heavy machinery, clear a flood of messages, slam every channel shut at once,
-and shut the door on ban-evading alts. Plus the alert the bot raises on its own
-when it spots a raid in progress.
+The heavy machinery: clear a flood of messages, lock every channel at once, and
+shut the door on ban-evading alts, plus the alert the bot raises on its own when
+it spots a raid.
 
 <div class="cmd-card">
   <div class="cmd-head">
@@ -571,7 +566,7 @@ when it spots a raid in progress.
     <span class="cmd-tag perm">ADMIN</span>
     <span class="cmd-tag ai">AI</span>
   </div>
-  <p class="cmd-desc">Bulk-delete recent messages. In <strong>Smart</strong> mode the AI reads the messages and removes only the problematic ones, after showing you a preview to confirm. Works in any channel.</p>
+  <p class="cmd-desc">Bulk-delete recent messages. In <strong>Smart</strong> mode the AI reads the messages and removes only the problematic ones, after showing you a preview to confirm.</p>
   <table class="cmd-args">
     <tr><th>Argument</th><th>Type</th><th>Notes</th></tr>
     <tr><td><code>count</code> <span class="req">required</span></td><td>number</td><td>How many recent messages to scan or delete (1 to 200).</td></tr>
@@ -597,8 +592,8 @@ when it spots a raid in progress.
 
 Run `/purge` with **mode: Smart** and the AI reads the recent messages, decides
 which to keep and which to remove, and shows you a **preview first**. Nothing is
-deleted until you press the button, and removed messages are archived to your
-log channel for review.
+deleted until you press the button; removed messages are archived to your log
+channel for review.
 
 <div class="wiz" data-wiz>
   <div class="wiz-bar">
@@ -712,10 +707,9 @@ log channel for review.
 
 ### When the bot spots a raid
 
-You don't have to be watching. If a burst of accounts joins in a short window,
-Server Assistant raises a **raid alert** in your log channel, pings the owner, and
-hands you two buttons, lock everything down on the spot, or dismiss it as a false
-alarm.
+If a burst of accounts joins in a short window, Server Assistant raises a **raid
+alert** in your log channel, pings the owner, and hands you two buttons: lock
+everything down on the spot, or dismiss it as a false alarm.
 
 <div class="dc">
   <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
@@ -733,12 +727,11 @@ alarm.
 </div>
 
 <p style="color:var(--fg-1);font-size:.9rem;line-height:1.55;">
-<strong>Lock down</strong> runs a full <code>/lockdown</code> on the spot, every
-channel shut, prior permissions saved, and tells you how many channels were
-locked. Lift it later with <code>/lockdown end</code>. <strong>Dismiss</strong>
-clears the alert if it was a false alarm. Either button only works for staff with
-the lock capability or the Manage Channels permission. The join threshold and
-time window are configurable per server.</p>
+<strong>Lock down</strong> runs a full <code>/lockdown</code> (every channel shut,
+prior permissions saved); lift it later with <code>/lockdown end</code>.
+<strong>Dismiss</strong> clears a false alarm. Either button needs the lock
+capability or Manage Channels. The join threshold and time window are
+configurable per server.</p>
 
 ---
 

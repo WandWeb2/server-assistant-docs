@@ -11,22 +11,19 @@ description: A full reference for Server Assistant's AI and intelligence command
 
 # AI &amp; intelligence
 
-These are the clever bits, the commands that lean on AI to help you run your
-server. Ask the bot to tune itself in plain English, conjure up an image from a
-prompt, translate a message in a tap, sit two members down for a calm chat, or
-get a weekly read-out on how your mod team is doing.
+The commands that lean on AI to help you run your server: tune the bot in plain
+English, generate an image, translate a message, mediate between two members, and get
+a weekly read-out on your mod team.
 
-How AI is powered depends on your plan. Every server gets a **free trial
-allowance** to try the AI features out of the box. After that you can either
-**bring your own key** (BYOK), paste a provider key during `/setup` or with
-`/ai-config`, and your server runs on your own account with no trial limit, or go
-**Premium** for the full set without managing a key yourself. The rest is handled
-behind the scenes; see the [pricing page]({{ '/pricing/' | relative_url }}) for
-what's included on each plan.
+How AI is powered depends on your plan. Every server gets a **free trial allowance**
+out of the box. After that, either **bring your own key** (BYOK), paste a provider key
+during `/setup` or with `/ai-config` and run on your own account with no trial limit,
+or go **Premium** for the full set without managing a key. See the
+[pricing page]({{ '/pricing/' | relative_url }}) for what each plan includes.
 
-> **Who can run these:** most AI commands are **owner- or staff-only** and check
-> your role before acting. Where a command is Premium, the bot tells you politely
-> if your plan doesn't include it.
+> **Who can run these:** most AI commands are **owner- or staff-only** and check your
+> role first. Where a command is Premium, the bot tells you if your plan doesn't
+> include it.
 
 Commands are tagged so you know what you're looking at:
 
@@ -39,11 +36,11 @@ Commands are tagged so you know what you're looking at:
 
 ## Tune the bot in plain English {#sai}
 
-`/sai` is your in-server concierge. Ask it anything about how your server is set
-up, "why did that message get flagged?", "make AutoMod a bit stricter", "how are
-we doing this week?", and it answers from your server's own activity. If you're
-the **owner**, it can also suggest concrete config changes and apply them with a
-single tap. Admins get the same insights in a read-only view.
+`/sai` is your in-server concierge. Ask it anything about your server ("why did that
+message get flagged?", "make AutoMod a bit stricter", "how are we doing this week?")
+and it answers from your server's own activity. If you're the **owner**, it can suggest
+concrete config changes and apply them with one tap. Admins get the same insights,
+read-only.
 
 <div class="cmd-card">
   <div class="cmd-head">
@@ -78,19 +75,17 @@ single tap. Admins get the same insights in a read-only view.
 </div>
 
 <p style="color:var(--fg-1);font-size:.9rem;line-height:1.55;">
-The header tells you which mode you're in, <code>owner · full access</code> or
-<code>admin · read-only</code>. As the owner you can press <strong>Apply
-change(s)</strong> to put the suggestions live in one tap; admins see the same
-analysis without the button. If your question is really one for the team, the bot
-notes it's been logged for them.</p>
+The header shows your mode, <code>owner · full access</code> or <code>admin ·
+read-only</code>. As the owner, press <strong>Apply change(s)</strong> to put the
+suggestions live in one tap; admins see the same analysis without the button.</p>
 
 ---
 
 ## Generate an image {#imagine}
 
-`/imagine` turns a text prompt into a picture, posted right in the channel. There's
-a short cooldown between generations on the free trial; Premium servers skip it.
-`/img` is just a shorter alias for the same command.
+`/imagine` turns a text prompt into a picture, posted in the channel. A short cooldown
+applies between generations on the free trial; Premium skips it. `/img` is an alias for
+the same command.
 
 <div class="cmd-card">
   <div class="cmd-head">
@@ -121,10 +116,9 @@ a short cooldown between generations on the free trial; Premium servers skip it.
 
 ### Choosing where images come from
 
-By default `/imagine` uses a **free image service** (Pollinations), so it works
-with no setup. If you'd rather use your own provider, for higher-quality results
-or your own billing, the server owner can set one up under `/ai-config`. That
-opens this short form:
+By default `/imagine` uses a **free image service** (Pollinations), so it works with no
+setup. To use your own provider (for higher quality or your own billing), the owner can
+set one up under `/ai-config`:
 
 <div class="dc">
   <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
@@ -142,17 +136,16 @@ opens this short form:
 </div>
 
 <p style="color:var(--fg-1);font-size:.9rem;line-height:1.55;">
-Choose <code>openai</code>, <code>stability</code> or <code>pollinations</code>.
-The free Pollinations option needs no key at all, just leave the key field blank.
-The image's footer always shows which provider produced it.</p>
+Choose <code>openai</code>, <code>stability</code> or <code>pollinations</code>. Free
+Pollinations needs no key, just leave the key field blank. The image's footer always
+shows which provider produced it.</p>
 
 ---
 
 ## Translate {#translate}
 
-`/translate` renders any text into the language you want, replied privately so it
-doesn't clutter the channel. Leave the language out and it uses your own Discord
-language.
+`/translate` renders any text into the language you want, replied privately. Leave the
+language out and it uses your own Discord language.
 
 <div class="cmd-card">
   <div class="cmd-head">
@@ -178,11 +171,11 @@ language.
   </div>
 </div>
 
-### The “Translate” right-click shortcut
+### The "Translate" right-click shortcut
 
-You don't even need to retype a message to translate it. Right-click (or
-long-press) any message, open **Apps → Translate**, and the bot translates it into
-*your* Discord language, replied privately. Same Premium feature, no typing.
+No need to retype a message. Right-click (or long-press) any message and open **Apps →
+Translate**, and the bot translates it into *your* Discord language, replied privately.
+Same Premium feature, no typing.
 
 <div class="dc">
   <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
@@ -195,10 +188,9 @@ long-press) any message, open **Apps → Translate**, and the bot translates it 
 
 ## Mediate a dispute {#mediate}
 
-When two members are at odds, `/mediate` steps in as a calm, neutral go-between. It
-DMs each person separately to hear their side, then posts a **neutral summary** to
-the channel for your team. It never takes sides, assigns blame, or recommends a
-punishment, it just helps everyone see the disagreement clearly.
+When two members are at odds, `/mediate` acts as a calm, neutral go-between. It DMs each
+person separately to hear their side, then posts a **neutral summary** to the channel
+for your team. It never takes sides, assigns blame, or recommends punishment.
 
 <div class="cmd-card">
   <div class="cmd-head">
@@ -215,6 +207,8 @@ punishment, it just helps everyone see the disagreement clearly.
 </div>
 
 Running `/mediate` opens a small private panel. Step through it below.
+
+
 
 <div class="wiz" data-wiz>
   <div class="wiz-bar">
@@ -258,7 +252,7 @@ Running `/mediate` opens a small private panel. Step through it below.
         </div>
       </div></div>
     </div>
-    <p class="wiz-caption"><strong>Optional context.</strong> Tapping <strong>Topic</strong> opens this short form. Add a sentence about what the dispute is over (up to 300 characters) or skip it, the mediation works either way.</p>
+    <p class="wiz-caption"><strong>Optional context.</strong> Tapping <strong>Topic</strong> opens this form. Add a sentence about the dispute (up to 300 characters) or skip it, the mediation works either way.</p>
   </div>
 
   <div class="wiz-step" data-step="The bot collects each side">
@@ -288,7 +282,7 @@ Running `/mediate` opens a small private panel. Step through it below.
         </div>
       </div></div>
     </div>
-    <p class="wiz-caption"><strong>A read for the team.</strong> Once both have replied, the bot posts this summary in the channel: the core disagreement, each side's position, any common ground, and a couple of gentle de-escalation options. It stays strictly neutral, the next step is always yours.</p>
+    <p class="wiz-caption"><strong>A read for the team.</strong> Once both have replied, the bot posts this summary: the core disagreement, each side's position, any common ground, and a couple of de-escalation options. It stays strictly neutral; the next step is yours.</p>
   </div>
 </div>
 
@@ -296,10 +290,9 @@ Running `/mediate` opens a small private panel. Step through it below.
 
 ## Weekly mod-team retrospective {#retro}
 
-`/retro` pulls together the last seven days of moderation activity into a single
-read-out for your team, how many cases were handled, the trend versus last week,
-who was busiest, and (if AI is on) a short note on patterns worth discussing. Handy
-for a weekly staff catch-up.
+`/retro` pulls the last seven days of moderation into one read-out for your team: cases
+handled, the trend versus last week, who was busiest, and (if AI is on) a short note on
+patterns worth discussing.
 
 <div class="cmd-card">
   <div class="cmd-head">
@@ -335,16 +328,16 @@ for a weekly staff catch-up.
 </div>
 
 <p style="color:var(--fg-1);font-size:.9rem;line-height:1.55;">
-The retro lands in your staff chat if one's set up, otherwise it replies privately
-to you. A quiet week with no logged actions simply says so. You can turn the weekly
-retro on or off under <code>/settings → Behaviour</code>.</p>
+The retro lands in your staff chat if one's set up, otherwise it replies privately to
+you. A quiet week with no logged actions says so. Turn the weekly retro on or off under
+<code>/settings → Behaviour</code>.</p>
 
 ---
 
 ## Server statistics {#stats}
 
-A quick snapshot of your server, members, channels, roles, boosts and more, at a
-glance. No AI, no plan needed.
+A quick snapshot of your server: members, channels, roles, boosts and more. No AI, no
+plan needed.
 
 <div class="cmd-card">
   <div class="cmd-head">

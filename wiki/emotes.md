@@ -11,51 +11,51 @@ description: How Server Assistant's emote commands work, /emote and its shortcut
 
 # Emote commands
 
-React with the perfect GIF in one tap. Server Assistant ships hundreds of emotes, 
+React with the perfect GIF in one tap. Server Assistant ships hundreds of emotes,
 baselined on the classic MMO emote sets (WoW and friends), posted as GIFs sourced
 from **KLIPY**.
 
 ## The commands
 
 - **`/emote <name> [genre] [member]`**: post any emote. The `name` field has
-  **autocomplete**, so start typing (`cry`, `dance`, `facepalm`, `wave`…) and pick from
-  the list. Common aliases work too (`lol` → laugh, `ty` → thank).
-- **`/e …`**: a shorthand alias for `/emote`, same options.
+  **autocomplete**, so start typing (`cry`, `dance`, `facepalm`, `wave`) and pick from
+  the list. Aliases work too (`lol` for laugh, `ty` for thank).
+- **`/e`**: shorthand for `/emote`, same options.
 - **`/cry`**, **`/hug`**, **`/dance`**: quick shortcuts for the most-used ones.
 - **`/emotestyle <subject>`**: set your **personal default theme** (see below).
 
 ## How the theme is chosen
 
-- **Bare emote** (`/cry`): the bot **picks a theme automatically** that fits your
-  server and the moment, then grabs a **random** matching GIF, so it's fresh each time.
-- **Your own genre** (`/cry anime`, `/cry wow`, `/cry naruto`): anything goes: the genre
-  is a live GIF search, so any subject works.
-- **Your personal default** (`/emotestyle anime`): your bare emotes lean your way by
-  default, across **every server** you share with Server Assistant. `/emotestyle clear`
-  removes it; `/emotestyle` on its own shows your current one.
+- **Bare emote** (`/cry`): the bot **picks a theme** that fits your server and the
+  moment, then grabs a **random** matching GIF, so it's fresh each time.
+- **Your own genre** (`/cry anime`, `/cry wow`, `/cry naruto`): the genre is a live GIF
+  search, so any subject works.
+- **Your personal default** (`/emotestyle anime`): your bare emotes lean your way
+  across **every server** you share with Server Assistant. `/emotestyle clear` removes
+  it; `/emotestyle` on its own shows your current one.
 
-The automatic theme uses your server's **AI allowance, the free 150K trial counts**, 
-and it's **not** Premium-only. When that allowance is used up, emotes simply fall back
-to a plain random GIF, so the commands always work.
+The automatic theme uses your server's **AI allowance, the free 150K trial counts**,
+and is **not** Premium-only. When the allowance runs out, emotes fall back to a plain
+random GIF, so the commands always work.
 
 ## Aiming an emote at someone
 
-Social emotes support an optional member: **`/hug @member`**, `/pat @member`,
-`/wave @member`, and so on. The post mentions the person you're reacting to.
+Social emotes take an optional member: **`/hug @member`**, `/pat @member`,
+`/wave @member`. The post mentions the person you're reacting to.
 
 ## Memes: `/meme <search>`
 
-**`/meme <search>`** posts a meme image matching what you type, `/meme distracted
-boyfriend`, `/meme this is fine`, `/meme success kid`. Memes are sourced from **KLIPY**.
-They share the emote feature's server controls (channel allowlist, rate limit and
-NSFW safe-search) and have their own on/off toggle in `/settings → Emotes`.
+**`/meme <search>`** posts a meme image matching what you type (`/meme distracted
+boyfriend`, `/meme this is fine`, `/meme success kid`), sourced from **KLIPY**. Memes
+share the emote server controls (channel allowlist, rate limit and NSFW safe-search)
+and have their own on/off toggle in `/settings → Emotes`.
 
-Like emotes, `/meme` adds a **natural caption** that says what the meme conveys about you
-, `/meme this is fine` → "@User has decided everything is fine", `/meme drake` → "@User has
-notes". On AI-enabled servers (your **AI allowance, free trial included**, not Premium-only)
-the caption is written to fit the meme *and* the recent conversation, using the same
-**AI theme-pick** toggle as emotes. When AI isn't available it falls back to a built-in
-library of well-known memes, and an unrecognised meme simply posts the image.
+Like emotes, `/meme` adds a **natural caption** for what the meme says about you
+(`/meme this is fine` becomes "@User has decided everything is fine"). On AI-enabled
+servers (your **AI allowance, free trial included**, not Premium-only) the caption is
+written to fit the meme *and* the recent conversation, using the same **AI theme-pick**
+toggle as emotes. Without AI it falls back to a built-in library of well-known memes,
+and an unrecognised meme simply posts the image.
 
 ## Server controls: `/settings → ⚙ Settings → Emotes`
 
@@ -63,11 +63,11 @@ Owners and admins can:
 
 - **Turn emotes on or off** for the server.
 - **Restrict them to specific channels** (default: all channels).
-- **Set a rate limit** (per member, per channel) to keep chat tidy.
+- **Set a rate limit** (per member, per channel).
 - **Toggle the AI theme-pick.**
 - **Allow spicier GIFs in NSFW channels**: off by default; safe-search is always on
-  outside of NSFW channels.
-- **Enable the “flavor pack”**: a handful of cheekier emotes (off by default).
+  outside NSFW channels.
+- **Enable the "flavor pack"**: a handful of cheekier emotes (off by default).
 
 ## See also
 

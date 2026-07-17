@@ -11,24 +11,20 @@ description: How Server Assistant's anti-nuke guard detects and stops a server n
 
 # Anti-nuke / rogue-admin guard
 
-Every server owner's nightmare is the same: an admin account goes rogue, or gets
-**compromised**, and in the space of a minute it deletes your channels, wipes
-your roles, and mass-bans your members. By the time you see it, the damage is
-done. The **anti-nuke guard** is the bit that's watching for exactly that, and
-acts in seconds, not after the fact.
+An admin account goes rogue or gets **compromised**, and in a minute it deletes
+your channels, wipes your roles and mass-bans your members. The **anti-nuke
+guard** watches for exactly that and acts in seconds.
 
-It runs on the moderation activity Server Assistant already sees, so there's
-nothing new to wire up. When **one account** suddenly starts doing damage in a
-tight burst, the guard scores how likely it is to be an attack and responds on a
-ladder, from a quiet note, to a staff alert, to **automatically stripping the
-account's power and putting everything back**.
+It runs on the moderation activity Server Assistant already sees, nothing new to
+wire up. When **one account** does damage in a tight burst, the guard scores how
+likely it's an attack and responds on a ladder: a quiet note, a staff alert, or
+**automatically stripping the account's power and putting everything back**.
 
-> **Who it protects, who can configure it:** the server **owner is always
-> immune**: the guard will never act against you. Configuration is owner /
-> **Manage Server** only, under `/settings → Anti-nuke`. It's **on by default**,
-> because detection and alerts don't change anything on their own; the one action
-> that *does*, auto-quarantine, only ever fires at high confidence and is
-> reversible in one tap.
+> **Who it protects, who configures it:** the server **owner is always immune**,
+> the guard never acts against you. Configuration is owner / **Manage Server**
+> only, under `/settings → Anti-nuke`. It's **on by default**: detection and
+> alerts change nothing on their own, and the one action that does,
+> auto-quarantine, fires only at high confidence and reverts in one tap.
 
 <span class="cmd-tag free">FREE</span> available on every plan &nbsp;·&nbsp;
 <span class="cmd-tag perm">ADMIN</span> only an admin or the owner can configure it &nbsp;·&nbsp;
@@ -39,45 +35,39 @@ account's power and putting everything back**.
 ## What it watches for {#signals}
 
 The guard tracks **dangerous, hard-to-undo actions** and looks for an unusual
-**burst from a single actor** in a short window. The actions it weighs most
-heavily are the ones a nuke is actually made of:
+**burst from a single actor** in a short window, the actions a nuke is made of:
 
 - **Channel deletions** and **role deletions**: the classic wipe.
 - **Mass bans / kicks** and **member prunes**: clearing out your community.
 - **Webhook creation floods**: often used to spam a server as it's nuked.
-- **Permission grabs**: a role suddenly being handed **Administrator**, **Ban**,
+- **Permission grabs**: a role suddenly handed **Administrator**, **Ban**,
   **Manage Server**, **Manage Roles** or **Manage Channels**. A compromised
-  account often escalates its own power first; the guard treats that as
-  nuke-prep and weighs it like a deletion.
+  account often escalates its own power first; the guard weighs that like a
+  deletion.
 
-A handful of normal admin actions won't trip anything. It takes a genuine
-**burst**: several destructive actions faster than a real admin would work,
-before the guard scores it as a likely incident.
+A few normal admin actions won't trip anything, it takes a genuine **burst**,
+several destructive actions faster than a real admin would work.
 
 ### Tuned to your community
 
-There's no one-size threshold. Sensitivity is **seeded from your server type**
-(picked during `/setup`): a busy **gaming** or **general** server, where staff
-churn channels and ban raiders all the time, gets more headroom; a locked-down
-or high-stakes server is stricter. You can always adjust it yourself under
-`/settings → Anti-nuke`.
+Sensitivity is **seeded from your server type** (picked during `/setup`): a busy
+**gaming** or **general** server gets more headroom; a locked-down or high-stakes
+one is stricter. Adjust it under `/settings → Anti-nuke`.
 
 ---
 
 ## The response ladder {#ladder}
 
-The guard's reaction scales with how confident it is that what it's seeing is an
-attack:
+The guard's reaction scales with its confidence that it's seeing an attack:
 
-- **Low confidence → observe.** It quietly records the activity. Nothing visible,
-  no action.
+- **Low confidence → observe.** It quietly records the activity. No action.
 - **Medium confidence → step-up alert.** It posts an alert to your staff channel
-  describing the burst and asks you to confirm: is this expected? You can
-  **quarantine the actor** or **trust them** right from the alert.
-- **High confidence → auto-quarantine.** It acts immediately: it **strips the
-  offending account of its power** to stop the damage, alerts you and your staff,
-  and attaches a short plain-language **SAi incident report** explaining what
-  happened. If it got it wrong, **one tap puts the account's roles back**.
+  describing the burst and asks you to confirm. You can **quarantine the actor**
+  or **trust them** right from the alert.
+- **High confidence → auto-quarantine.** It acts immediately: **strips the
+  offending account of its power** to stop the damage, alerts you and staff, and
+  attaches a short plain-language **SAi incident report**. If it got it wrong,
+  **one tap puts the account's roles back**.
 
 ### What a high-confidence incident looks like
 
@@ -104,45 +94,42 @@ attack:
 </div>
 
 Every incident is also recorded in your **web portal**'s activity feed, so you
-have a clear record of what happened and when, even if you weren't in Discord at
-the time.
+have a record even if you weren't in Discord at the time.
 
 ---
 
 ## Putting your server back: the restore engine {#restore}
 
 Catching the attack is only half the job, you also need your server *back*. The
-guard keeps a regular, automatic **snapshot** of how your server is configured:
-every role's exact permissions, and every channel's permission settings.
+guard keeps a regular, automatic **snapshot** of your configuration: every role's
+exact permissions and every channel's permission settings.
 
-When you tap **Restore server** on an incident (you'll get a quick preview and a
-confirm first), the guard:
+When you tap **Restore server** on an incident (with a preview and confirm
+first), the guard:
 
 - **Re-applies exact permissions.** Every role's permissions and every channel's
   overwrites are set back **precisely** to the snapshot, not a best-guess.
 - **Recreates deleted channels.** Channels the attacker deleted are **rebuilt**
   from the snapshot, best-effort, with their settings restored.
 
-Restore is **throttled** so it works smoothly within Discord's limits, and you
-can take a fresh snapshot any time with **Snapshot now** under
-`/settings → Anti-nuke`.
+Restore is **throttled** to stay within Discord's limits, and you can take a fresh
+snapshot any time with **Snapshot now** under `/settings → Anti-nuke`.
 
-> Restoring re-applies a *saved* configuration, the snapshot taken before the
-> attack. Anything changed legitimately since the last snapshot would be rolled
-> back too, which is why the guard shows you the snapshot's timestamp and asks
-> you to confirm before it runs.
+> Restore re-applies the *saved* snapshot taken before the attack, so anything
+> changed legitimately since then is rolled back too. That's why the guard shows
+> the snapshot's timestamp and asks you to confirm first.
 
 ---
 
 ## Trusted actors: the whitelist {#whitelist}
 
-Some accounts *should* be able to make sweeping changes, your most senior admin
-doing a planned restructure, or a management bot that creates channels in bulk.
-Add them to the **whitelist** and the guard won't score their actions at all.
+Some accounts *should* make sweeping changes, a senior admin doing a planned
+restructure, or a management bot that creates channels in bulk. Add them to the
+**whitelist** and the guard won't score their actions at all.
 
-You can whitelist **users, bots and roles** straight from `/settings →
-Anti-nuke` using the pickers, no IDs to copy. The **owner is always immune**
-regardless of the whitelist, and you can clear the whole list in one tap.
+You can whitelist **users, bots and roles** from `/settings → Anti-nuke` using
+the pickers, no IDs to copy. The **owner is always immune** regardless, and you
+can clear the whole list in one tap.
 
 <div class="cmd-card">
   <div class="cmd-head">
@@ -172,23 +159,21 @@ regardless of the whitelist, and you can clear the whole list in one tap.
 
 ## The two-person rule {#two-person}
 
-There's a subtle risk in any automatic protection: what if the *compromised*
-account is the one that tries to switch it off? The **two-person rule** closes
-that door. When it's on, **undoing a quarantine during a live incident requires
-two different admins** to confirm, so a single hijacked account can't quietly
-revert its own quarantine and carry on. It's on by default and can be toggled
-under `/settings → Anti-nuke`.
+What if the *compromised* account is the one that tries to switch protection off?
+The **two-person rule** closes that door: when it's on, **undoing a quarantine
+during a live incident requires two different admins** to confirm, so a single
+hijacked account can't revert its own quarantine and carry on. On by default,
+toggled under `/settings → Anti-nuke`.
 
 ---
 
 ## Local to your server {#local-only}
 
-The anti-nuke guard works **entirely within your own server**. It watches *your*
-admin activity, keeps *your* configuration snapshot, and acts on *your* server,
-and that's all. It does **not** read from, contribute to, or consult any
-cross-server list or shared network. It is deliberately **not** a
-[ThreatNet]({{ '/wiki/threatnet/' | relative_url }}) signal: an incident on your
-server stays on your server.
+The anti-nuke guard works **entirely within your own server**: it watches *your*
+admin activity, keeps *your* snapshot, and acts on *your* server. It does **not**
+read from, contribute to, or consult any cross-server list or shared network, and
+is deliberately **not** a [ThreatNet]({{ '/wiki/threatnet/' | relative_url }})
+signal. An incident on your server stays on your server.
 
 ---
 

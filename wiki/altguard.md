@@ -12,20 +12,16 @@ description: How Server Assistant's altguard catches ban-evading alts using your
 # Alt / ban-evasion detection (altguard)
 
 You ban someone, and ten minutes later a fresh account with the same avatar
-walks back in. **Altguard** is the bit that notices. When it's switched on,
-every new member is quietly checked against the people *your* server has already
-kicked or banned, and if the match is confident, the alt is banned again before
-they can settle in.
+walks back in. **Altguard** notices. When it's on, every new member is checked
+against the people *your* server has already kicked or banned, and a confident
+match is banned again before they can settle in.
 
-It runs entirely on **your own server's moderation history**. Altguard never
-reaches out to any shared list, central database or cross-server network, it
-only knows the people *you* have removed. That local-only design is the whole
-point of this feature, and we spell out exactly what it does and doesn't see
+It runs entirely on **your own server's moderation history**, never a shared list
+or cross-server network. That local-only design is the point, spelled out
 [further down](#local-only).
 
 > **Who can switch it on:** the server **owner**, or an admin with **Manage
-> Server**. It's **off by default**: altguard is opt-in, so nothing happens
-> until you turn it on with `/altguard mode: on`.
+> Server**. It's **off by default**: turn it on with `/altguard mode: on`.
 
 <span class="cmd-tag free">FREE</span> available on every plan &nbsp;·&nbsp;
 <span class="cmd-tag perm">ADMIN</span> only an admin or the owner can toggle it
@@ -35,41 +31,33 @@ point of this feature, and we spell out exactly what it does and doesn't see
 ## How the detection works {#how-it-works}
 
 When someone joins, altguard compares them against each prior offender on file
-for your server and builds a **match score out of 100**. Several signals stack
-up, the more they line up, the higher the score:
+and builds a **match score out of 100**. Signals stack:
 
-- **Reused custom avatar, the strongest signal.** If the joiner's custom
-  avatar is byte-for-byte the same image as one a banned or kicked member used,
-  that alone is a heavy hit. People rebrand their username far more readily than
-  they bother to change their profile picture, so a reused avatar is the clearest
-  "this is the same person" tell altguard has.
-- **Name similarity.** A near-identical username or display name to a prior
-  offender counts strongly; a loosely similar one counts a little. `Toxic_Mike`
-  rejoining as `ToxicMike2` won't slip past on a name tweak alone.
-- **Brand-new account.** If the joining account was **created within the last 7
-  days**, that adds to the score, throwaway alts are usually freshly minted.
+- **Reused custom avatar, the strongest signal.** A joiner's custom avatar that's
+  byte-for-byte the same image as a banned or kicked member's is a heavy hit,
+  people change usernames far more readily than profile pictures.
+- **Name similarity.** A near-identical username or display name counts strongly;
+  a loosely similar one counts a little. `Toxic_Mike` rejoining as `ToxicMike2`
+  won't slip past on a name tweak alone.
+- **Brand-new account.** An account **created within the last 7 days** adds to the
+  score, throwaway alts are usually freshly minted.
 - **Recent offence.** If the original ban or kick was **within the last month**,
-  the match weighs more heavily, since evasion tends to happen soon after the
-  removal rather than months later.
+  the match weighs more heavily.
 
-A weak coincidence on one signal won't trigger anything. It takes a genuinely
-convincing combination, and a reused avatar or a near-identical name on a fresh
-account is exactly the kind of pattern that pushes a match into **confident**
-territory.
+One weak coincidence won't trigger anything, it takes a convincing combination.
 
 ### Two outcomes: auto-ban or flag
 
-- **Confident match → auto-banned.** When the evidence is strong, a reused
-  custom avatar, or a near-identical name on a new account, with a high overall
-  score, altguard **bans the alt automatically** and posts a notice to your
-  log channel so your team has a record.
-- **Weaker match → flagged for review.** When the signals are suggestive but
-  not conclusive, altguard takes **no action on its own**. It simply flags the
-  join to your staff with the reasons, and leaves the decision to you.
+- **Confident match → auto-banned.** Strong evidence (a reused avatar, or a
+  near-identical name on a new account, at a high score) **bans the alt
+  automatically** and posts a notice to your log channel.
+- **Weaker match → flagged for review.** Suggestive but not conclusive signals
+  take **no action**, altguard flags the join with its reasons and leaves the
+  call to you.
 
-For altguard to carry out an auto-ban it needs the **Ban Members** permission
-and a role positioned above the member it's removing. If it spots a confident
-match but can't act, it tells you in the notice and asks you to review manually.
+An auto-ban needs the **Ban Members** permission and a role above the member.
+If altguard spots a confident match but can't act, it says so and asks you to
+review manually.
 
 ---
 
@@ -107,8 +95,7 @@ One command, three modes, turn detection on, off, or check where it stands.
 ### Checking the status
 
 `/altguard mode: status` tells you whether detection is on and how many prior
-offenders your server currently has on file, useful for confirming it's armed
-before you rely on it.
+offenders your server has on file.
 
 <div class="dc">
   <div class="dc-row"><img class="dc-av you" src="{{ '/assets/avatar-you.jpg' | relative_url }}" alt="You" loading="lazy"><div class="dc-body">
@@ -129,11 +116,10 @@ before you rely on it.
 
 ## What a match looks like {#notice}
 
-When altguard catches something, it posts to your **log channel** (or your staff
-chat if you haven't set a log channel). The notice shows the join, the match
-score, which prior offender it lines up with, the signals that fired, and what
-was done about it, **red** when the alt was auto-banned, **amber** when it's
-only a flag for you to review.
+When altguard catches something, it posts to your **log channel** (or staff chat
+if none is set). The notice shows the join, the match score, which prior offender
+it matches, the signals that fired, and the outcome, **red** for an auto-ban,
+**amber** for a flag to review.
 
 ### A confident match, auto-banned
 
@@ -178,32 +164,23 @@ removal becomes part of the same local history altguard checks against next time
 
 ## Local to your server, and only your server {#local-only}
 
-This is the most important thing to understand about altguard, so it's worth
-being blunt:
-
 **Altguard only ever looks at the bans and kicks made on *your own* server.** It
-fingerprints the members *you* have removed, and checks new joiners against
-*that* list and nothing else. It does **not** read, share, contribute to, or
-consult any cross-server list, central database or shared threat network. An alt
-who was banned on someone else's server, but never on yours, is invisible to
-altguard.
+fingerprints the members *you* removed and checks new joiners against *that* list
+and nothing else, never a cross-server list, central database or shared threat
+network. An alt banned on someone else's server but never on yours is invisible
+to altguard.
 
-A couple of specifics that follow from that:
+Two things follow:
 
-- **It builds up from the moment you turn it on.** Altguard can only match
-  people your server has already removed, so a brand-new server with no ban or
-  kick history has nothing to compare against yet. The list grows naturally as
-  you moderate.
-- **Soft-bans are deliberately excluded.** A [`/softban`]({{ '/wiki/moderation/#removals' | relative_url }})
-  is a ban-then-immediate-unban used purely to clear someone's recent messages,
-  it's *meant* to let them rejoin. So soft-banned members are **not** recorded as
-  offenders, and altguard won't flag them when they come back.
+- **It builds from the moment you turn it on.** A brand-new server with no ban or
+  kick history has nothing to compare against yet; the list grows as you moderate.
+- **Soft-bans are excluded.** A [`/softban`]({{ '/wiki/moderation/#removals' | relative_url }})
+  is *meant* to let someone rejoin, so soft-banned members are **not** recorded as
+  offenders and altguard won't flag them when they come back.
 
-Want protection that *does* span servers, catching known bad actors before
-they've ever offended on yours? That's a different feature with a different,
-opt-in trust model: the cross-server **[ThreatNet]({{ '/wiki/threatnet/' | relative_url }})**.
-Altguard is its purely local counterpart; the two are independent and you can run
-either, both, or neither.
+Want protection that *does* span servers? That's the cross-server, opt-in
+**[ThreatNet]({{ '/wiki/threatnet/' | relative_url }})**. Altguard is its local
+counterpart; the two are independent and you can run either, both, or neither.
 
 ---
 

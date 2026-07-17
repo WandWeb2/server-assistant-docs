@@ -11,21 +11,19 @@ description: How Server Assistant's ban appeals work end to end, the reason DM, 
 
 # Ban appeals
 
-A ban shouldn't be a silent door-slam. With **ban appeals** switched on, anyone
-you ban gets a DM explaining **exactly why**, and an invitation to put their
-case in a single reply. That reply opens a tidy **appeal ticket** for your staff,
-with one-tap **Unban**, **Deny** and a set of context buttons right there in your
-log channel. No digging through audit logs, no per-incident channels, no
-“did you get my appeal?” chasing.
+With **ban appeals** on, anyone you ban gets a DM explaining **exactly why**, and
+can put their case in a single reply. That reply opens an **appeal ticket** in
+your log channel with one-tap **Unban**, **Deny** and context buttons. No
+audit-log digging, no per-incident channels, no "did you get my appeal?" chasing.
 
-This page walks the whole flow, shows the free vs Premium difference, and covers
-the one important exception: a **ThreatNet auto-ban**, which is silent by design.
+This page walks the flow, the free vs Premium difference, and the one exception:
+a **ThreatNet auto-ban**, which is silent by design.
 
-> **It's automatic once it's on.** Ban appeals are controlled from
+> **Automatic once it's on.** Ban appeals are controlled from
 > [`/settings`]({{ '/wiki/' | relative_url }}) and are **on by default**. There's
-> nothing for a banned member to install or learn, they just reply to the DM.
+> nothing for a banned member to install, they just reply to the DM.
 
-Things on this page are tagged so you know what you're looking at:
+Tags on this page:
 
 <span class="cmd-tag free">FREE</span> available on every plan &nbsp;·&nbsp;
 <span class="cmd-tag premium">PREMIUM</span> needs a Premium plan &nbsp;·&nbsp;
@@ -35,9 +33,9 @@ Things on this page are tagged so you know what you're looking at:
 
 ## Step through an appeal
 
-Use **Next ›** and **‹ Back** to walk the flow, from the ban DM through the
-member's reply, the staff ticket and its buttons, the optional Premium
-back-and-forth, and the outcome.
+Use **Next ›** and **‹ Back** to walk the flow: the ban DM, the member's reply,
+the staff ticket and its buttons, the optional Premium back-and-forth, and the
+outcome.
 
 <div class="wiz" data-wiz>
   <div class="wiz-bar">
@@ -59,7 +57,7 @@ back-and-forth, and the outcome.
         </div>
       </div></div>
     </div>
-    <p class="wiz-caption"><strong>The member is told why.</strong> The banned member gets the exact reason and is invited to appeal by <em>replying</em> to the DM, there's <strong>no button to find</strong>, just a reply. If no reason was recorded, the DM reads “No reason was provided.” If their DMs are closed the bot simply can't reach them, and the appeal can't start.</p>
+    <p class="wiz-caption"><strong>The member is told why.</strong> They get the exact reason and appeal by <em>replying</em> to the DM, <strong>no button to find</strong>. If no reason was recorded, the DM reads “No reason was provided.” If their DMs are closed, the bot can't reach them and the appeal can't start.</p>
   </div>
 
   <div class="wiz-step" data-step="2 · They reply with their case">
@@ -73,7 +71,7 @@ back-and-forth, and the outcome.
         <div class="dc-desc" style="color:#dbdee1;line-height:1.5;">Thanks, your appeal has been sent to the staff team for review.</div>
       </div></div>
     </div>
-    <p class="wiz-caption"><strong>One reply, submitted.</strong> They reply once and the bot confirms it's gone to the staff team. They can't spam it, a second reply just gets <em>“Your appeal is in with the staff team, you'll get a message here if there's an update.”</em> On the free plan this single reply is the appeal; on Premium the bot can ask a short follow-up first (see step 5).</p>
+    <p class="wiz-caption"><strong>One reply, submitted.</strong> They reply once and the bot confirms it's gone to staff. A second reply just gets <em>“Your appeal is in with the staff team, you'll get a message here if there's an update.”</em> On free, this single reply is the appeal; on Premium the bot can ask a short follow-up first (step 6).</p>
   </div>
 
   <div class="wiz-step" data-step="3 · Staff get an appeal ticket">
@@ -99,7 +97,7 @@ back-and-forth, and the outcome.
         </div>
       </div></div>
     </div>
-    <p class="wiz-caption"><strong>The ticket.</strong> The appeal lands in your log channel with the member's words, their ID and the original ban reason. <strong>Unban</strong> lifts the ban and DMs the member the good news; <strong>Deny</strong> closes the appeal and tells them the ban stands. <strong>Info</strong>, <strong>Warnings</strong> and <strong>Notes</strong> pull up the member's history right there, privately, just for you, so you decide with full context. <strong>More info</strong> is Premium (step 5). Only staff with the ban capability can press any of them.</p>
+    <p class="wiz-caption"><strong>The ticket.</strong> It lands in your log channel with the member's words, their ID and the original ban reason. <strong>Unban</strong> lifts the ban and DMs them; <strong>Deny</strong> closes the appeal and tells them the ban stands. <strong>Info</strong>, <strong>Warnings</strong> and <strong>Notes</strong> pull up their history privately, for context. <strong>More info</strong> is Premium (step 5). Only staff with the ban capability can press any of them.</p>
   </div>
 
   <div class="wiz-step" data-step="4 · Research, on demand">
@@ -113,7 +111,7 @@ back-and-forth, and the outcome.
         </div>
       </div></div>
     </div>
-    <p class="wiz-caption"><strong>Research <span class="cmd-tag ai">AI</span>.</strong> Press <strong>Research</strong> and the bot writes a short, private assessment of the member's most recent cached message, a few bullets to help you weigh the appeal. It's <strong>opt-in</strong>: it runs (and costs AI only) the moment you press it, never before. If nothing was cached, they hadn't spoken recently, or the bot restarted since the ban, it says so rather than guessing.</p>
+    <p class="wiz-caption"><strong>Research <span class="cmd-tag ai">AI</span>.</strong> Press <strong>Research</strong> and the bot writes a short, private assessment of the member's most recent cached message. It's <strong>opt-in</strong>: it runs (and costs AI) only the moment you press it. If nothing was cached, it says so rather than guessing.</p>
   </div>
 
   <div class="wiz-step" data-step="5 · Ask for more info (Premium)">
@@ -128,7 +126,7 @@ back-and-forth, and the outcome.
         </div>
       </div></div>
     </div>
-    <p class="wiz-caption"><strong>More info <span class="cmd-tag premium">PREMIUM</span>.</strong> Not ready to decide? On Premium, <strong>More info</strong> opens this short form. Type a question, the bot DMs it to the member, and the ticket pauses, <em>“this card is paused; a fresh one returns when they reply.”</em> Their follow-up reply doesn't count against the one-reply limit, and a fresh ticket comes back the moment they answer. If their DMs are closed the appeal simply stays open in your channel.</p>
+    <p class="wiz-caption"><strong>More info <span class="cmd-tag premium">PREMIUM</span>.</strong> On Premium, <strong>More info</strong> opens this form. Type a question, the bot DMs it, and the ticket pauses (<em>“this card is paused; a fresh one returns when they reply.”</em>). Their follow-up doesn't count against the one-reply limit, and a fresh ticket returns the moment they answer.</p>
   </div>
 
   <div class="wiz-step" data-step="6 · A guided conversation (Premium)">
@@ -142,7 +140,7 @@ back-and-forth, and the outcome.
         <div class="dc-desc" style="color:#dbdee1;line-height:1.5;">Thanks for letting us know. When do you think your account was compromised, and have you since secured it?</div>
       </div></div>
     </div>
-    <p class="wiz-caption"><strong>Multi-round appeals <span class="cmd-tag premium">PREMIUM</span>.</strong> With guided multi-round appeals on, the bot can ask <strong>one or two short follow-up questions</strong> before passing the appeal on, gathering the full picture so a one-line “sorry” becomes something your staff can actually act on. The AI only <em>facilitates</em>: it never decides the outcome. When it concludes, staff get the full back-and-forth plus a short, neutral summary of the member's case.</p>
+    <p class="wiz-caption"><strong>Multi-round appeals <span class="cmd-tag premium">PREMIUM</span>.</strong> The bot can ask <strong>one or two short follow-up questions</strong> before passing the appeal on, turning a one-line “sorry” into something staff can act on. The AI only <em>facilitates</em>, it never decides the outcome. Staff get the full back-and-forth plus a short, neutral summary.</p>
   </div>
 
   <div class="wiz-step" data-step="7 · The member hears back">
@@ -152,7 +150,7 @@ back-and-forth, and the outcome.
         <div class="dc-desc" style="color:#dbdee1;line-height:1.5;">Good news, your ban appeal for <strong>The Hangout</strong> was <strong>approved</strong> and you've been unbanned. Please review the rules before rejoining.</div>
       </div></div>
     </div>
-    <p class="wiz-caption"><strong>The outcome.</strong> Whatever staff decide, the member hears back in their DMs, an approval comes with the unban and a nudge to read the rules; a denial says the ban stands. No chasing, no follow-up tickets.</p>
+    <p class="wiz-caption"><strong>The outcome.</strong> The member hears back in their DMs: an approval comes with the unban and a nudge to read the rules; a denial says the ban stands.</p>
   </div>
 </div>
 
@@ -181,33 +179,32 @@ buttons are all included. Premium adds the guided, conversational layer.
   <p class="cmd-desc">Adds a short, AI-facilitated back-and-forth: instead of taking a single reply, the bot can ask one or two clarifying follow-up questions to gather the full picture, then hands staff the whole conversation with a neutral summary. The AI only facilitates, it never decides the outcome. Premium also unlocks the <strong>More info</strong> button, so staff can ask the member a question mid-appeal without spending the member's one reply.</p>
 </div>
 
-> **“Why was I actioned?”** Separately, on Premium, the DM a member gets for a
-> *warning or other action* (not a ban) carries a **Why was I actioned?**
-> button. One tap and the bot writes them a short, plain-English explanation of
-> what the action was for, heading off a lot of confused replies to your staff.
+> **“Why was I actioned?”** Separately, on Premium, the DM for a *warning or
+> other action* (not a ban) carries a **Why was I actioned?** button. One tap and
+> the bot writes a short, plain-English explanation of what the action was for,
+> heading off confused replies to your staff.
 
 ---
 
 ## The exception: a ThreatNet auto-ban {#threatnet-exception}
 
-There's one ban that does **not** trigger any of the above. When **ThreatNet**
-auto-protect (a Premium safety net) bans an account on join because it has a
-serious, corroborated abuse history across other protected servers, that ban is
-**silent**:
+One ban does **not** trigger any of the above. When **ThreatNet** auto-protect (a
+Premium safety net) bans an account on join for a serious, corroborated abuse
+history across other protected servers, that ban is **silent**:
 
 - the member is **not** DM'd a reason, and
 - **no appeal ticket** is opened in your log channel.
 
-This is deliberate, and it's disclosed in our
+This is deliberate and disclosed in our
 [Privacy Policy]({{ '/privacy/' | relative_url }}). A ThreatNet auto-ban is an
-automated, cross-server decision, so it is **not** appealed through the
-in-server flow on this page. Instead, it remains **contestable via the web
-portal**, where the affected person can challenge the automated decision and
-manage their profiling preferences.
+automated, cross-server decision, so it is **not** appealed through the in-server
+flow on this page. Instead it remains **contestable via the web portal**, where
+the affected person can challenge the automated decision and manage their
+profiling preferences.
 
-> **It's contestable, not unappealable.** A ThreatNet auto-ban can always be
-> challenged, just through the [web portal]({{ '/portal/' | relative_url }})
-> rather than a ban-appeal DM. See [ThreatNet]({{ '/wiki/threatnet/' | relative_url }})
+> **Contestable, not unappealable.** A ThreatNet auto-ban can always be
+> challenged, through the [web portal]({{ '/portal/' | relative_url }}) rather
+> than a ban-appeal DM. See [ThreatNet]({{ '/wiki/threatnet/' | relative_url }})
 > for how the cross-server signal works and what it does (and doesn't) share.
 
 ---
