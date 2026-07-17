@@ -35,6 +35,20 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 </style>
 
 <details class="doc-sec" markdown="1" open>
+<summary>v6.15.0 — Fix: turning off level-up messages now actually works</summary>
+
+**A settings fix.** Some servers switched leveling off in the web portal and still saw level-up
+messages — because the portal had **two** leveling switches, and the obvious-looking one didn’t do
+anything. We’ve fixed it: there’s now a **single, clear “Level-up messages” toggle** that works.
+
+- **If you’d already turned it off**, we’ve carried that across for you — those servers are quiet
+  now, no need to touch anything.
+- **XP is unaffected** — members still earn XP toward their wallet (and Crestbound); turning the
+  toggle off just stops the celebratory messages.
+
+</details>
+
+<details class="doc-sec" markdown="1">
 <summary>v6.14.0 — Setup just got simpler: one guided, pre-filled wizard</summary>
 
 **No more choosing between "auto" and "manual".** Setup now does the smart thing by default: the
