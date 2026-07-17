@@ -33,13 +33,21 @@
 .wiki-side::-webkit-scrollbar-thumb, .wiki-search-results::-webkit-scrollbar-thumb { background: #cfd8dc; border-radius: 3px; }
 .wiki-side::-webkit-scrollbar-thumb:hover, .wiki-search-results::-webkit-scrollbar-thumb:hover { background: #b0bec5; }
 .wiki-search-results { scrollbar-width: thin; scrollbar-color: #cfd8dc transparent; }
-.wiki-nav-group { margin-bottom: 1.25rem; }
+/* Collapsible category groups: one open at a time (enforced in wiki.js). Native
+   <details>/<summary> so it works keyboard-accessibly and without JS. */
+.wiki-nav-group { margin: 0; border-bottom: 1px solid var(--border); }
+.wiki-nav-group:last-of-type { border-bottom: 0; }
 .wiki-nav-title {
-  display: flex; align-items: center; gap: .45rem;
+  display: flex; align-items: center; gap: .45rem; justify-content: space-between;
   font-size: .72rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase;
-  color: var(--fg-2); margin: 0 0 .5rem;
+  color: var(--fg-2); margin: 0; padding: .6rem .2rem; cursor: pointer;
+  list-style: none; user-select: none;
 }
-.wiki-nav-ic { font-size: .95rem; }
+.wiki-nav-title::-webkit-details-marker { display: none; }
+.wiki-nav-title:hover { color: var(--fg-0); }
+.wiki-nav-chev { font-size: .7rem; color: var(--fg-2); transition: transform .18s ease; }
+.wiki-nav-group[open] > .wiki-nav-title .wiki-nav-chev { transform: rotate(180deg); }
+.wiki-nav-group > ul { padding-bottom: .5rem; }
 .wiki-nav ul { list-style: none; margin: 0; padding: 0; }
 .wiki-nav li { margin: 0; }
 .wiki-nav a {

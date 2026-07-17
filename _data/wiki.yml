@@ -6,7 +6,6 @@
 #
 #   categories:
 #     - title:  group heading shown in the sidebar
-#       icon:   optional emoji shown before the heading
 #       items:
 #         - label:   link text
 #           url:     the page's permalink (must match the page front matter)
@@ -18,14 +17,12 @@
 # ============================================================================
 categories:
   - title: Getting started
-    icon: "🚀"
     items:
       - { label: "Wiki home", url: "/wiki/" }
       - { label: "Main features", url: "/wiki/features/" }
       - { label: "The /setup wizard", url: "/wiki/setup/" }
 
   - title: "Feature guides"
-    icon: "🌟"
     items:
       - { label: "Pulse", url: "/wiki/pulse/" }
       - { label: "Ban appeals", url: "/wiki/ban-appeals/" }
@@ -35,7 +32,6 @@ categories:
       - { label: "ThreatNet", url: "/wiki/threatnet/" }
 
   - title: "Moderation & safety"
-    icon: "🛡️"
     items:
       - { label: "Moderation & safety", url: "/wiki/moderation/" }
       - { label: "Warnings & notes", url: "/wiki/moderation/#warnings-notes" }
@@ -44,39 +40,32 @@ categories:
       - { label: "Bulk & raid response", url: "/wiki/moderation/#bulk-raid" }
 
   - title: "Settings & dashboards"
-    icon: "⚙️"
     items:
       - { label: "Settings hub & configuration", url: "/wiki/settings/" }
       - { label: "AutoMod", url: "/wiki/automod/" }
 
   - title: "AI & intelligence"
-    icon: "🤖"
     items:
       - { label: "AI & intelligence", url: "/wiki/ai/" }
 
   - title: "Tickets & support"
-    icon: "🎫"
     items:
       - { label: "Tickets & support", url: "/wiki/tickets/" }
 
   - title: "Member experience"
-    icon: "✨"
     items:
       - { label: "Member experience", url: "/wiki/members/" }
 
   - title: "XP & leveling"
-    icon: "🏅"
     items:
       - { label: "XP & leveling", url: "/wiki/leveling/" }
       - { label: "Crestbound", url: "/wiki/crestbound/" }
 
   - title: "Account & premium"
-    icon: "💎"
     items:
       - { label: "Account & premium", url: "/wiki/account/" }
 
   - title: "Changelogs"
-    icon: "📋"
     items:
       - { label: "SA Bot changelog", url: "/changelog/" }
       - { label: "Portal changelog", url: "/wiki/changelog-portal/" }

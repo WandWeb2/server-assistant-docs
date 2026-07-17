@@ -157,4 +157,31 @@
     });
   })();
 
+  // Sidebar accordion: keep exactly one category group open at a time. The
+  // layout marks the current page's group `open`; here we make sure precisely
+  // one is open on load (the active group, else the first) and close the rest
+  // whenever another is opened.
+  (function accordion() {
+    var groups = Array.prototype.slice.call(
+      document.querySelectorAll("details.wiki-nav-group")
+    );
+    if (!groups.length) return;
+    var keep = null;
+    for (var i = 0; i < groups.length; i++) { if (groups[i].open) { keep = groups[i]; break; } }
+    if (!keep) {
+      for (var j = 0; j < groups.length; j++) {
+        if (groups[j].querySelector("a.active")) { keep = groups[j]; break; }
+      }
+    }
+    keep = keep || groups[0];
+    groups.forEach(function (g) { g.open = (g === keep); });
+    groups.forEach(function (g) {
+      g.addEventListener("toggle", function () {
+        if (g.open) {
+          groups.forEach(function (o) { if (o !== g && o.open) o.open = false; });
+        }
+      });
+    });
+  })();
+
 })();
