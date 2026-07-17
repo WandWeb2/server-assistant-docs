@@ -4,21 +4,21 @@ title: "Member experience"
 permalink: /wiki/members/
 wiki: true
 wiki_category: "Member experience"
-summary: What your members and newcomers actually see — the welcome DM, one-click verification, the ban-appeal conversation, self-service role panels, custom commands and the staff profile lookup. Every flow shown exactly as it appears in Discord.
+summary: What your members and newcomers actually see — the welcome DM, the Reception verification desk, the ban-appeal conversation, self-service role panels, custom commands and the staff profile lookup. Every flow shown exactly as it appears in Discord.
 wiki_keywords: [welcome, onboarding, verify, verification, ban appeal, appeal, unban, rolepanel, role panel, self-service roles, customcmd, custom commands, info, member, profile]
-description: A member-facing reference for Server Assistant — the welcome and verification DMs, the ban-appeal flow, self-service role panels, custom commands and the /info lookup, each shown one state at a time exactly as it appears in Discord.
+description: A member-facing reference for Server Assistant — the welcome DM, the Reception verification desk, the ban-appeal flow, self-service role panels, custom commands and the /info lookup, each shown one state at a time exactly as it appears in Discord.
 ---
 
 # ✨ Member experience
 
 Most of Server Assistant works quietly in the background, but a few things land
 directly in front of your members — the welcome they get on the way in, the
-one-click verification, and the conversation that opens if someone is ever
-banned and wants to appeal. This page walks through everything a newcomer or an
+Reception desk where they verify, and the conversation that opens if someone is
+ever banned and wants to appeal. This page walks through everything a newcomer or an
 ordinary member sees, plus the two Premium self-service tools (**role panels**
 and **custom commands**) and the staff **profile lookup**.
 
-> **Most of this is automatic.** The welcome DM, verification prompt and
+> **Most of this is automatic.** The welcome DM, the Reception desk and the
 > ban-appeal flow all fire on their own once they're switched on in
 > [`/settings`]({{ '/wiki/' | relative_url }}) — there's nothing for a member to
 > install or learn.
@@ -33,11 +33,12 @@ Commands on this page are tagged so you know what you're looking at:
 
 ## Welcome &amp; verification {#welcome-verification}
 
-When someone joins, the bot can greet them in their DMs and — if you've turned
-it on — ask them to **verify** with a single click before they get full access.
-Both are optional and both are configured from the onboarding panel in
-[`/settings`]({{ '/wiki/' | relative_url }}); here we're just showing what the
-*member* sees.
+When someone joins, the bot can greet them with a welcome DM and — if you've
+turned it on — send them to **Reception**, an in-server welcome desk where they
+**verify** before they get full access. Both are optional: the welcome DM is set
+in the onboarding panel, and Reception in
+[`/settings → Verification`]({{ '/wiki/settings/' | relative_url }}). Here we're
+just showing what the *member* sees.
 
 ### The welcome DM
 
@@ -55,37 +56,50 @@ name for each person. Here's the shape of a typical one:
 
 <p style="color:var(--fg-1);font-size:.9rem;line-height:1.55;"><strong>It's your message, in your voice.</strong> The welcome DM is plain text you author yourself — there's no fixed template to fight with. If a member has DMs closed, the bot simply skips it (no error, no fuss). Don't want a welcome DM at all? Leave the message blank and nothing is sent.</p>
 
-### The verification prompt
+### Reception — the verification desk
 
-With verification switched on, every newcomer also gets a verification DM. It's a
-single button — one click and they're granted your verified role and let into the
-server.
+With verification switched on, newcomers don't get a cryptic DM — they land in
+your **#reception** channel and see a branded welcome desk: a pinned banner, a
+short greeting, and a single **🔓 Verify me** button.
 
 <div class="dc">
   <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
-    <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">Direct Message</span></div>
+    <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">#reception</span></div>
     <div class="dc-embed blue">
-      <div class="dc-title">🔐 Verify yourself for The Hangout</div>
-      <div class="dc-desc">Welcome, @Newcomer! Click the <strong>Verify</strong> button below to gain access to the server.<br><br>This takes one click — it's just a quick check that you're a real person.</div>
+      <div class="dc-title">👋 Welcome to The Hangout</div>
+      <div class="dc-desc">Glad to have you with us! Tap <strong>🔓 Verify me</strong> below to show you're a real person and unlock the rest of the server.</div>
       <div class="dc-btns">
-        <span class="dc-btn green">✅ Verify</span>
+        <span class="dc-btn green">🔓 Verify me</span>
       </div>
     </div>
   </div></div>
 </div>
 
-<p style="color:var(--fg-1);font-size:.9rem;line-height:1.55;"><strong>One click, done.</strong> Tapping <strong>✅ Verify</strong> grants the verified role you chose in settings and replies <em>“✅ Verified! Welcome to The Hangout.”</em> The button keeps working even after the bot restarts, so a member can verify whenever they get round to it. If their DMs are closed, the bot quietly flags it in your log channel so a moderator can verify them by hand.</p>
+<p style="color:var(--fg-1);font-size:.9rem;line-height:1.55;">Tapping <strong>🔓 Verify me</strong> opens a quick human-check — one simple question, like <em>“how many eyes does a spider have?”</em> — answered privately, just for them.</p>
+
+<div class="dc">
+  <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+    <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">only you can see this</span></div>
+    <div class="dc-embed blue">
+      <div class="dc-title">🔓 Quick check</div>
+      <div class="dc-desc">Just one quick question to show you're human:<br><br><strong>How many eyes does a spider have?</strong></div>
+      <div class="dc-select">Type your answer…</div>
+    </div>
+  </div></div>
+</div>
+
+<p style="color:var(--fg-1);font-size:.9rem;line-height:1.55;"><strong>Pass and you're in.</strong> A correct answer grants the verified role you chose in settings a moment later and welcomes them to the server; a wrong answer is just a friendly retry — Reception <strong>never bans</strong> someone for fumbling the question. And because the <em>only</em> thing to do at the desk is verify, it doubles as a <strong>honeypot</strong>: an unverified account that starts posting instead of verifying is removed automatically (brand-new, untrusted accounts are banned outright, and the trap tightens during a raid). <strong>Free</strong> servers get the desk and a greeting you can word yourself; <strong>Premium</strong> adds a generated or uploaded <strong>banner image</strong>, a custom <strong>receptionist name and persona</strong>, and a <strong>concierge</strong> — verified members can chat with SAi right there at the desk.</p>
 
 ### Auto-configure channels for verification
 
 A verification gate only works if unverified members actually *can't* see your
 server until they pass it — which normally means editing channel permissions by
 hand. The **Auto-configure channels** button in
-[`/settings → 👥 Members → Verification`]({{ '/wiki/settings/' | relative_url }})
+[`/settings → Verification`]({{ '/wiki/settings/' | relative_url }})
 does that part for you.
 
 Tap it and the bot proposes a sensible set of channels to keep visible to
-unverified members — the **verify channel** plus your server's **rules, system
+unverified members — the **reception channel** plus your server's **rules, system
 and announcements** channels — and lets you add any others you want to leave open
 with a picker. You see the full preview *before* anything changes. On
 **Apply**, it hides every other channel **and category** from unverified members
@@ -98,7 +112,7 @@ and opens them to your verified role, while keeping the bot's own access intact.
       <div class="dc-title">🔐 Auto-configure channels — preview</div>
       <div class="dc-desc">Here's what unverified members will see. Everything else gets hidden from them and opened to <strong>@Verified</strong>. Review, tweak, then Apply.</div>
       <div class="dc-fname">Stay visible to unverified</div>
-      <div class="dc-fval">#verify · #rules · #announcements · #system</div>
+      <div class="dc-fval">#reception · #rules · #announcements · #system</div>
       <div class="dc-select">Keep extra channels visible…</div>
       <div class="dc-btns">
         <span class="dc-btn green">✅ Apply</span>

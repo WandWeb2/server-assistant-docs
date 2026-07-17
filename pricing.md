@@ -146,14 +146,14 @@ Need extra headroom without changing plans? Top-ups never expire and stack on an
 - **Admin essentials** — `/role`, `/tempban` (persists across restarts), `/lockdown` (exact-prior-perm restore)
 - **AutoMod** — filter packs, custom regex, punishment ladder, link blocklist, anti-spam
 - **Anti-raid** — mass-join detection, alerts, auto-suspend
-- **DM Verification Gate** — button-based new-member verification
+- **Reception verification** — in-server welcome desk with a Verify button + human check
 - **🕵️ Alt-guard** (`/altguard`) — fingerprints banned/kicked users, auto-bans confident ban-evaders
 - **📩 Ban reasons + one-reply appeals** — DM + reply use no AI tokens; **Research** is metered only if you press it
 - **Warnings + notes** — full per-guild history
 - **🛡️ Encrypted tamper-proof audit log** — native-action logging, tamper alerts, owner ping on deletion
 - **24-hour undo** — bans, mutes, channel deletions, nickname changes
 - **`/setup` + `/settings`** — 60-second onboarding + 9-panel Customisation Hub
-- **Auto-pilot bootstrap** (`/autopilot`)
+- **`/autopilot`** — opens the pre-filled `/setup` wizard
 - **Privacy panel** (`/privacy`)
 - **Snippets + scheduled reminders**
 - **`/imagine`** — ~30 images on the free trial; unlimited on Premium
@@ -167,7 +167,7 @@ Need extra headroom without changing plans? Top-ups never expire and stack on an
 
 | Feature | Roughly |
 |---|---|
-| **🩺 Pulse** daily digest | ~3K tokens per day |
+| **🩺 Pulse** AI "notable patterns" narrative *(opt-in)* | ~3K per digest |
 | **🧠 Self-trained AutoMod** rule proposal | ~12K per learning round |
 | **📋 Message Report** AI summary | ~5K per right-click |
 | **🤔 AutoMod AI second-opinion** *(Premium, opt-in)* | ~1K per borderline hit (only when uncertain) |
@@ -189,7 +189,7 @@ Need extra headroom without changing plans? Top-ups never expire and stack on an
 | **AI tokens** | 150K lifetime *(our key)* | **your own key** | 750K/month *(our key)* |
 | **Billing** | no card | charged immediately | trial-then-bill (starts at 150K used) |
 | **SAi chat** (`/sai`) | — | ✅ | ✅ |
-| **🩺 Pulse** daily health report | — | ✅ | ✅ |
+| **🩺 Pulse** AI "notable patterns" narrative | — | ✅ | ✅ |
 | **🧠 Self-trained AutoMod** | — | ✅ | ✅ |
 | **🩹 Bot Health Insurance** | — | ✅ | ✅ |
 | **📋 Message Report** (right-click AI context) | — | ✅ | ✅ |

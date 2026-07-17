@@ -23,7 +23,7 @@ them with autocomplete, or open **`/help`** in the bot for a role-aware view.
 | Command | What it does |
 |---|---|
 | **`/setup`** | Configure the bot for this server (owner or Manage Server admins) |
-| **`/autopilot`** | Let Server Assistant detect and apply a sensible config automatically |
+| **`/autopilot`** | Opens the same `/setup` wizard with every step pre-filled from your detected channels and roles |
 | **`/settings`** | Open the settings hub (owner/admin) |
 | **`/automod`** | Configure auto-moderation (admins) |
 | **`/onboarding`** | Configure the new-member welcome DM |
