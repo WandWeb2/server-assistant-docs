@@ -1,17 +1,17 @@
 ---
 layout: default
-title: Changelog — v2.x
+title: Changelog - v2.x
 permalink: /changelog/v2/
 description: Server Assistant v2.x release history.
 ---
 
-# 📋 Changelog — v2.x
+# Changelog: v2.x
 
-The v2.x line — the warnings system, persistent state, audit logs.
+The v2.x line: the warnings system, persistent state, audit logs.
 
 ---
 
-## 2026-04-30 — v2.2
+## 2026-04-30 - v2.2
 
 ### Added
 - AutoMod engine with curated regex packs.
@@ -25,7 +25,7 @@ The v2.x line — the warnings system, persistent state, audit logs.
 
 ---
 
-## 2026-04-30 — v2.0
+## 2026-04-30 - v2.0
 
 ### Added
 - Persistent warning system with DM notifications and full per-guild history.

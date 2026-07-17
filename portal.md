@@ -12,4 +12,4 @@ nav_external_url: https://serverassistant.wandweb.co/
 <meta http-equiv="refresh" content="0; url=https://serverassistant.wandweb.co/">
 <script>window.location.replace("https://serverassistant.wandweb.co/");</script>
 
-Opening the **[Server Assistant web portal](https://serverassistant.wandweb.co/)** — manage your server from the browser. If you're not redirected, [click here](https://serverassistant.wandweb.co/).
+Opening the **[Server Assistant web portal](https://serverassistant.wandweb.co/)**. Manage your server from the browser. If you're not redirected, [click here](https://serverassistant.wandweb.co/).

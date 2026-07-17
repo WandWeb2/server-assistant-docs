@@ -4,22 +4,22 @@ title: "AI & intelligence"
 permalink: /wiki/ai/
 wiki: true
 wiki_category: "AI & intelligence"
-summary: Server Assistant's AI toolkit — tune the bot in plain English with /sai, generate images with /imagine, translate on the spot, run a neutral /mediate between members, get a weekly mod retrospective, and read your server stats. Each shown exactly as it appears in Discord.
+summary: Server Assistant's AI toolkit, tune the bot in plain English with /sai, generate images with /imagine, translate on the spot, run a neutral /mediate between members, get a weekly mod retrospective, and read your server stats. Each shown exactly as it appears in Discord.
 wiki_keywords: [ai, sai, concierge, imagine, img, image generation, translate, translation, mediate, mediation, retro, retrospective, stats, statistics, premium, byok]
 description: A full reference for Server Assistant's AI and intelligence commands, each shown one state at a time exactly as it appears in Discord.
 ---
 
-# 🤖 AI &amp; intelligence
+# AI &amp; intelligence
 
-These are the clever bits — the commands that lean on AI to help you run your
+These are the clever bits, the commands that lean on AI to help you run your
 server. Ask the bot to tune itself in plain English, conjure up an image from a
 prompt, translate a message in a tap, sit two members down for a calm chat, or
 get a weekly read-out on how your mod team is doing.
 
 How AI is powered depends on your plan. Every server gets a **free trial
 allowance** to try the AI features out of the box. After that you can either
-**bring your own key** (BYOK) — paste a provider key during `/setup` or with
-`/ai-config`, and your server runs on your own account with no trial limit — or go
+**bring your own key** (BYOK), paste a provider key during `/setup` or with
+`/ai-config`, and your server runs on your own account with no trial limit, or go
 **Premium** for the full set without managing a key yourself. The rest is handled
 behind the scenes; see the [pricing page]({{ '/pricing/' | relative_url }}) for
 what's included on each plan.
@@ -40,8 +40,8 @@ Commands are tagged so you know what you're looking at:
 ## Tune the bot in plain English {#sai}
 
 `/sai` is your in-server concierge. Ask it anything about how your server is set
-up — "why did that message get flagged?", "make AutoMod a bit stricter", "how are
-we doing this week?" — and it answers from your server's own activity. If you're
+up, "why did that message get flagged?", "make AutoMod a bit stricter", "how are
+we doing this week?", and it answers from your server's own activity. If you're
 the **owner**, it can also suggest concrete config changes and apply them with a
 single tap. Admins get the same insights in a read-only view.
 
@@ -55,22 +55,22 @@ single tap. Admins get the same insights in a read-only view.
   <p class="cmd-desc">Ask the bot about your server in plain English. The owner gets answers plus one-tap suggested changes; admins get the same insights, read-only. The reply is private to you (ephemeral).</p>
   <table class="cmd-args">
     <tr><th>Argument</th><th>Type</th><th>Notes</th></tr>
-    <tr><td><code>question</code> <span class="req">required</span></td><td>text</td><td>What you'd like help with — a question or an instruction.</td></tr>
+    <tr><td><code>question</code> <span class="req">required</span></td><td>text</td><td>What you'd like help with, a question or an instruction.</td></tr>
   </table>
   <div class="dc" style="margin-top:1rem;">
     <div class="dc-row"><img class="dc-av you" src="{{ '/assets/avatar-you.jpg' | relative_url }}" alt="You" loading="lazy"><div class="dc-body">
       <div class="dc-head"><span class="dc-name">You</span><span class="dc-time">today</span></div>
-      <div class="dc-slash"><span class="cmd">/sai</span> <span class="arg">question:</span> Things feel noisy — can we tighten up spam filtering a bit?</div>
+      <div class="dc-slash"><span class="cmd">/sai</span> <span class="arg">question:</span> Things feel noisy, can we tighten up spam filtering a bit?</div>
     </div></div>
     <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
       <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">Only you can see this</span></div>
       <div class="dc-embed blue">
-        <div class="dc-title">💬 SAi — owner · full access</div>
-        <div class="dc-desc">You've had a run of repeated-link spam in #general this week. I can raise AutoMod's sensitivity a notch and add a short slowmode — here's what I'd change.</div>
-        <div class="dc-fname">📋 Suggested changes</div>
+        <div class="dc-title">SAi, owner · full access</div>
+        <div class="dc-desc">You've had a run of repeated-link spam in #general this week. I can raise AutoMod's sensitivity a notch and add a short slowmode, here's what I'd change.</div>
+        <div class="dc-fname">Suggested changes</div>
         <div class="dc-fval">• <strong>AutoMod sensitivity</strong> → High <em>(more aggressive spam catching)</em><br>• <strong>#general slowmode</strong> → 5s <em>(slows repeat posters)</em></div>
         <div class="dc-btns">
-          <span class="dc-btn green">✅ Apply change(s)</span>
+          <span class="dc-btn green">Apply change(s)</span>
         </div>
       </div>
     </div></div>
@@ -78,8 +78,8 @@ single tap. Admins get the same insights in a read-only view.
 </div>
 
 <p style="color:var(--fg-1);font-size:.9rem;line-height:1.55;">
-The header tells you which mode you're in — <code>owner · full access</code> or
-<code>admin · read-only</code>. As the owner you can press <strong>✅ Apply
+The header tells you which mode you're in, <code>owner · full access</code> or
+<code>admin · read-only</code>. As the owner you can press <strong>Apply
 change(s)</strong> to put the suggestions live in one tap; admins see the same
 analysis without the button. If your question is really one for the team, the bot
 notes it's been logged for them.</p>
@@ -110,9 +110,9 @@ a short cooldown between generations on the free trial; Premium servers skip it.
     <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
       <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">today</span></div>
       <div class="dc-embed blue">
-        <div class="dc-title">🎨 Imagined</div>
+        <div class="dc-title">Imagined</div>
         <div class="dc-desc"><strong>Prompt:</strong> a cosy cabin in a snowy pine forest at dusk, warm light in the windows</div>
-        <div class="dc-fval" style="margin-top:.4rem;"><em>🖼️ &lt;your generated image appears here&gt;</em></div>
+        <div class="dc-fval" style="margin-top:.4rem;"><em>&lt;your generated image appears here&gt;</em></div>
         <div class="dc-foot">via pollinations · requested by @you</div>
       </div>
     </div></div>
@@ -122,8 +122,8 @@ a short cooldown between generations on the free trial; Premium servers skip it.
 ### Choosing where images come from
 
 By default `/imagine` uses a **free image service** (Pollinations), so it works
-with no setup. If you'd rather use your own provider — for higher-quality results
-or your own billing — the server owner can set one up under `/ai-config`. That
+with no setup. If you'd rather use your own provider, for higher-quality results
+or your own billing, the server owner can set one up under `/ai-config`. That
 opens this short form:
 
 <div class="dc">
@@ -143,7 +143,7 @@ opens this short form:
 
 <p style="color:var(--fg-1);font-size:.9rem;line-height:1.55;">
 Choose <code>openai</code>, <code>stability</code> or <code>pollinations</code>.
-The free Pollinations option needs no key at all — just leave the key field blank.
+The free Pollinations option needs no key at all, just leave the key field blank.
 The image's footer always shows which provider produced it.</p>
 
 ---
@@ -173,7 +173,7 @@ language.
     </div></div>
     <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
       <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">Only you can see this</span></div>
-      <div class="dc-body" style="padding:0;">🌐 <strong>Japanese:</strong><br>一番近い駅はどこですか？</div>
+      <div class="dc-body" style="padding:0;"><strong>Japanese:</strong><br>一番近い駅はどこですか？</div>
     </div></div>
   </div>
 </div>
@@ -187,7 +187,7 @@ long-press) any message, open **Apps → Translate**, and the bot translates it 
 <div class="dc">
   <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
     <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">Only you can see this</span></div>
-    <div class="dc-body" style="padding:0;">🌐 <strong>English:</strong><br>Where is the nearest station?</div>
+    <div class="dc-body" style="padding:0;"><strong>English:</strong><br>Where is the nearest station?</div>
   </div></div>
 </div>
 
@@ -198,7 +198,7 @@ long-press) any message, open **Apps → Translate**, and the bot translates it 
 When two members are at odds, `/mediate` steps in as a calm, neutral go-between. It
 DMs each person separately to hear their side, then posts a **neutral summary** to
 the channel for your team. It never takes sides, assigns blame, or recommends a
-punishment — it just helps everyone see the disagreement clearly.
+punishment, it just helps everyone see the disagreement clearly.
 
 <div class="cmd-card">
   <div class="cmd-head">
@@ -210,7 +210,7 @@ punishment — it just helps everyone see the disagreement clearly.
   <p class="cmd-desc">Open a guided mediation between two members. Pick the two people, optionally add a topic, and the bot collects each side privately before posting a neutral staff summary.</p>
   <table class="cmd-args">
     <tr><th>Argument</th><th>Type</th><th>Notes</th></tr>
-    <tr><td colspan="3">No typed arguments — you choose the two members from dropdowns in the panel that opens.</td></tr>
+    <tr><td colspan="3">No typed arguments, you choose the two members from dropdowns in the panel that opens.</td></tr>
   </table>
 </div>
 
@@ -230,19 +230,19 @@ Running `/mediate` opens a small private panel. Step through it below.
       <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
         <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">Only you can see this</span></div>
         <div class="dc-embed" style="border-left-color:#9b59b6;">
-          <div class="dc-title">🤝 Mediation</div>
+          <div class="dc-title">Mediation</div>
           <div class="dc-desc">Choose the two members. The bot will DM each one, collect their side privately, and post a <strong>neutral summary</strong> here. It never takes sides or recommends punishment.</div>
           <div class="dc-select">First member…</div>
           <div class="dc-select">Second member…</div>
           <div class="dc-btns">
-            <span class="dc-btn grey">📝 Topic</span>
-            <span class="dc-btn green">▶️ Start mediation</span>
+            <span class="dc-btn grey">Topic</span>
+            <span class="dc-btn green">Start mediation</span>
             <span class="dc-btn grey">Cancel</span>
           </div>
         </div>
       </div></div>
     </div>
-    <p class="wiz-caption"><strong>Who's involved.</strong> Two member dropdowns — pick one person in each. They must be two different, real members of your server (not bots).</p>
+    <p class="wiz-caption"><strong>Who's involved.</strong> Two member dropdowns, pick one person in each. They must be two different, real members of your server (not bots).</p>
   </div>
 
   <div class="wiz-step" data-step="Add a topic (optional)">
@@ -251,14 +251,14 @@ Running `/mediate` opens a small private panel. Step through it below.
         <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">Only you can see this</span></div>
         <div class="dc-modal">
           <div class="dc-modal-title">Mediation topic</div>
-          <div class="dc-modal-sub">A line of context helps the bot frame things — entirely optional.</div>
+          <div class="dc-modal-sub">A line of context helps the bot frame things, entirely optional.</div>
           <div class="dc-flabel">What's it about? (optional)</div>
           <div class="dc-input ph">e.g. a disagreement over event scheduling in #events</div>
           <div class="dc-btns"><span class="dc-btn blurple">Save</span></div>
         </div>
       </div></div>
     </div>
-    <p class="wiz-caption"><strong>Optional context.</strong> Tapping <strong>📝 Topic</strong> opens this short form. Add a sentence about what the dispute is over (up to 300 characters) or skip it — the mediation works either way.</p>
+    <p class="wiz-caption"><strong>Optional context.</strong> Tapping <strong>Topic</strong> opens this short form. Add a sentence about what the dispute is over (up to 300 characters) or skip it, the mediation works either way.</p>
   </div>
 
   <div class="wiz-step" data-step="The bot collects each side">
@@ -266,12 +266,12 @@ Running `/mediate` opens a small private panel. Step through it below.
       <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
         <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">Direct Message</span></div>
         <div class="dc-embed" style="border-left-color:#9b59b6;">
-          <div class="dc-title">🤝 A quick, private chat</div>
-          <div class="dc-desc">A member of staff has asked me to help sort out a disagreement. In your own words, what happened from your side? Nothing you say here is shared word-for-word — I'll only summarise it neutrally for the team.</div>
+          <div class="dc-title">A quick, private chat</div>
+          <div class="dc-desc">A member of staff has asked me to help sort out a disagreement. In your own words, what happened from your side? Nothing you say here is shared word-for-word, I'll only summarise it neutrally for the team.</div>
         </div>
       </div></div>
     </div>
-    <p class="wiz-caption"><strong>Each side, in private.</strong> After you press <strong>▶️ Start mediation</strong>, the bot DMs both members and asks each for their version, privately. Neither sees the other's reply.</p>
+    <p class="wiz-caption"><strong>Each side, in private.</strong> After you press <strong>Start mediation</strong>, the bot DMs both members and asks each for their version, privately. Neither sees the other's reply.</p>
   </div>
 
   <div class="wiz-step" data-step="The neutral summary">
@@ -279,8 +279,8 @@ Running `/mediate` opens a small private panel. Step through it below.
       <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
         <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">today</span></div>
         <div class="dc-embed" style="border-left-color:#9b59b6;">
-          <div class="dc-title">🤝 Mediation summary</div>
-          <div class="dc-desc">Both members have shared their side. Here's a neutral read for the team — no blame, no recommended action.</div>
+          <div class="dc-title">Mediation summary</div>
+          <div class="dc-desc">Both members have shared their side. Here's a neutral read for the team, no blame, no recommended action.</div>
           <div class="dc-fname">The core disagreement</div><div class="dc-fval">A mix-up over who agreed to host this week's event.</div>
           <div class="dc-fname">Each side</div><div class="dc-fval">One felt the slot was already theirs; the other thought it was still open.</div>
           <div class="dc-fname">Common ground</div><div class="dc-fval">Both want the event to run and are happy to share hosting.</div>
@@ -288,7 +288,7 @@ Running `/mediate` opens a small private panel. Step through it below.
         </div>
       </div></div>
     </div>
-    <p class="wiz-caption"><strong>A read for the team.</strong> Once both have replied, the bot posts this summary in the channel: the core disagreement, each side's position, any common ground, and a couple of gentle de-escalation options. It stays strictly neutral — the next step is always yours.</p>
+    <p class="wiz-caption"><strong>A read for the team.</strong> Once both have replied, the bot posts this summary in the channel: the core disagreement, each side's position, any common ground, and a couple of gentle de-escalation options. It stays strictly neutral, the next step is always yours.</p>
   </div>
 </div>
 
@@ -297,7 +297,7 @@ Running `/mediate` opens a small private panel. Step through it below.
 ## Weekly mod-team retrospective {#retro}
 
 `/retro` pulls together the last seven days of moderation activity into a single
-read-out for your team — how many cases were handled, the trend versus last week,
+read-out for your team, how many cases were handled, the trend versus last week,
 who was busiest, and (if AI is on) a short note on patterns worth discussing. Handy
 for a weekly staff catch-up.
 
@@ -311,7 +311,7 @@ for a weekly staff catch-up.
   <p class="cmd-desc">Post a retrospective of the last 7 days of moderation to your staff chat. Staff-only. The AI narrative is added when AI is enabled; without it you still get the figures.</p>
   <table class="cmd-args">
     <tr><th>Argument</th><th>Type</th><th>Notes</th></tr>
-    <tr><td colspan="3">No arguments — covers the last 7 days automatically.</td></tr>
+    <tr><td colspan="3">No arguments, covers the last 7 days automatically.</td></tr>
   </table>
   <div class="dc" style="margin-top:1rem;">
     <div class="dc-row"><img class="dc-av you" src="{{ '/assets/avatar-you.jpg' | relative_url }}" alt="You" loading="lazy"><div class="dc-body">
@@ -321,13 +321,13 @@ for a weekly staff catch-up.
     <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
       <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">today</span></div>
       <div class="dc-embed" style="border-left-color:#9b59b6;">
-        <div class="dc-title">🧭 Mod Team Retrospective</div>
-        <div class="dc-desc">My Server — last 7 days (2026-06-15 → 2026-06-22)</div>
-        <div class="dc-fname">Cases handled</div><div class="dc-fval">23 &nbsp;<span style="color:#949ba4">▲ +5 vs last week</span></div>
+        <div class="dc-title">Mod Team Retrospective</div>
+        <div class="dc-desc">My Server, last 7 days (2026-06-15 → 2026-06-22)</div>
+        <div class="dc-fname">Cases handled</div><div class="dc-fval">23 &nbsp;<span style="color:#949ba4">+5 vs last week</span></div>
         <div class="dc-fname">New warnings</div><div class="dc-fval">9</div>
         <div class="dc-fname">By action</div><div class="dc-fval">warn ×9 · mute ×7 · kick ×4 · ban ×3</div>
         <div class="dc-fname">Most active</div><div class="dc-fval">@mod · @helper · @you</div>
-        <div class="dc-fname">🔎 Retro</div><div class="dc-fval"><strong>Notable patterns</strong> — spam links spiked midweek in #general.<br><strong>Worth discussing</strong> — whether to add a short slowmode there.</div>
+        <div class="dc-fname">Retro</div><div class="dc-fval"><strong>Notable patterns</strong>, spam links spiked midweek in #general.<br><strong>Worth discussing</strong>, whether to add a short slowmode there.</div>
         <div class="dc-foot">Weekly mod retro · toggle in /settings → Behaviour</div>
       </div>
     </div></div>
@@ -343,7 +343,7 @@ retro on or off under <code>/settings → Behaviour</code>.</p>
 
 ## Server statistics {#stats}
 
-A quick snapshot of your server — members, channels, roles, boosts and more — at a
+A quick snapshot of your server, members, channels, roles, boosts and more, at a
 glance. No AI, no plan needed.
 
 <div class="cmd-card">
@@ -355,7 +355,7 @@ glance. No AI, no plan needed.
   <p class="cmd-desc">Show a snapshot of your server's key numbers. Staff-only. The reply is private to you (ephemeral).</p>
   <table class="cmd-args">
     <tr><th>Argument</th><th>Type</th><th>Notes</th></tr>
-    <tr><td colspan="3">No arguments — reports on the current server.</td></tr>
+    <tr><td colspan="3">No arguments, reports on the current server.</td></tr>
   </table>
   <div class="dc" style="margin-top:1rem;">
     <div class="dc-row"><img class="dc-av you" src="{{ '/assets/avatar-you.jpg' | relative_url }}" alt="You" loading="lazy"><div class="dc-body">
@@ -381,7 +381,7 @@ glance. No AI, no plan needed.
 
 ## See also
 
-- [The `/setup` wizard]({{ '/wiki/setup/' | relative_url }}) — choose your AI path (free trial, your own key, or skip) in about a minute
-- [Moderation &amp; safety]({{ '/wiki/moderation/' | relative_url }}) — including Smart purge, which uses AI to clean up only the problematic messages
-- [Pricing]({{ '/pricing/' | relative_url }}) — what's included on the free trial, BYOK and Premium
+- [The `/setup` wizard]({{ '/wiki/setup/' | relative_url }}), choose your AI path (free trial, your own key, or skip) in about a minute
+- [Moderation &amp; safety]({{ '/wiki/moderation/' | relative_url }}), including Smart purge, which uses AI to clean up only the problematic messages
+- [Pricing]({{ '/pricing/' | relative_url }}), what's included on the free trial, BYOK and Premium
 - [Back to the Wiki hub]({{ '/wiki/' | relative_url }})

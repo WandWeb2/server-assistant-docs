@@ -4,12 +4,12 @@ title: Server Assistant Setup
 permalink: /wiki/setup/
 wiki: true
 wiki_category: Getting started
-summary: A screen-by-screen walkthrough of the /setup wizard — preflight checks, channels, roles, permission review, AI and the welcome guide. Step through every state.
+summary: A screen-by-screen walkthrough of the /setup wizard, preflight checks, channels, roles, permission review, AI and the welcome guide. Step through every state.
 wiki_keywords: [setup, wizard, onboarding, channels, roles, permissions, automod, ai, byok, getting started, configure]
 description: Every screen of the Server Assistant /setup wizard, shown one state at a time exactly as it appears in Discord.
 ---
 
-# 🧭 The `/setup` wizard
+# The `/setup` wizard
 
 `/setup` is how Server Assistant gets configured for your server. It's a short,
 guided flow: the bot detects sensible defaults, fills them in for you, and you
@@ -17,11 +17,11 @@ just confirm each screen. The whole thing takes about a minute.
 
 You can reach it three ways:
 
-- **Automatically** — when the bot joins, it DMs the server owner a **Welcome**
+- **Automatically**: when the bot joins, it DMs the server owner a **Welcome**
   message that opens the wizard.
-- **`/setup`** — run it in your server any time to re-open the wizard (it
+- **`/setup`**: run it in your server any time to re-open the wizard (it
   pre-fills your *current* configuration, not a blank slate).
-- **Web portal** — the wizard offers a *“finish setup on the web”* link to
+- **Web portal**: the wizard offers a *“finish setup on the web”* link to
   [the portal]({{ '/portal/' | relative_url }}) if you'd rather click through a browser.
 
 > **Who can run it:** the server **owner**, or an admin with **Manage Server**.
@@ -90,9 +90,9 @@ details.tshoot .body code { color: var(--accent); }
 }
 </style>
 
-## 🚀 Quick start
+## Quick start
 
-You're set up in about a minute — the bot does the work, you just confirm.
+You're set up in about a minute, the bot does the work, you just confirm.
 
 <div class="steprow c-blue">
   <div class="stext">
@@ -106,38 +106,38 @@ You're set up in about a minute — the bot does the work, you just confirm.
       <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
         <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">Direct Message</span></div>
         <div class="dc-embed blue">
-          <div class="dc-title">🧭 Welcome — let's get you set up</div>
-          <div class="dc-desc">I've filled in your channels and roles. Confirm to finish — or step through to fine-tune.</div>
+          <div class="dc-title">Welcome, let's get you set up</div>
+          <div class="dc-desc">I've filled in your channels and roles. Confirm to finish, or step through to fine-tune.</div>
           <div class="dc-fname">Staff chat</div><div class="dc-fval">#staff-chat ✓</div>
           <div class="dc-fname">Log channel</div><div class="dc-fval">#mod-log ✓</div>
-          <div class="dc-btns"><span class="dc-btn grey">Create for me</span><span class="dc-btn green">✅ Looks good →</span></div>
-          <div class="dc-btns"><span class="dc-btn">🌐 …or finish setup on the web</span></div>
+          <div class="dc-btns"><span class="dc-btn grey">Create for me</span><span class="dc-btn green">Looks good →</span></div>
+          <div class="dc-btns"><span class="dc-btn">…or finish setup on the web</span></div>
         </div>
       </div></div>
     </div>
   </div>
 </div>
 
-<div class="fork-title"><span class="farrow">▼</span> <span class="stepn">2</span> Finish it — whichever's easiest</div>
+<div class="fork-title"><span class="farrow"></span> <span class="stepn">2</span> Finish it, whichever's easiest</div>
 
 <svg class="forksvg" viewBox="0 0 100 12" preserveAspectRatio="none" aria-hidden="true"><line x1="50" y1="0" x2="50" y2="4"/><line x1="16.67" y1="4" x2="83.33" y2="4"/><line x1="16.67" y1="4" x2="16.67" y2="12"/><line x1="50" y1="4" x2="50" y2="12"/><line x1="83.33" y1="4" x2="83.33" y2="12"/></svg>
 
 <div class="paths">
   <div class="path c-blue">
     <div class="ptag">Default</div>
-    <div class="pico">💬</div>
+    <div class="pico"></div>
     <h4>In your DMs</h4>
     <p>Your wizard's waiting, already filled in. Tap <strong>Looks good</strong>.</p>
   </div>
   <div class="path c-purple">
     <div class="ptag">Same wizard</div>
-    <div class="pico">🧭</div>
+    <div class="pico"></div>
     <h4><code>/setup</code></h4>
-    <p>Rather do it in-server? Run it any time — or tap the <strong>🚀 Run setup</strong> button the bot shows on any command before you're set up.</p>
+    <p>Rather do it in-server? Run it any time, or tap the <strong>Run setup</strong> button the bot shows on any command before you're set up.</p>
   </div>
   <div class="path c-amber">
     <div class="ptag">In a browser</div>
-    <div class="pico">🌐</div>
+    <div class="pico"></div>
     <h4>Web portal</h4>
     <p>Set it all up at <a href="https://serverassistant.wandweb.co">serverassistant.wandweb.co</a>.</p>
   </div>
@@ -149,16 +149,16 @@ You're set up in about a minute — the bot does the work, you just confirm.
   <div class="stext">
     <div class="stepn">3</div>
     <h3>Make it yours <span style="font-weight:400;font-size:.9rem;color:var(--ink-soft);">(optional)</span></h3>
-    <p>Tweak anything in <code>/settings</code> — a wizard for every section, every change saves instantly.</p>
+    <p>Tweak anything in <code>/settings</code>, a wizard for every section, every change saves instantly.</p>
     <details class="smore"><summary>The settings wizards</summary><div class="sbody"><ul>
-      <li>🎨 <strong>Branding</strong> · embed colour, nickname, timezone</li>
-      <li>⚡ <strong>Quick Presets</strong> · AutoMod / ladder / onboarding / anti-raid</li>
-      <li>🛡️ <strong>Behaviour</strong> · approval timeout, log verbosity, Threat Score</li>
-      <li>👋 <strong>New Members</strong> · auto-role, welcome reaction</li>
-      <li>🔓 <strong>Verification</strong> · Reception desk &amp; who gets held</li>
-      <li>📍 <strong>Channel allowlist</strong> · where the bot responds</li>
-      <li>🛂 <strong>Role Tiers</strong> · custom tiers + approval authority</li>
-      <li>🔔 <strong>Notifications</strong> · per-event role pings</li>
+      <li><strong>Branding</strong> · embed colour, nickname, timezone</li>
+      <li><strong>Quick Presets</strong> · AutoMod / ladder / onboarding / anti-raid</li>
+      <li><strong>Behaviour</strong> · approval timeout, log verbosity, Threat Score</li>
+      <li><strong>New Members</strong> · auto-role, welcome reaction</li>
+      <li><strong>Verification</strong> · Reception desk &amp; who gets held</li>
+      <li><strong>Channel allowlist</strong> · where the bot responds</li>
+      <li><strong>Role Tiers</strong> · custom tiers + approval authority</li>
+      <li><strong>Notifications</strong> · per-event role pings</li>
     </ul><p style="margin:.4rem 0 0;font-size:.85rem;color:var(--ink-soft);">Your server-health <a href="{{ '/wiki/pulse/' | relative_url }}">Pulse</a> lives in the web portal now, not here.</p></div></details>
   </div>
   <div class="sshot">
@@ -166,31 +166,31 @@ You're set up in about a minute — the bot does the work, you just confirm.
       <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
         <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">/settings</span></div>
         <div class="dc-embed">
-          <div class="dc-title">🎨 Settings — pick a wizard</div>
+          <div class="dc-title">Settings, pick a wizard</div>
           <div class="dc-desc">A sub-wizard for every section, all in one place. Every change saves instantly.</div>
-          <div class="dc-btns"><span class="dc-btn blurple">🎨 Branding</span><span class="dc-btn grey">⚡ Presets</span><span class="dc-btn grey">🛡️ Behaviour</span><span class="dc-btn grey">🛂 Role Tiers</span></div>
+          <div class="dc-btns"><span class="dc-btn blurple">Branding</span><span class="dc-btn grey">Presets</span><span class="dc-btn grey">Behaviour</span><span class="dc-btn grey">Role Tiers</span></div>
         </div>
       </div></div>
     </div>
   </div>
 </div>
 
-<p style="text-align:center; font-size:.85rem; color:var(--ink-soft); margin:1.1rem 0 0;">💡 Prefer one command? <code>/autopilot</code> opens this same wizard with every step already pre-filled from your detected channels and roles — same screens, same result, nothing saved until you finish. <strong>However you set up</strong> — the wizard, <code>/autopilot</code>, or the <a href="https://serverassistant.wandweb.co">web portal</a> — you land in the same place: channels and roles configured, a moderation profile matched to your community, and the free AI trial on.</p>
+<p style="text-align:center; font-size:.85rem; color:var(--ink-soft); margin:1.1rem 0 0;">Prefer one command? <code>/autopilot</code> opens this same wizard with every step already pre-filled from your detected channels and roles, same screens, same result, nothing saved until you finish. <strong>However you set up</strong>, the wizard, <code>/autopilot</code>, or the <a href="https://serverassistant.wandweb.co">web portal</a>, you land in the same place: channels and roles configured, a moderation profile matched to your community, and the free AI trial on.</p>
 
 ### Nice first touches
 
 <div class="qwin-grid">
-  <div class="qwin">📨 <strong>Welcome new members</strong> — <code>/onboarding</code></div>
-  <div class="qwin">🤖 <strong>Turn on AutoMod</strong> — <code>/automod</code></div>
-  <div class="qwin">🕐 <strong>Set your timezone</strong> — <code>/timezone</code></div>
-  <div class="qwin">💬 <strong>Type</strong> <code>help</code> in staff-chat for the full list</div>
+  <div class="qwin"><strong>Welcome new members</strong>, <code>/onboarding</code></div>
+  <div class="qwin"><strong>Turn on AutoMod</strong>, <code>/automod</code></div>
+  <div class="qwin"><strong>Set your timezone</strong>, <code>/timezone</code></div>
+  <div class="qwin"><strong>Type</strong> <code>help</code> in staff-chat for the full list</div>
 </div>
 
 ## Step through every screen
 
 Want the detail behind each confirmation? Here's the wizard, screen by screen.
 
-Use **Next ›** and **‹ Back** to walk each state — including the two
+Use **Next ›** and **‹ Back** to walk each state, including the two
 *conditional* screens (Preflight and Permission review) that only appear when the
 bot needs them.
 
@@ -208,12 +208,12 @@ bot needs them.
       <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
         <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">Direct Message</span></div>
         <div class="dc-embed amber">
-          <div class="dc-title">⚠️ Before we start — a couple of permissions</div>
+          <div class="dc-title">Before we start, a couple of permissions</div>
           <div class="dc-desc">I'm missing a permission I need to set things up properly. Grant it and re-check, or continue and I'll do what I can.</div>
-          <div class="dc-fname">Manage Roles</div><div class="dc-fval">❌ Needed to create and assign your staff roles</div>
+          <div class="dc-fname">Manage Roles</div><div class="dc-fval">Needed to create and assign your staff roles</div>
           <div class="dc-fname">Manage Channels</div><div class="dc-fval">✓ Granted</div>
           <div class="dc-btns">
-            <span class="dc-btn grey">🔄 Re-check</span>
+            <span class="dc-btn grey">Re-check</span>
             <span class="dc-btn blurple">Continue anyway →</span>
           </div>
         </div>
@@ -227,22 +227,22 @@ bot needs them.
       <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
         <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">Direct Message</span></div>
         <div class="dc-embed blue">
-          <div class="dc-title">🧭 Welcome — let's get you set up</div>
-          <div class="dc-desc">I've filled in your channels and roles. <strong>Confirm and you're done</strong> — or step through to fine-tune.</div>
+          <div class="dc-title">Welcome, let's get you set up</div>
+          <div class="dc-desc">I've filled in your channels and roles. <strong>Confirm and you're done</strong>, or step through to fine-tune.</div>
           <div class="dc-fname">Staff chat <span style="color:#949ba4;font-weight:400">(where I listen for commands)</span></div><div class="dc-fval">#staff-chat ✓ <span style="color:#949ba4">(detected)</span></div>
-          <div class="dc-fname">Log channel <span style="color:#949ba4;font-weight:400">(optional — dashboard log is always on)</span></div><div class="dc-fval">#mod-log ✓ <span style="color:#949ba4">(detected)</span></div>
+          <div class="dc-fname">Log channel <span style="color:#949ba4;font-weight:400">(optional, dashboard log is always on)</span></div><div class="dc-fval">#mod-log ✓ <span style="color:#949ba4">(detected)</span></div>
           <div class="dc-select">Pick a different staff chat…</div>
           <div class="dc-btns">
-            <span class="dc-btn green">✅ Looks good — pick roles</span>
+            <span class="dc-btn green">Looks good, pick roles</span>
           </div>
           <div class="dc-btns">
-            <span class="dc-btn grey">🆕 Create for me</span>
-            <span class="dc-btn blurple">🌐 …or finish setup on the web</span>
+            <span class="dc-btn grey">Create for me</span>
+            <span class="dc-btn blurple">…or finish setup on the web</span>
           </div>
         </div>
       </div></div>
     </div>
-    <p class="wiz-caption"><strong>Channels.</strong> Pick the <em>staff chat</em> (the command listening post); a <em>log channel</em> is optional — your dashboard moderation log is always on either way, so choose <strong>📋 Portal only</strong> to skip it. The bot pre-fills what it detected. <strong>✅ Looks good — pick roles</strong> moves you on to the quick, three-step wizard (channels → roles → AI); use <strong>🆕 Create for me</strong> to make fresh channels. Tags read <code>(detected)</code> on a new server, or <code>(current)</code> if you're re-running setup.</p>
+    <p class="wiz-caption"><strong>Channels.</strong> Pick the <em>staff chat</em> (the command listening post); a <em>log channel</em> is optional, your dashboard moderation log is always on either way, so choose <strong>Portal only</strong> to skip it. The bot pre-fills what it detected. <strong>Looks good, pick roles</strong> moves you on to the quick, three-step wizard (channels → roles → AI); use <strong>Create for me</strong> to make fresh channels. Tags read <code>(detected)</code> on a new server, or <code>(current)</code> if you're re-running setup.</p>
   </div>
 
   <div class="wiz-step" data-step="Step 2 · Roles">
@@ -250,19 +250,19 @@ bot needs them.
       <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
         <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">Direct Message</span></div>
         <div class="dc-embed blue">
-          <div class="dc-title">🛡️ Who's on your team?</div>
-          <div class="dc-desc"><strong>Step 2 (optional)</strong> — tell me which roles are your admins and moderators so commands respect your hierarchy.</div>
-          <div class="dc-fname">🟥 Admin role</div><div class="dc-fval">@Admin ✓ <span style="color:#949ba4">(detected)</span></div>
-          <div class="dc-fname">🟦 Moderator role</div><div class="dc-fval">@Moderator ✓ <span style="color:#949ba4">(detected)</span></div>
-          <div class="dc-foot">Server owner always has full access — no role needed.</div>
+          <div class="dc-title">Who's on your team?</div>
+          <div class="dc-desc"><strong>Step 2 (optional)</strong>, tell me which roles are your admins and moderators so commands respect your hierarchy.</div>
+          <div class="dc-fname">Admin role</div><div class="dc-fval">@Admin ✓ <span style="color:#949ba4">(detected)</span></div>
+          <div class="dc-fname">Moderator role</div><div class="dc-fval">@Moderator ✓ <span style="color:#949ba4">(detected)</span></div>
+          <div class="dc-foot">Server owner always has full access, no role needed.</div>
           <div class="dc-btns">
-            <span class="dc-btn grey">🆕 Create Admin + Mod</span>
-            <span class="dc-btn green">✅ Looks good →</span>
+            <span class="dc-btn grey">Create Admin + Mod</span>
+            <span class="dc-btn green">Looks good →</span>
           </div>
         </div>
       </div></div>
     </div>
-    <p class="wiz-caption"><strong>Roles.</strong> Choose your <em>Admin</em> and <em>Moderator</em> roles — the colour emoji mirrors each role's colour so they're easy to spot. No suitable roles yet? <strong>🆕 Create Admin + Mod</strong> generates them with sensible permissions. The owner is always treated as full-access, so an owner role is optional.</p>
+    <p class="wiz-caption"><strong>Roles.</strong> Choose your <em>Admin</em> and <em>Moderator</em> roles, the colour emoji mirrors each role's colour so they're easy to spot. No suitable roles yet? <strong>Create Admin + Mod</strong> generates them with sensible permissions. The owner is always treated as full-access, so an owner role is optional.</p>
   </div>
 
   <div class="wiz-step" data-step="Permission review">
@@ -270,18 +270,18 @@ bot needs them.
       <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
         <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">Direct Message</span></div>
         <div class="dc-embed amber">
-          <div class="dc-title">🔐 Quick permission tidy-up</div>
+          <div class="dc-title">Quick permission tidy-up</div>
           <div class="dc-desc">To make these roles work, I'd like to adjust a few permissions. Nothing happens until you approve.</div>
-          <div class="dc-fname">➕ @Moderator</div><div class="dc-fval">+ Timeout Members, + Manage Messages</div>
-          <div class="dc-fname">➖ @everyone</div><div class="dc-fval">− Mention @everyone <span style="color:#949ba4">(in #staff-chat)</span></div>
+          <div class="dc-fname">@Moderator</div><div class="dc-fval">+ Timeout Members, + Manage Messages</div>
+          <div class="dc-fname">@everyone</div><div class="dc-fval">− Mention @everyone <span style="color:#949ba4">(in #staff-chat)</span></div>
           <div class="dc-btns">
-            <span class="dc-btn green">✅ Approve &amp; apply</span>
-            <span class="dc-btn grey">🆕 Generate fresh instead</span>
+            <span class="dc-btn green">Approve &amp; apply</span>
+            <span class="dc-btn grey">Generate fresh instead</span>
           </div>
         </div>
       </div></div>
     </div>
-    <p class="wiz-caption"><strong>Only shows if a tidy-up is needed.</strong> If your staff roles are missing a permission they need — or <code>@everyone</code> has a risky one — the bot lists the exact change and waits for your <strong>✅ Approve &amp; apply</strong>. If it can't make a change because of role hierarchy, this becomes a <strong>🔄 Re-check</strong> after you move its role up.</p>
+    <p class="wiz-caption"><strong>Only shows if a tidy-up is needed.</strong> If your staff roles are missing a permission they need, or <code>@everyone</code> has a risky one, the bot lists the exact change and waits for your <strong>Approve &amp; apply</strong>. If it can't make a change because of role hierarchy, this becomes a <strong>Re-check</strong> after you move its role up.</p>
   </div>
 
   <div class="wiz-step" data-step="Last step · community type">
@@ -289,19 +289,19 @@ bot needs them.
       <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
         <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">Direct Message</span></div>
         <div class="dc-embed blue">
-          <div class="dc-title">🎚️ Last step — tune the defaults</div>
-          <div class="dc-desc"><strong>Last step.</strong> Pick your community type so I can preset AutoMod, the punishment ladder and anti-raid sensibly. Your free AI trial is already on — nothing to enter.</div>
+          <div class="dc-title">Last step, tune the defaults</div>
+          <div class="dc-desc"><strong>Last step.</strong> Pick your community type so I can preset AutoMod, the punishment ladder and anti-raid sensibly. Your free AI trial is already on, nothing to enter.</div>
           <div class="dc-fname">Community type</div>
-          <div class="dc-select">🎮 Gaming</div>
+          <div class="dc-select">Gaming</div>
           <div class="dc-fname">AI features</div>
-          <div class="dc-fval">🆓 Your free <strong>150k-token AI trial is already on</strong>. Want your own key (no trial limit)? Run <code>/ai-config</code> any time.</div>
+          <div class="dc-fval">Your free <strong>150k-token AI trial is already on</strong>. Want your own key (no trial limit)? Run <code>/ai-config</code> any time.</div>
           <div class="dc-btns">
             <span class="dc-btn green">Finish setup ✓</span>
           </div>
         </div>
       </div></div>
     </div>
-    <p class="wiz-caption"><strong>Community type.</strong> The bot guesses your <em>community type</em> from your server name and description (Gaming, Creator, Anime, Crypto, Education, DIY and more) and uses it to preset AutoMod, the punishment ladder and anti-raid. <strong>You're not asked for an AI key</strong> — the free 150k-token trial is on by default. Prefer to run on your own key with no trial limit? Set it up any time with <code>/ai-config</code>.</p>
+    <p class="wiz-caption"><strong>Community type.</strong> The bot guesses your <em>community type</em> from your server name and description (Gaming, Creator, Anime, Crypto, Education, DIY and more) and uses it to preset AutoMod, the punishment ladder and anti-raid. <strong>You're not asked for an AI key</strong>, the free 150k-token trial is on by default. Prefer to run on your own key with no trial limit? Set it up any time with <code>/ai-config</code>.</p>
   </div>
 
   <div class="wiz-step" data-step="Setup complete">
@@ -309,26 +309,26 @@ bot needs them.
       <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
         <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">Direct Message</span></div>
         <div class="dc-embed green">
-          <div class="dc-title">🎉 You're all set!</div>
+          <div class="dc-title">You're all set!</div>
           <div class="dc-desc">Server Assistant is configured and watching your server. Here's the summary:</div>
           <div class="dc-fname">Channels</div><div class="dc-fval">Staff #staff-chat · Logs #mod-log</div>
           <div class="dc-fname">Roles</div><div class="dc-fval">Admin @Admin · Mod @Moderator</div>
-          <div class="dc-fname">Preset</div><div class="dc-fval">🎮 Gaming · AutoMod on · Anti-raid on</div>
+          <div class="dc-fname">Preset</div><div class="dc-fval">Gaming · AutoMod on · Anti-raid on</div>
           <div class="dc-foot">Want your mods to know the ropes? I can post a quick welcome guide to your staff chat.</div>
           <div class="dc-btns">
-            <span class="dc-btn green">📤 Post welcome to staff chat</span>
+            <span class="dc-btn green">Post welcome to staff chat</span>
             <span class="dc-btn grey">Skip</span>
           </div>
         </div>
       </div></div>
     </div>
-    <p class="wiz-caption"><strong>Done.</strong> A recap of everything that was configured. <strong>📤 Post welcome to staff chat</strong> drops a short “how to drive the bot” guide into your staff channel for the rest of your team (on a re-run this becomes <strong>🔁 Re-post</strong>). From here, try <code>/help</code> or open <code>/settings</code> to fine-tune anything.</p>
+    <p class="wiz-caption"><strong>Done.</strong> A recap of everything that was configured. <strong>Post welcome to staff chat</strong> drops a short “how to drive the bot” guide into your staff channel for the rest of your team (on a re-run this becomes <strong>Re-post</strong>). From here, try <code>/help</code> or open <code>/settings</code> to fine-tune anything.</p>
   </div>
 </div>
 
 ## What if I want to change something later?
 
-Nothing here is one-shot. Re-run **`/setup`** any time — it loads your current
+Nothing here is one-shot. Re-run **`/setup`** any time, it loads your current
 configuration so you can adjust a single thing without starting over. For
 deeper, per-feature control, open the **Settings hub** with `/settings`, or
 manage AutoMod, onboarding and the rest from their own commands (each gets its
@@ -340,17 +340,17 @@ own page in this wiki).
 <div class="body">First-time global commands can take up to an hour to appear. Hard-refresh Discord (Ctrl+R) and they'll be there.</div></details>
 
 <details class="tshoot"><summary>Bot can't action someone?</summary>
-<div class="body">Drag the bot's role above theirs in <strong>Server Settings → Roles</strong> — Discord lets a bot action only roles below its own.</div></details>
+<div class="body">Drag the bot's role above theirs in <strong>Server Settings → Roles</strong>, Discord lets a bot action only roles below its own.</div></details>
 
 <details class="tshoot"><summary>AutoMod looks quiet?</summary>
 <div class="body">Pick a preset in <code>/settings → Quick Presets → AutoMod</code>, then flip <strong>Enabled</strong> on in <code>/automod</code>.</div></details>
 
 <details class="tshoot"><summary>Setting it up again?</summary>
-<div class="body">Run <code>/setup</code> any time — it keeps your warnings, notes, snippets, and audit logs.</div></details>
+<div class="body">Run <code>/setup</code> any time, it keeps your warnings, notes, snippets, and audit logs.</div></details>
 
 ## See also
 
-- [Main features]({{ '/wiki/features/' | relative_url }}) — everything the bot does
-- [Settings hub]({{ '/wiki/settings/' | relative_url }}) — every configuration panel
-- [AutoMod]({{ '/wiki/automod/' | relative_url }}) — auto-moderation in depth
-- [Wiki home]({{ '/wiki/' | relative_url }}) — the full command reference
+- [Main features]({{ '/wiki/features/' | relative_url }}): everything the bot does
+- [Settings hub]({{ '/wiki/settings/' | relative_url }}): every configuration panel
+- [AutoMod]({{ '/wiki/automod/' | relative_url }}): auto-moderation in depth
+- [Wiki home]({{ '/wiki/' | relative_url }}): the full command reference
