@@ -35,6 +35,24 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 </style>
 
 <details class="doc-sec" markdown="1" open>
+<summary>v6.13.0 — Reception is now the front door for verification</summary>
+
+**Following up on Reception.** Now that Reception is here, we've made it the recommended way to
+verify new members — the `/settings → Verification` panel leads with it, and the old
+**mode** setting is reframed as simply *who gets held* at the door (everyone / only risky
+arrivals / no one).
+
+- **One clear path.** We retired the old DM-button verification gate — it only ever ran in the
+  "no hold" mode and Reception (plus the Intelligent/On modes) does the job better.
+- **Nothing breaks.** If your server was relying on that old gate, we've automatically switched
+  you to **Intelligent** so you're never left without a gate. Servers that had no verification
+  are left exactly as they were.
+
+Tap **🛎️ Reception** in `/settings → Verification` to set up your welcome desk.
+
+</details>
+
+<details class="doc-sec" markdown="1">
 <summary>v6.12.0 — Meet Reception: a warm front door that keeps bad actors out</summary>
 
 **Verification just got a friendly face.** Turn on **Reception** and new members arrive at a
