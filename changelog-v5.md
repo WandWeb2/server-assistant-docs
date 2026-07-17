@@ -27,14 +27,50 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 .changelog-nav a:hover { color: var(--accent); border-bottom-color: var(--accent); text-decoration: none; }
 .changelog-nav a.current { color: var(--ink); border-bottom-style: solid; }
 .changelog-nav .latest-tag { font-size: 0.58rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; opacity: 0.7; margin-left: 0.25rem; }
-/* "Tempered" — named quality release; tempered-glass styling, set apart from numbered cards */
+/* "Tempered" - named quality release; tempered-glass styling, set apart from numbered cards */
 .doc-sec.tempered { background: linear-gradient(135deg, rgba(96,165,250,0.17), rgba(124,155,255,0.07) 55%, rgba(20,25,39,0.45)); border: 1px solid rgba(96,165,250,0.45); box-shadow: inset 0 0 0 1px rgba(158,197,255,0.10), 0 10px 34px rgba(20,40,90,0.40); }
 .doc-sec.tempered > summary { color: #cfe0ff; font-size: 1.08rem; }
 .doc-sec.tempered > summary::before { color: #60a5fa; }
 .doc-sec.tempered .tg-badge { display: inline-block; font-size: .6rem; font-weight: 800; letter-spacing: .09em; text-transform: uppercase; color: #0a1030; background: linear-gradient(135deg, #bcd6ff, #60a5fa); padding: .1rem .45rem; border-radius: 999px; margin-left: .55rem; vertical-align: middle; }
+/* Release-type colour coding - Fix / Feature / Update */
+.doc-sec[data-kind] { border-left-width: 3px; border-left-style: solid; }
+.doc-sec[data-kind="fix"]     { border-left-color: #e0913a; }  /* amber */
+.doc-sec[data-kind="feature"] { border-left-color: #2ea36b; }  /* green */
+.doc-sec[data-kind="update"]  { border-left-color: #3b82c4; }  /* blue  */
+.doc-sec > summary { position: relative; }
+.doc-sec[data-kind] > summary { padding-right: 5.4rem; }
+.doc-sec[data-kind] > summary::after {
+  position: absolute; right: .7rem; top: .6rem;
+  font-size: .58rem; font-weight: 800; letter-spacing: .07em; text-transform: uppercase;
+  padding: .14rem .5rem; border-radius: 999px; color: #fff; line-height: 1.5;
+}
+.doc-sec[data-kind="fix"]     > summary::after { content: "Fix";     background: #c9781a; }
+.doc-sec[data-kind="feature"] > summary::after { content: "Feature"; background: #1e8f5e; }
+.doc-sec[data-kind="update"]  > summary::after { content: "Update";  background: #2f74b5; }
+/* Tempered cards keep their own identity - never overridden by a type accent. */
+.doc-sec.tempered[data-kind] { border-left-width: 1px; }
+.doc-sec.tempered[data-kind] > summary { padding-right: .85rem; }
+.doc-sec.tempered[data-kind] > summary::after { content: none; }
+/* Legend */
+.cl-legend { display: flex; gap: .7rem; flex-wrap: wrap; align-items: center; margin: .2rem 0 1.1rem; font-size: .74rem; }
+.cl-legend .lbl { font-size: .66rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-soft); }
+.cl-key { display: inline-flex; align-items: center; gap: .4rem; color: var(--ink-soft); }
+.cl-key::before { content: ""; width: .7rem; height: .7rem; border-radius: 3px; }
+.cl-key.fix::before     { background: #c9781a; }
+.cl-key.feature::before { background: #1e8f5e; }
+.cl-key.update::before  { background: #2f74b5; }
+/* "Superseded by vX" pill - a release whose feature was later replaced */
+.cl-super { display: inline-block; font-size: .58rem; font-weight: 800; letter-spacing: .05em; text-transform: uppercase; color: #cbd2e0; background: rgba(120,132,158,0.26); border: 1px solid rgba(160,172,196,0.34); padding: .1rem .5rem; border-radius: 999px; margin-left: .5rem; vertical-align: middle; text-decoration: none; white-space: nowrap; }
+.cl-super:hover { background: rgba(150,162,186,0.42); color: #fff; text-decoration: none; }
+/* A superseded card shows the "Superseded by" pill inline instead of the type pill. */
+.doc-sec.superseded[data-kind] > summary { padding-right: .85rem; }
+.doc-sec.superseded[data-kind] > summary::after { content: none; }
+.doc-sec.superseded { opacity: .82; }
 </style>
 
-<details class="doc-sec" markdown="1">
+<p class="cl-legend"><span class="lbl">Release type</span><span class="cl-key fix">Fix</span><span class="cl-key feature">Feature</span><span class="cl-key update">Update</span></p>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v5.9.0: ThreatNet auto-protect (Premium): close the gate on join</summary>
 
 
@@ -49,7 +85,7 @@ Prefer advisory-only? Nothing changes unless you switch this on.
 
 </details>
 
-<details class="doc-sec tempered" markdown="1">
+<details class="doc-sec tempered" markdown="1" data-kind="feature">
 <summary>v5.8.0: ThreatNet: cross-server safety, on by default<span class="tg-badge">ThreatNet</span></summary>
 
 
@@ -60,7 +96,7 @@ It's **severity-only** by design: never the offence type, your staff's reasons, 
 
 </details>
 
-<details class="doc-sec" markdown="1">
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>Portal sign-in reliability fix</summary>
 
 
@@ -69,7 +105,7 @@ Fixed an issue where signing in to the web dashboard could show **"Invalid or ex
 
 </details>
 
-<details class="doc-sec" markdown="1">
+<details class="doc-sec" markdown="1" data-kind="update">
 <summary>v5.6.50: A full trial on our best AI, then AI that keeps working</summary>
 
 
@@ -78,7 +114,7 @@ Every free server now starts with a full trial on our **most capable AI**, then 
 
 </details>
 
-<details class="doc-sec" markdown="1">
+<details class="doc-sec" markdown="1" data-kind="update">
 <summary>v5.6.49: Friendlier responses to mistyped commands</summary>
 
 
@@ -87,7 +123,7 @@ When a command can't find the user or role you named, a typo, or someone who has
 
 </details>
 
-<details class="doc-sec" markdown="1">
+<details class="doc-sec" markdown="1" data-kind="update">
 <summary>v5.6.48: AI that keeps working on every plan</summary>
 
 
@@ -96,7 +132,7 @@ AI features now run on a **fast, free model by default for every server**, so th
 
 </details>
 
-<details class="doc-sec" markdown="1">
+<details class="doc-sec" markdown="1" data-kind="update">
 <summary>v5.6.47: Sharper AutoMod AI review</summary>
 
 
@@ -105,7 +141,7 @@ When AutoMod's optional **AI second-opinion** is switched on, borderline word-fi
 
 </details>
 
-<details class="doc-sec" markdown="1">
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v5.6.46: A broader AutoMod word filter + custom brand icons</summary>
 
 
@@ -116,7 +152,7 @@ When AutoMod's optional **AI second-opinion** is switched on, borderline word-fi
 
 </details>
 
-<details class="doc-sec" markdown="1">
+<details class="doc-sec" markdown="1" data-kind="update">
 <summary>v5.6.40: AI features keep working during maintenance</summary>
 
 
@@ -125,7 +161,7 @@ While our main AI is being upgraded, the AI-powered features on the shared plan,
 
 </details>
 
-<details class="doc-sec" markdown="1">
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v5.6.38: Asking the bot to post a message now reliably sends it</summary>
 
 
@@ -134,7 +170,7 @@ When you told the bot in plain language to post something, e.g. "say hello in th
 
 </details>
 
-<details class="doc-sec" markdown="1">
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v5.6.36: Stability & reliability</summary>
 
 
@@ -143,7 +179,7 @@ A quick behind-the-scenes maintenance update: small reliability fixes to keep Se
 
 </details>
 
-<details class="doc-sec" markdown="1">
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v5.6.35: Polls: a last-chance nudge + a live countdown</summary>
 
 
@@ -157,7 +193,7 @@ Small touches so your community never misses a vote.
 
 </details>
 
-<details class="doc-sec" markdown="1">
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v5.6.34: Upload a custom brand icon</summary>
 
 
@@ -168,18 +204,18 @@ Small touches so your community never misses a vote.
 
 </details>
 
-<details class="doc-sec" markdown="1">
+<details class="doc-sec" markdown="1" data-kind="update">
 <summary>v5.6.33: Native-action notifications, your call</summary>
 
 
 ### Added
 
-- **Turn off "done directly in Discord" notices.** When staff moderate directly in Discord (a native ban/kick/timeout), the bot posts a heads-up in your log channel with a tip for the team. Some servers love it, some find it noisy, so it's now a toggle in **`/settings → 🔔 Notifications`**. On by default; flip it off any time. (Your private, tamper-proof audit log still records every native action regardless.)
+- **Turn off "done directly in Discord" notices.** When staff moderate directly in Discord (a native ban/kick/timeout), the bot posts a heads-up in your log channel with a tip for the team. Some servers love it, some find it noisy, so it's now a toggle in **`/settings → Notifications`**. On by default; flip it off any time. (Your private, tamper-proof audit log still records every native action regardless.)
 
 
 </details>
 
-<details class="doc-sec" markdown="1">
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v5.6.32: Achievements, expanded</summary>
 
 
@@ -195,7 +231,7 @@ Small touches so your community never misses a vote.
 
 </details>
 
-<details class="doc-sec" markdown="1">
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v5.6.31: Share your server + milestone badges, in your portal</summary>
 
 
@@ -211,7 +247,7 @@ Two small touches that help you celebrate, and spread the word about, what you'v
 
 </details>
 
-<details class="doc-sec" markdown="1">
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v5.6.30: Your updates, your cadence: Notifications hub + Milestones</summary>
 
 
@@ -230,7 +266,7 @@ One place for every way Server Assistant keeps you in the loop, set your own pac
 
 </details>
 
-<details class="doc-sec" markdown="1">
+<details class="doc-sec" markdown="1" data-kind="update">
 <summary>v5.6.29: Setup tells you when a permission needs a nudge</summary>
 
 
@@ -244,7 +280,7 @@ When you run **`/setup`**, Server Assistant sets up channel and role permissions
 
 </details>
 
-<details class="doc-sec tempered" markdown="1">
+<details class="doc-sec tempered" markdown="1" data-kind="update">
 <summary>Tempered<span class="tg-badge">Quality release</span></summary>
 
 
@@ -268,7 +304,7 @@ A special **quality release**: no new features, just Server Assistant running **
 
 </details>
 
-<details class="doc-sec" markdown="1">
+<details class="doc-sec" markdown="1" data-kind="update">
 <summary>v5.6.28: Setup works when staff add the bot</summary>
 
 
@@ -282,7 +318,7 @@ A smoother first five minutes: especially when an admin, not the server owner, i
 
 </details>
 
-<details class="doc-sec" markdown="1">
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v5.6.27: The premium toolkit</summary>
 
 
@@ -306,7 +342,7 @@ A big drop of **seven new Premium features**, most built around one-screen **wiz
 
 </details>
 
-<details class="doc-sec" markdown="1">
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v5.6.26: Guided appeals & the decision explainer</summary>
 
 
@@ -322,7 +358,7 @@ Both are on by default for premium servers (toggle in **Settings → Protection*
 
 </details>
 
-<details class="doc-sec" markdown="1">
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v5.6.25: The web portal grows up</summary>
 
 
@@ -345,7 +381,7 @@ Your portal at [serverassistant.wandweb.co](https://serverassistant.wandweb.co) 
 
 </details>
 
-<details class="doc-sec" markdown="1">
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v5.6.17: Your whole staff team can use the web portal</summary>
 
 
@@ -362,7 +398,7 @@ The web portal now fits everyone on your team, not just owners and admins.
 
 </details>
 
-<details class="doc-sec" markdown="1">
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v5.6.15: Manage your server from the web</summary>
 
 
@@ -376,7 +412,7 @@ A new web portal lets owners and admins run their server from any browser.
 
 </details>
 
-<details class="doc-sec" markdown="1">
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v5.6.8: Mid-cycle servers get a vote</summary>
 
 
@@ -389,7 +425,7 @@ Joining partway through a community vote no longer means missing out.
 
 </details>
 
-<details class="doc-sec" markdown="1">
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v5.6.5: Reliable "your channel is gone" alerts</summary>
 
 
@@ -402,7 +438,7 @@ If a channel Server Assistant relies on disappears, the right people now hear ab
 
 </details>
 
-<details class="doc-sec" markdown="1">
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v5.6.4: Smarter staff-chat commands</summary>
 
 
@@ -423,7 +459,7 @@ Server Assistant listens more carefully, and butts in a lot less.
 
 </details>
 
-<details class="doc-sec" markdown="1">
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v5.6.3: Community feature polls</summary>
 
 
@@ -446,7 +482,7 @@ Your voice now decides what gets built next.
 
 </details>
 
-<details class="doc-sec" markdown="1">
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v5.6.2: Feedback command & dev-update prompts</summary>
 
 
@@ -460,7 +496,7 @@ A friendlier front door for sharing ideas, plus a nudge so you never forget it's
 
 </details>
 
-<details class="doc-sec" markdown="1">
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v5.6.1: Permission health check</summary>
 
 
@@ -473,7 +509,7 @@ Server Assistant now keeps an eye on its own permissions so a stray server chang
 
 </details>
 
-<details class="doc-sec" markdown="1">
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v5.6.0: Templates, smart purge, weekly retros & more</summary>
 
 
@@ -498,7 +534,7 @@ The biggest feature drop in the v5.x line: a setup that fits your kind of commun
 
 </details>
 
-<details class="doc-sec" markdown="1">
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v5.5.15: Invite-link permission fix</summary>
 
 
@@ -511,7 +547,7 @@ If you added Server Assistant recently and it couldn't finish `/setup`, stopping
 
 </details>
 
-<details class="doc-sec" markdown="1">
+<details class="doc-sec" markdown="1" data-kind="update">
 <summary>v5.5.14: Gentler setup reminders</summary>
 
 
@@ -531,7 +567,7 @@ If you add Server Assistant but don't finish `/setup` right away, the bot sends 
 
 </details>
 
-<details class="doc-sec" markdown="1">
+<details class="doc-sec" markdown="1" data-kind="update">
 <summary>v5.5.13: A rebuilt `/setup`, from first join to finish</summary>
 
 
@@ -565,7 +601,7 @@ Setup is the one thing every server does before getting any value from the bot, 
 
 </details>
 
-<details class="doc-sec" markdown="1">
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v5.5.12: Natural-language commands now require the action word at the start</summary>
 
 
@@ -603,19 +639,19 @@ If you want the bot to act on a request mid-sentence, the `@mention` path is the
 
 </details>
 
-<details class="doc-sec" markdown="1">
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v5.5.11: UX hotfix sweep</summary>
 
 
 A focused pass on places where the bot's behaviour didn't match what its menus claimed. Three real bugs and two defaults made more honest. Nothing changes for servers that had explicitly configured anything: only the *uncontested* defaults move.
 
 ### Fixed
-- **Pulse menus no longer lie about whether Pulse is on.** Three places in the privacy and settings panels (`/privacy → 🩺 Toggle Pulse`, `/settings → 🩺 Pulse`, and the Settings hub summary) were showing **Disabled** for servers that had never explicitly toggled the setting, while Pulse was actually firing because the default was on. The panels and the digest now read from the same source of truth, so what the menu says matches what actually happens.
+- **Pulse menus no longer lie about whether Pulse is on.** Three places in the privacy and settings panels (`/privacy → Toggle Pulse`, `/settings → Pulse`, and the Settings hub summary) were showing **Disabled** for servers that had never explicitly toggled the setting, while Pulse was actually firing because the default was on. The panels and the digest now read from the same source of truth, so what the menu says matches what actually happens.
 - **`/help → ← Overview` button "does nothing" fixed.** The button was rendered on every page including the Overview screen itself. Clicking it from the Overview tried to redraw the same content, which Discord no-op'd visually, so it looked broken. The button now disables itself when you're already on the Overview, so its state honestly reflects what a click can do.
 - **`/autopilot` Apply button now surfaces errors instead of swallowing them.** A rare error path was double-responding to the same interaction, which meant the original error never reached you. Now errors come through reliably.
 
 ### Changed: defaults moved to opt-in
-- **Pulse (daily server-health digest) is now off by default.** No more surprise 9 AM digests in servers that didn't explicitly ask for them. Turn it on via `/settings → 🩺 Pulse` (with full controls for hour and destination channel) or `/privacy → 🩺 Toggle Pulse`. **Existing servers that had explicitly enabled or disabled Pulse keep their choice**: only the default for servers that never touched it changes.
+- **Pulse (daily server-health digest) is now off by default.** No more surprise 9 AM digests in servers that didn't explicitly ask for them. Turn it on via `/settings → Pulse` (with full controls for hour and destination channel) or `/privacy → Toggle Pulse`. **Existing servers that had explicitly enabled or disabled Pulse keep their choice**: only the default for servers that never touched it changes.
 - **Weekly digest is now off by default** for the same reason. Turn it on via `/settings → Behavior` if you want it.
 - **The one-tap install proposal no longer silently enables Pulse.** Apply previously turned Pulse on without showing it in the proposal: that's an undisclosed opt-in. Apply now leaves Pulse alone; you enable it explicitly when you want it.
 
@@ -626,7 +662,7 @@ A focused pass on places where the bot's behaviour didn't match what its menus c
 
 </details>
 
-<details class="doc-sec" markdown="1">
+<details class="doc-sec" markdown="1" data-kind="update">
 <summary>v5.5.10: One-tap setup on install</summary>
 
 
@@ -641,7 +677,7 @@ A focused pass on places where the bot's behaviour didn't match what its menus c
 
 </details>
 
-<details class="doc-sec" markdown="1">
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v5.5.9: Per-server command usage logging</summary>
 
 
@@ -653,7 +689,7 @@ A focused pass on places where the bot's behaviour didn't match what its menus c
 
 </details>
 
-<details class="doc-sec" markdown="1">
+<details class="doc-sec" markdown="1" data-kind="update">
 <summary>v5.5.7: `/concierge` renamed to `/sai` + admin read-only mode</summary>
 
 
@@ -666,7 +702,7 @@ A focused pass on places where the bot's behaviour didn't match what its menus c
 
 </details>
 
-<details class="doc-sec" markdown="1">
+<details class="doc-sec" markdown="1" data-kind="update">
 <summary>v5.5.6: Multi-tenant address detection + per-feature NL billing</summary>
 
 
@@ -679,7 +715,7 @@ A focused pass on places where the bot's behaviour didn't match what its menus c
 
 </details>
 
-<details class="doc-sec" markdown="1">
+<details class="doc-sec" markdown="1" data-kind="update">
 <summary>v5.5.5: Refreshed staff onboarding + Dev Updates default ON</summary>
 
 
@@ -690,7 +726,7 @@ A focused pass on places where the bot's behaviour didn't match what its menus c
 
 </details>
 
-<details class="doc-sec" markdown="1">
+<details class="doc-sec" markdown="1" data-kind="update">
 <summary>v5.5.4: Docs reconciliation + Premium `/imagine` cooldown removed</summary>
 
 
@@ -726,7 +762,7 @@ A coordinated sweep across the docs site, pricing page, privacy policy, roadmap,
 
 </details>
 
-<details class="doc-sec" markdown="1">
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v5.5.3: Pulse on your clock</summary>
 
 
@@ -736,7 +772,7 @@ A coordinated sweep across the docs site, pricing page, privacy policy, roadmap,
 
 </details>
 
-<details class="doc-sec" markdown="1">
+<details class="doc-sec" markdown="1" data-kind="update">
 <summary>v5.5.2: Reports on the record</summary>
 
 
@@ -746,7 +782,7 @@ A coordinated sweep across the docs site, pricing page, privacy policy, roadmap,
 
 </details>
 
-<details class="doc-sec" markdown="1">
+<details class="doc-sec" markdown="1" data-kind="update">
 <summary>v5.5.1: Actionable Message Reports</summary>
 
 
@@ -756,7 +792,7 @@ A coordinated sweep across the docs site, pricing page, privacy policy, roadmap,
 
 </details>
 
-<details class="doc-sec" markdown="1">
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v5.5: Ban reasons & one-reply appeals</summary>
 
 
@@ -774,7 +810,7 @@ Bans are no longer a silent door slam, and an appeal is one reply away.
 
 </details>
 
-<details class="doc-sec" markdown="1">
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v5.4: Smarter AutoMod & ban-evasion defence</summary>
 
 
@@ -787,7 +823,7 @@ Two safety upgrades: one that cuts false positives, one that catches returning t
 
 </details>
 
-<details class="doc-sec" markdown="1">
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v5.3: Baseline admin essentials</summary>
 
 
@@ -801,7 +837,7 @@ Three plug-and-play admin commands that close common gaps: all permission-gated 
 
 </details>
 
-<details class="doc-sec" markdown="1">
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v5.2: Ticket Panels</summary>
 
 
@@ -818,7 +854,7 @@ Private in-server support tickets: no DMs, no leaving your server, no messy thre
 
 </details>
 
-<details class="doc-sec" markdown="1">
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v5.1: Complete audit trail & tamper protection</summary>
 
 
@@ -837,7 +873,7 @@ Oversight you can trust. Server Assistant now records **every** moderation actio
 
 </details>
 
-<details class="doc-sec" markdown="1">
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v5.0: Premium tier, Concierge, Auto-pilot, Privacy panel</summary>
 
 

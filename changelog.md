@@ -59,6 +59,20 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 .cl-key.fix::before     { background: #c9781a; }
 .cl-key.feature::before { background: #1e8f5e; }
 .cl-key.update::before  { background: #2f74b5; }
+/* ── Product tabs — SA Bot / Portal / Crestbound ─────────────────────────── */
+.cl-tabs { display: flex; gap: .35rem; flex-wrap: wrap; margin: .2rem 0 1.2rem; border-bottom: 1px solid var(--glass-border); }
+.cl-tab { appearance: none; background: transparent; border: 0; border-bottom: 2px solid transparent; color: var(--ink-soft); font: inherit; font-size: .9rem; font-weight: 600; padding: .5rem .85rem; margin-bottom: -1px; cursor: pointer; border-radius: 8px 8px 0 0; transition: color .15s, border-color .15s, background .15s; }
+.cl-tab:hover { color: var(--ink); background: rgba(255,255,255,0.04); }
+.cl-tab[aria-selected="true"] { color: var(--ink); border-bottom-color: var(--accent); }
+.cl-panel[hidden] { display: none; }
+.cl-panel > .cl-intro { color: var(--ink-soft); font-size: .92rem; margin: .1rem 0 1rem; }
+/* ── "Superseded by vX" pill — a release whose feature was later replaced ──── */
+.cl-super { display: inline-block; font-size: .58rem; font-weight: 800; letter-spacing: .05em; text-transform: uppercase; color: #cbd2e0; background: rgba(120,132,158,0.26); border: 1px solid rgba(160,172,196,0.34); padding: .1rem .5rem; border-radius: 999px; margin-left: .5rem; vertical-align: middle; text-decoration: none; white-space: nowrap; }
+.cl-super:hover { background: rgba(150,162,186,0.42); color: #fff; text-decoration: none; }
+/* A superseded card shows the "Superseded by" pill inline instead of the type pill. */
+.doc-sec.superseded[data-kind] > summary { padding-right: .85rem; }
+.doc-sec.superseded[data-kind] > summary::after { content: none; }
+.doc-sec.superseded { opacity: .82; }
 </style>
 
 <p class="cl-legend"><span class="lbl">Release type</span>
@@ -66,6 +80,14 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
   <span class="cl-key feature">Feature</span>
   <span class="cl-key update">Update</span>
 </p>
+
+<div class="cl-tabs" role="tablist" aria-label="Changelogs">
+  <button class="cl-tab" id="tab-bot" role="tab" aria-controls="cl-bot" aria-selected="true" data-cl="bot">SA Bot</button>
+  <button class="cl-tab" id="tab-portal" role="tab" aria-controls="cl-portal" aria-selected="false" data-cl="portal">Portal</button>
+  <button class="cl-tab" id="tab-crestbound" role="tab" aria-controls="cl-crestbound" aria-selected="false" data-cl="crestbound">Crestbound</button>
+</div>
+
+<div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
 <details class="doc-sec" markdown="1" open data-kind="update">
 <summary>v6.16.0: XP, made clear: your Level is a badge, your XP is what you spend</summary>
@@ -90,7 +112,7 @@ Nothing about *earning* changed: you get XP exactly as before; it's just clearer
 
 </details>
 
-<details class="doc-sec" markdown="1" data-kind="fix">
+<details class="doc-sec" markdown="1" data-kind="fix" id="v6.15.0">
 <summary>v6.15.0: Fix: turning off level-up messages now actually works</summary>
 
 **A settings fix.** Some servers switched leveling off in the web portal and still saw level-up
@@ -104,7 +126,7 @@ anything. We’ve fixed it: there’s now a **single, clear “Level-up messages
 
 </details>
 
-<details class="doc-sec" markdown="1" data-kind="update">
+<details class="doc-sec" markdown="1" data-kind="update" id="v6.14.0">
 <summary>v6.14.0: Setup just got simpler: one guided, pre-filled wizard</summary>
 
 **No more choosing between "auto" and "manual".** Setup now does the smart thing by default: the
@@ -120,7 +142,7 @@ Run **`/setup`** and you'll see your server already half-configured.
 
 </details>
 
-<details class="doc-sec" markdown="1" data-kind="update">
+<details class="doc-sec" markdown="1" data-kind="update" id="v6.13.0">
 <summary>v6.13.0: Reception is now the front door for verification</summary>
 
 **Following up on Reception.** Now that Reception is here, we've made it the recommended way to
@@ -138,7 +160,7 @@ Tap **Reception** in `/settings → Verification` to set up your welcome desk.
 
 </details>
 
-<details class="doc-sec" markdown="1" data-kind="feature">
+<details class="doc-sec" markdown="1" data-kind="feature" id="v6.12.0">
 <summary>v6.12.0: Meet Reception: a warm front door that keeps bad actors out</summary>
 
 **Verification just got a friendly face.** Turn on **Reception** and new members arrive at a
@@ -251,7 +273,7 @@ These used to live in the SAi chat panel; they're easier to find in Settings now
 <details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.7.31: Fine-tune staff permissions, action by action</summary>
 
-**Owners can now fine-tune exactly what each staff tier can do.** Previously you assigned a role a whole template (Admin / Moderator); now, in **`/settings → Role Tiers → 🔧 Fine-tune`**, the server owner can grant or revoke **individual** actions (e.g. give Moderators `unban`, or take `ban` off a role), set a tier's level, and toggle whether it can approve dangerous actions. Owner-only, so no one can widen their own access. **The same controls are also in the web portal**: server owners get a "Staff permissions" editor under Settings.
+**Owners can now fine-tune exactly what each staff tier can do.** Previously you assigned a role a whole template (Admin / Moderator); now, in **`/settings → Role Tiers → Fine-tune`**, the server owner can grant or revoke **individual** actions (e.g. give Moderators `unban`, or take `ban` off a role), set a tier's level, and toggle whether it can approve dangerous actions. Owner-only, so no one can widen their own access. **The same controls are also in the web portal**: server owners get a "Staff permissions" editor under Settings.
 </details>
 
 <details class="doc-sec" markdown="1" data-kind="update">
@@ -491,8 +513,8 @@ Thanks for helping more communities find the bot!
 
 </details>
 
-<details class="doc-sec" markdown="1" data-kind="feature">
-<summary>v6.3.2: One-tap verification channel setup</summary>
+<details class="doc-sec superseded" markdown="1" data-kind="feature">
+<summary>v6.3.2: One-tap verification channel setup<a class="cl-super" href="{{ '/changelog/' | relative_url }}#v6.13.0">Superseded by v6.13.0</a></summary>
 
 
 **Setting up verification just got a lot easier.** Verification works by hiding your channels from people who haven't been verified yet and revealing them once they pass, but wiring that up by hand, channel by channel, is tedious.
@@ -610,8 +632,8 @@ Server Assistant quietly tracks how active your members are: every message earns
 **A note on fairness:** XP is tied to *you*, not a single server: chat XP from every server you're in, plus your voting rewards, add up into one account-wide total that you spend in Crestbound.
 </details>
 
-<details class="doc-sec" markdown="1" data-kind="feature">
-<summary>v6.1.0: Smart join verification: hold the risky joins, wave the rest straight through</summary>
+<details class="doc-sec superseded" markdown="1" data-kind="feature">
+<summary>v6.1.0: Smart join verification: hold the risky joins, wave the rest straight through<a class="cl-super" href="{{ '/changelog/' | relative_url }}#v6.13.0">Superseded by v6.13.0</a></summary>
 
 
 **The second feature you voted for in v6.0 is here: verification that only gets in the way of suspicious joins.**
@@ -663,8 +685,121 @@ Everything stays **local to your server**: nothing is shared anywhere. It's **on
   <a href="{{ site.url }}{{ site.baseurl }}/changelog/v1/" class="{% if page.permalink == '/changelog/v1/' %}current{% endif %}">v1.x</a>
 </div>
 
+</div><!-- /cl-bot -->
+
+<div class="cl-panel" id="cl-portal" role="tabpanel" aria-labelledby="tab-portal" markdown="1" hidden>
+
+<p class="cl-intro">What's changed in the <strong>Server Assistant portal</strong>: the web dashboard you sign into with your Discord account.</p>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
+<summary>A simpler leveling toggle</summary>
+- **One "Level-up messages" switch.** The portal's leveling section now has a single **Level-up messages** on/off toggle in place of the old, confusing pair. Turn it off and the celebratory level-up messages stop; members still earn XP exactly as before, they just do it quietly.
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
+<summary>Crestbound joins the portal</summary>
+- **XP Games on the portal.** The portal home now has an **XP Games** section, with **[Crestbound]({{ '/wiki/crestbound/' | relative_url }})**, the Crest-collecting game, as its first entry. Open it to jump straight into your collection.
+- **My Collection.** A new view shows every Crest in the current Chapter: the ones you've found in full and the ones you haven't as placeholders, plus your spendable XP and a collection counter at the top.
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="update">
+<summary>Always up to date</summary>
+- **Automatic updates.** The portal now refreshes itself in the background, so you always see the latest version without needing to hard-reload the page.
+- **Wiki link in the footer.** A link to the [Server Assistant Wiki]({{ '/wiki/' | relative_url }}) now sits in the portal footer, so the full feature and command reference is always one tap away.
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
+<summary>The customer portal launches</summary>
+- **Sign in with Discord.** The customer portal launched as a web dashboard you reach by signing in with your Discord account, a home for the parts of Server Assistant that live on the web rather than in chat.
+</details>
+
+</div><!-- /cl-portal -->
+
+<div class="cl-panel" id="cl-crestbound" role="tabpanel" aria-labelledby="tab-crestbound" markdown="1" hidden>
+
+<p class="cl-intro">What's new in <strong>Crestbound</strong>: the Crest-collecting game in the portal, powered by the XP you earn in Discord.</p>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
+<summary>v1.5: The bot rounds out</summary>
+- **World-first discovery announcements.** Server admins can pick a channel with `/setup`; when a member makes a genuine world-first discovery, the server hears about it the moment the art comes to light. Announcement only, no reward ever differs by server.
+- **`/duel`**: see your active Wardeck and jump straight onto the Battle screen.
+- **Battles preload every Crest's art** so nothing pops in mid-duel.
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="update">
+<summary>v1.1 to v1.4: A cleaner, calmer Crestbound</summary>
+- **Discoverers are branded onto their Crests.** The discoverer's name now reads as a hot brand seared into the card, and you'll see it burn in live the moment a Crest is revealed.
+- **Rarity now reads from the cost stamp alone**: the shaped, coloured seal on the art. The old rarity-coloured borders are gone everywhere.
+- **A quieter, cleaner interface**: decorative emoji swept out of the game's menus, shop and messages; placeholder battle sounds removed (real, generated audio arrives as it's created); the Starter Decks gallery and the Deck Builder rebuilt to match the rest of the game's look.
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="update">
+<summary>v1.0: Crestbound stands alone</summary>
+- **The game moved into its own home** at [crestbound.wandweb.co](https://crestbound.wandweb.co): its own sign-in, its own Discord bot, the same game. **Your collection, XP, Cinders, decks and discoveries all came with it**; old links carry you to the new address.
+- Everything you know, packs, discovery, Wardecks & battles, quests, the Shop, is unchanged, just faster on its own foundations.
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
+<summary>Coming soon: Wardecks & battles</summary>
+- **Battle mode is on the way.** A future update will let you assemble a **Wardeck**: a 30-Crest battle group drawn from your collection, and put it to the test. It isn't here yet; for now, Crestbound is all about building your collection.
+- **Server Wars, on the far horizon.** A community-versus-community season: your Discord server is your banner, your members' duels bank points for it, and fleet-wide standings crown a champion server each season. Cosmetic glory only, no server or member ever gains a gameplay advantage. Parked until enough communities are battling; watch this page.
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
+<summary>Make it yours: Card Backs</summary>
+- **Card Backs arrive.** The Shop now has a cosmetics shelf: pick the free **Banked Ember**, one of five **faction backs** (300 XP each), or the prestige **Vault Gilt** (150 Cinders, the same quest currency that unlocks the Ember Vault). Your equipped back is shown everywhere a Crest sits face-down, collection placeholders and deck faces. Purely cosmetic: no card back ever changes how the game plays.
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
+<summary>A fullscreen home and the Shop</summary>
+- **Crestbound goes fullscreen.** The game now opens into its own full-screen home: a main menu of illustrated panels, your Collection, the Shop, and the battle features as they arrive, with your XP balance always in view at the top.
+- **A proper Shop.** Packs have moved out of the collection page into a dedicated **Shop**: pick one of the five **faction packs** (5 Crests from a single faction, no Mythics there), open the classic **Chapter Booster**, or eye up the **Ember Vault**, a premium pack of guaranteed rares crowned by a Mythic, opened with **Cinders**, a currency earned from quests. Your collection keeps a shortcut straight to the Shop.
+- **Hand-illustrated everywhere.** The home screen, its menu panels and every pack in the Shop now carry rich HD artwork in the same style as the Crests themselves, each piece fades in as it's ready.
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
+<summary>Tidy your collection: burn spare Crests</summary>
+- **Burn spare Crests for XP.** Got duplicates? You can now **burn** a spare Crest to recover some XP, common **5**, uncommon **12**, rare **30**, mythic **75**, and spend it on more packs. There's a confirmation every time, with an extra warning if you're about to burn your only copy of a Crest.
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="update">
+<summary>A more polished collection</summary>
+- **Rarest first.** Your collection now sorts with the most prized Crests at the top, mythic, then rare, then uncommon, then common, so the headline pieces are always front and centre.
+- **Reveal animations.** Opening a booster pack now plays a short reveal, with the Crests turning over one by one, and rare and mythic Crests catch the light with a subtle sheen.
+- **Collection counter.** My Collection now shows how many Crests of the Chapter you've found at a glance.
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
+<summary>Crestbound launches</summary>
+- **The game arrives.** Crestbound launched in the portal with its first Chapter, **"Chapter I: Embers of the First War"**: a sweeping cast of **450 Crests** to collect across four rarities: common, uncommon, rare and mythic.
+- **Booster packs.** Spend **200 XP** to open a booster pack of **5 Crests**, with the last Crest in every pack **guaranteed to be rare or better**.
+- **My Collection.** Every Crest in the Chapter shown in one place, the ones you own in full, the ones still out there as placeholders, so you can always see what's left to find.
+- **Powered by your XP.** Crestbound runs on the same account-wide XP you earn from chatting, voice time, and from voting for Server Assistant, no separate purchase, no Premium required.
+</details>
+
+</div><!-- /cl-crestbound -->
+
 ## What's next?
 
 - [Roadmap]({{ site.url }}{{ site.baseurl }}/roadmap/) for what's coming
 - [Features]({{ site.url }}{{ site.baseurl }}/features/) for the current capability set
 - [Setup]({{ site.url }}{{ site.baseurl }}/setup/) if you're new
+
+<script>
+(function () {
+  var tabs = [].slice.call(document.querySelectorAll('.cl-tab'));
+  var panels = { bot: 'cl-bot', portal: 'cl-portal', crestbound: 'cl-crestbound' };
+  function show(key) {
+    if (!panels[key]) key = 'bot';
+    tabs.forEach(function (t) { t.setAttribute('aria-selected', t.dataset.cl === key ? 'true' : 'false'); });
+    Object.keys(panels).forEach(function (k) { var el = document.getElementById(panels[k]); if (el) el.hidden = (k !== key); });
+  }
+  tabs.forEach(function (t) {
+    t.addEventListener('click', function () {
+      show(t.dataset.cl);
+      if (history.replaceState) history.replaceState(null, '', '#' + t.dataset.cl);
+    });
+  });
+  show((location.hash || '').replace('#', ''));
+})();
+</script>
