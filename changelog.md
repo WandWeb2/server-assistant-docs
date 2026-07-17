@@ -32,9 +32,42 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 .doc-sec.tempered > summary { color: #cfe0ff; font-size: 1.08rem; }
 .doc-sec.tempered > summary::before { color: #60a5fa; }
 .doc-sec.tempered .tg-badge { display: inline-block; font-size: .6rem; font-weight: 800; letter-spacing: .09em; text-transform: uppercase; color: #0a1030; background: linear-gradient(135deg, #bcd6ff, #60a5fa); padding: .1rem .45rem; border-radius: 999px; margin-left: .55rem; vertical-align: middle; }
+/* ── Release-type colour coding — Fix / Feature / Update ──────────────────── */
+.doc-sec[data-kind] { border-left-width: 3px; border-left-style: solid; }
+.doc-sec[data-kind="fix"]     { border-left-color: #e0913a; }  /* amber */
+.doc-sec[data-kind="feature"] { border-left-color: #2ea36b; }  /* green */
+.doc-sec[data-kind="update"]  { border-left-color: #3b82c4; }  /* blue  */
+.doc-sec > summary { position: relative; }
+.doc-sec[data-kind] > summary { padding-right: 5.4rem; }
+.doc-sec[data-kind] > summary::after {
+  position: absolute; right: .7rem; top: .6rem;
+  font-size: .58rem; font-weight: 800; letter-spacing: .07em; text-transform: uppercase;
+  padding: .14rem .5rem; border-radius: 999px; color: #fff; line-height: 1.5;
+}
+.doc-sec[data-kind="fix"]     > summary::after { content: "Fix";     background: #c9781a; }
+.doc-sec[data-kind="feature"] > summary::after { content: "Feature"; background: #1e8f5e; }
+.doc-sec[data-kind="update"]  > summary::after { content: "Update";  background: #2f74b5; }
+/* Tempered cards keep their own identity — never overridden by a type accent. */
+.doc-sec.tempered[data-kind] { border-left-width: 1px; }
+.doc-sec.tempered[data-kind] > summary { padding-right: .85rem; }
+.doc-sec.tempered[data-kind] > summary::after { content: none; }
+/* Legend */
+.cl-legend { display: flex; gap: .7rem; flex-wrap: wrap; align-items: center; margin: .2rem 0 1.1rem; font-size: .74rem; }
+.cl-legend .lbl { font-size: .66rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-soft); }
+.cl-key { display: inline-flex; align-items: center; gap: .4rem; color: var(--ink-soft); }
+.cl-key::before { content: ""; width: .7rem; height: .7rem; border-radius: 3px; }
+.cl-key.fix::before     { background: #c9781a; }
+.cl-key.feature::before { background: #1e8f5e; }
+.cl-key.update::before  { background: #2f74b5; }
 </style>
 
-<details class="doc-sec" markdown="1" open>
+<p class="cl-legend"><span class="lbl">Release type</span>
+  <span class="cl-key fix">Fix</span>
+  <span class="cl-key feature">Feature</span>
+  <span class="cl-key update">Update</span>
+</p>
+
+<details class="doc-sec" markdown="1" open data-kind="fix">
 <summary>v6.15.0 — Fix: turning off level-up messages now actually works</summary>
 
 **A settings fix.** Some servers switched leveling off in the web portal and still saw level-up
@@ -48,7 +81,7 @@ anything. We’ve fixed it: there’s now a **single, clear “Level-up messages
 
 </details>
 
-<details class="doc-sec" markdown="1">
+<details class="doc-sec" markdown="1" data-kind="update">
 <summary>v6.14.0 — Setup just got simpler: one guided, pre-filled wizard</summary>
 
 **No more choosing between "auto" and "manual".** Setup now does the smart thing by default: the
@@ -64,7 +97,7 @@ Run **`/setup`** and you'll see your server already half-configured.
 
 </details>
 
-<details class="doc-sec" markdown="1">
+<details class="doc-sec" markdown="1" data-kind="update">
 <summary>v6.13.0 — Reception is now the front door for verification</summary>
 
 **Following up on Reception.** Now that Reception is here, we've made it the recommended way to
@@ -82,7 +115,7 @@ Tap **🛎️ Reception** in `/settings → Verification` to set up your welcome
 
 </details>
 
-<details class="doc-sec" markdown="1">
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.12.0 — Meet Reception: a warm front door that keeps bad actors out</summary>
 
 **Verification just got a friendly face.** Turn on **Reception** and new members arrive at a
@@ -111,7 +144,7 @@ Find it under **`/settings → Verification → Reception`**. It's off until you
 
 </details>
 
-<details class="doc-sec" markdown="1">
+<details class="doc-sec" markdown="1" data-kind="update">
 <summary>v6.11.1 — Your personal settings now live under Settings → Personalization</summary>
 
 **A tidier home for the settings that are just *yours*.** The web portal's **Settings** tab now opens with a new **Personalization** section at the top — your own preferences, separate from the server-wide settings below it:
@@ -124,21 +157,21 @@ These used to live in the SAi chat panel; they're easier to find in Settings now
 
 </details>
 
-<details class="doc-sec" markdown="1">
+<details class="doc-sec" markdown="1" data-kind="update">
 <summary>v6.11.0 — One digest to rule them all: Weekly digest folds into Pulse</summary>
 
 **Cleaning up the last bit of overlap.** The old **Weekly digest** — a weekly activity summary the bot posted to your log channel — did the same job Pulse now does (and better: Pulse covers server activity *and* your mod-team recap, lives always-current in your portal, and can DM each staffer on their own schedule). So we've retired the standalone Weekly digest and its `/settings → Behaviour` toggles. Nothing to do — it's all in Pulse now. Your **Digests & health** settings are simpler for it.
 
 </details>
 
-<details class="doc-sec" markdown="1">
+<details class="doc-sec" markdown="1" data-kind="update">
 <summary>v6.10.1 — Tidied-up Pulse settings</summary>
 
 **A small follow-up to the Pulse update.** Now that Pulse lives in your web portal (always up to date) and can be DM'd to each staff member on their own schedule, the old **Pulse settings** in Discord `/settings → Notifications` — the "how often to post to a channel" menu and the channel/hour panel — no longer did anything, so we've cleared them away. Nothing you need to do; your Pulse is right where it should be. Set your personal Pulse DM cadence anytime from the SAi panel in the portal.
 
 </details>
 
-<details class="doc-sec" markdown="1">
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.10.0 — Get your Pulse in your DMs, on your schedule</summary>
 
 **Want your server's Pulse sent straight to you? Now each staff member can opt in — on their own schedule.** In the web portal's SAi panel there's a new **"🩺 Pulse in my DMs"** option: choose **weekly** or **monthly** and SAi will DM you the Pulse (server activity **and** your mod‑team recap) at that cadence — just for you, no setup for anyone else.
@@ -149,7 +182,7 @@ These used to live in the SAi chat panel; they're easier to find in Settings now
 
 </details>
 
-<details class="doc-sec" markdown="1">
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.9.0 — Pulse now includes your mod‑team recap</summary>
 
 **Your Daily Pulse and the Weekly mod recap are now one thing: Pulse.** One clean digest that covers both how your *server* is doing and how your *team* is doing — server activity (messages, joins/leaves, AutoMod blocks, warnings, early‑warning flags) **plus** your mod‑team recap (cases handled and the week's trend, a breakdown by action, who's been most active) and a new **itemised list of recent moderation actions** so you can see exactly what happened at a glance.
@@ -160,14 +193,14 @@ These used to live in the SAi chat panel; they're easier to find in Settings now
 
 </details>
 
-<details class="doc-sec" markdown="1">
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.8.1 — See a sample of SAi's notifications</summary>
 
 **Curious what SAi's DMs look like before one ever fires? Now you can see for yourself.** The SAi panel in the web portal has a new **"✨ Send me a sample"** button — tap it and SAi sends a few example notifications straight to your Discord DMs: the "a decision needs staff" call-up, a Daily Pulse briefing, and an all-clear. Each one is clearly marked as a sample, and it only ever DMs you (if your Discord DMs are closed, the button lets you know). A no-pressure way to see how SAi keeps you in the loop.
 
 </details>
 
-<details class="doc-sec" markdown="1">
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.8.0 — SAi is your notification hub, with DM call-ups</summary>
 
 **SAi now gathers everything that needs you in one place — and makes sure nothing slips.**
@@ -180,37 +213,37 @@ These used to live in the SAi chat panel; they're easier to find in Settings now
 
 </details>
 
-<details class="doc-sec" markdown="1">
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.7.33 — Co-owners can manage staff permissions</summary>
 
 **Co-owners can now manage staff permissions, just like you.** If you've granted someone a co-owner role (full owner-level power), they can now open the "Staff permissions" editor — in Discord and the web portal — to edit, add, and remove staff tiers, and grant or remove co-owners, exactly as the server owner can. Admins and moderators still can't (only owners and co-owners shape the permission structure).
 </details>
 
-<details class="doc-sec" markdown="1">
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.7.32 — Add or remove staff tiers from the web portal</summary>
 
 **The web portal's "Staff permissions" editor now does everything the Discord one does** — including **adding** a new staff tier (pick a Discord role) and **removing** one, not just editing existing tiers. Owner-only, as before. (This needed the bot to send your server's role list to the portal, so it activates on your next update.)
 </details>
 
-<details class="doc-sec" markdown="1">
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.7.31 — Fine-tune staff permissions, action by action</summary>
 
 **Owners can now fine-tune exactly what each staff tier can do.** Previously you assigned a role a whole template (Admin / Moderator); now, in **`/settings → Role Tiers → 🔧 Fine-tune`**, the server owner can grant or revoke **individual** actions (e.g. give Moderators `unban`, or take `ban` off a role), set a tier's level, and toggle whether it can approve dangerous actions. Owner-only, so no one can widen their own access. **The same controls are also in the web portal** — server owners get a "Staff permissions" editor under Settings.
 </details>
 
-<details class="doc-sec" markdown="1">
+<details class="doc-sec" markdown="1" data-kind="update">
 <summary>v6.7.30 — Admins can /purge without owner approval</summary>
 
 **Admins can now run `/purge` directly.** `/purge` was the one moderation command that asked the owner to approve it — even when an admin ran it. Now admins (and the owner) purge directly; every other action already ran immediately for whoever's role allows it.
 </details>
 
-<details class="doc-sec" markdown="1">
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v6.7.29 — Ban appeals & tickets: reliability under heavy activity</summary>
 
 **Ban appeals and tickets are now safe when several things happen at once.** Two fixes for busy servers: a ban appeal can no longer lose a reply (or step on another member's appeal) when replies and staff actions arrive together, and two members opening a ticket at the same instant now always get separate ticket numbers instead of colliding. Nothing to configure — it just holds up better under load.
 </details>
 
-<details class="doc-sec" markdown="1">
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v6.7.28 — Scam-image "Quarantine" & verification threshold fixes</summary>
 
 **Scam-image "Quarantine" now really skips the timeout.** If you set the scam-image defense to **Quarantine** (remove the image, no timeout — staff review the log), it was still timing the poster out for an hour on a confirmed match, the same as "Delete + timeout." Quarantine now removes the image without the timeout, exactly as described.
@@ -218,85 +251,85 @@ These used to live in the SAi chat panel; they're easier to find in Settings now
 **Verification: a hold threshold of `0` now holds every join.** In intelligent mode, setting the hold threshold to `0` (review every join) was being treated as the default instead — so lower-risk joins came straight in. Setting `0` now does what it says, and the same fix applies to the self-serve risk ceiling.
 </details>
 
-<details class="doc-sec" markdown="1">
+<details class="doc-sec" markdown="1" data-kind="update">
 <summary>v6.7.27 — Notices link to the web portal</summary>
 
 **Update and maintenance notices now link to the web portal.** When Server Assistant posts a Dev Update or Service Notice in your staff chat, its header is now a clickable link to the web portal — so you can jump straight from a notice to managing your server on the web.
 </details>
 
-<details class="doc-sec" markdown="1">
+<details class="doc-sec" markdown="1" data-kind="update">
 <summary>v6.7.26 — /stats shows live Online & In-voice counts</summary>
 
 **`/stats` now shows how many members are online and in voice, live.** Run `/stats` and you'll see a 🟢 Online and 🔊 In voice count alongside the usual server totals — read at the moment you run it, so they're always current. The web portal's "Online now" and "In voice" cards now refresh about every 5 minutes (up from hourly) — note these are a periodic snapshot, not live to the second, so for an exact live count use `/stats` in Discord.
 </details>
 
-<details class="doc-sec" markdown="1">
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v6.7.25 — Fix /setup on servers with lots of channels</summary>
 
 **`/setup` works again on larger servers.** On a server with 25 or more channels, running `/setup` failed with a generic error because the log-channel dropdown ran past Discord's 25-option limit per menu. That's fixed. Nothing for you to do.
 </details>
 
-<details class="doc-sec" markdown="1">
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v6.7.24 — Mediation reliability fix</summary>
 
 **Mediations hold up when both people reply at once.** If two members in a `/mediate` session responded at nearly the same moment, one side's reply could previously be lost and the staff summary might not post. Both accounts are now always captured and the summary is generated exactly once. Nothing for you to do.
 </details>
 
-<details class="doc-sec" markdown="1">
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v6.7.23 — More "it now actually works" fixes</summary>
 
 **A sweep of fixes so configured features reliably take effect.** Blocked links are now caught even when posted without `https://`; setting up AutoMod through the panel reliably switches it on (even after a previous disable); the `onboarding` / `welcome` command's **set**, **test** and status views work again; snippets named things like "playlist" post correctly instead of showing the list; turning **Pulse** off in the Privacy panel now actually stops the digest; and the Verification panel shows the right status on new servers. Nothing for you to do.
 </details>
 
-<details class="doc-sec" markdown="1">
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v6.7.22 — AutoMod & ticket reliability fixes</summary>
 
 **A handful of fixes so configured features always take effect.** Setting up AutoMod through the `/automod` panel now reliably turns it on; adding a filter or blocked link whose text happens to contain words like "off" or "on" no longer misfires; borderline AI-review flags are no longer dropped on servers without a log channel; and a custom ticket **close message** now reaches the person who opened the ticket. Nothing for you to do.
 </details>
 
-<details class="doc-sec" markdown="1">
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v6.7.21 — AutoMod custom filters now apply reliably</summary>
 
 **Your custom AutoMod filters now always take effect.** Custom word filters and blocked links you add are now reliably enforced — including any you'd added before. If you'd set up a custom filter that didn't seem to be catching messages, it'll start working automatically. Nothing for you to do.
 </details>
 
-<details class="doc-sec" markdown="1">
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.7.20 — 🎲 /roll — group loot rolls, WoW-style</summary>
 
 **Settle it with a roll.** The new **`/roll`** command starts a timed group roll — great for giveaways, prizes, or deciding who gets the drop. Everyone taps **Need**, **Greed** or **Pass**, and each person gets a hidden 1–100 roll. When the timer's up, **Need beats Greed** and the highest roll in the winning tier wins (ties are re-rolled), with the results revealed in a little dice-roll flourish. Add an item name and timer if you like — **`/roll [item] [seconds]`** (10–300s, default 60). Anyone can start one; one roll runs per channel at a time.
 </details>
 
-<details class="doc-sec" markdown="1">
+<details class="doc-sec" markdown="1" data-kind="update">
 <summary>v6.7.19 — Manage your log channel in /settings</summary>
 
 **Change or remove your log channel any time.** Open **/settings → Behavior → 📋 Log channel** to pick a channel to mirror your moderation actions to, or choose **Portal only** to turn the Discord channel off — your dashboard moderation log stays on either way. Setup also walks all the way through now: we removed the Step-1 “finish now” shortcut, so every server that starts `/setup` completes the quick 3-step wizard and ends up correctly configured.
 </details>
 
-<details class="doc-sec" markdown="1">
+<details class="doc-sec" markdown="1" data-kind="update">
 <summary>v6.7.18 — Your Discord log channel is now optional</summary>
 
 **Skip the Discord log channel if you like.** Setting a Discord mod-log channel is now optional — in `/setup`, pick **📋 Portal only** and carry on. Your permanent moderation log in the web dashboard is always on regardless, so you still have a complete, tamper-proof record of every action. Already have a log channel and want to drop it? Re-run `/setup` — it loads your current setup, so you can switch to **Portal only** in a couple of taps.
 </details>
 
-<details class="doc-sec" markdown="1">
+<details class="doc-sec" markdown="1" data-kind="update">
 <summary>v6.7.17 — Scam-image removals now appear in your dashboard log</summary>
 
 **A permanent record for every scam-image action.** Scam-image removals and timeouts are now saved to your moderation log in the web dashboard, alongside all your other moderation actions — a tamper-proof record that can't be edited or deleted, even by admins. This works even if you haven't set up a Discord log channel (or if a channel entry gets deleted), so a removal is never left without a record. Only the action is recorded — who acted, what they did, when, and the reason — **never** the message content or the image itself.
 </details>
 
-<details class="doc-sec" markdown="1">
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v6.7.13 — Scam-image alerts now always reach your staff</summary>
 
 **You'll always see a record when a scam image is removed.** If your server hasn't set a mod-log channel, ThreatNet scam-image actions used to be applied without a visible record. Now, when there's no log channel set, the alert is posted to your **staff chat** instead (with a reminder to set a log channel), so a removal never happens silently. Servers that already have a log channel are unaffected.
 </details>
 
-<details class="doc-sec" markdown="1">
+<details class="doc-sec" markdown="1" data-kind="update">
 <summary>v6.7.12 — Scam-image protection now catches more scammers</summary>
 
 **Scam screenshots get caught even from older accounts.** Server Assistant already fingerprints scam images and blocks them across servers. Now the AI check for brand-new scam images also looks at posts from **members who just joined your server** — not only those on brand-new Discord accounts. Scammers often join on an older account and post their fake "withdrawal received" or crypto-giveaway screenshot straight away, and this closes that gap. Known scam images are still blocked instantly for everyone, and ordinary members posting normal images are unaffected. It's on by default wherever scam-image protection is enabled.
 </details>
 
-<details class="doc-sec" markdown="1">
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v6.7.11 — Raid, AutoMod-review & Double-XP buttons keep working too</summary>
 
 **More alert buttons that don't go stale.** Following the anti-nuke fix, the buttons on three more alerts now keep working even if the bot updates or restarts after the alert was posted — so you're never left tapping a dead button on something time-sensitive:
@@ -308,19 +341,19 @@ These used to live in the SAi chat panel; they're easier to find in Settings now
 As before, tapping one of these on an older message just works now instead of showing "This interaction failed."
 </details>
 
-<details class="doc-sec" markdown="1">
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v6.7.10 — Anti-nuke buttons keep working after an update</summary>
 
 **Your security controls don't go stale.** The buttons on an anti-nuke alert — **Quarantine**, **Undo quarantine**, **Restore server**, **Trust this actor** — now keep working even if the bot updates or restarts after the alert was posted. Previously, tapping one later could show "This interaction failed"; now it just works, so you're never left unable to act during an incident. (The two-person confirmation for undoing a quarantine survives a restart too.)
 </details>
 
-<details class="doc-sec" markdown="1">
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v6.7.9 — Expired buttons now say so</summary>
 
 **No more silent "This interaction failed."** If you tap a button on an older message — for example a security alert — after the bot has updated, those buttons are no longer connected. Instead of failing silently, the bot now tells you the button has expired and how to get fresh controls (re-run the command, or act from the web portal, where your controls stay live).
 </details>
 
-<details class="doc-sec" markdown="1">
+<details class="doc-sec" markdown="1" data-kind="update">
 <summary>v6.7.5 — Every way to set up now lands in the same place</summary>
 
 **However you set up, you get the same result.** The `/setup` wizard, the one-tap **`/autopilot`**, and the **web portal** now all finish identically — your channels and roles configured, a moderation profile matched to your community, and the free AI trial on.
@@ -329,7 +362,7 @@ As before, tapping one of these on an older message just works now instead of sh
 - **If you set up earlier and the bot still acted "not set up,"** that's now corrected automatically — no need to run setup again.
 </details>
 
-<details class="doc-sec" markdown="1">
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.7.4 — Setup in one tap</summary>
 
 **Setup is now as fast as a single tap.** The first screen of `/setup` has a new **✅ Looks good — finish now** button: the bot fills in your channels, a sensible moderation profile for your community type, and your AI — you just confirm. No need to walk every screen unless you want to fine-tune.
@@ -338,7 +371,7 @@ As before, tapping one of these on an older message just works now instead of sh
 - **Still fully customisable.** Prefer to pick everything yourself? The step-by-step wizard is still there — the one-tap button just skips to the end with smart defaults.
 </details>
 
-<details class="doc-sec" markdown="1">
+<details class="doc-sec" markdown="1" data-kind="update">
 <summary>v6.7.2 — Finishing setup just got easier</summary>
 
 **A one-tap way back into setup.** If someone tries a command before your server is set up, the bot now shows a **🚀 Run setup** button right there — one tap opens the setup wizard, so you never have to remember the `/setup` command. The button keeps working even if the original welcome message has scrolled away or the bot has restarted since you added it.
@@ -346,7 +379,7 @@ As before, tapping one of these on an older message just works now instead of sh
 - **A quicker nudge if you get stuck.** If setup is left unfinished, the friendly reminder to wrap it up now arrives sooner rather than a day later — it only takes about a minute to finish.
 </details>
 
-<details class="doc-sec" markdown="1">
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.7.0 — Hanging out in voice now earns XP</summary>
 
 **Time spent together in voice chat now counts toward your level.** While you're actively in a voice channel, you earn XP for it — feeding the same balance as chatting. The busier the channel, the more it's worth: a lively call with several people pays more per minute than a quiet two-person chat.
@@ -356,7 +389,7 @@ As before, tapping one of these on an older message just works now instead of sh
 - **Free for everyone.** Like chat XP, voice XP is on for all servers — no Premium needed.
 </details>
 
-<details class="doc-sec" markdown="1">
+<details class="doc-sec" markdown="1" data-kind="update">
 <summary>v6.6.3 — <code>/meme</code> now captions the moment</summary>
 
 **`/meme` now reads like an emote.** Instead of just echoing your search, the bot adds a caption describing what the meme says about you — `/meme this is fine` → **"@User has decided everything is fine"**, `/meme drake` → **"@User has notes"**, `/meme woman yelling at cat` → **"@User is losing an argument to a cat"**.
@@ -367,7 +400,7 @@ As before, tapping one of these on an older message just works now instead of sh
 GIFs &amp; memes by KLIPY.
 </details>
 
-<details class="doc-sec" markdown="1">
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.6.2 — New <code>/meme</code> command</summary>
 
 **Drop the perfect meme into chat.** New **`/meme <search>`** posts a meme image matching your search — `/meme distracted boyfriend`, `/meme this is fine`, `/meme success kid`. Memes come from **KLIPY**.
@@ -377,7 +410,7 @@ GIFs &amp; memes by KLIPY.
 GIFs &amp; memes by KLIPY.
 </details>
 
-<details class="doc-sec" markdown="1">
+<details class="doc-sec" markdown="1" data-kind="update">
 <summary>v6.6.1 — Emotes that show the action, with natural captions</summary>
 
 **Emotes now show what you're actually doing.** `/laugh` posts a *laughing* GIF, `/cry` a *crying* one — the search leads with the action and prefers clips whose title or tags match it, so you get a relevant reaction instead of a generic theme image. Add a theme on top (`/cry anime`) and it still applies; if nothing in that theme fits the action, you get a plain matching GIF and a small note saying so.
@@ -387,7 +420,7 @@ GIFs &amp; memes by KLIPY.
 GIFs by KLIPY.
 </details>
 
-<details class="doc-sec" markdown="1">
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.6.0 — Emote commands: post the perfect reaction GIF</summary>
 
 **React with a GIF in one tap.** New **`/emote`** (and the shortcut **`/e`**), plus **`/cry`**, **`/hug`** and **`/dance`**, drop a fitting GIF straight into chat — with autocomplete over hundreds of emotes (cry, dance, laugh, facepalm, wave… and aliases like `lol`, `ty`, `congrats`).
@@ -400,7 +433,7 @@ GIFs by KLIPY.
 GIFs by KLIPY.
 </details>
 
-<details class="doc-sec" markdown="1">
+<details class="doc-sec" markdown="1" data-kind="update">
 <summary>v6.5.3 — Reward messages now show your spendable XP</summary>
 
 **The "you now have **X** XP" line in vote and review thank-you messages now matches Crestbound.** Your wallet has two numbers: the **lifetime XP** that ranks you on the leaderboard (it only ever goes up), and your **spendable XP** — the balance you spend on Booster Packs in [Crestbound]({{ '/wiki/crestbound/' | relative_url }}), which drops each time you open a pack. Both go up together when you earn, so they match until you spend.
@@ -409,7 +442,7 @@ Those reward messages were showing the lifetime number, so after you'd opened a 
 
 </details>
 
-<details class="doc-sec" markdown="1">
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.5.1 — Earn rewards for reviewing Server Assistant</summary>
 
 
@@ -423,7 +456,7 @@ Thanks for helping more communities find the bot! 💚
 
 </details>
 
-<details class="doc-sec" markdown="1">
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.4.0 — ThreatNet cross-server protection is now live</summary>
 
 
@@ -435,7 +468,7 @@ Thanks for helping more communities find the bot! 💚
 
 </details>
 
-<details class="doc-sec" markdown="1">
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.3.2 — One-tap verification channel setup</summary>
 
 
@@ -450,7 +483,7 @@ Now there's a **"Auto-configure channels"** button in **`/settings → Members �
 **Also:** the **Notifications** settings menu is flatter — it opens straight to your notification options (with Instant alerts and Pulse inside), instead of an extra step.
 </details>
 
-<details class="doc-sec" markdown="1">
+<details class="doc-sec" markdown="1" data-kind="update">
 <summary>v6.3.1 — Settings, reorganised into four clear sections</summary>
 
 
@@ -464,7 +497,7 @@ Now there's a **"Auto-configure channels"** button in **`/settings → Members �
 Tools that used to only have their own command — like AutoMod, AI config, onboarding, backups and more — can now also be opened straight from the matching section of `/settings`. Their commands still work exactly as before, and nothing about who can use what has changed.
 </details>
 
-<details class="doc-sec" markdown="1">
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.3.0 — ThreatNet now stops scam <em>images</em>, not just scam text</summary>
 
 
@@ -480,7 +513,7 @@ ThreatNet now recognises scam **images**. The moment a scam screenshot is flagge
 It's the biggest upgrade to ThreatNet yet — turning every server that flags a scam into protection for all the others.
 </details>
 
-<details class="doc-sec" markdown="1">
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>📖 New — the Server Assistant Wiki: every feature &amp; command, with live examples</summary>
 
 
@@ -494,7 +527,7 @@ It's the biggest upgrade to ThreatNet yet — turning every server that flags a 
 Open it from **Main Features** in the top menu, or jump straight in at [the wiki]({{ '/wiki/' | relative_url }}). Setup and the full command reference now live there too.
 </details>
 
-<details class="doc-sec" markdown="1">
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.2.7 — Bring your own Anthropic (Claude) key</summary>
 
 
@@ -503,7 +536,7 @@ Open it from **Main Features** in the top menu, or jump straight in at [the wiki
 Just paste the key — the provider is **auto-detected from it** (`sk-ant-…` → Anthropic, `sk-…` → OpenAI, `xai-…` → xAI), so the provider box stays optional, and you can leave the model blank for a sensible default. As with any BYOK key, your server runs AI on your own account (no trial limit) once you're on **Premium BYOK ($3/month)**.
 </details>
 
-<details class="doc-sec" markdown="1">
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v6.2.6 — Setup: bringing your own AI key no longer gets stuck</summary>
 
 
@@ -512,7 +545,7 @@ Just paste the key — the provider is **auto-detected from it** (`sk-ant-…` �
 Now the bot **auto-detects the provider from your key** (an `sk-…` key is OpenAI, an `xai-…` key is xAI), so the provider box is optional. If you change your mind or close the form, the included **free trial** (150k tokens) stays selected and **Finish** just works. And if you paste a key the bot can't use here, it tells you plainly — the built-in AI already runs on Claude, so no key is needed for the free trial.
 </details>
 
-<details class="doc-sec" markdown="1">
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v6.2.5 — Setup: the permission-review buttons respond reliably</summary>
 
 
@@ -521,7 +554,7 @@ Now the bot **auto-detects the provider from your key** (an `sk-…` key is Open
 Those buttons now acknowledge your click straight away and then apply the changes, so the wizard moves on reliably no matter how long the apply takes.
 </details>
 
-<details class="doc-sec" markdown="1">
+<details class="doc-sec" markdown="1" data-kind="update">
 <summary>v6.2.4 — Setup-first: commands point you to /setup</summary>
 
 
@@ -530,7 +563,7 @@ Those buttons now acknowledge your click straight away and then apply the change
 Now, in a server that hasn't been set up yet, commands point you to **`/setup`** so it's obvious what to do first. The getting-started and personal commands still work right away — `/setup`, `/help`, `/invite`, `/portal`, `/whatsnew`, `/support`, `/premium`, plus your account ones like `/rank`, `/vote` and `/leaderboard` (your XP follows *you*, not a single server, so those work everywhere). Everything else unlocks the moment setup is complete.
 </details>
 
-<details class="doc-sec" markdown="1">
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.2.3 — The XP Update: Crestbound, Double-XP & better vote rewards</summary>
 
 
@@ -554,7 +587,7 @@ Server Assistant quietly tracks how active your members are: every message earns
 **A note on fairness:** XP is tied to *you*, not a single server — chat XP from every server you're in, plus your voting rewards, add up into one account-wide total that you spend in Crestbound.
 </details>
 
-<details class="doc-sec" markdown="1">
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.1.0 — Smart join verification: hold the risky joins, wave the rest straight through</summary>
 
 
@@ -580,7 +613,7 @@ A few things worth knowing:
 **Also in this release:** an **unban now clears the slate** — if you unban someone (or lift a ban directly in Discord), it no longer counts against them in alt-detection or join risk-scoring. An overturned ban shouldn't follow someone around.
 </details>
 
-<details class="doc-sec" markdown="1">
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.0.0 — Anti-nuke / rogue-admin guard: a smoke alarm for your server</summary>
 
 
