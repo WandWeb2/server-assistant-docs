@@ -3,7 +3,7 @@ layout: wiki
 title: Server Assistant Alt / Ban-Evasion Detection
 permalink: /wiki/altguard/
 wiki: true
-wiki_category: Moderation & safety
+wiki_category: "Moderation"
 summary: Altguard watches new joins for ban-evading alts of people YOUR server has already kicked or banned, auto-banning confident matches and flagging weaker ones. A deep-dive on the signals it uses, the /altguard command, and why it's strictly local to your server.
 wiki_keywords: [altguard, alt, alt account, ban evasion, repeat offender, fingerprint, rejoin, ban-evading, evasion detection, local moderation]
 description: How Server Assistant's altguard catches ban-evading alts using your own server's ban and kick history, the matching signals, the /altguard command, and how it differs from the cross-server ThreatNet.

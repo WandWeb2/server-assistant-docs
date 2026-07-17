@@ -3,7 +3,7 @@ layout: wiki
 title: Server Assistant Wiki
 permalink: /wiki/
 wiki: true
-wiki_category: Getting started
+wiki_category: "Getting Started"
 summary: The complete Server Assistant reference, every command, every wizard, and every flow, with live examples of what you'll see in Discord.
 wiki_keywords: [wiki, reference, commands, guide, help, documentation, examples]
 description: The complete Server Assistant reference, every command, wizard and flow, each shown with a live example of what you'll see in Discord.

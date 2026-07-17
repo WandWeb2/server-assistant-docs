@@ -3,7 +3,7 @@ layout: wiki
 title: "Crestbound"
 permalink: /wiki/crestbound/
 wiki: true
-wiki_category: "XP & leveling"
+wiki_category: "Features"
 summary: Crestbound is the Crest-collecting game in the Server Assistant portal. Spend the XP you earn in Discord on booster packs, collect the Crests of the first Chapter, Embers of the First War, across four rarities, discover brand-new Crests and bring their art to light, complete your collection, and burn spare Crests back into XP. A full player guide to My Collection, booster packs, discovering Crests and burning.
 wiki_keywords: [crestbound, crests, crest, chapter, wardeck, wardecks, battle mode, five crests, faction, factions, warsworn, undertow, bonereave, ragefire, grimwild, card game, tcg, collection, booster, booster pack, pack, burn, rarity, common, uncommon, rare, mythic, embers of the first war, xp games, portal, discover, discovery, kindle, illuminate, grand reveal, unveil, first light, achievement, crest art, artwork, discovered by, credit, share, cinders, ember vault, card backs, cosmetics, shop, quests, daily quests, main menu, fullscreen, sort, filter]
 description: A player guide to Crestbound, the XP-powered Crest-collecting game in the Server Assistant portal. Earn XP in Discord, open booster packs, discover brand-new Crests and bring their artwork to light, collect the Crests of the first Chapter, Embers of the First War, burn spare Crests back into XP, and gear up the Shop's card backs and Ember Vault.

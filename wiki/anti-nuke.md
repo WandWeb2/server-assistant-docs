@@ -3,7 +3,7 @@ layout: wiki
 title: Server Assistant Anti-Nuke / Rogue-Admin Guard
 permalink: /wiki/anti-nuke/
 wiki: true
-wiki_category: Moderation & safety
+wiki_category: "Moderation"
 summary: The anti-nuke guard watches for catastrophic admin bursts, mass channel/role deletes, mass bans/kicks, permission grabs, and stops a server nuke or a compromised admin account in its tracks. A deep-dive on detection, auto-quarantine with one-tap revert, the exact restore engine, the whitelist, and the two-person rule.
 wiki_keywords: [anti-nuke, antinuke, nuke, rogue admin, compromised account, server wipe, mass delete, quarantine, restore, permission grab, security]
 description: How Server Assistant's anti-nuke guard detects and stops a server nuke or compromised admin, auto-quarantine with one-tap revert, exact permission restore, the trusted-actor whitelist, and the two-person rule.

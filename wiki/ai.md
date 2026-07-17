@@ -3,7 +3,7 @@ layout: wiki
 title: "AI & intelligence"
 permalink: /wiki/ai/
 wiki: true
-wiki_category: "AI & intelligence"
+wiki_category: "Features"
 summary: Server Assistant's AI toolkit, tune the bot in plain English with /sai, generate images with /imagine, translate on the spot, run a neutral /mediate between members, get a weekly mod retrospective, and read your server stats. Each shown exactly as it appears in Discord.
 wiki_keywords: [ai, sai, concierge, imagine, img, image generation, translate, translation, mediate, mediation, retro, retrospective, stats, statistics, premium, byok]
 description: A full reference for Server Assistant's AI and intelligence commands, each shown one state at a time exactly as it appears in Discord.

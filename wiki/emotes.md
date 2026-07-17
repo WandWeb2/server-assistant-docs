@@ -3,7 +3,7 @@ layout: wiki
 title: "Emote commands"
 permalink: /wiki/emotes/
 wiki: true
-wiki_category: "Engagement"
+wiki_category: "Features"
 summary: Post the perfect reaction GIF with /emote, /e, /cry, /hug, /dance and more, hundreds of emotes with autocomplete, an AI-picked theme that fits your server, a personal default theme via /emotestyle, @member targeting, and server controls in /settings.
 wiki_keywords: [emote, emotes, /emote, /e, /cry, /hug, /dance, /meme, meme, memes, gif, gifs, reaction, react, klipy, emotestyle, theme, flavor pack, /settings emotes]
 description: How Server Assistant's emote commands work, /emote and its shortcuts post a themed GIF, the AI picks a fitting theme for bare emotes (using your AI allowance, free trial included), /emotestyle sets your personal default, and owners tune it all in /settings.

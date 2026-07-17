@@ -3,7 +3,7 @@ layout: wiki
 title: Server Assistant Moderation & Safety
 permalink: /wiki/moderation/
 wiki: true
-wiki_category: Moderation & safety
+wiki_category: "Moderation"
 summary: Every moderation and safety command, warnings, notes, mutes, locks, kicks, bans, bulk purge and the anti-raid toolkit, each shown with the exact embed you'll see in Discord.
 wiki_keywords: [warn, warnings, note, mute, kick, ban, tempban, softban, purge, lockdown, altguard, slowmode, lock, role, moderation, safety]
 description: A full reference for Server Assistant's moderation and safety commands, each shown one state at a time exactly as it appears in Discord.

@@ -3,7 +3,7 @@ layout: wiki
 title: Server Assistant Audit Log
 permalink: /wiki/audit-log/
 wiki: true
-wiki_category: Feature guides
+wiki_category: "Moderation"
 summary: How Server Assistant keeps a reliable, tamper-proof record of every moderation action, an always-on log in your web dashboard, an optional Discord log channel, and a separate encrypted record staff can't quietly wipe.
 wiki_keywords: [audit, audit log, audit trail, log, logging, log channel, mod-log, moderation history, accountability, tamper-proof, native actions, command usage]
 description: A deep dive into Server Assistant's tamper-proof audit log, what gets recorded, why it can't be quietly wiped, and how to set your log channel.

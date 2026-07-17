@@ -3,7 +3,7 @@ layout: wiki
 title: Server Assistant Setup
 permalink: /wiki/setup/
 wiki: true
-wiki_category: Getting started
+wiki_category: "Getting Started"
 summary: A screen-by-screen walkthrough of the /setup wizard, preflight checks, channels, roles, permission review, AI and the welcome guide. Step through every state.
 wiki_keywords: [setup, wizard, onboarding, channels, roles, permissions, automod, ai, byok, getting started, configure]
 description: Every screen of the Server Assistant /setup wizard, shown one state at a time exactly as it appears in Discord.

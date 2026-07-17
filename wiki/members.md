@@ -3,7 +3,7 @@ layout: wiki
 title: "Member experience"
 permalink: /wiki/members/
 wiki: true
-wiki_category: "Member experience"
+wiki_category: "Features"
 summary: What your members and newcomers actually see, the welcome DM, the Reception verification desk, the ban-appeal conversation, self-service role panels, custom commands and the staff profile lookup. Every flow shown exactly as it appears in Discord.
 wiki_keywords: [welcome, onboarding, verify, verification, ban appeal, appeal, unban, rolepanel, role panel, self-service roles, customcmd, custom commands, info, member, profile]
 description: A member-facing reference for Server Assistant, the welcome DM, the Reception verification desk, the ban-appeal flow, self-service role panels, custom commands and the /info lookup, each shown one state at a time exactly as it appears in Discord.
