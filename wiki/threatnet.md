@@ -14,7 +14,7 @@ description: How ThreatNet, Server Assistant's cross-server safety network, work
 **ThreatNet** is Server Assistant's **cross-server threat network**. Protected
 servers contribute **minimized, severity-only** abuse signals, so an account
 with a serious, corroborated history of scams, raids or ban-evasion **on other
-servers** lights up on yours, ideally *before* they cause harm.
+servers** lights up on yours, ideally *before* it causes harm.
 
 It's the cross-server counterpart to
 [alt / ban-evasion detection]({{ '/wiki/altguard/' | relative_url }}): altguard
@@ -53,30 +53,30 @@ same opt-out as the rest of ThreatNet.
 
 ## Advisory by default <span class="cmd-tag free">FREE</span>
 
-For every server, the network signal is **advisory**, it does **not** ban,
-kick or sanction anyone on its own. It surfaces a risk band (low · elevated
-· high) to your human staff on user profiles, and they decide what (if
-anything) to do. Bands are tuned conservatively to favour false-negatives over
-false-positives, and the read is **explainable** (it shows what drove it). The
-advisory band is free for every server; Premium adds the richer cross-server
-dossier (how many distinct servers corroborate a signal, and recency).
+The network signal is **advisory**: it does **not** ban, kick or sanction
+anyone on its own. It surfaces a risk band (low · elevated · high) to your human
+staff on user profiles, and they decide what, if anything, to do. Bands are
+tuned conservatively to favour false-negatives over false-positives, and the
+read is **explainable** (it shows what drove it). The advisory band is free for
+every server; Premium adds the richer cross-server dossier (how many distinct
+servers corroborate a signal, and recency).
 
 ## Scam-image defense <span class="cmd-tag free">FREE</span> {#scam-image-defense}
 
-A lot of scams don't say a word, they're a **picture**. A throwaway account
-joins and posts a screenshot: a fake "withdrawal received" or investment-profit
+Many scams don't say a word, they're a **picture**. A throwaway account joins
+and posts a screenshot: a fake "withdrawal received" or investment-profit
 payout, a "you won the giveaway" notice, a staged testimonial. The whole pitch
-lives inside the image, so plain text filters never see it.
+lives inside the image, so text filters never see it.
 
-ThreatNet now reads those attachments. When an image is posted, the bot takes a
+ThreatNet reads those attachments. When an image is posted, the bot takes a
 **perceptual fingerprint** of it, a compact signature that still matches even if
 the picture is cropped, re-saved or lightly edited, and checks it against a
 **cross-server scam-image blocklist** built from confirmed reports. A match means
-the same scam image has been caught on other servers already.
+the same scam image has already been caught on other servers.
 
 **It's on by default for every server, on every plan.** When an image matches a
 known scam, the default response is to **remove the image and time the poster
-out**. Each server can soften that in settings to suit its community:
+out**. Each server can soften that in settings:
 
 - **Remove + time-out** *(default)*: the strongest response for a confirmed match.
 - **Quarantine**: pull the image and hold it for staff to review, without
@@ -100,10 +100,9 @@ out**. Each server can soften that in settings to suit its community:
 
 A blocklist only knows the scams it has already seen. On **AI-enabled plans**, an
 image from a **brand-new member** that *isn't* on the blocklist gets an extra
-**AI vision check** for the tell-tale signs of a never-seen scam. When the same
-new pattern is corroborated across several servers, it **teaches the network**, 
-so the scam that slips past one server is on the blocklist by the time it reaches
-the next.
+**AI vision check** for the signs of a never-seen scam. When the same new pattern
+is corroborated across several servers, it **teaches the network**, so a scam
+that slips past one server is on the blocklist by the time it reaches the next.
 
 > **Privacy.** Only an irreversible **perceptual fingerprint** of a flagged image
 > ever leaves your server, never the image itself, and it isn't linked to any
@@ -116,11 +115,11 @@ the next.
 Premium servers can turn on **auto-protect**: a user who joins meeting a
 **cross-server risk threshold you choose** is **banned automatically on join**.
 The default is the **highest band** (serious *and* corroborated across two or
-more independent servers, the safest); you can set a broader level, which acts
-on weaker signals and carries more risk of a mistake.
+more independent servers, the safest); a broader level acts on weaker signals
+and carries more risk of a mistake.
 
-Turn it on with **`/threatnet autoban on`** (optionally pass a `level`), or from
-**`/settings → Security → ThreatNet`**, both set the same per-server control.
+Turn it on with **`/threatnet autoban on`** (optionally with a `level`), or from
+**`/settings → Security → ThreatNet`**; both set the same per-server control.
 It's **off by default**.
 
 Because it's an **automated** action, it ships with safeguards:
@@ -128,11 +127,11 @@ Because it's an **automated** action, it ships with safeguards:
 - **Opted-out users are never auto-banned.**
 - Every auto-ban is written to your **audit log**, clearly attributed to the
   automated system.
-- The ban is **silent**: there is **no DM and no in-server appeal ticket**
-  (unlike a [normal ban]({{ '/wiki/ban-appeals/' | relative_url }})). The
-  automated decision is disclosed in our Privacy Policy and stays
-  **contestable via the web portal**, so it is *not* unappealable; the recourse
-  simply runs through the portal rather than your server.
+- The ban is **silent**: **no DM and no in-server appeal ticket** (unlike a
+  [normal ban]({{ '/wiki/ban-appeals/' | relative_url }})). The automated
+  decision is disclosed in our Privacy Policy and stays **contestable via the
+  web portal**, so it is *not* unappealable; recourse simply runs through the
+  portal rather than your server.
 
 <div class="cmd-card">
   <div class="cmd-head">
@@ -180,8 +179,8 @@ ThreatNet is a **core, on-by-default** safety feature for every server.
 **Individuals** can opt out of profiling from the
 [web portal](https://serverassistant.wandweb.co), subject to a published safety
 exception. The full opt-out model, what's recorded, retention and the lawful
-basis are set out on the **[Privacy page]({{ '/privacy/' | relative_url }})**, 
-the authoritative source for all of that.
+basis are set out on the **[Privacy page]({{ '/privacy/' | relative_url }})**,
+the authoritative source for all of it.
 
 ## See also
 
