@@ -11,18 +11,18 @@ description: Every screen of the Server Assistant /setup wizard, shown one state
 
 # The `/setup` wizard
 
-`/setup` is how Server Assistant gets configured for your server. It's a short,
-guided flow: the bot detects sensible defaults, fills them in for you, and you
-just confirm each screen. The whole thing takes about a minute.
+`/setup` configures Server Assistant for your server: a short guided flow where
+the bot detects sensible defaults, fills them in, and you confirm each screen.
+About a minute, start to finish.
 
-You can reach it three ways:
+Three ways to reach it:
 
-- **Automatically**: when the bot joins, it DMs the server owner a **Welcome**
-  message that opens the wizard.
-- **`/setup`**: run it in your server any time to re-open the wizard (it
-  pre-fills your *current* configuration, not a blank slate).
+- **Automatically**: when the bot joins, it DMs the owner a **Welcome** message
+  that opens the wizard.
+- **`/setup`**: run it any time to re-open the wizard (it pre-fills your
+  *current* configuration, not a blank slate).
 - **Web portal**: the wizard offers a *“finish setup on the web”* link to
-  [the portal]({{ '/portal/' | relative_url }}) if you'd rather click through a browser.
+  [the portal]({{ '/portal/' | relative_url }}) if you'd rather use a browser.
 
 > **Who can run it:** the server **owner**, or an admin with **Manage Server**.
 
@@ -92,7 +92,7 @@ details.tshoot .body code { color: var(--accent); }
 
 ## Quick start
 
-You're set up in about a minute, the bot does the work, you just confirm.
+The bot does the work; you just confirm. About a minute.
 
 <div class="steprow c-blue">
   <div class="stext">
@@ -175,7 +175,7 @@ You're set up in about a minute, the bot does the work, you just confirm.
   </div>
 </div>
 
-<p style="text-align:center; font-size:.85rem; color:var(--ink-soft); margin:1.1rem 0 0;">Prefer one command? <code>/autopilot</code> opens this same wizard with every step already pre-filled from your detected channels and roles, same screens, same result, nothing saved until you finish. <strong>However you set up</strong>, the wizard, <code>/autopilot</code>, or the <a href="https://serverassistant.wandweb.co">web portal</a>, you land in the same place: channels and roles configured, a moderation profile matched to your community, and the free AI trial on.</p>
+<p style="text-align:center; font-size:.85rem; color:var(--ink-soft); margin:1.1rem 0 0;">Prefer one command? <code>/autopilot</code> opens this same wizard with every step pre-filled from your detected channels and roles, nothing saved until you finish. <strong>However you set up</strong>, wizard, <code>/autopilot</code>, or <a href="https://serverassistant.wandweb.co">web portal</a>, you land in the same place: channels and roles configured, a moderation profile matched to your community, and the free AI trial on.</p>
 
 ### Nice first touches
 
@@ -188,11 +188,9 @@ You're set up in about a minute, the bot does the work, you just confirm.
 
 ## Step through every screen
 
-Want the detail behind each confirmation? Here's the wizard, screen by screen.
-
-Use **Next ›** and **‹ Back** to walk each state, including the two
-*conditional* screens (Preflight and Permission review) that only appear when the
-bot needs them.
+Here's the wizard, screen by screen. Use **Next ›** and **‹ Back** to walk each
+state, including the two *conditional* screens (Preflight and Permission review)
+that only appear when the bot needs them.
 
 <div class="wiz" data-wiz>
   <div class="wiz-bar">
@@ -219,7 +217,7 @@ bot needs them.
         </div>
       </div></div>
     </div>
-    <p class="wiz-caption"><strong>Only shows if something's missing.</strong> If the bot already has the permissions it needs, the wizard skips straight to Step 1. “Re-check” re-reads the bot's permissions after you fix them; “Continue anyway” proceeds and the bot does what it can.</p>
+    <p class="wiz-caption"><strong>Only shows if something's missing.</strong> If the bot already has what it needs, the wizard skips to Step 1. <strong>Re-check</strong> re-reads permissions after you fix them; <strong>Continue anyway</strong> proceeds with what the bot can do.</p>
   </div>
 
   <div class="wiz-step" data-step="Step 1 · Channels">
@@ -242,7 +240,7 @@ bot needs them.
         </div>
       </div></div>
     </div>
-    <p class="wiz-caption"><strong>Channels.</strong> Pick the <em>staff chat</em> (the command listening post); a <em>log channel</em> is optional, your dashboard moderation log is always on either way, so choose <strong>Portal only</strong> to skip it. The bot pre-fills what it detected. <strong>Looks good, pick roles</strong> moves you on to the quick, three-step wizard (channels → roles → AI); use <strong>Create for me</strong> to make fresh channels. Tags read <code>(detected)</code> on a new server, or <code>(current)</code> if you're re-running setup.</p>
+    <p class="wiz-caption"><strong>Channels.</strong> Pick the <em>staff chat</em> (the command listening post). A <em>log channel</em> is optional, your dashboard moderation log is always on, so <strong>Portal only</strong> skips it. The bot pre-fills what it detected. <strong>Looks good, pick roles</strong> moves to the three-step wizard (channels → roles → AI); <strong>Create for me</strong> makes fresh channels. Tags read <code>(detected)</code> on a new server, <code>(current)</code> when you re-run setup.</p>
   </div>
 
   <div class="wiz-step" data-step="Step 2 · Roles">
@@ -262,7 +260,7 @@ bot needs them.
         </div>
       </div></div>
     </div>
-    <p class="wiz-caption"><strong>Roles.</strong> Choose your <em>Admin</em> and <em>Moderator</em> roles, the colour emoji mirrors each role's colour so they're easy to spot. No suitable roles yet? <strong>Create Admin + Mod</strong> generates them with sensible permissions. The owner is always treated as full-access, so an owner role is optional.</p>
+    <p class="wiz-caption"><strong>Roles.</strong> Choose your <em>Admin</em> and <em>Moderator</em> roles; the colour emoji mirrors each role's colour. No suitable roles yet? <strong>Create Admin + Mod</strong> generates them with sensible permissions. The owner is always full-access, so an owner role is optional.</p>
   </div>
 
   <div class="wiz-step" data-step="Permission review">
@@ -281,7 +279,7 @@ bot needs them.
         </div>
       </div></div>
     </div>
-    <p class="wiz-caption"><strong>Only shows if a tidy-up is needed.</strong> If your staff roles are missing a permission they need, or <code>@everyone</code> has a risky one, the bot lists the exact change and waits for your <strong>Approve &amp; apply</strong>. If it can't make a change because of role hierarchy, this becomes a <strong>Re-check</strong> after you move its role up.</p>
+    <p class="wiz-caption"><strong>Only shows if a tidy-up is needed.</strong> If your staff roles lack a permission they need, or <code>@everyone</code> has a risky one, the bot lists the exact change and waits for <strong>Approve &amp; apply</strong>. If role hierarchy blocks a change, this becomes a <strong>Re-check</strong> after you move the bot's role up.</p>
   </div>
 
   <div class="wiz-step" data-step="Last step · community type">
@@ -301,7 +299,7 @@ bot needs them.
         </div>
       </div></div>
     </div>
-    <p class="wiz-caption"><strong>Community type.</strong> The bot guesses your <em>community type</em> from your server name and description (Gaming, Creator, Anime, Crypto, Education, DIY and more) and uses it to preset AutoMod, the punishment ladder and anti-raid. <strong>You're not asked for an AI key</strong>, the free 150k-token trial is on by default. Prefer to run on your own key with no trial limit? Set it up any time with <code>/ai-config</code>.</p>
+    <p class="wiz-caption"><strong>Community type.</strong> The bot guesses your <em>community type</em> from your server name and description (Gaming, Creator, Anime, Crypto, Education, DIY and more) to preset AutoMod, the punishment ladder and anti-raid. <strong>You're not asked for an AI key</strong>: the free 150k-token trial is on by default. Prefer your own key with no trial limit? Set it up any time with <code>/ai-config</code>.</p>
   </div>
 
   <div class="wiz-step" data-step="Setup complete">
@@ -322,17 +320,16 @@ bot needs them.
         </div>
       </div></div>
     </div>
-    <p class="wiz-caption"><strong>Done.</strong> A recap of everything that was configured. <strong>Post welcome to staff chat</strong> drops a short “how to drive the bot” guide into your staff channel for the rest of your team (on a re-run this becomes <strong>Re-post</strong>). From here, try <code>/help</code> or open <code>/settings</code> to fine-tune anything.</p>
+    <p class="wiz-caption"><strong>Done.</strong> A recap of everything configured. <strong>Post welcome to staff chat</strong> drops a short “how to drive the bot” guide into your staff channel (on a re-run this becomes <strong>Re-post</strong>). From here, try <code>/help</code> or open <code>/settings</code> to fine-tune.</p>
   </div>
 </div>
 
 ## What if I want to change something later?
 
 Nothing here is one-shot. Re-run **`/setup`** any time, it loads your current
-configuration so you can adjust a single thing without starting over. For
-deeper, per-feature control, open the **Settings hub** with `/settings`, or
-manage AutoMod, onboarding and the rest from their own commands (each gets its
-own page in this wiki).
+configuration so you can change one thing without starting over. For per-feature
+control, open the **Settings hub** with `/settings`, or use each tool's own
+command (AutoMod, onboarding and the rest, each with its own page here).
 
 ## If something needs a nudge
 

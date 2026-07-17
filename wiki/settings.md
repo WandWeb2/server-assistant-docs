@@ -11,9 +11,8 @@ description: Every Server Assistant configuration dashboard, the /settings hub a
 
 # Settings hub & configuration
 
-Once Server Assistant is set up, **`/settings`** is your control panel. It opens a
-single hub, now organised into **four sections** so you can jump straight to the
-area you want without scrolling past everything else:
+Once Server Assistant is set up, **`/settings`** is your control panel, a single
+hub in **four sections**:
 
 - **Settings**: branding, quick presets, behaviour, role tiers, AI config,
   white-label, snippets, custom commands and FAQ.
@@ -22,16 +21,13 @@ area you want without scrolling past everything else:
 - **Security**: AutoMod, anti-nuke, scam images, the channel allowlist,
   privacy and backups.
 
-Several tools used to live *only* behind their own slash command, AutoMod, AI
-config, onboarding, privacy, backups, white-label, snippets, custom commands, FAQ
-and role panels. They're now **also reachable from the matching `/settings`
-section**, so you can configure everything from one place. Those slash commands
-still work exactly as before, and every Premium or permission requirement is
-unchanged, the section is just another door to the same tool.
+Many of these tools also have their own slash command (AutoMod, AI config,
+onboarding, privacy, backups, white-label, snippets, custom commands, FAQ, role
+panels). The `/settings` section is just another door to the same tool: the
+commands still work as before, with the same Premium and permission requirements.
 
-This page covers the **Settings hub** and the handful of standalone commands that
-sit alongside it: `/autopilot`, `/privacy`, `/onboarding`, `/snippets`,
-`/timezone` and `/schedule`.
+This page covers the **Settings hub** and the standalone commands alongside it:
+`/autopilot`, `/privacy`, `/onboarding`, `/snippets`, `/timezone` and `/schedule`.
 
 > **Who can configure:** the server **owner** or an **admin** role. `/timezone`
 > is the exception, anyone can set their *own* timezone.
@@ -44,7 +40,7 @@ sit alongside it: `/autopilot`, `/privacy`, `/onboarding`, `/snippets`,
     <span class="cmd-tag free">FREE</span>
     <span class="cmd-tag perm">ADMIN</span>
   </div>
-  <p class="cmd-desc">Open the settings hub, four sections covering every part of the bot. Takes no arguments; everything is done with buttons and dropdowns.</p>
+  <p class="cmd-desc">Open the settings hub. No arguments; everything is done with buttons and dropdowns.</p>
   <table class="cmd-args">
     <tr><th>Argument</th><th>Type</th><th>Notes</th></tr>
     <tr><td colspan="3" style="color:var(--fg-2)">No arguments, the hub is fully interactive.</td></tr>
@@ -71,12 +67,11 @@ sit alongside it: `/autopilot`, `/privacy`, `/onboarding`, `/snippets`,
   </div>
 </div>
 
-<p style="color:var(--fg-1);font-size:.9rem;line-height:1.55;">Each button opens that section's own panel of tools. <strong>Settings</strong> holds branding, quick presets, behaviour, role tiers, AI config, white-label, snippets, custom commands and FAQ; <strong>Members</strong> covers new members, verification, onboarding and role panels; <strong>Notifications</strong> is event role-pings and alert toggles; and <strong>Security</strong> gathers AutoMod, anti-nuke, scam images, the channel allowlist, privacy and backups. The tools shown below appear under whichever section fits them.</p>
+<p style="color:var(--fg-1);font-size:.9rem;line-height:1.55;">Each button opens that section's own panel of tools (contents listed above). The tools shown below appear under whichever section fits them.</p>
 
 ### Step through every tab
 
-Use **Next ›** and **‹ Back** to walk each tab of the hub, including the modal
-forms that open from some of them.
+Use **Next ›** and **‹ Back** to walk each tab, including the modal forms some open.
 
 <div class="wiz" data-wiz>
   <div class="wiz-bar">
@@ -107,7 +102,7 @@ forms that open from some of them.
         </div>
       </div></div>
     </div>
-    <p class="wiz-caption"><strong>Branding.</strong> Pick the colour of every embed the bot posts from the dropdown (Blue, Red, Green, Gold, Discord Blurple and more), or open <strong>Custom hex colour</strong> to enter any hex like <code>#5865F2</code>. <strong>Set bot nickname</strong> changes the bot's display name in your server, and <strong>Default timezone</strong> sets the server-wide timezone used for digests and time displays.</p>
+    <p class="wiz-caption"><strong>Branding.</strong> Pick the embed colour from the dropdown (Blue, Red, Green, Gold, Discord Blurple and more), or <strong>Custom hex colour</strong> for any hex like <code>#5865F2</code>. <strong>Set bot nickname</strong> changes the bot's display name in your server; <strong>Default timezone</strong> sets the server-wide timezone for digests and time displays.</p>
   </div>
 
   <div class="wiz-step" data-step="Custom hex colour (modal)">
@@ -123,7 +118,7 @@ forms that open from some of them.
         </div>
       </div></div>
     </div>
-    <p class="wiz-caption"><strong>The colour form.</strong> Opens from <strong>Custom hex colour</strong>. Paste any hex value, with or without the leading <code>#</code> (or in <code>0x</code> form). The two sibling buttons open similar one-field forms, a <em>bot nickname</em> (up to 32 characters; leave blank to reset) and a <em>default timezone</em> (an IANA name like <code>Australia/Sydney</code>).</p>
+    <p class="wiz-caption"><strong>The colour form.</strong> Paste any hex value, with or without the leading <code>#</code> (or in <code>0x</code> form). The sibling buttons open similar one-field forms: a <em>bot nickname</em> (up to 32 characters; blank to reset) and a <em>default timezone</em> (an IANA name like <code>Australia/Sydney</code>).</p>
   </div>
 
   <div class="wiz-step" data-step="Quick Presets">
@@ -145,7 +140,7 @@ forms that open from some of them.
         </div>
       </div></div>
     </div>
-    <p class="wiz-caption"><strong>Quick Presets.</strong> Four dropdowns that each set a whole bundle in one tap: an <em>AutoMod preset</em> (Off, Scams only, Scams + slurs, or Strict), a <em>punishment ladder</em> (Gentle, Standard or Strict), an <em>onboarding template</em> (Friendly, Gaming, Professional, Minimal or Custom), and <em>anti-raid sensitivity</em> (Off, Normal, or Strict). The same presets the setup wizard applies from your community type, handy for changing your whole posture quickly.</p>
+    <p class="wiz-caption"><strong>Quick Presets.</strong> Four dropdowns, each setting a whole bundle in one tap: <em>AutoMod preset</em> (Off, Scams only, Scams + slurs, or Strict), <em>punishment ladder</em> (Gentle, Standard or Strict), <em>onboarding template</em> (Friendly, Gaming, Professional, Minimal or Custom), and <em>anti-raid sensitivity</em> (Off, Normal, or Strict). These are the presets the setup wizard applies from your community type, handy for changing your whole posture at once.</p>
   </div>
 
   <div class="wiz-step" data-step="Behavior">
@@ -176,7 +171,7 @@ forms that open from some of them.
         </div>
       </div></div>
     </div>
-    <p class="wiz-caption"><strong>Behavior.</strong> Controls how much the bot logs (all actions, dangerous-only, or errors-only) and which day the weekly digest lands. The toggles switch on or off the weekly digest, mentions outside your staff chat, the bot's own self-checks (Health Insurance), the advisory <span class="wiki-prem">PREMIUM</span> <em>Threat Score</em> display, dev-update notes, and the weekly mod-team recap. <strong>Approval timeout</strong> opens a form to set how long (30 to 300 seconds) a dangerous-action approval stays open.</p>
+    <p class="wiz-caption"><strong>Behavior.</strong> Controls how much the bot logs (all actions, dangerous-only, or errors-only) and which day the weekly digest lands. The toggles cover the weekly digest, mentions outside your staff chat, self-checks (Health Insurance), the advisory <span class="wiki-prem">PREMIUM</span> <em>Threat Score</em> display, dev-update notes, and the weekly mod-team recap. <strong>Approval timeout</strong> sets how long (30 to 300 seconds) a dangerous-action approval stays open.</p>
   </div>
 
   <div class="wiz-step" data-step="New Members">
@@ -199,7 +194,7 @@ forms that open from some of them.
         </div>
       </div></div>
     </div>
-    <p class="wiz-caption"><strong>New Members.</strong> Choose a role to grant automatically when someone joins, and set the emoji the bot reacts with to welcome them. <strong>Set welcome emoji</strong> opens a one-field form that accepts a standard emoji, a <code>:shortcode:</code>, or a custom <code>&lt;:name:id&gt;</code> emoji. The two <strong>Clear</strong> buttons reset each setting.</p>
+    <p class="wiz-caption"><strong>New Members.</strong> Choose a role to grant automatically on join, and the emoji the bot reacts with to welcome them. <strong>Set welcome emoji</strong> accepts a standard emoji, a <code>:shortcode:</code>, or a custom <code>&lt;:name:id&gt;</code> emoji. The <strong>Clear</strong> buttons reset each setting.</p>
   </div>
 
   <div class="wiz-step" data-step="Verification · Reception">
@@ -220,7 +215,7 @@ forms that open from some of them.
         </div>
       </div></div>
     </div>
-    <p class="wiz-caption"><strong>Verification.</strong> New members land at <strong>Reception</strong>, an in-server welcome desk with a banner, greeting and a <strong>Verify me</strong> button that opens a quick are-you-human check (a wrong answer just retries, never bans). Pick the role handed out on success, then choose <strong>who gets held</strong>: <strong>Off</strong> (no gate), <strong>Intelligent</strong> (holds only risk-scored joins for staff to <em>Approve / Kick / Ban</em>) or <strong>On</strong> (everyone verifies). You have to choose a role before you can switch the gate on. On <span class="wiki-prem">PREMIUM</span>, <strong>Reception desk</strong> adds a banner image, a custom receptionist name and persona, and a concierge members can chat with at the desk.</p>
+    <p class="wiz-caption"><strong>Verification.</strong> New members land at <strong>Reception</strong>, an in-server welcome desk with a banner, greeting and a <strong>Verify me</strong> button that opens a quick are-you-human check (a wrong answer just retries, never bans). Pick the role handed out on success, then choose <strong>who gets held</strong>: <strong>Off</strong> (no gate), <strong>Intelligent</strong> (holds only risk-scored joins for staff to <em>Approve / Kick / Ban</em>) or <strong>On</strong> (everyone verifies). You must choose a role before the gate can switch on. On <span class="wiki-prem">PREMIUM</span>, <strong>Reception desk</strong> adds a banner image, a custom receptionist name and persona, and a concierge members can chat with.</p>
   </div>
 
   <div class="wiz-step" data-step="Channel Allowlist">
@@ -238,7 +233,7 @@ forms that open from some of them.
         </div>
       </div></div>
     </div>
-    <p class="wiz-caption"><strong>Channel Allowlist.</strong> By default the bot works everywhere it can see. Add channels here to restrict it to just those, or use <strong>Clear allowlist (allow all)</strong> to go back to listening everywhere. Useful if you want commands confined to a couple of staff channels.</p>
+    <p class="wiz-caption"><strong>Channel Allowlist.</strong> By default the bot works everywhere it can see. Add channels here to restrict it to just those, or <strong>Clear allowlist (allow all)</strong> to reset. Useful for confining commands to a couple of staff channels.</p>
   </div>
 
   <div class="wiz-step" data-step="Role Tiers">
@@ -259,7 +254,7 @@ forms that open from some of them.
         </div>
       </div></div>
     </div>
-    <p class="wiz-caption"><strong>Role Tiers.</strong> Maps your Discord roles to what they're allowed to do. <strong>Add custom tier</strong> picks a role and a template, <em>Owner</em> (full access), <em>Admin</em> (most actions) or <em>Moderator</em> (the core mod toolkit). <strong>Add co-owner</strong> (owner-only) grants a role full owner-level access. The dropdown removes a tier. The server owner always has full access regardless.</p>
+    <p class="wiz-caption"><strong>Role Tiers.</strong> Maps your Discord roles to what they can do. <strong>Add custom tier</strong> picks a role and a template: <em>Owner</em> (full access), <em>Admin</em> (most actions) or <em>Moderator</em> (the core mod toolkit). <strong>Add co-owner</strong> (owner-only) grants full owner-level access. The dropdown removes a tier. The server owner always has full access regardless.</p>
   </div>
 
   <div class="wiz-step" data-step="Notifications">
@@ -280,7 +275,7 @@ forms that open from some of them.
         </div>
       </div></div>
     </div>
-    <p class="wiz-caption"><strong>Notifications.</strong> Opening this section now drops you straight onto the notification options, no extra menu step in between. Toggles celebratory milestone cards, product announcements and service notices, and native-action alerts (logging when staff moderate directly in Discord). <strong>Instant alerts →</strong> opens the role-ping screen. (Pulse now lives in the web portal, see the note below.)</p>
+    <p class="wiz-caption"><strong>Notifications.</strong> Toggles celebratory milestone cards, product announcements and service notices, and native-action alerts (logging when staff moderate directly in Discord). <strong>Instant alerts →</strong> opens the role-ping screen. (Pulse now lives in the web portal, see the note below.)</p>
   </div>
 
   <div class="wiz-step" data-step="Instant alerts">
@@ -300,16 +295,15 @@ forms that open from some of them.
         </div>
       </div></div>
     </div>
-    <p class="wiz-caption"><strong>Instant alerts.</strong> Choose which roles get an immediate ping for each urgent event: an <em>anti-raid</em> trigger, a <em>dangerous-action approval</em> request, and an <em>AutoMod escalation</em> (only timeouts, kicks and bans). Leave any of them empty for no ping.</p>
+    <p class="wiz-caption"><strong>Instant alerts.</strong> Choose which roles get an immediate ping for each urgent event: an <em>anti-raid</em> trigger, a <em>dangerous-action approval</em> request, and an <em>AutoMod escalation</em> (only timeouts, kicks and bans). Leave any empty for no ping.</p>
   </div>
 </div>
 
 > **Pulse has moved.** The server-health digest no longer posts to a Discord
-> channel on a schedule you set here, there's no cadence, destination or “send a
-> sample” to configure in `/settings` any more. Pulse is now **always on in the
+> channel on a schedule set here. Pulse is now **always on in the
 > [web portal]({{ '/portal/' | relative_url }})**, and each staff member can have
-> it **DM'd to them** on their own cadence (Off, Weekly or Monthly), set from the
-> portal. It's still counts-only, no message content is stored.
+> it **DM'd** on their own cadence (Off, Weekly or Monthly), set from the portal.
+> Still counts-only: no message content is stored.
 
 ## `/autopilot`
 
@@ -319,7 +313,7 @@ forms that open from some of them.
     <span class="cmd-tag free">FREE</span>
     <span class="cmd-tag perm">ADMIN</span>
   </div>
-  <p class="cmd-desc">An alias for <code>/setup</code>, it opens the same wizard with every step already pre-filled from your detected channels and roles. Review, adjust, then finish. Owner or Manage Server admin.</p>
+  <p class="cmd-desc">An alias for <code>/setup</code> that opens the same wizard with every step pre-filled from your detected channels and roles. Review, adjust, finish. Owner or Manage Server admin.</p>
   <table class="cmd-args">
     <tr><th>Argument</th><th>Type</th><th>Notes</th></tr>
     <tr><td colspan="3" style="color:var(--fg-2)">No arguments, the pre-filled wizard opens; nothing saves until you finish.</td></tr>
@@ -342,13 +336,12 @@ forms that open from some of them.
   </div>
 </div>
 
-`/autopilot` is no longer a separate one-tap apply, it simply opens the same
-pre-filled [`/setup` wizard]({{ '/wiki/setup/' | relative_url }}), with your
-channels, roles and staff detected and filled in for you. If something can't be
-detected, the bot flags it (for example *“none detected, recommend creating a
-private #staff channel”*) so you know what to create. Every step is editable and
-nothing is saved until you finish, so `/autopilot` and `/setup` land you in
-exactly the same place.
+`/autopilot` opens the same pre-filled [`/setup` wizard]({{ '/wiki/setup/' |
+relative_url }}), with your channels, roles and staff detected and filled in. If
+something can't be detected, the bot flags it (for example *“none detected,
+recommend creating a private #staff channel”*) so you know what to create. Every
+step is editable and nothing saves until you finish, so `/autopilot` and
+`/setup` land in the same place.
 
 ## `/privacy`
 
@@ -386,8 +379,8 @@ exactly the same place.
 Each toggle controls one reading feature: **natural-language commands** in your
 staff chat (like `warn @user 30min`), the right-click **Message Report** menu,
 **Pulse** (counts only, no message content is stored), **self-trained AutoMod**
-(which learns from staff deletions), and the bot's **Health Insurance**
-self-checks. Turn off anything you don't want, any time.
+(learns from staff deletions), and the bot's **Health Insurance** self-checks.
+Turn off anything, any time.
 
 ## `/onboarding`
 

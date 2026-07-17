@@ -4,19 +4,18 @@ title: "All commands"
 permalink: /wiki/commands/
 wiki: true
 wiki_category: "Getting Started"
-summary: The full list of Server Assistant commands, every slash command grouped by area (setup, moderation, channels, community & fun, AI & Premium, info & account) plus the right-click menus. marks Premium.
+summary: The full list of Server Assistant commands, every slash command grouped by area (setup, moderation, channels, community & fun, AI & Premium, info & account) plus the right-click menus.
 wiki_keywords: [commands, command list, all commands, command reference, slash commands, /commands, help, cheat sheet, roll, ban, kick, mute, warn, purge, setup, settings, emote, imagine, sai, translate]
-description: A complete reference of every Server Assistant slash command and right-click menu, grouped by area, with a short description of each. marks Premium features.
+description: A complete reference of every Server Assistant slash command and right-click menu, grouped by area, with a short description of each.
 ---
 
-# ⌨All commands
+# All commands
 
 Every Server Assistant command, grouped by area. Type **`/`** in any channel to see
-them with autocomplete, or open **`/help`** in the bot for a role-aware view.
-**= Premium.**
+them with autocomplete, or open **`/help`** for a role-aware view of what you can use.
 
-> Most commands can be run **anywhere**: the bot no longer needs to be in a specific
-> channel. Moderation commands respect your staff roles.
+> Most commands run **anywhere**, the bot needn't be in a specific channel.
+> Moderation commands respect your staff roles.
 
 ## Setup & configuration
 

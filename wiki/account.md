@@ -11,15 +11,14 @@ description: Every account, billing and premium command in Server Assistant, /pr
 
 # Account &amp; premium
 
-This is the home for everything to do with your **plan**: checking your AI
-token allowance, upgrading or topping up, and unlocking the Premium extras like
-white-label branding and server backups. It also gathers the little commands
-that help the bot grow: invites, votes, sharing and the web portal.
+Everything to do with your **plan**: checking your AI token allowance, upgrading
+or topping up, and unlocking Premium extras like white-label branding and server
+backups. Plus the small commands that help the bot grow: invites, votes, sharing
+and the web portal.
 
-> **Who can run these:** most are open to anyone in the server. Where a command
-> changes billing or a Premium setting, the bot checks you're the **server
-> owner** or hold **Manage Server** (or an admin role) first, and says so if
-> you're not.
+> **Who can run these:** most are open to anyone. Where a command changes billing
+> or a Premium setting, the bot first checks you're the **server owner** or hold
+> **Manage Server** (or an admin role), and says so if you're not.
 
 Commands are tagged so you know what you're looking at:
 
@@ -31,9 +30,9 @@ Commands are tagged so you know what you're looking at:
 
 ## Premium &amp; billing {#premium-billing}
 
-`/premium` is your plan dashboard. It shows which plan you're on, how many AI
-tokens you've used this month, and, if you're not yet Premium, the buttons to
-upgrade or grab a one-off token top-up. The reply is private to you.
+`/premium` is your plan dashboard: which plan you're on, how many AI tokens
+you've used this month, and, if you're not yet Premium, buttons to upgrade or
+grab a one-off token top-up. The reply is private to you.
 
 <div class="cmd-card">
   <div class="cmd-head">
@@ -71,7 +70,7 @@ Step through the three things `/premium` does, **check your status**, **upgrade*
         </div>
       </div></div>
     </div>
-    <p class="wiz-caption"><strong>Your plan at a glance.</strong> The top line shows your plan and a usage bar for your AI tokens, the free <strong>150K-token trial</strong>, or your monthly allowance on a paid plan. If you're on <strong>BYOK</strong> (your own key) it simply reads "no cap from us". If the allowance is exhausted, AI features pause but core moderation keeps running.</p>
+    <p class="wiz-caption"><strong>Your plan at a glance.</strong> The top line shows your plan and a usage bar for your AI tokens: the free <strong>150K-token trial</strong>, or your monthly allowance on a paid plan. On <strong>BYOK</strong> (your own key) it reads "no cap from us". If the allowance is exhausted, AI features pause but core moderation keeps running.</p>
   </div>
 
   <div class="wiz-step" data-step="Upgrade options">
@@ -88,7 +87,7 @@ Step through the three things `/premium` does, **check your status**, **upgrade*
         </div>
       </div></div>
     </div>
-    <p class="wiz-caption"><strong>Two ways to go Premium.</strong> <strong>Upgrade Now</strong> ($7/mo) saves your card but only starts billing once your free 150K tokens are used up, if your usage stays light, you may never pay. <strong>BYOK</strong> ($3/mo) runs AI on your own API key (add it first with <code>/ai-config</code>) and is charged straight away. Both are per-server and cancel anytime. Each button opens a secure checkout link.</p>
+    <p class="wiz-caption"><strong>Two ways to go Premium.</strong> <strong>Upgrade Now</strong> ($7/mo) saves your card but only starts billing once your free 150K tokens run out, so light usage may never pay. <strong>BYOK</strong> ($3/mo) runs AI on your own API key (add it first with <code>/ai-config</code>) and is charged straight away. Both are per-server, cancel anytime, and open a secure checkout link.</p>
   </div>
 
   <div class="wiz-step" data-step="Token top-ups">
@@ -109,13 +108,13 @@ Step through the three things `/premium` does, **check your status**, **upgrade*
         </div>
       </div></div>
     </div>
-    <p class="wiz-caption"><strong>Need more tokens this month?</strong> When top-up packs are available, <code>/premium</code> shows a button for each one. They're one-shot purchases that never expire and stack on top of whatever plan you're on, including an already-active Premium subscription, so you can ride out a busy spell without upgrading. Each button opens a secure checkout link.</p>
+    <p class="wiz-caption"><strong>Need more tokens this month?</strong> When top-up packs are available, <code>/premium</code> shows a button for each. They're one-shot purchases that never expire and stack on any plan, including an active Premium subscription, so you can ride out a busy spell without upgrading. Each button opens a secure checkout link.</p>
   </div>
 </div>
 
 For active subscribers, `/premium` instead shows a **Manage billing** button
 (owner-only) that opens the billing portal to update your card, view invoices or
-cancel, plus the top-up buttons if you need extra tokens for a busy month.
+cancel, plus the top-up buttons for extra tokens.
 
 ---
 
@@ -154,7 +153,7 @@ communities. None of these change anything in your server.
     <span class="cmd-name">/portal</span>
     <span class="cmd-tag free">FREE</span>
   </div>
-  <p class="cmd-desc">Open the web portal to manage this server from your browser, settings, moderation, insights, support tickets and your AI assistant <strong>SAi</strong>, all in one place. Sign in with the Discord account that owns or admins the server.</p>
+  <p class="cmd-desc">Manage this server from your browser: settings, moderation, insights, support tickets and your AI assistant <strong>SAi</strong>. Sign in with the Discord account that owns or admins the server.</p>
   <table class="cmd-args">
     <tr><th>Argument</th><th>Type</th><th>Notes</th></tr>
     <tr><td colspan="3"><em>No arguments.</em></td></tr>
@@ -225,7 +224,7 @@ communities. None of these change anything in your server.
     <span class="cmd-name">/share</span>
     <span class="cmd-tag free">FREE</span>
   </div>
-  <p class="cmd-desc">Grab a link to add Server Assistant to another server, a quick way to recommend it to a community that could use a hand. (Premium and white-label servers see a friendly thank-you instead, since the card is just for free servers spreading the word.)</p>
+  <p class="cmd-desc">Grab a link to add Server Assistant to another server, a quick way to recommend it to a community that could use a hand. (Premium and white-label servers see a thank-you instead.)</p>
   <table class="cmd-args">
     <tr><th>Argument</th><th>Type</th><th>Notes</th></tr>
     <tr><td colspan="3"><em>No arguments.</em></td></tr>
@@ -312,10 +311,9 @@ are private to you.
 ## White-label {#white-label}
 
 `/brand` <span class="wiki-prem">PREMIUM</span> rebrands the bot for **your**
-server. Discord only allows one global bot identity, so white-label changes what
-*can* be changed per server: the bot's **nickname** and the **name + icon +
-colour** on the embeds your members see. It's a small panel with a live sample
-so you can see the result as you go.
+server. Discord allows only one global bot identity, so white-label changes what
+*can* vary per server: the bot's **nickname** and the **name, icon and colour**
+on the embeds your members see. A small panel with a live sample.
 
 <div class="cmd-card">
   <div class="cmd-head">
@@ -349,8 +347,7 @@ so you can see the result as you go.
   </div>
 </div>
 
-Press **Name, icon &amp; colour** and a short form pops up to set all three at
-once:
+Press **Name, icon &amp; colour** for a short form that sets all three at once:
 
 <div class="dc">
   <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
@@ -520,10 +517,10 @@ safety record.
 
 <p style="color:var(--fg-1);font-size:.9rem;line-height:1.55;">
 Choosing a level <strong>below High</strong> casts a wider net on weaker
-signals, which raises the chance of banning someone by mistake, the bot warns
-you when you pick one. <strong>High</strong> (serious and corroborated across two
-or more servers) is the safest default. For how the network decides records, what
-it keeps, and how to opt out, see the
+signals, raising the chance of banning someone by mistake; the bot warns you when
+you pick one. <strong>High</strong> (serious and corroborated across two or more
+servers) is the safest default. For how the network decides records, what it
+keeps, and how to opt out, see the
 <a href="{{ '/privacy/' | relative_url }}">Privacy page</a>.</p>
 
 ---
@@ -533,5 +530,3 @@ it keeps, and how to opt out, see the
 - [Pricing]({{ '/pricing/' | relative_url }}), what's free, what's Premium, and the plan comparison
 - [Privacy]({{ '/privacy/' | relative_url }}), how ThreatNet works, what's collected, and how to opt out
 - [Back to the Wiki hub]({{ '/wiki/' | relative_url }})
-</content>
-</invoke>

@@ -13,39 +13,36 @@ description: How Server Assistant's /roll command works, start a timed Need/Gree
 
 <span class="cmd-tag free">FREE</span> &nbsp;`/roll` is on every plan.
 
-Need to decide who gets a prize, a giveaway, or the loot? **`/roll`** runs a quick,
-timed group roll in the classic *World of Warcraft* **"Need before Greed"** style, 
-no spreadsheets, no arguing.
+Deciding who gets a prize, giveaway, or loot drop? **`/roll`** runs a quick, timed
+group roll in the classic *World of Warcraft* **"Need before Greed"** style.
 
 ## How it works
 
 1. Anyone runs **`/roll`** (optionally naming what it's for). The bot posts a roll
    with **Need**, **Greed** and **Pass** buttons and a live countdown.
-2. Everyone taps their choice. Each person is given a **hidden 1 to 100 roll**, locked
-   on their first tap, switching between Need, Greed and Pass keeps your number, so
+2. Everyone taps their choice. Each person gets a **hidden 1 to 100 roll**, locked
+   on their first tap. Switching between Need, Greed and Pass keeps that number, so
    there's no re-rolling for a better one.
 3. When the timer ends, the winner is revealed in the same message:
    - **Need beats Greed**: *any* Need roll outranks *every* Greed roll.
    - Within the winning tier, the **highest roll wins**.
    - **Ties are re-rolled** automatically between the tied players.
-   - **Pass** just sits it out.
+   - **Pass** sits it out.
 
-Only the running tally (how many chose Need / Greed / Pass) is visible while the
-roll is open, everyone's actual numbers stay secret until the reveal.
+While the roll is open, only the running tally (how many chose Need / Greed / Pass)
+is visible. Everyone's actual numbers stay secret until the reveal.
 
-> **Need vs Greed, the etiquette:** tap **Need** if you genuinely want it, **Greed**
-> if you'd take it but don't mind losing. It's on the honour system, exactly like a
-> manual raid roll.
+> **The etiquette:** tap **Need** if you genuinely want it, **Greed** if you'd take
+> it but don't mind losing. Honour system, exactly like a manual raid roll.
 
 ## Options
 
 **`/roll [item] [seconds]`**, both optional:
 
-- **`item`**: what you're rolling for (e.g. a prize or drop name). Shown in the title.
+- **`item`**: what you're rolling for. Shown in the title.
 - **`seconds`**: how long the roll stays open, **10 to 300** seconds (default **60**).
 
-**Anyone** can start a roll, and **one roll runs per channel** at a time, wait for
-the current one to finish before starting another in the same channel.
+**Anyone** can start a roll, and **one roll runs per channel** at a time.
 
 ## See also
 

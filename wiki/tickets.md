@@ -11,22 +11,16 @@ description: How Server Assistant's ticket system works, posting a panel, the in
 
 # Tickets &amp; support
 
-Give your members a tidy way to ask for help in private. You post a **panel**
-with a button; a member clicks it, fills in a short **intake form**, and the bot
-spins up a **private channel** that only they and your staff can see. When the
-matter's resolved, anyone with access closes it and the bot saves a full
-**transcript** to your log channel.
+Give members a tidy way to ask for help in private. You post a **panel** with a
+button; a member clicks it, fills in a short **intake form**, and the bot spins up a
+**private channel** only they and your staff can see. When it's resolved, anyone with
+access closes it and the bot saves a full **transcript** to your log channel.
 
-This page also covers the **AI FAQ**, answer common questions automatically
-from a list you control, and the right-click **Message Report**, which gives
-staff a fast, AI-summarised view of a flagged message with action buttons.
+This page also covers the **AI FAQ** and the right-click **Message Report**.
 
-> **Who can run these:** the server **owner**, or an admin with **Manage
-> Server**, sets up and edits tickets. Any member can open one from the panel.
-> Closing a ticket is open to the **opener**, your **support role**, or anyone
-> with **Manage Channels**.
-
-Commands are tagged so you know what you're looking at:
+> **Who can run these:** the **owner**, or an admin with **Manage Server**, sets up
+> tickets. Any member can open one. Closing is open to the **opener**, your **support
+> role**, or anyone with **Manage Channels**.
 
 <span class="cmd-tag free">FREE</span> available on every plan &nbsp;·&nbsp;
 <span class="cmd-tag premium">PREMIUM</span> needs a premium plan &nbsp;·&nbsp;
@@ -37,9 +31,8 @@ Commands are tagged so you know what you're looking at:
 
 ## The end-to-end ticket flow {#flow}
 
-Here's the whole journey, one screen at a time, from the panel you post, to the
-member opening a ticket, to the private channel where you help them, to the close
-and its saved transcript.
+The whole journey, one screen at a time: the panel you post, a member opening a ticket,
+the private channel where you help them, and the close with its saved transcript.
 
 <div class="wiz" data-wiz>
   <div class="wiz-bar">
@@ -78,7 +71,7 @@ and its saved transcript.
         </div>
       </div></div>
     </div>
-    <p class="wiz-caption"><strong>The intake form.</strong> Clicking the button opens this short pop-up. On the free tier it's a single question (<em>“How can we help you?”</em>); Premium servers can ask up to <strong>four</strong>. The first question is always required. One open ticket per member at a time, click again while one's open and the bot just points you to it.</p>
+    <p class="wiz-caption"><strong>The intake form.</strong> Clicking the button opens this short pop-up. The free tier asks one question (<em>"How can we help you?"</em>); Premium servers can ask up to <strong>four</strong>. The first is always required. One open ticket per member: click again while one's open and the bot points you to it.</p>
   </div>
 
   <div class="wiz-step" data-step="3 · The private ticket channel opens">
@@ -97,7 +90,7 @@ and its saved transcript.
         </div>
       </div></div>
     </div>
-    <p class="wiz-caption"><strong>A channel just for this.</strong> The bot creates a numbered, private channel (<code>#ticket-0007-member</code>) that only the opener, your support role and staff with Manage Channels can see. It pings the support role, posts the member's answers, and pins a <strong>Close Ticket</strong> button. Talk to the member right there.</p>
+    <p class="wiz-caption"><strong>A channel just for this.</strong> The bot creates a numbered private channel (<code>#ticket-0007-member</code>) only the opener, your support role and staff with Manage Channels can see. It pings the support role, posts the member's answers, and pins a <strong>Close Ticket</strong> button.</p>
   </div>
 
   <div class="wiz-step" data-step="4 · Close &amp; save a transcript">
@@ -113,7 +106,7 @@ and its saved transcript.
         </div>
       </div></div>
     </div>
-    <p class="wiz-caption"><strong>Closed, with a paper trail.</strong> Pressing <strong>Close Ticket</strong> (or running <code>/tickets close</code>) saves the whole conversation as a <code>.txt</code> transcript to your log channel, then deletes the ticket channel. Nothing is lost, you keep the record, the clutter goes.</p>
+    <p class="wiz-caption"><strong>Closed, with a paper trail.</strong> Pressing <strong>Close Ticket</strong> (or running <code>/tickets close</code>) saves the conversation as a <code>.txt</code> transcript to your log channel, then deletes the ticket channel. You keep the record; the clutter goes.</p>
   </div>
 </div>
 
@@ -253,10 +246,9 @@ and its saved transcript.
 ## The AI FAQ {#faq}
 
 Answer your most-asked questions automatically. You build a short list of
-question-and-answer entries; members run **`/faq`** with their question and the
-AI replies, using **only** your entries, never made-up policy. Leave the
-question blank as staff and you get a one-screen builder to add, edit and remove
-entries.
+question-and-answer entries; members run **`/faq`** with their question and the AI
+replies using **only** your entries, never made-up policy. Leave the question blank as
+staff to open a one-screen builder.
 
 <div class="cmd-card">
   <div class="cmd-head">
@@ -285,10 +277,9 @@ entries.
 
 ### Managing the FAQ: the builder
 
-Run `/faq` with no question and (if you can manage the server) you get a private
-**FAQ builder**: a numbered list of entries, a dropdown to **edit**, a dropdown
-to **delete**, and an **Add entry** button that opens a small form. Changes
-save instantly and the list refreshes in place.
+Run `/faq` with no question (with Manage Server) to get a private **FAQ builder**: a
+numbered list of entries, dropdowns to **edit** and **delete**, and an **Add entry**
+button. Changes save instantly and the list refreshes in place.
 
 <div class="dc">
   <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
@@ -310,11 +301,10 @@ save instantly and the list refreshes in place.
 
 ## Right-click → Message Report {#message-report}
 
-Tickets are for members coming to you. **Message Report** is the reverse, a
-fast, AI-assisted way for *staff* to deal with a single message. Right-click (or
-long-press) any message → **Apps → Message Report**. The bot reads the message
-plus the surrounding conversation, writes a short objective summary, and gives
-you action buttons, all privately, only you can see it.
+**Message Report** is the reverse of a ticket: a fast, AI-assisted way for *staff* to
+deal with a single message. Right-click (or long-press) any message and choose **Apps →
+Message Report**. The bot reads the message plus the surrounding conversation, writes a
+short objective summary, and gives you action buttons, all privately.
 
 <div class="dc">
   <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
@@ -339,14 +329,12 @@ you action buttons, all privately, only you can see it.
 </div>
 
 <p style="color:var(--fg-1);font-size:.9rem;line-height:1.55;">
-<strong>How it works.</strong> The report is private and lasts about 15 minutes.
-Each button respects <em>your</em> role, you'll only be able to take an action
-your staff role allows, and the bot won't act on the owner or on other bots.
-Whatever you choose is written to your log channel with the AI summary attached,
-so the decision and its reasoning are on the record. Because it reads the
-message with AI, Message Report uses AI tokens and can be switched off per server
-from the <code>/privacy</code> panel (toggle <strong>Right-click Message
-Report</strong>).</p>
+<strong>How it works.</strong> The report is private and lasts about 15 minutes. Each
+button respects <em>your</em> role, so you can only take actions your staff role allows,
+and the bot won't act on the owner or on other bots. Whatever you choose is written to
+your log channel with the AI summary attached. Because it reads the message with AI, it
+uses AI tokens and can be switched off per server from the <code>/privacy</code> panel
+(toggle <strong>Right-click Message Report</strong>).</p>
 
 > **Need to reach the bot's developer instead?** That's a different door:
 > <code>/support</code> (and its alias <code>/feedback</code>) opens a private

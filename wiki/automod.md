@@ -11,16 +11,14 @@ description: Server Assistant's AutoMod dashboard, panel by panel, filter packs,
 
 # AutoMod
 
-**AutoMod** is Server Assistant's automatic message filter. It watches your
-channels and quietly acts on scams, slurs, spam and dodgy links, so your team
-isn't firefighting every bad message by hand. You decide how strict it is, and
-nothing acts that you haven't switched on.
+**AutoMod** is Server Assistant's automatic message filter. It acts on scams,
+slurs, spam and dodgy links, so your team isn't firefighting by hand. You set how
+strict it is, and nothing acts that you haven't switched on.
 
-When you first set the bot up, AutoMod is **seeded from your community type**: the
+On setup, AutoMod is **seeded from your community type**: the
 [setup wizard]({{ '/wiki/setup/' | relative_url }}) presets the filter packs,
 punishment ladder and anti-raid sensitivity to match a Gaming, Creator, Anime,
-Crypto, Education, NSFW or General community. This page is where you fine-tune all
-of it after the fact.
+Crypto, Education, NSFW or General community. This page is where you fine-tune it.
 
 > **Who can configure:** an **admin** role. Some panels, **AI Review** in
 > particular, need <span class="wiki-prem">PREMIUM</span>.
@@ -68,15 +66,13 @@ of it after the fact.
   </div>
 </div>
 
-The top of the dashboard is a live summary, whether AutoMod is on, which packs
-are active, your custom filter and link-block counts, the mention limit, anti-spam
-status and AI review. Every button below opens one of the panels you can step
-through next.
+The top of the dashboard is a live summary: whether AutoMod is on, active packs,
+custom filter and link-block counts, the mention limit, anti-spam and AI review.
+Each button opens a panel.
 
 ## Step through every panel
 
-Use **Next ›** and **‹ Back** to walk each AutoMod panel, including the forms
-that open from them.
+Use **Next ›** and **‹ Back** to walk each AutoMod panel and the forms they open.
 
 <div class="wiz" data-wiz>
   <div class="wiz-bar">
@@ -103,7 +99,7 @@ that open from them.
         </div>
       </div></div>
     </div>
-    <p class="wiz-caption"><strong>Filter Packs.</strong> Tick the ready-made packs you want, several can run at once. <code>scams</code> blocks the usual Free-Nitro and gift-card scams; <code>slurs_l1</code> catches slurs while leaving everyday swearing alone; <code>slurs_l2</code> adds targeted harassment; <code>profanity_l3</code> filters all casual swearing (warned as high false-positive); <code>ip_grabbers</code> blocks IP-logging links; and <code>lexicon</code> is a broad community word list, refreshed daily.</p>
+    <p class="wiz-caption"><strong>Filter Packs.</strong> Tick the packs you want; several can run at once. <code>scams</code> blocks Free-Nitro and gift-card scams; <code>slurs_l1</code> catches slurs but leaves everyday swearing alone; <code>slurs_l2</code> adds targeted harassment; <code>profanity_l3</code> filters all casual swearing (high false-positive); <code>ip_grabbers</code> blocks IP-logging links; <code>lexicon</code> is a broad community word list, refreshed daily.</p>
   </div>
 
   <div class="wiz-step" data-step="AI Review">
@@ -124,7 +120,7 @@ that open from them.
         </div>
       </div></div>
     </div>
-    <p class="wiz-caption"><strong>AI Review</strong> <span class="wiki-prem">PREMIUM</span>. A second opinion for the grey-area hits. When a word filter or spam check is unsure, the bot asks the AI for a confidence score: if it lands at or above your threshold it acts automatically; below that, the message stays up and your staff get a <strong>Delete &amp; warn</strong> / <strong>Allow</strong> prompt. Only borderline messages are ever sent for review, so token use stays low.</p>
+    <p class="wiz-caption"><strong>AI Review</strong> <span class="wiki-prem">PREMIUM</span>. A second opinion on grey-area hits. When a word filter or spam check is unsure, the bot asks the AI for a confidence score: at or above your threshold it acts automatically; below it, the message stays up and staff get a <strong>Delete &amp; warn</strong> / <strong>Allow</strong> prompt. Only borderline messages are sent for review, so token use stays low.</p>
   </div>
 
   <div class="wiz-step" data-step="Set threshold (modal)">
@@ -140,7 +136,7 @@ that open from them.
         </div>
       </div></div>
     </div>
-    <p class="wiz-caption"><strong>The threshold form.</strong> Opens from <strong>Set threshold</strong>. Enter a number from 0 to 100. A higher number means the AI has to be more confident before it acts on its own, anything below the line is handed to your staff to decide.</p>
+    <p class="wiz-caption"><strong>The threshold form.</strong> Enter a number from 0 to 100. Higher means the AI must be more confident before acting on its own; anything below the line goes to staff to decide.</p>
   </div>
 
   <div class="wiz-step" data-step="Self-training">
@@ -164,7 +160,7 @@ that open from them.
         </div>
       </div></div>
     </div>
-    <p class="wiz-caption"><strong>Self-training.</strong> With learning on, the bot remembers the <em>content</em> of messages your team deletes or flags via Message Report, then clusters the patterns and, when you press <strong>Suggest rules now</strong>, proposes custom filters tailored to your server. Only message text is kept (locally, for 30 days, no author identities), and nothing is enforced until you accept it. <strong>Clear learning log</strong> wipes the collected samples.</p>
+    <p class="wiz-caption"><strong>Self-training.</strong> With learning on, the bot remembers the <em>content</em> of messages your team deletes or flags via Message Report, clusters the patterns, and (when you press <strong>Suggest rules now</strong>) proposes custom filters for your server. Only message text is kept, locally, for 30 days, with no author identities; nothing is enforced until you accept it. <strong>Clear learning log</strong> wipes the samples.</p>
   </div>
 
   <div class="wiz-step" data-step="Reviewing a proposal">
@@ -186,7 +182,7 @@ that open from them.
         </div>
       </div></div>
     </div>
-    <p class="wiz-caption"><strong>Reviewing proposals.</strong> Pressing <strong>Suggest rules now</strong> walks you through each proposed rule one at a time, the reason for it, the pattern it would use, and real examples it <em>would have caught</em>. <strong>Accept</strong> adds it to your custom filters (live immediately, just like any custom filter); <strong>⏭Skip</strong> discards it. At the end you get a tally of how many were added and skipped.</p>
+    <p class="wiz-caption"><strong>Reviewing proposals.</strong> <strong>Suggest rules now</strong> walks each proposed rule one at a time: the reason, the pattern, and real examples it <em>would have caught</em>. <strong>Accept</strong> adds it to your custom filters (live immediately); <strong>⏭Skip</strong> discards it. You get a tally at the end.</p>
   </div>
 
   <div class="wiz-step" data-step="Custom Filters">
@@ -207,7 +203,7 @@ that open from them.
         </div>
       </div></div>
     </div>
-    <p class="wiz-caption"><strong>Custom Filters.</strong> Your own word/phrase patterns, on top of the curated packs. <strong>Add filter</strong> opens a form for a regular-expression pattern (up to 200 characters). The bot checks it for you, invalid patterns, or ones that could hang on malicious input, are rejected with an explanation. The dropdown removes any you no longer want.</p>
+    <p class="wiz-caption"><strong>Custom Filters.</strong> Your own word/phrase patterns, on top of the packs. <strong>Add filter</strong> opens a form for a regex pattern (up to 200 characters); the bot rejects invalid ones, or ones that could hang on malicious input, with an explanation. The dropdown removes entries.</p>
   </div>
 
   <div class="wiz-step" data-step="Add filter (modal)">
@@ -223,7 +219,7 @@ that open from them.
         </div>
       </div></div>
     </div>
-    <p class="wiz-caption"><strong>The custom filter form.</strong> Enter one pattern. If it isn't valid, or looks like it could be slow on crafted input, the bot tells you why and asks you to rewrite it, so a stray pattern can never wedge moderation.</p>
+    <p class="wiz-caption"><strong>The custom filter form.</strong> Enter one pattern. If it's invalid or could be slow on crafted input, the bot explains why and asks you to rewrite it, so a stray pattern can never wedge moderation.</p>
   </div>
 
   <div class="wiz-step" data-step="Link Blocks">
@@ -243,7 +239,7 @@ that open from them.
         </div>
       </div></div>
     </div>
-    <p class="wiz-caption"><strong>Link Blocks.</strong> A blocklist of domains you never want posted, on top of the built-in IP-grabber and scam lists. <strong>Add link block</strong> takes a domain (e.g. <code>badsite.com</code>), paste a full URL and the bot strips it down to the domain for you. The dropdown removes entries.</p>
+    <p class="wiz-caption"><strong>Link Blocks.</strong> Domains you never want posted, on top of the built-in IP-grabber and scam lists. <strong>Add link block</strong> takes a domain (e.g. <code>badsite.com</code>); paste a full URL and the bot strips it to the domain. The dropdown removes entries.</p>
   </div>
 
   <div class="wiz-step" data-step="Punishment Ladder (modal)">
@@ -261,7 +257,7 @@ that open from them.
         </div>
       </div></div>
     </div>
-    <p class="wiz-caption"><strong>Punishment Ladder.</strong> Decides what happens as a member racks up warnings. Each line is <code>count:action[:minutes]</code>, for example <code>3:timeout:10</code> times someone out for 10 minutes at 3 warnings, then <code>5:timeout:60</code>, then <code>10:ban</code>. Actions are <code>timeout</code>, <code>kick</code>, <code>ban</code> or <code>warn</code>; the minutes are optional. The default ladder is exactly the one shown.</p>
+    <p class="wiz-caption"><strong>Punishment Ladder.</strong> What happens as a member racks up warnings. Each line is <code>count:action[:minutes]</code>: e.g. <code>3:timeout:10</code> (10-min timeout at 3 warnings), then <code>5:timeout:60</code>, then <code>10:ban</code>. Actions are <code>timeout</code>, <code>kick</code>, <code>ban</code> or <code>warn</code>; minutes are optional. The default is the ladder shown.</p>
   </div>
 
   <div class="wiz-step" data-step="Spam Settings (modal)">
@@ -279,16 +275,16 @@ that open from them.
         </div>
       </div></div>
     </div>
-    <p class="wiz-caption"><strong>Spam Settings.</strong> Two quick controls: the <em>maximum mentions</em> allowed in a single message (anything over the limit is treated as mention spam), and an <em>anti-spam</em> toggle (<code>yes</code>/<code>no</code>) that catches the same message repeated over and over.</p>
+    <p class="wiz-caption"><strong>Spam Settings.</strong> Two controls: <em>max mentions</em> per message (over the limit counts as mention spam), and an <em>anti-spam</em> toggle (<code>yes</code>/<code>no</code>) that catches the same message repeated over and over.</p>
   </div>
 </div>
 
 ## How community-type presets seed AutoMod
 
-You never start from a blank slate. When you run [`/setup`]({{ '/wiki/setup/' | relative_url }})
-and pick your **community type**, the bot seeds AutoMod, the punishment ladder
-and anti-raid to match, and even pre-guesses the type from your server's name and
-description (defaulting to **General** if it's unsure, rather than guessing wrong).
+When you run [`/setup`]({{ '/wiki/setup/' | relative_url }}) and pick a
+**community type**, the bot seeds AutoMod, the punishment ladder and anti-raid to
+match. It even pre-guesses the type from your server's name and description
+(defaulting to **General** if unsure).
 
 | Community type | Filter packs | Ladder | Anti-raid |
 | --- | --- | --- | --- |

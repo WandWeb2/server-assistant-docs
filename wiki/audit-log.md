@@ -11,44 +11,40 @@ description: A deep dive into Server Assistant's tamper-proof audit log, what ge
 
 # The audit log
 
-Every time a moderator acts in your server, Server Assistant writes it down. That
-record, your **audit trail**, is how you answer the questions that come up after
-the fact: *who* removed that member, *when* the channel was locked, *why* someone
-was banned. It runs on every plan, with nothing to switch on.
+Every time a moderator acts, Server Assistant writes it down. That **audit trail**
+answers the questions that come up later: *who* removed that member, *when* the
+channel was locked, *why* someone was banned. It runs on every plan, nothing to
+switch on.
 
 <span class="cmd-tag free">FREE</span> &nbsp;The audit log is part of every plan.
 
-There are three parts to it, working together:
+Three parts work together:
 
-- A **permanent moderation log in your web dashboard**: always on, on every plan.
-  It records every moderation action on our servers, so it **can't be edited or
-  deleted from within Discord**, and your admins can read it any time by signing in
-  to the dashboard. Even if you never set up a Discord log channel, this record is
-  always there.
-- A **visible log channel** in your own server (optional, you can pick one during
-  `/setup`), where each action *also* lands as a tidy embed your whole team can read
-  at a glance.
-- A **separate, encrypted record** kept off to one side that **staff cannot read,
-  edit, or erase**, so even the underlying trail survives whatever happens to the
-  visible channel.
+- A **permanent moderation log in your web dashboard**: always on, every plan. It
+  records every action on our servers, so it **can't be edited or deleted from
+  within Discord**; admins read it by signing in. It's there even if you never set
+  up a Discord log channel.
+- A **visible log channel** in your server (optional, pick one during `/setup`),
+  where each action *also* lands as a tidy embed your team can read at a glance.
+- A **separate, encrypted record** that **staff cannot read, edit, or erase**, so
+  the underlying trail survives whatever happens to the visible channel.
 
-> **In short:** the log channel is the window your team looks through; the dashboard
-> log and the encrypted record are the safe behind the glass. You can break the
-> window, you can't open the safe.
+> **In short:** the log channel is the window; the dashboard log and encrypted
+> record are the safe behind the glass. You can break the window, you can't open
+> the safe.
 
 ## What gets logged
 
-Server Assistant records the things that actually matter for accountability:
+Server Assistant records what matters for accountability:
 
 - **Moderation actions**: warnings, notes, mutes, kicks, bans, soft-bans,
-  temp-bans, locks, lockdowns and the rest. Each one is logged with **who** did
-  it, **what** they did, **to whom**, and the **reason** they gave.
-- **Actions taken directly in Discord**: if a moderator bans or kicks someone
-  using Discord's own menus (not a Server Assistant command), the bot notices and
-  logs it for you anyway, clearly marked as a **native action**.
-- **Command usage**: a compact, one-line entry each time a command is run, so
-  you can see who's been driving the bot even when a command doesn't change
-  anything.
+  temp-bans, locks, lockdowns and the rest, each logged with **who** did it,
+  **what** they did, **to whom**, and the **reason**.
+- **Actions taken directly in Discord**: ban or kick someone via Discord's own
+  menus (not a Server Assistant command) and the bot logs it anyway, marked as a
+  **native action**.
+- **Command usage**: a compact one-line entry each time a command is run, so you
+  can see who's driving the bot even when nothing changes.
 
 ### A moderation action in the log
 
@@ -70,10 +66,9 @@ embed, the same one the command author sees, mirrored to the team:
 
 ### An action taken directly in Discord
 
-Moderate with Discord's built-in tools and Server Assistant still keeps your trail
-complete. It mirrors the action into the log channel, marked so you can tell it
-apart at a glance, with a friendly nudge towards doing it through the bot next
-time (which keeps the one-tap undo):
+Moderate with Discord's built-in tools and the trail stays complete: the bot
+mirrors the action into the log channel, marked so you can tell it apart, with a
+nudge to use the bot next time (which keeps the one-tap undo):
 
 <div class="dc">
   <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
@@ -125,20 +120,18 @@ full detail lives in our [Privacy Policy]({{ '/privacy/' | relative_url }}).)
 
 ## Why it's tamper-proof
 
-The whole point of an audit trail is that it stays trustworthy even when someone
-would rather it didn't. Server Assistant is built so the record **can't be quietly
-wiped**:
+An audit trail has to stay trustworthy even when someone would rather it didn't,
+so the record **can't be quietly wiped**:
 
 - **A separate, encrypted record.** Alongside the visible channel, the bot keeps
-  its own **encrypted** log of every moderation action. It lives outside Discord,
-  and **staff cannot read, edit or erase it**: there's no command, button or
-  permission that lets a moderator reach in and change history.
+  its own **encrypted** log of every action, outside Discord. **Staff cannot read,
+  edit or erase it**, there's no command, button or permission that reaches in.
 - **Deleting log messages doesn't delete the truth.** Someone *can* delete a
-  message from the visible log channel, but doing so changes only the window,
-  not the safe. The underlying encrypted record is untouched.
+  message from the visible log channel, but that changes only the window, not the
+  safe. The encrypted record is untouched.
 - **And you'll know if they try.** If a message is deleted from your log channel,
-  Server Assistant spots it and raises an alert, to your log channel and to the
-  server owner, naming who did it:
+  Server Assistant spots it and alerts your log channel and the server owner,
+  naming who did it:
 
 <div class="dc">
   <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
@@ -151,19 +144,16 @@ wiped**:
   </div></div>
 </div>
 
-If the log channel itself is deleted, the bot simply notices it's gone and clears
-the setting so you can pick a fresh one, and, again, the encrypted record carries
-on untouched the whole time.
+If the log channel itself is deleted, the bot notices, clears the setting so you
+can pick a fresh one, and the encrypted record carries on untouched.
 
 ## Setting your log channel
 
-A Discord log channel is **optional**: the dashboard moderation log above is always
-on either way, so you have a complete record whether or not you mirror it to Discord.
-If you'd like the Discord mirror too, choose it during the **`/setup`** wizard on the
-**Channels** step. The bot detects a likely candidate (often `#mod-log`) and fills it
-in for you, accept it, pick a different channel from the dropdown, have the bot
-**Create for me** a fresh locked-down one, or choose **Portal only** to skip the
-Discord channel entirely.
+A Discord log channel is **optional**, the dashboard log is always on either way.
+For the Discord mirror too, choose it during the **`/setup`** wizard on the
+**Channels** step: the bot detects a likely candidate (often `#mod-log`), or you
+can pick another from the dropdown, have it **Create for me** a fresh locked-down
+one, or choose **Portal only** to skip the Discord channel entirely.
 
 <div class="dc">
   <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
@@ -178,12 +168,11 @@ Discord channel entirely.
   </div></div>
 </div>
 
-Want to change it later? Open **`/settings` → Behaviour → Log channel** any time
-to pick a different channel, or switch to **Portal only** to turn the Discord
-channel off entirely (your dashboard log stays on). Re-running **`/setup`** works too,
-it loads your current configuration so you can swap the log channel there as well.
-For the finer controls, how chatty the log is, and whether those compact
-command-usage lines appear, the same **`/settings` → Behaviour** section has them.
+To change it later, open **`/settings` → Behaviour → Log channel** to pick a
+different channel or switch to **Portal only** (your dashboard log stays on).
+Re-running **`/setup`** works too. The same **`/settings` → Behaviour** section
+holds the finer controls: how chatty the log is, and whether the compact
+command-usage lines appear.
 
 ## See also
 
