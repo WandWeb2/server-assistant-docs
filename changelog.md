@@ -67,7 +67,30 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
   <span class="cl-key update">Update</span>
 </p>
 
-<details class="doc-sec" markdown="1" open data-kind="fix">
+<details class="doc-sec" markdown="1" open data-kind="update">
+<summary>v6.16.0 — XP, made clear: your Level is a badge, your XP is what you spend</summary>
+
+**One simple idea, spelled out everywhere.** XP used to mean two things at once, which was
+confusing. Now it's clean:
+
+- **Your Level** is a badge you earn over time — it only ever goes **up**, and spending never
+  lowers it.
+- **Your XP** is your **spendable** balance — earn it just by being active, and spend it on Crests
+  in **Crestbound**.
+
+What you'll notice:
+
+- **Level-up messages** now tell you what your XP is *for* ("…spend it on Crests in Crestbound").
+- **`/rank`** shows your **Level** and progress to the next one, plus a clear **"XP to spend"** line.
+- **`/leaderboard`** ranks by **Level**.
+- **Crestbound** says **XP** everywhere (no more stray "Coins"), and its sign-in page now tells
+  newcomers what it is and that it runs on the XP you already earn in Discord.
+
+Nothing about *earning* changed — you get XP exactly as before; it's just clearer now.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v6.15.0 — Fix: turning off level-up messages now actually works</summary>
 
 **A settings fix.** Some servers switched leveling off in the web portal and still saw level-up

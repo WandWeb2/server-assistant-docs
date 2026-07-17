@@ -91,22 +91,22 @@ doubles (never quadruples) — the boost is capped at 2×.
 — how much came from **being active** versus **voting** — so you can see your progress at
 a glance (and grab a vote link for more).
 
-<p style="color:var(--fg-1);font-size:.9rem;line-height:1.55;"><strong>One wallet, everywhere.</strong> Your XP is tied to <em>you</em>, not to a single server — chat and voice XP from every server you're in, plus your voting rewards, all add up into one account-wide total. That same total is what you spend in <a href="{{ '/wiki/crestbound/' | relative_url }}">Crestbound</a>, the Crest-collecting game in the portal.</p>
+<p style="color:var(--fg-1);font-size:.9rem;line-height:1.55;"><strong>One wallet, everywhere.</strong> Your XP is tied to <em>you</em>, not to a single server — chat and voice XP from every server you're in, plus your voting rewards, all add up in one account-wide wallet. Everything you earn lifts your <strong>Level</strong> (which only ever goes up), and your <strong>XP</strong> is the spendable balance that grows alongside it — the same balance you take into <a href="{{ '/wiki/crestbound/' | relative_url }}">Crestbound</a>, the Crest-collecting game in the portal, and spend there.</p>
 
 ---
 
 ## Check your rank — `/rank` {#rank}
 
-`/rank` shows your level, your total XP, how far you are through your current level,
-and where you sit on the server leaderboard. Run it on its own to see yourself, or
-add a member to peek at theirs. The reply is private to you.
+`/rank` shows your **Level**, how far you are through to the next Level, your
+spendable **XP**, and where you sit on the server leaderboard. Run it on its own to
+see yourself, or add a member to peek at theirs. The reply is private to you.
 
 <div class="cmd-card">
   <div class="cmd-head">
     <span class="cmd-name">/rank</span>
     <span class="cmd-tag free">FREE</span>
   </div>
-  <p class="cmd-desc">Show a member's level, XP, progress to the next level and their place on the server leaderboard. The reply is private to you (ephemeral).</p>
+  <p class="cmd-desc">Show a member's Level, progress to the next Level, spendable XP, and their place on the server leaderboard. The reply is private to you (ephemeral).</p>
   <table class="cmd-args">
     <tr><th>Argument</th><th>Type</th><th>Notes</th></tr>
     <tr><td><code>user</code> <span class="opt">optional</span></td><td>member</td><td>Whose rank to show. Leave it out to see your own.</td></tr>
@@ -123,20 +123,21 @@ add a member to peek at theirs. The reply is private to you.
         <div class="dc-fname">Level</div><div class="dc-fval">7</div>
         <div class="dc-fname">Rank</div><div class="dc-fval">#5 / 47</div>
         <div class="dc-fname">Messages</div><div class="dc-fval">1,842</div>
-        <div class="dc-fname">XP — 320/590 to level 8</div><div class="dc-fval">████████░░░░ <span style="color:#949ba4">(4,210 total)</span></div>
-        <div class="dc-foot">XP is your account-wide total (chat + votes)</div>
+        <div class="dc-fname">Progress to level 8</div><div class="dc-fval">████████░░░░ <span style="color:#949ba4">(320/590)</span></div>
+        <div class="dc-fname">XP to spend</div><div class="dc-fval">🟡 245</div>
+        <div class="dc-foot">Your Level only ever goes up · XP is your spendable balance</div>
       </div>
     </div></div>
   </div>
 </div>
 
-<p style="color:var(--fg-1);font-size:.9rem;line-height:1.55;"><strong>Reading the card.</strong> <strong>Level</strong> is how far you've climbed; <strong>Rank</strong> is your position among members in this server. <strong>Messages</strong> is how much you've posted here. The <strong>XP</strong> line shows a progress bar towards your next level, with your account-wide total in brackets — each level needs a little more XP than the last, so the higher you go, the more chatting (or voting) it takes to advance.</p>
+<p style="color:var(--fg-1);font-size:.9rem;line-height:1.55;"><strong>Reading the card.</strong> <strong>Level</strong> is the tier you've climbed to — it only ever goes up, and spending never lowers it. <strong>Rank</strong> is your position among members in this server, and <strong>Messages</strong> is how much you've posted here. <strong>Progress to level 8</strong> is a bar towards your next Level — each Level needs a little more XP earned than the last, so the higher you go, the more chatting (or voting) it takes to advance. <strong>XP to spend</strong> is your account-wide spendable balance — the XP you take into <a href="{{ '/wiki/crestbound/' | relative_url }}">Crestbound</a>.</p>
 
 ---
 
 ## The leaderboard — `/leaderboard` {#leaderboard}
 
-`/leaderboard` posts the server's top members, ranked by XP, right in the channel for
+`/leaderboard` posts the server's top members, ranked by Level, right in the channel for
 everyone to see. A friendly bit of bragging rights for your most active regulars.
 
 <div class="cmd-card">
@@ -144,7 +145,7 @@ everyone to see. A friendly bit of bragging rights for your most active regulars
     <span class="cmd-name">/leaderboard</span>
     <span class="cmd-tag free">FREE</span>
   </div>
-  <p class="cmd-desc">Show the server's most active members, ranked by account-wide XP. Posted publicly in the channel.</p>
+  <p class="cmd-desc">Show the server's most active members, ranked by Level. Posted publicly in the channel.</p>
   <table class="cmd-args">
     <tr><th>Argument</th><th>Type</th><th>Notes</th></tr>
     <tr><td colspan="3">No arguments — shows the top members of the current server.</td></tr>
@@ -158,8 +159,8 @@ everyone to see. A friendly bit of bragging rights for your most active regulars
       <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">today</span></div>
       <div class="dc-embed blue">
         <div class="dc-title">🏆 The Hangout — leaderboard</div>
-        <div class="dc-desc">🥇 <strong>1.</strong> @Ada — level 14 · 18,940 XP<br>🥈 <strong>2.</strong> @Ben — level 12 · 14,205 XP<br>🥉 <strong>3.</strong> @Cleo — level 11 · 12,880 XP<br>▫️ <strong>4.</strong> @Dane — level 9 · 7,510 XP<br>▫️ <strong>5.</strong> @You — level 7 · 4,210 XP</div>
-        <div class="dc-foot">Ranked by account-wide XP (chat + votes)</div>
+        <div class="dc-desc">🥇 <strong>1.</strong> @Ada — level 14<br>🥈 <strong>2.</strong> @Ben — level 12<br>🥉 <strong>3.</strong> @Cleo — level 11<br>▫️ <strong>4.</strong> @Dane — level 9<br>▫️ <strong>5.</strong> @You — level 7</div>
+        <div class="dc-foot">Ranked by Level (earned from chat + votes)</div>
       </div>
     </div></div>
   </div>
@@ -204,11 +205,12 @@ this only changes whether level-ups are announced.**
 
 ## Turning XP into rewards {#rewards}
 
-XP isn't just for show — your members can **spend** it. The same account-wide total
-that climbs as they chat is the currency for **[Crestbound]({{ '/wiki/crestbound/' | relative_url }})**,
-the Crest-collecting game in the customer portal. Opening a booster pack spends XP;
-collecting and trading Crests gives that score something to do beyond the
-leaderboard.
+XP isn't just for show — your members can **spend** it. Your **XP** is the spendable
+balance in your account-wide wallet, and it's the currency for
+**[Crestbound]({{ '/wiki/crestbound/' | relative_url }})**, the Crest-collecting game
+in the customer portal. Opening a booster pack spends XP; collecting and trading Crests
+gives that balance something to do beyond the leaderboard. Spending never touches your
+**Level** — that only ever goes up.
 
 <div style="margin:1.4rem 0;">
   <a class="cmd-btn-link" href="{{ '/wiki/crestbound/' | relative_url }}" style="display:inline-block;padding:.6rem 1rem;border-radius:8px;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;">🛡️ Explore Crestbound →</a>
