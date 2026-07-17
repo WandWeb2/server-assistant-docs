@@ -44,8 +44,8 @@ With an announcements channel set, your server hears it first when one of your
 members makes a **world-first discovery** — "*{player} just discovered {Crest} —
 first in the world.*" (An announcement only: no server gets better pulls, ever.)
 
-> **Powered by your XP.** Crestbound runs on the same account-wide XP you earn from
-> chatting, voice time, and from [voting for Server Assistant]({{ '/wiki/leveling/' | relative_url }}#earning-xp).
+> **Powered by your XP.** Crestbound runs on your **XP** — the account-wide spendable
+> balance you build up from chatting, voice time, and from [voting for Server Assistant]({{ '/wiki/leveling/' | relative_url }}#earning-xp).
 > Opening a pack spends that XP; there's no separate purchase and no Premium
 > required — if you've earned XP, you can play.
 
