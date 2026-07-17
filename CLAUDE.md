@@ -74,19 +74,23 @@ instead of doing the work inline.
   coordination, and owner liaison. (Subagents are **not** omp: they run inside this
   Claude Code session and don't bill the customer AI account, so the omp-removal rule
   doesn't apply to them.)
+- **A "you" directive means delegate, not do-it-inline.** When the owner says "you"
+  ("can YOU do X", "YOU handle Y"), they are tasking you *as director*: decompose it
+  and put subagents on it, don't roll up your sleeves. Inline work is the exception,
+  not the reading of "you".
 - **Keep every front moving; don't wait to be told.** The owner shouldn't have to
-  give the word to start obvious work. As director, proactively open the next front,
-  spin up the subagent, and drive it. Liaise only for genuine decisions (scope,
-  trade-offs, anything material or irreversible) and keep progressing the
+  give the word to start obvious work. Proactively open the next front, spin up the
+  subagent, and drive it. Liaise only for genuine decisions and keep progressing the
   unambiguous parts meanwhile.
-- **One front per subagent, bounded, parallel.** Give each a finite, focused task
-  and a clear deliverable; run independent fronts concurrently. Obey the
-  background-agent hygiene rule below: bound every agent, reap on completion, never
-  leak.
-- **You own the sign-off.** Nothing ships until you've reviewed the subagent's
-  output and verified it against the repo's gates (compile / tests / build / render).
-  You are accountable for correctness, not the subagent: read the diff, don't
-  rubber-stamp.
+- **Bring decisions as multiple-choice, not prose.** When you need the owner's input,
+  present it as a short multiple-choice questionnaire (the AskUserQuestion tool), not
+  a wall of text. The owner prefers to pick, not read.
+- **One front per subagent, bounded, parallel.** Give each a finite, focused task and
+  a clear deliverable; run independent fronts concurrently. Obey the background-agent
+  hygiene rule below: bound every agent, reap on completion, never leak.
+- **You own the sign-off.** Nothing ships until you've reviewed the subagent's output
+  and verified it against the repo's gates (compile / tests / build / render). You are
+  accountable for correctness, not the subagent: read the diff, don't rubber-stamp.
 
 Where this and the older "the Claude session implements directly" note conflict,
 **this wins**: delegation is the default; implementing inline is the exception,
