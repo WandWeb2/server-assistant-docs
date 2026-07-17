@@ -17,8 +17,8 @@
   *{box-sizing:border-box;margin:0;padding:0}
   html,body{height:100%}
   body{background:var(--bg);color:var(--ink);font-family:Inter,system-ui,sans-serif;overflow-x:hidden}
-  main{height:100vh;overflow-y:auto;scroll-snap-type:y mandatory;scroll-behavior:smooth}
-  section{min-height:100vh;scroll-snap-align:start;position:relative;display:flex;align-items:center;justify-content:center;padding:5.5rem 1.4rem 4.5rem;overflow:hidden}
+  main{height:100vh;height:100dvh;overflow-y:auto;scroll-snap-type:y mandatory;scroll-behavior:smooth}
+  section{min-height:100vh;min-height:100dvh;scroll-snap-align:start;scroll-snap-stop:always;position:relative;display:flex;align-items:center;justify-content:center;padding:5.5rem 1.4rem 4.5rem;overflow:hidden}
   .in{position:relative;z-index:3;max-width:1060px;width:100%}
   .bg{position:absolute;inset:0;background:center/cover no-repeat;filter:brightness(.32) saturate(1.05);z-index:0}
   .vig{position:absolute;inset:0;z-index:1;background:radial-gradient(115% 85% at 50% 32%,rgba(13,10,8,.18),rgba(13,10,8,.94) 82%)}
