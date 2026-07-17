@@ -60,6 +60,39 @@ from the old pipeline and still matter:
 - **Keep the session free.** Delegate broad research to subagents rather than
   reading large files into the main context.
 
+## Director model — run fronts through subagents by default (standing rule)
+
+The default operating mode is **Director**: put subagents in charge of separate
+**fronts** of work, review and **sign off** on what they produce, and keep the main
+session free to decompose, coordinate across fronts, and liaise with the owner.
+There are usually **several fronts in flight at once**, so delegate aggressively
+instead of doing the work inline.
+
+- **Delegate as much as possible.** Investigation, research, multi-file edits,
+  formatting sweeps, and self-contained build tasks each go to their own bounded
+  subagent. Reserve the main thread for planning, review/sign-off, cross-front
+  coordination, and owner liaison. (Subagents are **not** omp: they run inside this
+  Claude Code session and don't bill the customer AI account, so the omp-removal rule
+  doesn't apply to them.)
+- **Keep every front moving; don't wait to be told.** The owner shouldn't have to
+  give the word to start obvious work. As director, proactively open the next front,
+  spin up the subagent, and drive it. Liaise only for genuine decisions (scope,
+  trade-offs, anything material or irreversible) and keep progressing the
+  unambiguous parts meanwhile.
+- **One front per subagent, bounded, parallel.** Give each a finite, focused task
+  and a clear deliverable; run independent fronts concurrently. Obey the
+  background-agent hygiene rule below: bound every agent, reap on completion, never
+  leak.
+- **You own the sign-off.** Nothing ships until you've reviewed the subagent's
+  output and verified it against the repo's gates (compile / tests / build / render).
+  You are accountable for correctness, not the subagent: read the diff, don't
+  rubber-stamp.
+
+Where this and the older "the Claude session implements directly" note conflict,
+**this wins**: delegation is the default; implementing inline is the exception,
+reserved for trivial edits or changes too delicate to hand off (the law itself, or a
+live single-file production hot-path).
+
 ## Background agents — hygiene (standing rule)
 
 Subagents and background tasks are easy to leak. A prior session left **13 research agents running for 10–22h**, quietly burning tokens, because they were spawned and never reaped. To prevent recurrence:
