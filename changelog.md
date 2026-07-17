@@ -35,6 +35,22 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 </style>
 
 <details class="doc-sec" markdown="1" open>
+<summary>v6.14.0 — Setup just got simpler: one guided, pre-filled wizard</summary>
+
+**No more choosing between "auto" and "manual".** Setup now does the smart thing by default: the
+moment you run **`/setup`**, Server Assistant scans your server and **pre-fills every step** — your
+staff chat, log channel, and staff roles are already picked for you. Agree? Tap straight through.
+Want to change something? It's right there to adjust.
+
+- **Auto-pilot is folded in.** What used to be a separate `/autopilot` step is now just how setup
+  starts — you get its smart detection *and* the ability to tweak anything, in one flow.
+- **`/autopilot` still works** — it simply opens the same guided setup now.
+
+Run **`/setup`** and you'll see your server already half-configured.
+
+</details>
+
+<details class="doc-sec" markdown="1">
 <summary>v6.13.0 — Reception is now the front door for verification</summary>
 
 **Following up on Reception.** Now that Reception is here, we've made it the recommended way to
