@@ -4,9 +4,9 @@ title: Server Assistant Wiki
 permalink: /wiki/
 wiki: true
 wiki_category: Getting started
-summary: The complete Server Assistant reference — every command, every wizard, and every flow, with live examples of what you'll see in Discord.
+summary: The complete Server Assistant reference, every command, every wizard, and every flow, with live examples of what you'll see in Discord.
 wiki_keywords: [wiki, reference, commands, guide, help, documentation, examples]
-description: The complete Server Assistant reference — every command, wizard and flow, each shown with a live example of what you'll see in Discord.
+description: The complete Server Assistant reference, every command, wizard and flow, each shown with a live example of what you'll see in Discord.
 ---
 
 <style>
@@ -20,27 +20,27 @@ description: The complete Server Assistant reference — every command, wizard a
 .wiki-lead { color: var(--fg-1); font-size: 1.02rem; line-height: 1.6; max-width: 62ch; }
 </style>
 
-# 📖 Server Assistant Wiki
+# Server Assistant Wiki
 
-<p class="wiki-lead">The full reference for Server Assistant — <strong>every feature, command, wizard and flow</strong>, each shown with a live mock-up of exactly what you'll see in Discord. Search above, or browse below.</p>
+<p class="wiki-lead">The full reference for Server Assistant, <strong>every feature, command, wizard and flow</strong>, each shown with a live mock-up of exactly what you'll see in Discord. Search above, or browse below.</p>
 
 ## Start here
 
 <div class="wiki-hub">
 
   <a class="card" href="{{ '/wiki/features/' | relative_url }}">
-    <h3>🌟 Main features</h3>
-    <p>A guided tour of everything the bot does — what each feature is, how to switch it on, and where to read more.</p>
+    <h3>Main features</h3>
+    <p>A guided tour of everything the bot does, what each feature is, how to switch it on, and where to read more.</p>
   </a>
 
   <a class="card" href="{{ '/wiki/setup/' | relative_url }}">
-    <h3>🚀 Setup</h3>
-    <p>Configured in about a minute — a quick-start flow, then every screen of the <code>/setup</code> wizard, one state at a time.</p>
+    <h3>Setup</h3>
+    <p>Configured in about a minute, a quick-start flow, then every screen of the <code>/setup</code> wizard, one state at a time.</p>
   </a>
 
   <a class="card" href="{{ '/wiki/commands/' | relative_url }}">
-    <h3>⌨️ All commands</h3>
-    <p>The full list of every slash command and right-click menu, grouped by area — a one-page reference.</p>
+    <h3>All commands</h3>
+    <p>The full list of every slash command and right-click menu, grouped by area, a one-page reference.</p>
   </a>
 
 </div>
@@ -50,37 +50,37 @@ description: The complete Server Assistant reference — every command, wizard a
 <div class="wiki-hub">
 
   <a class="card" href="{{ '/wiki/moderation/' | relative_url }}">
-    <h3>🛡️ Moderation &amp; safety</h3>
-    <p>Warnings, mutes, bans, lockdown, purge and the anti-raid toolkit — every command with its output.</p>
+    <h3>Moderation &amp; safety</h3>
+    <p>Warnings, mutes, bans, lockdown, purge and the anti-raid toolkit, every command with its output.</p>
   </a>
 
   <a class="card" href="{{ '/wiki/settings/' | relative_url }}">
-    <h3>⚙️ Settings &amp; dashboards</h3>
+    <h3>Settings &amp; dashboards</h3>
     <p>The Settings hub, autopilot, onboarding, schedules, privacy and every configuration panel.</p>
   </a>
 
   <a class="card" href="{{ '/wiki/automod/' | relative_url }}">
-    <h3>🧹 AutoMod</h3>
-    <p>AI review, self-training, filters, link blocklists and the punishment ladder — the full AutoMod dashboard.</p>
+    <h3>AutoMod</h3>
+    <p>AI review, self-training, filters, link blocklists and the punishment ladder, the full AutoMod dashboard.</p>
   </a>
 
   <a class="card" href="{{ '/wiki/ai/' | relative_url }}">
-    <h3>🤖 AI &amp; intelligence</h3>
+    <h3>AI &amp; intelligence</h3>
     <p>SAi concierge chat, image generation, translation, mediation, retrospectives and stats.</p>
   </a>
 
   <a class="card" href="{{ '/wiki/tickets/' | relative_url }}">
-    <h3>🎫 Tickets &amp; support</h3>
+    <h3>Tickets &amp; support</h3>
     <p>The ticket panel, intake questions, the FAQ and the full support flow.</p>
   </a>
 
   <a class="card" href="{{ '/wiki/members/' | relative_url }}">
-    <h3>✨ Member experience</h3>
+    <h3>Member experience</h3>
     <p>Welcome DMs, verification, ban appeals, role panels and custom commands.</p>
   </a>
 
   <a class="card" href="{{ '/wiki/account/' | relative_url }}">
-    <h3>💎 Account &amp; premium</h3>
+    <h3>Account &amp; premium</h3>
     <p>Premium status, billing, backups, white-label branding and account commands.</p>
   </a>
 
@@ -91,53 +91,53 @@ description: The complete Server Assistant reference — every command, wizard a
 <div class="wiki-hub">
 
   <a class="card" href="{{ '/wiki/pulse/' | relative_url }}">
-    <h3>🩺 Pulse</h3>
+    <h3>Pulse</h3>
     <p>Read-only whole-server health digests, posted to your staff channel on the cadence you choose.</p>
   </a>
 
   <a class="card" href="{{ '/wiki/ban-appeals/' | relative_url }}">
-    <h3>📩 Ban appeals</h3>
-    <p>The DM-the-reason, one-reply staff appeal ticket flow — Unban / Deny / Research, and Premium multi-round.</p>
+    <h3>Ban appeals</h3>
+    <p>The DM-the-reason, one-reply staff appeal ticket flow, Unban / Deny / Research, and Premium multi-round.</p>
   </a>
 
   <a class="card" href="{{ '/wiki/audit-log/' | relative_url }}">
-    <h3>📜 Audit log</h3>
+    <h3>Audit log</h3>
     <p>The tamper-proof record of every moderation action, and how to set your log channel.</p>
   </a>
 
   <a class="card" href="{{ '/wiki/altguard/' | relative_url }}">
-    <h3>🕵️ Alt / ban-evasion</h3>
-    <p>Catches someone you banned coming back on a new account — local to your server, distinct from ThreatNet.</p>
+    <h3>Alt / ban-evasion</h3>
+    <p>Catches someone you banned coming back on a new account, local to your server, distinct from ThreatNet.</p>
   </a>
 
   <a class="card" href="{{ '/wiki/anti-nuke/' | relative_url }}">
-    <h3>🛡️ Anti-nuke / rogue-admin</h3>
-    <p>Stops a server nuke or compromised admin — auto-quarantine with one-tap revert, exact permission restore, and a trusted-actor whitelist.</p>
+    <h3>Anti-nuke / rogue-admin</h3>
+    <p>Stops a server nuke or compromised admin, auto-quarantine with one-tap revert, exact permission restore, and a trusted-actor whitelist.</p>
   </a>
 
   <a class="card" href="{{ '/wiki/threatnet/' | relative_url }}">
-    <h3>🌐 ThreatNet</h3>
-    <p>The cross-server safety network — advisory band, scam-image defense, Premium auto-protect, what's shared, and how to opt out.</p>
+    <h3>ThreatNet</h3>
+    <p>The cross-server safety network, advisory band, scam-image defense, Premium auto-protect, what's shared, and how to opt out.</p>
   </a>
 
   <a class="card" href="{{ '/wiki/leveling/' | relative_url }}">
-    <h3>🏅 XP &amp; leveling</h3>
-    <p>Members earn XP just by taking part — levels, the <code>/rank</code> card, the leaderboard and level-up announcements.</p>
+    <h3>XP &amp; leveling</h3>
+    <p>Members earn XP just by taking part, levels, the <code>/rank</code> card, the leaderboard and level-up announcements.</p>
   </a>
 
   <a class="card" href="{{ '/wiki/crestbound/' | relative_url }}">
-    <h3>🛡️ Crestbound</h3>
-    <p>The Crest-collecting game in the portal — spend earned XP on booster packs, complete the Chapter, and burn spares back into XP.</p>
+    <h3>Crestbound</h3>
+    <p>The Crest-collecting game in the portal, spend earned XP on booster packs, complete the Chapter, and burn spares back into XP.</p>
   </a>
 
   <a class="card" href="{{ '/wiki/emotes/' | relative_url }}">
-    <h3>😄 Emote commands</h3>
-    <p>React with the perfect GIF — <code>/emote</code>, <code>/cry</code>, <code>/hug</code>, <code>/dance</code> and more, plus <code>/meme</code>, with autocomplete and an AI-picked theme.</p>
+    <h3>Emote commands</h3>
+    <p>React with the perfect GIF, <code>/emote</code>, <code>/cry</code>, <code>/hug</code>, <code>/dance</code> and more, plus <code>/meme</code>, with autocomplete and an AI-picked theme.</p>
   </a>
 
   <a class="card" href="{{ '/wiki/roll/' | relative_url }}">
-    <h3>🎲 Group rolls</h3>
-    <p>Settle giveaways and loot with <code>/roll</code> — a timed Need / Greed / Pass group roll where the highest roll wins, WoW-style.</p>
+    <h3>Group rolls</h3>
+    <p>Settle giveaways and loot with <code>/roll</code>, a timed Need / Greed / Pass group roll where the highest roll wins, WoW-style.</p>
   </a>
 
 </div>
@@ -147,25 +147,25 @@ description: The complete Server Assistant reference — every command, wizard a
 <div class="wiki-hub">
 
   <a class="card" href="{{ '/changelog/' | relative_url }}">
-    <h3>📋 SA Bot changelog</h3>
-    <p>Release history for the bot — every feature and improvement, version by version.</p>
+    <h3>SA Bot changelog</h3>
+    <p>Release history for the bot, every feature and improvement, version by version.</p>
   </a>
 
   <a class="card" href="{{ '/wiki/changelog-portal/' | relative_url }}">
-    <h3>🗂️ Portal changelog</h3>
+    <h3>Portal changelog</h3>
     <p>What's changed in the web portal you sign into with Discord.</p>
   </a>
 
   <a class="card" href="{{ '/wiki/changelog-crestbound/' | relative_url }}">
-    <h3>🛡️ Crestbound changelog</h3>
-    <p>The XP game's release notes — the Chapter, booster packs, collection and burning.</p>
+    <h3>Crestbound changelog</h3>
+    <p>The XP game's release notes, the Chapter, booster packs, collection and burning.</p>
   </a>
 
 </div>
 
 ## How to read the examples
 
-Every screen on this wiki is a faithful recreation of the real Discord interface — the same embeds, buttons and dropdowns you'll see in your server. Where a feature is a multi-step **wizard**, you'll find a step-through like the one on the [setup page]({{ '/wiki/setup/' | relative_url }}): use **Next ›** and **‹ Back** to walk each state.
+Every screen on this wiki is a faithful recreation of the real Discord interface, the same embeds, buttons and dropdowns you'll see in your server. Where a feature is a multi-step **wizard**, you'll find a step-through like the one on the [setup page]({{ '/wiki/setup/' | relative_url }}): use **Next ›** and **‹ Back** to walk each state.
 
 Commands are tagged so you know what you're looking at:
 

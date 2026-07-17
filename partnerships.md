@@ -2,13 +2,13 @@
 layout: default
 title: Server Assistant Partners
 permalink: /partnerships/
-description: The people and projects we partner with — tools and communities that share Server Assistant's bar for quality, privacy, and looking after Discord moderators.
+description: "The people and projects we partner with: tools and communities that share Server Assistant's bar for quality, privacy, and looking after Discord moderators."
 image: /assets/banner.jpeg
 ---
 
 <div align="center">
   <h1>Partners</h1>
-  <p class="section-lead">We keep this list short on purpose. A partner is someone we'd happily point our own community toward — tools and communities that share our bar for quality, respect your privacy, and genuinely strive to make Discord better.</p>
+  <p class="section-lead">We keep this list short on purpose. A partner is someone we'd happily point our own community toward: tools and communities that share our bar for quality, respect your privacy, and genuinely strive to make Discord better.</p>
 </div>
 
 <style>
@@ -91,7 +91,7 @@ image: /assets/banner.jpeg
 }
 .partner-cta a.contact:hover { background: rgba(255,255,255,0.14); }
 
-/* Pending partner — frosted cover with an "In talks" badge, not yet live. */
+/* Pending partner: frosted cover with an "In talks" badge, not yet live. */
 .partner-card.pending { position: relative; overflow: hidden; }
 .partner-card.pending:hover { transform: none; box-shadow: none; border-color: var(--glass-border); }
 .partner-cover {
@@ -119,8 +119,8 @@ image: /assets/banner.jpeg
     </div>
     <h3>DiscordForge</h3>
     <p class="partner-tag">Bot &amp; server listing site</p>
-    <p class="partner-blurb">DiscordForge is a bot and server listing site built on quality by a small dev team we work closely with. We're aiming at the same goals — helping people find great tools and run healthier communities — so we point our audiences toward each other's best work.</p>
-    <a class="partner-link" href="https://discordforge.org" target="_blank" rel="noopener">Visit DiscordForge →</a>
+    <p class="partner-blurb">DiscordForge is a bot and server listing site built on quality by a small dev team we work closely with. We're aiming at the same goals (helping people find great tools and run healthier communities) so we point our audiences toward each other's best work.</p>
+    <a class="partner-link" href="https://discordforge.org" target="_blank" rel="noopener">Visit DiscordForge</a>
     <div class="partner-cover" aria-hidden="true"><span>In talks</span></div>
   </div>
 
@@ -130,8 +130,8 @@ image: /assets/banner.jpeg
     </div>
     <h3>Beemo</h3>
     <p class="partner-tag">Anti-raid protection</p>
-    <p class="partner-blurb">Beemo passively detects and bans userbot raids the moment they hit a server — front-line raid protection trusted by some of Discord's largest communities. We're exploring running side by side: Beemo stops raids at the door, Server Assistant handles the moderation around it.</p>
-    <a class="partner-link" href="https://beemo.gg" target="_blank" rel="noopener">Visit Beemo →</a>
+    <p class="partner-blurb">Beemo passively detects and bans userbot raids the moment they hit a server: front-line raid protection trusted by some of Discord's largest communities. We're exploring running side by side: Beemo stops raids at the door, Server Assistant handles the moderation around it.</p>
+    <a class="partner-link" href="https://beemo.gg" target="_blank" rel="noopener">Visit Beemo</a>
     <div class="partner-cover" aria-hidden="true"><span>In talks</span></div>
   </div>
 
@@ -141,8 +141,8 @@ image: /assets/banner.jpeg
     </div>
     <h3>FishFish</h3>
     <p class="partner-tag">Anti-phishing feed</p>
-    <p class="partner-blurb">FishFish is a community-driven anti-phishing service with a live database of scam and phishing domains. We're exploring using their real-time feed to power Server Assistant's scam-link protection — and contributing the domains we detect back to strengthen it.</p>
-    <a class="partner-link" href="https://fishfish.gg" target="_blank" rel="noopener">Visit FishFish →</a>
+    <p class="partner-blurb">FishFish is a community-driven anti-phishing service with a live database of scam and phishing domains. We're exploring using their real-time feed to power Server Assistant's scam-link protection, and contributing the domains we detect back to strengthen it.</p>
+    <a class="partner-link" href="https://fishfish.gg" target="_blank" rel="noopener">Visit FishFish</a>
     <div class="partner-cover" aria-hidden="true"><span>In talks</span></div>
   </div>
 
@@ -150,6 +150,6 @@ image: /assets/banner.jpeg
 
 <div class="partner-cta">
   <h2>Interested in partnering?</h2>
-  <p>If you build something Discord communities rely on and it lines up with how we work — privacy-first, no dark patterns, genuinely useful — we'd like to hear from you.</p>
-  <a class="contact" href="{{ site.url }}{{ site.baseurl }}/support/">Get in touch →</a>
+  <p>If you build something Discord communities rely on and it lines up with how we work (privacy-first, no dark patterns, genuinely useful) we'd like to hear from you.</p>
+  <a class="contact" href="{{ site.url }}{{ site.baseurl }}/support/">Get in touch</a>
 </div>

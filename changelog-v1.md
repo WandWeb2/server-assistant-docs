@@ -1,17 +1,17 @@
 ---
 layout: default
-title: Changelog — v1.x
+title: Changelog - v1.x
 permalink: /changelog/v1/
 description: Server Assistant v1.x release history.
 ---
 
-# 📋 Changelog — v1.x
+# Changelog: v1.x
 
-The v1.x line — initial release.
+The v1.x line: initial release.
 
 ---
 
-## 2026-04-30 — v1.0
+## 2026-04-30 - v1.0
 
 Initial release.
 

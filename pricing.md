@@ -2,12 +2,12 @@
 layout: default
 title: Server Assistant Pricing
 permalink: /pricing/
-description: Server Assistant pricing — generous free tier, $7/mo USD Premium with trial-then-bill, and $3/mo BYOK for those with their own AI key.
+description: "Server Assistant pricing: generous free tier, $7/mo USD Premium with trial-then-bill, and $3/mo BYOK for those with their own AI key."
 ---
 
-# 💸 Server Assistant Pricing
+# Server Assistant Pricing
 
-**Core moderation is free forever.** AI features cost real money to run, so they're metered — subscribe when you want them, and billing only starts once you've used your free tokens.
+**Core moderation is free forever.** AI features cost real money to run, so they're metered: subscribe when you want them, and billing only starts once you've used your free tokens.
 
 <style>
 .plans { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin: 1.5rem 0 1rem; align-items: start; }
@@ -48,9 +48,9 @@ description: Server Assistant pricing — generous free tier, $7/mo USD Premium 
 
 <div class="plans" markdown="0">
   <div class="plan free">
-    <div class="plan-name">🆓 Free</div>
+    <div class="plan-name">Free</div>
     <div class="plan-price">$0 <small>forever</small></div>
-    <div class="plan-pitch">Everything to run a safe, well-moderated server — no card needed.</div>
+    <div class="plan-pitch">Everything to run a safe, well-moderated server, no card needed.</div>
     <ul>
       <li>Full mod toolkit, AutoMod &amp; anti-raid</li>
       <li>Encrypted tamper-proof audit log</li>
@@ -59,10 +59,10 @@ description: Server Assistant pricing — generous free tier, $7/mo USD Premium 
       <li>150K lifetime AI trial tokens</li>
       <li>~30 <code>/imagine</code> images</li>
     </ul>
-    <a class="pcta" href="{{ site.url }}{{ site.baseurl }}/features/">✨ Explore features</a>
+    <a class="pcta" href="{{ site.url }}{{ site.baseurl }}/features/">Explore features</a>
   </div>
   <div class="plan byok">
-    <div class="plan-name">🔑 Premium BYOK</div>
+    <div class="plan-name">Premium BYOK</div>
     <div class="plan-price">$3 <small>USD/month</small></div>
     <div class="plan-pitch">All the Premium AI features, powered by your own API key.</div>
     <ul>
@@ -74,22 +74,22 @@ description: Server Assistant pricing — generous free tier, $7/mo USD Premium 
       <li>You supply the key (Anthropic / xAI / OpenAI)</li>
       <li class="no">Custom commands, backup, white-label</li>
     </ul>
-    <a class="pcta" href="{{ site.url }}{{ site.baseurl }}/features/">✨ Explore features</a>
+    <a class="pcta" href="{{ site.url }}{{ site.baseurl }}/features/">Explore features</a>
   </div>
   <div class="plan prem">
     <div class="plan-badge">Most popular</div>
-    <div class="plan-name">💎 Premium</div>
+    <div class="plan-name">Premium</div>
     <div class="plan-price">$7 <small>USD/month</small></div>
-    <div class="plan-pitch">The complete toolkit + 750K tokens a month — and billing only starts when your trial runs out.</div>
+    <div class="plan-pitch">The complete toolkit + 750K tokens a month, and billing only starts when your trial runs out.</div>
     <ul>
       <li>Everything in BYOK, plus:</li>
-      <li>⌨️ Custom slash commands</li>
-      <li>💾 Server backup &amp; restore</li>
-      <li>🎨 White-label branding — <strong>completely rebrand the bot as your own</strong></li>
+      <li>Custom slash commands</li>
+      <li>Server backup &amp; restore</li>
+      <li>White-label branding: <strong>completely rebrand the bot as your own</strong></li>
       <li>750K tokens / month (our key)</li>
-      <li>Trial-then-bill — see below</li>
+      <li>Trial-then-bill: see below</li>
     </ul>
-    <a class="pcta" href="{{ site.url }}{{ site.baseurl }}/features/">✨ Explore features</a>
+    <a class="pcta" href="{{ site.url }}{{ site.baseurl }}/features/">Explore features</a>
   </div>
 </div>
 
@@ -107,8 +107,8 @@ description: Server Assistant pricing — generous free tier, $7/mo USD Premium 
     <div class="dc-body">
       <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">Direct Message</span></div>
       <div class="dc-embed green">
-        <div class="dc-title">🎉 Premium is active — and you haven't been charged</div>
-        <div class="dc-desc">Your card is saved, not billed. You've got <strong>150,000 free tokens</strong> first — billing only starts if they run out.</div>
+        <div class="dc-title">Premium is active, and you haven't been charged</div>
+        <div class="dc-desc">Your card is saved, not billed. You've got <strong>150,000 free tokens</strong> first: billing only starts if they run out.</div>
         <div class="dc-fname">Tokens remaining</div><div class="dc-fval">150,000 / 150,000</div>
         <div class="dc-fname">First charge</div><div class="dc-fval">Only when the trial depletes · then $7/mo</div>
         <div class="dc-foot">Light-use servers may never pay a cent · cancel anytime</div>
@@ -117,116 +117,116 @@ description: Server Assistant pricing — generous free tier, $7/mo USD Premium 
   </div>
 </div>
 
-Subscribe to Premium and your card is **saved but not charged today**. You get **150,000 free tokens** first — the same as the free trial — and billing starts the moment they run out. Small or light-use servers may never deplete 150K, so they never pay despite being subscribed. **BYOK** ($3/mo) skips tokens entirely: paste your own key via `/ai-config`, pay your provider directly, and pay us only for the software.
+Subscribe to Premium and your card is **saved but not charged today**. You get **150,000 free tokens** first (the same as the free trial) and billing starts the moment they run out. Small or light-use servers may never deplete 150K, so they never pay despite being subscribed. **BYOK** ($3/mo) skips tokens entirely: paste your own key via `/ai-config`, pay your provider directly, and pay us only for the software.
 
 ---
 
-## 🪣 Top-up packs
+## Top-up packs
 
 Need extra headroom without changing plans? Top-ups never expire and stack on any tier.
 
 | Pack | Price | Tokens | $ per 100K |
 |---|---|---|---|
-| 🪣 **Splash** | $3 USD | 300K | $1.00 |
-| 🛢️ **Surge** | $10 USD | 1.25M | $0.80 |
-| 🏭 **Stockpile** | $25 USD | 3.4M | $0.74 |
+| **Splash** | $3 USD | 300K | $1.00 |
+| **Surge** | $10 USD | 1.25M | $0.80 |
+| **Stockpile** | $25 USD | 3.4M | $0.74 |
 
-> 💡 **Using AI most months?** Premium ($7/mo for 750K monthly tokens) is the cheapest steady-state rate. Top-ups are for **bursts and overflow** — Surge and Stockpile give better per-token value because you pay upfront with no subscription.
+> **Using AI most months?** Premium ($7/mo for 750K monthly tokens) is the cheapest steady-state rate. Top-ups are for **bursts and overflow**: Surge and Stockpile give better per-token value because you pay upfront with no subscription.
 
 ---
 
 ## The detail
 
 <details class="doc-sec" markdown="1">
-<summary>🆓 Everything in the free tier (never counts against tokens)</summary>
+<summary>Everything in the free tier (never counts against tokens)</summary>
 
 <div class="free-cols" markdown="1">
 
-- **Slash + text commands** — `/warn`, `/mute`, `/kick`, `/ban`, `/purge`, all moderation tools
-- **Admin essentials** — `/role`, `/tempban` (persists across restarts), `/lockdown` (exact-prior-perm restore)
-- **AutoMod** — filter packs, custom regex, punishment ladder, link blocklist, anti-spam
-- **Anti-raid** — mass-join detection, alerts, auto-suspend
-- **Reception verification** — in-server welcome desk with a Verify button + human check
-- **🕵️ Alt-guard** (`/altguard`) — fingerprints banned/kicked users, auto-bans confident ban-evaders
-- **📩 Ban reasons + one-reply appeals** — DM + reply use no AI tokens; **Research** is metered only if you press it
-- **Warnings + notes** — full per-guild history
-- **🛡️ Encrypted tamper-proof audit log** — native-action logging, tamper alerts, owner ping on deletion
-- **24-hour undo** — bans, mutes, channel deletions, nickname changes
-- **`/setup` + `/settings`** — 60-second onboarding + 9-panel Customisation Hub
-- **`/autopilot`** — opens the pre-filled `/setup` wizard
+- **Slash + text commands**: `/warn`, `/mute`, `/kick`, `/ban`, `/purge`, all moderation tools
+- **Admin essentials**: `/role`, `/tempban` (persists across restarts), `/lockdown` (exact-prior-perm restore)
+- **AutoMod**: filter packs, custom regex, punishment ladder, link blocklist, anti-spam
+- **Anti-raid**: mass-join detection, alerts, auto-suspend
+- **Reception verification**: in-server welcome desk with a Verify button + human check
+- **Alt-guard** (`/altguard`): fingerprints banned/kicked users, auto-bans confident ban-evaders
+- **Ban reasons + one-reply appeals**: DM + reply use no AI tokens; **Research** is metered only if you press it
+- **Warnings + notes**: full per-guild history
+- **Encrypted tamper-proof audit log**: native-action logging, tamper alerts, owner ping on deletion
+- **24-hour undo**: bans, mutes, channel deletions, nickname changes
+- **`/setup` + `/settings`**: 60-second onboarding + 9-panel Customisation Hub
+- **`/autopilot`**: opens the pre-filled `/setup` wizard
 - **Privacy panel** (`/privacy`)
 - **Snippets + scheduled reminders**
-- **`/imagine`** — ~30 images on the free trial; unlimited on Premium
-- **Ticket Panels (core)** — panel embed, private channels, one intake question, `.txt` transcripts
+- **`/imagine`**: ~30 images on the free trial; unlimited on Premium
+- **Ticket Panels (core)**: panel embed, private channels, one intake question, `.txt` transcripts
 
 </div>
 </details>
 
 <details class="doc-sec" markdown="1">
-<summary>🤖 What uses AI tokens (rough costs)</summary>
+<summary>What uses AI tokens (rough costs)</summary>
 
 | Feature | Roughly |
 |---|---|
-| **🩺 Pulse** AI "notable patterns" narrative *(opt-in)* | ~3K per digest |
-| **🧠 Self-trained AutoMod** rule proposal | ~12K per learning round |
-| **📋 Message Report** AI summary | ~5K per right-click |
-| **🤔 AutoMod AI second-opinion** *(Premium, opt-in)* | ~1K per borderline hit (only when uncertain) |
-| **🩹 Bot Health Insurance** check-in | ~3K every 14 days |
-| **💬 SAi chat** (`/sai`) *(Premium)* | ~30–50K per conversation |
-| **❓ FAQ answer** (`/faq`) *(Premium)* | ~2–6K per question |
-| **🌐 Translation** (`/translate`) *(Premium)* | ~1–3K per message |
-| **🤝 Mediator** (`/mediate`) *(Premium)* | ~3–6K per mediation |
-| **🖼️ `/imagine`** | ~5K per image (free trial; unlimited on Premium) |
+| **Pulse** AI "notable patterns" narrative *(opt-in)* | ~3K per digest |
+| **Self-trained AutoMod** rule proposal | ~12K per learning round |
+| **Message Report** AI summary | ~5K per right-click |
+| **AutoMod AI second-opinion** *(Premium, opt-in)* | ~1K per borderline hit (only when uncertain) |
+| **Bot Health Insurance** check-in | ~3K every 14 days |
+| **SAi chat** (`/sai`) *(Premium)* | ~30-50K per conversation |
+| **FAQ answer** (`/faq`) *(Premium)* | ~2-6K per question |
+| **Translation** (`/translate`) *(Premium)* | ~1-3K per message |
+| **Mediator** (`/mediate`) *(Premium)* | ~3-6K per mediation |
+| **`/imagine`** | ~5K per image (free trial; unlimited on Premium) |
 
 </details>
 
 <details class="doc-sec" markdown="1">
-<summary>📊 Full plan comparison</summary>
+<summary>Full plan comparison</summary>
 
 | | **Free** | **Premium BYOK** | **Premium** |
 |---|---|---|---|
 | **Price** | $0 | **$3/mo** | **$7/mo** |
 | **AI tokens** | 150K lifetime *(our key)* | **your own key** | 750K/month *(our key)* |
 | **Billing** | no card | charged immediately | trial-then-bill (starts at 150K used) |
-| **SAi chat** (`/sai`) | — | ✅ | ✅ |
-| **🩺 Pulse** AI "notable patterns" narrative | — | ✅ | ✅ |
-| **🧠 Self-trained AutoMod** | — | ✅ | ✅ |
-| **🩹 Bot Health Insurance** | — | ✅ | ✅ |
-| **📋 Message Report** (right-click AI context) | — | ✅ | ✅ |
-| **AutoMod AI second-opinion** | — | ✅ | ✅ |
-| **Active Threat Score** | — | ✅ | ✅ |
-| **🌐 ThreatNet** — cross-server safety (advisory) | ✅ | ✅ | ✅ |
-| **🛡️ ThreatNet auto-protect** — auto-ban known cross-server bad actors on join | — | ✅ | ✅ |
-| **🌟 Decision explainer & guided appeals** | — | ✅ | ✅ |
-| **🎭 Reaction roles** (`/rolepanel`) | — | ✅ | ✅ |
-| **❓ AI Q&A from your FAQ** (`/faq`) | — | ✅ | ✅ |
-| **🌐 Translation** (`/translate`) | — | ✅ | ✅ |
-| **🤝 Mediator** (`/mediate`) | — | ✅ | ✅ |
-| **⌨️ Custom slash commands** (`/customcmd`) | — | — | ✅ |
-| **💾 Server backup & restore** (`/backup`) | — | — | ✅ |
-| **🎨 White-label branding** (`/brand`) | — | — | ✅ |
-| **Unlimited `/imagine`** | — | ✅ | ✅ |
-| **Ticket Panels — premium features** | — | ✅ | ✅ |
-| **All free features** | ✅ | ✅ | ✅ |
+| **SAi chat** (`/sai`) | No | Yes | Yes |
+| **Pulse** AI "notable patterns" narrative | No | Yes | Yes |
+| **Self-trained AutoMod** | No | Yes | Yes |
+| **Bot Health Insurance** | No | Yes | Yes |
+| **Message Report** (right-click AI context) | No | Yes | Yes |
+| **AutoMod AI second-opinion** | No | Yes | Yes |
+| **Active Threat Score** | No | Yes | Yes |
+| **ThreatNet**: cross-server safety (advisory) | Yes | Yes | Yes |
+| **ThreatNet auto-protect**: auto-ban known cross-server bad actors on join | No | Yes | Yes |
+| **Decision explainer & guided appeals** | No | Yes | Yes |
+| **Reaction roles** (`/rolepanel`) | No | Yes | Yes |
+| **AI Q&A from your FAQ** (`/faq`) | No | Yes | Yes |
+| **Translation** (`/translate`) | No | Yes | Yes |
+| **Mediator** (`/mediate`) | No | Yes | Yes |
+| **Custom slash commands** (`/customcmd`) | No | No | Yes |
+| **Server backup & restore** (`/backup`) | No | No | Yes |
+| **White-label branding** (`/brand`) | No | No | Yes |
+| **Unlimited `/imagine`** | No | Yes | Yes |
+| **Ticket Panels: premium features** | No | Yes | Yes |
+| **All free features** | Yes | Yes | Yes |
 
-**Ticket Panels — premium features:** up to 4 custom intake questions, custom welcome + close messages, and `/tickets add @user` for mid-ticket access.
+**Ticket Panels, premium features:** up to 4 custom intake questions, custom welcome + close messages, and `/tickets add @user` for mid-ticket access.
 
-> **Threat Score:** the **advisory** view (a per-user risk pill in profiles) is free for every server — it's just visibility. The Premium **active** version drives actions, with all the safeguards on the [Roadmap]({{ site.url }}{{ site.baseurl }}/roadmap/).
+> **Threat Score:** the **advisory** view (a per-user risk pill in profiles) is free for every server: it's just visibility. The Premium **active** version drives actions, with all the safeguards on the [Roadmap]({{ site.url }}{{ site.baseurl }}/roadmap/).
 
-> **🌐 ThreatNet (Cross-Server Threat Network):** a **core, on-by-default** safety feature — the **advisory band is free for every server** (your staff decide what to do; it never auto-acts). **Premium** adds the **richer cross-server view** and, optionally, **ThreatNet auto-protect** — automatically banning a joining user who meets a cross-server risk threshold you choose (off by default; turn it on with `/threatnet autoban on` or in `/settings → Security → ThreatNet`). Severity-only sharing (never the offence type, reasons, content, or which server acted); individuals can opt out of profiling in the [web portal](https://serverassistant.wandweb.co), and auto-protect never acts on anyone who has opted out.
+> **ThreatNet (Cross-Server Threat Network):** a **core, on-by-default** safety feature. The **advisory band is free for every server** (your staff decide what to do; it never auto-acts). **Premium** adds the **richer cross-server view** and, optionally, **ThreatNet auto-protect**: automatically banning a joining user who meets a cross-server risk threshold you choose (off by default; turn it on with `/threatnet autoban on` or in `/settings → Security → ThreatNet`). Severity-only sharing (never the offence type, reasons, content, or which server acted); individuals can opt out of profiling in the [web portal](https://serverassistant.wandweb.co), and auto-protect never acts on anyone who has opted out.
 
 </details>
 
 <details class="doc-sec" markdown="1">
-<summary>🎁 Founding servers, payment &amp; cancellation</summary>
+<summary>Founding servers, payment &amp; cancellation</summary>
 
-**🎁 Founding servers** — servers that joined during the beta are grandfathered with **12 months of free Premium**, applied automatically. This window has closed for new servers, but the free tier and 150K trial are open to everyone.
+**Founding servers:** servers that joined during the beta are grandfathered with **12 months of free Premium**, applied automatically. This window has closed for new servers, but the free tier and 150K trial are open to everyone.
 
-**💳 Payment**
-- **Stripe** — credit/debit card, available now.
-- **Discord App Subscriptions** — pay through Discord *(available when Server Assistant reaches 75 server installs)*.
+**Payment**
+- **Stripe**: credit/debit card, available now.
+- **Discord App Subscriptions**: pay through Discord *(available when Server Assistant reaches 75 server installs)*.
 
-Premium is per-server. Cancel anytime — no charge if you cancel before your 150K trial runs out.
+Premium is per-server. Cancel anytime, no charge if you cancel before your 150K trial runs out.
 
 </details>
 
@@ -239,15 +239,15 @@ Not immediately. We capture your card at signup but only charge it once your 150
 </details>
 
 <details class="doc-sec"><summary>What happens when I run out of free tokens?</summary>
-<p>AI features pause. <strong>Everything that doesn't use AI keeps working with no change</strong> — AutoMod, anti-raid, warnings, slash commands, the encrypted audit log, Ticket Panels, <code>/lockdown</code>, <code>/tempban</code>, alt-guard, and ban-reason DMs + the one-reply appeal flow (only the <strong>Research</strong> button consumes AI tokens, and only if you press it). You'll get a DM — if you're subscribed to Premium, billing starts automatically; on the free tier, subscribe or buy a top-up to continue.</p>
+<p>AI features pause. <strong>Everything that doesn't use AI keeps working with no change</strong>: AutoMod, anti-raid, warnings, slash commands, the encrypted audit log, Ticket Panels, <code>/lockdown</code>, <code>/tempban</code>, alt-guard, and ban-reason DMs + the one-reply appeal flow (only the <strong>Research</strong> button consumes AI tokens, and only if you press it). You'll get a DM: if you're subscribed to Premium, billing starts automatically; on the free tier, subscribe or buy a top-up to continue.</p>
 </details>
 
 <details class="doc-sec"><summary>What if a single user spams SAi or Message Report?</summary>
-Each high-variance feature has an invisible 6-hour rolling cap per user — generous enough that normal use never hits it, tight enough to stop abuse from draining your allowance.
+Each high-variance feature has an invisible 6-hour rolling cap per user: generous enough that normal use never hits it, tight enough to stop abuse from draining your allowance.
 </details>
 
 <details class="doc-sec"><summary>Can I bring my own AI key?</summary>
-Yes — `/ai-config` lets you paste your own Anthropic, xAI, or OpenAI key. BYOK calls don't count against any allowance. Premium BYOK ($3/mo) gives you the Premium AI features while you supply the tokens.
+Yes: `/ai-config` lets you paste your own Anthropic, xAI, or OpenAI key. BYOK calls don't count against any allowance. Premium BYOK ($3/mo) gives you the Premium AI features while you supply the tokens.
 </details>
 
 <details class="doc-sec"><summary>What if I cancel Premium?</summary>
@@ -255,13 +255,13 @@ You drop to the free tier. If your 150K lifetime trial was already used, AI feat
 </details>
 
 <details class="doc-sec"><summary>Do prices include tax?</summary>
-No — applicable VAT, GST, or sales tax is added at checkout based on your billing region. Stripe and Discord calculate and collect it automatically.
+No: applicable VAT, GST, or sales tax is added at checkout based on your billing region. Stripe and Discord calculate and collect it automatically.
 </details>
 
 ---
 
 ## Next steps
 
-- **[Setup]({{ site.url }}{{ site.baseurl }}/setup/)** — invite the bot, done in 60 seconds
-- **[Features]({{ site.url }}{{ site.baseurl }}/features/)** — every feature, free vs premium
-- **[FAQ]({{ site.url }}{{ site.baseurl }}/faq/)** — common questions
+- **[Setup]({{ site.url }}{{ site.baseurl }}/setup/)**: invite the bot, done in 60 seconds
+- **[Features]({{ site.url }}{{ site.baseurl }}/features/)**: every feature, free vs premium
+- **[FAQ]({{ site.url }}{{ site.baseurl }}/faq/)**: common questions

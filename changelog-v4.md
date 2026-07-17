@@ -1,53 +1,53 @@
 ---
 layout: default
-title: Changelog — v4.x
+title: Changelog - v4.x
 permalink: /changelog/v4/
 description: Server Assistant v4.x release history.
 ---
 
-# 📋 Changelog — v4.x
+# Changelog: v4.x
 
-The v4.x line — Server Assistant's AI-Moderation milestone.
+The v4.x line: Server Assistant's AI-Moderation milestone.
 
 ---
 
-## 2026-05-31 — v4.3.0 — Support Channel + Dev Updates
+## 2026-05-31 - v4.3.0 - Support Channel + Dev Updates
 
 The way you get help, and the way I tell you about new releases, both get cleaner.
 
 ### Added
-- **`/support` slash command — now the only way to contact the maintainer.** No support server, no email, no GitHub issues for support. The flow is consent-based: running `/support` shows you an ephemeral info embed with two buttons — **Create a ticket** or **Never mind**. Tap *Create*, I'll DM you, and your next DM opens the ticket (15-minute window). Nothing leaves the channel without your tap.
-- **Two-way ticket conversation via DM.** Once a ticket is open, the maintainer's replies arrive as a DM from Server Assistant. **Reply to the DM** to add a follow-up — your message lands in the same ticket automatically. The bot reacts ✅ to confirm receipt. No more "please use this other channel" routing.
-- **Image attachments on ticket DMs.** Send a screenshot to the bot — first DM (which opens the ticket) and follow-ups both support attachments. PNG, JPG, GIF, WEBP — up to 12 MB each, 10 per message.
+- **`/support` slash command: now the only way to contact the maintainer.** No support server, no email, no GitHub issues for support. The flow is consent-based: running `/support` shows you an ephemeral info embed with two buttons: **Create a ticket** or **Never mind**. Tap *Create*, I'll DM you, and your next DM opens the ticket (15-minute window). Nothing leaves the channel without your tap.
+- **Two-way ticket conversation via DM.** Once a ticket is open, the maintainer's replies arrive as a DM from Server Assistant. **Reply to the DM** to add a follow-up. Your message lands in the same ticket automatically. The bot reacts ✅ to confirm receipt. No more "please use this other channel" routing.
+- **Image attachments on ticket DMs.** Send a screenshot to the bot: first DM (which opens the ticket) and follow-ups both support attachments. PNG, JPG, GIF, WEBP, up to 12 MB each, 10 per message.
 - **Dev Updates opt-in.** New question in `/setup`: opt your server into Server Assistant development updates, posted as embeds to your staff chat when a release ships. Off by default. Toggle anytime via `/settings → Behaviour → Dev updates`.
 
 ### Changed
-- **Maintainer broadcast embeds are now red.** When the maintainer sends a notice into a staff chat, it's signed **"Server Assistant Dev"** with a red embed colour, and the footer makes clear that replies to that embed are NOT seen — to respond, open a `/support` ticket.
+- **Maintainer broadcast embeds are now red.** When the maintainer sends a notice into a staff chat, it's signed **"Server Assistant Dev"** with a red embed colour, and the footer makes clear that replies to that embed are NOT seen. To respond, open a `/support` ticket.
 - **Documentation rewrite.** Every page on the docs site now routes support through `/support` only. The public web support form is closed. `SECURITY.md` also routes through `/support` (prefix your message with `[SECURITY]`).
 
 ### Removed
-- The Server Assistant support server is no longer the way to get help — replaced by the in-bot `/support` flow.
+- The Server Assistant support server is no longer the way to get help, replaced by the in-bot `/support` flow.
 - The public web ticket form (and the docs-site form on the Support page) is closed.
 
 ### Fixed
-- **DMs to the bot without an open ticket** are now silently discarded — no confusing "use /support" auto-reply, no unintended reactions. The bot only engages on DMs from users with an active support thread.
+- **DMs to the bot without an open ticket** are now silently discarded: no confusing "use /support" auto-reply, no unintended reactions. The bot only engages on DMs from users with an active support thread.
 
 ---
 
-## 2026-05-29 — v4.0.0 — The AI-Moderation Update 🚀
+## 2026-05-29 - v4.0.0 - The AI-Moderation Update
 
 The milestone. Server Assistant's four flagship AI-moderation features are all live, and a **premium tier** arrives.
 
 ### Added
-- **Premium tier (per-server).** A real free/premium split — and the free tier stays genuinely generous: all core moderation, AutoMod, anti-raid, 🩺 Pulse, 🧠 Self-trained AutoMod, 🩹 Bot Health Insurance, AI reports, and `/imagine`. Premium adds 🛡️ Threat Score, higher AI usage limits, and more to come.
-- **`/premium`** — see your server's status and the full free-vs-premium breakdown.
-- **Your beta perk, now concrete:** during the beta, premium is **free for every server** — and servers using the bot during the beta lock in **12 months of free premium** automatically when the paid tier launches. No card, no claim form.
+- **Premium tier (per-server).** A real free/premium split, and the free tier stays genuinely generous: all core moderation, AutoMod, anti-raid, Pulse, Self-trained AutoMod, Bot Health Insurance, AI reports, and `/imagine`. Premium adds Threat Score, higher AI usage limits, and more to come.
+- **`/premium`**: see your server's status and the full free-vs-premium breakdown.
+- **Your beta perk, now concrete:** during the beta, premium is **free for every server**, and servers using the bot during the beta lock in **12 months of free premium** automatically when the paid tier launches. No card, no claim form.
 
 ### The v4.0 AI-moderation suite (read-only / advisory by design)
-- **🩺 Pulse** — daily server-health digest with trends + leading-indicator flags
-- **🧠 Self-trained AutoMod** — learns from your moderators, proposes server-specific rules
-- **🩹 Bot Health Insurance** — the bot watches its own footprint and suggests tuning before it gets noisy
-- **🛡️ Threat Score** — explainable per-user risk visibility for staff
+- **Pulse**: daily server-health digest with trends + leading-indicator flags
+- **Self-trained AutoMod**: learns from your moderators, proposes server-specific rules
+- **Bot Health Insurance**: the bot watches its own footprint and suggests tuning before it gets noisy
+- **Threat Score**: explainable per-user risk visibility for staff
 
 Every one gives your team x-ray vision and leaves the decisions to you.
 

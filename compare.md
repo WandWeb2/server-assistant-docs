@@ -2,10 +2,10 @@
 layout: default
 title: Server Assistant Compare
 permalink: /compare/
-description: Honest feature comparisons — Server Assistant vs the bots you might already use. Where each wins, where each loses, and which one fits your server.
+description: "Honest feature comparisons: Server Assistant vs the bots you might already use. Where each wins, where each loses, and which one fits your server."
 ---
 
-# 🤝 Server Assistant — How it compares
+# Server Assistant: How it compares
 
 <style>
 .cmp-hero { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.3rem 0 1.6rem; }
@@ -40,12 +40,12 @@ description: Honest feature comparisons — Server Assistant vs the bots you mig
 </style>
 
 <div class="cmp-hero">
-  <div class="h">📌 <strong>Honest framing.</strong> No bot is the right pick for every server. The cards below show where each tool genuinely wins — including the cases where you should pick <em>them</em> over us.</div>
-  <div class="h">🔍 <strong>Feature comparisons only.</strong> We don't grade websites or marketing — only what the bots actually do once installed. <strong>Tap a card to expand.</strong></div>
+  <div class="h"><strong>Honest framing.</strong> No bot is the right pick for every server. The cards below show where each tool genuinely wins, including the cases where you should pick <em>them</em> over us.</div>
+  <div class="h"><strong>Feature comparisons only.</strong> We don't grade websites or marketing, only what the bots actually do once installed. <strong>Tap a card to expand.</strong></div>
 </div>
 
 <details class="cmp-card">
-<summary><strong>Server Assistant</strong> vs Civora<span class="vs-sub">"Discord moderation that understands meaning" — a focused AI chat-moderation bot with multi-language NLP, launched early 2026.</span></summary>
+<summary><strong>Server Assistant</strong> vs Civora<span class="vs-sub">"Discord moderation that understands meaning": a focused AI chat-moderation bot with multi-language NLP, launched early 2026.</span></summary>
 <div class="vs-body">
   <div class="vs-grid">
     <div class="vs-col them">
@@ -60,23 +60,23 @@ description: Honest feature comparisons — Server Assistant vs the bots you mig
       <h4>Where Server Assistant wins</h4>
       <ul>
         <li><strong>The whole moderation suite, not just chat-AI.</strong> Anti-raid, Threat Score, Self-trained AutoMod, Bot Health Insurance, Ticket Panels, baseline admin (<code>/role</code> / <code>/lockdown</code> / <code>/tempban</code> / <code>/altguard</code>).</li>
-        <li><strong>Risk-graded enforcement.</strong> Threat Score adjusts actions to the actual threat instead of fixed punishment ladders — with extensive safeguards against false positives.</li>
+        <li><strong>Risk-graded enforcement.</strong> Threat Score adjusts actions to the actual threat instead of fixed punishment ladders, with extensive safeguards against false positives.</li>
         <li><strong>Ban reasons + one-reply appeals.</strong> Every ban DMs the user the reason and opens a structured appeal channel to staff. Civora doesn't do post-action recovery flows.</li>
         <li><strong>One-tap setup on install.</strong> The bot DMs the owner a one-button Apply proposal when it joins.</li>
         <li><strong>Better usage economics.</strong> Premium $7/mo includes ~750,000 AI tokens; Civora Pro $14/mo includes 8,000 messages. Roughly an order of magnitude more usage for half the price.</li>
-        <li><strong>Image generation.</strong> <code>/imagine</code> — ~30 free-trial images, unlimited on Premium, or bring your own image key.</li>
+        <li><strong>Image generation.</strong> <code>/imagine</code>: ~30 free-trial images, unlimited on Premium, or bring your own image key.</li>
       </ul>
     </div>
   </div>
   <div class="pick">
     <p><strong>Pick Civora if:</strong> your server is primarily Hungarian, Polish, Czech, Romanian, or another Central/Eastern European language community and chat-moderation context is your only need.</p>
-    <p><strong>Pick Server Assistant if:</strong> you want a full moderation suite — chat-AI <em>plus</em> anti-raid, risk-based actions, appeals, tickets, onboarding, and baseline admin — at roughly half the price.</p>
+    <p><strong>Pick Server Assistant if:</strong> you want a full moderation suite (chat-AI <em>plus</em> anti-raid, risk-based actions, appeals, tickets, onboarding, and baseline admin) at roughly half the price.</p>
   </div>
 </div>
 </details>
 
 <details class="cmp-card">
-<summary><strong>Server Assistant</strong> vs MEE6<span class="vs-sub">The original all-in-one community bot — leveling, music, reaction roles, and basic keyword automod.</span></summary>
+<summary><strong>Server Assistant</strong> vs MEE6<span class="vs-sub">The original all-in-one community bot: leveling, music, reaction roles, and basic keyword automod.</span></summary>
 <div class="vs-body">
   <div class="vs-grid">
     <div class="vs-col them">
@@ -93,24 +93,24 @@ description: Honest feature comparisons — Server Assistant vs the bots you mig
       <ul>
         <li><strong>AI-context moderation</strong> instead of keyword regex. Catches sarcasm, slang, and intent that MEE6's filters miss entirely.</li>
         <li><strong>Self-trained AutoMod</strong> learns from your staff's manual decisions and proposes server-specific rules for approval.</li>
-        <li><strong>Threat Score</strong> — risk-based actions instead of one-size-fits-all punishment ladders.</li>
-        <li><strong>ThreatNet (cross-server threat network)</strong> — recognises scammers and raiders with a serious, corroborated history on <em>other</em> protected servers, before they reach yours. No major competitor shares a cross-server safety signal.</li>
+        <li><strong>Threat Score</strong>: risk-based actions instead of one-size-fits-all punishment ladders.</li>
+        <li><strong>ThreatNet (cross-server threat network)</strong>: recognises scammers and raiders with a serious, corroborated history on <em>other</em> protected servers, before they reach yours. No major competitor shares a cross-server safety signal.</li>
         <li><strong>Ban reasons + one-reply appeals</strong> built in. MEE6's ban flow is silent.</li>
-        <li><strong>Bot Health Insurance</strong> — the bot watches its own noisiness and suggests tuning before staff get fed up and mute it.</li>
+        <li><strong>Bot Health Insurance</strong>: the bot watches its own noisiness and suggests tuning before staff get fed up and mute it.</li>
         <li><strong>Real anti-raid</strong> with auto-actions, not just join logging.</li>
         <li><strong>Free tier is genuinely usable.</strong> No paywalled essentials (no "upgrade to use timeouts" gates).</li>
       </ul>
     </div>
   </div>
   <div class="pick">
-    <p><strong>Pick MEE6 if:</strong> you primarily want leveling, music, and stream alerts — and your moderation needs are basic.</p>
-    <p><strong>Pick Server Assistant if:</strong> moderation quality matters more than engagement features. You can run both side-by-side — they don't conflict.</p>
+    <p><strong>Pick MEE6 if:</strong> you primarily want leveling, music, and stream alerts, and your moderation needs are basic.</p>
+    <p><strong>Pick Server Assistant if:</strong> moderation quality matters more than engagement features. You can run both side-by-side; they don't conflict.</p>
   </div>
 </div>
 </details>
 
 <details class="cmp-card">
-<summary><strong>Server Assistant</strong> vs Wick<span class="vs-sub">The gold standard for anti-nuke and raid protection — trusted by very large servers as their last line of defence.</span></summary>
+<summary><strong>Server Assistant</strong> vs Wick<span class="vs-sub">The gold standard for anti-nuke and raid protection, trusted by very large servers as their last line of defence.</span></summary>
 <div class="vs-body">
   <div class="vs-grid">
     <div class="vs-col them">
@@ -127,8 +127,8 @@ description: Honest feature comparisons — Server Assistant vs the bots you mig
         <li><strong>Chat-content moderation.</strong> Wick is built around catastrophic protection (nukes, raids); we're built around day-to-day chat quality (AutoMod, Threat Score, Self-trained rules).</li>
         <li><strong>Onboarding + verification wizard</strong> and right-click context menus for routine mod tasks.</li>
         <li><strong>Ticket Panels</strong> for private support tickets.</li>
-        <li><strong>Baseline admin</strong>: <code>/role</code>, <code>/lockdown</code>, <code>/tempban</code>, <code>/altguard</code> — all permission-gated and audited.</li>
-        <li><strong>Appeals + ban-reason DMs</strong> — actual post-action recovery flows that Wick doesn't focus on.</li>
+        <li><strong>Baseline admin</strong>: <code>/role</code>, <code>/lockdown</code>, <code>/tempban</code>, <code>/altguard</code>, all permission-gated and audited.</li>
+        <li><strong>Appeals + ban-reason DMs</strong>: actual post-action recovery flows that Wick doesn't focus on.</li>
         <li><strong>AI-driven <code>/sai</code> assistant</strong> for natural-language config changes by the owner.</li>
         <li><strong>Friendlier pricing</strong> and a usable free tier.</li>
       </ul>
@@ -136,19 +136,19 @@ description: Honest feature comparisons — Server Assistant vs the bots you mig
   </div>
   <div class="pick">
     <p><strong>Pick Wick if:</strong> you run a 10,000+ member server where a nuke attempt is a credible threat and you need elite anti-nuke as your headline defence.</p>
-    <p><strong>Pick Server Assistant if:</strong> your moderation pain is daily — toxic messages, slow staff response, no appeal path — rather than catastrophic. They don't conflict; many servers run both.</p>
+    <p><strong>Pick Server Assistant if:</strong> your moderation pain is daily (toxic messages, slow staff response, no appeal path) rather than catastrophic. They don't conflict; many servers run both.</p>
   </div>
 </div>
 </details>
 
 <details class="cmp-card">
-<summary><strong>Server Assistant</strong> vs Carl-bot<span class="vs-sub">The deepest reaction-roles, tags, and embed builder on Discord — the community-content workhorse.</span></summary>
+<summary><strong>Server Assistant</strong> vs Carl-bot<span class="vs-sub">The deepest reaction-roles, tags, and embed builder on Discord: the community-content workhorse.</span></summary>
 <div class="vs-body">
   <div class="vs-grid">
     <div class="vs-col them">
       <h4>Where Carl-bot wins</h4>
       <ul>
-        <li><strong>Best-in-class reaction roles</strong> — button-based, dropdown, mutually-exclusive groups, the full range.</li>
+        <li><strong>Best-in-class reaction roles</strong>: button-based, dropdown, mutually-exclusive groups, the full range.</li>
         <li><strong>Powerful tags system</strong> with arguments, scripting, and inline conditionals.</li>
         <li><strong>Mature embed builder</strong> with persistent storage and inline editing.</li>
         <li><strong>Auto-response system</strong> with regex hooks and timed posts.</li>
@@ -157,7 +157,7 @@ description: Honest feature comparisons — Server Assistant vs the bots you mig
     <div class="vs-col us">
       <h4>Where Server Assistant wins</h4>
       <ul>
-        <li><strong>AI-context moderation</strong> — Carl-bot's automod is keyword-based and inherits the same blind-spots as every regex filter.</li>
+        <li><strong>AI-context moderation</strong>: Carl-bot's automod is keyword-based and inherits the same blind-spots as every regex filter.</li>
         <li><strong>Risk-based enforcement</strong> via Threat Score with safeguards.</li>
         <li><strong>Self-trained AutoMod</strong> from staff decisions.</li>
         <li><strong>Real appeals</strong> + one-reply ban DMs.</li>
@@ -169,7 +169,7 @@ description: Honest feature comparisons — Server Assistant vs the bots you mig
   </div>
   <div class="pick">
     <p><strong>Pick Carl-bot if:</strong> reaction roles, tags, and embed-driven content are the core of your community and moderation is secondary.</p>
-    <p><strong>Pick Server Assistant if:</strong> moderation is your primary problem. Run Carl-bot alongside for the content surface — they don't conflict.</p>
+    <p><strong>Pick Server Assistant if:</strong> moderation is your primary problem. Run Carl-bot alongside for the content surface; they don't conflict.</p>
   </div>
 </div>
 </details>
@@ -178,8 +178,8 @@ description: Honest feature comparisons — Server Assistant vs the bots you mig
 
 ## What's next?
 
-- [Setup]({{ site.url }}{{ site.baseurl }}/setup/) — get up and running in a minute
-- [Features]({{ site.url }}{{ site.baseurl }}/features/) — the full capability list
-- [Pricing]({{ site.url }}{{ site.baseurl }}/pricing/) — the free / Premium / BYOK breakdown
-- [Roadmap]({{ site.url }}{{ site.baseurl }}/roadmap/) — what's coming next
-- [Support]({{ site.url }}{{ site.baseurl }}/support/) — questions and feature requests
+- [Setup]({{ site.url }}{{ site.baseurl }}/setup/): get up and running in a minute
+- [Features]({{ site.url }}{{ site.baseurl }}/features/): the full capability list
+- [Pricing]({{ site.url }}{{ site.baseurl }}/pricing/): the free / Premium / BYOK breakdown
+- [Roadmap]({{ site.url }}{{ site.baseurl }}/roadmap/): what's coming next
+- [Support]({{ site.url }}{{ site.baseurl }}/support/): questions and feature requests
