@@ -18,7 +18,7 @@ area you want without scrolling past everything else:
 - **⚙️ Settings** — branding, quick presets, behaviour, role tiers, AI config,
   white-label, snippets, custom commands and FAQ.
 - **👥 Members** — new members, verification, onboarding and role panels.
-- **🔔 Notifications** — event role-pings and the Pulse digest.
+- **🔔 Notifications** — event role-pings and alert toggles.
 - **🛡️ Security** — AutoMod, anti-nuke, scam images, the channel allowlist,
   privacy and backups.
 
@@ -71,7 +71,7 @@ sit alongside it: `/autopilot`, `/privacy`, `/onboarding`, `/snippets`,
   </div>
 </div>
 
-<p style="color:var(--fg-1);font-size:.9rem;line-height:1.55;">Each button opens that section's own panel of tools. <strong>⚙️ Settings</strong> holds branding, quick presets, behaviour, role tiers, AI config, white-label, snippets, custom commands and FAQ; <strong>👥 Members</strong> covers new members, verification, onboarding and role panels; <strong>🔔 Notifications</strong> is event role-pings and the Pulse digest; and <strong>🛡️ Security</strong> gathers AutoMod, anti-nuke, scam images, the channel allowlist, privacy and backups. The tools shown below appear under whichever section fits them.</p>
+<p style="color:var(--fg-1);font-size:.9rem;line-height:1.55;">Each button opens that section's own panel of tools. <strong>⚙️ Settings</strong> holds branding, quick presets, behaviour, role tiers, AI config, white-label, snippets, custom commands and FAQ; <strong>👥 Members</strong> covers new members, verification, onboarding and role panels; <strong>🔔 Notifications</strong> is event role-pings and alert toggles; and <strong>🛡️ Security</strong> gathers AutoMod, anti-nuke, scam images, the channel allowlist, privacy and backups. The tools shown below appear under whichever section fits them.</p>
 
 ### Step through every tab
 
@@ -202,23 +202,25 @@ forms that open from some of them.
     <p class="wiz-caption"><strong>New Members.</strong> Choose a role to grant automatically when someone joins, and set the emoji the bot reacts with to welcome them. <strong>👋 Set welcome emoji</strong> opens a one-field form that accepts a standard emoji, a <code>:shortcode:</code>, or a custom <code>&lt;:name:id&gt;</code> emoji. The two <strong>🚫 Clear</strong> buttons reset each setting.</p>
   </div>
 
-  <div class="wiz-step" data-step="🔐 Verification gate">
+  <div class="wiz-step" data-step="🔓 Verification · Reception">
     <div class="dc">
       <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
         <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">only you can see this</span></div>
         <div class="dc-embed blue">
-          <div class="dc-title">🔐 Verification gate</div>
-          <div class="dc-desc">Make members click to prove they're human before they get access.</div>
+          <div class="dc-title">🔓 Verification · Reception</div>
+          <div class="dc-desc">Front new members at a branded Reception desk, and choose who gets held before they're let in.</div>
           <div class="dc-fname">Role granted on verification</div>
           <div class="dc-select">Pick a role…</div>
+          <div class="dc-fname">Who gets held</div>
+          <div class="dc-select">Intelligent — hold only risky joins</div>
           <div class="dc-btns">
-            <span class="dc-btn grey">🔘 Toggle on/off</span>
+            <span class="dc-btn grey">🎨 Reception desk…</span>
             <span class="dc-btn grey">← Back</span>
           </div>
         </div>
       </div></div>
     </div>
-    <p class="wiz-caption"><strong>Verification gate.</strong> Pick the role that's handed out once a member verifies, then flip <strong>🔘 Toggle on/off</strong>. You have to choose a role before you can enable the gate. A simple, low-friction human check that keeps drive-by spam accounts out.</p>
+    <p class="wiz-caption"><strong>Verification.</strong> New members land at <strong>Reception</strong> — an in-server welcome desk with a banner, greeting and a <strong>🔓 Verify me</strong> button that opens a quick are-you-human check (a wrong answer just retries, never bans). Pick the role handed out on success, then choose <strong>who gets held</strong>: <strong>Off</strong> (no gate), <strong>Intelligent</strong> (holds only risk-scored joins for staff to <em>Approve / Kick / Ban</em>) or <strong>On</strong> (everyone verifies). You have to choose a role before you can switch the gate on. On <span class="wiki-prem">PREMIUM</span>, <strong>🎨 Reception desk</strong> adds a banner image, a custom receptionist name and persona, and a concierge members can chat with at the desk.</p>
   </div>
 
   <div class="wiz-step" data-step="📍 Channel Allowlist">
@@ -267,8 +269,6 @@ forms that open from some of them.
         <div class="dc-embed blue">
           <div class="dc-title">🔔 Notifications</div>
           <div class="dc-desc">What the bot tells you about, and who gets pinged.</div>
-          <div class="dc-fname">Pulse digest cadence</div>
-          <div class="dc-select">🩺 Daily</div>
           <div class="dc-btns">
             <span class="dc-btn grey">🎉 Milestones: On</span>
             <span class="dc-btn grey">📣 Announcements: On</span>
@@ -280,7 +280,7 @@ forms that open from some of them.
         </div>
       </div></div>
     </div>
-    <p class="wiz-caption"><strong>Notifications.</strong> Opening this section now drops you straight onto the notification options — no extra menu step in between. Sets the Pulse digest cadence (Off, Daily, Weekly or Monthly) and toggles celebratory milestone cards, product announcements and service notices, and native-action alerts (logging when staff moderate directly in Discord). <strong>🚨 Instant alerts →</strong> opens the role-ping screen.</p>
+    <p class="wiz-caption"><strong>Notifications.</strong> Opening this section now drops you straight onto the notification options — no extra menu step in between. Toggles celebratory milestone cards, product announcements and service notices, and native-action alerts (logging when staff moderate directly in Discord). <strong>🚨 Instant alerts →</strong> opens the role-ping screen. (Pulse now lives in the web portal — see the note below.)</p>
   </div>
 
   <div class="wiz-step" data-step="🚨 Instant alerts">
@@ -302,28 +302,14 @@ forms that open from some of them.
     </div>
     <p class="wiz-caption"><strong>Instant alerts.</strong> Choose which roles get an immediate ping for each urgent event: an <em>anti-raid</em> trigger, a <em>dangerous-action approval</em> request, and an <em>AutoMod escalation</em> (only timeouts, kicks and bans). Leave any of them empty for no ping.</p>
   </div>
-
-  <div class="wiz-step" data-step="🩺 Pulse">
-    <div class="dc">
-      <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
-        <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">only you can see this</span></div>
-        <div class="dc-embed blue">
-          <div class="dc-title">🩺 Pulse</div>
-          <div class="dc-desc">A daily digest of your server's activity, posted automatically.</div>
-          <div class="dc-fname">Destination</div>
-          <div class="dc-select">#staff-chat</div>
-          <div class="dc-btns">
-            <span class="dc-btn grey">🔁 Toggle on/off</span>
-            <span class="dc-btn grey">🕘 Set hour…</span>
-            <span class="dc-btn grey">🧪 Send a sample now</span>
-          </div>
-          <div class="dc-btns"><span class="dc-btn grey">← Back</span></div>
-        </div>
-      </div></div>
-    </div>
-    <p class="wiz-caption"><strong>Pulse.</strong> A daily digest of activity counts (no message content is stored). Turn it on or off, choose its destination channel, and use <strong>🕘 Set hour…</strong> to pick the hour of day (0–23, server local time) it posts. <strong>🧪 Send a sample now</strong> posts one immediately so you can see what it looks like.</p>
-  </div>
 </div>
+
+> **Pulse has moved.** The server-health digest no longer posts to a Discord
+> channel on a schedule you set here — there's no cadence, destination or “send a
+> sample” to configure in `/settings` any more. Pulse is now **always on in the
+> [web portal]({{ '/portal/' | relative_url }})**, and each staff member can have
+> it **DM'd to them** on their own cadence (Off, Weekly or Monthly), set from the
+> portal. It's still counts-only — no message content is stored.
 
 ## `/autopilot`
 
@@ -333,33 +319,36 @@ forms that open from some of them.
     <span class="cmd-tag free">FREE</span>
     <span class="cmd-tag perm">ADMIN</span>
   </div>
-  <p class="cmd-desc">Let Server Assistant detect your channels and roles and apply a sensible config in one tap — no step-by-step wizard. Owner only.</p>
+  <p class="cmd-desc">An alias for <code>/setup</code> — it opens the same wizard with every step already pre-filled from your detected channels and roles. Review, adjust, then finish. Owner or Manage Server admin.</p>
   <table class="cmd-args">
     <tr><th>Argument</th><th>Type</th><th>Notes</th></tr>
-    <tr><td colspan="3" style="color:var(--fg-2)">No arguments — review the proposal, then Apply.</td></tr>
+    <tr><td colspan="3" style="color:var(--fg-2)">No arguments — the pre-filled wizard opens; nothing saves until you finish.</td></tr>
   </table>
   <div class="dc">
     <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
       <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">only you can see this</span></div>
       <div class="dc-embed blue">
-        <div class="dc-title">🛫 Autopilot — here's what I'd set up</div>
-        <div class="dc-desc">I detected your channels and roles. Apply this and you're done, or switch to manual setup.</div>
+        <div class="dc-title">🧭 Setup — I've filled everything in</div>
+        <div class="dc-desc">I scanned your server and pre-filled every step. Review and adjust, then finish — nothing saves until you do.</div>
         <div class="dc-fname">Staff chat · Log channel</div><div class="dc-fval">#staff-chat · #mod-log</div>
         <div class="dc-fname">Admin · Moderator</div><div class="dc-fval">@Admin · @Moderator</div>
-        <div class="dc-fname">Defaults</div><div class="dc-fval">AutoMod: Scams + slurs (gaming) · Anti-raid: Normal (5/30s) · Ladder: Standard (3→5→10) · Pulse: on</div>
+        <div class="dc-fname">Defaults</div><div class="dc-fval">AutoMod: Scams + slurs (gaming) · Anti-raid: Normal (5/30s) · Ladder: Standard (3→5→10)</div>
         <div class="dc-btns">
-          <span class="dc-btn green">Apply</span>
-          <span class="dc-btn grey">Manual setup</span>
+          <span class="dc-btn green">✅ Looks good →</span>
+          <span class="dc-btn grey">✏️ Adjust</span>
         </div>
       </div>
     </div></div>
   </div>
 </div>
 
-If something can't be detected, the bot flags it (for example *“none detected —
-recommend creating a private #staff channel”*) so you know what to create.
-Prefer to go screen by screen instead? Choose **Manual setup** to open the
-[`/setup` wizard]({{ '/wiki/setup/' | relative_url }}).
+`/autopilot` is no longer a separate one-tap apply — it simply opens the same
+pre-filled [`/setup` wizard]({{ '/wiki/setup/' | relative_url }}), with your
+channels, roles and staff detected and filled in for you. If something can't be
+detected, the bot flags it (for example *“none detected — recommend creating a
+private #staff channel”*) so you know what to create. Every step is editable and
+nothing is saved until you finish — so `/autopilot` and `/setup` land you in
+exactly the same place.
 
 ## `/privacy`
 

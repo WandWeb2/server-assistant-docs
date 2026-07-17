@@ -14,7 +14,7 @@ image: /assets/banner.jpeg
   <h1>Server Assistant</h1>
 
   <p style="font-size:1.15rem; font-weight:700;">Most Discord mod bots just react to messages.<br>This one understands your whole server.</p>
-  <p style="font-size:.95rem; color:var(--ink-soft); margin-top:-.25rem;">Daily health insight · AutoMod that learns your team · fair ban appeals · a tamper-proof audit trail.</p>
+  <p style="font-size:.95rem; color:var(--ink-soft); margin-top:-.25rem;">Whole-server health insight · AutoMod that learns your team · fair ban appeals · a tamper-proof audit trail.</p>
 </div>
 
 <script type="application/ld+json">
@@ -24,7 +24,7 @@ image: /assets/banner.jpeg
   "name": "Server Assistant",
   "applicationCategory": "Discord Bot",
   "operatingSystem": "Discord",
-  "description": "A Discord moderation bot that watches server health (Pulse daily digests), learns your staff's moderation decisions (self-trained AutoMod), reduces false positives with an AI second-opinion, gives banned members a structured appeal, catches ban-evading alts, and keeps an encrypted tamper-proof audit trail. Free AutoMod, anti-raid, verification, ticket panels and image generation, plus a Premium toolkit: reaction roles, custom slash commands, AI Q&A from your FAQ, translation, AI mediation, server backup & restore, and white-label branding.",
+  "description": "A Discord moderation bot that watches server health (Pulse health digests), learns your staff's moderation decisions (self-trained AutoMod), reduces false positives with an AI second-opinion, gives banned members a structured appeal, catches ban-evading alts, and keeps an encrypted tamper-proof audit trail. Free AutoMod, anti-raid, verification, ticket panels and image generation, plus a Premium toolkit: reaction roles, custom slash commands, AI Q&A from your FAQ, translation, AI mediation, server backup & restore, and white-label branding.",
   "offers": { "@type": "AggregateOffer", "lowPrice": "0", "highPrice": "7", "priceCurrency": "USD", "offerCount": "3" },
   "url": "https://wandweb2.github.io/server-assistant-docs/",
   "image": "https://wandweb2.github.io/server-assistant-docs/assets/banner.jpeg",
@@ -203,18 +203,18 @@ image: /assets/banner.jpeg
 <div class="frow c-green">
   <div class="ftext">
     <h3>🩺 Whole-server health insight</h3>
-    <p>Every other bot waits for a rule to break. <strong>Pulse</strong> posts a health report to your staff channel — daily, weekly or monthly, your call — and flags the slow-burn patterns humans miss.</p>
-    <details class="fmore"><summary>How it works</summary><div class="fbody">Messages, joins, AutoMod activity and warnings, each with a week-over-week trend — like a trickle of joins sitting just under your raid threshold. Set the cadence (or turn it off) in <code>/settings → 🔔 Notifications</code>. Read-only: it never acts on its own, it just gives your team x-ray vision.</div></details>
+    <p>Every other bot waits for a rule to break. <strong>Pulse</strong> is a whole-server health digest that flags the slow-burn patterns humans miss — always on in your web portal, and DM'd to each staff member on their own schedule.</p>
+    <details class="fmore"><summary>How it works</summary><div class="fbody">Activity counts, a mod-team recap and a reception summary, each with a week-over-week trend — like a trickle of joins sitting just under your raid threshold. Always on the portal card for every server; opt in to a personal DM (Weekly or Monthly) in your portal settings. Read-only: it never acts on its own, it just gives your team x-ray vision.</div></details>
   </div>
   <div class="fshot">
     <div class="dc">
       <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
-        <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">9:00 AM</span></div>
+        <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">Direct Message</span></div>
         <div class="dc-embed green">
-          <div class="dc-title">🩺 Daily Pulse — last 24 hours</div>
+          <div class="dc-title">🩺 Pulse — this week</div>
           <div class="dc-desc">Your server looks healthy. One thing worth a glance. 👇</div>
-          <div class="dc-fname">Messages</div><div class="dc-fval">4,812 · ▲ 6% vs avg</div>
-          <div class="dc-fname">New members</div><div class="dc-fval">37 joins · ⚠️ above baseline, below raid threshold</div>
+          <div class="dc-fname">Messages</div><div class="dc-fval">31,540 · ▲ 6% vs avg</div>
+          <div class="dc-fname">New members</div><div class="dc-fval">142 joins · ⚠️ above baseline, below raid threshold</div>
           <div class="dc-foot">Read-only insight · never auto-actions</div>
         </div>
       </div></div>
@@ -466,10 +466,10 @@ image: /assets/banner.jpeg
   <details class="x"><summary>🛡️ Full mod toolkit</summary><div class="b">warn · mute · kick · ban · softban · <code>/tempban</code> (timed, auto-unban) · one-command <code>/role</code> · <strong>tiered approval</strong> (dangerous actions route up the chain) · <strong>24-hour undo</strong>.</div></details>
   <details class="x"><summary>🤖 AutoMod engine</summary><div class="b">Filter packs (scams / slurs), <strong>custom regex</strong> with a safety check, link blocklist, anti-spam, and an auto-escalating punishment ladder. Staff are completely exempt.</div></details>
   <details class="x"><summary>🚨 Anti-raid &amp; lockdown</summary><div class="b">Always-on mass-join detection with staff alerts. <code>/lockdown</code> locks every channel in one command and restores the <strong>exact prior permissions</strong> when lifted.</div></details>
-  <details class="x"><summary>🔐 DM Verification Gate</summary><div class="b">Button-based new-member verification that stops most automated raid bots cold before they reach your channels.</div></details>
+  <details class="x"><summary>🔓 Reception verification</summary><div class="b">An in-server Reception welcome desk with a Verify-me button and a quick human check — stops most automated raid bots cold before they reach your channels.</div></details>
   <details class="x"><summary>🎫 Ticket Panels</summary><div class="b">Private in-server support tickets — a panel button opens a private channel with an intake form; a <code>.txt</code> transcript is saved on close. The bot can even create the channel for you.</div></details>
   <details class="x"><summary>🎨 AI extras</summary><div class="b"><code>/imagine</code> image generation · 🌐 <code>/translate</code> · ❓ <code>/faq</code> Q&amp;A · right-click <strong>Message Report</strong> &amp; <strong>Translate</strong>. Use the host's key or bring your own.</div></details>
-  <details class="x"><summary>🎛️ Customisation Hub</summary><div class="b">Nine sub-wizards in <code>/settings</code> — branding, role tiers, punishment ladders, notifications, Pulse and more. Everything saves instantly, no code.</div></details>
+  <details class="x"><summary>🎛️ Customisation Hub</summary><div class="b">Sub-wizards in <code>/settings</code> — branding, role tiers, punishment ladders, notifications and more. Everything saves instantly, no code. (Pulse lives in the web portal, not here.)</div></details>
   <details class="x"><summary>💎 Premium toolkit</summary><div class="b">🎭 Reaction roles · ⌨️ custom <code>/commands</code> with live embeds · ❓ AI Q&amp;A from your FAQ · 🌐 translation · 🤝 AI mediator · 💾 backup &amp; restore · 🎨 white-label branding. Most set up from a one-screen wizard.</div></details>
 </div>
 

@@ -149,18 +149,17 @@ You're set up in about a minute — the bot does the work, you just confirm.
   <div class="stext">
     <div class="stepn">3</div>
     <h3>Make it yours <span style="font-weight:400;font-size:.9rem;color:var(--ink-soft);">(optional)</span></h3>
-    <p>Tweak anything in <code>/settings</code> — nine wizards, every change saves instantly.</p>
-    <details class="smore"><summary>The nine wizards</summary><div class="sbody"><ul>
+    <p>Tweak anything in <code>/settings</code> — a wizard for every section, every change saves instantly.</p>
+    <details class="smore"><summary>The settings wizards</summary><div class="sbody"><ul>
       <li>🎨 <strong>Branding</strong> · embed colour, nickname, timezone</li>
       <li>⚡ <strong>Quick Presets</strong> · AutoMod / ladder / onboarding / anti-raid</li>
       <li>🛡️ <strong>Behaviour</strong> · approval timeout, log verbosity, Threat Score</li>
       <li>👋 <strong>New Members</strong> · auto-role, welcome reaction</li>
-      <li>🔐 <strong>Verification</strong> · DM-button gate</li>
+      <li>🔓 <strong>Verification</strong> · Reception desk &amp; who gets held</li>
       <li>📍 <strong>Channel allowlist</strong> · where the bot responds</li>
       <li>🛂 <strong>Role Tiers</strong> · custom tiers + approval authority</li>
       <li>🔔 <strong>Notifications</strong> · per-event role pings</li>
-      <li>🩺 <strong><a href="{{ '/wiki/pulse/' | relative_url }}">Pulse</a></strong> · daily health digest</li>
-    </ul></div></details>
+    </ul><p style="margin:.4rem 0 0;font-size:.85rem;color:var(--ink-soft);">Your server-health <a href="{{ '/wiki/pulse/' | relative_url }}">Pulse</a> lives in the web portal now, not here.</p></div></details>
   </div>
   <div class="sshot">
     <div class="dc">
@@ -168,7 +167,7 @@ You're set up in about a minute — the bot does the work, you just confirm.
         <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">/settings</span></div>
         <div class="dc-embed">
           <div class="dc-title">🎨 Settings — pick a wizard</div>
-          <div class="dc-desc">Nine sub-wizards, all in one place. Every change saves instantly.</div>
+          <div class="dc-desc">A sub-wizard for every section, all in one place. Every change saves instantly.</div>
           <div class="dc-btns"><span class="dc-btn blurple">🎨 Branding</span><span class="dc-btn grey">⚡ Presets</span><span class="dc-btn grey">🛡️ Behaviour</span><span class="dc-btn grey">🛂 Role Tiers</span></div>
         </div>
       </div></div>
@@ -176,7 +175,7 @@ You're set up in about a minute — the bot does the work, you just confirm.
   </div>
 </div>
 
-<p style="text-align:center; font-size:.85rem; color:var(--ink-soft); margin:1.1rem 0 0;">💡 In a real hurry? <code>/autopilot</code> skips the step-by-step wizard and applies the detected defaults in one tap — a faster <em>style</em> of setup, not a separate place to start (fine-tune anything later in <code>/settings</code>). <strong>However you set up</strong> — the wizard, <code>/autopilot</code>, or the <a href="https://serverassistant.wandweb.co">web portal</a> — you land in the same place: channels and roles configured, a moderation profile matched to your community, and the free AI trial on.</p>
+<p style="text-align:center; font-size:.85rem; color:var(--ink-soft); margin:1.1rem 0 0;">💡 Prefer one command? <code>/autopilot</code> opens this same wizard with every step already pre-filled from your detected channels and roles — same screens, same result, nothing saved until you finish. <strong>However you set up</strong> — the wizard, <code>/autopilot</code>, or the <a href="https://serverassistant.wandweb.co">web portal</a> — you land in the same place: channels and roles configured, a moderation profile matched to your community, and the free AI trial on.</p>
 
 ### Nice first touches
 

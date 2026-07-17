@@ -19,6 +19,13 @@ and for the Crest-collecting game see the
 
 ---
 
+## 2026 — A simpler leveling toggle {#level-up-toggle}
+
+- **One "Level-up messages" switch.** The portal's leveling section now has a
+  single **Level-up messages** on/off toggle in place of the old, confusing pair.
+  Turn it off and the celebratory level-up messages stop — members still earn XP
+  exactly as before, they just do it quietly.
+
 ## 2026 — Crestbound joins the portal {#xp-games}
 
 - **🎮 XP Games on the portal.** The portal home now has an **XP Games** section,

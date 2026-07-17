@@ -64,9 +64,9 @@ description: A tour of Server Assistant's headline features, what each one does,
 <p class="feat-lead">Four independent layers that keep known-bad actors out at the door. They're separate systems with <strong>different data sources</strong> — worth understanding so you know exactly what each one checks.</p>
 
 <div class="feat">
-  <h3>Smart join verification <span class="feat-tag free">Free</span></h3>
-  <p>Scores each new member and only gets in the way of the risky ones. <strong>Intelligent</strong> mode (the default) waves regulars straight through and holds only suspicious joins — brand-new accounts, no avatar, cross-server or alt signals; <strong>On</strong> verifies everyone. Lower-risk holds <strong>self-serve</strong> on a quick web page (Discord sign-in → confirm → access); higher-risk ones come to staff as a one-tap <strong>Approve / Kick / Ban</strong> card. You set the cut-off. Local to your server.</p>
-  <p class="how"><b>How to use:</b> <code>/settings</code> → <b>Verification</b> (mode, sensitivity, self-serve ceiling).</p>
+  <h3>Smart join verification <span class="feat-tag free">Free</span> <span class="feat-tag premium">Premium desk</span></h3>
+  <p>New members are met at <strong>Reception</strong> — a branded in-server welcome desk with a <strong>🔓 Verify me</strong> button and a quick are-you-human check — then verified into the server (a wrong answer just retries, never bans). You choose <strong>who gets held</strong> there: <strong>Intelligent</strong> (the default) waves regulars straight through and holds only risk-scored joins — brand-new accounts, no avatar, cross-server or alt signals — while <strong>On</strong> holds everyone and <strong>Off</strong> drops the gate. Risk-scored holds come to staff as a one-tap <strong>Approve / Kick / Ban</strong> card; you set the cut-off. The desk also doubles as a honeypot — an unverified account that posts instead of verifying is removed. On Premium it gains a custom banner, a receptionist persona, and a concierge members can chat with. Local to your server.</p>
+  <p class="how"><b>How to use:</b> <code>/settings → Verification → Reception</code> (who gets held, sensitivity, the desk's look).</p>
   <a class="more" href="{{ '/wiki/settings/' | relative_url }}">Settings hub guide →</a>
 </div>
 
@@ -111,8 +111,8 @@ description: A tour of Server Assistant's headline features, what each one does,
 
 <div class="feat">
   <h3>🩺 Pulse — whole-server health insight <span class="feat-tag free">Free</span></h3>
-  <p>Instead of waiting for a rule to break, Pulse posts a health report to your staff channel — daily, weekly or monthly — surfacing slow-burn trends humans miss, like a trickle of joins sitting just under your raid threshold. Read-only: it never acts on its own.</p>
-  <p class="how"><b>How to use:</b> <code>/settings</code> → <b>🔔 Notifications / Pulse</b> to set the cadence (or turn it off).</p>
+  <p>Instead of waiting for a rule to break, Pulse surfaces slow-burn trends humans miss — like a trickle of joins sitting just under your raid threshold. It's always on in the web portal, and each staff member can have it DM'd to them on their own schedule. Read-only: it never acts on its own.</p>
+  <p class="how"><b>How to use:</b> open the <a href="{{ '/portal/' | relative_url }}">web portal</a> — Pulse is always on there; set your personal DM cadence (Off, Weekly or Monthly) in your portal settings.</p>
   <a class="more" href="{{ '/wiki/pulse/' | relative_url }}">Pulse guide →</a>
 </div>
 
@@ -142,9 +142,9 @@ description: A tour of Server Assistant's headline features, what each one does,
 ## ⚙️ Setup & control
 
 <div class="feat">
-  <h3>Guided setup, Settings hub &amp; autopilot <span class="feat-tag free">Free</span></h3>
-  <p>A one-minute guided wizard gets you configured (the bot detects sensible defaults and you just confirm); the Settings hub gives per-feature control afterwards; and autopilot can detect and apply a full config for you.</p>
-  <p class="how"><b>How to use:</b> <code>/setup</code> to start, <code>/settings</code> to fine-tune, <code>/autopilot</code> to auto-configure.</p>
+  <h3>Guided setup &amp; Settings hub <span class="feat-tag free">Free</span></h3>
+  <p>A one-minute guided wizard gets you configured — the bot scans your server and pre-fills every step, so you just review and confirm; the Settings hub gives per-feature control afterwards. <code>/autopilot</code> is simply an alias that opens the same pre-filled wizard.</p>
+  <p class="how"><b>How to use:</b> <code>/setup</code> (or <code>/autopilot</code>) to start, <code>/settings</code> to fine-tune.</p>
   <a class="more" href="{{ '/wiki/setup/' | relative_url }}">Setup wizard guide →</a>
 </div>
 

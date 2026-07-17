@@ -56,7 +56,7 @@ details.faq .faq-body table { margin: .5rem 0; }
       "name": "How long does setup take?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "About 60 seconds — and you may not even need to run /setup: when the bot joins it DMs the owner the setup wizard, pre-filled, ready to finish in DMs. The bot auto-detects your channels and roles so you mostly just confirm channels, roles, then a server-type + AI step. In a hurry, /autopilot does it all in one command, and /settings opens nine optional panels to fine-tune anything afterwards."
+        "text": "About 60 seconds — and you may not even need to run /setup: when the bot joins it DMs the owner the setup wizard, pre-filled, ready to finish in DMs. The bot auto-detects your channels and roles so you mostly just confirm channels, roles, then a server-type + AI step. /autopilot opens the very same wizard with every step already pre-filled, and /settings opens optional panels to fine-tune anything afterwards."
       }
     },
     {
@@ -93,10 +93,10 @@ details.faq .faq-body table { margin: .5rem 0; }
     },
     {
       "@type": "Question",
-      "name": "How does the verification gate work?",
+      "name": "How does verification work?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Enable it in /settings → Members → Verification. New joiners get a DM with a green Verify button. Clicking it grants the configured verified role, which gates channels via Discord's role permissions. If a user has DMs disabled the failure is logged and they stay unverified. To set up the gated channels without editing permissions by hand, use the Auto-configure channels button in the same Verification panel: it proposes which channels stay visible to unverified members (verify, rules, system, announcements), lets you keep extra ones visible, then on Apply hides everything else and opens it to your verified role — with a one-tap Undo. It needs a verified role set and the bot to have Manage Channels and Manage Roles."
+        "text": "Enable it in /settings → Verification. New members are met at Reception — an in-server welcome desk with a banner, a greeting and a 🔓 Verify me button. Tapping it opens a quick are-you-human check; pass and they're granted the configured verified role a moment later, which gates channels via Discord's role permissions. A wrong answer is a friendly retry, never a ban. To set up the gated channels without editing permissions by hand, use the Auto-configure channels button in the same Verification panel: it proposes which channels stay visible to unverified members (reception, rules, system, announcements), lets you keep extra ones visible, then on Apply hides everything else and opens it to your verified role — with a one-tap Undo. It needs a verified role set and the bot to have Manage Channels and Manage Roles."
       }
     },
     {
@@ -171,7 +171,7 @@ details.faq .faq-body table { margin: .5rem 0; }
 
 <details class="faq"><summary>Is the bot free?</summary>
 <div class="faq-body">
-<p><strong>The full moderation toolkit is free forever</strong> — no card, no catch. Core moderation, AutoMod, anti-raid, DM verification, audit logs, warnings, the Customisation Hub, and zero-touch <code>/autopilot</code> setup never cost a thing.</p>
+<p><strong>The full moderation toolkit is free forever</strong> — no card, no catch. Core moderation, AutoMod, anti-raid, Reception verification, audit logs, warnings, the Customisation Hub, and <code>/autopilot</code> setup never cost a thing.</p>
 <p>The <strong>AI features</strong> (SAi, Message Report, Self-trained AutoMod, Pulse) include a <strong>150,000-token free trial</strong>. After that, <strong>Premium ($7 USD/mo)</strong> keeps them going — but you're only charged once your trial tokens run out, so light-use servers may never pay. Got your own AI key? <strong>Premium BYOK is $3 USD/mo</strong>. See <a href="{{ site.url }}{{ site.baseurl }}/pricing/">Pricing</a> for the full breakdown.</p>
 </div>
 </details>
@@ -269,22 +269,22 @@ Yes — DM explaining which rule fired and their warning count. If their DMs are
 
 <div class="faq-cat-heading">🔐 Verification Gate</div>
 
-<details class="faq"><summary>How does the verification gate work?</summary>
+<details class="faq"><summary>How does verification work?</summary>
 <div class="faq-body">
-<p>Enable in <code>/settings → 👥 Members → Verification</code>. New joiners get a DM with a green <strong>Verify</strong> button. Clicking it grants the configured verified role, which gates channels via Discord's role permissions.</p>
-<p>To set up those gated channels without editing permissions by hand, use the <strong>Auto-configure channels</strong> button in the same Verification panel: it proposes which channels stay visible to unverified members (your verify, rules, system and announcements channels), lets you keep extra ones visible, then on Apply hides everything else and opens it to your verified role. There's a one-tap <strong>Undo</strong>. It needs a verified role set and the bot to have <strong>Manage Channels</strong> + <strong>Manage Roles</strong>.</p>
+<p>Enable in <code>/settings → Verification</code>. New members are met at <strong>Reception</strong> — an in-server welcome desk with a banner, a greeting and a <strong>🔓 Verify me</strong> button. Tapping it opens a quick are-you-human check; pass and they're granted the configured verified role a moment later, which gates channels via Discord's role permissions. A wrong answer is just a friendly retry — never a ban.</p>
+<p>To set up those gated channels without editing permissions by hand, use the <strong>Auto-configure channels</strong> button in the same Verification panel: it proposes which channels stay visible to unverified members (your reception, rules, system and announcements channels), lets you keep extra ones visible, then on Apply hides everything else and opens it to your verified role. There's a one-tap <strong>Undo</strong>. It needs a verified role set and the bot to have <strong>Manage Channels</strong> + <strong>Manage Roles</strong>.</p>
 </div>
 </details>
 
-<details class="faq"><summary>What happens if a user has DMs disabled?</summary>
+<details class="faq"><summary>What if someone posts instead of verifying?</summary>
 <div class="faq-body">
-The failure is logged; the user stays unverified. They can see <code>@everyone</code> channels but not gated ones.
+Reception doubles as a honeypot — verifying is the only thing to do there. An unverified account that posts instead is removed automatically; brand-new, untrusted accounts are banned outright, and the trap tightens during a raid.
 </div>
 </details>
 
-<details class="faq"><summary>Can I customise the verification message?</summary>
+<details class="faq"><summary>Can I customise the Reception desk?</summary>
 <div class="faq-body">
-Currently it's fixed wording. Custom verification copy is on the <a href="{{ site.url }}{{ site.baseurl }}/roadmap/">roadmap</a>.
+Yes. On every plan you can word the greeting yourself. <strong>Premium</strong> adds a generated or uploaded banner image and a custom receptionist name and persona, plus a concierge verified members can chat with at the desk.
 </div>
 </details>
 
@@ -299,13 +299,13 @@ Currently it's fixed wording. Custom verification copy is on the <a href="{{ sit
 <li><strong>AutoMod escalations</strong> — user crosses a punishment threshold (timeout / kick / ban)</li>
 </ul>
 <p>Up to 10 roles per event; empty = silent. Routine single-message blocks don't ping (only escalations do).</p>
-<p>These live under <strong>Instant alerts</strong> in the hub. The other half — <strong>Updates &amp; digests</strong> — is where you set how often <strong>Pulse</strong> arrives (Off / Daily / Weekly / Monthly) and toggle <strong>Milestones</strong> and <strong>Announcements</strong> on or off.</p>
+<p>These live under <strong>Instant alerts</strong> in the hub. The other half — <strong>Updates &amp; digests</strong> — is where you toggle <strong>Milestones</strong> and <strong>Announcements</strong> on or off. (Pulse itself now lives in the web portal — see below.)</p>
 </div>
 </details>
 
 <details class="faq"><summary>How often does Pulse arrive, and can I change it?</summary>
 <div class="faq-body">
-<p>Your call. In <code>/settings → 🔔 Notifications → Updates &amp; digests</code>, set <strong>Pulse</strong> to <strong>Off / Daily / Weekly / Monthly</strong>. Any cadence you'd already set carries over automatically.</p>
+<p>Pulse is now <strong>always on in the <a href="{{ site.url }}{{ site.baseurl }}/portal/">web portal</a></strong>, so it's there whenever you want to look. If you'd like it delivered too, each staff member can set their own DM cadence — <strong>Off / Weekly / Monthly</strong> — from the portal. It's no longer set from Discord <code>/settings</code>.</p>
 </div>
 </details>
 
