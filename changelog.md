@@ -89,7 +89,27 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
-<details class="doc-sec" markdown="1" open data-kind="update">
+<details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>v6.17.0: Set up your Welcome desk right in /setup</summary>
+
+**Reception now has a home in setup.** `/setup` has a new **Welcome desk** step, so you can
+stand up your Reception welcome desk as part of getting started, with no separate trip to
+`/settings`.
+
+- **Pick or create your verified role.** Choose an existing role for verified members, or create
+  a fresh **Verified** role in one tap.
+- **Turn Reception on, live.** Left on (it's recommended, on by default, and skippable), the step
+  goes to work right away: it creates your branded **reception** channel, pins the greeting, and
+  sets the verification gate to intelligent.
+- **Free to make it yours.** Write your own **greeting** right in the step, at no cost. Deeper
+  branding, a named receptionist persona, a banner image, and the concierge, stays on **Premium**
+  in `/settings`.
+
+The wizard now runs Channels, Roles, Welcome desk, then Moderation & AI.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="update">
 <summary>v6.16.0: XP, made clear: your Level is a badge, your XP is what you spend</summary>
 
 **One simple idea, spelled out everywhere.** XP used to mean two things at once, which was
