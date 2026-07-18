@@ -90,6 +90,27 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
 <details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>v6.19.0: A warmer Reception, now free for every server</summary>
+
+**Reception now greets every server with its own banner, keeps itself in shape, and stays
+clear for new arrivals.** The welcome desk has four upgrades this release, and its signature
+banner is now free on every plan.
+
+- **A free Reception banner for every server.** Every server now gets its own custom
+  welcome-desk banner, created once automatically from Server Assistant's read of your
+  community. It used to be a Premium-only touch; now it's free for all.
+- **A self-healing honeypot.** The Reception channel stays locked as a spam trap. If its
+  settings ever drift, Server Assistant restores them on its own, so the trap keeps working.
+- **Stray posts are tidied away.** Reception is for new-member verification only, so if
+  someone posts there, Server Assistant removes the message and lets them know why. (On
+  Premium, that becomes a concierge hand-off instead, see below.)
+- **A Premium SAi concierge in Reception.** On Premium servers, a member who reaches out in
+  Reception is moved into their own private ticket where SAi helps them one-to-one, keeping
+  Reception clear for the next new arrival.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.18.0: Reception, set up from anywhere and it just works</summary>
 
 **Reception now sets up from the web portal too, and holds the gate more tightly.**
