@@ -240,7 +240,7 @@ that only appear when the bot needs them.
         </div>
       </div></div>
     </div>
-    <p class="wiz-caption"><strong>Channels.</strong> Pick the <em>staff chat</em> (the command listening post). A <em>log channel</em> is optional, your dashboard moderation log is always on, so <strong>Portal only</strong> skips it. The bot pre-fills what it detected. <strong>Looks good, pick roles</strong> moves to the three-step wizard (channels → roles → AI); <strong>Create for me</strong> makes fresh channels. Tags read <code>(detected)</code> on a new server, <code>(current)</code> when you re-run setup.</p>
+    <p class="wiz-caption"><strong>Channels.</strong> Pick the <em>staff chat</em> (the command listening post). A <em>log channel</em> is optional, your dashboard moderation log is always on, so <strong>Portal only</strong> skips it. The bot pre-fills what it detected. <strong>Looks good, pick roles</strong> moves to the four-step wizard (channels → roles → welcome desk → moderation &amp; AI); <strong>Create for me</strong> makes fresh channels. Tags read <code>(detected)</code> on a new server, <code>(current)</code> when you re-run setup.</p>
   </div>
 
   <div class="wiz-step" data-step="Step 2 · Roles">
@@ -280,6 +280,29 @@ that only appear when the bot needs them.
       </div></div>
     </div>
     <p class="wiz-caption"><strong>Only shows if a tidy-up is needed.</strong> If your staff roles lack a permission they need, or <code>@everyone</code> has a risky one, the bot lists the exact change and waits for <strong>Approve &amp; apply</strong>. If role hierarchy blocks a change, this becomes a <strong>Re-check</strong> after you move the bot's role up.</p>
+  </div>
+
+  <div class="wiz-step" data-step="Step 3 · Welcome desk">
+    <div class="dc">
+      <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+        <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">Direct Message</span></div>
+        <div class="dc-embed blue">
+          <div class="dc-title">Set up your Welcome desk</div>
+          <div class="dc-desc"><strong>Step 3.</strong> Reception greets new members at a branded desk and gates verification. Recommended on, skip it if you'd rather not.</div>
+          <div class="dc-fname">Verified role <span style="color:#949ba4;font-weight:400">(given once a member passes)</span></div><div class="dc-fval">@Verified ✓ <span style="color:#949ba4">(detected)</span></div>
+          <div class="dc-fname">Reception</div><div class="dc-fval">On, I'll create #reception, pin the greeting, and set the gate to intelligent</div>
+          <div class="dc-select">Edit greeting…</div>
+          <div class="dc-btns">
+            <span class="dc-btn grey">Create Verified role</span>
+            <span class="dc-btn green">Looks good →</span>
+          </div>
+          <div class="dc-btns">
+            <span class="dc-btn grey">Skip Reception</span>
+          </div>
+        </div>
+      </div></div>
+    </div>
+    <p class="wiz-caption"><strong>Welcome desk.</strong> Pick an existing <em>verified role</em> or tap <strong>Create Verified role</strong> to make one. Left on (recommended, and the default), Reception goes live as you finish the step: it creates a branded <strong>#reception</strong> channel, pins the greeting, and sets the verification gate to <strong>intelligent</strong>. The <strong>greeting is free to customise</strong> right here; Premium extras, a receptionist persona, a banner image and the concierge, live in <code>/settings</code>. Prefer not to? <strong>Skip Reception</strong> and the wizard moves on.</p>
   </div>
 
   <div class="wiz-step" data-step="Last step · community type">
