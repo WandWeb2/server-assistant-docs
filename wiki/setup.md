@@ -302,7 +302,7 @@ that only appear when the bot needs them.
         </div>
       </div></div>
     </div>
-    <p class="wiz-caption"><strong>Welcome desk.</strong> Pick an existing <em>verified role</em> or tap <strong>Create Verified role</strong> to make one. Left on (recommended, and the default), Reception goes live as you finish the step: it creates a branded <strong>#reception</strong> channel, pins the greeting, and sets the verification gate to <strong>intelligent</strong>. The <strong>greeting is free to customise</strong> right here; Premium extras, a receptionist persona, a banner image and the concierge, live in <code>/settings</code>. Prefer not to? <strong>Skip Reception</strong> and the wizard moves on.</p>
+    <p class="wiz-caption"><strong>Welcome desk.</strong> Pick an existing <em>verified role</em> or tap <strong>Create Verified role</strong> to make one. Left on (recommended, and the default), Reception goes live as you finish the step: it creates a branded <strong>#reception</strong> channel (pinned to the <strong>top of your channel list</strong>), pins the greeting, and sets the verification gate to <strong>intelligent</strong>. The <strong>greeting is free to customise</strong> right here; Premium extras, a receptionist persona, a banner image and the concierge, live in <code>/settings</code>. Prefer not to? <strong>Skip Reception</strong> and the wizard moves on. <strong>Not in Discord?</strong> The <a href="https://serverassistant.wandweb.co">web portal</a>'s setup wizard now has this same Welcome desk step, so you can set Reception up there too.</p>
   </div>
 
   <div class="wiz-step" data-step="Last step · community type">
