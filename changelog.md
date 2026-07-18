@@ -90,6 +90,21 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
 <details class="doc-sec" markdown="1" open data-kind="update">
+<summary>v6.20.0: A wider welcome banner you can refresh</summary>
+
+The Reception welcome banner is now a proper wide landscape image, and every server, free
+included, can regenerate it whenever they like.
+
+- **Landscape, not square.** The auto-created welcome banner now renders as a wide banner that
+  fits the top of your reception channel properly.
+- **Regenerate any time, free.** Not happy with the first banner? Open Settings, Reception, and
+  use the Banner button to have Server Assistant paint a fresh one from its read of your
+  community. It is free and does not use any of your AI allowance. (Premium can still supply a
+  custom prompt for a bespoke banner.)
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="update">
 <summary>v6.19.3: A quieter log channel</summary>
 
 Your log channel no longer fills up with a line every time Server Assistant sends a member a
