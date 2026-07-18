@@ -90,6 +90,21 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
 <details class="doc-sec" markdown="1" open data-kind="update">
+<summary>v6.21.0: A tidier Settings panel</summary>
+
+Everything in /settings now happens inside one panel. No more popups appearing over the top
+of it.
+
+- **One panel, no popups.** Opening a section, saving a change, or hitting a limit no longer
+  opens a separate popup message. The settings panel updates in place and shows a short status
+  line right where you are looking.
+- **A Back button everywhere.** Every menu and built-in tool (AutoMod, Onboarding, verification,
+  backups, and the rest) now has a Back button, so you can move around Settings without losing
+  your place.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="update">
 <summary>v6.20.0: A wider welcome banner you can refresh</summary>
 
 The Reception welcome banner is now a proper wide landscape image, and every server, free
