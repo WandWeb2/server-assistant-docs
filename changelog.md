@@ -89,7 +89,23 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
-<details class="doc-sec" markdown="1" open data-kind="feature">
+<details class="doc-sec" markdown="1" open data-kind="fix">
+<summary>v6.19.1: A one-tap fix when Onboarding fights your gate</summary>
+
+When you turn on Reception, if your server's Discord Onboarding could hand out the verified
+role on its own (which would let people skip the gate), Server Assistant now offers to fix it
+right there in setup instead of just warning you.
+
+- **Fix it in one tap.** If Onboarding would auto-grant your verified role, setup now shows
+  two buttons: let Server Assistant remove that role from Onboarding for you, or create a
+  fresh verified role that Onboarding does not touch.
+- **No more hunting through settings.** The old warning told you to dig through Server
+  Settings yourself; now it is handled in place, in the same setup screen, so there are not
+  two things competing for your attention.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.19.0: A warmer Reception, now free for every server</summary>
 
 **Reception now greets every server with its own banner, keeps itself in shape, and stays
