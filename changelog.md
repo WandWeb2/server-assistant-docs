@@ -90,6 +90,26 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
 <details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>v6.18.0: Reception, set up from anywhere and it just works</summary>
+
+**Reception now sets up from the web portal too, and holds the gate more tightly.**
+The portal's setup wizard has gained the same **Welcome desk** step as `/setup`, so you
+can stand Reception up in a browser, not just in Discord.
+
+- **Set up Reception from the portal.** The web setup wizard now has a Welcome desk step:
+  pick or create your **verified role**, write a free **greeting**, and switch Reception
+  on, all without leaving the portal.
+- **#reception sits at the top.** When Reception creates your **#reception** channel, it
+  now pins it to the **top of your channel list**, so new members see it first.
+- **The gate actually holds.** Reception now checks that nothing else is quietly handing
+  out your **verified role** (Discord Onboarding, another bot, and the like) and warns you
+  if it finds one. And if an unverified member is given the role some other way, Reception
+  takes it back until they've passed the desk, so the gate can't be side-stepped.
+- **Finishing setup links you to your portal**, so your dashboard is one tap away.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.17.0: Set up your Welcome desk right in /setup</summary>
 
 **Reception now has a home in setup.** `/setup` has a new **Welcome desk** step, so you can
