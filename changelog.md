@@ -89,7 +89,22 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
-<details class="doc-sec" markdown="1" open data-kind="fix">
+<details class="doc-sec" markdown="1" open data-kind="update">
+<summary>v6.19.3: A quieter log channel</summary>
+
+Your log channel no longer fills up with a line every time Server Assistant sends a member a
+direct message (verification notes, AutoMod warnings, and the like). These "sent a DM" notices
+are now off by default.
+
+- **Off by default, on when you want it.** Turn the notices back on any time under
+  Settings, Behavior, "Log 'sent a DM' notices" in the web portal.
+- **Nothing stops being recorded.** These were only ever a convenience line in your Discord
+  log channel. Your full activity history in the operator portal is unchanged and still tracks
+  everything.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v6.19.1: A one-tap fix when Onboarding fights your gate</summary>
 
 When you turn on Reception, if your server's Discord Onboarding could hand out the verified
