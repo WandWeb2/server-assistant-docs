@@ -89,7 +89,25 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
-<details class="doc-sec" markdown="1" open data-kind="update">
+<details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>v6.22.0: A weekly Pulse in your staff chat</summary>
+
+Server Assistant now drops a short weekly summary straight into your staff chat, so you can
+see how the week went without opening the portal.
+
+- **Weekly Pulse to your staff chat.** Once a week you get a single digest: server activity
+  (messages, active voice time, members), a mod-team recap, reception stats, and a **ThreatNet**
+  section — scam images blocked, spam bots caught, and auto-protect bans on your server that
+  week, plus the network-wide "flagged actors / scam images blocked" totals. It is **on by
+  default**; turn it on or off under **/settings → Notifications**.
+- **The old "Auto-pilot weekly report" is gone.** The weekly Pulse replaces it — same idea, more
+  useful, and with a real on/off switch (the old report couldn't actually be turned off).
+- Pulse is still always live in your web portal, and each staffer can still opt into their own
+  Pulse DMs.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="update">
 <summary>v6.21.0: A tidier Settings panel</summary>
 
 Everything in /settings now happens inside one panel. No more popups appearing over the top
