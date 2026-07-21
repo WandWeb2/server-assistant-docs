@@ -91,6 +91,30 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
 <details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>v6.24.0: Set up the Minecraft bridge in one command</summary>
+
+Setting up and tuning the **Minecraft ↔ Discord bridge** is now a single guided wizard,
+so there are no subcommands to remember.
+
+- **One command, one wizard.** Run **`/mcdc`** (or open it from **`/settings → Minecraft`**)
+  and everything happens in one panel: pick a channel to bridge, or let Server Assistant
+  **create one for you**. When you link, it hands you the paste-ready plugin config and the
+  download link, once.
+- **One-click toggles once you're linked.** Turn server events (joins, leaves, deaths,
+  advancements, start/stop), the live topic online-count, and live translation on or off
+  from the wizard, rotate your token, or unlink, all in a couple of taps.
+- **Chat filtering is now optional.** Masking bridged chat against your AutoMod word list is
+  a toggle in the wizard, on by default, that you can switch off to relay chat exactly as
+  typed.
+- **It won't clash with your other channels.** The wizard won't let you bridge a channel
+  that's already your reception/verification, staff-chat, or mod-log channel.
+
+The subcommands (`/mcdc link`, `/mcdc status`, `/mcdc translate`, `/mcdc unlink`) are gone,
+folded into the wizard. `/online` is unchanged.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.23.0: Bridge your Minecraft server to Discord</summary>
 
 Link one Discord channel to your Minecraft (Paper/Spigot) server with a small free
@@ -950,6 +974,26 @@ Everything stays **local to your server**: nothing is shared anywhere. It's **on
 <p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server.</p>
 
 <details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>Bridge v6.24.0: One-command setup wizard</summary>
+
+Linking and customising the bridge is now a single **`/mcdc`** wizard (also reachable from
+**`/settings → Minecraft`**), replacing the old `/mcdc link`, `/mcdc status`,
+`/mcdc translate` and `/mcdc unlink` subcommands.
+
+- **Pick or create a channel.** Open the wizard and choose a channel to bridge from a
+  dropdown, or press **Create a channel for me** and Server Assistant makes one. On linking
+  it shows the paste-ready plugin config and download link, once.
+- **One-click toggles once linked.** Flip server events (joins, leaves, deaths,
+  advancements, start/stop), the topic online-count, and translation on or off from the
+  wizard, rotate your token, or unlink, in a couple of taps.
+- **Chat filtering is now optional.** AutoMod masking of bridged chat is a toggle, on by
+  default, that you can switch off to relay chat exactly as typed.
+- **No channel clashes.** The wizard won't bridge a channel already used as your
+  reception/verification, staff-chat, or mod-log channel. `/online` is unchanged.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>Plugin v0.1.0: The MCDC companion plugin goes public</summary>
 
 The first public release of the **MCDC companion plugin**, the small, free add-on that runs
