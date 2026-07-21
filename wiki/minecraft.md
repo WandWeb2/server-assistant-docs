@@ -51,9 +51,9 @@ setup command):
 > **Requirements.** A **Paper** or **Spigot** server on a recent Minecraft version. The
 > plugin targets **1.21.x**, which requires **Java 21**.
 
-The plugin is distributed via GitHub Releases:
-**[MCDC plugin releases](https://github.com/WandWeb2/mcdc-plugin/releases)** — grab the
-latest `.jar` from there. (`/mcdc link` in Discord also links you straight to it.)
+Download the plugin here — drop the `.jar` into your server's `plugins/` folder:
+**[⬇ Download the MCDC plugin ({{ site.mcdc_plugin_version }})]({{ '/downloads/mcdc-plugin.jar' | relative_url }})**.
+(`/mcdc link` in Discord also gives you this download link.)
 
 ## Commands
 
