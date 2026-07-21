@@ -40,6 +40,11 @@ image: /assets/banner.jpeg
 .cta-primary .dlogo { width: 22px; height: 22px; flex: none; }
 .cta-secondary { border-radius: 8px; padding: .82rem 1.45rem; font-weight: 600; background: rgba(255,255,255,0.08); color: var(--ink) !important; border: 1px solid var(--glass-border); box-shadow: 0 8px 22px rgba(0,0,0,.28); }
 .cta-secondary:hover { background: rgba(255,255,255,0.14); transform: translateY(-1px); box-shadow: 0 12px 30px rgba(0,0,0,.38); }
+/* Secondary row of smaller pill buttons (MCDC download · Crestbound) under the main two. */
+.subcta-row { display: flex; gap: .6rem; justify-content: center; flex-wrap: wrap; margin: .55rem 0 .1rem; }
+.subcta { display: inline-flex; align-items: center; gap: .45rem; padding: .46rem 1rem; border-radius: 999px; font-weight: 600; font-size: .85rem; text-decoration: none !important; background: rgba(255,255,255,0.05); color: var(--ink) !important; border: 1px solid var(--glass-border); transition: background .15s, transform .15s; }
+.subcta:hover { background: rgba(255,255,255,0.11); transform: translateY(-1px); }
+.subcta .si { font-size: 1.05em; line-height: 1; }
 .free-line { text-align: center; font-size: .85rem; color: var(--ink-soft); margin: 0 0 1.5rem; }
 .fleet-stats { text-align: center; font-size: .92rem; font-weight: 600; color: var(--ink-soft); margin: .1rem 0 .2rem; min-height: 1.2em; }
 .fleet-stats[hidden] { display: none; }
@@ -98,6 +103,11 @@ image: /assets/banner.jpeg
 <div class="cta-row">
   <a class="cta cta-primary" href="https://discord.com/api/oauth2/authorize?client_id=1278486617375510570&permissions=8&scope=bot+applications.commands"><svg class="dlogo" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.27 5.33C17.94 4.71 16.5 4.26 15 4a.09.09 0 0 0-.07.03c-.18.33-.39.76-.53 1.09a16.09 16.09 0 0 0-4.8 0C9.46 4.79 9.25 4.36 9.06 4.03A.07.07 0 0 0 9 4c-1.5.26-2.93.71-4.27 1.33a.06.06 0 0 0-.03.02C1.98 9.42 1.23 13.38 1.6 17.3a.1.1 0 0 0 .03.05c1.8 1.32 3.53 2.12 5.24 2.65a.07.07 0 0 0 .07-.02c.4-.55.76-1.13 1.07-1.74a.07.07 0 0 0-.04-.09 12.9 12.9 0 0 1-1.64-.78.07.07 0 0 1-.01-.11l.33-.25a.07.07 0 0 1 .07-.01c3.44 1.57 7.15 1.57 10.55 0a.07.07 0 0 1 .07.01l.33.26c.04.03.04.09-.01.11-.52.31-1.07.56-1.64.78a.07.07 0 0 0-.04.09c.32.61.68 1.19 1.07 1.74a.07.07 0 0 0 .08.03c1.72-.53 3.45-1.33 5.25-2.65a.07.07 0 0 0 .03-.05c.44-4.53-.73-8.46-3.1-11.95a.05.05 0 0 0-.03-.02ZM8.52 14.91c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.91.96 1.89 2.12 0 1.17-.84 2.12-1.89 2.12Zm6.97 0c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.91.96 1.89 2.12 0 1.17-.83 2.12-1.89 2.12Z"/></svg>Add to Discord</a>
   <a class="cta cta-secondary" href="{{ site.url }}{{ site.baseurl }}/features/">Explore every feature</a>
+</div>
+
+<div class="subcta-row">
+  <a class="subcta" href="{{ '/downloads/mcdc-plugin.jar' | relative_url }}" download><span class="si">⛏️</span> Download the MCDC plugin</a>
+  <a class="subcta" href="{{ site.url }}{{ site.baseurl }}/crestbound-vision.html"><span class="si">🃏</span> Crestbound</a>
 </div>
 
 <p class="fleet-stats" id="fleet-stats" hidden></p>
