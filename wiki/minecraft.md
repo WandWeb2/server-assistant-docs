@@ -5,7 +5,7 @@ permalink: /wiki/minecraft/
 wiki: true
 wiki_category: "Features"
 summary: Link one Discord channel to your Minecraft (Paper/Spigot) server with a small free plugin for two-way chat, real player identity, relayed server events, an /online list with a live topic count, and optional live AI translation both ways, all with no passwords or remote-console access leaving your machine.
-wiki_keywords: [minecraft, mcdc, discord, bridge, chat bridge, paper, spigot, plugin, /mcdc, /mcdc link, /online, translate, translation, server events, join, leave, death, advancement, skin, avatar, config.yml, java 21, 1.21]
+wiki_keywords: [minecraft, mcdc, discord, bridge, chat bridge, paper, spigot, plugin, /mcdc, wizard, /settings, /online, translate, translation, server events, join, leave, death, advancement, skin, avatar, config.yml, java 21, 1.21]
 description: How Server Assistant's Minecraft to Discord chat bridge (MCDC) works, link a Discord channel to your Paper/Spigot server with a free plugin for two-way chat with real player identity, relayed events, an /online count, and optional live AI translation, with chat relayed in transit and not stored.
 ---
 
@@ -38,9 +38,10 @@ targets modern **1.21.x**, which needs **Java 21**.
 Four steps, run once by the server owner (**Manage Server** permission is needed for the
 setup command):
 
-1. **In Discord, run `/mcdc link`** and pick the channel you want bridged. The command
-   hands you a paste-ready config (a **relay URL** and a **token**) and a link to download
-   the plugin.
+1. **In Discord, run `/mcdc`** (or open **`/settings → Minecraft`**) to open the wizard,
+   then **pick the channel to bridge** from the dropdown, or press **Create a channel for
+   me** and let Server Assistant make one. On linking, the wizard hands you a paste-ready
+   config (a **relay URL** and a **token**) and a link to download the plugin.
 2. **Download the MCDC plugin `.jar`** and drop it into your Minecraft server's
    **`plugins/`** folder.
 3. **Start the server once.** The plugin creates its config file at
@@ -52,12 +53,12 @@ setup command):
 > plugin targets **1.21.x**, which requires **Java 21**.
 
 > **One server per Discord server.** In this version you can link **one** Minecraft
-> server to each Discord server (one active bridge at a time). Run `/mcdc link` again to
+> server to each Discord server (one active bridge at a time). Reopen the `/mcdc` wizard to
 > point the bridge at a different channel.
 
 Download the plugin here — drop the `.jar` into your server's `plugins/` folder:
 **[⬇ Download the MCDC plugin ({{ site.mcdc_plugin_version }})]({{ '/downloads/mcdc-plugin.jar' | relative_url }})**.
-(`/mcdc link` in Discord also gives you this download link.)
+(the `/mcdc` wizard also gives you this download link.)
 
 ## Plugin settings (`config.yml`) {#config}
 
@@ -67,8 +68,8 @@ knobs it holds:
 
 | Setting | What it does |
 |---|---|
-| `relay-url` | The relay address from `/mcdc link`. Until it's set to a real value, the plugin stays idle and makes no network calls. |
-| `token` | Your link token from `/mcdc link`. Keep it secret — treat it like a password. |
+| `relay-url` | The relay address from the `/mcdc` wizard. Until it's set to a real value, the plugin stays idle and makes no network calls. |
+| `token` | Your link token from the `/mcdc` wizard. Keep it secret — treat it like a password. |
 | `join-notice` | Shows each player an in-game notice on join that chat is bridged to Discord. This is a **privacy requirement — please keep it on** (`true`). |
 | `join-notice-text` | The wording of that notice. Supports `&` colour codes. |
 | `discord-to-mc-format` | How Discord messages look in-game. Placeholders `{author}` and `{text}`, with `&` colour codes — default `&9[Discord] &b{author}&7: &f{text}`. |
@@ -85,21 +86,17 @@ want. After editing the file, restart the server (or re-run the bridge) to pick 
 
 ## Commands
 
-- **`/mcdc link`**: pick the channel to bridge and get your paste-ready config plus the
-  plugin download link. Needs **Manage Server**.
-- **`/mcdc status`**: show the current link, connection state, and which events and
-  translation are enabled.
-- **`/mcdc translate <language|off>`**: turn live translation on to a target language, or
-  **off**. See [Translation](#translation).
-- **`/mcdc unlink`**: disconnect the bridge and stop relaying.
-- **`/online`**: list the players currently in-game. Anyone can run it.
+- **`/mcdc`**: opens the setup & customization wizard (pick/create a channel, get your
+  plugin config, and toggle filtering, events, the topic count and translation, rotate the
+  token, or unlink). Owner / **Manage Server** only. Also in `/settings → Minecraft`.
+- **`/online`**: list who's currently in-game; anyone can run it.
 
 ## Translation {#translation}
 
 Turn on **live AI translation** and everyone reads **one conversation**, whichever side
-they're on. Set **one target language** with `/mcdc translate <language>`, and chat is
-translated **both ways**, in-game messages into that language for Discord and Discord
-messages into that language for in-game.
+they're on. Set a target language from the **Translation** button in the `/mcdc` wizard (or
+turn it off there), and chat is translated **both ways**, in-game messages into that
+language for Discord and Discord messages into that language for in-game.
 
 - It is **off by default**, switch it on only when you want it.
 - Text that is **already in your chosen language is left alone**, no needless re-wording.
@@ -113,7 +110,8 @@ The bridge respects your server's own moderation, in **both** directions:
 - **Your AutoMod filter applies to bridged chat.** Messages crossing the bridge are run
   through your server's existing **AutoMod word list (lexicon)**, and any matched words are
   masked to `***` in the copy that's delivered — so a word you already block in Discord
-  stays blocked when it comes from Minecraft, and vice versa.
+  stays blocked when it comes from Minecraft, and vice versa. **Filtering is optional** — a
+  toggle in the `/mcdc` wizard, on by default, that you can turn off to relay chat verbatim.
 - **No surprise pings from in-game.** A player typing `@everyone` (or any other mention) in
   Minecraft **cannot** ping your Discord. Mentions in bridged messages are handled safely and
   show as plain text, so nobody can mass-ping the server through the game.
@@ -137,9 +135,9 @@ The bridge is built to keep your server's secrets on your server:
 ## Troubleshooting {#troubleshooting}
 
 - **The bridge won't connect.** Double-check the **relay URL** and **token** were pasted
-  in exactly as `/mcdc link` gave them, make sure your Minecraft server can reach the
-  internet (the plugin needs **outbound HTTPS**), then run **`/mcdc status`** in Discord to
-  see the current connection state. The bridge also reconnects on its own if the link drops.
+  in exactly as the `/mcdc` wizard gave them, make sure your Minecraft server can reach the
+  internet (the plugin needs **outbound HTTPS**), then check the `/mcdc` wizard (it shows
+  the connection state). The bridge also reconnects on its own if the link drops.
 - **The plugin won't load.** MCDC needs **Java 21** and a **Paper** or **Spigot** server on
   **1.21.x**. An older Java or server version will stop the plugin loading.
 - **Chat shows as a plain bot message, not the player.** In-game chat is posted through a
@@ -150,7 +148,8 @@ The bridge is built to keep your server's secrets on your server:
   once a minute and is rate-limited, so a change can take a few minutes to appear. The bot
   also needs the **Manage Channel** permission to edit the topic.
 - **`/online` says nothing's linked.** The plugin isn't running or hasn't connected yet.
-  Start your Minecraft server and check **`/mcdc status`** to confirm the bridge is live.
+  Start your Minecraft server and check the `/mcdc` wizard (it shows the connection state)
+  to confirm the bridge is live.
 
 ## Coming soon
 
