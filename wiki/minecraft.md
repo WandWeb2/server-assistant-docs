@@ -51,9 +51,37 @@ setup command):
 > **Requirements.** A **Paper** or **Spigot** server on a recent Minecraft version. The
 > plugin targets **1.21.x**, which requires **Java 21**.
 
+> **One server per Discord server.** In this version you can link **one** Minecraft
+> server to each Discord server (one active bridge at a time). Run `/mcdc link` again to
+> point the bridge at a different channel.
+
 Download the plugin here — drop the `.jar` into your server's `plugins/` folder:
 **[⬇ Download the MCDC plugin ({{ site.mcdc_plugin_version }})]({{ '/downloads/mcdc-plugin.jar' | relative_url }})**.
 (`/mcdc link` in Discord also gives you this download link.)
+
+## Plugin settings (`config.yml`) {#config}
+
+Most people only ever paste the **relay URL** and **token** and leave everything else
+alone. The plugin generates `plugins/MCDC/config.yml` on first start, and these are the
+knobs it holds:
+
+| Setting | What it does |
+|---|---|
+| `relay-url` | The relay address from `/mcdc link`. Until it's set to a real value, the plugin stays idle and makes no network calls. |
+| `token` | Your link token from `/mcdc link`. Keep it secret — treat it like a password. |
+| `join-notice` | Shows each player an in-game notice on join that chat is bridged to Discord. This is a **privacy requirement — please keep it on** (`true`). |
+| `join-notice-text` | The wording of that notice. Supports `&` colour codes. |
+| `discord-to-mc-format` | How Discord messages look in-game. Placeholders `{author}` and `{text}`, with `&` colour codes — default `&9[Discord] &b{author}&7: &f{text}`. |
+| `relay.chat` | Relay in-game chat to Discord. |
+| `relay.join` / `relay.leave` | Relay player joins / leaves. |
+| `relay.death` | Relay death messages. |
+| `relay.advancement` | Relay advancements. |
+| `relay.server-start-stop` | Relay server start and stop. |
+| `poll-wait-seconds` | How long the plugin waits for Discord messages on each check (default 25). |
+| `presence-interval-seconds` | How often the online count and player list are refreshed (default 60). |
+
+Each `relay:` line is an independent **on/off toggle**, so you can post only the events you
+want. After editing the file, restart the server (or re-run the bridge) to pick up changes.
 
 ## Commands
 
@@ -78,6 +106,18 @@ messages into that language for in-game.
 - Translation is handled by Server Assistant's AI, the same engine behind the bot's
   existing [`/translate`]({{ '/wiki/ai/' | relative_url }}) feature.
 
+## Keeping chat clean & safe {#safety}
+
+The bridge respects your server's own moderation, in **both** directions:
+
+- **Your AutoMod filter applies to bridged chat.** Messages crossing the bridge are run
+  through your server's existing **AutoMod word list (lexicon)**, and any matched words are
+  masked to `***` in the copy that's delivered — so a word you already block in Discord
+  stays blocked when it comes from Minecraft, and vice versa.
+- **No surprise pings from in-game.** A player typing `@everyone` (or any other mention) in
+  Minecraft **cannot** ping your Discord. Mentions in bridged messages are handled safely and
+  show as plain text, so nobody can mass-ping the server through the game.
+
 ## Privacy
 
 The bridge is built to keep your server's secrets on your server:
@@ -93,6 +133,24 @@ The bridge is built to keep your server's secrets on your server:
   **inform your players** that the bridge is active.
 - **No account linking.** This first version does **not** link Discord and Minecraft
   accounts.
+
+## Troubleshooting {#troubleshooting}
+
+- **The bridge won't connect.** Double-check the **relay URL** and **token** were pasted
+  in exactly as `/mcdc link` gave them, make sure your Minecraft server can reach the
+  internet (the plugin needs **outbound HTTPS**), then run **`/mcdc status`** in Discord to
+  see the current connection state. The bridge also reconnects on its own if the link drops.
+- **The plugin won't load.** MCDC needs **Java 21** and a **Paper** or **Spigot** server on
+  **1.21.x**. An older Java or server version will stop the plugin loading.
+- **Chat shows as a plain bot message, not the player.** In-game chat is posted through a
+  channel **webhook** so it can show the player's name and skin-face avatar. If the bot
+  can't manage that webhook it falls back to a plain message — give the bot the **Manage
+  Webhooks** permission in the linked channel.
+- **The online count in the topic looks stale.** The channel **topic** count updates about
+  once a minute and is rate-limited, so a change can take a few minutes to appear. The bot
+  also needs the **Manage Channel** permission to edit the topic.
+- **`/online` says nothing's linked.** The plugin isn't running or hasn't connected yet.
+  Start your Minecraft server and check **`/mcdc status`** to confirm the bridge is live.
 
 ## See also
 
