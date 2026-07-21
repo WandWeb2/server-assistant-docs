@@ -34,6 +34,7 @@ categories:
       - { label: "Welcome & verification", url: "/wiki/members/" }
       - { label: "Tickets & support", url: "/wiki/tickets/" }
       - { label: "XP & leveling", url: "/wiki/leveling/" }
+      - { label: "Minecraft bridge", url: "/wiki/minecraft/" }
       - { label: "Crestbound", url: "/wiki/crestbound/" }
       - { label: "Emotes & fun", url: "/wiki/emotes/" }
       - { label: "Roll", url: "/wiki/roll/" }

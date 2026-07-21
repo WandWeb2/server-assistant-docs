@@ -90,6 +90,31 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
 <details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>v6.23.0: Bridge your Minecraft server to Discord</summary>
+
+Link one Discord channel to your Minecraft (Paper/Spigot) server with a small free
+plugin, and your in-game and Discord chat become one conversation.
+
+- **Two-way chat with real player identity.** In-game chat lands in your Discord channel
+  as the player, their Minecraft name and skin-face avatar, and anything typed in that
+  Discord channel shows up in-game. Server events, joins, leaves, deaths, advancements,
+  and server start/stop, can be relayed too, each toggleable.
+- **Optional AI translation, both ways.** Turn on one target language and everyone reads
+  a single conversation, in-game and in Discord, with messages translated live. It is off
+  by default, and text already in your chosen language is left untouched.
+- **See who's on at a glance.** `/online` lists the players currently in-game, and the
+  linked channel's topic keeps a live count, for example "🟢 7/40 online".
+- **Set it up with one command.** Run `/mcdc link`, drop the free companion plugin into
+  your server's `plugins/` folder, paste in the two lines it gives you, and restart.
+  Manage it any time with `/mcdc status`, `/mcdc translate`, and `/mcdc unlink`.
+- **Privacy stays front and centre.** No server passwords or remote-console access ever
+  leave your machine. Chat and player names are relayed in transit and **not stored**, and
+  the plugin posts an in-game notice so players know chat is bridged. There's no
+  Discord-to-Minecraft account linking in this first version.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.22.0: A weekly Pulse in your staff chat</summary>
 
 Server Assistant now drops a short weekly summary straight into your staff chat, so you can
