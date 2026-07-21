@@ -177,6 +177,10 @@ different, or not ship at all. No dates yet.
 - **AI helpers in-game.** Ask SAi questions right in Minecraft chat, get a "while you were
   away" recap when you next log in, and a weekly AI highlight reel of your community's best
   moments.
+- **SAi *in* your world.** Give SAi an actual in-game presence, a friendly character that can
+  greet players, answer questions and show newcomers around, from a helpful guide standing at
+  spawn to, further out, a companion that can move through the world alongside you. This one is
+  a big, exploratory idea and the furthest from ready.
 - **Minecraft in your Pulse.** A Minecraft section in your weekly Pulse digest, and a single
   player history that spans both Discord and Minecraft.
 - **Reward time played.** Turn playtime on your Minecraft server into XP, feeding the same
