@@ -152,6 +152,43 @@ The bridge is built to keep your server's secrets on your server:
 - **`/online` says nothing's linked.** The plugin isn't running or hasn't connected yet.
   Start your Minecraft server and check **`/mcdc status`** to confirm the bridge is live.
 
+## Coming soon
+
+This first version keeps things focused: two-way chat, real player identity, relayed
+events, an `/online` count, and optional translation. Plenty more is on the drawing board
+for future updates. The ideas below are **planned or under consideration, not yet
+available**, and everything here is **subject to change**, some may arrive later, look
+different, or not ship at all. No dates yet.
+
+- **Link Discord and Minecraft accounts.** Connect the two so a player is recognised as the
+  same person on both sides, the foundation for the role, rank and trust features below.
+- **Discord roles and ranks in-game.** Mirror a Discord role to an in-game group, sync
+  nicknames, and let a booster or supporter role unlock an in-game perk.
+- **More of your server in the bridge.** Bridge extra channels (factions, staff, towny),
+  show Discord images and attachments as links in-game, and keep message edits and deletes
+  in sync across both sides.
+- **Server health at a glance.** Live performance stats (TPS, memory, lag) with alerts, and
+  a clear online/offline indicator for your server.
+- **Moderate from either side.** Broadcast kicks, bans and mutes, keep Discord and Minecraft
+  bans and mutes in sync, and run moderation commands (kick, ban, whitelist) from Discord
+  with per-role permissions, plus an optional console relay and running server commands from
+  Discord.
+- **Server Assistant's protection, in Minecraft.** Bring the bot's AutoMod, ThreatNet
+  cross-server protection, and scam link and image guard to your in-game chat.
+- **AI helpers in-game.** Ask SAi questions right in Minecraft chat, get a "while you were
+  away" recap when you next log in, and a weekly AI highlight reel of your community's best
+  moments.
+- **Minecraft in your Pulse.** A Minecraft section in your weekly Pulse digest, and a single
+  player history that spans both Discord and Minecraft.
+- **Reward time played.** Turn playtime on your Minecraft server into XP, feeding the same
+  balance you already earn in Discord.
+- **DM offline players.** Send a Discord message to a player who isn't currently online.
+- **Richer formatting.** Markdown and emoji carried across both ways, PlaceholderAPI
+  support, and more language options.
+- **Bigger setups.** Bridge several servers into one channel or one server into several
+  channels, support for proxy networks (BungeeCord/Velocity) and cross-server chat, Bedrock
+  players via Geyser, and Dynmap web-chat.
+
 ## See also
 
 - [SAi (AI assistant)]({{ '/wiki/ai/' | relative_url }}): the AI behind live translation

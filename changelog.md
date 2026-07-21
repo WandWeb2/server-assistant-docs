@@ -85,6 +85,7 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
   <button class="cl-tab" id="tab-bot" role="tab" aria-controls="cl-bot" aria-selected="true" data-cl="bot">SA Bot</button>
   <button class="cl-tab" id="tab-portal" role="tab" aria-controls="cl-portal" aria-selected="false" data-cl="portal">Portal</button>
   <button class="cl-tab" id="tab-crestbound" role="tab" aria-controls="cl-crestbound" aria-selected="false" data-cl="crestbound">Crestbound</button>
+  <button class="cl-tab" id="tab-mcdc" role="tab" aria-controls="cl-mcdc" aria-selected="false" data-cl="mcdc">MCDC</button>
 </div>
 
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
@@ -944,6 +945,51 @@ Everything stays **local to your server**: nothing is shared anywhere. It's **on
 
 </div><!-- /cl-crestbound -->
 
+<div class="cl-panel" id="cl-mcdc" role="tabpanel" aria-labelledby="tab-mcdc" markdown="1" hidden>
+
+<p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server.</p>
+
+<details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>Plugin v0.1.0: The MCDC companion plugin goes public</summary>
+
+The first public release of the **MCDC companion plugin**, the small, free add-on that runs
+on your Minecraft server and does the talking to Discord. Drop the `.jar` into your server's
+`plugins/` folder, paste in the two lines `/mcdc link` gives you, and restart.
+
+- **Built for modern servers.** Targets **Paper/Spigot 1.21.x** and needs **Java 21**.
+- **Relays what happens in-game.** In-game chat, plus joins, leaves, deaths and
+  advancements, are sent through to your linked Discord channel, each one a toggle you
+  control.
+- **A live online-player count.** The plugin keeps Discord updated with how many players
+  are currently on your server.
+- **Outbound-only, no console access.** The plugin makes **outbound HTTPS** connections
+  only, with no RCON and no ports to open, so no server passwords ever leave your machine.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
+<summary>Bridge v6.23.0: The Minecraft ↔ Discord bridge goes live</summary>
+
+The bot side of the bridge arrived: link one Discord channel to your Minecraft
+(Paper/Spigot) server with the free companion plugin, and your in-game and Discord chat
+become a single conversation.
+
+- **Two-way chat with real player identity.** In-game chat lands in your Discord channel as
+  the player, their Minecraft name and skin-face avatar, and anything typed in that Discord
+  channel shows up in-game.
+- **Optional AI translation, both ways.** Turn on one target language and everyone reads a
+  single conversation, in-game and in Discord, with messages translated live. It is off by
+  default, and text already in your chosen language is left untouched.
+- **See who's on at a glance.** `/online` lists the players currently in-game, and the
+  linked channel's topic keeps a live count, for example "🟢 7/40 online".
+- **Set it up with one command.** Run `/mcdc link`, drop the free companion plugin into
+  your server's `plugins/` folder, paste in the two lines it gives you, and restart. Manage
+  it any time with `/mcdc status`, `/mcdc translate`, and `/mcdc unlink`.
+
+</details>
+
+</div><!-- /cl-mcdc -->
+
 ## What's next?
 
 - [Roadmap]({{ site.url }}{{ site.baseurl }}/roadmap/) for what's coming
@@ -953,7 +999,7 @@ Everything stays **local to your server**: nothing is shared anywhere. It's **on
 <script>
 (function () {
   var tabs = [].slice.call(document.querySelectorAll('.cl-tab'));
-  var panels = { bot: 'cl-bot', portal: 'cl-portal', crestbound: 'cl-crestbound' };
+  var panels = { bot: 'cl-bot', portal: 'cl-portal', crestbound: 'cl-crestbound', mcdc: 'cl-mcdc' };
   function show(key) {
     if (!panels[key]) key = 'bot';
     tabs.forEach(function (t) { t.setAttribute('aria-selected', t.dataset.cl === key ? 'true' : 'false'); });
