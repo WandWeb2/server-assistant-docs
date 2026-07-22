@@ -74,6 +74,11 @@ panel. Each button is **permission-gated** — only staff who already have the
 matching kick/ban permission can click it. Carrying the action out in-game needs
 the companion plugin **v0.5.0** or newer (it updates itself if auto-update is on).
 
+Every MCDC moderation action — a **Kick** or **Ban** taken from an alert, and the
+chat-flag alerts themselves — is recorded in your server's **log channel** and **audit
+trail**, exactly like native Server Assistant moderation, so there's a full record of
+what happened and who acted.
+
 ## In your weekly Pulse
 
 <span class="cmd-tag free">FREE</span> &nbsp;Linked servers get a **Minecraft
@@ -129,6 +134,14 @@ restart:
 **Alternative — link via the config file.** Prefer to edit the file? Paste the **relay URL**
 and **token** from the wizard into **`plugins/MCDC/config.yml`** (the plugin generates it on
 first start) and **restart the server**. This is the same link, just the manual route.
+
+**A setup summary posts to your staff chat.** As soon as the bridge is linked, Server
+Assistant posts a short **hierarchy self-report** to your staff channel: which **roles** it
+detected, where it **sits in the role hierarchy**, what it will **monitor**, what it can
+**manage**, and what it **can't** (for example, roles ranked above its own). It's a quick way
+to confirm the bot is set up the way you expect. The **Sync now** button in the `/mcdc`
+wizard re-checks Server Assistant's role position and **re-posts that summary on demand** —
+handy after you move the bot's role or change its permissions.
 
 > **Requirements.** A **Paper** or **Spigot** server on a recent Minecraft version. The
 > plugin targets **1.21.x**, which requires **Java 21**.
@@ -194,6 +207,13 @@ The bridge respects your server's own moderation, in **both** directions:
   masked to `***` in the copy that's delivered — so a word you already block in Discord
   stays blocked when it comes from Minecraft, and vice versa. **Filtering is optional** — a
   toggle in the `/mcdc` wizard, on by default, that you can turn off to relay chat verbatim.
+- **Your full protection scans in-game chat too.** Bridged Minecraft chat is checked by the
+  **same AutoMod as your Discord** — your **word and lexicon filters**, the built-in
+  **`scams` pack**, and the **known-bad-domain link blocklist**. A match raises a **staff
+  alert** (with the **Kick** and **Ban in-game** buttons from
+  [Moderate from Discord](#moderate-from-discord)), so your **scam-link and phishing
+  protection already covers Minecraft**, not just Discord. This runs whenever your server's
+  **AutoMod is on**.
 - **No surprise pings from in-game.** A player typing `@everyone` (or any other mention) in
   Minecraft **cannot** ping your Discord. Mentions in bridged messages are handled safely and
   show as plain text, so nobody can mass-ping the server through the game.
@@ -239,37 +259,37 @@ The bridge is built to keep your server's secrets on your server:
 
 ## Coming soon
 
-This first version keeps things focused: two-way chat, real player identity, relayed
-events, an `/online` count, and optional translation. Plenty more is on the drawing board
-for future updates. The ideas below are **planned or under consideration, not yet
-available**, and everything here is **subject to change**, some may arrive later, look
-different, or not ship at all. No dates yet.
+The bridge has grown well past its first version — two-way chat, server health, moderation
+from Discord, full chat protection, Ask SAi in-game, account linking and a weekly Pulse
+section are all **live today**. Plenty more is still on the drawing board. The ideas below
+are **planned or under consideration, not yet available**, and everything here is **subject
+to change**, some may arrive later, look different, or not ship at all. No dates yet.
 
 - **Earn XP for playtime.** Now that Discord and Minecraft accounts can be linked (see
   [Link your account](#link-your-account)), the next step is crediting **XP for the time you
-  spend in-game** to your account-wide balance.
-- **Discord roles and ranks in-game.** Mirror a Discord role to an in-game group, sync
-  nicknames, and let a booster or supporter role unlock an in-game perk.
+  spend in-game** to your account-wide balance, feeding the same balance you already earn in
+  Discord. *(Being built.)*
+- **Discord roles and ranks in step.** Mirror a Discord role to an in-game group, sync
+  nicknames, and let a booster or supporter role unlock an in-game perk. *(Planned.)*
+- **ThreatNet in Minecraft.** Extend [ThreatNet]({{ '/wiki/threatnet/' | relative_url }})
+  cross-server protection to your Minecraft server, so **known bad actors can be stopped from
+  joining** in the first place. *(On the roadmap.)*
 - **More of your server in the bridge.** Bridge extra channels (factions, staff, towny),
   show Discord images and attachments as links in-game, and keep message edits and deletes
   in sync across both sides.
-- **Moderate from either side.** Broadcast kicks, bans and mutes, keep Discord and Minecraft
-  bans and mutes in sync, and run moderation commands (kick, ban, whitelist) from Discord
-  with per-role permissions, plus an optional console relay and running server commands from
-  Discord.
-- **Server Assistant's protection, in Minecraft.** Bring the bot's AutoMod, ThreatNet
-  cross-server protection, and scam link and image guard to your in-game chat.
-- **AI helpers in-game.** Ask SAi questions right in Minecraft chat, get a "while you were
-  away" recap when you next log in, and a weekly AI highlight reel of your community's best
-  moments.
+- **More moderation sync.** Keep Discord and Minecraft **bans and mutes in step**, broadcast
+  mutes both ways, and optionally relay the server console or run server commands from
+  Discord. *(Kicking and banning a flagged player from Discord is already live — see
+  [Moderate from Discord](#moderate-from-discord).)*
+- **More AI in-game.** A "while you were away" recap when you next log in, and a weekly AI
+  highlight reel of your community's best moments. *(Asking SAi in-game is already live — see
+  [Ask SAi in-game](#ask-sai-in-game).)*
 - **SAi *in* your world.** Give SAi an actual in-game presence, a friendly character that can
   greet players, answer questions and show newcomers around, from a helpful guide standing at
   spawn to, further out, a companion that can move through the world alongside you. This one is
   a big, exploratory idea and the furthest from ready.
-- **Minecraft in your Pulse.** A Minecraft section in your weekly Pulse digest, and a single
-  player history that spans both Discord and Minecraft.
-- **Reward time played.** Turn playtime on your Minecraft server into XP, feeding the same
-  balance you already earn in Discord.
+- **One player history across both sides.** A single activity history that spans a linked
+  player's Discord and Minecraft presence.
 - **DM offline players.** Send a Discord message to a player who isn't currently online.
 - **Richer formatting.** Markdown and emoji carried across both ways, PlaceholderAPI
   support, and more language options.
