@@ -1017,10 +1017,10 @@ Everything stays **local to your server**: nothing is shared anywhere. It's **on
 
 <div class="cl-panel" id="cl-mcdc" role="tabpanel" aria-labelledby="tab-mcdc" markdown="1" hidden>
 
-<p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server.</p>
+<p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.1.0</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
 
 <details class="doc-sec" markdown="1" open data-kind="feature">
-<summary>Bridge v6.25.0: Discord reactions in Minecraft</summary>
+<summary>Discord reactions in Minecraft</summary>
 
 Reactions on the Discord side now carry into your linked Minecraft channel, so a thumbs-up
 or a laugh reaction is visible to players in-game, not just in Discord.
@@ -1033,7 +1033,7 @@ or a laugh reaction is visible to players in-game, not just in Discord.
 </details>
 
 <details class="doc-sec" markdown="1" data-kind="feature">
-<summary>Bridge v6.24.0: One-command setup wizard</summary>
+<summary>One-command setup wizard</summary>
 
 Linking and customising the bridge is now a single **`/mcdc`** wizard (also reachable from
 **`/settings → Minecraft`**), replacing the old `/mcdc link`, `/mcdc status`,
@@ -1071,7 +1071,7 @@ on your Minecraft server and does the talking to Discord. Drop the `.jar` into y
 </details>
 
 <details class="doc-sec" markdown="1" data-kind="feature">
-<summary>Bridge v6.23.0: The Minecraft ↔ Discord bridge goes live</summary>
+<summary>The Minecraft ↔ Discord bridge goes live</summary>
 
 The bot side of the bridge arrived: link one Discord channel to your Minecraft
 (Paper/Spigot) server with the free companion plugin, and your in-game and Discord chat
