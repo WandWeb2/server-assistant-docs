@@ -79,6 +79,11 @@ chat-flag alerts themselves — is recorded in your server's **log channel** and
 trail**, exactly like native Server Assistant moderation, so there's a full record of
 what happened and who acted.
 
+**Players can appeal.** When someone is banned or kicked, the disconnect message
+they see includes a **one-time link** to a web appeal form. If they submit it,
+their appeal reaches your staff to review — no Discord account required. The link
+is single-use and expires.
+
 ## In your weekly Pulse
 
 <span class="cmd-tag free">FREE</span> &nbsp;Linked servers get a **Minecraft

@@ -91,6 +91,21 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
 <details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>v6.42.0: Appeal a Minecraft ban or kick from the ban screen</summary>
+
+If you're banned or kicked on a Minecraft server running our bridge, the
+disconnect message now shows a **one-time link** to a web appeal form. Open it,
+write your side of the story, and your appeal goes straight to that server's
+staff to review — no Discord account needed.
+
+- **One link, one use.** The link on your ban screen is **single-use and
+  expires**, so keep the tab open if you want to appeal.
+- **It reaches the right people.** Your appeal lands with the server's staff
+  alongside the ban details, so they have the context to make a call.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.37.0: Link your Minecraft & Discord accounts</summary>
 
 Players on a bridged Minecraft server can now **connect their Discord and

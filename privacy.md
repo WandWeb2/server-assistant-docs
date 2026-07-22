@@ -111,6 +111,8 @@ When you message us through a support ticket (via `/support`) or reply to a ban-
 - **Support ticket:** your message text (up to 4,000 characters) and any image URLs you attach
 - **Ban appeal:** the appeal reply you send, forwarded to the server's staff
 
+**Minecraft ban/kick appeals (web form).** If you are banned or kicked on a Minecraft server running our bridge, the disconnect message may include a **one-time link** to a web appeal form. If you choose to submit it, we store the **appeal text you write**, together with your **Minecraft account UUID** and the ban context (your Minecraft player name, the action, and the staff-supplied reason), and forward it to that server's staff to review. This is information **you choose to send**; the form link is **single-use and expires**. Our lawful basis is our and the server operator's **legitimate interest in operating a fair appeals process** (Australian Privacy Principle 3; GDPR Article 6(1)(f)) — distinct from the opt-in *consent* basis for Minecraft account linking. We retain it with the related moderation record and delete it on request.
+
 These are messages you choose to send to us or to your server's staff. Ordinary direct messages and private conversations are never read or stored.
 
 ### Bot message log
@@ -325,7 +327,7 @@ If you play on a Minecraft server running our Minecraft ↔ Discord bridge, you 
 
 **Lawful basis.** We rely on your **consent** (GDPR Article 6(1)(a); Australian Privacy Principles 3 and 6). Linking is entirely your choice, and no accounts are ever connected unless you take both of those steps yourself.
 
-**What we store.** **Only** the connection between your **Discord user ID** and your **Minecraft account UUID**. We do **not** store your Minecraft username.
+**What we store.** **Only** the connection between your **Discord user ID** and your **Minecraft account UUID**. We do **not** store your Minecraft username. (This applies to the account-link mapping itself. Separately, if you submit a Minecraft ban/kick appeal, that moderation record includes your player name and the appeal you write — see **Support tickets & appeals**.)
 
 **Why we store it.** So that:
 
@@ -413,6 +415,7 @@ We do **not** sell your data or share it with advertising or analytics networks.
 | Cross-Server Threat Network signals | Rolling 12 months from the **last** signal, then hard-deleted |
 | XP, level, message counts, reputation & account-wide XP wallet | Retained while the member's account-wide wallet is in use, until deleted on request; no automatic expiry |
 | Minecraft account-link mapping (Discord ID ↔ MC UUID) | Until you `/unlink` or leave; auto-removed after ~12 months unused (data minimisation) |
+| Minecraft ban/kick appeal (UUID + player name + your appeal text + ban context) | Kept with the related moderation record; deleted on request |
 
 ---
 
