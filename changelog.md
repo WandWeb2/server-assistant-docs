@@ -1017,9 +1017,29 @@ Everything stays **local to your server**: nothing is shared anywhere. It's **on
 
 <div class="cl-panel" id="cl-mcdc" role="tabpanel" aria-labelledby="tab-mcdc" markdown="1" hidden>
 
-<p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.1.0</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
+<p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.2.0</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
 
 <details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>Plugin v0.2.0: Automatic updates</summary>
+
+The companion plugin now keeps itself up to date. Install this version **once**, and
+from here on new plugin releases apply **automatically on your next server restart** —
+no more downloading a new `.jar` by hand.
+
+- **Install once, then hands-off.** On startup the plugin checks Server Assistant for a
+  newer build; if there is one it downloads it, checks it, and stages it so your server
+  picks it up the next time it restarts.
+- **Verified downloads only.** Each update is checked against a checksum before it's
+  staged, over HTTPS — the plugin never applies a jar that doesn't match.
+- **You stay in control.** It never restarts your server for you, and you can pin your
+  current version any time by setting `auto-update: false` in the plugin's `config.yml`.
+
+Grab this one update from the [download link](/wiki/minecraft/#config) and drop it in as
+usual — it's the last manual install you'll need.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>Discord reactions in Minecraft</summary>
 
 Reactions on the Discord side now carry into your linked Minecraft channel, so a thumbs-up
