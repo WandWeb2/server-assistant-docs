@@ -91,6 +91,24 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
 <details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>v6.31.0: Server Assistant now monitors Minecraft chat</summary>
+
+Your **Minecraft chat is now watched the same way your Discord chat is** — so bad language
+and blocked links from in-game players don't slip past moderation.
+
+- **AutoMod scans bridged Minecraft chat.** Every message a player sends in-game is checked
+  against your server's AutoMod word filters and blocked-link list, and counted in your
+  "messages scanned" stats.
+- **Staff get a heads-up when something trips a rule.** If a Minecraft player's message is
+  flagged, Server Assistant posts a note to your log/staff channel — who said it, the message,
+  and which rule — so your team can handle it in-game. (It's a heads-up only: Server Assistant
+  can't mute or ban Minecraft players itself.)
+- **Toggle it from `/mcdc`.** "Monitoring" is on by default; switch it off any time in the
+  `/mcdc` panel.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.30.0: Set up the Minecraft bridge entirely in-game</summary>
 
 Set up the **Minecraft ↔ Discord bridge** entirely **in-game** — no config file to edit, no
