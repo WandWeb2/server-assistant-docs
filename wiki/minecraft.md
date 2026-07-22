@@ -76,8 +76,8 @@ Download the plugin here — drop the `.jar` into your server's `plugins/` folde
 
 ## Plugin settings (`config.yml`) {#config}
 
-You don't need to edit the config file to link the bridge — the in-game **`/mcdc link
-<token> <relay-url>`** command (see [Setup](#setup)) does that for you. The file is still
+You don't need to edit the config file to link the bridge — the in-game
+**`/mcdc link <token> <relay-url>`** command (see [Setup](#setup)) does that for you. The file is still
 there if you'd rather set the **relay URL** and **token** by hand, and it holds the rest of
 the plugin's knobs. The plugin generates `plugins/MCDC/config.yml` on first start:
 
