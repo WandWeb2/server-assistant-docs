@@ -64,6 +64,15 @@ It's **off by default** — turn it on with the **Ask SAi** toggle in the `/mcdc
 player can ask up to **15 questions every 6 hours**, and answers draw on the **same AI allowance**
 as the rest of SAi.
 
+## In your weekly Pulse
+
+<span class="cmd-tag free">FREE</span> &nbsp;Linked servers get a **Minecraft
+section in the weekly [Pulse](pulse.md) digest** — a 7-day rollup of in-game
+**chat**, **joins**, **deaths** and **advancements**, right alongside the rest of
+your weekly recap. It's **free** and **automatic**: it shows up on its own for any
+server with the bridge linked and some in-game activity that week, with nothing to
+switch on and no plugin change.
+
 ## Setup
 
 Setup runs once, by the server owner (**Manage Server** permission is needed for the setup
