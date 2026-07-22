@@ -91,6 +91,23 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
 <details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>v6.35.0: Minecraft in your weekly Pulse</summary>
+
+If you run the Minecraft bridge, your **weekly Pulse now includes a Minecraft
+section** — a 7-day recap of in-game chat, joins, deaths and advancements. It's
+**free**, and it shows up **automatically** for linked servers that had activity —
+nothing to switch on.
+
+- **A Minecraft rollup in the digest.** Alongside the rest of your weekly Pulse,
+  linked servers get a Minecraft section summarising the last 7 days in-game:
+  chat volume, player joins, deaths and advancements.
+- **Free and automatic.** It appears on its own for any server with the bridge
+  linked and some in-game activity that week — there's nothing to enable, and no
+  plugin change needed.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.34.0: Ask SAi right inside Minecraft</summary>
 
 Premium: let your players ask SAi questions without leaving the game. Type
