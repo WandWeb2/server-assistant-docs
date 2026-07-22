@@ -90,7 +90,25 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
-<details class="doc-sec" markdown="1" open data-kind="improvement">
+<details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>v6.33.0: Server health at a glance</summary>
+
+See your Minecraft server's health right in Discord — live TPS, tick time, RAM and uptime
+show in the `/mcdc` panel and `/online`. Optional health alerts ping your staff/log channel
+if the server goes offline or starts lagging. Free.
+
+- **Live health in the `/mcdc` panel and `/online`.** Under the connection line you'll see a
+  readout like `🟢 TPS 19.8 · ⏱ 42ms · 🧠 2.1/4.0 GB · ⏳ up 3d 4h` — your server's ticks-per-second,
+  tick time, memory use, and uptime, updated as it reports in.
+- **Optional health alerts.** A short notice posts to your log/staff channel when the server
+  goes **offline or back online**, or when **TPS drops into the red**. It's on by default
+  (`mcdc_health_alerts`); toggle it in the `/mcdc` panel.
+- **Free, needs the companion plugin.** Health reporting is free on every plan and needs the
+  MCDC plugin **v0.4.0** (it updates itself if auto-update is on).
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="improvement">
 <summary>v6.32.0: Clearer AutoMod status &amp; branding</summary>
 
 Two clarity fixes so the panels tell you what's really happening.
@@ -1104,9 +1122,23 @@ Everything stays **local to your server**: nothing is shared anywhere. It's **on
 
 <div class="cl-panel" id="cl-mcdc" role="tabpanel" aria-labelledby="tab-mcdc" markdown="1" hidden>
 
-<p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.3.0</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
+<p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.4.0</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
 
 <details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>Plugin v0.4.0: Reports your server's health to Server Assistant</summary>
+
+Reports live server health (TPS, tick time, RAM, uptime) to Server Assistant so it can show
+your server's status in Discord. Auto-updates as usual.
+
+- **Live health on every check-in.** The plugin now includes your server's ticks-per-second,
+  tick time, memory use, and uptime when it reports in, so Server Assistant can show them in
+  the `/mcdc` panel and `/online` and raise optional health alerts.
+- **Auto-updates as usual.** If auto-update is on, this version applies on your next server
+  restart — nothing to download by hand.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>Plugin v0.3.0: In-game setup — link the bridge without editing config.yml</summary>
 
 You can now link the bridge **entirely in-game**, with no config file to edit and no restart.

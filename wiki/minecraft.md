@@ -36,6 +36,22 @@ targets modern **1.21.x**, which needs **Java 21**.
 - **Who's online at a glance.** **`/online`** lists the players currently in-game, and the
   linked channel's **topic** keeps a live count, for example `🟢 7/40 online`.
 
+## Server health
+
+<span class="cmd-tag free">FREE</span> &nbsp;The bot shows your linked server's **live health**
+right in Discord — its **TPS** (ticks per second), **tick time**, **RAM** use and **uptime**
+appear under the connection line in the `/mcdc` panel and as a **Server health** field in
+`/online`, updated as your server reports in. A typical readout looks like:
+
+```
+🟢 TPS 19.8 · ⏱ 42ms · 🧠 2.1/4.0 GB · ⏳ up 3d 4h
+```
+
+**Optional health alerts** post a short notice to your **log/staff channel** when the server
+**goes offline or comes back**, or when **TPS drops into the red**. They're **on by default**
+and you can toggle them from the `/mcdc` panel. Health reporting is **free** on every plan and
+needs the companion plugin **v0.4.0** or newer (it updates itself if auto-update is on).
+
 ## Setup
 
 Setup runs once, by the server owner (**Manage Server** permission is needed for the setup
@@ -181,8 +197,6 @@ different, or not ship at all. No dates yet.
 - **More of your server in the bridge.** Bridge extra channels (factions, staff, towny),
   show Discord images and attachments as links in-game, and keep message edits and deletes
   in sync across both sides.
-- **Server health at a glance.** Live performance stats (TPS, memory, lag) with alerts, and
-  a clear online/offline indicator for your server.
 - **Moderate from either side.** Broadcast kicks, bans and mutes, keep Discord and Minecraft
   bans and mutes in sync, and run moderation commands (kick, ban, whitelist) from Discord
   with per-role permissions, plus an optional console relay and running server commands from
