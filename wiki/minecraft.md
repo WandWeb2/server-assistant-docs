@@ -64,6 +64,16 @@ It's **off by default** — turn it on with the **Ask SAi** toggle in the `/mcdc
 player can ask up to **15 questions every 6 hours**, and answers draw on the **same AI allowance**
 as the rest of SAi.
 
+## Moderate from Discord
+
+<span class="cmd-tag free">FREE</span> &nbsp;When the chat scan flags a Minecraft
+player, staff see **Kick** and **Ban in-game** buttons on the flag alert and can
+action the player **right on your Minecraft server** — no console needed. It's
+**off by default**: turn it on with the **Enforcement** toggle in the `/mcdc`
+panel. Each button is **permission-gated** — only staff who already have the
+matching kick/ban permission can click it. Carrying the action out in-game needs
+the companion plugin **v0.5.0** or newer (it updates itself if auto-update is on).
+
 ## In your weekly Pulse
 
 <span class="cmd-tag free">FREE</span> &nbsp;Linked servers get a **Minecraft

@@ -91,6 +91,26 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
 <details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>v6.36.0: Kick or ban a flagged Minecraft player in-game</summary>
+
+When a Minecraft player trips your AutoMod, staff can now Kick or Ban them
+in-game with one click on the flag alert. Off by default — enable
+**Enforcement** in the `/mcdc` panel; only staff with kick/ban permission can
+use the buttons.
+
+- **Act straight from the alert.** When your AutoMod flags a Minecraft player's
+  chat, the Discord alert now carries **Kick** and **Ban in-game** buttons —
+  press one and the action runs on your Minecraft server, no console needed.
+- **Off until you turn it on.** Enforcement stays off until you enable it in the
+  `/mcdc` panel, so nothing changes for servers that don't want it.
+- **Permission-gated.** Each button only works for staff who already have the
+  matching kick/ban permission — everyone else is turned away.
+- **Needs the companion plugin.** The action is carried out in-game by the MCDC
+  plugin **v0.5.0** (it updates itself if auto-update is on).
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.35.0: Minecraft in your weekly Pulse</summary>
 
 If you run the Minecraft bridge, your **weekly Pulse now includes a Minecraft
@@ -1156,9 +1176,23 @@ Everything stays **local to your server**: nothing is shared anywhere. It's **on
 
 <div class="cl-panel" id="cl-mcdc" role="tabpanel" aria-labelledby="tab-mcdc" markdown="1" hidden>
 
-<p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.4.0</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
+<p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.5.0</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
 
 <details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>Plugin v0.5.0: Carries out staff kick/ban actions in-game</summary>
+
+Carries out staff kick/ban actions in-game when triggered from Discord.
+Auto-updates as usual.
+
+- **Runs enforcement on your server.** When staff press **Kick** or **Ban
+  in-game** on an AutoMod flag alert in Discord, this plugin carries the action
+  out on your Minecraft server.
+- **Auto-updates as usual.** If auto-update is on, this version applies on your
+  next server restart — nothing to download by hand.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>Plugin v0.4.0: Reports your server's health to Server Assistant</summary>
 
 Reports live server health (TPS, tick time, RAM, uptime) to Server Assistant so it can show
