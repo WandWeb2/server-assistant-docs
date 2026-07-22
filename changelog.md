@@ -1017,10 +1017,10 @@ Everything stays **local to your server**: nothing is shared anywhere. It's **on
 
 <div class="cl-panel" id="cl-mcdc" role="tabpanel" aria-labelledby="tab-mcdc" markdown="1" hidden>
 
-<p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.2.1</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
+<p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.2.2</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
 
 <details class="doc-sec" markdown="1" open data-kind="feature">
-<summary>Plugin v0.2.1: Automatic updates (and a chat fix)</summary>
+<summary>Plugin v0.2.2: Automatic updates, clearer console, a chat fix</summary>
 
 The companion plugin now keeps itself up to date. Install this version **once**, and
 from here on new plugin releases apply **automatically on your next server restart** —
@@ -1036,6 +1036,10 @@ no more downloading a new `.jar` by hand.
 - **No more backlog on restart.** When your server (or the plugin) loads, in-game chat no
   longer replays the recent Discord history all at once — it picks up cleanly from the
   moment it comes online.
+- **You can see it working.** The server console now prints the plugin version on start and
+  reports the update check plainly — "up to date", or "update available: vX → vY — downloading…"
+  then "staged, applies on the next restart". `/mcdc status` shows the version and whether
+  auto-update is on.
 
 Grab this one update from the [download link](/wiki/minecraft/#config) and drop it in as
 usual — it's the last manual install you'll need.
