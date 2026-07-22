@@ -152,6 +152,19 @@ pre {
   padding: 1rem 1.2rem;
 }
 pre code { background: transparent; border: none; color: var(--fg-0); padding: 0; }
+/* Fenced code blocks (```) are wrapped by Rouge in .highlighter-rouge/.highlight,
+   which Minima's main.css paints a LIGHT background (#fff / #eef). On this dark
+   theme the code text is near-white (--fg-0), so that collision renders
+   light-on-light — illegible (e.g. the `/mcdc link <token> <relay-url>` block).
+   Force the Rouge wrappers to the same dark surface as a bare <pre>. */
+.highlight,
+.highlighter-rouge .highlight {
+  background: rgba(0, 0, 0, 0.32) !important;
+  border-radius: 14px;
+}
+.highlight pre { background: transparent !important; box-shadow: none; }
+.highlight pre code,
+.highlighter-rouge code { color: var(--fg-0); }
 
 /* ── Tables ────────────────────────────────────────────────────────────────── */
 table {
