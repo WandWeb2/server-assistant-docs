@@ -91,6 +91,24 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
 <details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>v6.28.0: Control the Minecraft join message from Discord</summary>
+
+The in-game notice players see when they join your Minecraft server — the one telling them
+chat is bridged to Discord — can now be **edited and toggled straight from the `/mcdc`
+wizard**, instead of editing the plugin's config file on the server.
+
+- **Reword it or turn it off.** In the `/mcdc` wizard there's a **Join notice** toggle and an
+  **✏️ Join text** editor. Change the wording, or switch the notice off entirely — your call.
+- **Applies itself.** Your change reaches the server automatically within about a minute — no
+  restart, no config file editing.
+- **On by default.** New and existing servers keep the notice on unless you turn it off; if
+  you do disable it, remember your players won't be told in-game that chat is bridged.
+
+Needs the companion plugin **v0.2.3** (it updates itself if auto-update is on).
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.27.0: Just ask SA to change a setting</summary>
 
 Ask Server Assistant in chat to turn something on or off — like level-up announcements or
@@ -1017,10 +1035,10 @@ Everything stays **local to your server**: nothing is shared anywhere. It's **on
 
 <div class="cl-panel" id="cl-mcdc" role="tabpanel" aria-labelledby="tab-mcdc" markdown="1" hidden>
 
-<p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.2.2</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
+<p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.2.3</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
 
 <details class="doc-sec" markdown="1" open data-kind="feature">
-<summary>Plugin v0.2.2: Automatic updates, clearer console, a chat fix</summary>
+<summary>Plugin v0.2.3: Automatic updates, clearer console, join-notice control</summary>
 
 The companion plugin now keeps itself up to date. Install this version **once**, and
 from here on new plugin releases apply **automatically on your next server restart** —
@@ -1040,6 +1058,9 @@ no more downloading a new `.jar` by hand.
   reports the update check plainly — "up to date", or "update available: vX → vY — downloading…"
   then "staged, applies on the next restart". `/mcdc status` shows the version and whether
   auto-update is on.
+- **Join notice, controlled from Discord.** The in-game "chat is bridged" notice players see
+  on join can now be edited and toggled from the `/mcdc` wizard (see the bot entry) — the
+  plugin picks up your choice automatically, no config file or restart needed.
 
 Grab this one update from the [download link](/wiki/minecraft/#config) and drop it in as
 usual — it's the last manual install you'll need.
