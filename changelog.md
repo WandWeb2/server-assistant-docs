@@ -91,6 +91,22 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
 <details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>v6.29.0: A friendlier staff welcome</summary>
+
+When you finish setup, Server Assistant now greets your staff team with **one short, friendly
+message** instead of a wall of onboarding cards.
+
+- **Just a hello + the essentials.** Run `/help` to see everything, or **@mention Server
+  Assistant** and ask in plain English — no commands to memorise.
+- **A quick note on natural language.** It explains that in staff chat you can just ask for
+  things the way you'd ask a teammate ("warn @jen for spam", "mute @user 30 min"), and that SA
+  confirms before anything major.
+- **Reply to keep going.** It points out that replying to SA's messages continues the
+  conversation, so you can refine on the fly.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.28.0: Control the Minecraft join message from Discord</summary>
 
 The in-game notice players see when they join your Minecraft server — the one telling them
