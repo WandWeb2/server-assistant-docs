@@ -7,7 +7,7 @@ description: How Server Assistant handles your Discord server's data, encrypted 
 # Server Assistant Privacy Policy
 
 **Effective date:** May 9, 2026
-**Last updated:** June 21, 2026
+**Last updated:** July 22, 2026
 
 This policy describes how the Server Assistant Discord bot ("the Bot") collects, uses, and stores information when installed in a Discord server.
 
@@ -319,6 +319,23 @@ We process XP and leveling data to provide the leveling feature itself, ranking,
 
 **Retention.** XP, level, message counts, reputation and the account-wide XP wallet are retained for as long as the member's account-wide wallet is in use, that is, until the data is deleted on request. There is no automatic expiry for XP data. You may contact us via [`/support`]({{ site.url }}{{ site.baseurl }}/support/) to request access to, or deletion of, the XP data we hold about you.
 
+## Minecraft account linking (opt-in)
+
+If you play on a Minecraft server running our Minecraft ↔ Discord bridge, you can **optionally link your Discord and Minecraft accounts**. This is **strictly opt-in**: nothing links automatically. You start it yourself, by running `/link` in Discord and then typing `!link <code>` in Minecraft chat, and only then do we connect your two accounts.
+
+**Lawful basis.** We rely on your **consent** (GDPR Article 6(1)(a); Australian Privacy Principles 3 and 6). Linking is entirely your choice, and no accounts are ever connected unless you take both of those steps yourself.
+
+**What we store.** **Only** the connection between your **Discord user ID** and your **Minecraft account UUID**. We do **not** store your Minecraft username.
+
+**Why we store it.** So that:
+
+- your in-game playtime can be credited as **XP** to your (account-wide) XP wallet; and
+- if your server operator turns it on, your **Discord roles and in-game ranks** can be kept in step, a **two-way sync** (on first run it seeds from Minecraft → Discord).
+
+**It is never sold or shared**, and it is **separate from the ThreatNet threat-intelligence network** described above.
+
+**You stay in control.** Run `/unlink` at any time to delete the connection. We also automatically remove a link that has gone **unused for about 12 months** (data minimisation).
+
 ## Crest artwork & attribution
 
 **Crestbound** Crest artwork is **crowdsourced and shared**. The first member to reveal a particular Crest's art triggers its one-time generation by a third-party image generator (**Pollinations**, [pollinations.ai](https://pollinations.ai)); the resulting image is then **stored by us and shown to every player, permanently**. The image prompt is generated automatically from the Crest's name and type, **no personal data is sent** to the image generator.
@@ -395,6 +412,7 @@ We do **not** sell your data or share it with advertising or analytics networks.
 | Bot message log (messages the Bot sends) | Rolling window (~60 days), then auto-deleted |
 | Cross-Server Threat Network signals | Rolling 12 months from the **last** signal, then hard-deleted |
 | XP, level, message counts, reputation & account-wide XP wallet | Retained while the member's account-wide wallet is in use, until deleted on request; no automatic expiry |
+| Minecraft account-link mapping (Discord ID ↔ MC UUID) | Until you `/unlink` or leave; auto-removed after ~12 months unused (data minimisation) |
 
 ---
 

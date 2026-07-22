@@ -83,6 +83,26 @@ your weekly recap. It's **free** and **automatic**: it shows up on its own for a
 server with the bridge linked and some in-game activity that week, with nothing to
 switch on and no plugin change.
 
+## Link your account
+
+Players can **link their Discord and Minecraft accounts** so they're recognised as
+the same person on both sides. It's **opt-in** — nothing links automatically — and
+**free**.
+
+Linking is the groundwork for features we're building on top of it — **earning XP
+for in-game playtime** and keeping your **Discord roles and in-game ranks in step** —
+so linking now means you're ready as those arrive.
+
+To link:
+
+1. In Discord, run **`/link`** to get a one-time code.
+2. In Minecraft chat, type `!link <code>` within **15 minutes**.
+3. The plugin confirms the link **in-game** — you're connected.
+
+Run **`/unlink`** at any time to disconnect. Only the connection between your
+**Discord account and your Minecraft UUID** is stored, never your Minecraft
+username.
+
 ## Setup
 
 Setup runs once, by the server owner (**Manage Server** permission is needed for the setup
@@ -191,8 +211,12 @@ The bridge is built to keep your server's secrets on your server:
 - **Players are told, in-game.** When a player joins, the plugin posts an in-game notice
   letting them know chat is bridged to Discord. As the server owner, you should also
   **inform your players** that the bridge is active.
-- **No account linking.** This first version does **not** link Discord and Minecraft
-  accounts.
+- **Account linking is opt-in.** Linking your Discord and Minecraft accounts is
+  **optional** and started by you (`/link`, then `!link <code>`) — until you do, the
+  bridge does not connect the two. When you do link, only the **Discord ID ↔
+  Minecraft UUID** connection is stored (never your Minecraft username), and you can
+  `/unlink` any time. See [Link your account](#link-your-account) and the
+  [Privacy Policy]({{ '/privacy/' | relative_url }}).
 
 ## Troubleshooting {#troubleshooting}
 
@@ -221,8 +245,9 @@ for future updates. The ideas below are **planned or under consideration, not ye
 available**, and everything here is **subject to change**, some may arrive later, look
 different, or not ship at all. No dates yet.
 
-- **Link Discord and Minecraft accounts.** Connect the two so a player is recognised as the
-  same person on both sides, the foundation for the role, rank and trust features below.
+- **Earn XP for playtime.** Now that Discord and Minecraft accounts can be linked (see
+  [Link your account](#link-your-account)), the next step is crediting **XP for the time you
+  spend in-game** to your account-wide balance.
 - **Discord roles and ranks in-game.** Mirror a Discord role to an in-game group, sync
   nicknames, and let a booster or supporter role unlock an in-game perk.
 - **More of your server in the bridge.** Bridge extra channels (factions, staff, towny),

@@ -91,6 +91,25 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
 <details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>v6.37.0: Link your Minecraft & Discord accounts</summary>
+
+Players on a bridged Minecraft server can now **connect their Discord and
+Minecraft accounts** — it's **opt-in** and **free**. Run **`/link`** in Discord to
+get a code, then type `!link <code>` in Minecraft chat, and the two accounts are
+joined.
+
+- **You're in control.** It's entirely your choice — nothing links automatically —
+  and you can run **`/unlink`** any time to disconnect. Only the connection between
+  your Discord account and your Minecraft UUID is stored, never your Minecraft
+  username.
+- **The foundation for what's next.** Linking is the groundwork for two features
+  we're building on top of it: **earning XP for your in-game playtime**, and keeping
+  your **Discord roles and in-game ranks in step**. Link now and you'll be ready as
+  they roll out.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.36.0: Kick or ban a flagged Minecraft player in-game</summary>
 
 When a Minecraft player trips your AutoMod, staff can now Kick or Ban them
