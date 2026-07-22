@@ -618,7 +618,7 @@ Where Server Assistant is heading. Priorities are decided by the people who run 
 </details>
 
   <details class="pack">
-  <summary class="pack-h">Threat &amp; Raid Defense <span class="pack-count">4 cards · 1 new</span></summary>
+  <summary class="pack-h">Threat &amp; Raid Defense <span class="pack-count">5 cards · 1 new · 1 upgrade</span></summary>
   <div class="pack-desc">Proactive security for the attacks the text AutoMod can't see, decoy traps, ghost-pings, and DM-blast raids, sitting on top of the shipped AltGuard and Threat Score.</div>
   <div class="longterm-grid">
 
@@ -629,6 +629,8 @@ Where Server Assistant is heading. Priorities are decided by the people who run 
   <details class="card"><summary>Ghost-ping detection</summary><span class="desc">Flag the "ping then delete" trick, a message that mentions a user or role and vanishes seconds later. The bot logs who pinged whom for staff, closing a common bait-and-harassment tactic that normal AutoMod misses.</span></details>
 
   <details class="card"><summary>DM-spam &amp; advertising shield <span class="new-pill">New</span></summary><span class="desc">Catches the <em>"join, DM-blast every member, leave"</em> attack that text AutoMod never sees. When several members report the same unsolicited DM, or a fresh account mass-mentions identical promo across channels, the bot flags the source, alerts staff, and can auto-quarantine on a confident match, reusing the AltGuard fingerprinting already shipped. Never actions on a single report.</span></details>
+
+  <details class="card"><summary>ThreatNet in Minecraft <span class="upgrade-pill">Upgrade</span></summary><span class="desc">Extends the shipped <strong>ThreatNet</strong> cross-server threat network onto your Minecraft server: known bad actors flagged across the network can be <strong>stopped from joining your game server</strong> before they cause harm, the same reputation signal that guards your Discord now guarding your world. Builds on the Minecraft ↔ Discord bridge.</span></details>
 
 </div>
 </details>
