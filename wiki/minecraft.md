@@ -28,6 +28,9 @@ targets modern **1.21.x**, which needs **Java 21**.
   channel appear **in-game**.
 - **Relayed server events.** Joins, leaves, deaths, advancements, and server start/stop
   can be posted to Discord. Each event type is a **toggle**, so you show only what you want.
+- **Discord reactions in-game.** When someone reacts to a message in the linked Discord
+  channel, it shows up in Minecraft (for example `Alice reacted 👍 to Bob: "gg"`). Toggle it
+  in the `/mcdc` wizard. On by default.
 - **Live AI translation, both ways** (optional, off by default). See
   [Translation](#translation) below.
 - **Who's online at a glance.** **`/online`** lists the players currently in-game, and the
@@ -87,8 +90,8 @@ want. After editing the file, restart the server (or re-run the bridge) to pick 
 ## Commands
 
 - **`/mcdc`**: opens the setup & customization wizard (pick/create a channel, get your
-  plugin config, and toggle filtering, events, the topic count and translation, rotate the
-  token, or unlink). Owner / **Manage Server** only. Also in `/settings → Minecraft`.
+  plugin config, and toggle filtering, events, the topic count, reactions and translation,
+  rotate the token, or unlink). Owner / **Manage Server** only. Also in `/settings → Minecraft`.
 - **`/online`**: list who's currently in-game; anyone can run it.
 
 ## Translation {#translation}

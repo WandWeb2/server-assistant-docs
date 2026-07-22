@@ -91,6 +91,19 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
 <details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>v6.25.0: Discord reactions show up in Minecraft</summary>
+
+React to a message in your bridged Discord channel and everyone in-game sees it too, so a
+quick 👍 or 😂 carries across the bridge instead of getting lost.
+
+- **Reactions cross the bridge.** When someone reacts to a message in the linked Discord
+  channel, it appears in Minecraft, for example `Alice reacted 👍 to Bob: "gg"`.
+- **On by default, and easy to turn off.** Reactions are a **toggle** in the `/mcdc` wizard,
+  on out of the box, so switch them off there any time you'd rather keep in-game chat quieter.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.24.0: Set up the Minecraft bridge in one command</summary>
 
 Setting up and tuning the **Minecraft ↔ Discord bridge** is now a single guided wizard,
@@ -974,6 +987,19 @@ Everything stays **local to your server**: nothing is shared anywhere. It's **on
 <p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server.</p>
 
 <details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>Bridge v6.25.0: Discord reactions in Minecraft</summary>
+
+Reactions on the Discord side now carry into your linked Minecraft channel, so a thumbs-up
+or a laugh reaction is visible to players in-game, not just in Discord.
+
+- **Reactions appear in-game.** React to a message in the bridged Discord channel and it
+  shows up in Minecraft, for example `Alice reacted 👍 to Bob: "gg"`.
+- **A Reactions toggle in the wizard.** It's controlled from the `/mcdc` wizard and is on by
+  default, so turn it off there if you'd prefer not to relay reactions.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>Bridge v6.24.0: One-command setup wizard</summary>
 
 Linking and customising the bridge is now a single **`/mcdc`** wizard (also reachable from
