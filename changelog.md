@@ -90,7 +90,27 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
-<details class="doc-sec" markdown="1" open data-kind="fix">
+<details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>v6.27.0: Just ask SA to change a setting</summary>
+
+Ask Server Assistant in chat to turn something on or off — like level-up announcements or
+the Minecraft reaction relay — and it will make the change for you, not just point you to
+where it lives.
+
+- **Ask, confirm, done.** Say something like "turn off level-up messages" or "enable the
+  Minecraft reaction relay" and SA shows a quick **Confirm / Cancel** prompt. Confirm and it
+  flips the setting there and then — no digging through menus.
+- **Safe toggles only, admins only.** This covers a curated set of everyday on/off switches
+  (level-up announcements, the Minecraft-bridge toggles, emote and meme commands, notification
+  and logging options). Security, privacy and verification settings are **not** included — SA
+  politely declines those. Only staff with **Manage Server** can make a change, and every
+  change is confirmed, logged and reversible.
+- **Fewer one-time setup notices.** SA no longer posts a "New: …" note to your staff chat when
+  a feature is added, so your staff channel stays quieter.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v6.26.0: Level-up messages now off by default on new servers</summary>
 
 Newly-added servers now start with **level-up messages switched off**, so Server Assistant
