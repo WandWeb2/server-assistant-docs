@@ -38,19 +38,30 @@ targets modern **1.21.x**, which needs **Java 21**.
 
 ## Setup
 
-Four steps, run once by the server owner (**Manage Server** permission is needed for the
-setup command):
+Setup runs once, by the server owner (**Manage Server** permission is needed for the setup
+command). You can link the bridge **entirely in-game** — no config file to edit and no
+restart:
 
-1. **In Discord, run `/mcdc`** (or open **`/settings → Minecraft`**) to open the wizard,
+1. **Add the plugin.** [Download the MCDC plugin `.jar`]({{ '/downloads/mcdc-plugin.jar' | relative_url }}),
+   drop it into your Minecraft server's **`plugins/`** folder, and **start the server**.
+2. **In Discord, run `/mcdc`** (or open **`/settings → Minecraft`**) to open the wizard,
    then **pick the channel to bridge** from the dropdown, or press **Create a channel for
-   me** and let Server Assistant make one. On linking, the wizard hands you a paste-ready
-   config (a **relay URL** and a **token**) and a link to download the plugin.
-2. **Download the MCDC plugin `.jar`** and drop it into your Minecraft server's
-   **`plugins/`** folder.
-3. **Start the server once.** The plugin creates its config file at
-   **`plugins/MCDC/config.yml`**. Paste the **two lines** from step 1 (the relay URL and
-   token) into that file.
-4. **Restart the server.** The bridge connects, and the linked channel goes live.
+   me** and let Server Assistant make one. On linking, the panel shows a **ready-to-run
+   line** — your `/mcdc link` command with the **token** and **relay URL** already filled
+   in — plus the plugin download link.
+3. **In Minecraft, run the link command.** As a server **operator** (or from the **server
+   console**), run the line the panel gave you:
+
+   ```
+   /mcdc link <token> <relay-url>
+   ```
+
+   The bridge links **instantly** — the plugin validates the token, confirms which Discord
+   channel it linked to, and the linked channel goes live. **No restart needed.**
+
+**Alternative — link via the config file.** Prefer to edit the file? Paste the **relay URL**
+and **token** from the wizard into **`plugins/MCDC/config.yml`** (the plugin generates it on
+first start) and **restart the server**. This is the same link, just the manual route.
 
 > **Requirements.** A **Paper** or **Spigot** server on a recent Minecraft version. The
 > plugin targets **1.21.x**, which requires **Java 21**.
@@ -65,9 +76,10 @@ Download the plugin here — drop the `.jar` into your server's `plugins/` folde
 
 ## Plugin settings (`config.yml`) {#config}
 
-Most people only ever paste the **relay URL** and **token** and leave everything else
-alone. The plugin generates `plugins/MCDC/config.yml` on first start, and these are the
-knobs it holds:
+You don't need to edit the config file to link the bridge — the in-game **`/mcdc link
+<token> <relay-url>`** command (see [Setup](#setup)) does that for you. The file is still
+there if you'd rather set the **relay URL** and **token** by hand, and it holds the rest of
+the plugin's knobs. The plugin generates `plugins/MCDC/config.yml` on first start:
 
 | Setting | What it does |
 |---|---|
