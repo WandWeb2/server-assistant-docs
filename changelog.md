@@ -91,6 +91,25 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
 <details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>v6.30.0: Set up the Minecraft bridge entirely in-game</summary>
+
+Set up the **Minecraft ↔ Discord bridge** entirely **in-game** — no config file to edit, no
+server restart.
+
+- **Drop the plugin, then link in one line.** After adding the companion plugin to your
+  server, run **`/mcdc link <token>`** in Minecraft to link the bridge instantly. The token
+  is shown in Server Assistant's **`/mcdc` setup panel**.
+- **The panel shows the exact command.** The `/mcdc` setup panel now prints the ready-to-run
+  line for you to copy, so there's nothing to type out by hand.
+- **No config-file editing, no restart.** The bridge links there and then — editing
+  `plugins/MCDC/config.yml` and restarting the server is now just an alternative, not the
+  only way.
+
+Needs the companion plugin **v0.3.0** (it updates itself if auto-update is on).
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.29.0: A friendlier staff welcome</summary>
 
 When you finish setup, Server Assistant now greets your staff team with **one short, friendly
@@ -1051,9 +1070,26 @@ Everything stays **local to your server**: nothing is shared anywhere. It's **on
 
 <div class="cl-panel" id="cl-mcdc" role="tabpanel" aria-labelledby="tab-mcdc" markdown="1" hidden>
 
-<p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.2.4</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
+<p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.3.0</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
 
 <details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>Plugin v0.3.0: In-game setup — link the bridge without editing config.yml</summary>
+
+You can now link the bridge **entirely in-game**, with no config file to edit and no restart.
+
+- **Link from Minecraft or the console.** As a server operator (or from the server console),
+  run **`/mcdc link <token> <relay-url>`** — the same token and relay URL shown in Server
+  Assistant's `/mcdc` setup panel — and the bridge links straight away.
+- **It confirms the link for you.** The plugin validates the token and tells you which Discord
+  channel it linked to, so you know it worked without leaving the game.
+- **No config.yml, no restart.** Pasting `relay-url` and `token` into `plugins/MCDC/config.yml`
+  and restarting still works, but it's now the alternative — not the only way.
+- **Auto-updates as usual.** Install this version once and later plugin releases apply
+  automatically on your next server restart.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>Plugin v0.2.4: Automatic updates, clearer console, join-notice control</summary>
 
 The companion plugin now keeps itself up to date. Install this version **once**, and
