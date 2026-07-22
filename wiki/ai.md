@@ -79,6 +79,20 @@ The header shows your mode, <code>owner · full access</code> or <code>admin ·
 read-only</code>. As the owner, press <strong>Apply change(s)</strong> to put the
 suggestions live in one tap; admins see the same analysis without the button.</p>
 
+### Ask SA to change a setting {#apply-setting}
+
+You can also just **ask SA to flip a setting** in chat, rather than being pointed to
+where it lives. Say something like "turn off level-up messages" or "enable the Minecraft
+reaction relay" and the bot shows a quick **Confirm / Cancel** prompt; confirm it and the
+setting changes there and then.
+
+<p style="color:var(--fg-1);font-size:.9rem;line-height:1.55;">
+This is limited to a curated set of everyday <strong>on/off toggles</strong>, level-up
+announcements, the Minecraft-bridge toggles, emote and meme commands, and notification and
+logging options. <strong>Security, privacy and verification settings are never changed
+this way</strong>, SA politely declines those. Only staff with <strong>Manage Server</strong>
+can make a change, and every change is confirmed before it happens, logged, and reversible.</p>
+
 ---
 
 ## Generate an image {#imagine}
