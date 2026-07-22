@@ -7,7 +7,7 @@ description: Server Assistant terms of use, permitted use, moderation responsibi
 # Server Assistant Terms of Service
 
 **Effective date:** May 9, 2026
-**Last updated:** June 21, 2026
+**Last updated:** July 22, 2026
 
 Server Assistant is built and maintained by **Wandering Webmaster** ([wandweb.co](https://wandweb.co)) ("we", "us", "our"). These terms govern your use of the Server Assistant Discord bot ("the Bot"). By inviting the Bot to a server, the server owner agrees to these terms on behalf of that server.
 
@@ -45,6 +45,8 @@ You are solely responsible for:
 - The accuracy of warnings, notes, and other moderation records you create
 - Configuring appropriate roles, permissions, and channels
 - Ensuring your server complies with applicable laws
+
+You are also responsible for enabling and configuring any optional Minecraft integration (playtime XP crediting and Discord-role ↔ in-game-rank sync) on your own game server, and for the roles and ranks you map through it.
 
 We give members notice of the Bot's [Privacy Policy]({{ site.url }}{{ site.baseurl }}/privacy/) and of the Cross-Server Threat Network ourselves (see §6); you are **encouraged** to point your members to the Privacy Policy as good practice, but we do **not** make member-notice your obligation.
 
