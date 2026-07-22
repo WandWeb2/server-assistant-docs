@@ -91,6 +91,23 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
 <details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>v6.34.0: Ask SAi right inside Minecraft</summary>
+
+Premium: let your players ask SAi questions without leaving the game. Type
+`@sai <question>` in Minecraft chat and the answer prints back in-game.
+
+- **Ask in-game, get an in-game answer.** On a bridged Minecraft server, a player
+  can type `@sai` (or `!sai` / `!ai`) followed by a question in chat, and SAi's
+  reply appears right there in Minecraft — no need to switch to Discord.
+- **Off by default, opt-in per server.** It stays off until you switch it on with
+  the **Ask SAi** toggle in the `/mcdc` panel.
+- **Fair-use limited, and it uses your AI allowance.** Each player can ask up to
+  15 questions every 6 hours, and answers count toward the same AI allowance as
+  the rest of SAi.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.33.0: Server health at a glance</summary>
 
 See your Minecraft server's health right in Discord — live TPS, tick time, RAM and uptime

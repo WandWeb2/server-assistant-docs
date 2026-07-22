@@ -52,6 +52,18 @@ appear under the connection line in the `/mcdc` panel and as a **Server health**
 and you can toggle them from the `/mcdc` panel. Health reporting is **free** on every plan and
 needs the companion plugin **v0.4.0** or newer (it updates itself if auto-update is on).
 
+## Ask SAi in-game
+
+<span class="cmd-tag premium">PREMIUM</span> &nbsp;On a bridged server, your players can ask
+SAi questions **without leaving Minecraft**. A player types `@sai` (or `!sai` / `!ai`) followed
+by a question in chat, and SAi's answer prints straight back **in-game** — no need to switch to
+Discord. For example, typing `@sai what's the nether portal ratio?` gets SAi's reply right there
+in chat.
+
+It's **off by default** — turn it on with the **Ask SAi** toggle in the `/mcdc` panel. Each
+player can ask up to **15 questions every 6 hours**, and answers draw on the **same AI allowance**
+as the rest of SAi.
+
 ## Setup
 
 Setup runs once, by the server owner (**Manage Server** permission is needed for the setup
