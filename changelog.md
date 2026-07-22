@@ -90,7 +90,23 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
-<details class="doc-sec" markdown="1" open data-kind="feature">
+<details class="doc-sec" markdown="1" open data-kind="improvement">
+<summary>v6.32.0: Clearer AutoMod status &amp; branding</summary>
+
+Two clarity fixes so the panels tell you what's really happening.
+
+- **AutoMod status now counts your packs.** The `automod` status card used to show
+  "Filters: 0" even when a filter pack (like the gaming slurs pack) was switched on —
+  which looked like nothing was being filtered. It now shows the real number of active
+  rules, notes when the community word-list is on, and lists your enabled packs by name.
+- **Branding makes the icon's scope clear.** `/brand` now spells out that your brand icon
+  appears on the bot's **messages/embeds**, not its profile picture. Discord only allows a
+  bot one avatar across every server, so branding changes the bot's **nickname and embeds**
+  here — not the picture in the member list.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.31.0: Server Assistant now monitors Minecraft chat</summary>
 
 Your **Minecraft chat is now watched the same way your Discord chat is** — so bad language
