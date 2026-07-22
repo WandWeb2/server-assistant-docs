@@ -90,7 +90,20 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
-<details class="doc-sec" markdown="1" open data-kind="feature">
+<details class="doc-sec" markdown="1" open data-kind="fix">
+<summary>v6.26.0: Level-up messages now off by default on new servers</summary>
+
+Newly-added servers now start with **level-up messages switched off**, so Server Assistant
+won't post them until you decide you want them.
+
+- **New servers start quiet.** When you add Server Assistant to a server, level-up messages
+  begin **off**. Servers you already have are **unchanged** — nothing switches on or off for them.
+- **Flip it whenever you like.** Turn level-up messages on or off any time in **`/leveling`** or
+  the dashboard's **"Level-up messages"** setting.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.25.0: Discord reactions show up in Minecraft</summary>
 
 React to a message in your bridged Discord channel and everyone in-game sees it too, so a
