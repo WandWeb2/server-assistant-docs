@@ -91,7 +91,21 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
-<details class="doc-sec" markdown="1" open data-kind="feature">
+<details class="doc-sec" markdown="1" open data-kind="fix">
+<summary>v6.57.0: Minecraft channel topic now shows offline correctly</summary>
+
+The linked Minecraft channel's **topic** used to get stuck showing "🟢 online" with a
+player count even after the Minecraft server had stopped. It now correctly shows
+**🔴 Server offline** when the server goes down or stops responding.
+
+- **The topic tells the truth.** When your server stops or stops responding, the channel
+  topic flips to **🔴 Server offline** instead of leaving a stale online count sitting there.
+- **It flips back on its own.** When the server comes back, the topic returns to the live
+  player count and stats automatically — nothing to run.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.56.0: Updates to AutoMod</summary>
 
 Behind-the-scenes improvements and refinements to AutoMod.
@@ -1333,7 +1347,23 @@ Everything stays **local to your server**: nothing is shared anywhere. It's **on
 
 <p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.10.0</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
 
-<details class="doc-sec" markdown="1" open data-kind="feature">
+<details class="doc-sec" markdown="1" open data-kind="fix">
+<summary>v6.57.0: Channel topic now shows offline correctly</summary>
+
+The linked Discord channel's **topic** used to get stuck showing "🟢 online" with a
+player count even after the Minecraft server had stopped. It now correctly shows
+**🔴 Server offline** when the server goes down or stops responding.
+
+- **The topic tells the truth.** When your server stops or stops responding, the channel
+  topic flips to **🔴 Server offline** instead of leaving a stale online count sitting there.
+- **It flips back on its own.** When the server comes back, the topic returns to the live
+  player count and stats automatically — nothing to run.
+
+This is a bot-side fix — **no plugin update needed**.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>Plugin v0.10.0: Updates to AutoMod</summary>
 
 Behind-the-scenes improvements and refinements to AutoMod. Needs plugin **v0.10.0**
