@@ -90,7 +90,25 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
-<details class="doc-sec" markdown="1" open data-kind="fix">
+<details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>v6.48.0: Bad language is now masked in Minecraft chat too</summary>
+
+When your **AutoMod** catches a word in **in-game Minecraft chat**, that word is now
+**masked to `***` in the game broadcast** other players see — not just in the Discord
+copy. Your staff still get the **real wording** in the server log and the flag alert,
+so nothing is lost for evidence.
+
+- **Players see it censored; your log keeps the truth.** A flagged word shows as `***`
+  to everyone in-game, while the original text still reaches Discord and your server
+  log untouched. The message isn't dropped — just cleaned up for the room.
+- **Follows your AutoMod switch, automatically.** The in-game mask uses the exact same
+  word packs as the rest of your AutoMod and turns on/off with it — nothing extra to
+  configure. Requires the latest bridge plugin (**v0.7.0**), which your server updates
+  to on its own.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v6.47.0: Minecraft chat filtering now follows your AutoMod switch</summary>
 
 Filtering and monitoring of your bridged **Minecraft chat** is now tied to **one
