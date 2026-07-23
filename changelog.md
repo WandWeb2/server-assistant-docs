@@ -90,7 +90,26 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
-<details class="doc-sec" markdown="1" open data-kind="feature">
+<details class="doc-sec" markdown="1" open data-kind="fix">
+<summary>v6.47.0: Minecraft chat filtering now follows your AutoMod switch</summary>
+
+Filtering and monitoring of your bridged **Minecraft chat** is now tied to **one
+control — your server's AutoMod switch** — so it can never look "on" while quietly
+doing nothing.
+
+- **One switch, not two.** The separate **Chat filtering** and **Monitoring** toggles
+  in the `/mcdc` wizard have been replaced by a single **Filter &amp; monitor** status
+  that simply follows AutoMod. When **AutoMod is on**, bridged Minecraft chat is
+  masked and monitored automatically — **both directions**, using the word packs
+  you've already set up. When AutoMod is off, the bridge isn't filtered.
+- **Fixes chat slipping through.** Before, those two toggles could each read "on"
+  yet still do nothing whenever the AutoMod master switch happened to be off — which
+  once let a slur (covered by the gaming slur pack) through unmasked and unflagged.
+  Now the single control makes the real state clear, so what you see is what you get.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.42.0: Appeal a Minecraft ban or kick from the ban screen</summary>
 
 If you're banned or kicked on a Minecraft server running our bridge, the
