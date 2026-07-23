@@ -91,6 +91,26 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
 <details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>v6.55.0: AutoMod catches disguised slurs</summary>
+
+**AutoMod** now spots slurs that have been deliberately dressed up to slip past the
+filter — not just the plain spelling.
+
+- **The tricks it now sees through.** Letters spaced out (`n i g g e r`), broken up
+  with dots, dashes or asterisks, the same letter repeated to pad a word, invisible
+  characters hidden inside it, and look-alike letters swapped in (for example Cyrillic
+  characters that look like ordinary Latin ones). If it reads as a slur, AutoMod catches
+  it.
+- **Flagged for your staff, not auto-punished.** Because spotting these disguises leans
+  on close text-matching that can occasionally over-reach, SA **raises a staff flag for
+  a human to review** rather than acting on its own — your team makes the final call.
+- **Slur filtering only, and it follows your AutoMod switch.** This applies to the slur
+  word packs, and turns on and off with AutoMod like the rest of your filtering — nothing
+  extra to set up. It works in **both** Discord and bridged **Minecraft** chat.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.54.0: Minecraft chat flags — Dismiss + a reason prompt</summary>
 
 The Minecraft chat-flag alert is now a proper action card, and it also shows in the
@@ -1319,6 +1339,26 @@ Everything stays **local to your server**: nothing is shared anywhere. It's **on
 <p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.9.0</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
 
 <details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>v6.55.0: Bridged chat catches disguised slurs too</summary>
+
+**AutoMod** now spots slurs in bridged **Minecraft** chat even when they've been
+deliberately disguised to slip past the filter — the same anti-evasion it added on the
+Discord side. No plugin update needed.
+
+- **The tricks it now sees through.** Letters spaced out (`n i g g e r`), broken up with
+  dots, dashes or asterisks, the same letter repeated to pad a word, invisible characters
+  hidden inside it, and look-alike letters swapped in (for example Cyrillic characters
+  that look like ordinary Latin ones).
+- **Flagged for your staff, not auto-punished.** Because spotting these disguises leans on
+  close text-matching that can occasionally over-reach, a **staff flag is raised for a
+  human to review** rather than acting automatically — with the same **Kick** / **Ban
+  in-game** buttons as any other Minecraft chat flag.
+- **Slur filtering only, and it follows your AutoMod switch.** This applies to the slur
+  word packs and turns on and off with AutoMod like the rest of your bridge filtering.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.54.0: Minecraft chat flags — Dismiss + a reason prompt</summary>
 
 The Minecraft chat-flag alert is now a proper action card, and it also shows in the
