@@ -187,7 +187,7 @@ want. After editing the file, restart the server (or re-run the bridge) to pick 
 ## Commands
 
 - **`/mcdc`**: opens the setup & customization wizard (pick/create a channel, get your
-  plugin config, and toggle filtering, events, the topic count, reactions and translation,
+  plugin config, and toggle events, the topic count, reactions and translation,
   rotate the token, or unlink). Owner / **Manage Server** only. Also in `/settings → Minecraft`.
 - **`/online`**: list who's currently in-game; anyone can run it.
 
@@ -205,20 +205,25 @@ language for Discord and Discord messages into that language for in-game.
 
 ## Keeping chat clean & safe {#safety}
 
-The bridge respects your server's own moderation, in **both** directions:
+The bridge respects your server's own moderation, in **both** directions — and it's
+governed by a **single control: your server's AutoMod switch**.
 
-- **Your AutoMod filter applies to bridged chat.** Messages crossing the bridge are run
-  through your server's existing **AutoMod word list (lexicon)**, and any matched words are
-  masked to `***` in the copy that's delivered — so a word you already block in Discord
-  stays blocked when it comes from Minecraft, and vice versa. **Filtering is optional** — a
-  toggle in the `/mcdc` wizard, on by default, that you can turn off to relay chat verbatim.
+- **Filtering &amp; monitoring follow your AutoMod switch.** There's nothing separate to
+  turn on for the bridge. **When AutoMod is on**, bridged Minecraft chat is automatically
+  **masked and monitored** in both directions; **when it's off**, the bridge isn't
+  filtered. The `/mcdc` wizard shows a single **Filter & monitor** status that reflects
+  AutoMod — no bridge-only toggles that can read "on" while doing nothing.
+- **Your AutoMod filter applies to bridged chat.** With AutoMod on, messages crossing the
+  bridge are run through your server's existing **AutoMod word list (lexicon)** and enabled
+  **word packs**, and any matched words are masked to `***` in the copy that's delivered —
+  so a word you already block in Discord stays blocked when it comes from Minecraft, and
+  vice versa.
 - **Your full protection scans in-game chat too.** Bridged Minecraft chat is checked by the
   **same AutoMod as your Discord** — your **word and lexicon filters**, the built-in
   **`scams` pack**, and the **known-bad-domain link blocklist**. A match raises a **staff
   alert** (with the **Kick** and **Ban in-game** buttons from
   [Moderate from Discord](#moderate-from-discord)), so your **scam-link and phishing
-  protection already covers Minecraft**, not just Discord. This runs whenever your server's
-  **AutoMod is on**.
+  protection already covers Minecraft**, not just Discord.
 - **No surprise pings from in-game.** A player typing `@everyone` (or any other mention) in
   Minecraft **cannot** ping your Discord. Mentions in bridged messages are handled safely and
   show as plain text, so nobody can mass-ping the server through the game.
