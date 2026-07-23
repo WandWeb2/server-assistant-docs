@@ -91,37 +91,16 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
 <details class="doc-sec" markdown="1" open data-kind="feature">
-<summary>v6.56.0: Minecraft in-game mask blanks disguised slurs too</summary>
+<summary>v6.56.0: Updates to AutoMod</summary>
 
-The **Minecraft** in-game chat **mask** now also blanks slurs that were dressed up to
-dodge the filter — so what gets hidden in-game matches what AutoMod already detects.
-
-- **The disguises it now masks.** Letters spaced out (`n i g g e r`), broken up with dots,
-  dashes or asterisks, the same letter repeated to pad a word, and look-alike characters
-  swapped in — the in-game view now hides these, not just the plain spelling.
-- **Slur packs only, and it follows your AutoMod switch.** This applies to the slur word
-  packs and turns on and off with AutoMod like the rest of your filtering. The full wording
-  still reaches Discord and the server log so staff keep the context.
+Behind-the-scenes improvements and refinements to AutoMod.
 
 </details>
 
 <details class="doc-sec" markdown="1" data-kind="feature">
-<summary>v6.55.0: AutoMod catches disguised slurs</summary>
+<summary>v6.55.0: Updates to AutoMod</summary>
 
-**AutoMod** now spots slurs that have been deliberately dressed up to slip past the
-filter — not just the plain spelling.
-
-- **The tricks it now sees through.** Letters spaced out (`n i g g e r`), broken up
-  with dots, dashes or asterisks, the same letter repeated to pad a word, invisible
-  characters hidden inside it, and look-alike letters swapped in (for example Cyrillic
-  characters that look like ordinary Latin ones). If it reads as a slur, AutoMod catches
-  it.
-- **Flagged for your staff, not auto-punished.** Because spotting these disguises leans
-  on close text-matching that can occasionally over-reach, SA **raises a staff flag for
-  a human to review** rather than acting on its own — your team makes the final call.
-- **Slur filtering only, and it follows your AutoMod switch.** This applies to the slur
-  word packs, and turns on and off with AutoMod like the rest of your filtering — nothing
-  extra to set up. It works in **both** Discord and bridged **Minecraft** chat.
+Behind-the-scenes improvements and refinements to AutoMod.
 
 </details>
 
@@ -1354,40 +1333,17 @@ Everything stays **local to your server**: nothing is shared anywhere. It's **on
 <p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.10.0</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
 
 <details class="doc-sec" markdown="1" open data-kind="feature">
-<summary>Plugin v0.10.0: In-game chat masks disguised slurs too</summary>
+<summary>Plugin v0.10.0: Updates to AutoMod</summary>
 
-The in-game chat **mask** now also blanks slurs that were deliberately disguised —
-matching what **AutoMod** already detects, so what gets hidden in Minecraft chat keeps
-pace with what gets caught. Needs plugin **v0.10.0** (auto-updates as usual).
-
-- **The disguises it now masks.** Slurs spaced out (`n i g g e r`), broken up with dots,
-  dashes or asterisks, glued-together repeats, invisible characters hidden inside the word,
-  and look-alike letters swapped in (for example Cyrillic characters that look like ordinary
-  Latin ones) — the mask now hides these in the in-game view too, not just the plain spelling.
-- **Staff still see the real wording.** The unmasked message still reaches **Discord** and
-  the **server log** so your team has the full context — only the in-game chat view is masked.
-- **Slur filtering only, and it follows your AutoMod switch.** This applies to the slur word
-  packs and turns on and off with AutoMod like the rest of your bridge filtering.
+Behind-the-scenes improvements and refinements to AutoMod. Needs plugin **v0.10.0**
+(auto-updates as usual).
 
 </details>
 
 <details class="doc-sec" markdown="1" data-kind="feature">
-<summary>v6.55.0: Bridged chat catches disguised slurs too</summary>
+<summary>v6.55.0: Updates to AutoMod</summary>
 
-**AutoMod** now spots slurs in bridged **Minecraft** chat even when they've been
-deliberately disguised to slip past the filter — the same anti-evasion it added on the
-Discord side. No plugin update needed.
-
-- **The tricks it now sees through.** Letters spaced out (`n i g g e r`), broken up with
-  dots, dashes or asterisks, the same letter repeated to pad a word, invisible characters
-  hidden inside it, and look-alike letters swapped in (for example Cyrillic characters
-  that look like ordinary Latin ones).
-- **Flagged for your staff, not auto-punished.** Because spotting these disguises leans on
-  close text-matching that can occasionally over-reach, a **staff flag is raised for a
-  human to review** rather than acting automatically — with the same **Kick** / **Ban
-  in-game** buttons as any other Minecraft chat flag.
-- **Slur filtering only, and it follows your AutoMod switch.** This applies to the slur
-  word packs and turns on and off with AutoMod like the rest of your bridge filtering.
+Behind-the-scenes improvements and refinements to AutoMod.
 
 </details>
 
