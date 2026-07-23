@@ -3,6 +3,7 @@ layout: default
 title: Server Assistant Changelog
 permalink: /changelog/
 description: Release history for Server Assistant, v6.x line.
+# rebuild-trigger: 2026-07-23 (force GitHub Pages redeploy)
 ---
 
 # Server Assistant Changelog: v6.x
