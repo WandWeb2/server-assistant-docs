@@ -90,7 +90,19 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
-<details class="doc-sec" markdown="1" open data-kind="feature">
+<details class="doc-sec" markdown="1" open data-kind="fix">
+<summary>v6.52.0: Minecraft chat-flag alerts go to your staff chat</summary>
+
+When a bridged Minecraft message trips AutoMod, the flag notice — with its **Kick** /
+**Ban in-game** buttons — now posts to your **staff-chat channel** instead of your
+server-log channel, so it lands where your team is watching.
+
+- Falls back to your usual alert channel if no staff chat is configured. The full audit
+  trail still records every flag as before.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.51.0: Blocked links are masked in Minecraft chat</summary>
 
 A link your AutoMod blocks (IP-grabbers, or any domain on your link blocklist) is now
