@@ -1304,9 +1304,132 @@ Everything stays **local to your server**: nothing is shared anywhere. It's **on
 
 <div class="cl-panel" id="cl-mcdc" role="tabpanel" aria-labelledby="tab-mcdc" markdown="1" hidden>
 
-<p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.5.0</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
+<p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.9.0</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
 
 <details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>v6.53.0: Live server stats in the channel topic</summary>
+
+The linked Discord channel's **topic** now shows your Minecraft server's live status at a
+glance, for example `🟢 1/7 online · TPS 20.0 · 4ms · 2.3GB`.
+
+- **Online count, TPS, tick time, and RAM, right in the topic.** No need to run a command —
+  the numbers sit at the top of the bridged channel.
+- **Refreshes about every 5 minutes.** Discord rate-limits topic edits, so this updates
+  periodically rather than second-by-second. No plugin update needed.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
+<summary>Plugin v0.9.0: One-restart updates, instant settings, no kick appeal</summary>
+
+The companion plugin now updates and configures itself more smoothly. Auto-updates as usual.
+
+- **Updates apply in a single restart** (it used to take two).
+- **Your server-side settings apply instantly on start** — things like your custom join
+  text take effect right away instead of about a minute later.
+- **New `/mcdc update` command** to check for and stage an update on demand.
+- **No appeal line on kicks.** A kick is temporary, so the disconnect screen no longer shows
+  an appeal link for kicks (bans still do).
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
+<summary>Plugin v0.8.0: Clickable appeal link on the kick/ban screen</summary>
+
+The appeal URL shown on a player's disconnect screen is now a **clickable link**, not just
+text. Auto-updates as usual.
+
+- **One click to open the appeal.** Whether the click actually opens a browser depends on the
+  player's Minecraft client, but the URL is always readable and copyable either way.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
+<summary>v6.52.0: Minecraft chat-flag alerts go to your staff chat</summary>
+
+When a bridged Minecraft message trips AutoMod, the flag notice — with its **Kick** /
+**Ban in-game** buttons — now posts to your **staff-chat channel** instead of your
+server-log channel, so it lands where your team is watching. No plugin update needed.
+
+- Falls back to your usual alert channel if no staff chat is configured. The full audit
+  trail still records every flag as before.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
+<summary>v6.51.0: Blocked links are masked in bridged chat</summary>
+
+A link your AutoMod blocks (IP-grabbers, or any domain on your link blocklist) is now
+**masked to `***`** in bridged chat — in the Discord copy and the in-game broadcast —
+instead of only raising a staff flag. No plugin update needed.
+
+- **The bad link doesn't reach the room, but your staff still see it.** The masked copy is
+  what players see; your staff alert and server log keep the **real link** for evidence.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
+<summary>v6.50.0: Ask-SAi answers now show in Discord too</summary>
+
+When a player asks **SAi** in-game (`@sai …`), SAi's reply now also appears in your linked
+Discord channel — not just in Minecraft. No plugin update needed.
+
+- **The bridged conversation reads the same on both sides.** Staff watching from Discord
+  can follow the whole exchange instead of seeing a question with no reply.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
+<summary>v6.48.0 / Plugin v0.7.0: Flagged words masked in the in-game broadcast</summary>
+
+Words your AutoMod catches are now **masked to `***` in the in-game Minecraft chat**, while
+the true wording still reaches Discord and your server log for your records.
+
+- **Players see the clean version, staff see the real one.** The in-game broadcast is masked;
+  your staff alert and server log keep the original wording.
+- **Needs plugin v0.7.0+.** If auto-update is on, this applies on your next server restart —
+  nothing to download by hand.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
+<summary>v6.47.0: One AutoMod switch covers Discord and Minecraft</summary>
+
+Bridge filtering and monitoring now follow your **single AutoMod switch** — the old separate
+MCDC toggles have been removed. No plugin update needed.
+
+- **One place to control it.** Turn AutoMod on and it protects your Discord and your bridged
+  Minecraft chat together; there's no longer a second bridge-only toggle to keep in sync.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
+<summary>Bans-only appeals and short appeal links</summary>
+
+Appeals are now cleaner to offer and easier to type. No plugin update needed for these
+changes on Server Assistant's side.
+
+- **Only bans offer an appeal now.** A kick is temporary, so kicked players no longer get an
+  appeal prompt — only banned players do.
+- **Short, hand-typeable links.** A ban-appeal link is now `https://sa.wandweb.co/a/<code>`,
+  instead of the old long `/mc-appeal?token=…` URL.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
+<summary>Plugin v0.6.0: Appeal a ban/kick from the web, and in-game unban</summary>
+
+Banned or kicked players now get a **one-time web appeal link** on their disconnect screen,
+and approving an appeal **unbans them in-game** automatically. Auto-updates as usual.
+
+- **A way back in from the disconnect screen.** The player sees a link they can use once to
+  appeal, so they aren't left with no path forward.
+- **Approve once, they're back.** When you approve an appeal, the plugin lifts the ban on
+  your Minecraft server for you.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>Plugin v0.5.0: Carries out staff kick/ban actions in-game</summary>
 
 Carries out staff kick/ban actions in-game when triggered from Discord.

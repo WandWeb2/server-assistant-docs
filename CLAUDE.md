@@ -106,6 +106,27 @@ Subagents and background tasks are easy to leak. A prior session left **13 resea
 - **If something feels slow, check `/tasks` (or the Background tasks panel).** A task running far longer than its work warrants is stuck — kill it and redo the work directly.
 - Tasks spawned in an earlier context may not be stoppable from a later one programmatically; the operator can stop them from the `/tasks` panel.
 
+## Changelog panels — MCDC changes go in the MCDC panel (standing rule)
+
+The public `changelog.md` is split into **audience tabs/panels** (`#cl-bot`,
+`#cl-mcdc`, `#cl-portal`, `#cl-crestbound`, …), each its own `<div class="cl-panel">`.
+A change lands in the panel for its audience — and a **Minecraft ↔ Discord bridge
+(MCDC) change is MCDC-audience**, whether it shipped bot-side or as a plugin update.
+
+- **Every MCDC / Minecraft-bridge change MUST get an entry in the `#cl-mcdc` panel**
+  — not only the Bot panel. Bot-side bridge work (`v6.x`) belongs in BOTH the Bot
+  panel and the MCDC panel; plugin-only changes belong in the MCDC panel. Don't leave
+  a bridge change visible only under `#cl-bot`.
+- **Bump the MCDC intro's plugin version** (the `<p class="cl-intro">` "currently
+  **vX.Y.Z**" line) whenever a new plugin jar ships, so it always names the latest
+  plugin release.
+- Match the existing entry format exactly: `<details class="doc-sec" markdown="1"
+  [open] data-kind="feature|fix">` + `<summary>…</summary>` + body + `</details>`,
+  newest-first, only the top entry carrying `open`.
+
+Origin: operator flagged the MCDC panel had gone stale — recent bridge work was
+being added to the Bot panel only and the MCDC panel was missed (2026-07-23).
+
 ## Core-pillar changes — direct owner liaison required (standing rule)
 
 The product's **core legal/compliance pillars** — the **privacy policy, terms of service, the threat-network opt-out model, what data is collected/kept/shared, the lawful basis, and whether the small-business exemption is relied upon** — must **never be changed on assumption**. Any change that touches these pillars requires **extensive direct liaison with the owner: explicit questioning AND double-checking before the change goes live.** Never guess on a core pillar — surface it and confirm. Origin: a session where the individual opt-out stance shifted; it was caught and confirmed with the owner before it reached live policy.
