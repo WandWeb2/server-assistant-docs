@@ -90,7 +90,21 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
-<details class="doc-sec" markdown="1" open data-kind="fix">
+<details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>v6.51.0: Blocked links are masked in Minecraft chat</summary>
+
+A link your AutoMod blocks (IP-grabbers, or any domain on your link blocklist) is now
+**masked to `***` in bridged Minecraft chat** — in the Discord copy and the in-game
+broadcast — instead of only raising a staff flag.
+
+- **The bad link doesn't reach the room, but your staff still see it.** The masked
+  copy is what players see; your staff alert and server log keep the **real link** for
+  evidence. Works both directions and follows your AutoMod switch, same as the rest of
+  the bridge filter.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v6.50.0: Ask-SAi answers now show in Discord too</summary>
 
 When a player asks **SAi** in-game (`@sai …`), SAi's reply now also appears in your
