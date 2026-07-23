@@ -90,7 +90,20 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
-<details class="doc-sec" markdown="1" open data-kind="feature">
+<details class="doc-sec" markdown="1" open data-kind="fix">
+<summary>v6.50.0: Ask-SAi answers now show in Discord too</summary>
+
+When a player asks **SAi** in-game (`@sai …`), SAi's reply now also appears in your
+linked Discord channel — not just in Minecraft.
+
+- **The bridged conversation reads the same on both sides.** The player's question
+  already crossed to Discord; now SAi's answer sits right below it in `#minecraft`,
+  so staff watching from Discord can follow the whole exchange instead of seeing a
+  question with no reply.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.49.0: SAi now knows Server Assistant inside out</summary>
 
 Ask **SAi** how something works or where a setting lives, and it now answers from
