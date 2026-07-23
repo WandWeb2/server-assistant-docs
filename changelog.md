@@ -91,6 +91,24 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
 <details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>v6.49.0: SAi now knows Server Assistant inside out</summary>
+
+Ask **SAi** how something works or where a setting lives, and it now answers from
+Server Assistant's own documentation instead of guessing.
+
+- **"How do I…" questions actually get answered.** In-game (`@sai`) or at the
+  reception desk, SAi can now explain your features, plans, the Minecraft bridge,
+  privacy, and **where each setting lives** — and it points you to the right command
+  or panel. If something isn't covered, it says so plainly rather than making it up.
+- **It still only explains — never changes.** SAi never edits settings, roles, or
+  permissions; those are done by staff in Discord. A request to change someone's
+  permissions or roles is refused and flagged, as always.
+- **Kept current automatically.** SAi's knowledge is pulled from the live docs, so it
+  stays in step with new releases without anything to configure.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.48.0: Bad language is now masked in Minecraft chat too</summary>
 
 When your **AutoMod** catches a word in **in-game Minecraft chat**, that word is now
