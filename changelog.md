@@ -90,7 +90,19 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
-<details class="doc-sec" markdown="1" open data-kind="fix">
+<details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>v6.54.0: Minecraft chat flags — Dismiss + a reason prompt</summary>
+
+The Minecraft chat-flag alert is now a proper action card, and it also shows in the
+operator portal's **Needs input** list so nothing slips through.
+
+- **Dismiss button** on every flag — and your audit log records **who** dismissed it.
+- **Kick / Ban open a reason box** pre-filled from the offence (the rule + the flagged
+  text) that staff can edit before confirming — the reason the player sees on disconnect.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v6.52.0: Minecraft chat-flag alerts go to your staff chat</summary>
 
 When a bridged Minecraft message trips AutoMod, the flag notice — with its **Kick** /
@@ -1307,6 +1319,18 @@ Everything stays **local to your server**: nothing is shared anywhere. It's **on
 <p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.9.0</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
 
 <details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>v6.54.0: Minecraft chat flags — Dismiss + a reason prompt</summary>
+
+The Minecraft chat-flag alert is now a proper action card, and it also shows in the
+operator portal's **Needs input** list so nothing slips through.
+
+- **Dismiss button** on every flag — and your audit log records **who** dismissed it.
+- **Kick / Ban open a reason box** pre-filled from the offence (the rule + the flagged
+  text) that staff can edit before confirming — the reason the player sees on disconnect.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.53.0: Live server stats in the channel topic</summary>
 
 The linked Discord channel's **topic** now shows your Minecraft server's live status at a
