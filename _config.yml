@@ -83,3 +83,7 @@ exclude:
   - CLAUDE.md
   - scripts/
   - .omp/
+  # SAi knowledge base — fetched RAW at runtime and injected into SAi's system
+  # prompts. Excluded so Jekyll doesn't turn it into an HTML page; it stays a
+  # plain static file at the repo path (reachable via the raw GitHub URL).
+  - sai-knowledge.md
