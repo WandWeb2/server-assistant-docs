@@ -92,6 +92,27 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
 <details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>v6.62.0: @sai in-game — smarter answers, clearer linking, staff-only enforced</summary>
+
+A polish pass on the in-game **@sai** assistant, from live testing.
+
+- **Answers more.** @sai now helps with general Minecraft questions (crafting,
+  mechanics, mobs) as well as your server's own info — and it **never goes silent**:
+  if it can't answer, it says so instead of ignoring you.
+- **Clearer account linking.** When a player needs to link, the message now says to
+  run **`/link` in Discord** (it's a Discord command that gives you a code to redeem
+  in-game) — no more confusion about typing it in Minecraft.
+- **Staff-only really means staff-only.** If you restrict @sai to staff (or linked
+  members), players who don't qualify can no longer summon or use the in-game
+  companion at all — not just get refused after asking.
+- As always, @sai only explains and guides — it **never** changes settings, roles or
+  permissions.
+
+Pairs with **MCDC plugin v0.14.0** (see the MCDC tab) — auto-updates.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.61.0: 🧚 Summon your own SAi companion in-game</summary>
 
 Players on **Premium** can now **summon a personal SAi companion** right inside
@@ -1421,9 +1442,34 @@ Everything stays **local to your server**: nothing is shared anywhere. It's **on
 
 <div class="cl-panel" id="cl-mcdc" role="tabpanel" aria-labelledby="tab-mcdc" markdown="1" hidden>
 
-<p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.13.1</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
+<p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.14.0</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
 
-<details class="doc-sec" markdown="1" open data-kind="fix">
+<details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>v6.62.0 + Plugin v0.14.0: @sai companion polish + staff-only enforced in-game</summary>
+
+A big polish pass on the in-game **@sai companion**, from your testing feedback.
+
+- **A friendlier companion item.** The hotbar item is now a **glinting Allay spawn
+  egg** (was a player head) — right-click it to **summon** your companion; it never
+  places or spawns a stray mob.
+- **He sticks close.** Your companion now prefers to **settle and stand near you**,
+  only flying to catch up when you get ahead — no more constant flitting.
+- **You see your own question.** When you ask @sai, your question is echoed back
+  **privately to you** (still hidden from public and Discord chat) so you can see what
+  you asked.
+- **Smarter, never silent.** @sai now answers general Minecraft questions too, and
+  always replies — even if just to say it didn't catch that.
+- **Clearer linking.** Prompts now say to run **`/link` in Discord** (not in-game).
+- **Staff-only is enforced in-game (security).** If @sai is restricted to staff or
+  linked members, everyone else is blocked from the `/sai` command and the companion
+  entirely — not just refused after asking. The companion stays **fairness-neutral**
+  (no items, no combat, no advantage), and @sai still never changes roles or perms.
+
+Needs the companion plugin at **v0.14.0** (auto-updates as usual).
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>Plugin v0.13.1: Startup log now names the auto-restart state</summary>
 
 A small polish: the server startup log now shows whether **`/mcdc update`
