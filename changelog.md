@@ -91,7 +91,24 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
-<details class="doc-sec" markdown="1" open data-kind="fix">
+<details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>v6.58.0: Minecraft channel topic now shows your server's health</summary>
+
+The status dot on the linked Minecraft channel's **topic** now reflects your
+**server's health** rather than how many players are on — so an online but empty
+server no longer sits behind a grey dot.
+
+- **The dot tells you how the server is doing.** 🟢 means online and healthy,
+  🟡 means online but running slow, and 🔴 means offline or in trouble.
+- **Empty no longer looks down.** An online server with nobody on it now correctly
+  shows green instead of a grey dot.
+
+Follows v6.57.0, which made the topic show offline when the server is down. This is
+a bot-side change — **no plugin update needed**.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v6.57.0: Minecraft channel topic now shows offline correctly</summary>
 
 The linked Minecraft channel's **topic** used to get stuck showing "🟢 online" with a
@@ -1347,7 +1364,24 @@ Everything stays **local to your server**: nothing is shared anywhere. It's **on
 
 <p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.10.0</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
 
-<details class="doc-sec" markdown="1" open data-kind="fix">
+<details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>v6.58.0: Channel topic status dot now shows server health</summary>
+
+The status dot on the linked channel's **topic** now reflects your **server's
+health** instead of the player count, so an online but empty server no longer
+shows a grey dot.
+
+- **The dot tells you how the server is doing.** 🟢 means online and healthy,
+  🟡 means online but running slow, and 🔴 means offline or in trouble.
+- **Empty no longer looks down.** An online server with nobody on it now correctly
+  shows green instead of a grey dot.
+
+Follows v6.57.0, which made the topic show offline when the server is down. This is
+a bot-side change — **no plugin update needed**.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v6.57.0: Channel topic now shows offline correctly</summary>
 
 The linked Discord channel's **topic** used to get stuck showing "🟢 online" with a
