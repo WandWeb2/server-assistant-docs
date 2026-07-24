@@ -1442,9 +1442,18 @@ Everything stays **local to your server**: nothing is shared anywhere. It's **on
 
 <div class="cl-panel" id="cl-mcdc" role="tabpanel" aria-labelledby="tab-mcdc" markdown="1" hidden>
 
-<p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.14.0</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
+<p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.14.1</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
 
-<details class="doc-sec" markdown="1" open data-kind="feature">
+<details class="doc-sec" markdown="1" open data-kind="fix">
+<summary>Plugin v0.14.1: Summon your companion straight from your hand</summary>
+
+The @sai companion item now works when you **right-click it in the air** — you no
+longer have to aim at a block to summon your companion. (It still never spawns a
+stray Allay.)
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.62.0 + Plugin v0.14.0: @sai companion polish + staff-only enforced in-game</summary>
 
 A big polish pass on the in-game **@sai companion**, from your testing feedback.
