@@ -91,7 +91,27 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
-<details class="doc-sec" markdown="1" open data-kind="feature">
+<details class="doc-sec" markdown="1" open data-kind="fix">
+<summary>v6.63.0: SAi now follows the conversation in Discord</summary>
+
+Ask SAi something in Discord and it now **remembers the thread** instead of treating
+every message as a fresh start.
+
+- **Follow-ups just work.** If SAi asks a clarifying question ("in a game or real
+  life?") and you answer with a fragment ("in mc"), it now applies that to your
+  **original** question rather than answering something unrelated.
+- **Replies are always picked up.** Replying to one of SAi's messages continues the
+  conversation — even if you turn the reply-ping off.
+- **Answers on the merits.** A genuine question — including general game questions
+  like a Minecraft crafting recipe — gets a real answer, instead of being steered
+  back to bot settings.
+
+Only recent messages from that same channel are used, and quoted chat is treated as
+context to read, never as instructions to act on.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.62.0: @sai in-game — smarter answers, clearer linking, staff-only enforced</summary>
 
 A polish pass on the in-game **@sai** assistant, from live testing.
