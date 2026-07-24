@@ -92,6 +92,27 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
 <details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>v6.60.0: Make the in-game @sai assistant your own</summary>
+
+You can now **customise the @sai assistant** on your linked Minecraft server —
+its name, its manner, what it knows, and who's allowed to use it — all from a new
+**@sai Studio** page in the `/mcdc` wizard.
+
+- **Give it your own name, tone and greeting.** Rename @sai, pick how it speaks
+  (concise, friendly, or in-character), and write the line players see when they
+  first talk to it.
+- **Teach it your server.** Add a **knowledge pack** of your own details — rules,
+  ranks, how to claim land, upcoming events — so @sai can answer players' "how do
+  I…" questions with your real information. When something isn't in the pack, it
+  says so and points players to staff rather than making an answer up.
+- **Choose who can use it.** Open it to everyone, to linked members only, to staff
+  only, or turn it off entirely.
+- **It still only explains and guides.** @sai never changes anyone's roles or
+  permissions — a request to do that is refused, exactly as before.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.59.0: Earn XP for time spent on your linked Minecraft server</summary>
 
 You now earn XP just for **playing on your linked Minecraft server** — the same
@@ -1383,6 +1404,29 @@ Everything stays **local to your server**: nothing is shared anywhere. It's **on
 <p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.11.0</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
 
 <details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>v6.60.0: Make the in-game @sai assistant your own</summary>
+
+You can now **customise the @sai assistant** on your linked Minecraft server —
+its name, its manner, what it knows, and who's allowed to use it — all from a new
+**@sai Studio** page in the `/mcdc` wizard.
+
+- **Give it your own name, tone and greeting.** Rename @sai, pick how it speaks
+  (concise, friendly, or in-character), and write the line players see when they
+  first talk to it.
+- **Teach it your server.** Add a **knowledge pack** of your own details — rules,
+  ranks, how to claim land, upcoming events — so @sai can answer players' "how do
+  I…" questions with your real information. When something isn't in the pack, it
+  says so and points players to staff rather than making an answer up.
+- **Choose who can use it.** Open it to everyone, to linked members only, to staff
+  only, or turn it off entirely.
+- **It still only explains and guides.** @sai never changes anyone's roles or
+  permissions — a request to do that is refused, exactly as before.
+
+This is a bot-side change — **no plugin update needed**.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.59.0: Earn XP for time spent on your linked Minecraft server</summary>
 
 You now earn XP just for **playing on your linked Minecraft server** — the same
