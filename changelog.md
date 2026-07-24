@@ -92,6 +92,24 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
 <details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>v6.59.0: Earn XP for time spent on your linked Minecraft server</summary>
+
+You now earn XP just for **playing on your linked Minecraft server** — the same
+way time in voice channels earns XP.
+
+- **Same rate as voice XP.** Time on the server earns at the same rate as time in
+  a voice channel, and your **2× events and buffs apply** to it just like everywhere
+  else.
+- **A fair hourly cap** keeps it balanced with the rest of the server.
+- **Link your account to start earning.** Use `/link` in-game or the `/mcdc` wizard
+  to connect your Minecraft account to Discord — playtime XP is credited to linked
+  players only.
+
+Needs the companion plugin at **v0.11.0** (auto-updates as usual).
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.58.0: Minecraft channel topic now shows your server's health</summary>
 
 The status dot on the linked Minecraft channel's **topic** now reflects your
@@ -1362,9 +1380,27 @@ Everything stays **local to your server**: nothing is shared anywhere. It's **on
 
 <div class="cl-panel" id="cl-mcdc" role="tabpanel" aria-labelledby="tab-mcdc" markdown="1" hidden>
 
-<p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.10.0</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
+<p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.11.0</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
 
 <details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>v6.59.0: Earn XP for time spent on your linked Minecraft server</summary>
+
+You now earn XP just for **playing on your linked Minecraft server** — the same
+way time in voice channels earns XP.
+
+- **Same rate as voice XP.** Time on the server earns at the same rate as time in
+  a voice channel, and your **2× events and buffs apply** to it just like everywhere
+  else.
+- **A fair hourly cap** keeps it balanced with the rest of the server.
+- **Link your account to start earning.** Use `/link` in-game or the `/mcdc` wizard
+  to connect your Minecraft account to Discord — playtime XP is credited to linked
+  players only.
+
+Needs the companion plugin at **v0.11.0** (auto-updates as usual).
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.58.0: Channel topic status dot now shows server health</summary>
 
 The status dot on the linked channel's **topic** now reflects your **server's
