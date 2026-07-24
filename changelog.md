@@ -1421,9 +1421,31 @@ Everything stays **local to your server**: nothing is shared anywhere. It's **on
 
 <div class="cl-panel" id="cl-mcdc" role="tabpanel" aria-labelledby="tab-mcdc" markdown="1" hidden>
 
-<p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.12.0</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
+<p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.13.0</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
 
 <details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>Plugin v0.13.0: One-command plugin updates — <code>/mcdc update</code> now restarts to apply</summary>
+
+Updating the MCDC plugin is now a **single command**. Previously `/mcdc update`
+downloaded the new build but you had to restart the server yourself to load it —
+now it can finish the job for you.
+
+- **`/mcdc update` → done.** It downloads, verifies, installs, and then
+  **restarts the server** to apply the new build — no second step.
+- **A heads-up before it goes down.** Online players get a short (~10-second)
+  in-game countdown first, so nobody's caught off guard.
+- **Changed your mind?** Run **`/mcdc update cancel`** during the countdown to
+  abort — the update still applies on your next manual restart.
+- **You're in control.** Set `update-auto-restart: false` in the plugin config to
+  keep the old "download now, restart later" behaviour. The automatic on-startup
+  update check **never** restarts on its own — only the `/mcdc update` command does.
+
+Requires your host to relaunch the server when it stops (most panels — Pterodactyl,
+systemd, a restart script — do this automatically).
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.61.0: 🧚 Summon your own SAi companion in-game</summary>
 
 Players on **Premium** can now **summon a personal SAi companion** right inside
