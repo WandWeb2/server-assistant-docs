@@ -92,6 +92,26 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
 <details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>v6.61.0: 🧚 Summon your own SAi companion in-game</summary>
+
+Players on **Premium** can now **summon a personal SAi companion** right inside
+Minecraft and ask **@sai a question privately** — the answer comes back to just
+that player, not the whole chat.
+
+- **A private answer, just for you.** Ask @sai something and the reply is sent to
+  you alone, so you can get help without filling up the chat.
+- **The same SAi your server already set up.** It's the very same SAi — its name,
+  tone and server-knowledge all carry over.
+- **It still only explains, guides and reports.** The companion never changes
+  settings, roles or permissions.
+- **A friendly first hello (optional).** Servers can have a companion greet
+  first-time players automatically.
+
+Turn it on in `/mcdc` → **🤖 @sai Studio** → **🧚 SAi Companion**. Premium, opt-in.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.60.0: Make the in-game @sai assistant your own</summary>
 
 You can now **customise the @sai assistant** on your linked Minecraft server —
@@ -1401,9 +1421,31 @@ Everything stays **local to your server**: nothing is shared anywhere. It's **on
 
 <div class="cl-panel" id="cl-mcdc" role="tabpanel" aria-labelledby="tab-mcdc" markdown="1" hidden>
 
-<p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.11.0</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
+<p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.12.0</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
 
 <details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>v6.61.0: 🧚 Summon your own SAi companion in-game</summary>
+
+Players on **Premium** can now **summon a personal SAi companion** right inside
+Minecraft and ask **@sai a question privately** — the answer comes back to just
+that player, not the whole chat.
+
+- **A private answer, just for you.** Ask @sai something and the reply is sent to
+  you alone, so you can get help without filling up the chat.
+- **The same SAi your server already set up.** It's the very same SAi — its name,
+  tone and server-knowledge all carry over.
+- **It still only explains, guides and reports.** The companion never changes
+  settings, roles or permissions.
+- **A friendly first hello (optional).** Servers can have a companion greet
+  first-time players automatically.
+
+Turn it on in `/mcdc` → **🤖 @sai Studio** → **🧚 SAi Companion**. Premium, opt-in.
+
+Needs the companion plugin at **v0.12.0** (auto-updates as usual).
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.60.0: Make the in-game @sai assistant your own</summary>
 
 You can now **customise the @sai assistant** on your linked Minecraft server —
