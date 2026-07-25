@@ -406,6 +406,16 @@ The bridge is built to keep your server's secrets on your server:
   between Minecraft and Discord to deliver the message, **and not stored**. When
   translation is on, that chat is processed by Server Assistant's AI translation (the same
   as `/translate`) to produce the translated text.
+- **A flagged message is the exception.** If a bridged message trips your AutoMod, the
+  180-day moderation-actions record keeps only the player name, UUID and which rule matched
+  — **never the message text**. A short extract (up to ~500 characters) is kept with the
+  staff decision card so your staff can see what they're deciding about, and that is deleted
+  90 days after the decision is closed. The filter check itself is plain pattern-matching on
+  our servers — **no AI provider sees it**. Full detail in the
+  [Privacy Policy]({{ '/privacy/' | relative_url }}).
+- **Ask SAi in-game sends your operator's server notes.** When `@sai` is on, a player's
+  question goes to the AI along with the server-information text you wrote for it (up to
+  2,000 characters). No player names or UUIDs are sent.
 - **Players are told, in-game.** When a player joins, the plugin posts an in-game notice
   letting them know chat is bridged to Discord. As the server owner, you should also
   **inform your players** that the bridge is active.

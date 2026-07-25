@@ -7,7 +7,7 @@ description: Server Assistant terms of use, permitted use, moderation responsibi
 # Server Assistant Terms of Service
 
 **Effective date:** May 9, 2026
-**Last updated:** July 22, 2026
+**Last updated:** July 25, 2026
 
 Server Assistant is built and maintained by **Wandering Webmaster** ([wandweb.co](https://wandweb.co)) ("we", "us", "our"). These terms govern your use of the Server Assistant Discord bot ("the Bot"). By inviting the Bot to a server, the server owner agrees to these terms on behalf of that server.
 
@@ -56,11 +56,12 @@ The Bot is a tool. Final accountability for any moderation action rests with the
 
 ## 5. AI features
 
-The Bot offers optional AI features (SAi, Message Report, Self-trained AutoMod, Pulse, `/imagine`) powered by Anthropic, and, when you supply your own key (BYOK), by the provider whose key you bring (**Anthropic**, **xAI**, or **OpenAI**):
+The Bot offers optional AI features (SAi, Message Report, Self-trained AutoMod, Pulse, `/imagine`, and — if you run our Minecraft bridge — chat translation and in-game `@sai`) powered by Anthropic, with other providers used for specific checks and as fallbacks, and, when you supply your own key (BYOK), by the provider whose key you bring (**Anthropic**, **xAI**, or **OpenAI**). The [Privacy Policy]({{ site.url }}{{ site.baseurl }}/privacy/) lists every provider and exactly what each receives.
 
 - AI-generated content is **not guaranteed to be accurate or appropriate**
 - You are responsible for reviewing AI output before relying on it for moderation decisions
 - AI providers may process transmitted data per their own privacy policies
+- Some optional features transmit content that was **not typed in your Discord server** — enabling Minecraft bridge translation or in-game `@sai` sends in-game chat to an AI provider. These are **off until you switch them on**, and by switching them on **you accept responsibility for telling your members and players** that you have done so
 - We don't guarantee continued availability of any specific AI provider or model
 - If you supply your own API keys (BYOK mode), you are responsible for any costs incurred with that provider
 
