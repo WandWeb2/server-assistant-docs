@@ -92,6 +92,59 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
 <details class="doc-sec" markdown="1" open data-kind="fix">
+<summary>v6.71.0: Flagged Minecraft messages are no longer kept in the activity log</summary>
+
+This is a privacy fix, and it is worth being plain about it.
+
+Our privacy policy says the **moderation-actions log does not store message content**. For
+AutoMod flags on **bridged Minecraft chat**, that wasn't true: a short extract of the
+flagged message was being written into the durable record — the same record you can read
+and **search** in the portal activity log. Two paths did it: the automatic flag itself, and
+the reason pre-filled for your staff when they kicked or banned straight from the flag card.
+
+The durable record now keeps **who** and **which filter matched** — and no longer the
+message text.
+
+**What has _not_ changed** — your moderators lose nothing they need to judge a message:
+
+- **The staff alert in Discord still quotes the message in full.** Your moderators still
+  see exactly what was said, in full context, before they decide anything.
+- **The server log channel embed still shows the full reason.**
+- **The kick or ban message the player sees in-game is unchanged.**
+- **Discord-side moderation is entirely unaffected.**
+
+Only the durable, searchable activity record is redacted — bringing it into line with what
+the privacy policy already promised.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
+<summary>v6.70.0: The assistant no longer fills gaps with guesses</summary>
+
+Asked *"what are the rules on this server?"* on a server with no rules configured, the
+assistant used to answer anyway. It would say staff set those up, suggest checking "a rules
+channel **if there is one**", and add that they "**might have also** set up a `/rules`
+command **or something similar**". None of that was known to be true — it was
+plausible-sounding filler, and it sent people looking for things that may not exist.
+
+It now **never names a command, channel, role, rank or feature it hasn't been told exists.**
+When it doesn't know something, it says so in one short sentence and points at the one thing
+that is always true — **ask the server's staff** — instead of padding the answer with
+guesses.
+
+This applies everywhere it answers: **in-game**, **in Discord**, the **welcome assistant**,
+and **`/faq`**.
+
+**It still answers plainly what it does know.** If your server's knowledge pack says "no
+griefing", it says "no griefing". The change targets invention, not confidence — a
+well-filled-in server gets the same direct answers as before.
+
+**A tip for operators:** fill in your server knowledge pack — `/mcdc` → **@sai Studio** —
+and the assistant can answer these questions properly instead of pointing people at staff.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v6.69.0: /online rebuilt — a truthful, instant look at who's on your Minecraft server</summary>
 
 Run **`/online`** in your linked Minecraft channel to see who's on the game server right
@@ -1632,6 +1685,65 @@ Everything stays **local to your server**: nothing is shared anywhere. It's **on
 <p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.15.0</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
 
 <details class="doc-sec" markdown="1" open data-kind="fix">
+<summary>v6.71.0: Flagged Minecraft messages are no longer kept in the activity log</summary>
+
+This is a privacy fix, and it is worth being plain about it.
+
+Our privacy policy says the **moderation-actions log does not store message content**. For
+AutoMod flags raised on **bridged Minecraft chat**, that wasn't true: a short extract of the
+flagged message was being written into the durable record — the same record you can read and
+**search** in the portal activity log. Two paths did it: the automatic flag itself, and the
+reason pre-filled for your staff when they kicked or banned a player straight from the flag
+card.
+
+The durable record now keeps **who** and **which filter matched** — and no longer the
+message text.
+
+**What has _not_ changed** — your moderators lose nothing they need to judge a message:
+
+- **The staff alert in Discord still quotes the message in full.** Your moderators still see
+  exactly what was said in chat, in full, before they decide anything.
+- **The server log channel embed still shows the full reason.**
+- **The kick or ban message the player sees in-game is unchanged.**
+- **Discord-side moderation is entirely unaffected.**
+
+Only the durable, searchable activity record is redacted — bringing it into line with what
+the privacy policy already promised.
+
+**No plugin update needed.**
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
+<summary>v6.70.0: The assistant no longer fills gaps with guesses</summary>
+
+A player asking the assistant in-game *"what are the rules on this server?"* — on a server
+with no rules configured — used to get an answer anyway. It would say staff set those up,
+suggest checking "a rules channel **if there is one**", and add that they "**might have
+also** set up a `/rules` command **or something similar**". None of that was known to be
+true; it was plausible-sounding filler, and it sent players looking for things that may not
+exist.
+
+It now **never names a command, channel, role, rank or feature it hasn't been told exists.**
+When it doesn't know something, it says so in one short sentence and points at the one thing
+that is always true — **ask the server's staff** — instead of padding the answer with
+guesses.
+
+This applies everywhere it answers: **in-game**, **in Discord**, the **welcome assistant**,
+and **`/faq`**.
+
+**It still answers plainly what it does know.** If your server's knowledge pack says "no
+griefing", it says "no griefing". The change targets invention, not confidence — a
+well-filled-in server gets the same direct answers as before.
+
+**A tip for operators:** fill in your server knowledge pack — `/mcdc` → **@sai Studio** —
+and the assistant can answer these questions properly instead of pointing players at staff.
+
+**No plugin update needed.**
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v6.69.0: /online rebuilt — who's on the game server, answered truthfully and instantly</summary>
 
 **`/online`**, run in your linked Minecraft channel, shows who's on the game server right
