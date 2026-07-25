@@ -1504,7 +1504,7 @@ Everything stays **local to your server**: nothing is shared anywhere. It's **on
 
 <p class="cl-intro">What's new in <strong>Crestbound</strong>: the Crest-collecting game in the portal, powered by the XP you earn in Discord.</p>
 
-<details class="doc-sec" markdown="1" open data-kind="feature">
+<details class="doc-sec" markdown="1" open data-kind="feature" id="v1.5">
 <summary>v1.5: The bot rounds out</summary>
 - **World-first discovery announcements.** Server admins can pick a channel with `/setup`; when a member makes a genuine world-first discovery, the server hears about it the moment the art comes to light. Announcement only, no reward ever differs by server.
 - **`/duel`**: see your active Wardeck and jump straight onto the Battle screen.
@@ -1524,9 +1524,9 @@ Everything stays **local to your server**: nothing is shared anywhere. It's **on
 - Everything you know, packs, discovery, Wardecks & battles, quests, the Shop, is unchanged, just faster on its own foundations.
 </details>
 
-<details class="doc-sec" markdown="1" data-kind="feature">
-<summary>Coming soon: Wardecks & battles</summary>
-- **Battle mode is on the way.** A future update will let you assemble a **Wardeck**: a 30-Crest battle group drawn from your collection, and put it to the test. It isn't here yet; for now, Crestbound is all about building your collection.
+<details class="doc-sec superseded" markdown="1" data-kind="feature">
+<summary>Coming soon: Wardecks & battles<a class="cl-super" href="{{ '/changelog/' | relative_url }}#v1.5">Superseded by v1.5</a></summary>
+- **Battle mode has since arrived.** Assemble a **Wardeck** — a 30-Crest battle group drawn from your collection — and put it to the test with `/duel`. See the v1.5 entry above.
 - **Server Wars, on the far horizon.** A community-versus-community season: your Discord server is your banner, your members' duels bank points for it, and fleet-wide standings crown a champion server each season. Cosmetic glory only, no server or member ever gains a gameplay advantage. Parked until enough communities are battling; watch this page.
 </details>
 
