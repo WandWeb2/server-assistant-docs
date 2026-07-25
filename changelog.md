@@ -91,7 +91,24 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
-<details class="doc-sec" markdown="1" open data-kind="fix">
+<details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>v6.74.0: The assistant can now point players to your customer portal</summary>
+
+Ask the assistant how to reach the portal — *"where's the website?"*, *"how do I get to my
+account?"* — and it now gives you the portal's address instead of leaving you to hunt for
+it. That works wherever the assistant answers, including **in-game** on a bridged Minecraft
+server (`@sai`), on servers that have the assistant switched on.
+
+It gives out the address and nothing else — the portal's own page carries the Privacy and
+Terms links in its footer.
+
+**Minecraft players get a second, simpler route in the same release:** the companion plugin
+now has a **`/saportal`** command that prints a clickable link, with no assistant and no
+Discord account needed. See the **MCDC** tab for that — it needs **plugin v0.16.0**.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v6.73.0: The auto-close safety net for forgotten staff decisions now actually runs</summary>
 
 **v6.72.0 added a safety net that wasn't doing anything.** Items waiting on a staff decision
@@ -1747,9 +1764,35 @@ Everything stays **local to your server**: nothing is shared anywhere. It's **on
 
 <div class="cl-panel" id="cl-mcdc" role="tabpanel" aria-labelledby="tab-mcdc" markdown="1" hidden>
 
-<p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.15.0</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
+<p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.16.0</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
 
-<details class="doc-sec" markdown="1" open data-kind="fix">
+<details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>v6.74.0 + Plugin v0.16.0: Reach your customer portal from in-game</summary>
+
+Players had no way to get to the Server Assistant **customer portal** from inside Minecraft —
+they had to go and find the address somewhere else. Two ways now, and they work for everyone
+on the server.
+
+- **`/saportal`** — type it in chat and the plugin prints a **clickable** link to the portal.
+  Click it and your launcher opens it in your browser.
+- **Ask the assistant.** On servers with the assistant switched on, asking `@sai` where the
+  portal or website is now gets the same link back in chat.
+
+**No permission, no rank, no linked Discord account.** `/saportal` is available to every
+player who can type in chat — the portal is a public web address, so there is nothing to
+gate. You don't need to have run `/link` to use it. Both routes give out the address only;
+the portal page itself carries the Privacy and Terms links in its footer.
+
+The command also answers to the shorter **`/portal`**. If your server already runs a warp or
+teleport plugin that claims `/portal`, that plugin keeps it — **`/saportal` always works.**
+
+**This one needs a plugin update to v0.16.0.** Servers with auto-update on will pick it up
+by themselves; otherwise run `/mcdc update` in-game, or download the new jar from the
+[Minecraft wiki page]({{ '/wiki/minecraft/' | relative_url }}).
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v6.73.0: Minecraft chat flags now expire — the auto-close safety net actually runs</summary>
 
 When AutoMod flags a message in bridged Minecraft chat, it lands in the portal's **Needs
