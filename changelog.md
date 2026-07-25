@@ -92,6 +92,39 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
 <details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>v6.75.0: Changes to the assistant now appear in your audit log</summary>
+
+Your audit log has always recorded what your staff *do* — a ban, a warning, a dismissed
+flag. It didn't record changes to **the assistant itself**: who turned it on, who changed
+who's allowed to talk to it, who rewrote what it knows about your server. Those were the
+one set of changes that left no trace. They do now.
+
+**On a bridged Minecraft server** (`/mcdc` → **@sai Studio**) that covers who may ask
+`@sai`, the reply tone, the assistant's name and greeting, your server knowledge pack, and
+both SAi Companion switches — the companion itself, and whether new players get one
+automatically. The **Ask @sai** on/off button on the bridge's main page is covered too.
+
+**On the Discord side** it covers the AI mode, provider and model you pick in `/ai-config`
+or during `/setup`, the image-generation provider, and your Reception assistant's persona
+and greeting.
+
+**Entries record the change, not the content.** A switch reads `companion: off → on`; an
+access change reads `access: staff → everyone`. **Anything you wrote yourself is recorded
+only by its shape** — your knowledge pack, the assistant's identity, its greeting, its
+persona. The log will say `knowledge updated (412 → 980 chars)`, never a word of what it
+says. So you can see that your rules were rewritten, and by whom, without your own text
+sitting in a second place.
+
+**Opening a form and closing it again writes nothing.** Only real changes are recorded, so
+your log doesn't fill up with people having a look around.
+
+**Nothing to turn on** — it applies from this release, wherever you can already configure
+the assistant. Existing entries are untouched, and these records use the same fields your
+audit log already keeps for every staff action.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.74.0: The assistant can now point players to your customer portal</summary>
 
 Ask the assistant how to reach the portal — *"where's the website?"*, *"how do I get to my
@@ -1767,6 +1800,42 @@ Everything stays **local to your server**: nothing is shared anywhere. It's **on
 <p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.16.0</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
 
 <details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>v6.75.0: @sai Studio changes now appear in your audit log</summary>
+
+**@sai Studio** — `/mcdc` → **@sai Studio** — is where you decide what the in-game assistant
+is: who's allowed to talk to it, how it sounds, what it's called, and what it knows about
+your server. Until now, changing any of that left no trace. A knowledge pack could be
+rewritten, or `@sai` opened up from staff to everyone, and there was nothing afterwards to
+say who did it.
+
+**Every one of those changes is now written to your audit log**, alongside your kicks, bans
+and AutoMod actions:
+
+- **Who may ask `@sai`** — staff only, or everyone.
+- **The reply tone**, and the assistant's **name and greeting**.
+- **Your server knowledge pack** — the rules, the how-to-play, the answers it gives out.
+- **Both SAi Companion switches** — the companion itself, and whether new players get one
+  automatically.
+- **The Ask @sai on/off button** on the bridge wizard's main page.
+
+**Entries record the change, not the content.** A switch reads `companion: off → on`; an
+access change reads `access: staff → everyone`. **Anything you wrote yourself is recorded
+only by its shape** — the knowledge pack, the assistant's identity and greeting. The log
+will say `knowledge updated (412 → 980 chars)`, never a word of what it says. So you can see
+that your in-game rules were rewritten, and by whom, without a copy of your text living in
+a second place.
+
+**Opening the Studio and closing it again writes nothing.** Only real changes are recorded.
+
+**The Discord-side assistant is covered in the same release** — the AI mode, provider and
+model, the image-generation provider, and the Reception persona and greeting. See the **SA
+Bot** tab.
+
+**Nothing to turn on, and no plugin update needed.**
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.74.0 + Plugin v0.16.0: Reach your customer portal from in-game</summary>
 
 Players had no way to get to the Server Assistant **customer portal** from inside Minecraft —
