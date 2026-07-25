@@ -91,7 +91,33 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
-<details class="doc-sec" markdown="1" open data-kind="feature">
+<details class="doc-sec" markdown="1" open data-kind="fix">
+<summary>v6.67.0: Targeted-harassment filtering now reaches servers set up before it existed</summary>
+
+An earlier release added **targeted-harassment filtering** — the **Level 2** pack, which
+catches "kys", "kill/hang/neck yourself", "go die" and the like — to every setup preset
+that already included slur filtering. But choosing a preset copies its filter packs to
+your server at that moment, so in practice **only servers set up after that release
+actually got it**. Servers set up earlier kept the packs they'd been given and never
+picked it up.
+
+We've now applied it to those servers directly, so we should be upfront about what
+changed on your side:
+
+- **Only servers that already had the Level 1 slur filter switched on.** If you'd
+  deliberately left slur filtering off, **nothing has changed for you** — we haven't
+  turned filtering on anywhere it wasn't already running.
+- **You can turn it off, and it stays off.** Untick **Level 2** in `/automod` →
+  **Filter Packs**. It won't be quietly re-added later.
+- **You'll see it in your own logs.** Affected servers get a single line in their server
+  log channel when this switches on, so it isn't a silent change to your moderation
+  settings.
+
+Nothing else about your automod setup was touched.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.66.0: Give your Minecraft ranks a Discord role to follow</summary>
 
 The setup side of **rank sync** is here. Point a Discord role at an in-game rank and
