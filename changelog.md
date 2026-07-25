@@ -92,6 +92,175 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
 <details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>v6.74.0: The assistant can now point players to your customer portal</summary>
+
+Ask the assistant how to reach the portal — *"where's the website?"*, *"how do I get to my
+account?"* — and it now gives you the portal's address instead of leaving you to hunt for
+it. That works wherever the assistant answers, including **in-game** on a bridged Minecraft
+server (`@sai`), on servers that have the assistant switched on.
+
+It gives out the address and nothing else — the portal's own page carries the Privacy and
+Terms links in its footer.
+
+**Minecraft players get a second, simpler route in the same release:** the companion plugin
+now has a **`/saportal`** command that prints a clickable link, with no assistant and no
+Discord account needed. See the **MCDC** tab for that — it needs **plugin v0.16.0**.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
+<summary>v6.73.0: The auto-close safety net for forgotten staff decisions now actually runs</summary>
+
+**v6.72.0 added a safety net that wasn't doing anything.** Items waiting on a staff decision
+were supposed to warn you and then close themselves if nobody ever acted — but they were
+never given a closing date in the first place, so nothing ever reached the warning stage.
+This release gives them one, so that feature now genuinely works.
+
+**How long an item waits** now depends on what it is, because they aren't all alike:
+
+- **AutoMod reviews and Minecraft chat flags — about two weeks.** These carry an extract of
+  the flagged message, so they shouldn't sit around.
+- **Ban appeals, raid alerts and verification items — about a month.**
+- **Owner approvals — no closing date at all.** They wait until you answer them.
+
+After that, the behaviour is exactly what v6.72.0 described: **a warning first** — a notice
+in the portal, a push notification and a DM to the staff who can act — then **24 hours** to
+act on the item or dismiss it, and only then does it close itself. Closing records that
+nobody acted; it is not an approval or a denial. The record is cleared **90 days** after
+closing.
+
+**One thing you will now start to see:** once an item is past its date, it also drops off
+the portal's **Needs input** list. That isn't new — it is how the list has always worked —
+but since nothing ever reached a date before, nobody had seen it happen. It doesn't skip
+anything: the item is still warned about, still gets its full 24 hours to be acted on or
+dismissed, and is **not deleted** at that point.
+
+**Nothing already in your queue changes today.** Items raised before this update don't have
+a closing date, so none of this applies to them — they stay exactly where they are.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
+<summary>v6.72.0: Forgotten staff decisions now close themselves — after warning you first</summary>
+
+When something needs a staff decision — a ban appeal, an AutoMod review, an owner
+approval — it lands in the portal's **Needs input** list and SA nudges your staff about
+it. Until now, an item nobody ever acted on simply sat there forever.
+
+Those items now eventually close themselves. But **never silently**:
+
+- **You get a warning first.** Before anything closes itself, SA tells you: a notice in
+  the portal activity feed, a push notification, **and a DM** to the staff who can act on
+  it. The warning says what the item is, how long it has been waiting, and exactly when
+  it will close.
+- **A full day to act.** After that warning there is a **24-hour** grace period. Act on
+  the item — or dismiss it — at any point in that window and it never closes itself. A
+  warning that arrives at 3am is still there to be handled by whoever is on shift next.
+- **Closing is a tidy-up, not a decision.** SA closing an item does **not** record it as
+  approved or denied. It records that nobody acted.
+- **Items with no deadline are never touched.** If something was raised without an
+  expiry, it stays in your queue indefinitely, exactly as before.
+
+**Why this exists:** closed items are now cleared out after **90 days**, so the details of
+an old decision — including any message text involved — don't sit on file forever. An item
+that never closed was never cleared.
+
+**Your existing "needs your input" nudges are unchanged.** This adds a final warning
+before an item lapses; it does not replace the reminders you already get.
+
+One note: anyone who has turned off DMs from SA won't receive the DM version of the
+warning. The portal notice still reaches them.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
+<summary>v6.71.0: Flagged Minecraft messages are no longer kept in the activity log</summary>
+
+This is a privacy fix, and it is worth being plain about it.
+
+Our privacy policy says the **moderation-actions log does not store message content**. For
+AutoMod flags on **bridged Minecraft chat**, that wasn't true: a short extract of the
+flagged message was being written into the durable record — the same record you can read
+and **search** in the portal activity log. Two paths did it: the automatic flag itself, and
+the reason pre-filled for your staff when they kicked or banned straight from the flag card.
+
+The durable record now keeps **who** and **which filter matched** — and no longer the
+message text.
+
+**What has _not_ changed** — your moderators lose nothing they need to judge a message:
+
+- **The staff alert in Discord still quotes the message in full.** Your moderators still
+  see exactly what was said, in full context, before they decide anything.
+- **The server log channel embed still shows the full reason.**
+- **The kick or ban message the player sees in-game is unchanged.**
+- **Discord-side moderation is entirely unaffected.**
+
+Only the durable, searchable activity record is redacted — bringing it into line with what
+the privacy policy already promised.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
+<summary>v6.70.0: The assistant no longer fills gaps with guesses</summary>
+
+Asked *"what are the rules on this server?"* on a server with no rules configured, the
+assistant used to answer anyway. It would say staff set those up, suggest checking "a rules
+channel **if there is one**", and add that they "**might have also** set up a `/rules`
+command **or something similar**". None of that was known to be true — it was
+plausible-sounding filler, and it sent people looking for things that may not exist.
+
+It now **never names a command, channel, role, rank or feature it hasn't been told exists.**
+When it doesn't know something, it says so in one short sentence and points at the one thing
+that is always true — **ask the server's staff** — instead of padding the answer with
+guesses.
+
+This applies everywhere it answers: **in-game**, **in Discord**, the **welcome assistant**,
+and **`/faq`**.
+
+**It still answers plainly what it does know.** If your server's knowledge pack says "no
+griefing", it says "no griefing". The change targets invention, not confidence — a
+well-filled-in server gets the same direct answers as before.
+
+**A tip for operators:** fill in your server knowledge pack — `/mcdc` → **@sai Studio** —
+and the assistant can answer these questions properly instead of pointing people at staff.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
+<summary>v6.69.0: /online rebuilt — a truthful, instant look at who's on your Minecraft server</summary>
+
+Run **`/online`** in your linked Minecraft channel to see who's on the game server right
+now. The command already existed, but it was thin — and worse, it could tell you things
+that weren't true. This release rebuilds it.
+
+- **A stopped server used to show as online.** When a server went down, `/online` kept
+  reporting the last thing it had heard, listing whoever happened to be playing at that
+  moment. It now recognises that the information has gone stale, says the server
+  **appears to be offline**, and **withholds the old player list** rather than showing
+  you a roster that isn't really there.
+- **A connection problem used to read as "no Minecraft server linked"** — a confusing
+  answer when one plainly was. Trouble reaching your server is now reported as exactly
+  that.
+- **Long player lists no longer cut a name in half.** Busy servers get a tidy
+  **"+N more"** instead of a name chopped mid-word.
+- **Replies are instant.** `/online` now reads the presence information your bridge
+  already keeps up to date — refreshed about once a minute — instead of going and asking
+  all over again on every use. Run it twice in a row and the second answer comes back
+  immediately.
+- **Server health at a glance.** The same 🟢 / 🟡 (running slow) / 🔴 (offline) marker
+  you already see on the channel topic, so the two can never disagree.
+- **You can see how fresh the list is.** It tells you when the information was last
+  refreshed, so a minute-old list is never mistaken for live truth.
+- **Run it in the wrong place and it helps.** In another channel it points you at the
+  right one; in a server with no Minecraft link at all, it tells you how to set one up.
+
+**It shows Minecraft names only — never which Discord account a player is linked to**,
+even for players who have linked one. Answers are visible only to the person who ran the
+command, so `/online` never clutters your chat channel.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.68.0: AI Review can now tell "venting at the game" from "aimed at a person"</summary>
 
 **AI Review** — the optional second opinion on a flagged message — used to answer only one
@@ -1595,9 +1764,161 @@ Everything stays **local to your server**: nothing is shared anywhere. It's **on
 
 <div class="cl-panel" id="cl-mcdc" role="tabpanel" aria-labelledby="tab-mcdc" markdown="1" hidden>
 
-<p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.15.0</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
+<p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.16.0</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
 
 <details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>v6.74.0 + Plugin v0.16.0: Reach your customer portal from in-game</summary>
+
+Players had no way to get to the Server Assistant **customer portal** from inside Minecraft —
+they had to go and find the address somewhere else. Two ways now, and they work for everyone
+on the server.
+
+- **`/saportal`** — type it in chat and the plugin prints a **clickable** link to the portal.
+  Click it and your launcher opens it in your browser.
+- **Ask the assistant.** On servers with the assistant switched on, asking `@sai` where the
+  portal or website is now gets the same link back in chat.
+
+**No permission, no rank, no linked Discord account.** `/saportal` is available to every
+player who can type in chat — the portal is a public web address, so there is nothing to
+gate. You don't need to have run `/link` to use it. Both routes give out the address only;
+the portal page itself carries the Privacy and Terms links in its footer.
+
+The command also answers to the shorter **`/portal`**. If your server already runs a warp or
+teleport plugin that claims `/portal`, that plugin keeps it — **`/saportal` always works.**
+
+**This one needs a plugin update to v0.16.0.** Servers with auto-update on will pick it up
+by themselves; otherwise run `/mcdc update` in-game, or download the new jar from the
+[Minecraft wiki page]({{ '/wiki/minecraft/' | relative_url }}).
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
+<summary>v6.73.0: Minecraft chat flags now expire — the auto-close safety net actually runs</summary>
+
+When AutoMod flags a message in bridged Minecraft chat, it lands in the portal's **Needs
+input** list waiting for a staff decision. v6.72.0 added a safety net for items nobody ever
+acts on: warn your staff, give them a day, then close the item. **It wasn't doing
+anything** — flags were never given a closing date in the first place, so nothing ever
+reached the warning stage. This release gives them one, so that safety net now genuinely
+works.
+
+**Minecraft chat flags close after about two weeks** — the same as Discord-side AutoMod
+reviews, and deliberately shorter than the roughly one month given to ban appeals, raid
+alerts and verification items. Chat flags carry an extract of the flagged message, so they
+shouldn't sit around. (Owner approvals still have no closing date and wait until answered.)
+
+Then the behaviour is as v6.72.0 described: **a warning first** — a notice in the portal, a
+push notification and a DM to the staff who can act — then **24 hours** to act on the flag
+or dismiss it, and only then does it close itself. Closing records that nobody acted; it is
+not a decision either way. The record is cleared **90 days** after closing.
+
+**One thing you will now start to see:** once a flag is past its date, it also drops off the
+portal's **Needs input** list. That isn't new — it is how the list has always worked — but
+since nothing ever reached a date before, nobody had seen it happen. It doesn't skip
+anything: the flag is still warned about, still gets its full 24 hours to be acted on or
+dismissed, and is **not deleted** at that point.
+
+**Flags raised before this update don't have a closing date**, so they aren't affected —
+they stay in your queue as they are.
+
+**No plugin update needed.**
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
+<summary>v6.71.0: Flagged Minecraft messages are no longer kept in the activity log</summary>
+
+This is a privacy fix, and it is worth being plain about it.
+
+Our privacy policy says the **moderation-actions log does not store message content**. For
+AutoMod flags raised on **bridged Minecraft chat**, that wasn't true: a short extract of the
+flagged message was being written into the durable record — the same record you can read and
+**search** in the portal activity log. Two paths did it: the automatic flag itself, and the
+reason pre-filled for your staff when they kicked or banned a player straight from the flag
+card.
+
+The durable record now keeps **who** and **which filter matched** — and no longer the
+message text.
+
+**What has _not_ changed** — your moderators lose nothing they need to judge a message:
+
+- **The staff alert in Discord still quotes the message in full.** Your moderators still see
+  exactly what was said in chat, in full, before they decide anything.
+- **The server log channel embed still shows the full reason.**
+- **The kick or ban message the player sees in-game is unchanged.**
+- **Discord-side moderation is entirely unaffected.**
+
+Only the durable, searchable activity record is redacted — bringing it into line with what
+the privacy policy already promised.
+
+**No plugin update needed.**
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
+<summary>v6.70.0: The assistant no longer fills gaps with guesses</summary>
+
+A player asking the assistant in-game *"what are the rules on this server?"* — on a server
+with no rules configured — used to get an answer anyway. It would say staff set those up,
+suggest checking "a rules channel **if there is one**", and add that they "**might have
+also** set up a `/rules` command **or something similar**". None of that was known to be
+true; it was plausible-sounding filler, and it sent players looking for things that may not
+exist.
+
+It now **never names a command, channel, role, rank or feature it hasn't been told exists.**
+When it doesn't know something, it says so in one short sentence and points at the one thing
+that is always true — **ask the server's staff** — instead of padding the answer with
+guesses.
+
+This applies everywhere it answers: **in-game**, **in Discord**, the **welcome assistant**,
+and **`/faq`**.
+
+**It still answers plainly what it does know.** If your server's knowledge pack says "no
+griefing", it says "no griefing". The change targets invention, not confidence — a
+well-filled-in server gets the same direct answers as before.
+
+**A tip for operators:** fill in your server knowledge pack — `/mcdc` → **@sai Studio** —
+and the assistant can answer these questions properly instead of pointing players at staff.
+
+**No plugin update needed.**
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
+<summary>v6.69.0: /online rebuilt — who's on the game server, answered truthfully and instantly</summary>
+
+**`/online`**, run in your linked Minecraft channel, shows who's on the game server right
+now. It already existed, but it was thin — and it could tell you things that weren't true.
+This release rebuilds it.
+
+- **A stopped server used to show as online.** With the server down, `/online` kept
+  reporting the last thing the bridge had heard, listing whoever was playing at that
+  moment. It now recognises that the information has gone stale, says the server
+  **appears to be offline**, and **withholds the old player list** instead of showing a
+  roster that isn't really there.
+- **A connection problem used to read as "no Minecraft server linked"** — confusing, when
+  one plainly was. Trouble reaching your server is now reported as exactly that.
+- **Long player lists no longer cut a name in half.** Busy servers get a tidy
+  **"+N more"**.
+- **Replies are instant.** It reads the presence information the bridge already refreshes
+  about once a minute, rather than asking your server again on every use — so running it
+  repeatedly is immediate.
+- **The same health marker as your channel topic** — 🟢 / 🟡 (running slow) / 🔴
+  (offline) — so the command and the topic can never disagree.
+- **It tells you when the list was last refreshed**, so a minute-old list is never
+  mistaken for live truth.
+- **Wrong channel? It points you at the right one.** And in a server with no Minecraft
+  link at all, it tells you how to set one up.
+
+**It shows Minecraft names only — never which Discord account a player is linked to**,
+even for players who have linked one. Answers are visible only to the person who ran the
+command, so it never clutters your chat channel.
+
+**No plugin update needed.**
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.66.0: Set up rank sync in /mcdc — map a Discord role to an in-game rank</summary>
 
 The plugin brought rank sync to your server; this release brings you the **controls**.
