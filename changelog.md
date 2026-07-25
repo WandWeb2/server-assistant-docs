@@ -91,7 +91,41 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
-<details class="doc-sec" markdown="1" open data-kind="feature">
+<details class="doc-sec" markdown="1" open data-kind="fix">
+<summary>v6.69.0: /online rebuilt — a truthful, instant look at who's on your Minecraft server</summary>
+
+Run **`/online`** in your linked Minecraft channel to see who's on the game server right
+now. The command already existed, but it was thin — and worse, it could tell you things
+that weren't true. This release rebuilds it.
+
+- **A stopped server used to show as online.** When a server went down, `/online` kept
+  reporting the last thing it had heard, listing whoever happened to be playing at that
+  moment. It now recognises that the information has gone stale, says the server
+  **appears to be offline**, and **withholds the old player list** rather than showing
+  you a roster that isn't really there.
+- **A connection problem used to read as "no Minecraft server linked"** — a confusing
+  answer when one plainly was. Trouble reaching your server is now reported as exactly
+  that.
+- **Long player lists no longer cut a name in half.** Busy servers get a tidy
+  **"+N more"** instead of a name chopped mid-word.
+- **Replies are instant.** `/online` now reads the presence information your bridge
+  already keeps up to date — refreshed about once a minute — instead of going and asking
+  all over again on every use. Run it twice in a row and the second answer comes back
+  immediately.
+- **Server health at a glance.** The same 🟢 / 🟡 (running slow) / 🔴 (offline) marker
+  you already see on the channel topic, so the two can never disagree.
+- **You can see how fresh the list is.** It tells you when the information was last
+  refreshed, so a minute-old list is never mistaken for live truth.
+- **Run it in the wrong place and it helps.** In another channel it points you at the
+  right one; in a server with no Minecraft link at all, it tells you how to set one up.
+
+**It shows Minecraft names only — never which Discord account a player is linked to**,
+even for players who have linked one. Answers are visible only to the person who ran the
+command, so `/online` never clutters your chat channel.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.68.0: AI Review can now tell "venting at the game" from "aimed at a person"</summary>
 
 **AI Review** — the optional second opinion on a flagged message — used to answer only one
@@ -1597,7 +1631,41 @@ Everything stays **local to your server**: nothing is shared anywhere. It's **on
 
 <p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.15.0</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
 
-<details class="doc-sec" markdown="1" open data-kind="feature">
+<details class="doc-sec" markdown="1" open data-kind="fix">
+<summary>v6.69.0: /online rebuilt — who's on the game server, answered truthfully and instantly</summary>
+
+**`/online`**, run in your linked Minecraft channel, shows who's on the game server right
+now. It already existed, but it was thin — and it could tell you things that weren't true.
+This release rebuilds it.
+
+- **A stopped server used to show as online.** With the server down, `/online` kept
+  reporting the last thing the bridge had heard, listing whoever was playing at that
+  moment. It now recognises that the information has gone stale, says the server
+  **appears to be offline**, and **withholds the old player list** instead of showing a
+  roster that isn't really there.
+- **A connection problem used to read as "no Minecraft server linked"** — confusing, when
+  one plainly was. Trouble reaching your server is now reported as exactly that.
+- **Long player lists no longer cut a name in half.** Busy servers get a tidy
+  **"+N more"**.
+- **Replies are instant.** It reads the presence information the bridge already refreshes
+  about once a minute, rather than asking your server again on every use — so running it
+  repeatedly is immediate.
+- **The same health marker as your channel topic** — 🟢 / 🟡 (running slow) / 🔴
+  (offline) — so the command and the topic can never disagree.
+- **It tells you when the list was last refreshed**, so a minute-old list is never
+  mistaken for live truth.
+- **Wrong channel? It points you at the right one.** And in a server with no Minecraft
+  link at all, it tells you how to set one up.
+
+**It shows Minecraft names only — never which Discord account a player is linked to**,
+even for players who have linked one. Answers are visible only to the person who ran the
+command, so it never clutters your chat channel.
+
+**No plugin update needed.**
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.66.0: Set up rank sync in /mcdc — map a Discord role to an in-game rank</summary>
 
 The plugin brought rank sync to your server; this release brings you the **controls**.
