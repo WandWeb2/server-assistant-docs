@@ -92,6 +92,38 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
 <details class="doc-sec" markdown="1" open data-kind="fix">
+<summary>v6.73.0: The auto-close safety net for forgotten staff decisions now actually runs</summary>
+
+**v6.72.0 added a safety net that wasn't doing anything.** Items waiting on a staff decision
+were supposed to warn you and then close themselves if nobody ever acted — but they were
+never given a closing date in the first place, so nothing ever reached the warning stage.
+This release gives them one, so that feature now genuinely works.
+
+**How long an item waits** now depends on what it is, because they aren't all alike:
+
+- **AutoMod reviews and Minecraft chat flags — about two weeks.** These carry an extract of
+  the flagged message, so they shouldn't sit around.
+- **Ban appeals, raid alerts and verification items — about a month.**
+- **Owner approvals — no closing date at all.** They wait until you answer them.
+
+After that, the behaviour is exactly what v6.72.0 described: **a warning first** — a notice
+in the portal, a push notification and a DM to the staff who can act — then **24 hours** to
+act on the item or dismiss it, and only then does it close itself. Closing records that
+nobody acted; it is not an approval or a denial. The record is cleared **90 days** after
+closing.
+
+**One thing you will now start to see:** once an item is past its date, it also drops off
+the portal's **Needs input** list. That isn't new — it is how the list has always worked —
+but since nothing ever reached a date before, nobody had seen it happen. It doesn't skip
+anything: the item is still warned about, still gets its full 24 hours to be acted on or
+dismissed, and is **not deleted** at that point.
+
+**Nothing already in your queue changes today.** Items raised before this update don't have
+a closing date, so none of this applies to them — they stay exactly where they are.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v6.72.0: Forgotten staff decisions now close themselves — after warning you first</summary>
 
 When something needs a staff decision — a ban appeal, an AutoMod review, an owner
@@ -1718,6 +1750,39 @@ Everything stays **local to your server**: nothing is shared anywhere. It's **on
 <p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.15.0</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
 
 <details class="doc-sec" markdown="1" open data-kind="fix">
+<summary>v6.73.0: Minecraft chat flags now expire — the auto-close safety net actually runs</summary>
+
+When AutoMod flags a message in bridged Minecraft chat, it lands in the portal's **Needs
+input** list waiting for a staff decision. v6.72.0 added a safety net for items nobody ever
+acts on: warn your staff, give them a day, then close the item. **It wasn't doing
+anything** — flags were never given a closing date in the first place, so nothing ever
+reached the warning stage. This release gives them one, so that safety net now genuinely
+works.
+
+**Minecraft chat flags close after about two weeks** — the same as Discord-side AutoMod
+reviews, and deliberately shorter than the roughly one month given to ban appeals, raid
+alerts and verification items. Chat flags carry an extract of the flagged message, so they
+shouldn't sit around. (Owner approvals still have no closing date and wait until answered.)
+
+Then the behaviour is as v6.72.0 described: **a warning first** — a notice in the portal, a
+push notification and a DM to the staff who can act — then **24 hours** to act on the flag
+or dismiss it, and only then does it close itself. Closing records that nobody acted; it is
+not a decision either way. The record is cleared **90 days** after closing.
+
+**One thing you will now start to see:** once a flag is past its date, it also drops off the
+portal's **Needs input** list. That isn't new — it is how the list has always worked — but
+since nothing ever reached a date before, nobody had seen it happen. It doesn't skip
+anything: the flag is still warned about, still gets its full 24 hours to be acted on or
+dismissed, and is **not deleted** at that point.
+
+**Flags raised before this update don't have a closing date**, so they aren't affected —
+they stay in your queue as they are.
+
+**No plugin update needed.**
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v6.71.0: Flagged Minecraft messages are no longer kept in the activity log</summary>
 
 This is a privacy fix, and it is worth being plain about it.
