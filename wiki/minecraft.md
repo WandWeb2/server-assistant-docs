@@ -185,8 +185,10 @@ username.
 account-wide balance you already build up by chatting and sitting in voice on Discord.
 There's no separate Minecraft score and nothing to switch on.
 
-- **The rate matches voice.** Each qualifying minute in-game is worth the same base XP as
-  a minute in a voice channel.
+- **The rate matches voice.** Each minute in-game is worth the same base XP as a minute in
+  a voice channel.
+- **It counts connected time.** XP accrues while you're connected to the server. There's no
+  idle check in-game, so time spent AFK still earns, up to the hourly cap below.
 - **Double XP counts.** A server-wide **Double-XP event** or your own **personal Double-XP
   buff** doubles your in-game earnings exactly as it doubles chat and voice XP — and, as
   everywhere else, the boost is **capped at 2×** even if both are running.
