@@ -91,7 +91,41 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
-<details class="doc-sec" markdown="1" open data-kind="fix">
+<details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>v6.66.0: Give your Minecraft ranks a Discord role to follow</summary>
+
+The setup side of **rank sync** is here. Point a Discord role at an in-game rank and
+Server Assistant keeps the two in step for you — no manual LuckPerms edit every time
+someone is promoted.
+
+- **Map your roles in `/mcdc` → 🏅 Rank sync.** Pick a Discord role, name the in-game
+  rank it should grant (your LuckPerms group), and turn the master switch on. From
+  then on, when someone's Discord role changes their in-game rank follows **within
+  about a minute**.
+- **Several roles? Highest one wins.** A member who holds more than one mapped role
+  gets the rank of their **highest-positioned Discord role**, so your hierarchy in
+  Discord is the hierarchy in-game.
+- **It only mirrors — it never takes instructions.** Nothing a player types, in
+  Discord or in Minecraft or to the assistant, can *request* a rank change. Ranks only
+  ever change because an authorised staff member changed a Discord role, or edited
+  LuckPerms directly.
+- **Some roles are protected, and SA tells you why.** When you pick a role that
+  shouldn't be mirrored, SA declines it on the spot and explains: `@everyone`,
+  bot- and integration-managed roles, roles carrying Administrator, and any role at or
+  above Server Assistant's own position (your Operations / Executive Operator tier).
+  Your top of house stays a human decision.
+- **Only mapped ranks are ever touched.** Ranks you set by hand in LuckPerms, and your
+  staff and admin ranks, are never modified. If a member isn't in your mapping, they
+  are left completely alone.
+- **Removing a mapping demotes cleanly.** Take a pairing out and SA withdraws the rank
+  it granted, rather than leaving people stranded on a rank nobody is maintaining.
+
+Needs the **MCDC plugin v0.15.0 or newer** and LuckPerms on the game server. Off until
+you turn it on.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v6.65.0: Stronger hate-speech filtering — sexism, transphobia, homophobia, ableism</summary>
 
 The slur filter behind most of our setup presets now covers **much more of what you'd
@@ -1509,6 +1543,37 @@ Everything stays **local to your server**: nothing is shared anywhere. It's **on
 <p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.15.0</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
 
 <details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>v6.66.0: Set up rank sync in /mcdc — map a Discord role to an in-game rank</summary>
+
+The plugin brought rank sync to your server; this release brings you the **controls**.
+Everything is set up in Discord, in `/mcdc` → **🏅 Rank sync**.
+
+- **Map a role to a rank.** Pick the Discord role, name the in-game rank it should
+  grant (your LuckPerms group), and flip the master switch on. When someone's Discord
+  role changes, their in-game rank follows **within about a minute**.
+- **Several roles? Highest one wins.** A member holding more than one mapped role gets
+  the rank of their **highest-positioned Discord role** — your Discord hierarchy is
+  your in-game hierarchy.
+- **It only mirrors — it never takes instructions.** Nothing a player types, in
+  Discord or in Minecraft or to the assistant, can *request* a rank change. Ranks only
+  ever change because an authorised staff member changed a Discord role, or edited
+  LuckPerms directly.
+- **Some roles are protected, and SA tells you why.** Pick a role that shouldn't be
+  mirrored and SA declines it with the reason: `@everyone`, bot- and
+  integration-managed roles, roles carrying Administrator, and any role at or above
+  Server Assistant's own position (your Operations / Executive Operator tier).
+- **Only mapped ranks are ever touched.** Ranks you set by hand in LuckPerms, and your
+  staff and admin ranks, are never modified. Anyone outside your mapping is left
+  completely alone.
+- **Removing a mapping demotes cleanly.** Take a pairing out and SA withdraws the rank
+  it granted, instead of leaving it stranded.
+
+Needs the **MCDC plugin v0.15.0 or newer** and LuckPerms on the game server. Off until
+you turn it on. **No plugin update needed** for this release.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>Plugin v0.15.0: Keep Minecraft ranks in step with Discord roles</summary>
 
 Your Minecraft ranks can now **follow your Discord roles automatically**. Give someone
