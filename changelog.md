@@ -92,6 +92,39 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
 <details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>v6.76.0: @sai can answer from your server's website</summary>
+
+Players ask `@sai` the same handful of questions — how do I rank up, what's on the store,
+when's the next event — and the answers are usually already written down on your website.
+`@sai` can now read that page and answer from it.
+
+In `/mcdc` → **🤖 @sai Studio** → **🌐 Website**, paste your server's address. `@sai` reads
+that one page, answers players' questions from it, and gives them the address when the
+address is the answer. It re-reads the page about once a day, and there's a **🔄 Refresh
+now** button for when you've just changed something.
+
+The panel shows you exactly what was read — "**1,842 characters** from *Nightfall SMP —
+Home*", plus the sections it found — so you can see what `@sai` actually learned, rather
+than just that the feature is switched on.
+
+- **Premium, opt-in, off by default.** Nothing changes for a server that doesn't turn it on,
+  and no existing server has been opted in.
+- **One page.** The address you give, and nothing else on the site. `@sai` will never read a
+  web address someone types into a question.
+- **Pages anyone can post to are refused.** An address that looks like a forum, wiki, comment
+  thread, board or user profile is turned down with an explanation — a page strangers can
+  write to would let them write what `@sai` tells your players. There is no override for
+  this, and it deliberately errs towards refusing: if a page you consider legitimate is
+  turned down, point `@sai` at a different one.
+- **`robots.txt` is honoured** on every site we read.
+- **Your text, your call.** Only the extracted words are kept — never the page itself —
+  overwritten on each re-read, and deleted the moment you switch the toggle off, change the
+  address, or remove the bot. What we send to AI providers is set out in the
+  [privacy policy]({{ site.baseurl }}/privacy/).
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.75.0: Changes to the assistant now appear in your audit log</summary>
 
 Your audit log has always recorded what your staff *do* — a ban, a warning, a dismissed
@@ -1800,6 +1833,35 @@ Everything stays **local to your server**: nothing is shared anywhere. It's **on
 <p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.16.0</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
 
 <details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>v6.76.0: @sai can answer from your server's website</summary>
+
+Most of what players ask `@sai` in-game — how do I rank up, what's on the store, when's the
+next event — is already written down on your server's website. `@sai` can now read that page
+and answer from it, instead of you copying it all into the knowledge pack by hand.
+
+Open `/mcdc` → **🤖 @sai Studio** → **🌐 Website** and paste your server's address. From then
+on `@sai` answers players from that page, and hands out the address when the address is what
+they wanted. It re-reads about once a day; **🔄 Refresh now** picks up a change immediately.
+
+The panel reports what it actually read — the character count, the page title and the
+sections it found — so you can confirm `@sai` learned the right thing.
+
+- **Premium, opt-in, off by default.** No existing server has been opted in.
+- **One page only** — the address you give. `@sai` will never follow a web address a player
+  types into a question.
+- **Pages anyone can post to are refused**, with an explanation and no override: a forum,
+  wiki, comment thread, board or user profile is somewhere a stranger could write what `@sai`
+  tells your players. It errs towards refusing, so if a page you trust is turned down, give
+  it a different one.
+- **`robots.txt` is honoured.**
+- **Only the extracted text is kept** — never the page — overwritten each re-read and deleted
+  when you switch it off, change the address, or remove the bot.
+
+This is a **Server Assistant-side change — no plugin update is needed.**
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.75.0: @sai Studio changes now appear in your audit log</summary>
 
 **@sai Studio** — `/mcdc` → **@sai Studio** — is where you decide what the in-game assistant
