@@ -91,7 +91,36 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
-<details class="doc-sec" markdown="1" open data-kind="fix">
+<details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>v6.68.0: AI Review can now tell "venting at the game" from "aimed at a person"</summary>
+
+**AI Review** — the optional second opinion on a flagged message — used to answer only one
+question: *did the filter really match something?* It was told to be lenient about ordinary
+swearing, so it was good at calming down false alarms, but it couldn't tell an insult
+pointed at another member from someone cursing at a boss fight.
+
+It now judges **who a message is aimed at** as a separate question from whether the filter
+matched:
+
+- **Casual** — venting, banter, swearing at the game. Still calmed down, exactly as before.
+- **Directed** — aimed at a person: insults, harassment, putting someone down.
+- **Identity-based hate** — targeting who someone is. Flagged **whatever the tone**; said
+  with a smile, it's still hate.
+
+**Your staff can see that judgement.** It appears on the review card and in the automod log,
+so a moderator can see *why* something was flagged instead of only that it was.
+
+- **Nothing is punished more harshly.** This changes what your staff *see*, and whether a
+  flag gets quietened — it never moves anyone further along the punishment ladder, and it
+  never acts on something that wouldn't have been actioned before.
+- **Still Premium, still opt-in, still off by default.** Turn it on in `/automod` →
+  **AI Review**. If you haven't enabled it, nothing changes for you and no AI calls are made.
+- **Nothing new is sent.** Same as always: one borderline message plus which filter matched.
+  No usernames, no IDs.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v6.67.0: Targeted-harassment filtering now reaches servers set up before it existed</summary>
 
 An earlier release added **targeted-harassment filtering** — the **Level 2** pack, which
