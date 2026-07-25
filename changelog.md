@@ -92,6 +92,39 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
 <details class="doc-sec" markdown="1" open data-kind="fix">
+<summary>v6.72.0: Forgotten staff decisions now close themselves — after warning you first</summary>
+
+When something needs a staff decision — a ban appeal, an AutoMod review, an owner
+approval — it lands in the portal's **Needs input** list and SA nudges your staff about
+it. Until now, an item nobody ever acted on simply sat there forever.
+
+Those items now eventually close themselves. But **never silently**:
+
+- **You get a warning first.** Before anything closes itself, SA tells you: a notice in
+  the portal activity feed, a push notification, **and a DM** to the staff who can act on
+  it. The warning says what the item is, how long it has been waiting, and exactly when
+  it will close.
+- **A full day to act.** After that warning there is a **24-hour** grace period. Act on
+  the item — or dismiss it — at any point in that window and it never closes itself. A
+  warning that arrives at 3am is still there to be handled by whoever is on shift next.
+- **Closing is a tidy-up, not a decision.** SA closing an item does **not** record it as
+  approved or denied. It records that nobody acted.
+- **Items with no deadline are never touched.** If something was raised without an
+  expiry, it stays in your queue indefinitely, exactly as before.
+
+**Why this exists:** closed items are now cleared out after **90 days**, so the details of
+an old decision — including any message text involved — don't sit on file forever. An item
+that never closed was never cleared.
+
+**Your existing "needs your input" nudges are unchanged.** This adds a final warning
+before an item lapses; it does not replace the reminders you already get.
+
+One note: anyone who has turned off DMs from SA won't receive the DM version of the
+warning. The portal notice still reaches them.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v6.71.0: Flagged Minecraft messages are no longer kept in the activity log</summary>
 
 This is a privacy fix, and it is worth being plain about it.
