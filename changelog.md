@@ -118,8 +118,9 @@ sitting in a second place.
 **Opening a form and closing it again writes nothing.** Only real changes are recorded, so
 your log doesn't fill up with people having a look around.
 
-**Nothing to turn on** — this applies to every server, on every plan, from this release.
-Existing entries are untouched, and no new information is collected about your members.
+**Nothing to turn on** — it applies from this release, wherever you can already configure
+the assistant. Existing entries are untouched, and these records use the same fields your
+audit log already keeps for every staff action.
 
 </details>
 
