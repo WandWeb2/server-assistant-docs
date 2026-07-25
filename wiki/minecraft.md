@@ -185,8 +185,10 @@ username.
 account-wide balance you already build up by chatting and sitting in voice on Discord.
 There's no separate Minecraft score and nothing to switch on.
 
-- **The rate matches voice.** Each qualifying minute in-game is worth the same base XP as
-  a minute in a voice channel.
+- **The rate matches voice.** Each minute in-game is worth the same base XP as a minute in
+  a voice channel.
+- **It counts connected time.** XP accrues while you're connected to the server. There's no
+  idle check in-game, so time spent AFK still earns, up to the hourly cap below.
 - **Double XP counts.** A server-wide **Double-XP event** or your own **personal Double-XP
   buff** doubles your in-game earnings exactly as it doubles chat and voice XP — and, as
   everywhere else, the boost is **capped at 2×** even if both are running.
@@ -406,6 +408,16 @@ The bridge is built to keep your server's secrets on your server:
   between Minecraft and Discord to deliver the message, **and not stored**. When
   translation is on, that chat is processed by Server Assistant's AI translation (the same
   as `/translate`) to produce the translated text.
+- **A flagged message is the exception.** If a bridged message trips your AutoMod, the
+  180-day moderation-actions record keeps only the player name, UUID and which rule matched
+  — **never the message text**. A short extract (up to ~500 characters) is kept with the
+  staff decision card so your staff can see what they're deciding about, and that is deleted
+  90 days after the decision is closed. The filter check itself is plain pattern-matching on
+  our servers — **no AI provider sees it**. Full detail in the
+  [Privacy Policy]({{ '/privacy/' | relative_url }}).
+- **Ask SAi in-game sends your operator's server notes.** When `@sai` is on, a player's
+  question goes to the AI along with the server-information text you wrote for it (up to
+  2,000 characters). No player names or UUIDs are sent.
 - **Players are told, in-game.** When a player joins, the plugin posts an in-game notice
   letting them know chat is bridged to Discord. As the server owner, you should also
   **inform your players** that the bridge is active.

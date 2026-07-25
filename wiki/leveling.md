@@ -37,11 +37,12 @@ sessions fair.
 
 **By playing on a linked Minecraft server.** If your server runs the
 [Minecraft ↔ Discord bridge]({{ '/wiki/minecraft/' | relative_url }}) and you've **linked
-your Minecraft and Discord accounts**, the time you spend **in-game** earns XP into the
-same balance, at the **same base rate as voice**, with its own gentle hourly limit. It's
-free and automatic once you've linked, with nothing else to switch on. One difference:
-because you're in-game rather than in a channel, a level-up earned in Minecraft **isn't
-announced** — the XP still lands.
+your Minecraft and Discord accounts**, the time you spend **connected to the server** earns
+XP into the same balance, at the **same base rate as voice**, with its own gentle hourly
+limit. Unlike voice, there's no idle check in-game, so AFK time still earns, up to that
+limit. It's free and automatic once you've linked, with nothing else to switch on. One
+difference: because you're in-game rather than in a channel, a level-up earned in
+Minecraft **isn't announced** — the XP still lands.
 
 **By voting for Server Assistant.** Vote on
 [**DiscordForge**](https://discordforge.org/bot/1278486617375510570) and you earn
