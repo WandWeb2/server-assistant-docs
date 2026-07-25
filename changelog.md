@@ -92,6 +92,23 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
 <details class="doc-sec" markdown="1" open data-kind="fix">
+<summary>v6.64.0: Rename your in-game assistant and it's fully yours</summary>
+
+Polish for the in-game assistant, especially on servers that have **given it their own
+name**.
+
+- **A renamed assistant is properly yours.** Give it a custom name in `/mcdc` →
+  **@sai Studio** and, in-game, that's simply who it is — it introduces itself by your
+  name and doesn't bring up the software behind it. It still answers your players'
+  questions exactly as well.
+- **Replies read cleanly in chat.** Answers are now plain text — no stray `**` or
+  backticks from formatting that Minecraft can't display.
+- **No more sentences cut in half.** Long answers now finish their sentence and trim
+  neatly instead of stopping mid-word.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v6.63.0: SAi now follows the conversation in Discord</summary>
 
 Ask SAi something in Discord and it now **remembers the thread** instead of treating
