@@ -117,9 +117,19 @@ A change lands in the panel for its audience — and a **Minecraft ↔ Discord b
   — not only the Bot panel. Bot-side bridge work (`v6.x`) belongs in BOTH the Bot
   panel and the MCDC panel; plugin-only changes belong in the MCDC panel. Don't leave
   a bridge change visible only under `#cl-bot`.
-- **Bump the MCDC intro's plugin version** (the `<p class="cl-intro">` "currently
-  **vX.Y.Z**" line) whenever a new plugin jar ships, so it always names the latest
-  plugin release.
+- **Bump the plugin version in BOTH places** whenever a new plugin jar ships — they
+  drift independently and one is easy to miss:
+  1. the MCDC intro's `<p class="cl-intro">` "currently **vX.Y.Z**" line, and
+  2. **`mcdc_plugin_version` in `_config.yml`**, which feeds the wiki and the download
+     CTA (`wiki/minecraft.md`, `index.md`).
+  Found stale at v0.10.0 in 2026-07-25 — five releases behind, so the download page had
+  been advertising the wrong version since v0.11.0 while the changelog intro was current.
+- **The jar is a single unversioned file, overwritten each release**:
+  `downloads/mcdc-plugin.jar`. No versioned filenames. The relay's `MCDC_PLUGIN_LATEST`
+  pins `{version, url, sha256}` against that exact path — so after replacing the jar,
+  **bump the relay pin's version AND sha256 together**. A stale sha256 fail-safes (blocks
+  the auto-update) rather than shipping a wrong jar, so a forgotten bump silently strands
+  every server on the old plugin.
 - Match the existing entry format exactly: `<details class="doc-sec" markdown="1"
   [open] data-kind="feature|fix">` + `<summary>…</summary>` + body + `</details>`,
   newest-first, only the top entry carrying `open`.
