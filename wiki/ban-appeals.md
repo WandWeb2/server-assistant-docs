@@ -5,7 +5,7 @@ permalink: /wiki/ban-appeals/
 wiki: true
 wiki_category: "Moderation"
 summary: A deep-dive on ban appeals, the ban DM that tells the member exactly why, the single reply that opens a staff appeal ticket, the one-tap Unban / Deny / Research / Info / Warnings / Notes buttons, and the Premium guided multi-round flow. Shown one state at a time exactly as it appears in Discord.
-wiki_keywords: [ban, appeal, unban, deny, research, recovery, dm, ban appeal, multi-round, ban appeals]
+wiki_keywords: [ban, appeal, unban, deny, research, recovery, dm, ban appeal, multi-round, ban appeals, expiry, auto-close, retention, decision card]
 description: How Server Assistant's ban appeals work end to end, the reason DM, the member's one reply, the staff appeal ticket with its review buttons, the Premium multi-round conversation, and why a ThreatNet auto-ban is the silent exception that's contested via the web portal instead.
 ---
 
@@ -183,6 +183,39 @@ buttons are all included. Premium adds the guided, conversational layer.
 > other action* (not a ban) carries a **Why was I actioned?** button. One tap and
 > the bot writes a short, plain-English explanation of what the action was for,
 > heading off confused replies to your staff.
+
+---
+
+## Nothing quietly rots {#expiry}
+
+An appeal nobody gets to shouldn't sit open forever, and it shouldn't vanish
+without anyone noticing either. Two things make sure of that.
+
+**SAi DMs a staffer before an appeal closes itself.** Once an appeal has run past
+its deadline, SAi sends **one** staff member who can actually action it a direct
+message saying plainly that the card is about to close **and exactly when** — as a
+Discord relative timestamp, so it reads correctly in any timezone and stays
+correct however long the DM sits unread. It also says how long the appeal has been
+waiting and links straight to it in the portal. This is deliberately *not* the
+ordinary "been waiting about an hour, no rush" nudge: an overdue card gets its own
+wording, because telling a moderator to take their time over something that lapses
+today is worse than saying nothing.
+
+- It's sent to the people who **could** action the appeal, plus the owner.
+- It respects the **same opt-out** as every other staff nudge — turn **"Call me by
+  DM"** off in the portal and both the ordinary escalation nudges and these
+  last-chance warnings stop together. There's no way to be opted out of one but
+  not the other.
+- The portal feed entry and web push still fire; the DM is an **extra** channel,
+  not a replacement.
+- If DMs are down, the warning is simply missed — a card still closes on schedule.
+
+**Then it closes on a clock.** A **ban appeal** (and a **Minecraft ban appeal**)
+is kept for **30 days** — deliberately the generous end, because someone is waiting
+on an outcome. After that it's warned as above, closes following a **24-hour grace
+period**, and is deleted **90 days after closing**. The full table, including the
+shorter window on cards that carry a message extract, is in the
+[audit log guide]({{ '/wiki/audit-log/#decision-expiry' | relative_url }}).
 
 ---
 

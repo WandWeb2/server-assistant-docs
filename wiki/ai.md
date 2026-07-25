@@ -5,7 +5,7 @@ permalink: /wiki/ai/
 wiki: true
 wiki_category: "Features"
 summary: Server Assistant's AI toolkit, tune the bot in plain English with /sai, generate images with /imagine, translate on the spot, run a neutral /mediate between members, get a weekly mod retrospective, and read your server stats. Each shown exactly as it appears in Discord.
-wiki_keywords: [ai, sai, concierge, imagine, img, image generation, translate, translation, mediate, mediation, retro, retrospective, stats, statistics, premium, byok]
+wiki_keywords: [ai, sai, concierge, imagine, img, image generation, translate, translation, mediate, mediation, retro, retrospective, stats, statistics, premium, byok, hallucination, speculation, i don't know, portal link, white-label]
 description: A full reference for Server Assistant's AI and intelligence commands, each shown one state at a time exactly as it appears in Discord.
 ---
 
@@ -92,6 +92,37 @@ announcements, the Minecraft-bridge toggles, emote and meme commands, and notifi
 logging options. <strong>Security, privacy and verification settings are never changed
 this way</strong>, SA politely declines those. Only staff with <strong>Manage Server</strong>
 can make a change, and every change is confirmed before it happens, logged, and reversible.</p>
+
+### SAi doesn't guess {#no-speculation}
+
+An assistant that invents a plausible-sounding answer is worse than one that admits it
+doesn't know — a made-up command wastes your time, and a made-up channel name sends a
+member somewhere that doesn't exist. So SAi **only names a command, channel, role, rank,
+rule or feature when it actually knows that thing exists**, either from what your server
+has told it or from what it genuinely knows about the product.
+
+It also can't **hedge** something into existence. Phrasings like *"check the rules channel
+if there is one"*, *"they might have set up `/rules` or something similar"* or *"maybe try…"*
+are off the table: if it has to hedge, it doesn't know, so it doesn't say it.
+
+When SAi doesn't know something, you get a **short, clean "I don't know"** and one next step
+that's always true — **ask your server's staff** — rather than a longer answer with a guess
+buried in it. This applies everywhere SAi speaks: the concierge, the Reception desk, `/faq`,
+and [`@sai` in Minecraft]({{ '/wiki/minecraft/#ask-sai-in-game' | relative_url }}).
+
+### SAi can point you at the portal {#portal-link}
+
+One thing SAi now definitely *does* know is the address of the
+**[customer web portal]({{ '/portal/' | relative_url }})**. Ask it how to reach the portal,
+the website, your account, or where to manage your settings, and it gives you the address
+directly instead of sending you to staff for it. Sign in there with Discord to manage
+settings, plan and account from a browser.
+
+It's the **only** web address SAi will give for this, it won't extend it with an invented
+page or path, and in-game it answers with just the link and a short clause rather than a
+paragraph. A [white-labelled assistant]({{ '/wiki/minecraft/#sai-studio' | relative_url }})
+is excluded — a rebranded assistant never names the product, so it won't hand out a
+product-branded address either.
 
 ---
 
