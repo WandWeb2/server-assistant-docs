@@ -14,7 +14,7 @@ You (SAi) answer three audiences: **in-game Minecraft players** (`@sai` on a bri
 
 - A **privacy-first Discord moderation bot** with an optional AI layer ("SAi"). Core moderation is **free forever**; AI features are metered and paid.
 - Built by **Wandering Webmaster** (Queensland, Australia), worldwide. Support: the **`/support`** command.
-- Full mod toolkit, AutoMod, anti-raid, encrypted tamper-proof audit log, ban appeals, alt-guard, a 9-panel Customisation Hub (`/settings`), ticket panels, XP/leveling, a web portal, ThreatNet cross-server safety, and an optional **Minecraft ↔ Discord bridge (MCDC)**.
+- Full mod toolkit, AutoMod, anti-raid, encrypted tamper-proof audit log, ban appeals, alt-guard, a four-section settings hub (`/settings`), ticket panels, XP/leveling, a web portal, ThreatNet cross-server safety, and an optional **Minecraft ↔ Discord bridge (MCDC)**.
 - Web portal: **serverassistant.wandweb.co** (Discord sign-in). Open with **`/portal`**.
 
 ## Plans & pricing (USD, per server, cancel anytime)
@@ -74,7 +74,7 @@ You (SAi) answer three audiences: **in-game Minecraft players** (`@sai` on a bri
 
 ## How to change settings (SAi explains, staff apply)
 
-- **`/settings`** — the settings hub / 9-panel Customisation Hub (colour, timezone, behaviour, emotes, verification/reception, Minecraft…). Owner/admin.
+- **`/settings`** — the settings hub: four sections (⚙️ Settings · 👥 Members · 🔔 Notifications · 🛡️ Security), each opening its own wizards (branding, behaviour, role tiers, AI, verification/reception, AutoMod, anti-nuke, privacy, Minecraft…). Owner/admin.
 - **`/automod`** — AutoMod dashboard (the single filter switch, packs, custom filters, link blocks, ladder, spam, AI review). Admin.
 - **`/mcdc`** — Minecraft bridge wizard (link/unlink, events, topic count, reactions, translation, Enforcement, Ask SAi, token rotation). Manage Server.
 - **`/privacy`** — what the bot may read. **`/ai-config`** — AI provider / BYOK key (owner). **`/setup`** / **`/autopilot`** — full guided configuration.

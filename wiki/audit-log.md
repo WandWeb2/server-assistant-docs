@@ -5,7 +5,7 @@ permalink: /wiki/audit-log/
 wiki: true
 wiki_category: "Moderation"
 summary: How Server Assistant keeps a reliable, tamper-proof record of every moderation action, an always-on log in your web dashboard, an optional Discord log channel, and a separate encrypted record staff can't quietly wipe.
-wiki_keywords: [audit, audit log, audit trail, log, logging, log channel, mod-log, moderation history, accountability, tamper-proof, native actions, command usage]
+wiki_keywords: [audit, audit log, audit trail, log, logging, log channel, mod-log, moderation history, accountability, tamper-proof, native actions, command usage, sai changes, sai studio, mcdc, minecraft kick, minecraft ban, retention, decision cards, expiry]
 description: A deep dive into Server Assistant's tamper-proof audit log, what gets recorded, why it can't be quietly wiped, and how to set your log channel.
 ---
 
@@ -45,6 +45,40 @@ Server Assistant records what matters for accountability:
   **native action**.
 - **Command usage**: a compact one-line entry each time a command is run, so you
   can see who's driving the bot even when nothing changes.
+- **Minecraft moderation**: a **Kick** or **Ban in-game** taken from a Minecraft
+  chat-flag alert is recorded like any other moderation action — log channel,
+  dashboard log and encrypted record — marked **via MCDC enforce** and naming the
+  player and their Minecraft UUID. See the
+  [Minecraft bridge]({{ '/wiki/minecraft/' | relative_url }}) guide.
+- **Changes to SAi**: when someone reconfigures your AI assistant, the change is
+  written down. That covers the Discord side (AI mode, provider, model, image
+  provider, the Reception persona and greeting) and the in-game
+  [**@sai Studio**]({{ '/wiki/minecraft/#sai-studio' | relative_url }}) (who may
+  ask, the assistant's name, tone, greeting, knowledge pack, and the in-world
+  companion toggles).
+
+### How an SAi change is recorded {#sai-config}
+
+These entries answer *"who changed the assistant, and when"* without ever
+copying what was written. **They record the shape of a change, not its text:**
+
+```
+knowledge updated (412 → 980 chars)
+greeting cleared (86 chars removed)
+access: staff → everyone
+companion: off → on
+```
+
+The prose fields — the assistant's **name**, **greeting**, **persona** and the
+**server knowledge pack** — are owner-authored writing, so only their **length**
+is measured and stored. The wording itself never enters the audit trail, and it
+is never sent to the dashboard log. On/off and either/or settings record the old
+and new value, because those *are* the fact worth keeping.
+
+> **Where these land.** SAi-configuration entries go to the **dashboard log and
+> the encrypted record**, not to your Discord log channel, so reconfiguring the
+> assistant doesn't spam `#mod-log`. Everything else on this page behaves as
+> described above.
 
 ### A moderation action in the log
 
@@ -117,6 +151,30 @@ The dashboard moderation log is deliberately minimal. Each entry keeps **only**:
 It does **not** store the message content, or any image that triggered the action,
 only the fields above. Entries are automatically removed after **180 days**. (The
 full detail lives in our [Privacy Policy]({{ '/privacy/' | relative_url }}).)
+
+### Decision cards have their own clock {#decision-expiry}
+
+A **decision card** is the pending item your team is asked to act on — an AutoMod
+review, a Minecraft chat flag, a ban appeal, a raid alert. Unlike a finished log
+entry, some of these still hold context (a short extract of the flagged message,
+a player's name and Minecraft UUID), so an unactioned card doesn't sit around
+forever:
+
+| Decision | Kept until |
+|---|---|
+| **AutoMod review**, **Minecraft chat flag** | **14 days** — these are the cards carrying a message extract |
+| **Ban appeal**, **Minecraft ban appeal**, **raid alert** | **30 days** — deliberately generous, someone is waiting on an outcome |
+| **Owner approval** | **No expiry** — a question put to a specific person, it waits until it's answered |
+
+Anything not listed gets the **30-day** default. Reaching the window doesn't
+delete anything on the spot: staff are **warned first**, the card closes after a
+**24-hour grace period**, and it's deleted **90 days after it closes**.
+
+This is an outer bound on how long an *ignored* card is kept. It doesn't change
+how long a card stays in front of your team in practice — the nudging for an
+unactioned card is the escalation ladder, which starts DMing after about an hour.
+Decisions raised before this clock shipped have no expiry set and aren't swept by
+it.
 
 ## Why it's tamper-proof
 

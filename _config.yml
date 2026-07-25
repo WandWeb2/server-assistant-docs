@@ -5,8 +5,9 @@ title: Server Assistant
 tagline: Privacy-first Discord moderation — with optional AI enhancement.
 description: >-
   Privacy-first Discord moderation bot. Full mod toolkit, AutoMod, anti-raid,
-  audit logs, and a 9-panel Customisation Hub — all free. Premium adds an AI
-  Concierge that reads your server and proposes specific improvements.
+  audit logs, a Minecraft ↔ Discord bridge, and a four-section settings hub —
+  all free. Premium adds an AI Concierge that reads your server and proposes
+  specific improvements.
 url: https://wandweb2.github.io
 baseurl: /server-assistant-docs
 lang: en-GB

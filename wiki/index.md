@@ -120,9 +120,14 @@ description: The complete Server Assistant reference, every command, wizard and 
     <p>The cross-server safety network: advisory band, scam-image defense, Premium auto-protect, what's shared, how to opt out.</p>
   </a>
 
+  <a class="card" href="{{ '/wiki/minecraft/' | relative_url }}">
+    <h3>Minecraft bridge</h3>
+    <p>Two-way chat with your Paper/Spigot server, server health, moderation from Discord, account linking, playtime XP, rank sync and in-game <code>@sai</code>.</p>
+  </a>
+
   <a class="card" href="{{ '/wiki/leveling/' | relative_url }}">
     <h3>XP &amp; leveling</h3>
-    <p>Members earn XP just by taking part: levels, the <code>/rank</code> card, the leaderboard and level-up announcements.</p>
+    <p>Members earn XP just by taking part, in chat, in voice and on a linked Minecraft server: levels, the <code>/rank</code> card, the leaderboard and level-up announcements.</p>
   </a>
 
   <a class="card" href="{{ '/wiki/crestbound/' | relative_url }}">

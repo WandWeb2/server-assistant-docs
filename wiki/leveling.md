@@ -4,9 +4,9 @@ title: "XP &amp; leveling"
 permalink: /wiki/leveling/
 wiki: true
 wiki_category: "Features"
-summary: How members earn XP just by being part of the conversation, level up over time, and climb the server leaderboard. Covers /rank, /leaderboard, level-up announcements, and how voting for Server Assistant earns extra XP, all shown exactly as they appear in Discord.
-wiki_keywords: [xp, levels, leveling, levelling, rank, /rank, leaderboard, /leaderboard, level up, level-up, levelling up, vote, voting, review, /review, review rewards, double xp, rewards, reputation, points, ranks, /leveling]
-description: A member-facing reference for Server Assistant's XP and leveling system, earning XP from chat and voting, the /rank card, the leaderboard, and level-up announcements, each shown one state at a time exactly as it appears in Discord.
+summary: How members earn XP just by being part of the conversation, level up over time, and climb the server leaderboard. Covers /rank, /leaderboard, level-up announcements, XP for time on a linked Minecraft server, and how voting for Server Assistant earns extra XP, all shown exactly as they appear in Discord.
+wiki_keywords: [xp, levels, leveling, levelling, rank, /rank, leaderboard, /leaderboard, level up, level-up, levelling up, vote, voting, review, /review, review rewards, double xp, rewards, reputation, points, ranks, /leveling, minecraft xp, playtime xp]
+description: A member-facing reference for Server Assistant's XP and leveling system, earning XP from chat, voice, linked Minecraft playtime and voting, the /rank card, the leaderboard, and level-up announcements, each shown one state at a time exactly as it appears in Discord.
 ---
 
 # XP &amp; leveling
@@ -34,6 +34,14 @@ balance. The busier the channel, the more it's worth per minute. Sitting muted t
 listen still counts, but you **won't** earn while parked in the AFK channel, deafened,
 or alone, so nobody can farm levels by idling. A gentle hourly limit keeps long
 sessions fair.
+
+**By playing on a linked Minecraft server.** If your server runs the
+[Minecraft ↔ Discord bridge]({{ '/wiki/minecraft/' | relative_url }}) and you've **linked
+your Minecraft and Discord accounts**, the time you spend **in-game** earns XP into the
+same balance, at the **same base rate as voice**, with its own gentle hourly limit. It's
+free and automatic once you've linked, with nothing else to switch on. One difference:
+because you're in-game rather than in a channel, a level-up earned in Minecraft **isn't
+announced** — the XP still lands.
 
 **By voting for Server Assistant.** Vote on
 [**DiscordForge**](https://discordforge.org/bot/1278486617375510570) and you earn
@@ -63,19 +71,19 @@ automated checks, your link goes to our team for a quick manual confirmation and
 rewarded by DM.
 
 **Double-XP events.** When a server's been quiet, the bot may offer its staff a
-**48-hour Double-XP event**. While one runs, **every member earns 2× XP for chatting
-and voice time** (voting rewards stay the same), and staff get a recap when it ends.
-Only a server manager can start one.
+**48-hour Double-XP event**. While one runs, **every member earns 2× XP for chatting,
+voice time and linked Minecraft playtime** (voting rewards stay the same), and staff get a
+recap when it ends. Only a server manager can start one.
 
 **Your personal Double-XP buff.** The month of Double XP from a review is **yours**: it
-follows you across **every server you share with Server Assistant**, doubling your chat
-and voice XP. If a server-wide event is also running, your XP still only doubles, the
-boost is **capped at 2×** (never quadruples).
+follows you across **every server you share with Server Assistant**, doubling your chat,
+voice and Minecraft playtime XP. If a server-wide event is also running, your XP still only
+doubles, the boost is **capped at 2×** (never quadruples).
 
 **Your weekly recap.** Once a week, if you earned any XP, the bot DMs you a quick
 summary of how much came from **being active** versus **voting**.
 
-<p style="color:var(--fg-1);font-size:.9rem;line-height:1.55;"><strong>One wallet, everywhere.</strong> Your XP is tied to <em>you</em>, not to one server: chat and voice XP from every server, plus voting rewards, add up in one account-wide wallet. Everything you earn lifts your <strong>Level</strong> (which only ever goes up); your <strong>XP</strong> is the spendable balance that grows alongside it, the same balance you take into <a href="{{ '/wiki/crestbound/' | relative_url }}">Crestbound</a>.</p>
+<p style="color:var(--fg-1);font-size:.9rem;line-height:1.55;"><strong>One wallet, everywhere.</strong> Your XP is tied to <em>you</em>, not to one server: chat and voice XP from every server, playtime on a linked Minecraft server, plus voting rewards, all add up in one account-wide wallet. Everything you earn lifts your <strong>Level</strong> (which only ever goes up); your <strong>XP</strong> is the spendable balance that grows alongside it, the same balance you take into <a href="{{ '/wiki/crestbound/' | relative_url }}">Crestbound</a>.</p>
 
 ---
 

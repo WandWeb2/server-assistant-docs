@@ -4,8 +4,8 @@ title: "All commands"
 permalink: /wiki/commands/
 wiki: true
 wiki_category: "Getting Started"
-summary: The full list of Server Assistant commands, every slash command grouped by area (setup, moderation, channels, community & fun, AI & Premium, info & account) plus the right-click menus.
-wiki_keywords: [commands, command list, all commands, command reference, slash commands, /commands, help, cheat sheet, roll, ban, kick, mute, warn, purge, setup, settings, emote, imagine, sai, translate]
+summary: The full list of Server Assistant commands, every slash command grouped by area (setup, moderation, channels, community & fun, AI & Premium, Minecraft, info & account) plus the right-click menus.
+wiki_keywords: [commands, command list, all commands, command reference, slash commands, /commands, help, cheat sheet, roll, ban, kick, mute, warn, purge, setup, settings, emote, imagine, sai, translate, mcdc, minecraft, online, link, unlink]
 description: A complete reference of every Server Assistant slash command and right-click menu, grouped by area, with a short description of each.
 ---
 
@@ -76,10 +76,19 @@ them with autocomplete, or open **`/help`** for a role-aware view of what you ca
 | **`/sai`** | Chat with Server Assistant's intelligence to tune your bot |
 | **`/translate`** | Translate text into another language |
 | **`/mediate`** | Start AI-facilitated mediation between two members |
-| **`/backup`** | Snapshot & restore your server's structure |
-| **`/brand`** | White-label the bot for your server |
-| **`/customcmd`** | Create your own `/commands` with live embeds |
+| **`/backup`** | Snapshot & restore your server's structure (**full Premium**, not Premium BYOK) |
+| **`/brand`** | White-label the bot for your server (**full Premium**, not Premium BYOK) |
+| **`/customcmd`** | Create your own `/commands` with live embeds (**full Premium**, not Premium BYOK) |
 | **`/rolepanel`** | Build a self-service role-button panel |
+
+## Minecraft bridge
+
+| Command | What it does |
+|---|---|
+| **`/mcdc`** | Set up & customize the Minecraft ↔ Discord bridge: channel, plugin token, events, translation, @sai Studio, rank sync (owner / Manage Server) |
+| **`/online`** | See who's currently on the linked Minecraft server. Anyone can run it, **in the bridged channel** |
+| **`/link`** | Get a one-time code to link your Minecraft account to Discord (opt-in, anyone) |
+| **`/unlink`** | Disconnect your linked Minecraft account (anyone, on themselves) |
 
 ## Info, help & account
 

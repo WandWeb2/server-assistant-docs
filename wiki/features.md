@@ -4,8 +4,8 @@ title: Server Assistant Main Features
 permalink: /wiki/features/
 wiki: true
 wiki_category: "Getting Started"
-summary: A tour of Server Assistant's headline features, moderation, AutoMod, join-time protection, ban appeals, Pulse, tickets and AI, with how to use each and where to learn more.
-wiki_keywords: [features, overview, automod, pulse, threatnet, altguard, ban appeals, anti-raid, verification, audit log, tickets, ai, moderation, what does it do]
+summary: A tour of Server Assistant's headline features, moderation, AutoMod, join-time protection, ban appeals, Pulse, tickets, the Minecraft bridge, XP and AI, with how to use each and where to learn more.
+wiki_keywords: [features, overview, automod, pulse, threatnet, altguard, ban appeals, anti-raid, verification, audit log, tickets, ai, moderation, what does it do, minecraft, mcdc, bridge, xp, leveling]
 description: A tour of Server Assistant's headline features, what each one does, how to turn it on, and where to read the full guide.
 ---
 
@@ -121,6 +121,20 @@ description: A tour of Server Assistant's headline features, what each one does,
   <p>A button panel members use to open a private ticket channel with your staff; close it and a transcript is saved to your log. Premium adds custom intake questions and adding users to a ticket.</p>
   <p class="how"><b>How to use:</b> <code>/tickets setup</code> to post the panel.</p>
   <a class="more" href="{{ '/wiki/tickets/' | relative_url }}">Tickets &amp; support guide →</a>
+</div>
+
+<div class="feat">
+  <h3>Minecraft ↔ Discord bridge <span class="feat-tag free">Free</span> <span class="feat-tag premium">Premium in-game AI</span></h3>
+  <p>Joins one Discord channel to your <strong>Paper/Spigot</strong> server with a small free plugin, no mods for your players. Two-way chat with real player names and skin-face avatars, relayed joins/deaths/advancements, live server health (TPS, RAM, uptime), an <code>/online</code> list and a live topic count. Your <strong>AutoMod covers in-game chat too</strong>, and staff get one-tap <strong>Kick</strong> / <strong>Ban in-game</strong> on a flagged player. Players can <strong>link their accounts</strong> to earn <strong>XP for in-game playtime</strong> and, if you enable it, have their Discord role mirror to their <strong>LuckPerms rank</strong> (one-way, allowlisted, never on request). Premium adds <strong>@sai in-game</strong> with a configurable assistant and an in-world companion, plus live AI translation both ways.</p>
+  <p class="how"><b>How to use:</b> drop the plugin into <code>plugins/</code>, run <code>/mcdc</code> in Discord to pick a channel, then run the pre-filled link line in-game. No restart.</p>
+  <a class="more" href="{{ '/wiki/minecraft/' | relative_url }}">Minecraft bridge guide →</a>
+</div>
+
+<div class="feat">
+  <h3>XP, levels &amp; leaderboards <span class="feat-tag free">Free</span></h3>
+  <p>Members earn XP for chatting, for time spent in voice, and for playtime on a linked Minecraft server, all into one account-wide balance. Levels, a <code>/rank</code> card, a leaderboard, optional level-up announcements, and Double-XP events.</p>
+  <p class="how"><b>How to use:</b> on automatically; <code>/leveling</code> controls announcements, <code>/rank</code> and <code>/leaderboard</code> for members.</p>
+  <a class="more" href="{{ '/wiki/leveling/' | relative_url }}">XP &amp; leveling guide →</a>
 </div>
 
 <div class="feat">

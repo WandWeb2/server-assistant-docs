@@ -152,7 +152,7 @@ Need extra headroom without changing plans? Top-ups never expire and stack on an
 - **Warnings + notes**: full per-guild history
 - **Encrypted tamper-proof audit log**: native-action logging, tamper alerts, owner ping on deletion
 - **24-hour undo**: bans, mutes, channel deletions, nickname changes
-- **`/setup` + `/settings`**: 60-second onboarding + 9-panel Customisation Hub
+- **`/setup` + `/settings`**: 60-second onboarding + a four-section settings hub
 - **`/autopilot`**: opens the pre-filled `/setup` wizard
 - **Privacy panel** (`/privacy`)
 - **Snippets + scheduled reminders**
