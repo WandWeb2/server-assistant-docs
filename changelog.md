@@ -1476,7 +1476,7 @@ Everything stays **local to your server**: nothing is shared anywhere. It's **on
 
 <p class="cl-intro">What's changed in the <strong>Server Assistant portal</strong>: the web dashboard you sign into with your Discord account.</p>
 
-<details class="doc-sec" markdown="1" data-kind="fix">
+<details class="doc-sec" markdown="1" open data-kind="fix">
 <summary>v1.3: A simpler leveling toggle</summary>
 - **One "Level-up messages" switch.** The portal's leveling section now has a single **Level-up messages** on/off toggle in place of the old, confusing pair. Turn it off and the celebratory level-up messages stop; members still earn XP exactly as before, they just do it quietly.
 </details>
@@ -1504,7 +1504,7 @@ Everything stays **local to your server**: nothing is shared anywhere. It's **on
 
 <p class="cl-intro">What's new in <strong>Crestbound</strong>: the Crest-collecting game in the portal, powered by the XP you earn in Discord.</p>
 
-<details class="doc-sec" markdown="1" data-kind="feature">
+<details class="doc-sec" markdown="1" open data-kind="feature">
 <summary>v1.5: The bot rounds out</summary>
 - **World-first discovery announcements.** Server admins can pick a channel with `/setup`; when a member makes a genuine world-first discovery, the server hears about it the moment the art comes to light. Announcement only, no reward ever differs by server.
 - **`/duel`**: see your active Wardeck and jump straight onto the Battle screen.
