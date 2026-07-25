@@ -92,6 +92,33 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
 <details class="doc-sec" markdown="1" open data-kind="fix">
+<summary>v6.65.0: Stronger hate-speech filtering — sexism, transphobia, homophobia, ableism</summary>
+
+The slur filter behind most of our setup presets now covers **much more of what you'd
+expect it to**. It already caught racial, ethnic and religious slurs, but had **no
+coverage of misogyny or sexism at all** and barely any of anti-trans hate. That gap is
+closed.
+
+- **Wider coverage, applied automatically.** Misogyny and sexism, transphobia,
+  homophobia and ableism now sit alongside the racial, ethnic and religious coverage
+  the filter already had. If your server is on a preset that includes the **Level 1
+  slur filter** (`slurs_l1` — Gaming, Creator, Anime, Crypto and NSFW all use it), you
+  have this already, with **no settings change needed**.
+- **Casual swearing is still not filtered.** That's deliberate and unchanged — venting
+  at a hard boss fight won't trip anything. Ordinary profanity is only filtered by the
+  **Strict** preset (`profanity_l3`).
+- **Targeted harassment now comes with the pack.** Presets that switch on slur
+  filtering now include the **Level 2** pack too ("kys" and similar). Servers set up
+  before this update keep exactly the packs you already chose — to turn it on, either
+  pick your community-type preset again in `/setup`, or enable **`slurs_l2`** in
+  `/automod` → **Filter Packs**.
+- **Minecraft bridge fix.** A slur deliberately typed with characters between the
+  letters was hidden in-game but appeared **in full** in the linked Discord channel.
+  It's now masked on both sides.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v6.64.0: Rename your in-game assistant and it's fully yours</summary>
 
 Polish for the in-game assistant, especially on servers that have **given it their own
@@ -1479,9 +1506,50 @@ Everything stays **local to your server**: nothing is shared anywhere. It's **on
 
 <div class="cl-panel" id="cl-mcdc" role="tabpanel" aria-labelledby="tab-mcdc" markdown="1" hidden>
 
-<p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.14.1</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
+<p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.15.0</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
 
-<details class="doc-sec" markdown="1" open data-kind="fix">
+<details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>Plugin v0.15.0: Keep Minecraft ranks in step with Discord roles</summary>
+
+Your Minecraft ranks can now **follow your Discord roles automatically**. Give someone
+a role in Discord and their in-game rank updates on its own — no manual LuckPerms
+edit, no waiting for a staff member to be online.
+
+- **Map the roles you want mirrored.** In `/mcdc`, pair each Discord role with the
+  in-game rank it should grant. When a linked member's Discord roles change, their
+  in-game rank follows **within about a minute**.
+- **It only mirrors — it never takes instructions.** There is no in-game command and
+  no chat message that can *request* a rank, and asking the in-game assistant for one
+  does nothing at all. Ranks are only ever changed by an authorised staff member
+  acting in Discord or directly in LuckPerms; the plugin simply reflects the result.
+- **Only the ranks you map can be touched.** Anything outside your mapping is off
+  limits — ranks you set by hand in LuckPerms, and your **staff and admin ranks**, are
+  never modified. If a player isn't in the mapping, they're left completely alone.
+- **Needs LuckPerms; off until you turn it on.** Rank sync is disabled by default. On
+  a server without LuckPerms it simply stays unavailable — your chat bridge is
+  completely unaffected either way.
+
+Update the plugin with `/mcdc update` in-game, or let auto-update pick it up.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
+<summary>v6.65.0: Obfuscated slurs are now masked in Discord too</summary>
+
+A slur deliberately typed with characters between the letters was **hidden in-game**
+but printed **in full** in the linked Discord channel — so the bridge undid the
+masking players were protected by. Both sides now mask it identically, and only the
+slur itself is replaced: the rest of the message keeps its wording and casing.
+
+This applies wherever AutoMod is on with a slur filter pack enabled — the same
+condition as the in-game masking. **No plugin update needed.**
+
+The same release also widened the slur filter itself to cover misogyny and sexism,
+transphobia, homophobia and ableism — see the **SA Bot** tab for the full note.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>Plugin v0.14.1: Summon your companion straight from your hand</summary>
 
 The @sai companion item now works when you **right-click it in the air** — you no
