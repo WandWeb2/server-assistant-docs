@@ -91,7 +91,25 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
-<details class="doc-sec" markdown="1" open data-kind="fix">
+<details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>v6.77.0: staff get told when their rank is waiting on an account link</summary>
+
+If you use **rank sync**, giving someone a synced Discord role used to be silent to
+them — their in-game rank simply never appeared, which looks like something is broken.
+
+Now they get a **DM naming the rank that's waiting**, with the two steps to claim it:
+run `/link` in Discord, then `!link <code>` in game.
+
+If their DMs are closed, we say so **in your staff chat** and mention them, so someone
+can pass the message on rather than it vanishing.
+
+A few deliberate limits: only *gaining* a role triggers it (never losing one), only
+people who haven't linked get it, and it's **one message per person per day** — so
+adding and removing a role can't spam anyone.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v6.76.1: @sai no longer refuses your leaderboard page</summary>
 
 `@sai` refuses to read pages anyone can post to — forums, wikis, comment threads. That
@@ -1849,7 +1867,27 @@ Everything stays **local to your server**: nothing is shared anywhere. It's **on
 
 <p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.16.0</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
 
-<details class="doc-sec" markdown="1" open data-kind="fix">
+<details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>v6.77.0: staff get told when their rank is waiting on an account link</summary>
+
+Rank sync only applies to players who've **linked** their Minecraft and Discord
+accounts. Until now, giving someone a synced role while they were unlinked did nothing
+visible — the rank never arrived and nothing explained why.
+
+Now they get a DM naming the rank waiting for them, plus the two steps: `/link` in
+Discord, then `!link <code>` in game. DMs closed? We tell your **staff chat** instead
+and mention them.
+
+**Worth knowing about ordering.** Assign the Discord role *before* someone links. A
+player who links while holding no matching Discord role is treated as having no rank,
+and the mirror will remove the one they had in game — that's the mirror working
+correctly, but it surprises people.
+
+**No plugin update needed.**
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v6.76.1: @sai no longer refuses your leaderboard page</summary>
 
 The check that stops `@sai` reading pages anyone can post to was too blunt — it turned down
