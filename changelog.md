@@ -107,6 +107,9 @@ A few deliberate limits: only *gaining* a role triggers it (never losing one), o
 people who haven't linked get it, and it's **one message per person per day** — so
 adding and removing a role can't spam anyone.
 
+**Also fixed:** `/link` and `/unlink` sometimes failed with an "Unknown interaction"
+error when the server was busy. Both now respond straight away.
+
 </details>
 
 <details class="doc-sec" markdown="1" data-kind="fix">
@@ -1882,6 +1885,9 @@ and mention them.
 player who links while holding no matching Discord role is treated as having no rank,
 and the mirror will remove the one they had in game — that's the mirror working
 correctly, but it surprises people.
+
+**Also fixed:** `/link` and `/unlink` sometimes failed with an "Unknown interaction"
+error when the server was busy. Both now respond straight away.
 
 **No plugin update needed.**
 
