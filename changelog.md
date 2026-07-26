@@ -91,7 +91,24 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
-<details class="doc-sec" markdown="1" open data-kind="feature">
+<details class="doc-sec" markdown="1" open data-kind="fix">
+<summary>v6.76.1: @sai no longer refuses your leaderboard page</summary>
+
+`@sai` refuses to read pages anyone can post to — forums, wikis, comment threads. That
+check was too blunt: it turned down ordinary pages whose names merely *contain* one of the
+words it watches for.
+
+**`/leaderboard` was refused**, because "board" ends the word — while `/leaderboards` was
+accepted, because the plural breaks the match. `/scoreboard`, `/dashboard` and
+`/postal-address` were turned down for the same reason.
+
+Those pages are accepted now. Nothing else changed: forums, wikis, comment threads, boards
+and user profiles are still refused, still with no override. If a page you trust is turned
+down, that's still the answer — give `@sai` a different page.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.76.0: @sai can answer from your server's website</summary>
 
 Players ask `@sai` the same handful of questions — how do I rank up, what's on the store,
@@ -1832,7 +1849,25 @@ Everything stays **local to your server**: nothing is shared anywhere. It's **on
 
 <p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.16.0</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
 
-<details class="doc-sec" markdown="1" open data-kind="feature">
+<details class="doc-sec" markdown="1" open data-kind="fix">
+<summary>v6.76.1: @sai no longer refuses your leaderboard page</summary>
+
+The check that stops `@sai` reading pages anyone can post to was too blunt — it turned down
+ordinary pages whose names merely *contain* one of the words it watches for.
+
+**`/leaderboard` was refused**, because "board" ends the word, while `/leaderboards` was
+accepted, because the plural breaks the match. `/scoreboard`, `/dashboard` and
+`/postal-address` were turned down the same way.
+
+Those pages work now. The wall is otherwise unchanged: forums, wikis, comment threads,
+boards and user profiles are still refused, with no override. If a page you trust is still
+turned down, give `@sai` a different one — that remains the intended answer.
+
+**No plugin update needed.**
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.76.0: @sai can answer from your server's website</summary>
 
 Most of what players ask `@sai` in-game — how do I rank up, what's on the store, when's the
