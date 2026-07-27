@@ -194,9 +194,9 @@ Need extra headroom without changing plans? Top-ups never expire and stack on an
 | **Bot Health Insurance** | No | Yes | Yes |
 | **Message Report** (right-click AI context) | No | Yes | Yes |
 | **AutoMod AI second-opinion** | No | Yes | Yes |
-| **Active Threat Score** | No | Yes | Yes |
+| **Active Threat Score** | No | No | Yes |
 | **ThreatNet**: cross-server safety (advisory) | Yes | Yes | Yes |
-| **ThreatNet auto-protect**: auto-ban known cross-server bad actors on join | No | Yes | Yes |
+| **ThreatNet auto-protect**: auto-ban known cross-server bad actors on join | No | No | Yes |
 | **Decision explainer & guided appeals** | No | Yes | Yes |
 | **Reaction roles** (`/rolepanel`) | No | Yes | Yes |
 | **AI Q&A from your FAQ** (`/faq`) | No | Yes | Yes |
