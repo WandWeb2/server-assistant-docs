@@ -91,7 +91,26 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
-<details class="doc-sec" markdown="1" open data-kind="feature">
+<details class="doc-sec" markdown="1" open data-kind="fix">
+<summary>v6.78.0: auto-protect and Active Threat Score are now full-Premium features</summary>
+
+**ThreatNet auto-protect** and **Active Threat Score** have moved to the **full Premium**
+plan. They are no longer included with **BYOK**, which covers bringing your own AI key.
+
+If your server is on BYOK and had either switched on, we've **turned it off and posted a
+notice in your staff chat** saying exactly what changed — rather than letting it stop
+working quietly. If you had auto-protect on, that notice says plainly that **joins are no
+longer auto-banned**, so nobody carries on assuming they're screened.
+
+**The advisory ThreatNet flag stays free for every server**, on every plan. Your staff
+still see the cross-server risk band on member profiles — it simply doesn't act on its
+own unless you're on full Premium.
+
+Everything else on BYOK is unchanged, including unlimited `/imagine` with your own key.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.77.0: staff get told when their rank is waiting on an account link</summary>
 
 If you use **rank sync**, giving someone a synced Discord role used to be silent to
