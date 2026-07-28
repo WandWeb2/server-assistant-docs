@@ -91,7 +91,33 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
-<details class="doc-sec" markdown="1" open data-kind="fix">
+<details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>v6.82.0: @sai looks the answer up on the Minecraft wiki instead of remembering it</summary>
+
+v6.81.0 stopped @sai giving confident answers about an old version of Minecraft. That fixed
+the *wrong* answer — it didn't produce a *right* one. Asked "how do I tame a nautilus", it
+went from confidently wrong to honestly unsure, which is better and still no help.
+
+**@sai now reads the Minecraft wiki before answering.** Ask it a game question and it looks
+up the relevant page, then answers from that — treating the wiki as more reliable than its
+own training data. So it doesn't just stop being wrong about nautilus; it tells you they
+can be tamed, saddled and ridden as an underwater mount.
+
+Because it has actually checked, it also drops the "this may have changed in your version"
+caveat when the wiki answered the question.
+
+**If the wiki can't be reached** — it's slow, or there's simply no page for what was asked —
+@sai falls back to the careful, clearly-hedged answer from v6.81.0. It never fails silently
+or leaves a player waiting.
+
+**You can turn it off.** If you'd rather @sai never make an outside lookup, the setting is
+there; leaving it on is the default.
+
+**No plugin update needed.**
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v6.81.0: @sai no longer gives confident answers about an old version of Minecraft</summary>
 
 **The problem.** A player asked @sai how to tame a nautilus and got back "you can't tame a
@@ -1974,7 +2000,34 @@ Everything stays **local to your server**: nothing is shared anywhere. It's **on
 
 <p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.16.0</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
 
-<details class="doc-sec" markdown="1" open data-kind="fix">
+<details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>v6.82.0: @sai looks the answer up on the Minecraft wiki instead of remembering it</summary>
+
+v6.81.0 stopped @sai giving confident answers about an old version of Minecraft. That fixed
+the *wrong* answer — it didn't produce a *right* one. A player asking "how do I tame a
+nautilus" in game went from a confidently wrong reply to an honestly unsure one, which is
+better and still no help to them.
+
+**@sai now reads the Minecraft wiki before answering an in-game question.** It looks up the
+page for what was asked and answers from that, treating the wiki as more reliable than its
+own training data. Ask about nautilus now and it tells you they can be tamed, saddled and
+ridden as an underwater mount.
+
+Because it has actually checked, it drops the "this may have changed in your version"
+caveat when the wiki answered the question.
+
+**It stays fast and fails gracefully.** The lookup is a single request, and answers are
+remembered for a day, so a question your players ask repeatedly is only fetched once. If
+the wiki is slow or has no page for what was asked, @sai falls back to the careful hedged
+answer from v6.81.0 rather than leaving anyone waiting.
+
+**You can turn it off** if you'd rather @sai never make an outside lookup. On is the default.
+
+**No plugin update needed** — this is entirely on Server Assistant's side.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v6.81.0: @sai no longer gives confident answers about an old version of Minecraft</summary>
 
 **The problem.** A player asked @sai in game how to tame a nautilus and got back "you can't
