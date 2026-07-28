@@ -92,6 +92,26 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
 <details class="doc-sec" markdown="1" open data-kind="fix">
+<summary>v6.79.0: @sai's answers now reach Minecraft, and answer to your own name</summary>
+
+Two fixes for servers using the Minecraft bridge.
+
+**@sai's answers now cross into the game.** If someone asked @sai a question in your
+bridged Discord channel, players in Minecraft saw the *question* arrive but never the
+answer. Now the answer follows it across — shown under your assistant's own name, so a
+renamed assistant stays renamed in game.
+
+**Your assistant answers to its own name in game.** If you've renamed it in
+**@sai Studio**, players can now summon it with `@YourName` in Minecraft chat instead of
+having to type `@sai`. `@sai`, `!sai` and `!ai` all keep working, so nothing you've
+already told your players stops being true.
+
+One thing to bear in mind: if you name your assistant a common word, `@that word` will
+start summoning it in chat.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v6.78.0: auto-protect and Active Threat Score are now full-Premium features</summary>
 
 **ThreatNet auto-protect** and **Active Threat Score** have moved to the **full Premium**
@@ -1889,7 +1909,26 @@ Everything stays **local to your server**: nothing is shared anywhere. It's **on
 
 <p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.16.0</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
 
-<details class="doc-sec" markdown="1" open data-kind="feature">
+<details class="doc-sec" markdown="1" open data-kind="fix">
+<summary>v6.79.0: @sai's answers now reach Minecraft, and answer to your own name</summary>
+
+**Answers from Discord now cross into the game.** When someone asked @sai a question in
+the bridged channel, your players saw the *question* mirror into Minecraft and then
+nothing — the answer stopped at Discord. It now follows across, posted under your
+assistant's own name.
+
+**Your assistant answers to its own name in game.** Renamed it in **@sai Studio**?
+Players can now use `@YourName` in Minecraft chat. `@sai`, `!sai` and `!ai` still work,
+so existing habits and anything you've written in your server rules stay valid.
+
+Worth knowing: naming your assistant a common word means `@that word` starts summoning
+it in chat.
+
+**No plugin update needed.**
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.77.0: staff get told when their rank is waiting on an account link</summary>
 
 Rank sync only applies to players who've **linked** their Minecraft and Discord
