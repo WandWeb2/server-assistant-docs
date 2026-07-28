@@ -91,7 +91,41 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
-<details class="doc-sec" markdown="1" open data-kind="fix">
+<details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>v6.80.0: your Admins and Moderators can do more — and three toggles that never did anything are gone</summary>
+
+**Admin can now shape the server.** Your Admin tier can now be asked to create, rename and
+move channels, manage categories, unarchive threads, create invites, issue timeouts and
+wipe messages. Several of these were gaps rather than decisions: `archive` was allowed but
+`unarchive` wasn't, and `purge` and `prune` were allowed but their synonym `wipe` wasn't.
+
+**Moderator can now issue timeouts.** `timeout` was in neither tier, even though mute and
+unmute were in both — so nobody below the server owner could actually ask for a Discord
+timeout. Moderators can now.
+
+Admin still **cannot** delete or remove channels, and still cannot run `setup`. Both stay
+owner-only on purpose.
+
+**This changes the defaults, not your settings.** If you've already customised your role
+capabilities, nothing about your server changes. The wider lists are what newly-configured
+roles start with, and what the presets in the editor offer.
+
+**Three capabilities are gone from the editor: `role`, `permission` and `webhook`.** They
+appeared as toggles, but there was never a feature behind them — ticking one changed
+nothing. Server Assistant will never change anyone's roles or permissions because it was
+asked to; that's a standing security rule, not a setting you can switch. A request to do so
+is now refused with a clear message pointing at **Server Settings → Roles**, and logged for
+your staff.
+
+**And when a capability really is missing, the refusal now tells you where to fix it.** The
+"your role isn't cleared to have me run that" message now names the path — `/settings` →
+**Role Tiers** → **Fine-tune** → pick the role → add the action — and says plainly that
+changing someone's *Discord* permissions won't grant a Server Assistant capability. They're
+separate systems, so handing a role Discord Administrator won't help.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v6.79.0: @sai's answers now reach Minecraft, and answer to your own name</summary>
 
 Two fixes for servers using the Minecraft bridge.
