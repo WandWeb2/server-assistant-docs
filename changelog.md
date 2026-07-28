@@ -91,7 +91,38 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
-<details class="doc-sec" markdown="1" open data-kind="feature">
+<details class="doc-sec" markdown="1" open data-kind="fix">
+<summary>v6.81.0: @sai no longer gives confident answers about an old version of Minecraft</summary>
+
+**The problem.** A player asked @sai how to tame a nautilus and got back "you can't tame a
+nautilus — nautilus shells are items you find, not living mobs." On that server's version
+of Minecraft, you can. The answer was wrong, stated with total confidence, in public chat.
+
+**Why it happened.** @sai's general Minecraft knowledge comes from training data, which has
+a cutoff date. Your server doesn't. Minecraft changes mobs, items and mechanics with every
+release, so an answer that was right when the assistant was trained quietly goes wrong the
+moment your server updates past that point — and the assistant has no way to know it has.
+
+**What's changed.** @sai is now told which version of Minecraft your server is actually
+running, and that its own knowledge might be older than that. It's also no longer allowed
+to flatly tell a player something is impossible — "you can't do that", "that isn't in the
+game" — from memory alone. That's the kind of answer a new Minecraft release turns into a
+wrong one.
+
+Ask it about something it thinks isn't possible and it will now tell you what it knows, say
+it may have changed in the version you're running, and point you at your staff or the
+in-game recipe book.
+
+**It hasn't become vague.** Crafting recipes, redstone, mob behaviour and command questions
+are answered as directly as before. The new caution applies only to claims about whether
+something *exists* or is *possible* — the questions where a Minecraft update actually
+changes the answer.
+
+**No plugin update needed.**
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.80.0: your Admins and Moderators can do more — and three toggles that never did anything are gone</summary>
 
 **Admin can now shape the server.** Your Admin tier can now be asked to create, rename and
@@ -1944,6 +1975,37 @@ Everything stays **local to your server**: nothing is shared anywhere. It's **on
 <p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.16.0</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
 
 <details class="doc-sec" markdown="1" open data-kind="fix">
+<summary>v6.81.0: @sai no longer gives confident answers about an old version of Minecraft</summary>
+
+**The problem.** A player asked @sai in game how to tame a nautilus and got back "you can't
+tame a nautilus — nautilus shells are items you find, not living mobs." On that server's
+version of Minecraft, you can. The answer was wrong, stated with total confidence, in front
+of everyone in chat.
+
+**Why it happened.** @sai's general Minecraft knowledge comes from training data, which has
+a cutoff date. Your server doesn't. Minecraft changes mobs, items and mechanics with every
+release, so an answer that was right when the assistant was trained quietly goes wrong the
+moment your server updates past that point — and the assistant has no way to know it has.
+
+**What's changed.** Your Minecraft server already tells Server Assistant which version it's
+running, on every check-in. @sai is now given that version, and told its own knowledge may
+be older. It's also no longer allowed to flatly tell a player something is impossible —
+"you can't do that", "that isn't in the game" — from memory alone.
+
+Ask it about something it thinks isn't possible and it will now tell you what it knows, say
+it may have changed in the version you're running, and point you at your staff or the
+in-game recipe book.
+
+**It hasn't become vague.** Crafting recipes, redstone, mob behaviour and command questions
+are answered as directly as before. The new caution applies only to claims about whether
+something *exists* or is *possible* — the questions where a Minecraft update actually
+changes the answer.
+
+**No plugin update needed** — this is entirely on Server Assistant's side.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v6.79.0: @sai's answers now reach Minecraft, and answer to your own name</summary>
 
 **Answers from Discord now cross into the game.** When someone asked @sai a question in
