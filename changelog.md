@@ -2080,7 +2080,7 @@ Everything stays **local to your server**: nothing is shared anywhere. It's **on
 
 <p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.17.0</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
 
-<details class="doc-sec" markdown="1" data-kind="fix">
+<details class="doc-sec" markdown="1" open data-kind="fix">
 <summary>v6.83.1: @sai now finds the right wiki page for your question</summary>
 
 v6.82.0 taught @sai to read the Minecraft wiki before answering in-game questions. It
