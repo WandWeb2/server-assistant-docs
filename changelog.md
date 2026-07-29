@@ -91,7 +91,31 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
-<details class="doc-sec" markdown="1" open data-kind="feature">
+<details class="doc-sec" markdown="1" open data-kind="fix">
+<summary>v6.83.1: @sai now finds the right wiki page for your question</summary>
+
+v6.82.0 taught @sai to read the Minecraft wiki. It turned out it couldn't reach the wiki
+at all — and once that was fixed, it was looking up the *wrong page*.
+
+Asked "what does a nautilus eat", it was searching that whole sentence, and the wiki
+answered with a **version changelog page** rather than the article about nautilus. @sai
+read that page, found nothing about nautilus in it, and fell back to guessing — which
+looked exactly like the original problem.
+
+**It now searches for what you're actually asking about.** The question wording is
+stripped down to the thing itself — "how do I craft a hopper" becomes "hopper" — plurals
+are matched to the singular article name, and version/snapshot pages are skipped since
+they never answer a gameplay question. If one of the results is the thing you named, that
+page wins.
+
+Tested against the live wiki across common questions — nautilus, hopper, beacon, creeper,
+axolotl, diamond, nether portal, netherite — all now find the right article.
+
+**No plugin update needed.**
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.83.0: AFK players stop earning Minecraft playtime XP</summary>
 
 Server Assistant pays XP for every minute a linked player spends on your Minecraft
@@ -2038,7 +2062,32 @@ Everything stays **local to your server**: nothing is shared anywhere. It's **on
 
 <p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.17.0</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
 
-<details class="doc-sec" markdown="1" open data-kind="feature">
+<details class="doc-sec" markdown="1" open data-kind="fix">
+<summary>v6.83.1: @sai now finds the right wiki page for your question</summary>
+
+v6.82.0 taught @sai to read the Minecraft wiki before answering in-game questions. It
+turned out it couldn't reach the wiki at all — and once that was fixed, it was looking up
+the *wrong page*.
+
+Asked "what does a nautilus eat", it was searching that whole sentence, and the wiki
+answered with a **version changelog page** rather than the article about nautilus. @sai
+read that page, found nothing about nautilus in it, and fell back to guessing — which
+looked exactly like the original problem.
+
+**It now searches for what you're actually asking about.** The question wording is
+stripped down to the thing itself — "how do I craft a hopper" becomes "hopper" — plurals
+are matched to the singular article name, and version/snapshot pages are skipped since
+they never answer a gameplay question. If one of the results is the thing you named, that
+page wins.
+
+Tested against the live wiki across common questions — nautilus, hopper, beacon, creeper,
+axolotl, diamond, nether portal, netherite — all now find the right article.
+
+**No plugin update needed.**
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v0.17.0: the bridge now reports who's AFK, so idle players stop earning XP</summary>
 
 Server Assistant pays XP per minute of Minecraft playtime, and it had no way to tell
