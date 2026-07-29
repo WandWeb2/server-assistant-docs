@@ -91,7 +91,29 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
-<details class="doc-sec" markdown="1" open data-kind="fix">
+<details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>v6.84.0: @sai shows you where its Minecraft answers come from</summary>
+
+**Every in-game answer now ends with `[wiki]` and a link** to the minecraft.wiki page @sai
+read to answer you. Ask about nautilus and you get the Nautilus page, so you can go and
+read the rest yourself instead of taking one line on trust.
+
+**It also makes a bad answer obvious.** @sai picks the best match out of several wiki
+search results, and it can occasionally pick the wrong one. Before, there was no way to
+tell that from the outside — the answer just looked slightly off. Now you can see the
+page it used and know instantly.
+
+In **Discord** the link is clickable, with no large preview card cluttering the channel.
+**In game** it's shown as text you can read (Minecraft chat won't open it for you).
+Refusals and error notices don't get a source link — only actual advice does, because
+"I'm resting for a bit" didn't come from the wiki.
+
+Controlled by the same wiki-lookup switch as the lookup itself, so turning that off
+removes the links too. **No plugin update needed.**
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v6.83.2: What's New is current again — and stops claiming you're up to date</summary>
 
 **`/whatsnew` was twelve releases behind.** Its newest item was v6.71.0 while the bot was
@@ -2080,7 +2102,27 @@ Everything stays **local to your server**: nothing is shared anywhere. It's **on
 
 <p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.17.0</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
 
-<details class="doc-sec" markdown="1" open data-kind="fix">
+<details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>v6.84.0: @sai cites the wiki page behind each in-game answer</summary>
+
+**In-game answers now end with `[wiki]` and a link** to the minecraft.wiki page @sai read.
+Ask "how do I tame a nautilus" and the reply points at the Nautilus article, so a player
+can go and read the detail a single chat line can't hold.
+
+It also makes a wrong answer visible. @sai picks the best of several wiki search results
+and can occasionally pick the wrong page; until now that just looked like a slightly odd
+answer. Now the source is right there in the line.
+
+In **Discord** the link is clickable, without a big preview card under every bridged
+answer. **In game** it prints as readable text — Minecraft chat won't open it for you.
+Refusals and error notices are never given a source link; only real advice is.
+
+Uses the same wiki-lookup switch, so turning the lookup off removes the citations too.
+**No plugin update needed** — this is a Server Assistant-side change.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v6.83.1: @sai now finds the right wiki page for your question</summary>
 
 v6.82.0 taught @sai to read the Minecraft wiki before answering in-game questions. It
