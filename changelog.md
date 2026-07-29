@@ -92,6 +92,24 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
 <details class="doc-sec" markdown="1" open data-kind="fix">
+<summary>v6.83.2: What's New is current again — and stops claiming you're up to date</summary>
+
+**`/whatsnew` was twelve releases behind.** Its newest item was v6.71.0 while the bot was
+on v6.83.1, so months of work never appeared there. All thirteen missing releases —
+v6.72.0 through v6.83.1 — have now been written up.
+
+**Worse, it told you that stale list was current.** Because it marks you as having seen
+whatever version you're running, and that version had no entry of its own, it concluded
+there was nothing new and showed "✅ You're up to date" above months-old news. It now
+compares version numbers, so a gap reports what you actually haven't seen instead of a
+false all-clear.
+
+**Long release notes are also trimmed properly** — on a word boundary rather than
+mid-sentence.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v6.83.1: @sai now finds the right wiki page for your question</summary>
 
 v6.82.0 taught @sai to read the Minecraft wiki. It turned out it couldn't reach the wiki
