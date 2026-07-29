@@ -116,6 +116,17 @@ your server has legitimately slow activities, or AFK farms you *want* to reward.
 **Needs MCDC plugin v0.17.0.** Until your server updates, playtime XP behaves exactly as
 before — nothing breaks, idle players simply keep earning.
 
+---
+
+**Also fixed: `/whatsnew` wasn't working.** Running it returned "Something went wrong
+running that command" — every time, for everyone. One release entry had grown eight
+characters past a Discord size limit, and Discord rejects the whole message when any one
+section is too long. It works again, and long entries are now trimmed neatly instead of
+breaking the command.
+
+You may notice `/whatsnew` is behind on recent releases — the list it reads from stopped
+being updated a while back, which the broken command was hiding. We're catching it up.
+
 </details>
 
 <details class="doc-sec" markdown="1" data-kind="feature">
