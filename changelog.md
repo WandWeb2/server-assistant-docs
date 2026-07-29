@@ -92,6 +92,44 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
 <details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>v6.83.0: AFK players stop earning Minecraft playtime XP</summary>
+
+Server Assistant pays XP for every minute a linked player spends on your Minecraft
+server. Until now it couldn't tell the difference between playing and *being logged in* —
+so an AFK pool or an auto-fishing rig earned exactly as much as someone actually playing,
+all night, without touching the keyboard.
+
+**Idle players now stop earning.** After five minutes with no activity, playtime XP pauses
+until they do something. Everything else is unaffected — they stay connected, chat still
+works, nothing is kicked or interrupted. Only the XP pauses.
+
+**What counts as being active:** moving from one block to another, breaking or placing a
+block, interacting, clicking an inventory, chatting, or running a command. Turning your
+head or drifting in an AFK pool deliberately doesn't count — that's the whole point.
+
+**Coming back is instant.** The moment an idle player does anything, they're earning again
+on the very next minute — no waiting to be counted again.
+
+**The five minutes is yours to change** in the plugin's `afk-minutes` setting. Raise it if
+your server has legitimately slow activities, or AFK farms you *want* to reward.
+
+**Needs MCDC plugin v0.17.0.** Until your server updates, playtime XP behaves exactly as
+before — nothing breaks, idle players simply keep earning.
+
+---
+
+**Also fixed: `/whatsnew` wasn't working.** Running it returned "Something went wrong
+running that command" — every time, for everyone. One release entry had grown eight
+characters past a Discord size limit, and Discord rejects the whole message when any one
+section is too long. It works again, and long entries are now trimmed neatly instead of
+breaking the command.
+
+You may notice `/whatsnew` is behind on recent releases — the list it reads from stopped
+being updated a while back, which the broken command was hiding. We're catching it up.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.82.0: @sai looks the answer up on the Minecraft wiki instead of remembering it</summary>
 
 v6.81.0 stopped @sai giving confident answers about an old version of Minecraft. That fixed
@@ -1998,9 +2036,39 @@ Everything stays **local to your server**: nothing is shared anywhere. It's **on
 
 <div class="cl-panel" id="cl-mcdc" role="tabpanel" aria-labelledby="tab-mcdc" markdown="1" hidden>
 
-<p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.16.0</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
+<p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.17.0</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
 
 <details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>v0.17.0: the bridge now reports who's AFK, so idle players stop earning XP</summary>
+
+Server Assistant pays XP per minute of Minecraft playtime, and it had no way to tell
+playing apart from *being logged in*. An AFK pool earned as much as a player actually
+online and doing things.
+
+**The plugin now tracks activity and reports idle players to Server Assistant**, which
+withholds playtime XP from them until they do something. The plugin only reports the
+fact — the bot decides what it means — so the two halves can update independently.
+
+**A player counts as active** when they change block position, break or place a block,
+interact, click an inventory, chat, or run a command. Turning your head or drifting in an
+AFK pool is deliberately *not* activity, since that's exactly the case this addresses.
+
+**`afk-minutes` in your config sets the threshold** (default 5, range 1–120). Raise it if
+your server has slow legitimate activities or AFK farms you want to keep rewarding.
+
+**Performance was the main design constraint.** Movement fires up to 20 times a second per
+player, so the check compares block coordinates rather than exact positions and does no
+work at all when a player hasn't moved between blocks.
+
+**Nothing else changes** — no kicks, no interruptions, no messages to your players. Only
+XP pauses, and it resumes the moment they move.
+
+**Pairs with bot v6.83.0.** An older bot ignores the new flag; an older plugin doesn't send
+it and the bot treats everyone as active. Either way playtime XP keeps working.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.82.0: @sai looks the answer up on the Minecraft wiki instead of remembering it</summary>
 
 v6.81.0 stopped @sai giving confident answers about an old version of Minecraft. That fixed
