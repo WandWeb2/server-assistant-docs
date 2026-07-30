@@ -91,7 +91,34 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
-<details class="doc-sec" markdown="1" open data-kind="feature">
+<details class="doc-sec" markdown="1" open data-kind="fix">
+<summary>v6.85.0: @sai stops telling players something isn't in the game</summary>
+
+**A player asked how far copper golems detect chests and was told they "didn't make it into
+the game"** — on a server that has them. @sai's Minecraft knowledge comes from training data
+with a cutoff, so anything added to the game since then looks fictional to it.
+
+It now works the other way round: if a player names a mob, item or block @sai doesn't
+recognise, it **assumes the player is right** and says it isn't familiar with it yet, pointing
+them at the wiki or staff. It will no longer tell anyone something was cancelled, lost a mob
+vote, or is modded-only.
+
+**It also stops reading changelog pages.** The wiki lookup had handed it *"Bedrock Edition
+Preview 1.21.110.24"* — a version changelog, which answers nothing about how anything works.
+Those are now filtered out properly. And plurals finally reach the right article: "copper
+golems" finds the **Copper Golem** page, which was sitting in the search results the whole
+time.
+
+**When it isn't sure it found the right page**, @sai now keeps its "this may have changed in
+your version" caution and adds no source link, instead of presenting a guess as fact.
+
+**The `[wiki]` link is shorter too.** In game it shows the page name rather than a long
+address (Minecraft chat can't open links anyway); in Discord it's a compact clickable
+**[wiki]**.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.84.0: @sai shows you where its Minecraft answers come from</summary>
 
 **Every in-game answer now ends with `[wiki]` and a link** to the minecraft.wiki page @sai
@@ -2102,7 +2129,33 @@ Everything stays **local to your server**: nothing is shared anywhere. It's **on
 
 <p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.17.0</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
 
-<details class="doc-sec" markdown="1" open data-kind="feature">
+<details class="doc-sec" markdown="1" open data-kind="fix">
+<summary>v6.85.0: @sai no longer denies that new mobs exist</summary>
+
+Reported in game: *"how far can copper golems detect chests?"* → @sai replied that copper
+golems "were a mob vote concept that didn't make it into the game", on a server running a
+version that has them.
+
+Three things were wrong and all three are fixed:
+
+- **@sai treated its own training data as the last word on what exists.** It now assumes
+  anything a player names by name **is** in the game and was added after its cutoff — it says
+  it isn't familiar with it yet rather than denying it.
+- **The wiki lookup was serving changelog pages.** *"Bedrock Edition Preview 1.21.110.24"*
+  slipped past the filter that exists to block exactly that. Preview, snapshot, beta and
+  release-candidate pages are all excluded now.
+- **Plurals missed the right article.** "copper golems" didn't match the **Copper Golem**
+  page, so a changelog outranked it. Plural questions now find the singular article.
+
+Plus: when the lookup isn't confident it found the right page, @sai keeps its "may have
+changed" caution and shows no source link — and the `[wiki]` link itself is now short (the
+page name in game, a compact clickable **[wiki]** in Discord).
+
+**No plugin update needed.**
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.84.0: @sai cites the wiki page behind each in-game answer</summary>
 
 **In-game answers now end with `[wiki]` and a link** to the minecraft.wiki page @sai read.
