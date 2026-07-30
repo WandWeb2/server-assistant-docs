@@ -2310,9 +2310,26 @@ Everything stays **local to your server**: nothing is shared anywhere. It's **on
 
 <div class="cl-panel" id="cl-mcdc" role="tabpanel" aria-labelledby="tab-mcdc" markdown="1" hidden>
 
-<p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.19.0</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
+<p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.20.0</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
 
 <details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>Plugin v0.20.0: your assistant shows up when you type /msg</summary>
+
+`/msg Ody` already worked — but nothing told you so. The suggestion list that pops up when
+you type `/msg` only showed real players, so unless someone had mentioned it, you'd never
+know you could message your assistant at all.
+
+Now it appears in that list alongside the players online, so you can tab straight to it.
+
+It's only offered to players who can actually use the assistant — being suggested a name
+that then turns you away is worse than not being suggested it. And players hidden in vanish
+stay hidden.
+
+Requires **plugin v0.20.0** — servers with auto-update on will pick it up on their own.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>Plugin v0.19.0: ask @sai privately, and quieter replies in chat</summary>
 
 **Ask @sai without using public chat.** `/ody <question>` — or `/msg Ody <question>`, if
