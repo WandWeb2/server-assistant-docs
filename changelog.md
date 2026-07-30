@@ -92,6 +92,24 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
 <details class="doc-sec" markdown="1" open data-kind="fix">
+<summary>v6.96.0: @sai reads the real crafting grid</summary>
+
+Asked how to craft a soul torch, @sai said the soul sand **"replaces the coal at the
+bottom"**. Wrong twice over: coal sits at the **top** of a torch recipe with the stick
+below it, and the soul soil is a **third ingredient**, not a swap. A player corrected it
+in chat.
+
+**@sai now reads the actual crafting grid from the wiki** for "how do I make X" questions.
+Recipes live in tables, and tables were being stripped out before @sai ever saw them — so
+it was answering from memory and getting the layout wrong.
+
+**Positions come through too**: what goes on top, in the middle and at the bottom, which
+ingredients can be swapped for which, and how many you get. Only recipe questions do the
+extra lookup, so nothing else got slower.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v6.95.0: the in-game [wiki] link stops appearing twice</summary>
 
 @sai's answers in Minecraft were ending with **two** `[wiki]` tags — one plain, one
@@ -2295,6 +2313,24 @@ Everything stays **local to your server**: nothing is shared anywhere. It's **on
 <p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.18.0</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
 
 <details class="doc-sec" markdown="1" open data-kind="fix">
+<summary>v6.96.0: @sai reads the real crafting grid</summary>
+
+Asked how to craft a soul torch, @sai said the soul sand **"replaces the coal at the
+bottom"**. Wrong twice over: coal sits at the **top** of a torch recipe with the stick
+below it, and the soul soil is a **third ingredient**, not a swap. A player corrected it
+in chat.
+
+**@sai now reads the actual crafting grid from the wiki** for "how do I make X" questions.
+Recipes live in tables, and tables were being stripped out before @sai ever saw them — so
+it was answering from memory and getting the layout wrong.
+
+**Positions come through too**: what goes on top, in the middle and at the bottom, which
+ingredients can be swapped for which, and how many you get. Only recipe questions do the
+extra lookup, so nothing else got slower.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v6.95.0: the in-game [wiki] link stops appearing twice</summary>
 
 @sai's answers in Minecraft were ending with **two** `[wiki]` tags — one plain, one
