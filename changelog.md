@@ -91,7 +91,25 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
-<details class="doc-sec" markdown="1" open data-kind="feature">
+<details class="doc-sec" markdown="1" open data-kind="fix">
+<summary>v6.90.0: @sai reads the part of the page that answers you</summary>
+
+@sai was only reading each wiki page's **opening summary**. Asked "how far can copper golems
+detect chests" it found the right page and had to admit the detail wasn't in what it read —
+because the detection range is further down the page, under behaviour, not in the intro.
+
+**It now picks out the paragraphs that match your question.** Ranges, durations, drop
+chances, spawn conditions — the specifics that live in the middle of an article — actually
+reach the answer now. The page's opening definition is always kept as well, so a figure
+arrives with the context that makes sense of it.
+
+**Only when it needs to.** A question the summary already answers behaves exactly as before
+and is just as quick. And if the deeper read fails for any reason, @sai falls back to precisely
+what it did previously.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.89.0: @sai searches properly now — and finds the right page</summary>
 
 **@sai now uses a real search engine to find the right wiki page.** The wiki's own search
@@ -2202,7 +2220,27 @@ Everything stays **local to your server**: nothing is shared anywhere. It's **on
 
 <p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.18.0</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
 
-<details class="doc-sec" markdown="1" open data-kind="feature">
+<details class="doc-sec" markdown="1" open data-kind="fix">
+<summary>v6.90.0: @sai reads the part of the page that answers you</summary>
+
+@sai was only reading each wiki page's **opening summary**. Asked "how far can copper golems
+detect chests" it found the right page and had to admit the detail wasn't in what it read —
+because the detection range is further down the page, under behaviour, not in the intro.
+
+**It now picks out the paragraphs that match your question.** Ranges, durations, drop
+chances, spawn conditions — the specifics that live in the middle of an article — actually
+reach the answer now. The page's opening definition is always kept as well, so a figure
+arrives with the context that makes sense of it.
+
+**Only when it needs to.** A question the summary already answers behaves exactly as before
+and is just as quick. And if the deeper read fails for any reason, @sai falls back to precisely
+what it did previously.
+
+**No plugin update needed.**
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.89.0: @sai searches properly now — and finds the right page</summary>
 
 **@sai now uses a real search engine to find the right wiki page.** The wiki's own search
