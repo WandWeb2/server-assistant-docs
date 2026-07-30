@@ -92,6 +92,26 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
 <details class="doc-sec" markdown="1" open data-kind="fix">
+<summary>v6.91.0 &amp; v6.92.0: @sai finds the actual numbers on a wiki page</summary>
+
+Asked "how far can copper golems detect chests", @sai said they don't detect chests from a
+distance — while reading the page that says they search a **65×17×65 area**. It had the right
+page and was picking the wrong paragraphs out of it.
+
+**Questions asking for a figure now prefer the paragraphs that contain one.** A measurement
+like "65×17×65" outranks an unrelated number like "3 seconds", "how far" matches the words a
+wiki actually uses (area, radius, within, centered), and those questions get more of the page
+to work with.
+
+**And @sai now uses the page's own contents list.** A wiki page's sections — "Behavior",
+"Chest interactions and item transportation" — are labelled by a person to say what each part
+covers, which beats guessing from the wording of your question. So when you ask "how far can
+they detect chests" and the page says "search … in a cubic area", the section heading connects
+the two. No extra lookups, so it's no slower.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v6.90.0: @sai reads the part of the page that answers you</summary>
 
 @sai was only reading each wiki page's **opening summary**. Asked "how far can copper golems
@@ -2221,6 +2241,28 @@ Everything stays **local to your server**: nothing is shared anywhere. It's **on
 <p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.18.0</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
 
 <details class="doc-sec" markdown="1" open data-kind="fix">
+<summary>v6.91.0 &amp; v6.92.0: @sai finds the actual numbers on a wiki page</summary>
+
+Asked "how far can copper golems detect chests", @sai said they don't detect chests from a
+distance — while reading the page that says they search a **65×17×65 area**. It had the right
+page and was picking the wrong paragraphs out of it.
+
+**Questions asking for a figure now prefer the paragraphs that contain one.** A measurement
+like "65×17×65" outranks an unrelated number like "3 seconds", "how far" matches the words a
+wiki actually uses (area, radius, within, centered), and those questions get more of the page
+to work with.
+
+**And @sai now uses the page's own contents list.** A wiki page's sections — "Behavior",
+"Chest interactions and item transportation" — are labelled by a person to say what each part
+covers, which beats guessing from the wording of your question. So when you ask "how far can
+they detect chests" and the page says "search … in a cubic area", the section heading connects
+the two. No extra lookups, so it's no slower.
+
+**No plugin update needed.**
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v6.90.0: @sai reads the part of the page that answers you</summary>
 
 @sai was only reading each wiki page's **opening summary**. Asked "how far can copper golems
