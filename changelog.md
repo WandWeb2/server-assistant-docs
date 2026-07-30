@@ -91,7 +91,20 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
-<details class="doc-sec" markdown="1" open data-kind="feature">
+<details class="doc-sec" markdown="1" open data-kind="fix">
+<summary>v6.95.0: the in-game [wiki] link stops appearing twice</summary>
+
+@sai's answers in Minecraft were ending with **two** `[wiki]` tags — one plain, one
+clickable. @sai types the tag itself out of helpfulness, and the real link was then added
+after it rather than replacing it.
+
+**Every reply now carries exactly one `[wiki]` link**, however many tags end up in the
+text. Replies already showing the double repair themselves, so you don't need to do
+anything.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.94.0: members can open more than one support ticket</summary>
 
 Support tickets were limited to **one open ticket per member**. Someone with two unrelated
@@ -2282,6 +2295,19 @@ Everything stays **local to your server**: nothing is shared anywhere. It's **on
 <p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.18.0</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
 
 <details class="doc-sec" markdown="1" open data-kind="fix">
+<summary>v6.95.0: the in-game [wiki] link stops appearing twice</summary>
+
+@sai's answers in Minecraft were ending with **two** `[wiki]` tags — one plain, one
+clickable. @sai types the tag itself out of helpfulness, and the real link was then added
+after it rather than replacing it.
+
+**Every reply now carries exactly one `[wiki]` link**, however many tags end up in the
+text. Replies already showing the double repair themselves, so you don't need to do
+anything.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v6.93.0: @sai stops saying "that isn't in the game"</summary>
 
 Asked how long dried ghasts take to turn into happy ghasts, @sai replied that ghasts don't
