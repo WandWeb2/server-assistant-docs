@@ -91,7 +91,22 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
-<details class="doc-sec" markdown="1" open data-kind="fix">
+<details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>v6.86.0: the <code>[wiki]</code> link works in Minecraft too</summary>
+
+The `[wiki]` source on @sai's in-game answers is now a **real clickable link** — click it in
+chat and the page opens in your browser; hover it to see the page name and full address.
+
+Previously Minecraft chat could only show the citation as text, because chat lines have no
+links. The address now travels alongside the message rather than inside it, which is what
+lets the plugin turn it into something you can actually click — and keeps the line short.
+
+Needs **MCDC plugin v0.18.0** on your Minecraft server (`/mcdc update`, or wait for the
+automatic update). Until then the citation shows as plain text, exactly as before.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v6.85.0: @sai stops telling players something isn't in the game</summary>
 
 **A player asked how far copper golems detect chests and was told they "didn't make it into
@@ -2127,9 +2142,26 @@ Everything stays **local to your server**: nothing is shared anywhere. It's **on
 
 <div class="cl-panel" id="cl-mcdc" role="tabpanel" aria-labelledby="tab-mcdc" markdown="1" hidden>
 
-<p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.17.0</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
+<p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.18.0</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
 
-<details class="doc-sec" markdown="1" open data-kind="fix">
+<details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>v0.18.0: the <code>[wiki]</code> source on an @sai answer is now clickable in game</summary>
+
+@sai's in-game answers end with a `[wiki]` citation naming the page the answer came from.
+Until now that was **text only** — Minecraft chat has no links, so there was nothing to
+click.
+
+**Now `[wiki]` is a real link.** Click it and the wiki page opens in your browser. Hover it
+and you get the page name and the full address, so you can still read or copy it without
+the long URL cluttering chat.
+
+Requires **plugin v0.18.0** — run `/mcdc update` in game, or wait for the automatic update.
+Until your server updates, the citation still appears as plain text exactly as before, so
+nothing is lost by updating late.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v6.85.0: @sai no longer denies that new mobs exist</summary>
 
 Reported in game: *"how far can copper golems detect chests?"* → @sai replied that copper
