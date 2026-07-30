@@ -91,7 +91,27 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
-<details class="doc-sec" markdown="1" open data-kind="fix">
+<details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>v6.89.0: @sai searches properly now — and finds the right page</summary>
+
+**@sai now uses a real search engine to find the right wiki page.** The wiki's own search
+was the weak link: asked "how far can copper golems detect chests" it never returned the
+Copper Golem page at all — so @sai had nothing useful to read and fell back to guessing.
+
+**The answer still comes from the Minecraft wiki.** The search engine only decides *which
+page* to read, and it's restricted to minecraft.wiki, so the source is unchanged — it's just
+far better at finding the right article from a normal question.
+
+**It only searches when it needs to.** If the wiki's own search already found the right page,
+nothing extra happens. The search engine is there for the questions that were previously
+failing, which also keeps it well within its free allowance.
+
+If the search is ever unavailable, @sai simply falls back to what it did before — nothing
+gets worse.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v6.88.0: @sai's in-game replies finish their sentences</summary>
 
 Asked "what's the thing that sorts my items", @sai gave a long answer that ran past its first
@@ -2182,7 +2202,29 @@ Everything stays **local to your server**: nothing is shared anywhere. It's **on
 
 <p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.18.0</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
 
-<details class="doc-sec" markdown="1" open data-kind="fix">
+<details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>v6.89.0: @sai searches properly now — and finds the right page</summary>
+
+**@sai now uses a real search engine to find the right wiki page.** The wiki's own search
+was the weak link: asked "how far can copper golems detect chests" it never returned the
+Copper Golem page at all — so @sai had nothing useful to read and fell back to guessing.
+
+**The answer still comes from the Minecraft wiki.** The search engine only decides *which
+page* to read, and it's restricted to minecraft.wiki, so the source is unchanged — it's just
+far better at finding the right article from a normal question.
+
+**It only searches when it needs to.** If the wiki's own search already found the right page,
+nothing extra happens. The search engine is there for the questions that were previously
+failing, which also keeps it well within its free allowance.
+
+If the search is ever unavailable, @sai simply falls back to what it did before — nothing
+gets worse.
+
+**No plugin update needed.**
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v6.88.0: @sai's in-game replies finish their sentences</summary>
 
 Asked "what's the thing that sorts my items", @sai gave a long answer that ran past its first
