@@ -2310,9 +2310,34 @@ Everything stays **local to your server**: nothing is shared anywhere. It's **on
 
 <div class="cl-panel" id="cl-mcdc" role="tabpanel" aria-labelledby="tab-mcdc" markdown="1" hidden>
 
-<p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.21.0</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
+<p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.22.0</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
 
-<details class="doc-sec" markdown="1" open data-kind="fix">
+<details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>Plugin v0.22.0: your assistant now appears when you type /msg</summary>
+
+Type `/msg` in game and the list of names that pops up now includes your assistant,
+after the real players. Picking it works exactly like `/msg Ody <question>` always has —
+this only makes it **discoverable**, so players who were never told about it can find it.
+
+We said in v0.21.0 that this was impossible. **That was wrong, and we've fixed it.** The
+reasoning was that Minecraft's client builds that list from the players it already knows
+about, without asking the server — which is true, and is why our earlier attempt did
+nothing. What we missed is that the server can ask the client to check with it instead.
+It now does, for this one list.
+
+Nothing else about that list changes: `@a` and `@p` still work, and players hidden by a
+vanish plugin stay hidden. Your assistant is **not** added to the player list or the
+player count — it is only offered as a suggestion while you type.
+
+Server owners who'd rather leave `/msg` completely untouched can set
+`companion.msg-suggest-persona: false` in the plugin's `config.yml`. `/msg <assistant>`
+and `/ody` keep working either way.
+
+Requires **plugin v0.22.0** — servers with auto-update on will pick it up on their own.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>Plugin v0.21.0: you can see your own question again</summary>
 
 Asking with `/ody` or `/msg Ody` sent your question **silently** — nothing appeared in chat,
@@ -2321,8 +2346,10 @@ back to you (only to you) the moment you send it, the same way it always was whe
 through the Allay companion.
 
 We also removed the v0.20.0 attempt to list the assistant in `/msg`'s autocomplete. It
-couldn't work: Minecraft's client builds that list from the players it knows about, without
-asking the server, so no plugin can add to it.
+couldn't work the way it was built: Minecraft's client builds that list from the players it
+knows about, without asking the server. *(We concluded at the time that no plugin could
+ever add to it. That was wrong — **v0.22.0 does it**, by having the server ask the client
+to check with it. This entry is left as written for the record.)*
 
 Use **`/ody <question>`** instead — it's a real command, so it tab-completes normally. The
 first time you use `/msg Ody`, a one-off tip now points you at it.
