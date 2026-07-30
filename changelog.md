@@ -91,7 +91,28 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
-<details class="doc-sec" markdown="1" open data-kind="feature">
+<details class="doc-sec" markdown="1" open data-kind="fix">
+<summary>v6.87.0: @sai stops holding on to a wiki page it wasn't sure about</summary>
+
+When @sai looks something up, it remembers which wiki page it used so the next player asking
+the same thing gets an instant answer. That was sensible for a page it had **confirmed** —
+but it was doing the same for a page it had only **guessed** at, and holding onto a guess for
+a whole day meant one wrong lookup kept being wrong all day, on every server that asked the
+same way.
+
+**A guess is now forgotten within minutes**, so it gets another go. A confirmed page is still
+remembered for a day, because wiki articles don't change that fast.
+
+**And there's now a way to clear it deliberately.** If @sai ever cites a page that's plainly
+wrong, switching the wiki lookup off and back on wipes everything it remembered — you no
+longer have to wait it out.
+
+To be clear about what was never remembered: **@sai's actual answer**. Only which page it
+read. Every player gets a fresh reply.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.86.0: the <code>[wiki]</code> link works in Minecraft too</summary>
 
 The `[wiki]` source on @sai's in-game answers is now a **real clickable link** — click it in
@@ -2144,7 +2165,30 @@ Everything stays **local to your server**: nothing is shared anywhere. It's **on
 
 <p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.18.0</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
 
-<details class="doc-sec" markdown="1" open data-kind="feature">
+<details class="doc-sec" markdown="1" open data-kind="fix">
+<summary>v6.87.0: a guessed wiki page is no longer remembered for a day</summary>
+
+When @sai looks something up, it remembers which wiki page it used so the next player asking
+the same thing gets an instant answer. That was sensible for a page it had **confirmed** —
+but it was doing the same for a page it had only **guessed** at, and holding onto a guess for
+a whole day meant one wrong lookup kept being wrong all day, on every server that asked the
+same way.
+
+**A guess is now forgotten within minutes**, so it gets another go. A confirmed page is still
+remembered for a day, because wiki articles don't change that fast.
+
+**And there's now a way to clear it deliberately.** If @sai ever cites a page that's plainly
+wrong, switching the wiki lookup off and back on wipes everything it remembered — you no
+longer have to wait it out.
+
+To be clear about what was never remembered: **@sai's actual answer**. Only which page it
+read. Every player gets a fresh reply.
+
+**No plugin update needed.**
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v0.18.0: the <code>[wiki]</code> source on an @sai answer is now clickable in game</summary>
 
 @sai's in-game answers end with a `[wiki]` citation naming the page the answer came from.
