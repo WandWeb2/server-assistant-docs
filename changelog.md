@@ -92,6 +92,27 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
 <details class="doc-sec" markdown="1" open data-kind="fix">
+<summary>v6.93.0: @sai stops saying "that isn't in the game"</summary>
+
+Asked how long dried ghasts take to turn into happy ghasts, @sai replied that ghasts don't
+have "dried" or "happy" variants and suggested you were thinking of a mod. They're real —
+waterlog a dried ghast for about 20 minutes to get a ghastling, which grows into a happy
+ghast over another 20.
+
+**The right page was in the search results and lost to a shorter title.** Both *Ghast* and
+*Happy Ghast* came back, and @sai took whichever ranked higher rather than whichever matched
+more of your question. Now the more specific page wins: if you name two words, a two-word
+page title beats a one-word one.
+
+**And a page not mentioning something is no longer treated as proof it doesn't exist.** @sai
+was reading the *Ghast* page, finding nothing about dried or happy variants, and concluding
+they aren't real. It now understands that it's reading part of one page — if the answer isn't
+there, it says it couldn't find it and points you at the wiki, rather than telling you the
+thing doesn't exist.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v6.91.0 &amp; v6.92.0: @sai finds the actual numbers on a wiki page</summary>
 
 Asked "how far can copper golems detect chests", @sai said they don't detect chests from a
@@ -2241,6 +2262,27 @@ Everything stays **local to your server**: nothing is shared anywhere. It's **on
 <p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.18.0</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
 
 <details class="doc-sec" markdown="1" open data-kind="fix">
+<summary>v6.93.0: @sai stops saying "that isn't in the game"</summary>
+
+Asked how long dried ghasts take to turn into happy ghasts, @sai replied that ghasts don't
+have "dried" or "happy" variants and suggested you were thinking of a mod. They're real —
+waterlog a dried ghast for about 20 minutes to get a ghastling, which grows into a happy
+ghast over another 20.
+
+**The right page was in the search results and lost to a shorter title.** Both *Ghast* and
+*Happy Ghast* came back, and @sai took whichever ranked higher rather than whichever matched
+more of your question. Now the more specific page wins: if you name two words, a two-word
+page title beats a one-word one.
+
+**And a page not mentioning something is no longer treated as proof it doesn't exist.** @sai
+was reading the *Ghast* page, finding nothing about dried or happy variants, and concluding
+they aren't real. It now understands that it's reading part of one page — if the answer isn't
+there, it says it couldn't find it and points you at the wiki, rather than telling you the
+thing doesn't exist.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v6.91.0 &amp; v6.92.0: @sai finds the actual numbers on a wiki page</summary>
 
 Asked "how far can copper golems detect chests", @sai said they don't detect chests from a
