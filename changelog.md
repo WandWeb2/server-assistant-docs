@@ -2310,10 +2310,29 @@ Everything stays **local to your server**: nothing is shared anywhere. It's **on
 
 <div class="cl-panel" id="cl-mcdc" role="tabpanel" aria-labelledby="tab-mcdc" markdown="1" hidden>
 
-<p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.20.0</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
+<p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.21.0</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
 
-<details class="doc-sec" markdown="1" open data-kind="feature">
-<summary>Plugin v0.20.0: your assistant shows up when you type /msg</summary>
+<details class="doc-sec" markdown="1" open data-kind="fix">
+<summary>Plugin v0.21.0: you can see your own question again</summary>
+
+Asking with `/ody` or `/msg Ody` sent your question **silently** — nothing appeared in chat,
+so there was no sign it had worked until the answer came back. Your question is now echoed
+back to you (only to you) the moment you send it, the same way it always was when asking
+through the Allay companion.
+
+We also removed the v0.20.0 attempt to list the assistant in `/msg`'s autocomplete. It
+couldn't work: Minecraft's client builds that list from the players it knows about, without
+asking the server, so no plugin can add to it.
+
+Use **`/ody <question>`** instead — it's a real command, so it tab-completes normally. The
+first time you use `/msg Ody`, a one-off tip now points you at it.
+
+Requires **plugin v0.21.0** — servers with auto-update on will pick it up on their own.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
+<summary>Plugin v0.20.0: your assistant shows up when you type /msg (withdrawn in v0.21.0)</summary>
 
 `/msg Ody` already worked — but nothing told you so. The suggestion list that pops up when
 you type `/msg` only showed real players, so unless someone had mentioned it, you'd never
