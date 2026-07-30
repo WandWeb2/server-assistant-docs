@@ -92,6 +92,23 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
 <details class="doc-sec" markdown="1" open data-kind="fix">
+<summary>v6.88.0: @sai's in-game replies finish their sentences</summary>
+
+Asked "what's the thing that sorts my items", @sai gave a long answer that ran past its first
+sentence into a second thought and ended in a "…". Replies should end properly.
+
+**@sai now aims much shorter** — one or two complete sentences — and is told plainly that
+finishing its sentence matters more than saying everything, so it answers the question and
+stops instead of listing every alternative.
+
+**And when a reply does have to be shortened, it now ends properly.** Previously, cutting at
+the end of a sentence *removed the full stop and put a "…" in its place* — so an answer that
+had finished cleanly still looked cut off. A shortened reply now keeps its full stop, and the
+"…" only appears when something genuinely was cut mid-sentence.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v6.87.0: @sai stops holding on to a wiki page it wasn't sure about</summary>
 
 When @sai looks something up, it remembers which wiki page it used so the next player asking
@@ -2166,6 +2183,25 @@ Everything stays **local to your server**: nothing is shared anywhere. It's **on
 <p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.18.0</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
 
 <details class="doc-sec" markdown="1" open data-kind="fix">
+<summary>v6.88.0: @sai's in-game replies finish their sentences</summary>
+
+Asked "what's the thing that sorts my items", @sai gave a long answer that ran past its first
+sentence into a second thought and ended in a "…". Replies should end properly.
+
+**@sai now aims much shorter** — one or two complete sentences — and is told plainly that
+finishing its sentence matters more than saying everything, so it answers the question and
+stops instead of listing every alternative.
+
+**And when a reply does have to be shortened, it now ends properly.** Previously, cutting at
+the end of a sentence *removed the full stop and put a "…" in its place* — so an answer that
+had finished cleanly still looked cut off. A shortened reply now keeps its full stop, and the
+"…" only appears when something genuinely was cut mid-sentence.
+
+**No plugin update needed.**
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v6.87.0: a guessed wiki page is no longer remembered for a day</summary>
 
 When @sai looks something up, it remembers which wiki page it used so the next player asking
