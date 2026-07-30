@@ -2310,9 +2310,30 @@ Everything stays **local to your server**: nothing is shared anywhere. It's **on
 
 <div class="cl-panel" id="cl-mcdc" role="tabpanel" aria-labelledby="tab-mcdc" markdown="1" hidden>
 
-<p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.18.0</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
+<p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.19.0</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
 
-<details class="doc-sec" markdown="1" open data-kind="fix">
+<details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>Plugin v0.19.0: ask @sai privately, and quieter replies in chat</summary>
+
+**Ask @sai without using public chat.** `/ody <question>` — or `/msg Ody <question>`, if
+that's more natural — sends your question straight to the assistant and the answer comes
+back **only to you**. Players asked for this after @sai suggested "@mention them in chat",
+which isn't something you can do from Minecraft. Both work with whatever name you've given
+your assistant.
+
+**@sai's replies no longer say `[Discord]`.** It isn't a Discord player talking — it's your
+server's assistant answering a question — so the tag was misleading.
+
+**And they're grey now**, instead of bright blue, so they sit alongside player chat instead
+of shouting over it. Ordinary bridged Discord messages are unchanged. If you preferred the
+old look, set `sai-to-mc-format` in the plugin config to the same value as
+`discord-to-mc-format`.
+
+Requires **plugin v0.19.0** — servers with auto-update on will pick it up on their own.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v6.96.0: @sai reads the real crafting grid</summary>
 
 Asked how to craft a soul torch, @sai said the soul sand **"replaces the coal at the
