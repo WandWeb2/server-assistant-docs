@@ -15,7 +15,7 @@ lang: en-GB
 # MCDC plugin — the jar is hosted at /downloads/mcdc-plugin.jar (served from this
 # site) so customers can download it without access to the private plugin repo.
 # Bump this when a new plugin jar is dropped into downloads/.
-mcdc_plugin_version: v0.17.0
+mcdc_plugin_version: v0.18.0
 
 # Hero / social-share image (used by Open Graph and Twitter Cards)
 image: /assets/banner.jpeg
