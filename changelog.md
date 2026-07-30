@@ -91,7 +91,27 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
-<details class="doc-sec" markdown="1" open data-kind="fix">
+<details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>v6.94.0: members can open more than one support ticket</summary>
+
+Support tickets were limited to **one open ticket per member**. Someone with two unrelated
+problems had the second refused — so they either waited, or raised it inside the first
+ticket, which is harder for staff to follow, not easier.
+
+**Members can now hold several tickets open at once.** No setup needed; this is the new
+default everywhere.
+
+**Servers that want a limit can set one.** `/tickets` → **Edit panel** → *Max open tickets
+per member*. Leave it blank for unlimited, or enter a number — set it to **1** to keep the
+old behaviour exactly.
+
+**Deleted tickets no longer count against a member.** If staff remove a ticket channel by
+hand, that ticket stops taking up a slot, so nobody is refused support because of a ticket
+that isn't there any more.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v6.93.0: @sai stops saying "that isn't in the game"</summary>
 
 Asked how long dried ghasts take to turn into happy ghasts, @sai replied that ghasts don't
