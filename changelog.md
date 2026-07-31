@@ -92,6 +92,24 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
 <details class="doc-sec" markdown="1" open data-kind="fix">
+<summary>v6.97.0: @sai only links a wiki page when it actually used it</summary>
+
+When @sai answers a Minecraft question it adds a **[wiki]** link to the page it read, so
+you can check it. Sometimes that link pointed at a page the answer hadn't come from — one
+player asked what the chances were that another player would say something, @sai correctly
+said it can't predict that, and then linked the page about the `/say` command.
+
+That link is a claim about where an answer came from, so a wrong one is worse than none:
+you click through, find nothing relevant, and stop trusting the links that are right. @sai
+now checks the finished answer against the page before linking it, and simply leaves the
+link off when it doesn't line up.
+
+Answers themselves are unchanged — this only affects whether a **[wiki]** link is shown.
+You'll see slightly fewer links, and the ones you do see are ones the answer really used.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v6.96.0: @sai reads the real crafting grid</summary>
 
 Asked how to craft a soul torch, @sai said the soul sand **"replaces the coal at the
@@ -2313,6 +2331,24 @@ Everything stays **local to your server**: nothing is shared anywhere. It's **on
 <p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.22.2</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
 
 <details class="doc-sec" markdown="1" open data-kind="fix">
+<summary>v6.97.0: the in-game [wiki] link only appears when @sai used that page</summary>
+
+When you ask @sai a Minecraft question in game, the reply ends with a clickable
+**[wiki]** link to the page it read. Sometimes that link pointed at a page the answer
+hadn't actually come from — a player asked what the chances were that someone would say
+something, @sai correctly said it can't predict that, and still linked the `/say` command
+page.
+
+The link is a claim about where the answer came from, so a wrong one is worse than none.
+@sai now checks the finished answer against the page and leaves the link off when they
+don't line up. Answers are unchanged; you'll just see slightly fewer links, and the ones
+you see are ones the answer really used.
+
+No plugin update needed — this is Server Assistant's side.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>Plugin v0.22.2: the assistant really does appear in /msg now</summary>
 
 **v0.22.0 didn't actually work.** We said the assistant would show up when you type `/msg`,
