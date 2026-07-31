@@ -92,6 +92,36 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
 <details class="doc-sec" markdown="1" open data-kind="fix">
+<summary>v6.99.0: @sai follows the conversation in Minecraft</summary>
+
+A player asked *"@ody hey how do i make a bee farm?"*, got a good answer, then asked
+*"@ody how do i harvest it tho"* — and was told how to harvest wheat, carrots and
+potatoes. Every in-game question was answered on its own, so *"it"* had nothing to point
+at.
+
+**@sai now reads a follow-up in the light of your last few questions**, the same way the
+Discord side already did. Ask about bees, then ask how to harvest it, and you get an
+answer about bees.
+
+**Your private Allay conversation and public chat stay separate.** Something you ask the
+Allay companion privately never shapes an answer everyone else can read, and the other way
+round.
+
+**The memory is short.** It's held only while the bot is running, never saved, and
+forgotten after **10 minutes** of quiet.
+
+**Typing casually no longer sends @sai to the wrong page.** A trailing "tho", "rn", "lol"
+or "pls" was quietly wrecking the lookup: searching *"diamond"* found the Diamond page,
+but *"diamond rn"* found the *Formatting codes* page, and *"nautilus tho"* found nothing
+at all. Casual chat words are now ignored when @sai looks something up.
+
+**Asking about a "farm" now looks up the thing you're farming.** *"bee farm"* was matching
+crop-farming pages — which is exactly where that wheat answer came from. Ask about a bee
+farm and @sai looks up bees. Questions that really are about farming still work as before.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v6.98.0: @sai says when it's not sure, and stops making things up</summary>
 
 A player asked whether piglins can barter the Soul Speed enchantment. @sai got the first
@@ -2355,9 +2385,59 @@ Everything stays **local to your server**: nothing is shared anywhere. It's **on
 
 <div class="cl-panel" id="cl-mcdc" role="tabpanel" aria-labelledby="tab-mcdc" markdown="1" hidden>
 
-<p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.22.2</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
+<p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.22.3</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
 
 <details class="doc-sec" markdown="1" open data-kind="fix">
+<summary>Plugin v0.22.3: @sai's in-game replies are all the same colour again</summary>
+
+Two answers in a row could come out in different colours: the one that ended with a
+`[wiki]` link showed up **white**, while the one without it showed up in the usual
+**grey**. Nothing else about the reply was different, so it looked random from in game.
+
+Adding the clickable `[wiki]` link was rebuilding the line from scratch and losing the
+colours it had already been given — including the assistant's name at the front. A reply
+with no link was left alone, which is why only some of them changed.
+
+**Adding a link now costs the line nothing.** Whatever colours you've set for @sai's
+replies are kept exactly, link or no link.
+
+Update the plugin with `/mcdc update`, or let auto-update pick it up.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
+<summary>v6.99.0: @sai remembers your last few questions in Minecraft</summary>
+
+A player asked *"@ody hey how do i make a bee farm?"*, got a good answer, then asked
+*"@ody how do i harvest it tho"* — and was told how to harvest wheat, carrots and
+potatoes. Every question asked in game was answered on its own, with no idea what came
+before it, so *"it"* had nothing to point at.
+
+**@sai now reads a follow-up in the light of your last few questions**, the same way the
+Discord side already did. Ask about bees, then ask how to harvest it, and the answer is
+about bees.
+
+**Your private Allay conversation and public chat are separate conversations.** Something
+you ask the Allay companion privately never shapes an answer everyone in chat can read,
+and the other way round.
+
+**The memory is short.** It's held only while the bot is running, never saved, and
+forgotten after **10 minutes** of quiet.
+
+**Typing casually no longer sends @sai to the wrong page.** A trailing "tho", "rn", "lol"
+or "pls" was quietly wrecking the lookup: searching *"diamond"* found the Diamond page,
+but *"diamond rn"* found the *Formatting codes* page, and *"nautilus tho"* found nothing
+at all. Casual chat words are now ignored when @sai looks something up.
+
+**Asking about a "farm" now looks up the thing you're farming.** *"bee farm"* was matching
+crop-farming pages — which is exactly where that wheat answer came from. Ask about a bee
+farm and @sai looks up bees. Questions that really are about farming still work as before.
+
+No plugin update needed — this is Server Assistant's side.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v6.98.0: @sai says when it's not sure, and stops making things up</summary>
 
 A player asked whether piglins can barter the Soul Speed enchantment. @sai got the first
