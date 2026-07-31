@@ -2310,9 +2310,30 @@ Everything stays **local to your server**: nothing is shared anywhere. It's **on
 
 <div class="cl-panel" id="cl-mcdc" role="tabpanel" aria-labelledby="tab-mcdc" markdown="1" hidden>
 
-<p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.22.0</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
+<p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.22.2</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
 
-<details class="doc-sec" markdown="1" open data-kind="feature">
+<details class="doc-sec" markdown="1" open data-kind="fix">
+<summary>Plugin v0.22.2: the assistant really does appear in /msg now</summary>
+
+**v0.22.0 didn't actually work.** We said the assistant would show up when you type `/msg`,
+and on a real server it didn't. Sorry — that one got out the door on a check that only
+covered part of the job.
+
+It works now, and one case in particular is worth knowing about: typing `/msg` followed by
+the first letters of your assistant's name, when **no player** on the server has a name
+starting with those letters, previously showed you nothing at all. That was the most
+obvious way to try the feature, which is why it looked completely dead.
+
+Nothing else about the list changed: `@a` and `@p` still work, vanished players stay
+hidden, and your assistant is still **not** added to the player list or the player count.
+
+Requires **plugin v0.22.2** — servers with auto-update on will pick it up on their own.
+Server owners who'd rather leave `/msg` alone entirely can still set
+`companion.msg-suggest-persona: false` in the plugin's `config.yml`.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>Plugin v0.22.0: your assistant now appears when you type /msg</summary>
 
 Type `/msg` in game and the list of names that pops up now includes your assistant,
