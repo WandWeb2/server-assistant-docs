@@ -92,6 +92,33 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
 <details class="doc-sec" markdown="1" open data-kind="fix">
+<summary>v6.98.0: @sai says when it's not sure, and stops making things up</summary>
+
+A player asked whether piglins can barter the Soul Speed enchantment. @sai got the first
+half right — they barter enchanted iron boots — and then added that this was *"the only way
+to get that enchantment without trading with villagers in ancient cities"*. Ancient cities
+have no villagers, and two messages later @sai said so itself. One of the players put it
+plainly: *"ody straight up lying"*.
+
+Two changes:
+
+**It stops adding extra claims.** The page @sai had read said nothing about villagers or
+ancient cities — the invented part was welded onto an otherwise correct answer. It's now
+told, in as many words, not to add specifics its source doesn't support, and to watch for
+the phrasings where that creeps in ("the only way to…", "you can also get it from…").
+
+**When it isn't sure, it says so — and shows you where it looked.** Before, an unconfirmed
+answer came with a quiet "this may have changed in a newer version", which reads like a
+confident answer with a footnote. Now you'll get *"Not sure, but…"* — and, when it used a
+page, the **[wiki]** link to go and check for yourself. Previously unsure answers had no
+link at all, which left you with a hedge and nowhere to take it.
+
+Also fixed: a correct answer about ancient cities was losing its **[wiki]** link because of
+how plurals were matched.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v6.97.0: @sai only links a wiki page when it actually used it</summary>
 
 When @sai answers a Minecraft question it adds a **[wiki]** link to the page it read, so
@@ -2331,6 +2358,33 @@ Everything stays **local to your server**: nothing is shared anywhere. It's **on
 <p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.22.2</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
 
 <details class="doc-sec" markdown="1" open data-kind="fix">
+<summary>v6.98.0: @sai says when it's not sure, and stops making things up</summary>
+
+A player asked whether piglins can barter the Soul Speed enchantment. @sai got the first
+half right — they barter enchanted iron boots — and then added that this was *"the only way
+to get that enchantment without trading with villagers in ancient cities"*. Ancient cities
+have no villagers, and two messages later @sai said so itself. One of the players put it
+plainly: *"ody straight up lying"*.
+
+Two changes:
+
+**It stops adding extra claims.** The page @sai had read said nothing about villagers or
+ancient cities — the invented part was welded onto an otherwise correct answer. It's now
+told, in as many words, not to add specifics its source doesn't support, and to watch for
+the phrasings where that creeps in ("the only way to…", "you can also get it from…").
+
+**When it isn't sure, it says so — and shows you where it looked.** Before, an unconfirmed
+answer came with a quiet "this may have changed in a newer version", which reads like a
+confident answer with a footnote. Now you'll get *"Not sure, but…"* — and, when it used a
+page, the **[wiki]** link to go and check for yourself. Previously unsure answers had no
+link at all, which left you with a hedge and nowhere to take it.
+
+Also fixed: a correct answer about ancient cities was losing its **[wiki]** link because of
+how plurals were matched.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v6.97.0: the in-game [wiki] link only appears when @sai used that page</summary>
 
 When you ask @sai a Minecraft question in game, the reply ends with a clickable
