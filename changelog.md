@@ -92,6 +92,24 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
 <details class="doc-sec" markdown="1" open data-kind="fix">
+<summary>v6.107.0: @sai no longer answers from the wrong wiki page when a common word appears in the question</summary>
+
+**"How far can copper golems detect chests" could get you an answer about chests.** The word
+*chest* in the question was enough to land @sai on the page for *Chest*, and having found a
+page it stopped looking, so the search that would have turned up *Copper Golem* never ran.
+The reply came back as confidently as any other, citing the wrong page.
+
+**A thin match like that no longer ends the search.** @sai keeps looking for the page the
+question is actually about. Questions that were already landing on the right page behave
+exactly as before, and nothing here changes an answer that was already right.
+
+**Ordinary word endings no longer lose the answer.** Asking about *oxidising* wouldn't match
+a section titled *Oxidation*, so the one section that answered the question was skipped.
+@sai now handles everyday English endings, so the question and the heading meet.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v6.106.0: @sai holds a correct answer when someone invents a source, and the permission alert now covers private questions</summary>
 
 **A player talked @sai out of a correct answer by making a source up.** The question was
@@ -2588,6 +2606,33 @@ Everything stays **local to your server**: nothing is shared anywhere. It's **on
 <p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.25.0</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
 
 <details class="doc-sec" markdown="1" open data-kind="fix">
+<summary>v6.107.0: @sai stops answering from the wrong wiki page when a common word appears in the question</summary>
+
+**What happened.** A player asked in in-game chat: *"how far can copper golems detect
+chests"*. @sai answered from the wiki page for **Chest**. The word *chest* was in the
+question, that page matched it, and once a page had been found @sai treated the lookup as
+settled. The proper search, the one that would have found **Copper Golem**, never ran. The
+reply read as confidently as any other and pointed your player at the page it had used,
+which was the wrong one.
+
+**The fix.** A thin match on a stray word no longer counts as having found the page. @sai
+carries on looking for the page the question is really about, and answers from that.
+
+**What this does not change.** Questions that were already landing on the right page behave
+exactly as before. This closes off one way of going wrong; it does not touch answers that
+were already right, and @sai still tells a player when it cannot find anything rather than
+guessing at it.
+
+**Second fix: ordinary word endings.** A player asking about *oxidising* would not match a
+section headed *Oxidation*, so the one section on the page that answered the question was
+passed over. Everyday English endings are now handled, so the wording of the question and
+the wording of the heading meet.
+
+**No plugin update needed.** Both fixes are on Server Assistant's side.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v6.106.0: @sai stops being argued out of a correct answer, and the op-request alert now covers the private companion too</summary>
 
 **What happened.** A player asked @sai a question in in-game chat and got a correct answer,
