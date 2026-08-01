@@ -91,7 +91,37 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
-<details class="doc-sec" markdown="1" open data-kind="fix">
+<details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>v6.101.0: signs, books, name tags and renamed items are filtered too</summary>
+
+**Chat has been filtered and masked for a long time. Every *other* place a player can type
+was not** — so anyone who wanted their words in front of people simply stopped using chat. A
+sign at spawn, a signed book passed round, a name tag on a mob in a public farm, a renamed
+item in a shop: all durable, all public, and none of it filtered.
+
+**Four more surfaces are now covered** — signs, signed books, mob name tags, and item
+renames at an anvil:
+
+- **Other players see the text masked**, exactly as chat is masked — including the same
+  handling of spaced-out and disguised spellings.
+- **Staff get an alert** saying which surface it was, what was really written, and the
+  **coordinates** — so they can walk straight to the sign instead of hunting for it.
+- **Nothing new to configure.** It uses the word filter your server already has, and a
+  server with chat relaying turned off gets none of it.
+
+**Only newly written text is checked.** Signs, books and name tags already in your world
+before this update are never scanned — there is no retroactive sweep. The bypass is closed
+going forward; what's already built stands until someone edits it.
+
+**Anvil renames are reported when the item is taken out**, not while you type — so renaming
+something doesn't spam staff with half-typed words.
+
+**This needs the new plugin (v0.23.0).** Auto-update will pick it up, or run `/mcdc update`
+in game.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v6.100.0: @sai links the right page, keeps up with the topic, and reads the room</summary>
 
 **A wiki link posted to Discord could point at a page the answer never used.** The check
@@ -2420,9 +2450,44 @@ Everything stays **local to your server**: nothing is shared anywhere. It's **on
 
 <div class="cl-panel" id="cl-mcdc" role="tabpanel" aria-labelledby="tab-mcdc" markdown="1" hidden>
 
-<p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.22.3</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
+<p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.23.0</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
 
-<details class="doc-sec" markdown="1" open data-kind="fix">
+<details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>v6.101.0 + plugin v0.23.0: signs, books, name tags and anvil renames are filtered too</summary>
+
+**Chat has been filtered and masked for a long time. Every *other* place a player can type
+was not** — so anyone determined to get their words in front of people simply stopped using
+chat. A sign at spawn, a signed book passed round, a name tag on a mob in the public farm, a
+renamed item in a shop: all durable, all public, and none of it going anywhere near your
+filter.
+
+**Four surfaces are now covered:** signs, signed books, mob name tags, and item renames at
+an anvil.
+
+- **Other players see the text masked**, exactly the way chat is masked — including the same
+  handling of spaced-out and disguised spellings, so the usual workarounds don't get through
+  either.
+- **Your staff get an alert** naming the surface it came from, the text as it was really
+  written, and **the coordinates**. No more asking *"which sign?"* — the alert tells them
+  where to stand.
+- **It uses the word filter your server already has.** Nothing new to configure and no
+  second list to maintain. A server with chat relaying turned off gets none of it.
+
+**Only newly written text is checked.** Anything already in the world before this update —
+signs already standing, books already written, name tags already applied — is never scanned.
+There is no retroactive sweep, so updating won't suddenly flood staff with alerts about a
+build from six months ago. The bypass is closed going forward; what's already there stands
+until someone edits it.
+
+**Anvil renames are reported when the item is taken out of the anvil**, not while you type —
+so renaming a sword doesn't send staff a running commentary of half-typed words.
+
+**This one needs the plugin update** — the checks run on your server. Update with `/mcdc
+update`, or let auto-update pick it up.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v6.100.0: the wiki link in the bridged copy is checked too</summary>
 
 **The copy of @sai's answer posted to your Discord channel could carry a wiki link the
