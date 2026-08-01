@@ -348,7 +348,7 @@ knowing which are commands and which are just chat:
 
 | In-game | What it does | Who |
 |---|---|---|
-| **`/mcdc link <token> <relay-url>`** | Links the bridge to your Discord channel, instantly and with no restart. You only run this **once**, during [Setup](#setup) — the `/mcdc` wizard hands you the whole line pre-filled. | Server **operator**, or the server console |
+| **`/mcdc link <token> <relay-url>`** | Links the bridge to your Discord channel, instantly and with no restart. You only run this **once**, during [Setup](#setup) — the `/mcdc` wizard hands you the whole line pre-filled. **From plugin v0.24.0 this must be run at the server console, not typed in game.** A command typed in chat is readable by every other plugin on your server and is written to your server log, so a token pasted there should be treated as exposed. If you would rather not use the console, paste the `relay-url` and `token` block from the `/mcdc` wizard straight into `config.yml` instead — that never puts the token through a command at all. | The server **console** only |
 | **`/saportal`** | Prints your **customer portal** address into chat as a clickable link, so a player can reach their account without hunting for the URL. The address is served by Server Assistant, so it stays correct without a plugin update. | Players |
 | **`!link <code>`** | Not a command — a **chat message**. Redeems the one-time code `/link` gave you in Discord, within **15 minutes**. See [Link your account](#link-your-account). | Any player |
 | **`@sai …`** · **`!sai …`** · **`!ai …`** | Also chat, not commands. Ask the assistant a question in-game. Subject to your **access** setting. See [Ask SAi in-game](#ask-sai-in-game). | Depends on access |

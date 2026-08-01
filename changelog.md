@@ -92,6 +92,68 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
 <details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>v6.102.0 + v6.103.0: emotes, private messages and usernames are filtered too — and staff are told when in-game moderation stops</summary>
+
+**v6.101.0 covered signs, books, item names and mob name tags. It didn't cover everything.**
+That release was scoped from what someone reported; this one is scoped from actually working
+through every place a player can put text in front of another player. Three more, and the
+first is the widest of the lot:
+
+- **`/me` emotes.** They broadcast to everyone on the server, and they were never filtered at
+  all — not masked, not flagged, not even carried to Discord. Anyone who knew about it had a
+  clear line to the whole server.
+- **Private messages** (`/msg`, `/tell`, `/w`) — where harassment goes the moment public chat
+  is filtered, and where staff previously had no visibility whatsoever.
+- **Usernames.** An offensive name arrives with the player and is repeated every session. It
+  can't be masked — a name is an identity your server, Discord and your permissions plugin all
+  key off — so it raises a staff alert on join and staff decide what to do.
+
+**And a gap in the last release, said plainly.** Books were only checked once they were
+**signed**, which missed the simplest trick going: write it, never sign it, leave it in a chest
+for someone to read. Draft books are now checked as they're written. The author keeps their own
+draft exactly as they typed it; the masking applies when the book leaves their hands.
+
+That brings the total to **eight** places covered — chat, signs, books, item names, mob name
+tags, `/me` emotes, usernames and private messages — all on the one AutoMod switch you already
+have.
+
+**About private messages, stated plainly rather than buried.** Every private message on a
+bridged server is **sent to us and checked — all of them, not just the bad ones**. There's no
+way to know whether a message contains harassment without checking it, and the filter that can
+tell is the one on our side. **No person reads a message that doesn't match.** The check is
+automated end to end; a message that matches nothing is deleted within about a day and leaves no
+record anywhere. Only a message that actually trips your filter reaches a human, and then only
+your own server's staff. No AI provider is involved at any point. The full reasoning, the
+limits, and your right to object are in the
+[Privacy Policy]({{ '/privacy/' | relative_url }}).
+
+**Every player joining is told, in game, that private messages are checked** — and that notice
+is **mandatory**. A server owner can't switch it off, reword it, or edit the clause out.
+
+**Staff are now told when in-game moderation stops running (v6.103.0).** If a linked Minecraft
+server goes quiet — server down, plugin stopped, a setting wrong — nothing used to say so. Staff
+chat stayed silent and everyone carried on assuming the filter was still working, which is the
+worst way for a safety feature to fail. Staff chat now gets a plain **"in-game moderation is NOT
+running"** alert, with when the server was last seen and the handful of things worth checking,
+and a short confirmation when it comes back. It waits about **15 minutes** first, so an ordinary
+restart doesn't cry wolf, and it sends **one alert per outage** rather than repeating.
+
+**Two security changes on the plugin side.** The relay address must now be **`https://`** — a
+server still set to a plaintext address is upgraded and retried automatically, and only if that
+fails does the bridge stop sending, loudly rather than quietly carrying on in the clear. And
+**`/mcdc link` must now be run from the server console, not typed in chat.** That was our own
+setup instruction and it was wrong: a token typed into in-game chat can be read by every other
+plugin on the server, and it lands in the server log.
+
+**If you have ever pasted your link token into in-game chat, regenerate it from the `/mcdc`
+panel.** It takes seconds, and it's the one thing here that needs you to actually do something.
+
+**This needs the new plugin (v0.24.0).** Auto-update will pick it up, or run `/mcdc update` in
+game.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.101.0: signs, books, name tags and renamed items are filtered too</summary>
 
 **Chat has been filtered and masked for a long time. Every *other* place a player can type
@@ -2450,9 +2512,124 @@ Everything stays **local to your server**: nothing is shared anywhere. It's **on
 
 <div class="cl-panel" id="cl-mcdc" role="tabpanel" aria-labelledby="tab-mcdc" markdown="1" hidden>
 
-<p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.23.0</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
+<p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.24.0</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
 
 <details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>v6.102.0 + v6.103.0 + plugin v0.24.0: emotes, private messages and usernames are filtered too — plus an https requirement and a token worth regenerating</summary>
+
+**Read this first if you read nothing else: if you have ever typed your link token into
+in-game chat, regenerate it from the `/mcdc` panel.** Details at the bottom. Everything else
+in this release happens on its own.
+
+**v6.101.0 covered signs, books, item names and mob name tags. It didn't cover everything.**
+That release was scoped from what an operator reported — signs. This one is scoped from
+working through every place on a server where a player can put text in front of another
+player. Three more, and the first was the widest of the lot:
+
+- **`/me` emotes.** An emote goes to every player on the server, and it never fires the chat
+  event — so it slipped past masking, past flagging and past the Discord bridge all at once.
+  Nothing your filter did had ever touched it. It's the oldest chat bypass there is, and it
+  was wide open.
+- **Private messages** (`/msg`, `/tell`, `/w`). Once public chat is filtered, targeted
+  harassment moves here — and you had no visibility into it at all: no masking, no alert,
+  nothing.
+- **Usernames.** An offensive name is repeated into your Discord channel every session that
+  player plays. This one is **flag-only**: a name is an identity your Minecraft server,
+  Discord and LuckPerms all key off, so quietly rewriting it in one place would help nobody.
+  Staff get an alert on join, and staff decide.
+
+**Draft books — a gap in the last plugin release, and worth naming as one.** v0.23.0 checked a
+book when it was **signed**, which missed the simplest workaround available: write it, never
+sign it, leave it in a chest for someone to pick up. Books are now checked **as they're
+written**. The author's own copy stays exactly as they typed it — nobody's draft gets mangled
+while they're still writing it — and the masking applies once the book leaves their hands.
+
+That brings the total to **eight** places covered: chat, signs, books, item names, mob name
+tags, `/me` emotes, usernames and private messages. All eight follow the **same single AutoMod
+switch** — nothing extra to enable, no second word list to maintain, and a server with chat
+relaying off gets none of it.
+
+**As before, checked is not the same as bridged.** Chat is still the only thing mirrored into
+your Discord channel. Emotes, private messages and usernames are checked and flagged, never
+posted there.
+
+**Private messages — the part you should be able to explain to your players.** We'd rather you
+heard this from us in plain terms than worked it out later:
+
+- **Every private message is sent to us and checked — all of them, not just the ones that turn
+  out to be bad.** There's no way to tell whether a message contains harassment without
+  checking it, and the filter that can tell is your Discord server's AutoMod, which runs on our
+  side.
+- **No person reads one that doesn't match.** The check is software from end to end. A message
+  that matches nothing is deleted from the queue it's checked from within about a day, and no
+  record of it is written anywhere — not your moderation log, not a decision card, nothing.
+- **A message that does match reaches your staff, and only your staff** — as an ordinary flag
+  alert, naming who it was aimed at, because a moderator handling harassment needs to know who
+  is on the receiving end.
+- **No AI provider is involved**, on any plan, at any point. It is deterministic
+  pattern-matching.
+- **There is no separate switch** — and, to be equally plain about the other side of that, no
+  setting that filters public chat while leaving private messages unchecked.
+
+Why it works this way, the balancing test behind it, the alternative we rejected and why, and
+your players' right to object are all set out in the
+[Privacy Policy]({{ '/privacy/' | relative_url }}).
+
+**Every player joining sees an in-game notice saying private messages are checked for abuse,
+and you cannot switch it off.** It isn't the `join-notice` key, it isn't in your config, and it
+ignores the relay override — it is separate from your own bridge notice, which stays yours to
+reword or disable. This filtering has no opt-in moment, and for a player who never joins your
+Discord that line is the only notice that ever reaches them, so it isn't something an operator
+can remove. Say it in your server rules as well.
+
+**Your staff are now told when in-game moderation stops running.** If your Minecraft server
+stopped checking in — server down, plugin crashed, token revoked, a setting wrong, network cut
+— **nothing told anybody**. Staff chat simply went quiet, and everyone carried on believing
+in-game moderation was still running when it wasn't. A safety feature that fails silently is
+worse than one that was never installed.
+
+Staff chat now gets a clear **"in-game moderation is NOT running"** alert, naming when your
+server was last seen and the few things worth checking (starting with the relay address), plus
+a short confirmation when the bridge comes back. It also lands on the portal's needs-attention
+rail, because the fix isn't a button in Discord — someone has to go and look at the Minecraft
+server, and a chat message scrolls away while the bridge stays dead.
+
+- **It waits about 15 minutes first.** A restart, a big world loading, a long plugin list —
+  none of those should raise an alarm. The cost is that a genuinely dead bridge can go
+  unreported for around a quarter of an hour, which is the right trade: an alert that fires
+  every time you reboot is an alert everyone learns to ignore.
+- **One alert per outage**, not one per check, with a cooldown so a flapping connection can't
+  fill your staff chat. If a down alert was suppressed, you won't get an orphan "it's back"
+  line for it either.
+- **Never for a server that isn't linked**, and never for one still being set up.
+- **Not tied to the health-alerts toggle.** Muting those meant muting server-lag chatter, not
+  agreeing to be kept in the dark about moderation failing.
+
+**Security: the relay address must now be `https://`.** A plaintext address is upgraded to
+`https://` and retried automatically, so nearly every server will migrate without touching
+anything. Only if that retry fails does the bridge **stop sending** — deliberately, and
+loudly, rather than putting your link token on the wire in the clear. That is exactly why the
+offline alert above shipped alongside it: if your bridge does stop, the alert is what tells
+you.
+
+**Security: `/mcdc link` must now be run from the server console, not typed in chat.** Our own
+setup instructions used to tell you to run it in game, and that was wrong. A command typed into
+in-game chat can be read by every other plugin on the server, and it is written into your
+server log — so the token, which is the credential to your bridge, was exposed to both. Running
+it from the console keeps it out of chat and out of the log, and the `/mcdc` wizard now hands
+you the line for the console.
+
+**So: if you have ever pasted your link token into in-game chat, regenerate it.** Open
+`/mcdc`, generate a fresh token, and run the new line from your server console. An old token
+keeps working until you replace it — which is precisely the reason to replace one that has
+been in chat. Nothing else in this release needs anything from you; this does.
+
+**This one needs the plugin update** — the checks run on your server. Update with `/mcdc
+update`, or let auto-update stage it for your next restart.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.101.0 + plugin v0.23.0: signs, books, name tags and anvil renames are filtered too</summary>
 
 **Chat has been filtered and masked for a long time. Every *other* place a player can type
