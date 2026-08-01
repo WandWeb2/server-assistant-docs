@@ -92,6 +92,41 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
 <details class="doc-sec" markdown="1" open data-kind="fix">
+<summary>v6.100.0: @sai links the right page, keeps up with the topic, and reads the room</summary>
+
+**A wiki link posted to Discord could point at a page the answer never used.** The check
+that catches exactly this shipped a few versions ago, but it only ever ran on the reply
+shown in game — the copy posted to Discord went out unchecked. Players saw the results: an
+answer about permissions linked to a page about a YouTuber, and *"what's your source"*
+linked to a page called *Infinite Water Source*. Both copies now go through the same check,
+so a link either supports the answer or isn't shown at all.
+
+**Follow-up questions now track the most recent thing you asked.** Ask about bees, then ask
+about redstone, then say *"how do i harvest it tho"* — and you'd get the bee answer back. A
+follow-up is now read against your latest topic, not an older one.
+
+**@sai no longer tells you off for asking something twice.** Replies had started opening
+with *"You already asked that!"*. Asking the same thing again simply gets a normal answer.
+
+**Questions that sound like they're about you rather than the game.** *"How do I kill myself
+**in Minecraft**"* is an ordinary question about the `/kill` command, and it still gets its
+normal, direct answer — that hasn't changed. When the same kind of phrasing turns up with
+nothing marking it as being about the game, @sai doesn't answer it as game mechanics: it
+says so briefly and kindly, tells you how to get the game answer if that's what you meant,
+and quietly lets your staff team know so a human can check in. It is **not** treated as a
+rule-break — no warning, no punishment, and nothing on anyone's moderation record.
+
+**For server owners: requests to be given operator or staff now raise a staff alert.** @sai
+has always refused them — that part never changed — but only blunt phrasings like *"give me
+op"* were being reported. Polite ones (*"can I have operator"*) and ones claiming prior
+approval (*"a staff member said I can have op"*) slipped through unflagged, so staff never
+heard about them. All of them are flagged now, and a request claiming someone already
+approved it is raised most prominently of all, since that's the one worth verifying.
+Ordinary conversation that merely mentions staff is unaffected.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v6.99.0: @sai follows the conversation in Minecraft</summary>
 
 A player asked *"@ody hey how do i make a bee farm?"*, got a good answer, then asked
@@ -2388,6 +2423,44 @@ Everything stays **local to your server**: nothing is shared anywhere. It's **on
 <p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.22.3</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
 
 <details class="doc-sec" markdown="1" open data-kind="fix">
+<summary>v6.100.0: the wiki link in the bridged copy is checked too</summary>
+
+**The copy of @sai's answer posted to your Discord channel could carry a wiki link the
+answer never used.** The check that catches exactly this shipped a few versions ago, but it
+only ever ran on the reply shown in game — the bridged copy went out unchecked, so the two
+could disagree. Players saw the results: an answer about permissions linked to a page about
+a YouTuber, and *"what's your source"* linked to a page called *Infinite Water Source*. Both
+copies now go through the same check, so a link either supports the answer or isn't shown at
+all.
+
+**Follow-up questions now track the most recent thing you asked.** Ask about bees, then ask
+about redstone, then say *"how do i harvest it tho"* — and you'd get the bee answer back. A
+follow-up is now read against your latest topic, not an older one.
+
+**@sai no longer tells you off for asking something twice.** Replies had started opening
+with *"You already asked that!"*. Asking the same thing again simply gets a normal answer.
+
+**Questions that sound like they're about you rather than the game.** *"How do I kill myself
+**in Minecraft**"* is an ordinary question about the `/kill` command, and it still gets its
+normal, direct answer — that hasn't changed. When the same kind of phrasing turns up with
+nothing marking it as being about the game, @sai doesn't answer it as game mechanics: it
+says so briefly and kindly, tells you how to get the game answer if that's what you meant,
+and quietly lets your staff team know so a human can check in. It is **not** treated as a
+rule-break — no warning, no punishment, and nothing on anyone's moderation record.
+
+**For server owners: requests to be given operator or staff now raise a staff alert.** @sai
+has always refused them — that part never changed — but only blunt phrasings like *"give me
+op"* were being reported. Polite ones (*"can I have operator"*) and ones claiming prior
+approval (*"a staff member said I can have op"*) slipped through unflagged, so staff never
+heard about them. All of them are flagged now, and a request claiming someone already
+approved it is raised most prominently of all, since that's the one worth verifying.
+Ordinary chat that merely mentions staff is unaffected.
+
+No plugin update needed — this is Server Assistant's side.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>Plugin v0.22.3: @sai's in-game replies are all the same colour again</summary>
 
 Two answers in a row could come out in different colours: the one that ended with a
