@@ -92,6 +92,42 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
 <details class="doc-sec" markdown="1" open data-kind="fix">
+<summary>v6.106.0: @sai holds a correct answer when someone invents a source, and the permission alert now covers private questions</summary>
+
+**A player talked @sai out of a correct answer by making a source up.** The question was
+asked in Minecraft, and @sai answered it correctly from a page it had looked up on the
+wiki. The player then said *"the wiki says I need op"*. That was not true, and they later
+admitted making it up. @sai took them at their word, said it had been wrong, and reversed
+an answer that was right.
+
+**@sai now remembers which page an answer came from.** So when someone says a source says
+otherwise, it can tell the difference between a page it actually read and a claim about a
+page. If there is something real behind its answer it keeps it, names the page it used, and
+offers to check again.
+
+**A genuine correction still works.** Tell it a recipe changed in a particular version, or
+tell it what you just saw in game, and it will look again and update. What it now declines
+is a bare *"the wiki says otherwise"* with nothing behind it.
+
+**When it hasn't looked anything up, it stays open**, exactly as before. It doesn't start
+insisting it is right from memory, and it still won't tell you something isn't in the game.
+
+**Asking the private in-world companion for op now raises a staff alert too.** Asking in
+public chat always has. Asking privately raised nothing at all, so the one place nobody else
+could see was also the one nobody was watching. The same check now also covers signs, books,
+item names, name tags, `/me` emotes and private messages.
+
+**A correction to what the v6.100.0 notes told you.** They said a request claiming someone
+had already approved it is raised most prominently of all. That was true of chat and not of
+the private companion. It is true now.
+
+**Still alert only.** Server Assistant has never changed anyone's permissions or ranks
+because they asked, and it never will. Nobody is punished for asking either: staff are simply
+told, and staff decide.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v6.104.0 + v6.105.0: link tokens our old setup instructions put into chat are replaced for you</summary>
 
 **Our own setup instructions used to tell you to type your bridge link token into in-game
@@ -2552,6 +2588,60 @@ Everything stays **local to your server**: nothing is shared anywhere. It's **on
 <p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.25.0</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
 
 <details class="doc-sec" markdown="1" open data-kind="fix">
+<summary>v6.106.0: @sai stops being argued out of a correct answer, and the op-request alert now covers the private companion too</summary>
+
+**What happened.** A player asked @sai a question in in-game chat and got a correct answer,
+one @sai had looked up on the Minecraft wiki before replying. The player
+came back with *"the wiki says I need op"*. There is no such line on that page: the player
+made it up, and said so afterwards. @sai apologised, agreed it had been wrong, and replaced
+a correct answer with the player's invention. Anyone reading the chat then had the wrong
+answer, from your assistant, with its apology attached.
+
+**The fix, in one line: @sai now remembers which page an answer came from.** Before, an
+answer and the page behind it came apart the moment the reply was sent, so *"the wiki says
+otherwise"* had nothing to be measured against and the safest thing @sai could do was defer.
+Now it can tell the difference between a page it actually read and somebody's claim about a
+page. When it has something real behind an answer, it holds it, says which page it used, and
+offers to go and check again.
+
+**The limits are the interesting part, so here they are plainly:**
+
+- **A real correction still lands.** If you tell @sai that a recipe changed in a specific
+  version, or describe what you have just seen on your own server, it treats that as new
+  information, checks again, and updates its answer. Being harder to bluff is not the same as
+  being stubborn.
+- **What it declines is the empty version:** *"that's wrong, the wiki says so"*, with no
+  version, no detail and nothing it can go and look at.
+- **When @sai hasn't looked anything up, nothing changes.** It stays open to being corrected
+  exactly as it was. It does not start defending answers it is holding from memory, and the
+  behaviour from v6.93.0 stands: it still won't tell a player something isn't in the game.
+
+**Second change: the permission-request alert now covers every surface.** Since v6.100.0,
+asking @sai in public chat to be given op or staff has raised a staff alert. Asking the
+**private in-world companion** the same thing raised nothing whatsoever, which is the wrong
+way round: the private route is the one your moderators cannot read over someone's shoulder,
+so it was the least visible way to try it and the one with no alert on it. That is closed.
+The check now runs on the private companion as well as chat, and on the other text surfaces
+your server already has covered: signs, books, item names, mob name tags, `/me` emotes and
+private messages.
+
+**We told you something that wasn't true, so here it is corrected.** The v6.100.0 notes said
+a request claiming someone had already approved it is raised most prominently of all. That
+was true of public chat, and it was not true of the private companion, where the request
+raised nothing at all. It is true everywhere now.
+
+**Nothing about this grants anything, and nobody gets punished for asking.** Server Assistant
+does not change permissions, roles or ranks because someone asked it to, on any surface, in
+any wording, whoever they claim sent them. Real permission changes are made by your staff in
+Discord or in LuckPerms, directly. All the alert does is tell your staff it was asked, so a
+human can decide whether it is worth a look. A player who asks out of curiosity gets a refusal
+and no consequence.
+
+**No plugin update needed.** Both changes are on Server Assistant's side.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v6.104.0 + v6.105.0 + plugin v0.25.0: link tokens exposed by our old setup instructions are replaced for you, and the setup code is now single use</summary>
 
 **Read this first: most servers need to do nothing, and your staff chat will say which
