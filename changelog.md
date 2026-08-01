@@ -91,7 +91,44 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
-<details class="doc-sec" markdown="1" open data-kind="feature">
+<details class="doc-sec" markdown="1" open data-kind="fix">
+<summary>v6.104.0 + v6.105.0: link tokens our old setup instructions put into chat are replaced for you</summary>
+
+**Our own setup instructions used to tell you to type your bridge link token into in-game
+chat. That was wrong.** A command typed in chat can be read by every other plugin running on
+the server, and it is written into your server log. Plugin v0.24.0 stopped accepting the
+command there. This release deals with the tokens that were already exposed by it.
+
+**Most servers are handled automatically, with nothing to do.** If your Minecraft server is on
+plugin v0.25.0 or newer, its token is replaced for you over the encrypted connection the
+plugin already has. Nothing is typed anywhere, nothing is shown in Discord, and nothing reaches
+a log file. Your staff chat gets a short card confirming it is done and that no action is
+needed from you.
+
+**Your bridge does not go down while it happens.** The old token keeps working until the new
+one is confirmed working, so there is no window where the bridge is broken.
+
+**Servers still on an older plugin cannot be done this way.** Their staff chat gets a card
+saying so, with step by step instructions for doing it by hand. If an automatic attempt does
+not complete, that staff chat gets the manual instructions too.
+
+**This is a one off, not an ongoing rotation service.** Once a server has been moved onto a
+token issued this way, it is not swapped again.
+
+**The setup code in the `/mcdc` panel is now single use and expires after 30 minutes.** It used
+to be presented as though it were permanent, which was wrong for a credential. The panel now
+leads with the `config.yml` route rather than the command, because that route never puts the
+code through a command at all, and there is a **🔄 Regenerate token** button when you want a
+fresh one.
+
+**If you have ever pasted your token into in-game chat and you are not covered by the automatic
+path above, regenerate it.** That is the one thing in this release that needs anything from you.
+
+**This pairs with plugin v0.25.0.** Auto-update will pick it up, or run `/mcdc update` in game.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.102.0 + v6.103.0: emotes, private messages and usernames are filtered too — and staff are told when in-game moderation stops</summary>
 
 **v6.101.0 covered signs, books, item names and mob name tags. It didn't cover everything.**
@@ -2512,9 +2549,59 @@ Everything stays **local to your server**: nothing is shared anywhere. It's **on
 
 <div class="cl-panel" id="cl-mcdc" role="tabpanel" aria-labelledby="tab-mcdc" markdown="1" hidden>
 
-<p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.24.0</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
+<p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.25.0</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
 
-<details class="doc-sec" markdown="1" open data-kind="feature">
+<details class="doc-sec" markdown="1" open data-kind="fix">
+<summary>v6.104.0 + v6.105.0 + plugin v0.25.0: link tokens exposed by our old setup instructions are replaced for you, and the setup code is now single use</summary>
+
+**Read this first: most servers need to do nothing, and your staff chat will say which
+group yours is in.**
+
+**The problem, stated plainly.** Our own setup instructions used to tell you to type
+`/mcdc link` with your token into in-game chat. That was wrong. A command typed in chat can be
+read by every other plugin running on the server, and it is written into `latest.log`. So for
+any server that followed those instructions, the credential to its bridge went to both places.
+Plugin v0.24.0 already stopped accepting the command in chat. This release is the other half of
+that: dealing with the tokens that were exposed before it landed.
+
+**If your server is on plugin v0.25.0 or newer, it is replaced automatically.** The new token
+is delivered over the encrypted connection your plugin already holds. It is never typed into
+chat or a console, never shown in Discord, and never written to a log on either side. Your
+staff chat gets a confirmation card telling you it is done and that nothing is needed from you.
+
+**Nothing goes offline while it happens.** The old token stays valid until the new one has been
+confirmed working. There is no gap, no restart, and no window where the bridge is dead. If you
+were watching the bridge closely you would not notice.
+
+**If your server is on an older plugin, it cannot be done automatically.** There is no
+trustworthy way to hand a new credential to a plugin that has no way of receiving one. That
+staff chat gets a card explaining exactly that, followed by the manual steps: mint a fresh code
+in `/mcdc`, put it in `config.yml`, restart. The same card is sent if an automatic attempt
+starts and does not complete, so nobody is left assuming they were covered when they were not.
+
+**This runs once, and only once.** It is a migration, not a rotation service. Once a server is
+holding a token that was issued automatically, it is not swapped again, and you will not get
+this card a second time.
+
+**The setup code in `/mcdc` is now single use and expires after 30 minutes.** Previously it was
+presented in a way that implied it stayed valid indefinitely, which is not how a credential
+should be handled. A code now covers one link and then stops working, and it lapses on its own
+if you generate it and get distracted.
+
+**The `/mcdc` panel leads with the `config.yml` route now.** It is listed first because it
+never puts the code through a command at all, which removes the whole class of problem this
+release exists to clean up. The console command is still there for anyone who prefers it. A
+**🔄 Regenerate token** button sits alongside for minting a fresh code whenever you want one.
+
+**So, the one thing worth acting on:** if you have ever pasted your token into in-game chat and
+your server is **not** on plugin v0.25.0 or newer, regenerate. Everyone else is already
+handled, and the card in your staff chat will tell you which of those you are.
+
+**Plugin v0.25.0 is what makes the automatic path possible.** It is the build that tells us which version your server is running, which is how we know a replacement can be sent safely. Auto-update will pick it up, or run `/mcdc update` from your server console.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.102.0 + v6.103.0 + plugin v0.24.0: emotes, private messages and usernames are filtered too — plus an https requirement and a token worth regenerating</summary>
 
 **Read this first if you read nothing else: if you have ever typed your link token into
