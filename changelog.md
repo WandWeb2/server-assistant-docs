@@ -91,7 +91,37 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
-<details class="doc-sec" markdown="1" open data-kind="fix">
+<details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>v6.108.0 + v6.109.0: @sai reads the stats box on a wiki page, and only gives a number it can stand behind</summary>
+
+**Ask how much health a creeper has and the number is now in the answer.** Health, damage,
+hitbox size, durability: those live in the stats box at the top of a wiki article, not in the
+writing, so until now an answer depended on the number happening to turn up in a sentence
+somewhere. A creeper's 20 health appears nowhere in the prose of its page.
+
+**The more useful half is what @sai refuses to answer.**
+
+- **Where the wiki gives two different numbers for the same thing, you get neither as a flat
+  answer.** A wolf has 8 health wild and 40 tamed. A creeper is 1.7 blocks tall in Java and
+  1.8 in Bedrock. Picking one of those would be confidently wrong for half the people asking,
+  so @sai says the page gives more than one instead of choosing.
+- **Where a value genuinely has two labelled sides, both are named.** A diamond sword is 1561
+  uses in Java and 1562 in Bedrock, and you get both, each with its edition.
+- **Where the number is not actually written on the page, @sai says so rather than
+  estimating.**
+
+**Two honesty fixes came with it.** The rule that stops @sai adding facts that were not on the
+page it read only applied when a page had been found. When a lookup came up empty, which is
+the common case, the rule was not there at all. It now applies either way. This is the other
+half of the fix for @sai describing villagers as living somewhere they do not.
+
+**@sai also stays consistent with what it already told you.** It could reverse a correct
+answer later in the same conversation without anyone challenging it. If it does need to
+correct itself, it now says what changed.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v6.107.0: @sai no longer answers from the wrong wiki page when a common word appears in the question</summary>
 
 **"How far can copper golems detect chests" could get you an answer about chests.** The word
@@ -2605,7 +2635,45 @@ Everything stays **local to your server**: nothing is shared anywhere. It's **on
 
 <p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.25.0</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
 
-<details class="doc-sec" markdown="1" open data-kind="fix">
+<details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>v6.108.0 + v6.109.0: @sai answers with the numbers from a wiki page's stats box, and holds back the ones the wiki disagrees with itself on</summary>
+
+**What players were asking for.** Hard numbers. How much health a creeper has, how tall it is,
+how many uses a diamond sword has, how much damage something does. Those values live in the
+stats box at the top of a wiki article rather than in the writing underneath it, and @sai only
+read the writing. So the answer depended on the number happening to appear in a sentence, and
+a creeper's 20 health appears nowhere in the prose of its page. @sai now reads that box.
+
+**The part worth knowing about is what it will not answer.** A number given confidently and
+wrongly is worse for your server than no number, so three rules sit on top of this:
+
+- **Where the wiki lists two different values for the same thing, @sai gives neither as a flat
+  answer.** A wolf has 8 health wild and 40 tamed. A creeper is 1.7 blocks tall in Java and
+  1.8 in Bedrock. Answering with one of those would be confidently wrong for half the players
+  asking, so @sai tells the player the page gives more than one rather than picking.
+- **Where a value has two properly labelled sides, both are named.** A diamond sword is 1561
+  uses in Java and 1562 in Bedrock, and the player gets both, each labelled with its edition,
+  which is an answer rather than a dodge.
+- **Where the number is not actually written on the page, @sai says so.** It does not estimate
+  one, and it does not fall back on what it thinks it remembers.
+
+**Two honesty fixes shipped alongside it.**
+
+- **The rule that keeps @sai to what was on the page now applies even when there was no page.**
+  It only ran when a lookup had found something. When the lookup came up empty, which is the
+  common case for an off-topic or oddly worded question, the rule was not applied at all,
+  which is exactly the moment it is needed. This is the other half of the fix for @sai
+  describing villagers as living somewhere they do not.
+- **@sai stays consistent with what it has already told a player.** It could reverse a correct
+  answer later in the same conversation with nobody having challenged it, which reads to your
+  players as an assistant that cannot be relied on twice. If it genuinely needs to correct
+  itself, it says what changed.
+
+**No plugin update needed.** All of this is on Server Assistant's side.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v6.107.0: @sai stops answering from the wrong wiki page when a common word appears in the question</summary>
 
 **What happened.** A player asked in in-game chat: *"how far can copper golems detect
