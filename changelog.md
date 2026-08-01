@@ -2633,9 +2633,45 @@ Everything stays **local to your server**: nothing is shared anywhere. It's **on
 
 <div class="cl-panel" id="cl-mcdc" role="tabpanel" aria-labelledby="tab-mcdc" markdown="1" hidden>
 
-<p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.25.0</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
+<p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.26.0</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
 
-<details class="doc-sec" markdown="1" open data-kind="feature">
+<details class="doc-sec" markdown="1" open data-kind="fix">
+<summary>Plugin v0.26.0: the notice players see when they join now names everything that is checked, not just DMs</summary>
+
+**What players see now.** The grey line shown once on joining reads:
+
+> Chat and DMs are checked for abuse. Be good, have fun!
+
+It used to read `[MCDC] Private messages here are checked for abuse.`
+
+**Why it changed: the old wording was too narrow to be accurate.** It named private messages
+and nothing else, so the fair conclusion from reading it was that everything else went
+unread. That has not been true for several releases. The filter covers in-game chat, signs,
+written books, item and anvil renames, mob name tags, `/me` emotes, usernames and private
+messages, plus the private companion ask on Server Assistant's side. A player who put
+something on a sign believing only DMs were looked at had been told that by us.
+
+The new line covers the whole surface in one sentence, and still says DMs explicitly,
+because that is the part nobody would otherwise assume.
+
+**The `[MCDC]` prefix is gone from this one line.** It keeps its grey colour, so it still
+reads as the server speaking rather than as another player in chat. The separate bridge
+notice, the one telling players that chat here reaches Discord, is unchanged and keeps its
+prefix.
+
+**What has not changed.** The notice is still mandatory and nothing here can switch it off:
+it is compiled into the plugin rather than being a setting, so `join-notice: false` does not
+touch it, rewording `join-notice-text` does not reach it, and it cannot be overridden from
+the Server Assistant side. The single condition on it is also unchanged: it is only sent
+when the filtering it describes is actually running, so an unlinked or idle bridge stays
+quiet instead of promising a check that is not happening.
+
+**Nothing to do.** No config change, no new key, no setting to review. Auto-update will pick
+this up, or run `/mcdc update` from your server console.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.108.0 + v6.109.0: @sai answers with the numbers from a wiki page's stats box, and holds back the ones the wiki disagrees with itself on</summary>
 
 **What players were asking for.** Hard numbers. How much health a creeper has, how tall it is,
