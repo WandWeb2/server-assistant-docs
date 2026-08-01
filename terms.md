@@ -7,7 +7,7 @@ description: Server Assistant terms of use, permitted use, moderation responsibi
 # Server Assistant Terms of Service
 
 **Effective date:** May 9, 2026
-**Last updated:** July 25, 2026
+**Last updated:** August 1, 2026
 
 Server Assistant is built and maintained by **Wandering Webmaster** ([wandweb.co](https://wandweb.co)) ("we", "us", "our"). These terms govern your use of the Server Assistant Discord bot ("the Bot"). By inviting the Bot to a server, the server owner agrees to these terms on behalf of that server.
 
@@ -50,6 +50,8 @@ You are also responsible for enabling and configuring any optional Minecraft int
 
 We give members notice of the Bot's [Privacy Policy]({{ site.url }}{{ site.baseurl }}/privacy/) and of the Cross-Server Threat Network ourselves (see §6); you are **encouraged** to point your members to the Privacy Policy as good practice, but we do **not** make member-notice your obligation.
 
+**Telling your Minecraft players is the one exception, and it is yours.** If you run our Minecraft bridge, the Bot's moderation reaches the text your players write **in the game** — chat, signs, books, item names, mob name tags, `/me` emotes, usernames, and **private messages between players**. Some of that is **always-on**: it follows your AutoMod switch, there is no separate control, and so — unlike the optional AI features in §5 — there is **no moment at which you switch it on**. **The duty to tell your players applies regardless of whether you had to enable anything.** You are responsible for making them aware that in-game text, **including private messages**, is filtered: say so in your own server rules, and leave the plugin's in-game notices in place. (The plugin's privacy notice about private-message filtering is mandatory and you cannot switch it off; that does not discharge your own duty to tell your players.) We accept the notice duty everywhere we can reach the person ourselves; a Minecraft player who has never joined your Discord is someone only you can reach. The [Privacy Policy]({{ site.url }}{{ site.baseurl }}/privacy/) sets out exactly what is checked, what is kept, and for how long.
+
 The Bot is a tool. Final accountability for any moderation action rests with the staff member who invoked it.
 
 ---
@@ -62,6 +64,7 @@ The Bot offers optional AI features (SAi, Message Report, Self-trained AutoMod, 
 - You are responsible for reviewing AI output before relying on it for moderation decisions
 - AI providers may process transmitted data per their own privacy policies
 - Some optional features transmit content that was **not typed in your Discord server** — enabling Minecraft bridge translation or in-game `@sai` sends in-game chat to an AI provider. These are **off until you switch them on**, and by switching them on **you accept responsibility for telling your members and players** that you have done so
+- **Not everything the Minecraft bridge does is optional, and this bullet does not cover the rest of it.** AutoMod's filtering of in-game text — including private messages between players — is **always-on**, has no switch of its own, and involves **no AI provider at all**. Your duty to tell your players about it does not depend on your having enabled anything: see §4
 - We don't guarantee continued availability of any specific AI provider or model
 - If you supply your own API keys (BYOK mode), you are responsible for any costs incurred with that provider
 
