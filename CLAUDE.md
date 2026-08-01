@@ -31,9 +31,56 @@ After pushing a change and opening its PR on the working branch:
 - CI is failing or still running, or
 - a human has left an unresolved review comment or change request.
 
-If the working branch has drifted from `main` (from earlier squash-merges),
-sync it first by merging `origin/main` into the branch and re-applying the
-change — never force-push.
+### Re-syncing a drifted branch: RESET from `main`, do not merge `main` in
+
+If the working branch has drifted from `main` (from earlier squash-merges), **reset
+the branch from `main`**. Do **not** merge `origin/main` into it:
+
+```bash
+git fetch origin main && git checkout -B <branch> origin/main
+git push --force-with-lease
+```
+
+**The precondition is load-bearing.** This is safe **only** when the branch holds
+nothing but history that already reached `main`. Test that by **content**:
+
+```bash
+git diff origin/main HEAD    # must be EMPTY
+```
+
+**Do NOT test it with `git log origin/main..HEAD`.** That is the obvious check and it
+is wrong here: after a squash-merge it is **always** non-empty, because the branch's
+individual commits are never ancestors of the single squashed commit on `main`. That
+non-emptiness **is** the drift, not evidence of unmerged work. Anyone who reads it as
+unmerged work will either skip a safe reset forever or learn to ignore the check
+entirely. `git diff` compares content, so it answers the question actually being
+asked. (This mistake was made, and caught, on 2026-08-01.)
+
+If `git diff origin/main HEAD` is **not** empty there is genuine unmerged work:
+**rebase it onto the new base, never discard it.**
+
+**Why the old "merge `main` in" rule is gone.** A squash-merge lands the branch's
+changes on `main` as **one new commit with a new SHA**, while the branch keeps its
+original individual commits. Git then sees two different histories touching the same
+lines, so the **next** PR from that branch opens **already conflicted**. That happened
+three times in a row on one long-lived branch on 2026-08-01, and GitHub does not queue
+`pull_request` CI for a conflicted PR at all, so the PRs sat with no checks and looked
+like a CI outage rather than a merge problem. In the code repos the same drift forced
+hand-edited conflicts in `bot.py` and `relay.py`, 35k-line single-file production entry
+points, where the conflicting side was code **already running in production** and a
+careless resolution silently reverts shipped fixes rather than failing loudly. Here the
+blast radius is smaller (published copy, not a live service), but a bad resolution in
+`changelog.md` still ships wrong information to customers.
+
+**What the rule costs** (recorded so it does not get "simplified" back into a bug): the
+reset **discards local branch state**, so anything not yet merged must be rebased first,
+and it requires a **force-push**, which the old rule flatly forbade. **"Never
+force-push" stays the default everywhere else.** The exception is narrow and
+conditional, not a general licence: it applies only when `git diff origin/main HEAD` is
+empty, which means the branch contains only history that already reached `main` by
+another route, so nothing can be lost.
+
+Full write-up: `server-assistant/docs/dev/09-working-practices.md`.
 
 _To revoke this, delete this section._
 
