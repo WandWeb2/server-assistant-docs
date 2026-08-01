@@ -130,8 +130,10 @@ and the assistant.
 
 ## Moderate from Discord
 
-<span class="cmd-tag free">FREE</span> &nbsp;When the chat scan flags a Minecraft
-player, staff see **Kick** and **Ban in-game** buttons on the flag alert and can
+<span class="cmd-tag free">FREE</span> &nbsp;When the filter flags a Minecraft
+player — in chat or on any of the other surfaces in
+[Keeping in-game text clean & safe](#safety) — staff see **Kick** and **Ban in-game**
+buttons on the flag alert and can
 action the player **right on your Minecraft server** — no console needed. It's
 **off by default**: turn it on with the **Enforcement** toggle in the `/mcdc`
 panel. Each button is **permission-gated** — only staff who already have the
@@ -139,7 +141,7 @@ matching kick/ban permission can click it. Carrying the action out in-game needs
 the companion plugin **v0.5.0** or newer (it updates itself if auto-update is on).
 
 Every MCDC moderation action — a **Kick** or **Ban** taken from an alert, and the
-chat-flag alerts themselves — is recorded in your server's **log channel** and **audit
+flag alerts themselves — is recorded in your server's **log channel** and **audit
 trail**, exactly like native Server Assistant moderation, so there's a full record of
 what happened and who acted.
 
@@ -310,7 +312,7 @@ the plugin's knobs. The plugin generates `plugins/MCDC/config.yml` on first star
 |---|---|
 | `relay-url` | The relay address from the `/mcdc` wizard. Until it's set to a real value, the plugin stays idle and makes no network calls. |
 | `token` | Your link token from the `/mcdc` wizard. Keep it secret — treat it like a password. |
-| `join-notice` | Shows each player an in-game notice on join that chat is bridged to Discord. This is a **privacy requirement — please keep it on** (`true`). |
+| `join-notice` | Shows each player the **bridge** notice on join (*"Chat here is bridged to Discord"*). Yours to reword via `join-notice-text` or switch off. **Please keep it on.** Note this key does **not** control the mandatory **privacy** notice about private-message filtering, which always sends and has no setting; see [Privacy](#privacy). |
 | `join-notice-text` | The wording of that notice. Supports `&` colour codes. |
 | `discord-to-mc-format` | How Discord messages look in-game. Placeholders `{author}` and `{text}`, with `&` colour codes — default `&9[Discord] &b{author}&7: &f{text}`. |
 | `relay.chat` | Relay in-game chat to Discord. |
@@ -346,7 +348,7 @@ knowing which are commands and which are just chat:
 
 | In-game | What it does | Who |
 |---|---|---|
-| **`/mcdc link <token> <relay-url>`** | Links the bridge to your Discord channel, instantly and with no restart. You only run this **once**, during [Setup](#setup) — the `/mcdc` wizard hands you the whole line pre-filled. | Server **operator**, or the server console |
+| **`/mcdc link <token> <relay-url>`** | Links the bridge to your Discord channel, instantly and with no restart. You only run this **once**, during [Setup](#setup) — the `/mcdc` wizard hands you the whole line pre-filled. **From plugin v0.24.0 this must be run at the server console, not typed in game.** A command typed in chat is readable by every other plugin on your server and is written to your server log, so a token pasted there should be treated as exposed. If you would rather not use the console, paste the `relay-url` and `token` block from the `/mcdc` wizard straight into `config.yml` instead — that never puts the token through a command at all. | The server **console** only |
 | **`/saportal`** | Prints your **customer portal** address into chat as a clickable link, so a player can reach their account without hunting for the URL. The address is served by Server Assistant, so it stays correct without a plugin update. | Players |
 | **`!link <code>`** | Not a command — a **chat message**. Redeems the one-time code `/link` gave you in Discord, within **15 minutes**. See [Link your account](#link-your-account). | Any player |
 | **`@sai …`** · **`!sai …`** · **`!ai …`** | Also chat, not commands. Ask the assistant a question in-game. Subject to your **access** setting. See [Ask SAi in-game](#ask-sai-in-game). | Depends on access |
@@ -373,27 +375,39 @@ language for Discord and Discord messages into that language for in-game.
 - Translation is handled by Server Assistant's AI, the same engine behind the bot's
   existing [`/translate`]({{ '/wiki/ai/' | relative_url }}) feature.
 
-## Keeping chat clean & safe {#safety}
+## Keeping in-game text clean & safe {#safety}
 
 The bridge respects your server's own moderation, in **both** directions — and it's
 governed by a **single control: your server's AutoMod switch**.
 
 - **Filtering &amp; monitoring follow your AutoMod switch.** There's nothing separate to
-  turn on for the bridge. **When AutoMod is on**, bridged Minecraft chat is automatically
-  **masked and monitored** in both directions; **when it's off**, the bridge isn't
-  filtered. The `/mcdc` wizard shows a single **Filter & monitor** status that reflects
+  turn on for the bridge. **When AutoMod is on**, in-game text is automatically **masked and
+  monitored**, and bridged chat in both directions with it; **when it's off**, the bridge
+  isn't filtered. The `/mcdc` wizard shows a single **Filter & monitor** status that reflects
   AutoMod — no bridge-only toggles that can read "on" while doing nothing.
-- **Your AutoMod filter applies to bridged chat.** With AutoMod on, messages crossing the
-  bridge are run through your server's existing **AutoMod word list (lexicon)** and enabled
-  **word packs**, and any matched words are masked to `***` in the copy that's delivered —
-  so a word you already block in Discord stays blocked when it comes from Minecraft, and
-  vice versa.
-- **Your full protection scans in-game chat too.** Bridged Minecraft chat is checked by the
-  **same AutoMod as your Discord** — your **word and lexicon filters**, the built-in
-  **`scams` pack**, and the **known-bad-domain link blocklist**. A match raises a **staff
-  alert** (with the **Kick** and **Ban in-game** buttons from
-  [Moderate from Discord](#moderate-from-discord)), so your **scam-link and phishing
-  protection already covers Minecraft**, not just Discord.
+- **Chat is not the only place a player writes, so it's not the only place we check.**
+  Anyone who wants to route around a chat filter can use a **sign**, a **book**, an
+  **item name** (an anvil rename), a **mob name tag** or a **`/me` emote** — or aim it at
+  one person with **`/msg`**, or just **join under a name** that says it for them. All of
+  those are covered, on the same single switch.
+- **Checked isn't the same as bridged.** Chat is the only thing mirrored into your Discord
+  channel. Signs, books, item names, name tags, emotes and private messages are **checked and
+  flagged, never posted to Discord** — a sign isn't conversation, and echoing every sign
+  someone places would be noise nobody asked for.
+- **Your AutoMod filter applies to all of it.** With AutoMod on, in-game text is run through
+  your server's existing **AutoMod word list (lexicon)** and enabled **word packs**, and any
+  matched words are masked to `***` — in the copy delivered to Discord for chat, and
+  **in-game** for a sign, book, item name, name tag or emote, so other players don't see them
+  either. A word you already block in Discord stays blocked when it comes from Minecraft, and
+  vice versa. A **username** is the one thing that's flagged but never rewritten: a name is an
+  identity your server, Discord and LuckPerms all key off, so staff are told and staff decide.
+- **Your full protection scans in-game text too.** It's checked by the **same AutoMod as your
+  Discord** — your **word and lexicon filters**, the built-in **`scams` pack**, and the
+  **known-bad-domain link blocklist**. A match raises a **staff alert** (with the **Kick** and
+  **Ban in-game** buttons from [Moderate from Discord](#moderate-from-discord)), carrying the
+  world position for the surfaces that have one so staff can find the sign rather than hunt
+  for it. Your **scam-link and phishing protection already covers Minecraft**, not just
+  Discord.
 - **No surprise pings from in-game.** A player typing `@everyone` (or any other mention) in
   Minecraft **cannot** ping your Discord. Mentions in bridged messages are handled safely and
   show as plain text, so nobody can mass-ping the server through the game.
@@ -404,23 +418,46 @@ The bridge is built to keep your server's secrets on your server:
 
 - **No passwords, no remote console.** The plugin never exposes RCON and no admin
   passwords ever leave your machine. It only makes **outbound HTTPS** connections.
-- **Relayed in transit, not stored.** In-game chat and player usernames are passed
+- **Chat: relayed in transit, not stored.** In-game chat and player usernames are passed
   between Minecraft and Discord to deliver the message, **and not stored**. When
   translation is on, that chat is processed by Server Assistant's AI translation (the same
   as `/translate`) to produce the translated text.
-- **A flagged message is the exception.** If a bridged message trips your AutoMod, the
-  180-day moderation-actions record keeps only the player name, UUID and which rule matched
-  — **never the message text**. A short extract (up to ~500 characters) is kept with the
-  staff decision card so your staff can see what they're deciding about, and that is deleted
-  90 days after the decision is closed. The filter check itself is plain pattern-matching on
-  our servers — **no AI provider sees it**. Full detail in the
+- **The other surfaces: read, but not relayed.** Signs, books, item names, name tags and
+  `/me` emotes are **checked, never posted to your Discord channel** — the bridge mirrors
+  chat, and only chat. Their text is passed to us to run your AutoMod against and is not
+  kept as a record of what was written.
+- **Private messages are checked too — all of them, by software, read by nobody.** A `/msg`
+  between two players is sent to us and run through your filter. If it matches nothing, **no
+  person ever sees it**: it's deleted from the queue we check it from within about a day and
+  no record of it is kept anywhere. Only a message that actually trips your filter reaches a
+  human, and then only your staff. No AI provider is involved at any point, and nothing is
+  sent to any third party.
+- **Masking and flagging don't use the same filter.** Flagging runs here against your **full**
+  AutoMod, lexicon included. Masking runs in-game, and the plugin only holds part of your
+  filter — your word packs, custom filters, disguised-slur check and blocked-link list. The
+  large **community lexicon is too big to ship to a game server**, so a word only *it* knows
+  about will be **reported to you but won't have been masked**: the recipient saw it in full.
+  Masking is best-effort; the staff alert is the reliable part.
+- **A flagged piece of text is the exception.** If anything a player writes trips your
+  AutoMod, the 180-day moderation-actions record keeps only the player name, UUID and which
+  rule matched — **never the text itself**. A short extract (up to ~500 characters) is kept
+  with the staff decision card so your staff can see what they're deciding about, and that is
+  deleted 90 days after the decision is closed. The filter check itself is plain
+  pattern-matching — **no AI provider sees it**. Full detail in the
   [Privacy Policy]({{ '/privacy/' | relative_url }}).
 - **Ask SAi in-game sends your operator's server notes.** When `@sai` is on, a player's
   question goes to the AI along with the server-information text you wrote for it (up to
   2,000 characters). No player names or UUIDs are sent.
-- **Players are told, in-game.** When a player joins, the plugin posts an in-game notice
-  letting them know chat is bridged to Discord. As the server owner, you should also
-  **inform your players** that the bridge is active.
+- **Players are told, in-game — and one of those notices you can't switch off.** Joining
+  players see **two** separate lines. The **bridge notice** (*"Chat here is bridged to
+  Discord"*) is **yours**: `join-notice` / `join-notice-text`, reword it or turn it off as you
+  like — how your server is wired up is yours to explain. The **privacy notice** (*"Private
+  messages here are checked for abuse"*) is **mandatory and not configurable**: there's no key
+  for it, it ignores the relay override, and it sends to every player whenever chat relaying
+  is on. That's deliberate — message filtering has no opt-in moment, and this is the only
+  notice that reaches a player who never joins your Discord. You should **also** say it in
+  your server rules; the [Terms]({{ '/terms/' | relative_url }}) make telling your players
+  your responsibility.
 - **Account linking is opt-in.** Linking your Discord and Minecraft accounts is
   **optional** and started by you (`/link`, then `!link <code>`) — until you do, the
   bridge does not connect the two. When you do link, only the **Discord ID ↔
