@@ -137,6 +137,28 @@ A change lands in the panel for its audience — and a **Minecraft ↔ Discord b
 Origin: operator flagged the MCDC panel had gone stale — recent bridge work was
 being added to the Bot panel only and the MCDC panel was missed (2026-07-23).
 
+## No em-dashes in written output (standing rule)
+
+**Do not use the em-dash character in anything you write.** That covers commit
+messages, changelog entries (internal and public), PR titles and bodies, code
+comments, docs, wiki pages, policy copy, in-game and Discord user-facing strings,
+and chat replies to the owner.
+
+Use a comma, a colon, a full stop, or brackets instead. Rewriting the sentence is
+usually better than swapping the punctuation.
+
+**One exception, and it is load-bearing:** the `CHANGELOG.md` release headings
+`## [X.Y.Z] - DATE - Title` keep their em-dash separators, because the relay
+PARSES them. `relay.py` splits those lines on the literal em-dash to build the
+banked-deploy advance notice (two call sites, `re.split(r"\s+—\s+", ...)`).
+"Tidying" the separator would leave the title empty in the notice every server
+receives before a restart, and nothing would fail loudly. Changing the format
+means changing the relay parser in the same breath.
+
+This is a house style preference, not a correctness rule, so it applies **from now
+on**: existing merged copy is deliberately left alone rather than swept. Origin:
+owner directive, 2026-08-01.
+
 ## Core-pillar changes — direct owner liaison required (standing rule)
 
 The product's **core legal/compliance pillars** — the **privacy policy, terms of service, the threat-network opt-out model, what data is collected/kept/shared, the lawful basis, and whether the small-business exemption is relied upon** — must **never be changed on assumption**. Any change that touches these pillars requires **extensive direct liaison with the owner: explicit questioning AND double-checking before the change goes live.** Never guess on a core pillar — surface it and confirm. Origin: a session where the individual opt-out stance shifted; it was caught and confirmed with the owner before it reached live policy.
