@@ -156,6 +156,32 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
 <details class="doc-sec" markdown="1" open data-kind="fix">
+<summary>v6.116.0: the Double-XP suggestion now waits two weeks before deciding your server is quiet</summary>
+
+**New servers were being told they looked quiet, days after adding the Bot.** The
+suggestion to run a Double-XP event is meant for a server that has genuinely gone
+still. It was arriving almost immediately after setup instead, which is a poor first
+impression and, for most of those servers, simply wrong.
+
+**Why it happened.** The check reads your last seven days of messages. On a server the
+Bot joined two days ago, five of those days are empty for the simple reason that it was
+not there for them. A perfectly busy server could come out under the quiet line because
+the window ran off the end of the Bot's own history, not because anyone had stopped
+talking.
+
+**What changed.** The Bot now watches for **two weeks** before making the suggestion at
+all: seven days for that window to be entirely its own, then another seven of real
+traffic to judge against. Everything else is the same. The suggestion still appears at
+most once a fortnight, and a server manager is still the only one who can start an
+event.
+
+**If your server really is quiet, you lose nothing.** The suggestion arrives once there
+is enough history to say so honestly, and your staff were never prevented from running
+an event in the meantime.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v6.115.0: the opt-out wording was corrected on one more screen</summary>
 
 **A follow-on to v6.113.0.** That release corrected a line saying opted-out members are
