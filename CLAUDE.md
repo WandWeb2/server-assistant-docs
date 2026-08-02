@@ -184,6 +184,29 @@ A change lands in the panel for its audience — and a **Minecraft ↔ Discord b
 Origin: operator flagged the MCDC panel had gone stale — recent bridge work was
 being added to the Bot panel only and the MCDC panel was missed (2026-07-23).
 
+## Legal-review notes live in `.omp/`, never in published pages (standing rule)
+
+Internal legal-review annotations belong in **`.omp/legal-review-notes.md`**, and are
+**never** embedded in a published page as an HTML comment.
+
+An HTML comment is not private. Jekyll passes it through into the generated page, so
+anything written as `<!-- ... -->` in `privacy.md`, `terms.md`, or any other published
+file is served to customers in view-source. Six such notes were found sitting live on
+the privacy policy and terms: severity ratings, unresolved exposure, references to the
+internal PIA/LIA and risk register, and open items flagged for the owner and a lawyer.
+They were moved to `.omp/legal-review-notes.md` (a dotfile directory, so Jekyll
+excludes it from the build) with their bodies copied **verbatim**, since they are
+assessment records rather than prose to be edited.
+
+- **Do not reintroduce them.** A new annotation goes in `.omp/legal-review-notes.md`,
+  not in the page it is about.
+- **Tie a note to its clause by description**, not by a marker in the page: record the
+  heading plus a quoted lead-in, so the note survives the copy being rewrapped or moved.
+- **This is separate from the core-pillar rule below.** Moving a note out of a page is
+  not a policy change, but changing what a policy *says* still needs owner liaison.
+
+Origin: internal notes found shipping in view-source on the live site, 2026-08-02.
+
 ## No em-dashes in written output (standing rule)
 
 **Do not use the em-dash character in anything you write.** That covers commit
