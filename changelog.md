@@ -156,6 +156,22 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
 <details class="doc-sec" markdown="1" open data-kind="fix">
+<summary>v6.115.0: the opt-out wording was corrected on one more screen</summary>
+
+**A follow-on to v6.113.0.** That release corrected a line saying opted-out members are
+*never* automatically banned, in the `/threatnet autoban` status reply and at the foot of
+the ThreatNet settings panel. A third screen carried the same line and was missed: the
+confirmation you see at the moment you switch auto-protect **on**.
+
+That is the worst of the three places to overstate it, because it is exactly when you are
+deciding. It now matches the other two and the Privacy Policy: opted-out members are not
+auto-banned, apart from the most serious corroborated cases covered by a safety exception.
+
+Wording only. How auto-protect behaves is unchanged by this release.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v6.114.0: only a person's decision reaches the threat network now, plus an install notice and a tighter safety exception</summary>
 
 **Three things the Privacy Policy already promised, now true in the product.** A review
