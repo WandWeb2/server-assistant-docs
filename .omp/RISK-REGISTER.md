@@ -24,10 +24,12 @@ Severity scale: **CRITICAL** (could block launch / unlawful as designed) ·
 > cross-reference "R1" etc.), but the register is no longer led by R1. After the
 > owner's **severity-only design lock**, **R1 re-rates CRITICAL → LOW/MEDIUM**, so
 > the current severity ordering is:
-> **R2 (HIGH) ≈ R3 (HIGH) ≈ R4 (HIGH) > R5 (MEDIUM) ≈ R6 (MEDIUM) > R8 (LOW/MEDIUM)
-> ≈ R1 (LOW/MEDIUM) > R7 (LOW).**
-> The top live exposures are now R2/R3/R4 (exemption-loss assumption, DPIA/PIA
-> sign-off, and the unbound-third-party/ACL point), **not** R1.
+> **R2 (HIGH) ≈ R3 (HIGH) ≈ R4 (HIGH) ≈ R9 (HIGH) > R5 (MEDIUM) ≈ R6 (MEDIUM) >
+> R8 (LOW/MEDIUM) ≈ R1 (LOW/MEDIUM) > R7 (LOW).**
+> The top live exposures are now R2/R3/R4/R9 (exemption-loss assumption, DPIA/PIA
+> sign-off, the unbound-third-party/ACL point, and solely-automated bans under
+> GDPR Art. 22), **not** R1. **R9 was added 2026-08-02**, when the LIA was re-run
+> against automated action.
 
 ---
 
@@ -126,9 +128,10 @@ Consumer Law** prevents excluding certain consumer guarantees/liability by
 contract, so the §9 cap may not hold against an Australian consumer.
 
 **What I did to mitigate.** Flagged both points candidly in `terms.md` §6 and noted
-that the **real** mitigations are the product design (advisory-only, conservative
+that the **real** mitigations are the product design (conservative
 tuning, N≥2 corroboration, anti-poisoning) and the **APP 13 correction right**, not
-the disclaimer wording. **Strengthened 2026-06-21 by the qualified individual
+the disclaimer wording. **Corrected 2026-08-02:** that list previously led with
+"advisory-only", which is false of the shipped product. See **R9**. **Strengthened 2026-06-21 by the qualified individual
 opt-out:** a wrongly-flagged individual now has an **affirmative, advertised way to
 stop profiling** (opt-out via `/support` now; self-service portal toggle on the
 roadmap), in addition to correction (APP 13) and erasure — honoured unless we have
@@ -138,11 +141,18 @@ depend on Terms they never signed, **reducing the practical exposure** even thou
 the *legal* point (Terms don't bind a non-signatory; the ACL cap may not hold)
 stands.
 
-**Net rating: still HIGH, but the residual is meaningfully reduced.** The opt-out
+**Net rating: still HIGH, and the residual ROSE on 2026-08-02.** The opt-out
 plus correction/erasure is a stronger answer to a flagged individual than the
 case-by-case-only stance was. The HIGH stays because the unbound-third-party and ACL
 points are legal questions a lawyer should still confirm; the durable fixes remain
 product-side (accuracy, correction, appeal, opt-out).
+
+**What changed 2026-08-02.** A wrongly-flagged individual may now be **banned
+automatically**, on the servers that have enabled either automated path, rather than
+merely scrutinised by staff who could catch the error. The unbound third party is
+therefore exposed to a worse outcome than this entry originally assessed, and the
+"advisory-only" mitigation it leaned on does not exist. See **R9**, which carries
+the automated-decision analysis in full.
 
 **What still needs a lawyer / product.** Confirm the residual liability exposure to
 flagged third parties; the durable fixes are product-side (accuracy, correction,
@@ -223,6 +233,122 @@ portal opt-out toggle per the roadmap.
 
 ---
 
+## R9: Solely-automated bans (GDPR Art. 22), **HIGH**
+
+**Added 2026-08-02**, alongside the re-run of the LIA balance against automated
+action (`.omp/threat-network-PIA-LIA.md` B3.3 to B3.6).
+
+**What it is.** The product takes two kinds of automated decision that exclude a
+person from a community with no human involved, and until 2026-08-02 neither the
+LIA nor this register acknowledged that any such decision existed.
+
+- **ThreatNet auto-protect.** A full-Premium server may switch on automatic banning
+  at a cross-server risk threshold **it** chooses (`bot.py:9863`, gate at `9873`,
+  threshold at `9884`). The **hard "high" floor was removed by owner directive on
+  2026-06-22**, so a server may set the trigger as low as `low`, at which a single
+  minor signal from a single server, one kick or one warning, bans a joining account
+  on sight (`relay.py:1467`, `bot.py:9891`, `41196`). The ban is **silent toward the
+  affected person**: no DM, no notice (`bot.py:9894-9897`).
+- **Alt-guard auto-ban.** A server that has run `/altguard on` automatically bans a
+  joining account that scores 70 or more with a strong signal
+  (`bot.py:8618`, `8621`). The arithmetic restricts the strong route in practice to
+  a **shared profile picture** plus one supporting signal such as a new account
+  (`bot.py:8587-8605`). A picture is not a person. **A person who has never been
+  banned anywhere can be banned on arrival because of their avatar, with no human
+  in the loop.** Fingerprint recording is unconditional and happens on every server
+  regardless of the switch (`bot.py:9947`, `9949`, `15608`, `39433`); only the
+  acting on it is opt-in.
+
+**The two paths chain, and nothing stops them.** An alt-guard auto-ban is not marked
+the way a ThreatNet auto-ban is, so it falls through to `_emit_threat_signal`
+(`bot.py:9945-9953`), and every ban maps to the **top** severity band
+(`bot.py:4097-4098`). Two independent servers auto-banning the same account on an
+avatar match therefore produce the `high` cross-server band
+(`relay.py:1463-1464`) that is the **default** trigger for auto-protect elsewhere
+(`bot.py:9809`). Automated action manufactures the exact input for further automated
+action, with no human anywhere in the chain. The relay cannot even tell the two
+apart, because the `altguard_match` flag is never set by any call site
+(`bot.py:9953`, default at `4144`). The existing circular-amplification guard
+(`bot.py:9940-9948`) was written for ThreatNet's own bans and does not cover this.
+
+**Why it is HIGH.** Art. 22(1) restricts decisions based solely on automated
+processing that produce legal effects or similarly significant effects. None of the
+three Art. 22(2) gates fits cleanly: there is no contract with the data subject, no
+Union or Member State authorisation, and no explicit consent. The operator's
+position rests on the safeguards, the opt-out, and after-the-fact human review
+rather than on an exemption. Alongside that, the removed threshold floor means the
+false-positive rate is set by each customer rather than by the operator, and the
+alt-guard evidence bar is an image match.
+
+**What has been done to mitigate.**
+
+- Both paths are **off by default** and opt-in per server (`bot.py:696`, `712`).
+- Auto-protect is **full Premium only, re-checked at action time**, so a lapsed plan
+  stops acting immediately (`bot.py:9875`), and both paths need Manage Server or
+  above (`bot.py:39704`, `41204`).
+- **Fail-safe on uncertainty**: no record, relay outage, suppressed dossier, or
+  missing permissions all resolve to no ban (`bot.py:9887-9892`).
+- **Conservative default threshold** of `high`, serious and corroborated across two
+  or more independent servers (`bot.py:9809`).
+- **Opt-out is honoured and stops collection, not merely disclosure**
+  (`relay.py:1505-1511`, `1738-1766`).
+- **Disclosed in the Privacy Policy**, which applies Art. 22 safeguards to both
+  paths and offers human review, contest, correction and erasure via the portal or
+  `/support`, open to anyone whether or not they were notified. Published
+  2026-08-02 on the owner's sign-off.
+- On the alt-guard path only, the affected person gets the ban-reason DM and a
+  single reply that reaches that server's staff (`bot.py:8845`, `9962`).
+- Audit trail and staff notice on both paths (`bot.py:8635-8654`, `9911-9927`),
+  **subject to a log or staff channel actually being configured**
+  (`bot.py:8635-8637`).
+
+**Residual, stated without softening.**
+
+1. **No human confirmation before either action.** The only human is downstream of
+   the ban.
+2. **The auto-protect path notifies nobody.** The affected person learns only that
+   they are banned, never that a decision was made about them or that it was
+   automated. Art. 22(3) rights they do not know they have are rights they will not
+   use. The operator directive behind the silence (do not tip off a flagged actor,
+   2026-06-22) is a genuine security rationale that trades directly against this.
+3. **No floor under the threshold.** At `low`, corroboration, the safeguard the rest
+   of the assessment leans on hardest, does no work. The `/threatnet` command warns
+   the administrator and assigns them responsibility (`bot.py:41242-41247`), which
+   allocates risk fairly between operator and customer but protects the data
+   subject not at all, since they are not party to it and cannot see the level a
+   server chose.
+4. **Automated bans become cross-server evidence.** Residual 2 of the LIA's B3.5.
+   Unmitigated. A change stopping the automated alt-guard ban from emitting, while
+   leaving staff-made bans emitting, was in flight as at 2026-08-02 and **had not
+   landed**; `privacy.md` therefore discloses the current behaviour.
+5. **Alt-guard notice can fail silently in both directions.** The DM depends on
+   `ban_appeals_enabled` and on open DMs (`bot.py:8845`, `8886-8890`); the staff
+   alert depends on a configured log or staff channel (`bot.py:8635-8637`). A server
+   with neither, and appeals off, auto-bans a joining member with nobody told.
+6. **`privacy.md` previously overstated the opt-out** as absolute ("never acts on
+   anyone who has opted out"), while the safety-exception path can return an
+   unsuppressed dossier (`relay.py:1740-1757`) that `_threatnet_autoban_check` acts
+   on without inspecting the exception flag (`bot.py:9888`). **Corrected in wording
+   on 2026-08-02**, not in code: the policy now carries the qualification in both
+   places. The code still does not consult the exception flag.
+
+**What still needs a lawyer or the owner.**
+
+- **Lawyer:** whether exclusion from a Discord community is a "similarly significant
+  effect", and which if any Art. 22(2) gate the operator can rely on. This is the
+  question the 2026-08-02 sign-off did not answer, and it is the one most likely to
+  change the product rather than the wording. The owner published the Art. 22
+  disclosure on 2026-08-02 **without lawyer review**, knowingly (see the decision
+  log). Removing the threshold floor raises the value of that outstanding review
+  rather than lowering it. **Targeted advice on the Art. 22(2) question has since
+  been sought and is outstanding** (decision log, 2026-08-02).
+- **Owner:** whether the removed floor stays removed; whether alt-guard's auto-ban
+  should require staff confirmation; whether an alt-guard auto-ban should be barred
+  from emitting a network signal; and whether the `privacy.md` opt-out absolute is
+  additionally corrected **in code** now that it has been corrected in wording.
+
+---
+
 ## Bottom line for the owner (what changed, and what still bites)
 
 **The biggest single risk (R1) has been retired by design, not wording.** The
@@ -255,9 +381,14 @@ unchanged, but R4/R5/R8 residuals are reduced.
    unresolved consent gap.
 2. **Exposure to a wrongly-flagged individual (R4)** isn't disclaimed by Terms that
    individual never signed; the cure is accuracy/correction/**opt-out** in the
-   product (advisory only, conservative tuning, APP 13, qualified opt-out), not
-   wording. Still HIGH, residual reduced.
-3. **Operational follow-through** — DPAs/SCCs (R6), the `/support` rights + **opt-out
+   product (conservative tuning, APP 13, qualified opt-out), not
+   wording. Still HIGH, and the residual **rose** on 2026-08-02 because such an
+   individual may now be banned automatically. See R9.
+3. **Solely-automated bans under GDPR Art. 22 (R9), HIGH, added 2026-08-02.** Two
+   paths ban a person with no human in the loop, they chain into one another, and
+   no Art. 22(2) gate fits cleanly. Targeted legal advice on the Art. 22(2)
+   question has been sought and is outstanding.
+4. **Operational follow-through** — DPAs/SCCs (R6), the `/support` rights + **opt-out
    handling** workflow with consistent compelling-grounds application (R8), shipping
    the bot-delivered install notice + roadmap portal opt-out toggle, and keeping the
    severity band genuinely generic (R1 residual) — are the live to-dos.
@@ -266,6 +397,12 @@ This pass makes the documentation **honest, consistent, and APP-correct**, refle
 the severity-only design throughout, and **does not overclaim**: it still notes the
 residual EU/UK Art. 10 review point and flags R2–R4 plainly. It remains a
 **best-effort, non-lawyer** review, not certified compliance.
+
+**Updated 2026-08-02.** Until that date this summary described a product that takes
+**no automated action**, which was wrong. The register now carries **R9**, the LIA
+balance has been re-run against automated action, and the "advisory-only" claim has
+been removed everywhere it appeared rather than supplemented. The summary above
+"does not overclaim" only with R9 read alongside it.
 
 ---
 
@@ -306,3 +443,30 @@ Related, still open (not changed by this sign-off):
   auto-protect clause reading "Confirm with the owner AND a lawyer before
   publishing". Tonight's sign-off was scoped to `privacy.md`, so those were left
   in place and remain outstanding.
+
+**2026-08-02 (owner decision) - targeted legal advice on Article 22(2) has been
+SOUGHT and is OUTSTANDING.** Rather than commission a full legal review, the owner
+decided to seek **targeted advice on the Article 22(2) question specifically**:
+whether any of the three gates (necessity for a **contract** with the data subject,
+authorisation by **Union or Member State law**, or the data subject's **explicit
+consent**) is available to the operator for the two solely-automated ban paths.
+
+This is an **OPEN ACTION, not a closed one.** The advice has been sought. It has
+not been received, and nothing in this register or in
+`.omp/threat-network-PIA-LIA.md` should be read as resting on it.
+
+- **Scope is deliberately narrow.** It covers the Art. 22(2) gate question only. It
+  is **not** the qualified privacy-lawyer sign-off that **R3** asks for, and it does
+  not discharge R3, the small-business-exemption question (**R2**), or the
+  unbound-third-party and ACL points (**R4**). Those remain open on their own terms.
+- **Why this question.** It is the one point where the current position is
+  acknowledged as not squarely satisfied. The LIA's B3.5 residual 6 and B3.6 both
+  record that none of the three gates fits cleanly and that the operator relies
+  instead on safeguards, the opt-out, and after-the-fact human review. **R9** rates
+  the exposure HIGH on that basis.
+- **What it does not change.** The Article 22 position published on 2026-08-02 went
+  live on owner sign-off with **no lawyer review** (see the entry above), and it is
+  live now. Seeking this advice does not retrospectively satisfy that gate.
+- **On receipt:** re-run the LIA balance (B3.5, B3.6), re-rate **R9**, and revisit
+  the published `privacy.md` and `terms.md` Article 22 wording if the advice moves
+  the position.
