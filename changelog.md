@@ -92,6 +92,30 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
 <details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>v6.111.0: the Minecraft health alerts now have an off switch in <code>/mcdc</code></summary>
+
+**Three notices, one switch.** "Minecraft server offline", "server recovered" and "TPS below
+12" are the server-health notices Server Assistant posts to your staff chat. They now sit
+behind a single **Health alerts** toggle on the first page of `/mcdc`, next to **Topic
+count**.
+
+**Why you might want it off.** If your Minecraft server restarts on a schedule, the offline
+notice and the recovered notice that follows it are staff chat reporting something you
+arranged yourself, every night. That is noise, and noise is what buries the alert that
+actually matters. Turn Health alerts off and all three stop.
+
+**On by default, and staying that way.** Nothing changes unless you change it. Nobody has to
+opt in to being told their server is down: the switch is there so a channel that has got
+noisy can go quiet.
+
+**One notice deliberately ignores this setting.** The bridge-offline notice, the one telling
+you that in-game moderation has stopped running, still arrives with Health alerts off.
+Choosing to hear less about routine server health is not the same as choosing not to be told
+that the filtering on your server has stopped, so the two are kept apart on purpose.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.108.0 + v6.109.0: @sai reads the stats box on a wiki page, and only gives a number it can stand behind</summary>
 
 **Ask how much health a creeper has and the number is now in the answer.** Health, damage,
@@ -2635,7 +2659,33 @@ Everything stays **local to your server**: nothing is shared anywhere. It's **on
 
 <p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.26.0</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
 
-<details class="doc-sec" markdown="1" open data-kind="fix">
+<details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>v6.111.0: the Minecraft health alerts can now be switched off from <code>/mcdc</code></summary>
+
+**Which notices this covers.** Three, all of them posted to your staff chat: your Minecraft
+server went offline, your Minecraft server recovered, and TPS has dropped below 12. They now
+sit behind one **Health alerts** toggle on the first page of `/mcdc`, beside **Topic count**.
+
+**Why it exists.** On a server that reboots on a schedule, the offline notice and the
+recovered notice that follows it are staff chat narrating something you scheduled yourself.
+Every night. The pair is noise, and the cost of noise is that the notice which actually
+matters gets skimmed past with the rest. If that describes your server, switch Health alerts
+off and the three notices stop.
+
+**On by default.** Existing bridges are unaffected and new ones start with alerts on. This is
+a control for a channel that has become noisy, not something you now have to opt in to.
+
+**The bridge-offline notice is not part of this.** The separate notice telling you that
+in-game moderation has stopped running still comes through with Health alerts off, on
+purpose. Choosing to hear less about routine server health is not the same as choosing not to
+be told that the filtering on your server has stopped.
+
+**Nothing to install.** This is a change on Server Assistant's side. No plugin update is
+needed.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>Plugin v0.26.0: the notice players see when they join now names everything that is checked, not just DMs</summary>
 
 **What players see now.** The grey line shown once on joining reads:
