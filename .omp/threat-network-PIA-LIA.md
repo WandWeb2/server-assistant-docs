@@ -375,9 +375,20 @@ already been shown. It is assessed on that footing in B3.5 and B3.6.
 
 ### B3.1 Nature of the data
 - A **pseudonymous Discord user ID** + **minimized behavioural signals** (counts,
-  recency, a generic **severity level**, fingerprint-match boolean, account-age
-  modifier) about moderation outcomes. No message content, no free-text, no
-  AI-generated summary, no offence type/category, no contact/financial data.
+  recency, a generic **severity level**, account-age modifier) about moderation
+  outcomes. No message content, no free-text, no AI-generated summary, no offence
+  type/category, no contact/financial data.
+- **Alt-guard fingerprint-match boolean: SPECIFIED BUT NOT IN USE, corrected
+  2026-08-02.** Earlier revisions of this assessment listed a fingerprint-match
+  boolean among the signals crossing the boundary. The network schema carries the
+  field, but **no call site sets it true**, so the value transmitted is invariably
+  false and **no fingerprint-derived indicator about any individual is in fact
+  shared**. It is accordingly excluded from the nature-of-data above, and the five
+  corresponding claims in `privacy.md` were corrected on the same date rather than
+  left asserting a disclosure wider than the processing. **If it were ever wired
+  up**, a local fingerprint judgement would begin crossing the boundary and the
+  balancing test at B3 would not cover it; the assessment must be re-run before any
+  such change ships.
 - **Special-category data (Art. 9):** none — a generic severity level describes
   *how serious*, not a protected characteristic, and no offence type crosses.
 - **Criminal-offence data (Art. 10) — RAISED, now VERY UNLIKELY after the
