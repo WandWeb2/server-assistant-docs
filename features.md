@@ -156,7 +156,7 @@ Each feature area pairs what you get **free** (the <span style="color:#54e08e;fo
   <div class="col prem">
     <div class="xgrid">
       <details class="x"><summary><strong>Self-trained AutoMod</strong> <span class="t">(learns from you)</span> <span class="tier-badge tier-trial">Free trial</span></summary><div class="b">Watches the messages your staff delete or report, then proposes server-specific AutoMod rules for your approval. Nothing auto-enforced; 30-day local log, no identities stored. Enable in <code>/automod → Self-training</code>.</div></details>
-      <details class="x"><summary><strong>AutoMod AI second-opinion</strong></summary><div class="b">Optional in <code>/automod → AI Review</code>. Borderline filter hits get an AI confidence check first, confident ones act, low-confidence ones go to a one-tap staff review card (<em>Delete &amp; warn</em> / <em>Allow</em>) instead of an auto-delete. Cuts false positives; only borderline messages cost tokens.</div></details>
+      <details class="x"><summary><strong>AutoMod AI second-opinion</strong></summary><div class="b">Optional in <code>/automod → AI Review</code>. Word-filter and spam hits get an AI confidence check first: confident ones act, low-confidence ones go to a one-tap staff review card (<em>Delete &amp; warn</em> / <em>Allow</em>) instead of an auto-delete. Link and mention hits are not sent. Cuts false positives; word-filter checks run on a free moderation endpoint and cost you nothing, spam checks use your AI allowance.</div></details>
 </div>
 </div>
 

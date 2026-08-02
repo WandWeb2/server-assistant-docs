@@ -256,8 +256,8 @@ image: /assets/banner.jpeg
 <div class="frow c-amber">
   <div class="ftext">
     <h3>AutoMod that asks before it over-reacts</h3>
-    <p>Keyword filters punish the innocent, the classic "I love visiting Scunthorpe" problem. Borderline hits get an AI confidence check first.</p>
-    <details class="fmore"><summary>How it works</summary><div class="fbody">Clear violations act instantly; anything doubtful is <strong>left up</strong> and handed to staff with one-tap <strong>Delete &amp; warn</strong> or <strong>Allow</strong>. Less collateral damage, less mod drama, and only borderline messages cost tokens.</div></details>
+    <p>Keyword filters punish the innocent, the classic "I love visiting Scunthorpe" problem. Word-filter and spam hits get an AI confidence check first.</p>
+    <details class="fmore"><summary>How it works</summary><div class="fbody">Every word-filter and spam hit gets the check, and what the AI makes of it decides what happens next: a clear violation acts instantly, anything doubtful is <strong>left up</strong> and handed to staff with one-tap <strong>Delete &amp; warn</strong> or <strong>Allow</strong>. Less collateral damage, less mod drama. Word-filter checks run on a dedicated free moderation endpoint, so they cost you nothing; spam checks use your AI allowance.</div></details>
   </div>
   <div class="fshot">
     <div class="dc">

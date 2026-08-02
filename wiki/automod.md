@@ -111,7 +111,7 @@ Use **Next ›** and **‹ Back** to walk each AutoMod panel and the forms they 
           <div class="dc-desc">Borderline word-filter and spam hits get a quick AI confidence check. Hits <strong>at or above</strong> your threshold act automatically; anything <strong>below</strong> is left up and posted to staff for a one-tap decision. High-confidence hits (links, mention spam) always act immediately.</div>
           <div class="dc-fname">Status</div><div class="dc-fval">Off · needs Premium</div>
           <div class="dc-fname">Auto-action threshold</div><div class="dc-fval">70/100</div>
-          <div class="dc-foot">Premium. Only borderline messages are checked, so token use stays low.</div>
+          <div class="dc-foot">Premium. Word-filter and spam hits are checked; word-filter checks are free.</div>
           <div class="dc-btns">
             <span class="dc-btn blurple">Toggle on/off</span>
             <span class="dc-btn grey">Set threshold</span>
@@ -120,7 +120,7 @@ Use **Next ›** and **‹ Back** to walk each AutoMod panel and the forms they 
         </div>
       </div></div>
     </div>
-    <p class="wiz-caption"><strong>AI Review</strong> <span class="wiki-prem">PREMIUM</span>. A second opinion on grey-area hits. When a word filter or spam check is unsure, the bot asks the AI for a confidence score: at or above your threshold it acts automatically; below it, the message stays up and staff get a <strong>Delete &amp; warn</strong> / <strong>Allow</strong> prompt. Only borderline messages are sent for review, so token use stays low.</p>
+    <p class="wiz-caption"><strong>AI Review</strong> <span class="wiki-prem">PREMIUM</span>. A second opinion on filter hits. Every word-filter and spam match is sent to the AI for a confidence score: at or above your threshold it acts automatically; below it, the message stays up and staff get a <strong>Delete &amp; warn</strong> / <strong>Allow</strong> prompt. The filter cannot rank its own certainty, so the AI is what decides whether a hit is clear-cut. Link and mention hits are never sent. Word-filter checks run on a dedicated free moderation endpoint and cost you nothing; spam checks use your AI allowance.</p>
   </div>
 
   <div class="wiz-step" data-step="Set threshold (modal)">
