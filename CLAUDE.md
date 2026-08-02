@@ -184,6 +184,41 @@ A change lands in the panel for its audience — and a **Minecraft ↔ Discord b
 Origin: operator flagged the MCDC panel had gone stale — recent bridge work was
 being added to the Bot panel only and the MCDC panel was missed (2026-07-23).
 
+## Reason about anchors with the GFM parser, not bare kramdown (standing rule)
+
+**The local toolchain is not the live toolchain.** GitHub Pages renders this site with
+**`kramdown-parser-gfm`**. A bare local `kramdown` run gives **different heading ids**
+for any heading containing inline HTML, because GFM strips the inline HTML from the
+header text before slugging and plain kramdown does not.
+
+This is not academic. A 2026-08-02 link inventory was generated with bare kramdown and
+reported four wiki anchors as mangled:
+
+```
+advisory-by-default-span-classcmd-tag-freefreespan     # what bare kramdown produces
+advisory-by-default-free                               # what the live site actually serves
+```
+
+Acting on that inventory would have **changed four live anchors while believing it was
+fixing them**. The error was caught only because the agent doing the work checked the
+published page instead of trusting the brief.
+
+- **Render with `input: 'GFM'`** when deriving ids locally, or
+- **`curl` the published page** and read the ids out of the served HTML. That is the
+  only unarguable source, and it is one command.
+- **An empty slug is also parser-dependent**: kramdown 2.5.2 emits `id="section"`,
+  GFM emits `id=""`. Neither emits nothing, so "the heading has no id" is never a safe
+  inference from a local render alone.
+- **Raw HTML headings** (`<h3>` inside `.feat`, `.wiki-hub .card`, `.steprow`) get **no
+  id from either parser**, because kramdown never touches them. They need a literal
+  `id="..."` attribute. A `{#...}` IAL does nothing there.
+
+Pinning an id with `{#...}` is worth doing on any heading something links to: it
+decouples the anchor from both the copy and the parser, so neither a reword nor a
+GitHub Pages toolchain bump can move it.
+
+Origin: the bare-kramdown inventory error, 2026-08-02.
+
 ## Legal-review notes live in `.omp/`, never in published pages (standing rule)
 
 Internal legal-review annotations belong in **`.omp/legal-review-notes.md`**, and are

@@ -59,7 +59,7 @@ appear under the connection line in the `/mcdc` panel and as a **Server health**
 and you can toggle them from the `/mcdc` panel. Health reporting is **free** on every plan and
 needs the companion plugin **v0.4.0** or newer (it updates itself if auto-update is on).
 
-## Ask SAi in-game
+## Ask SAi in-game {#ask-sai-in-game}
 
 <span class="cmd-tag premium">PREMIUM</span> &nbsp;On a bridged server, your players can ask
 SAi questions **without leaving Minecraft**. A player types `@sai` (or `!sai` / `!ai`) followed
@@ -128,7 +128,7 @@ and the assistant.
 - Summoning happens **in game**, and the companion is served by the plugin, so keep the
   plugin **up to date** (it updates itself if auto-update is on).
 
-## Moderate from Discord
+## Moderate from Discord {#moderate-from-discord}
 
 <span class="cmd-tag free">FREE</span> &nbsp;When the filter flags a Minecraft
 player — in chat or on any of the other surfaces in
@@ -255,7 +255,7 @@ on every sync (a role can be moved after you map it):
 
 Needs the companion plugin **v0.15.0** or newer and **LuckPerms** on your Minecraft server.
 
-## Setup
+## Setup {#setup}
 
 Setup runs once, by the server owner (**Manage Server** permission is needed for the setup
 command). You can link the bridge **entirely in-game** — no config file to edit and no
@@ -412,7 +412,7 @@ governed by a **single control: your server's AutoMod switch**.
   Minecraft **cannot** ping your Discord. Mentions in bridged messages are handled safely and
   show as plain text, so nobody can mass-ping the server through the game.
 
-## Privacy
+## Privacy {#privacy}
 
 The bridge is built to keep your server's secrets on your server:
 

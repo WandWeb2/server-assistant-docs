@@ -32,28 +32,28 @@ description: A tour of Server Assistant's headline features, what each one does,
 ## Moderation & AutoMod
 
 <div class="feat">
-  <h3>Full moderation toolkit <span class="feat-tag free">Free</span></h3>
+  <h3 id="feat-moderation-toolkit">Full moderation toolkit <span class="feat-tag free">Free</span></h3>
   <p>Warnings and private staff notes, timeouts, kicks and bans (incl. temp-ban and soft-ban), channel locks, slowmode, role changes and bulk message clean-up, all usable in any channel.</p>
   <p class="how"><b>How to use:</b> just run the command, e.g. <code>/warn</code>, <code>/mute</code>, <code>/ban</code>, <code>/purge</code>.</p>
   <a class="more" href="{{ '/wiki/moderation/' | relative_url }}">Moderation &amp; safety guide →</a>
 </div>
 
 <div class="feat">
-  <h3>AutoMod that asks before it over-reacts <span class="feat-tag free">Free</span> <span class="feat-tag premium">Premium AI review</span></h3>
+  <h3 id="feat-automod-ai-review">AutoMod that asks before it over-reacts <span class="feat-tag free">Free</span> <span class="feat-tag premium">Premium AI review</span></h3>
   <p>Clear violations are actioned instantly on every plan. On Premium, borderline messages get an AI confidence check first (the classic "I love visiting Scunthorpe" problem) and are left up for staff with one-tap <b>Delete &amp; warn</b> or <b>Allow</b>, so a blunt keyword filter never punishes the innocent.</p>
   <p class="how"><b>How to use:</b> <code>/automod</code> → <b>AI review</b>. The setup wizard seeds sensible defaults from your community type.</p>
   <a class="more" href="{{ '/wiki/automod/' | relative_url }}">AutoMod guide →</a>
 </div>
 
 <div class="feat">
-  <h3>AutoMod that learns your team <span class="feat-tag free">Free</span></h3>
+  <h3 id="feat-automod-self-train">AutoMod that learns your team <span class="feat-tag free">Free</span></h3>
   <p>Self-training watches the calls your mods make and proposes filter and rule refinements tuned to your server. You approve or dismiss each one; it never changes anything on its own.</p>
   <p class="how"><b>How to use:</b> <code>/automod</code> → <b>Self-train</b>, then review proposals.</p>
   <a class="more" href="{{ '/wiki/automod/' | relative_url }}">AutoMod guide →</a>
 </div>
 
 <div class="feat">
-  <h3>A tamper-proof audit trail <span class="feat-tag free">Free</span></h3>
+  <h3 id="feat-audit-trail">A tamper-proof audit trail <span class="feat-tag free">Free</span></h3>
   <p>A reliable log of moderation activity that can't be quietly wiped, so you always have the record of who did what.</p>
   <p class="how"><b>How to use:</b> pick a log channel during <code>/setup</code> (or change it later in <code>/settings</code>).</p>
   <a class="more" href="{{ '/wiki/audit-log/' | relative_url }}">Audit log guide →</a>
@@ -64,35 +64,35 @@ description: A tour of Server Assistant's headline features, what each one does,
 <p class="feat-lead">Four independent layers that keep known-bad actors out at the door. Each is a separate system with its own <strong>data source</strong>, so it's worth knowing what each one checks.</p>
 
 <div class="feat">
-  <h3>Smart join verification <span class="feat-tag free">Free</span> <span class="feat-tag premium">Premium desk</span></h3>
+  <h3 id="feat-verification">Smart join verification <span class="feat-tag free">Free</span> <span class="feat-tag premium">Premium desk</span></h3>
   <p>New members are met at <strong>Reception</strong>, a branded in-server welcome desk with a <strong>Verify me</strong> button and a quick are-you-human check (a wrong answer just retries, never bans). You choose <strong>who gets held</strong>: <strong>Intelligent</strong> (the default) waves regulars through and holds only risk-scored joins (brand-new accounts, no avatar, cross-server or alt signals); <strong>On</strong> holds everyone; <strong>Off</strong> drops the gate. Risk-scored holds reach staff as a one-tap <strong>Approve / Kick / Ban</strong> card. The desk doubles as a honeypot: an unverified account that posts instead of verifying is removed. Premium adds a custom banner, a receptionist persona, and a concierge members can chat with. Local to your server.</p>
   <p class="how"><b>How to use:</b> <code>/settings → Verification → Reception</code> (who gets held, sensitivity, the desk's look).</p>
   <a class="more" href="{{ '/wiki/settings/' | relative_url }}">Settings hub guide →</a>
 </div>
 
 <div class="feat">
-  <h3>Anti-raid &amp; lockdown <span class="feat-tag free">Free</span></h3>
+  <h3 id="feat-anti-raid">Anti-raid &amp; lockdown <span class="feat-tag free">Free</span></h3>
   <p>Detects a sudden flood of joins on <em>your</em> server and lets you slam every channel shut in one move while you deal with it.</p>
   <p class="how"><b>How to use:</b> anti-raid sensitivity comes from your community-type preset (tune it in <code>/settings</code>); hit <code>/lockdown</code> to lock or unlock everything at once.</p>
   <a class="more" href="{{ '/wiki/moderation/#bulk-raid' | relative_url }}">Raid response →</a>
 </div>
 
 <div class="feat umbrella">
-  <h3>Alt / ban-evasion detection (altguard) <span class="feat-tag free">Free</span></h3>
+  <h3 id="feat-altguard">Alt / ban-evasion detection (altguard) <span class="feat-tag free">Free</span></h3>
   <p>Catches someone <strong>you</strong> banned coming back under a new account. On join it fingerprints against <em>your own server's</em> ban/kick history (reused avatar, similar name, fresh account) and either flags the account for review or auto-bans a strong match. <b>This is local to your server</b>, it never consults the cross-server network.</p>
   <p class="how"><b>How to use:</b> <code>/altguard</code> to enable and set flag-only or auto-ban.</p>
   <a class="more" href="{{ '/wiki/altguard/' | relative_url }}">Alt / ban-evasion guide →</a>
 </div>
 
 <div class="feat umbrella">
-  <h3>Anti-nuke / rogue-admin guard <span class="feat-tag free">Free</span></h3>
+  <h3 id="feat-anti-nuke">Anti-nuke / rogue-admin guard <span class="feat-tag free">Free</span></h3>
   <p>Stops a server <strong>nuke</strong> or a <strong>compromised admin</strong> in seconds. When one account suddenly mass-deletes channels/roles, mass-bans, or grabs dangerous permissions, it scores how likely that's an attack and responds on a ladder: observe, alert staff, or <strong>auto-quarantine</strong> the account (stripping its power, with <strong>one-tap revert</strong>). A snapshot of your roles and channels lets it <strong>restore them exactly</strong> and recreate deleted channels afterwards. <b>The owner is always immune</b>, trusted staff can be whitelisted, and it's <b>local to your server</b>.</p>
   <p class="how"><b>How to use:</b> on by default, tune it under <code>/settings → Anti-nuke</code> (auto-quarantine, two-person rule, whitelist, sensitivity).</p>
   <a class="more" href="{{ '/wiki/anti-nuke/' | relative_url }}">Anti-nuke guide →</a>
 </div>
 
 <div class="feat umbrella">
-  <h3>ThreatNet <span class="feat-tag free">Free</span> <span class="feat-tag premium">Premium auto-ban</span></h3>
+  <h3 id="feat-threatnet">ThreatNet <span class="feat-tag free">Free</span> <span class="feat-tag premium">Premium auto-ban</span></h3>
   <p>The opposite of altguard: it flags accounts carrying a serious, corroborated safety record <strong>on other servers</strong>, before they've done anything on yours. It also catches <strong>scam images</strong>: the bot fingerprints posted pictures and removes ones matching a cross-server scam-image blocklist (on by default, all plans), so a fake "withdrawal received" or giveaway screenshot a text filter would miss gets caught. It shares only severity signals and opaque image fingerprints across the opt-in network, never offence details, the picture itself, or which server acted; members can opt out in the web portal. Premium can auto-ban the worst matches on join. That auto-ban is <strong>silent</strong> and opens <strong>no in-server appeal ticket</strong>, but the decision is disclosed in our Privacy Policy and stays contestable via the web portal.</p>
   <p class="how"><b>How to use:</b> <code>/threatnet status</code> to check your own status; <code>/threatnet autoban</code> (Premium) to enable join-time auto-ban. How the data and opt-out work lives on the Privacy page.</p>
   <a class="more" href="{{ '/wiki/threatnet/' | relative_url }}">ThreatNet guide →</a>
@@ -103,51 +103,51 @@ description: A tour of Server Assistant's headline features, what each one does,
 ## Member experience & team ops
 
 <div class="feat">
-  <h3>Fair ban appeals <span class="feat-tag free">Free</span></h3>
+  <h3 id="feat-ban-appeals">Fair ban appeals <span class="feat-tag free">Free</span></h3>
   <p>A ban isn't a silent door-slam. The member is DM'd <strong>exactly why</strong>, and one reply opens a staff appeal ticket with one-tap <b>Unban</b>, <b>Deny</b> and <b>Research</b> (an AI report on their recent messages, no tokens spent unless you press it). <em>One exception: a <a href="{{ '/wiki/threatnet/' | relative_url }}">ThreatNet auto-ban</a> is silent and opens no appeal ticket; that automated decision is contested via the web portal.</em></p>
   <p class="how"><b>How to use:</b> on by default once a log/staff channel is set; tune it in <code>/settings</code>.</p>
   <a class="more" href="{{ '/wiki/ban-appeals/' | relative_url }}">Ban appeals guide →</a>
 </div>
 
 <div class="feat">
-  <h3>Pulse, whole-server health insight <span class="feat-tag free">Free</span></h3>
+  <h3 id="feat-pulse">Pulse, whole-server health insight <span class="feat-tag free">Free</span></h3>
   <p>Pulse surfaces slow-burn trends humans miss, like a trickle of joins sitting just under your raid threshold. Always on in the web portal, and each staff member can have it DM'd on their own schedule. Read-only: it never acts on its own.</p>
   <p class="how"><b>How to use:</b> open the <a href="{{ '/portal/' | relative_url }}">web portal</a> (Pulse is always on there); set your personal DM cadence (Off, Weekly or Monthly) in your portal settings.</p>
   <a class="more" href="{{ '/wiki/pulse/' | relative_url }}">Pulse guide →</a>
 </div>
 
 <div class="feat">
-  <h3>Support tickets <span class="feat-tag free">Free</span></h3>
+  <h3 id="feat-tickets">Support tickets <span class="feat-tag free">Free</span></h3>
   <p>A button panel members use to open a private ticket channel with your staff; close it and a transcript is saved to your log. Premium adds custom intake questions and adding users to a ticket.</p>
   <p class="how"><b>How to use:</b> <code>/tickets setup</code> to post the panel.</p>
   <a class="more" href="{{ '/wiki/tickets/' | relative_url }}">Tickets &amp; support guide →</a>
 </div>
 
 <div class="feat">
-  <h3>Minecraft ↔ Discord bridge <span class="feat-tag free">Free</span> <span class="feat-tag premium">Premium in-game AI</span></h3>
+  <h3 id="feat-minecraft-bridge">Minecraft ↔ Discord bridge <span class="feat-tag free">Free</span> <span class="feat-tag premium">Premium in-game AI</span></h3>
   <p>Joins one Discord channel to your <strong>Paper/Spigot</strong> server with a small free plugin, no mods for your players. Two-way chat with real player names and skin-face avatars, relayed joins/deaths/advancements, live server health (TPS, RAM, uptime), an <code>/online</code> list and a live topic count. Your <strong>AutoMod covers in-game chat too</strong>, and staff get one-tap <strong>Kick</strong> / <strong>Ban in-game</strong> on a flagged player. Players can <strong>link their accounts</strong> to earn <strong>XP for in-game playtime</strong> and, if you enable it, have their Discord role mirror to their <strong>LuckPerms rank</strong> (one-way, allowlisted, never on request). Premium adds <strong>@sai in-game</strong> with a configurable assistant and an in-world companion, plus live AI translation both ways.</p>
   <p class="how"><b>How to use:</b> drop the plugin into <code>plugins/</code>, run <code>/mcdc</code> in Discord to pick a channel, then run the pre-filled link line in-game. No restart.</p>
   <a class="more" href="{{ '/wiki/minecraft/' | relative_url }}">Minecraft bridge guide →</a>
 </div>
 
 <div class="feat">
-  <h3>XP, levels &amp; leaderboards <span class="feat-tag free">Free</span></h3>
+  <h3 id="feat-leveling">XP, levels &amp; leaderboards <span class="feat-tag free">Free</span></h3>
   <p>Members earn XP for chatting, for time spent in voice, and for playtime on a linked Minecraft server, all into one account-wide balance. Levels, a <code>/rank</code> card, a leaderboard, optional level-up announcements, and Double-XP events.</p>
   <p class="how"><b>How to use:</b> on automatically; <code>/leveling</code> controls announcements, <code>/rank</code> and <code>/leaderboard</code> for members.</p>
   <a class="more" href="{{ '/wiki/leveling/' | relative_url }}">XP &amp; leveling guide →</a>
 </div>
 
 <div class="feat">
-  <h3>Welcome &amp; onboarding <span class="feat-tag free">Free</span></h3>
+  <h3 id="feat-onboarding">Welcome &amp; onboarding <span class="feat-tag free">Free</span></h3>
   <p>Greet new members with a configurable welcome DM and guide them in.</p>
   <p class="how"><b>How to use:</b> <code>/onboarding</code> to set the welcome message.</p>
   <a class="more" href="{{ '/wiki/members/' | relative_url }}">Member experience guide →</a>
 </div>
 
-## AI features <span class="feat-tag premium">Premium</span>
+## AI features <span class="feat-tag premium">Premium</span> {#ai-features-premium}
 
 <div class="feat">
-  <h3>The AI suite <span class="feat-tag premium">Premium</span></h3>
+  <h3 id="feat-ai-suite">The AI suite <span class="feat-tag premium">Premium</span></h3>
   <p>SAi, a concierge that reads your server and proposes specific improvements, plus image generation, translation and AI-facilitated mediation between members. A free 150k-token trial lets you try it, or bring your own provider key.</p>
   <p class="how"><b>How to use:</b> <code>/sai</code>, <code>/imagine</code>, <code>/translate</code>, <code>/mediate</code>. Set AI up in <code>/setup</code> or <code>/ai-config</code>.</p>
   <a class="more" href="{{ '/wiki/ai/' | relative_url }}">AI &amp; intelligence guide →</a>
@@ -156,7 +156,7 @@ description: A tour of Server Assistant's headline features, what each one does,
 ## Setup & control
 
 <div class="feat">
-  <h3>Guided setup &amp; Settings hub <span class="feat-tag free">Free</span></h3>
+  <h3 id="feat-setup">Guided setup &amp; Settings hub <span class="feat-tag free">Free</span></h3>
   <p>A one-minute wizard gets you configured: the bot scans your server, pre-fills every step, and you just review and confirm. The Settings hub gives per-feature control afterwards. <code>/autopilot</code> is an alias that opens the same pre-filled wizard.</p>
   <p class="how"><b>How to use:</b> <code>/setup</code> (or <code>/autopilot</code>) to start, <code>/settings</code> to fine-tune.</p>
   <a class="more" href="{{ '/wiki/setup/' | relative_url }}">Setup wizard guide →</a>

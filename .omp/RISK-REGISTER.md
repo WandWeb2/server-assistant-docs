@@ -52,7 +52,7 @@ a private operator lacks — a potential hard blocker.
   free-text describing alleged wrongdoing is ever pooled.
 
 On this design the cross-server dataset (pseudonymous user ID + counts + recency +
-severity level + fingerprint-match boolean + account-age modifier) is **assessed
+severity level + account-age modifier) is **assessed
 NON-sensitive** under s6(1) — not a "criminal record." **APP 3.3 is not engaged, so
 no consent is required**; collection rests on **APP 3.2** (reasonably necessary) +
 **APP 5** notice + **APP 6** limits. The no-opt-out lock is **no longer in tension**
@@ -60,6 +60,14 @@ with a consent requirement, because none arises. Under GDPR, **Art. 10 is now ve
 unlikely** to be engaged for the same structural reason, so legitimate interest
 (Art. 6(1)(f)) per the LIA is a sufficient basis. **This is the durable kind of fix:
 the data that crosses the boundary changed, not just the description of it.**
+
+**Corrected 2026-08-02:** that dataset list also carried a **fingerprint-match
+boolean** (`altguard_match`). It has not crossed the boundary since **v6.112.0**,
+which stopped sending the key at all (`bot.py:4180-4195`) and removed the dossier
+line that read it (`bot.py:37451`). The relay keeps the column at `DEFAULT 0`
+(`relay.py:706`) and defaults the field to `False` when it is absent
+(`relay.py:27757`). The boundary is narrower than this rating was set against, so
+the rating stands unchanged.
 
 **What was done (in the docs).** Propagated the severity-only design through
 `privacy.md` (signals list, what-never-crosses list, data-minimisation, legal-basis
@@ -133,8 +141,9 @@ tuning, N≥2 corroboration, anti-poisoning) and the **APP 13 correction right**
 the disclaimer wording. **Corrected 2026-08-02:** that list previously led with
 "advisory-only", which is false of the shipped product. See **R9**. **Strengthened 2026-06-21 by the qualified individual
 opt-out:** a wrongly-flagged individual now has an **affirmative, advertised way to
-stop profiling** (opt-out via `/support` now; self-service portal toggle on the
-roadmap), in addition to correction (APP 13) and erasure — honoured unless we have
+stop profiling** (self-service portal toggle, **live since v5.8.0**; corrected
+2026-08-02, this previously read "via `/support` now; self-service portal toggle on
+the roadmap"), in addition to correction (APP 13) and erasure via `/support` — honoured unless we have
 compelling legitimate grounds (a corroborated safety/fraud need) to retain the most
 serious signals. This gives the third party real, exercisable recourse that does not
 depend on Terms they never signed, **reducing the practical exposure** even though
@@ -224,12 +233,20 @@ must be honoured promptly, and the **compelling-grounds safety exception** must 
 applied **consistently and documented** each time it is invoked — otherwise the
 opt-out is a promise on paper only.
 
+**Corrected 2026-08-02.** The opt-out half of that workload is no longer a `/support`
+queue: the **self-service portal toggle shipped in v5.8.0** and is now the only
+opt-out route (`relay.py:16372-16410`, UI at `relay.py:20015-20025`), with `/support`
+explicitly **not** an opt-out route (`bot.py:41177-41180`). What remains manual, and
+what this risk is really about, is **access (APP 12), correction (APP 13), erasure /
+objection, and the operator-set safety exception**, which a customer can never set
+themselves. The rating is left unchanged.
+
 **What I did to mitigate.** Documented the required workflow (including the
 compelling-grounds standard) in the PIA Part C checklist.
 
 **What still needs work (operational).** Build the triage + decision-standard +
-opt-out handling + refusal-documentation + SLA before launch; ship the self-service
-portal opt-out toggle per the roadmap.
+refusal-documentation + SLA before launch. The self-service portal opt-out toggle,
+listed here as outstanding, is **done** (v5.8.0).
 
 ---
 
@@ -265,17 +282,22 @@ LIA nor this register acknowledged that any such decision existed.
   acting on it is opt-in.
 
 **The two paths chained, and nothing stopped them (fixed in v6.112.0, see residual
-4).** As originally assessed: an alt-guard auto-ban is not marked
-the way a ThreatNet auto-ban is, so it falls through to `_emit_threat_signal`
-(`bot.py:9945-9953`), and every ban maps to the **top** severity band
-(`bot.py:4097-4098`). Two independent servers auto-banning the same account on an
-avatar match therefore produce the `high` cross-server band
+4).** As originally assessed, and stated here in the past tense because v6.112.0
+changed it: an alt-guard auto-ban **was** not marked the way a ThreatNet auto-ban is,
+so it fell through to `_emit_threat_signal`, and every ban maps to the **top**
+severity band (`bot.py:4097-4098`). Two independent servers auto-banning the same
+account on an avatar match therefore produced the `high` cross-server band
 (`relay.py:1463-1464`) that is the **default** trigger for auto-protect elsewhere
-(`bot.py:9809`). Automated action manufactures the exact input for further automated
-action, with no human anywhere in the chain. The relay cannot even tell the two
-apart, because the `altguard_match` flag is never set by any call site
-(`bot.py:9953`, default at `4144`). The existing circular-amplification guard
-(`bot.py:9940-9948`) was written for ThreatNet's own bans and does not cover this.
+(`bot.py:9809`). Automated action manufactured the exact input for further automated
+action, with no human anywhere in the chain. The relay could not tell the two apart
+either. **Corrected 2026-08-02:** the reason given for that was "the `altguard_match`
+flag is never set by any call site", which understates the current position. Since
+v6.112.0 the field is **not sent at all**: the key was removed from the signal
+payload (`bot.py:4180-4195`) and from the dossier line that read it
+(`bot.py:37451`); the relay holds the column at `DEFAULT 0` (`relay.py:706`) and
+defaults the field to `False` when it is absent (`relay.py:27757`). The existing
+circular-amplification guard was written for ThreatNet's own bans and did not cover
+this.
 
 **Why it is HIGH.** Art. 22(1) restricts decisions based solely on automated
 processing that produce legal effects or similarly significant effects. None of the
@@ -390,8 +412,9 @@ legitimate interest per the LIA (EU/UK).
 
 **Second improvement — the qualified individual opt-out (locked 2026-06-21).**
 Servers still cannot opt out (core functionality), but the **individual** can now
-opt out of profiling (via `/support` now; self-service portal toggle on the
-roadmap), subject to a **compelling-grounds safety exception** (verified
+opt out of profiling (**self-service portal toggle, live since v5.8.0**; corrected
+2026-08-02, this previously read "via `/support` now; self-service portal toggle on
+the roadmap"), subject to a **compelling-grounds safety exception** (verified
 raid/scam/ban-evasion → most serious signals may be retained, so bad actors can't
 opt out to evade detection). This **supersedes the old "no opt-out UI / case-by-case
 erasure only" stance** and strengthens the data-subject posture across the board:
@@ -421,10 +444,13 @@ unchanged, but R4/R5/R8 residuals are reduced.
    at `elevated` (residual 3, narrowed). The rating stays **HIGH**, because what
    drives it is the unresolved Art. 22(2) gate and the absence of a human before
    either ban, neither of which this release touched.
-4. **Operational follow-through** — DPAs/SCCs (R6), the `/support` rights + **opt-out
-   handling** workflow with consistent compelling-grounds application (R8), shipping
-   the bot-delivered install notice + roadmap portal opt-out toggle, and keeping the
-   severity band genuinely generic (R1 residual) — are the live to-dos.
+4. **Operational follow-through** — DPAs/SCCs (R6), the `/support` rights workflow
+   (access, correction, erasure) with consistent compelling-grounds application on
+   the operator-set safety exception (R8), shipping the bot-delivered install notice,
+   and keeping the severity band genuinely generic (R1 residual) — are the live
+   to-dos. **The portal opt-out toggle was listed here as outstanding and is done**
+   (v5.8.0, corrected 2026-08-02); it is self-service, so opt-out handling is no
+   longer part of the `/support` workload.
 
 This pass makes the documentation **honest, consistent, and APP-correct**, reflects
 the severity-only design throughout, and **does not overclaim**: it still notes the
@@ -482,6 +508,13 @@ Related, still open (not changed by this sign-off):
   auto-protect clause reading "Confirm with the owner AND a lawyer before
   publishing". Tonight's sign-off was scoped to `privacy.md`, so those were left
   in place and remain outstanding.
+  **RESOLVED as to the FILE, 2026-08-02:** the markers are no longer in `terms.md`.
+  They were HTML comments, which Jekyll serves to customers in view-source, so they
+  were moved out of both published pages into `.omp/legal-review-notes.md`;
+  `grep -c "<!--"` is now **0** for `terms.md` and `privacy.md` alike, and the
+  quoted sentence now lives at `.omp/legal-review-notes.md:94`. **The underlying
+  item is NOT discharged:** owner and lawyer confirmation on the auto-protect
+  clause remains outstanding. Only its location changed.
 
 **2026-08-02 (owner decision) - targeted legal advice on Article 22(2) has been
 SOUGHT and is OUTSTANDING.** Rather than commission a full legal review, the owner
