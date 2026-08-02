@@ -5,13 +5,227 @@ permalink: /privacy/
 description: How Server Assistant handles your Discord server's data, encrypted storage, per-guild isolation, AI provider data flow, the web portal, and billing.
 ---
 # Server Assistant Privacy Policy
+{: #server-assistant-privacy-policy}
 
-**Effective date:** May 9, 2026
-**Last updated:** August 2, 2026
+<style>
+/* ── Legal pages (Privacy / Terms): type hierarchy + on-page navigation ──────
+   Tokens and surfaces only, nothing new invented. Selectors are scoped to
+   `.page-content .wrapper` so they outrank glass.css, which loads after this
+   block (it is pulled in from _includes/footer.html). ─────────────────────── */
+.page-content .wrapper h1 { font-size: var(--fs-2xl); line-height: 1.15; margin-bottom: .55rem; }
+.page-content .wrapper h2 { font-size: 1.5rem; margin-top: 2.1rem; padding-top: 0; scroll-margin-top: 78px; }
+.page-content .wrapper h3 {
+  font-size: 1.08rem; margin-top: 2rem; margin-bottom: .5rem;
+  padding-left: .7rem; border-left: 3px solid var(--accent); scroll-margin-top: 78px;
+}
+
+/* Document meta: effective / last-updated / where changes are announced. */
+.lp-meta { display: flex; flex-wrap: wrap; gap: .45rem .5rem; margin: .1rem 0 1.5rem; }
+.lp-meta > span, .lp-meta > a {
+  font-size: var(--fs-sm); color: var(--fg-1);
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 999px; padding: .3rem .8rem;
+}
+.lp-meta strong { color: var(--fg-0); font-weight: 600; }
+.lp-meta > a { color: var(--accent); }
+
+/* Shared card shell for the navigation blocks. */
+.lp-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--r-md); padding: 1.15rem 1.3rem; margin: 1.6rem 0;
+}
+.page-content .wrapper .lp-card h2.lp-h {
+  font-size: var(--fs-sm); text-transform: uppercase; letter-spacing: .08em;
+  color: var(--fg-2); font-weight: 700; margin: 0 0 .9rem; padding: 0; border: 0;
+}
+.lp-note { font-size: var(--fs-sm); color: var(--fg-1); margin: 0 0 1rem; }
+.lp-note strong { color: var(--fg-0); }
+
+/* "Start here" grid: signposts into the policy, not a substitute for it. */
+.lp-glance { display: grid; grid-template-columns: repeat(auto-fit, minmax(215px, 1fr)); gap: .7rem; }
+.lp-g {
+  display: flex; flex-direction: column; gap: .3rem;
+  background: var(--surface-2); border: 1px solid var(--border);
+  border-radius: var(--r-sm); padding: .8rem .9rem;
+  color: var(--fg-1) !important; text-decoration: none !important;
+  transition: background .15s ease, border-color .15s ease;
+}
+.lp-g:hover { background: var(--surface-hi); border-color: rgba(60, 193, 240, 0.35); }
+.lp-gt { font-size: var(--fs-base); font-weight: 700; color: var(--fg-0); line-height: 1.3; }
+.lp-gd { font-size: var(--fs-sm); line-height: 1.45; }
+.lp-gl { font-size: var(--fs-xs); color: var(--accent); margin-top: .15rem; }
+
+/* Contents. */
+.lp-toc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 1.1rem 1.6rem; }
+.lp-toc-cat { font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: .07em; color: var(--fg-2); margin: 0 0 .4rem; font-weight: 700; }
+.lp-toc-list { list-style: none; margin: 0; padding: 0; }
+.lp-toc-list li { margin: 0 0 .3rem; line-height: 1.35; }
+.lp-toc-list a { font-size: var(--fs-sm); display: inline-block; overflow-wrap: anywhere; }
+.lp-toc-list .lp-sub { padding-left: .8rem; border-left: 1px solid var(--divider); }
+.lp-toc-list .lp-sub a { color: var(--fg-1); }
+.lp-toc-list .lp-sub a:hover { color: var(--accent); }
+.lp-toc-foot { font-size: var(--fs-sm); color: var(--fg-1); margin: 1.1rem 0 0; padding-top: .85rem; border-top: 1px solid var(--divider); }
+
+/* The four dense reference tables get their own scroll box, so a wide one can
+   never push the page body sideways, plus tighter type for scanning. No
+   min-width here on purpose: narrow-screen table scrolling is owned site-wide
+   by glass.css, and a min-width would fight it. */
+.lp-tablewrap { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 1rem 0 1.4rem; }
+.lp-tablewrap > table { margin-bottom: 0; }
+.lp-tablewrap th, .lp-tablewrap td { font-size: var(--fs-sm); line-height: 1.5; vertical-align: top; overflow-wrap: anywhere; }
+
+@media (max-width: 620px) {
+  .lp-card { padding: .95rem 1rem; }
+  .lp-glance, .lp-toc-grid { grid-template-columns: 1fr; gap: .7rem; }
+}
+</style>
+
+<div class="lp-meta">
+  <span><strong>Effective date:</strong> May 9, 2026</span>
+  <span><strong>Last updated:</strong> August 2, 2026</span>
+  <a href="#changes-to-this-policy">How changes are announced</a>
+</div>
 
 This policy describes how the Server Assistant Discord bot ("the Bot") collects, uses, and stores information when installed in a Discord server.
 
+<div class="lp-card" id="start-here">
+  <h2 class="lp-h" id="start-here-h">Start here</h2>
+  <p class="lp-note"><strong>A map, not a summary.</strong> These cards do nothing but point you at the section that actually applies. They are not a shortened version of this policy, they replace and qualify nothing, and they make no claim the linked section does not already make in full. Read the section.</p>
+  <div class="lp-glance">
+    <a class="lp-g" href="#what-the-bot-stores">
+      <span class="lp-gt">What we store</span>
+      <span class="lp-gd">Per-server settings, moderation records, and the limited, truncated extracts a feature needs to do its job.</span>
+      <span class="lp-gl">What the Bot stores &rarr;</span>
+    </a>
+    <a class="lp-g" href="#what-the-bot-does-not-store">
+      <span class="lp-gt">What we never store</span>
+      <span class="lp-gd">No voice audio, no record of who is online, no ordinary Discord DMs, and no message content beyond what triggered an action. Three named exceptions.</span>
+      <span class="lp-gl">What the Bot does NOT store &rarr;</span>
+    </a>
+    <a class="lp-g" href="#cross-server-threat-network-threatnet">
+      <span class="lp-gt">What crosses to other servers</span>
+      <span class="lp-gd">Minimized aggregates and a severity level. Never message content, never the offence type, never which server acted.</span>
+      <span class="lp-gl">Cross-Server Threat Network &rarr;</span>
+    </a>
+    <a class="lp-g" href="#third-party-ai-providers">
+      <span class="lp-gt">What goes to an AI provider</span>
+      <span class="lp-gd">Only when staff invoke a feature or an enabled, opt-in feature fires, and only the minimum that feature needs. Every provider is named.</span>
+      <span class="lp-gl">Third-party AI providers &rarr;</span>
+    </a>
+    <a class="lp-g" href="#data-retention">
+      <span class="lp-gt">How long we keep it</span>
+      <span class="lp-gd">Every category has its own stated limit. Some are clocks, some are counts, some run until the Bot is removed.</span>
+      <span class="lp-gl">Data retention &rarr;</span>
+    </a>
+    <a class="lp-g" href="#opt-out-servers-vs-individuals">
+      <span class="lp-gt">How to opt out</span>
+      <span class="lp-gd">A server cannot opt out of the Threat Network. An individual can, from the web portal, subject to one published safety exception.</span>
+      <span class="lp-gl">Opt-out: servers vs individuals &rarr;</span>
+    </a>
+    <a class="lp-g" href="#your-rights">
+      <span class="lp-gt">Your rights</span>
+      <span class="lp-gd">Access, correction, deletion and objection, under the Australian Privacy Principles, the GDPR and the CCPA, and how to use them.</span>
+      <span class="lp-gl">Your rights &rarr;</span>
+    </a>
+    <a class="lp-g" href="#complaints">
+      <span class="lp-gt">If you are not satisfied</span>
+      <span class="lp-gd">Raise it with us first, then with the regulator for where you are.</span>
+      <span class="lp-gl">Complaints &rarr;</span>
+    </a>
+  </div>
+</div>
+
+<nav class="lp-card lp-toc" id="contents" aria-labelledby="contents-h">
+  <h2 class="lp-h" id="contents-h">Contents</h2>
+  <div class="lp-toc-grid">
+    <div>
+      <p class="lp-toc-cat">Who we are</p>
+      <ul class="lp-toc-list">
+        <li><a href="#who-is-responsible">Who is responsible</a></li>
+        <li class="lp-sub"><a href="#our-approach-to-your-privacy">Our approach to your privacy</a></li>
+      </ul>
+      <p class="lp-toc-cat" style="margin-top:.9rem">What we hold</p>
+      <ul class="lp-toc-list">
+        <li><a href="#what-the-bot-stores">What the Bot stores</a></li>
+        <li class="lp-sub"><a href="#per-server-configuration">Per-server configuration</a></li>
+        <li class="lp-sub"><a href="#moderation-records">Moderation records</a></li>
+        <li class="lp-sub"><a href="#alt-guard-fingerprints-repeat-offender-detection">Alt-guard fingerprints</a></li>
+        <li class="lp-sub"><a href="#staff-decision-records">Staff decision records</a></li>
+        <li class="lp-sub"><a href="#audit-log">Audit log</a></li>
+        <li class="lp-sub"><a href="#scheduled-tasks">Scheduled tasks</a></li>
+        <li class="lp-sub"><a href="#encrypted-credentials">Encrypted credentials</a></li>
+        <li class="lp-sub"><a href="#ai-token-ledger">AI token ledger</a></li>
+        <li class="lp-sub"><a href="#billing-data">Billing data</a></li>
+        <li class="lp-sub"><a href="#web-portal-sign-in-staff">Web portal sign-in (staff)</a></li>
+        <li class="lp-sub"><a href="#push-notifications-web-portal">Push notifications</a></li>
+        <li class="lp-sub"><a href="#support-tickets--appeals">Support tickets &amp; appeals</a></li>
+        <li class="lp-sub"><a href="#bot-message-log">Bot message log</a></li>
+        <li class="lp-sub"><a href="#community-feature-polls">Community feature polls</a></li>
+        <li><a href="#what-the-bot-does-not-store">What the Bot does NOT store</a></li>
+        <li><a href="#what-each-feature-reads">What each feature reads</a></li>
+        <li class="lp-sub"><a href="#sai-answering-from-channels-you-nominate-not-live-today">SAi answering from channels you nominate</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="lp-toc-cat">Cross-Server Threat Network</p>
+      <ul class="lp-toc-list">
+        <li><a href="#cross-server-threat-network-threatnet">Cross-Server Threat Network (ThreatNet)</a></li>
+        <li class="lp-sub"><a href="#what-this-means-for-our-role">What this means for our role</a></li>
+        <li class="lp-sub"><a href="#what-data-is-shared-across-servers">What data is shared across servers</a></li>
+        <li class="lp-sub"><a href="#what-we-do-not-collect-keep-or-share-in-the-network">What we do NOT collect, keep, or share</a></li>
+        <li class="lp-sub"><a href="#why-we-do-this-legal-basis">Why we do this (legal basis)</a></li>
+        <li class="lp-sub"><a href="#opt-out-servers-vs-individuals">Opt-out: servers vs individuals</a></li>
+        <li class="lp-sub"><a href="#advisory-by-default-and-optional-premium-automated-action">Advisory by default, and automated action</a></li>
+        <li class="lp-sub"><a href="#data-minimization">Data minimization</a></li>
+        <li class="lp-sub"><a href="#retention">Retention</a></li>
+        <li class="lp-sub"><a href="#your-rights-in-the-threat-network">Your rights in the Threat Network</a></li>
+        <li class="lp-sub"><a href="#contribution-vs-visibility">Contribution vs visibility</a></li>
+      </ul>
+      <p class="lp-toc-cat" style="margin-top:.9rem">Features with their own terms</p>
+      <ul class="lp-toc-list">
+        <li><a href="#xp-leveling--the-public-leaderboard">XP, leveling &amp; the public leaderboard</a></li>
+        <li><a href="#minecraft-account-linking-opt-in">Minecraft account linking (opt-in)</a></li>
+        <li><a href="#minecraft-chat-and-other-in-game-text">Minecraft chat and other in-game text</a></li>
+        <li class="lp-sub"><a href="#private-in-game-messages-msg-tell-w">Private in-game messages</a></li>
+        <li class="lp-sub"><a href="#in-game-ai-features-sai-translation-and-ai-review">In-game AI features and AI review</a></li>
+        <li class="lp-sub"><a href="#why-we-would-allow-ai-review-of-in-game-chat-legitimate-interest">Why we would allow AI review of in-game chat</a></li>
+        <li><a href="#crest-artwork--attribution">Crest artwork &amp; attribution</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="lp-toc-cat">Where it goes, and for how long</p>
+      <ul class="lp-toc-list">
+        <li><a href="#third-party-ai-providers">Third-party AI providers</a></li>
+        <li><a href="#where-your-data-is-stored">Where your data is stored</a></li>
+        <li class="lp-sub"><a href="#sub-processors">Sub-processors</a></li>
+        <li><a href="#data-retention">Data retention</a></li>
+      </ul>
+      <p class="lp-toc-cat" style="margin-top:.9rem">Your rights</p>
+      <ul class="lp-toc-list">
+        <li><a href="#your-rights">Your rights</a></li>
+        <li class="lp-sub"><a href="#australian-privacy-act-1988--australian-privacy-principles-primary">Australian Privacy Act 1988 / APPs</a></li>
+        <li class="lp-sub"><a href="#gdpr-eea--uk">GDPR (EEA / UK)</a></li>
+        <li class="lp-sub"><a href="#ccpa-california">CCPA (California)</a></li>
+        <li><a href="#complaints">Complaints</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <p class="lp-toc-cat" style="margin-top:.9rem">Security and platform compliance</p>
+      <ul class="lp-toc-list">
+        <li><a href="#data-security">Data security</a></li>
+        <li><a href="#privileged-gateway-intents">Privileged Gateway Intents</a></li>
+        <li><a href="#discord-platform-compliance">Discord platform compliance</a></li>
+        <li><a href="#childrens-privacy">Children's privacy</a></li>
+        <li><a href="#changes-to-this-policy">Changes to this policy</a></li>
+      </ul>
+    </div>
+  </div>
+  <p class="lp-toc-foot">Companion document: the <a href="{{ site.url }}{{ site.baseurl }}/terms/">Terms of Service</a>.</p>
+</nav>
+
+---
+
 ## Who is responsible
+{: #who-is-responsible}
 
 Server Assistant is built and maintained by **Wandering Webmaster** ([wandweb.co](https://wandweb.co)), based in **Queensland, Australia**, serving Discord communities **worldwide**. Contact us via the [`/support`]({{ site.url }}{{ site.baseurl }}/support/) slash command from any Discord server with the Bot installed.
 
@@ -25,16 +239,19 @@ Where these regimes use different language for the same idea, we have written th
 Wandering Webmaster is the **data controller** (and, in Australian terms, the **APP entity**) for the information described in this policy. Where we process moderation records about a server's members **on that server's behalf**, the server owner is the controller and we act as a **processor** carrying out the owner's instructions. There is one important exception: for the **Cross-Server Threat Network** (see that section below), where we pool minimized signals from many servers into a shared safety dataset, **we act as the data controller** of that cross-server dataset.
 
 ### Our approach to your privacy
+{: #our-approach-to-your-privacy}
 
 Server Assistant is run by a **small independent operator** who takes a **privacy-by-design, data-minimisation** approach: we collect only what each feature genuinely needs, share the minimum necessary, and prefer aggregates and severity levels over raw content wherever a feature allows. If you ever have a privacy concern, about the Threat Network or anything else, you can reach us directly through the [`/support`]({{ site.url }}{{ site.baseurl }}/support/) slash command from any server with the Bot installed, and we will respond. We **review and update this policy periodically** as the Bot's features evolve, and the "Last updated" date above reflects the most recent revision.
 
 ---
 
 ## What the Bot stores
+{: #what-the-bot-stores}
 
 The Bot stores the minimum data needed to run its features. All data lives on our hosting infrastructure and is not sold or shared except as described below.
 
 ### Per-server configuration
+{: #per-server-configuration}
 
 When a server owner runs `/setup` or `/autopilot`, the Bot stores:
 - Discord server (guild) ID, staff-chat channel ID, log channel ID
@@ -44,6 +261,7 @@ When a server owner runs `/setup` or `/autopilot`, the Bot stores:
 - Privacy panel toggles (which AI features are enabled per-server)
 
 ### Moderation records
+{: #moderation-records}
 
 **Warnings & notes.** When staff issue a warning or note:
 - Discord user ID of the affected member
@@ -58,6 +276,7 @@ Retained until manually removed by staff or until the Bot is removed from the se
 This log is **always on** and is **visible to your server's admins in the web dashboard**. Because it lives on our servers, it cannot be edited or deleted from within Discord, so a moderation action is never left without a record, even if you have not set up a Discord log channel (or a channel entry is deleted). It does **not** store the message content or any image that triggered the action, only the fields listed above. That holds for **text written in the game** too, on a Minecraft server running our bridge: when in-game text trips your AutoMod — chat, a sign, a book, an item name, a mob name tag, a `/me` emote, a username, or a private message — the entry names the player, their Minecraft UUID, and which rule matched, and records **no part of the text itself**. Entries are automatically deleted after **180 days**.
 
 ### Alt-guard fingerprints (repeat-offender detection)
+{: #alt-guard-fingerprints-repeat-offender-detection}
 
 Alt-guard is the feature that spots someone your server banned coming back on a second account. To do that it needs a record of who has already been removed, so when a member is **banned or kicked** in your server, whether staff did it or the Bot did, we write a small **fingerprint** of that account to your server's own store on our host:
 
@@ -99,6 +318,7 @@ What we are **not** going to weigh in favour, because it would not be honest, is
 - **Your right to object.** Because this rests on legitimate interest, you may **object** under **GDPR Article 21**, and ask what we hold about you, have it corrected, or have it deleted. Come to us directly through [`/support`]({{ site.url }}{{ site.baseurl }}/support/) or [wandweb.co](https://wandweb.co); you do not have to go through the server that banned you.
 
 ### Staff decision records
+{: #staff-decision-records}
 
 Some alerts need a **person** to decide: a ban appeal, a borderline AutoMod flag, a possible raid, a risky action awaiting owner approval, or a flagged piece of in-game text from a bridged Minecraft server. When one is raised, we store a **decision record**, so that the same item appears both in your staff chat and in the web portal's "Needs input" strip, and so it is clear who acted on it. Each record holds:
 
@@ -110,6 +330,7 @@ Some alerts need a **person** to decide: a ban appeal, a borderline AutoMod flag
 This is the one place a short extract of flagged **in-game** text is written to our database; the moderation-actions log above deliberately holds none. A decision record is deleted **90 days after the decision is closed**. A decision **nobody has acted on stays open** and is kept until someone closes it — we do not delete an item still waiting on a moderator, because a decision that silently vanishes from the queue is worse than one that waits.
 
 ### Audit log
+{: #audit-log}
 
 A rolling log of recent staff actions across the Bot, including actions taken **directly in Discord** (native bans, kicks, timeouts), not just those routed through the Bot. Each entry contains:
 - Timestamp, acting staff member's user ID and tag
@@ -121,10 +342,12 @@ It is a fixed-size ring: we keep the **most recent 500 entries**, and each new o
 This audit trail is **encrypted at rest** with the same master key used for credentials. Server staff cannot read, edit, or erase it; only the Bot can access it. If anyone deletes an entry from a server's visible log channel, the owner is alerted automatically, and the encrypted record remains intact.
 
 ### Scheduled tasks
+{: #scheduled-tasks}
 
 Reminder and recurring task data (task ID, creator ID, channel ID, guild ID, scheduled time, command text). Deleted automatically when the task fires or is cancelled.
 
 ### Encrypted credentials
+{: #encrypted-credentials}
 
 Stored encrypted at rest:
 - AI provider API keys (when server owner provides their own via `/ai-config`)
@@ -133,6 +356,7 @@ Stored encrypted at rest:
 The encryption key is stored separately on our host and never transmitted.
 
 ### AI token ledger
+{: #ai-token-ledger}
 
 For servers using AI features on the shared key:
 - Guild ID, current plan, tokens used (lifetime or monthly), plan reset date
@@ -142,6 +366,7 @@ For servers using AI features on the shared key:
 The user ID is in that per-call log because some AI features are capped **per person** rather than per server, and this log is what the six-hour rolling cap is counted from. It is the only thing that reads it at that grain.
 
 ### Billing data
+{: #billing-data}
 
 If you subscribe to Premium via Stripe:
 - We store a reference to your Stripe Customer and Subscription ID (not your card details, those are held by Stripe)
@@ -149,6 +374,7 @@ If you subscribe to Premium via Stripe:
 - Stripe handles all payment processing, card storage, and tax compliance per their own [Privacy Policy](https://stripe.com/privacy)
 
 ### Web portal sign-in (staff)
+{: #web-portal-sign-in-staff}
 
 Server owners, admins, and moderators can manage their server from the web portal at **serverassistant.wandweb.co**. Signing in uses **Discord OAuth** (you authorise it on Discord; we never see your Discord password). For a signed-in staff member we store:
 - Discord user ID and username
@@ -158,10 +384,12 @@ Server owners, admins, and moderators can manage their server from the web porta
 We request the Discord scopes `identify`, `guilds`, and `guilds.members.read` **only** to confirm who you are and which servers and roles you have. The short-lived Discord access token used to read that is **not stored**; we derive your access level and discard it. The portal never grants a staff member more than their Discord role already allows, and every action is re-checked on our server.
 
 ### Push notifications (web portal)
+{: #push-notifications-web-portal}
 
 If a staff member installs the portal as an app and turns on notifications, we store the browser **push subscription** (an endpoint URL and its encryption keys) together with their Discord ID, so we can alert them when something needs their input. Notifications are delivered through the push service operated by that person's **browser vendor** (e.g. Google, Mozilla, or Apple), see Sub-processors below. Signing out or disabling notifications deletes the subscription.
 
 ### Support tickets & appeals
+{: #support-tickets--appeals}
 
 When you message us through a support ticket (via `/support`) or reply to a ban-appeal DM, we store the content of those messages so staff and our operator can read and respond:
 - **Support ticket:** your message text (up to 4,000 characters) and any image URLs you attach
@@ -174,6 +402,7 @@ When you message us through a support ticket (via `/support`) or reply to a ban-
 These are messages you choose to send to us or to your server's staff. **Ordinary Discord direct messages and private conversations are never read or stored.** That has always been a statement about **Discord**, and we have made it explicit here rather than leave it to be inferred: private messages sent *inside the game*, on a Minecraft server running our bridge, are a different thing entirely and have their own section — see *Minecraft chat and other in-game text → Private in-game messages* below.
 
 ### Bot message log
+{: #bot-message-log}
 
 A record of the messages **the Bot itself sends**, to a server channel, a thread, or to a member by direct message (for example a ban-reason DM or a "finish setup" reminder). For each, we keep:
 - The server (guild) ID and which channel it was sent to, or, for a DM, simply that a direct message was sent and to whom
@@ -182,6 +411,7 @@ A record of the messages **the Bot itself sends**, to a server channel, a thread
 This log covers only messages **the Bot sends**, never messages your members send to one another. It exists for operational reliability and as a safety/audit trail of the Bot's own activity, and is visible only to our operator. It is **not** shown in your server's web portal, and the **content** of a member's private DM is never echoed into any server channel, only a content-free note that the Bot reached out. Entries are automatically deleted after **60 days**.
 
 ### Community feature polls
+{: #community-feature-polls}
 
 Every so often we ask the servers we serve which feature we should build next. When we do, the Bot posts a **Discord poll** into the **staff-chat channel** you nominated in `/setup`, so the people who run the server can weigh in on what we work on. These go to a server's **staff**, about our roadmap. We do not put polls to a server's members, and we do not use this to survey your community about anything.
 
@@ -199,6 +429,7 @@ That is all of it. A vote carries no free text, and someone who does not vote le
 ---
 
 ## What the Bot does NOT store
+{: #what-the-bot-does-not-store}
 
 - Message content beyond what triggered an action or review — whether it was posted in Discord or written in the game on a Minecraft server running our bridge (when one is triggered, only a truncated copy is kept: up to 500 characters in the audit log, up to ~500 characters in the staff decision record described above, or up to ~1,500 characters of surrounding context for a message your staff send for review)
 - User direct messages or private conversations. There are **three** exceptions, and they are the only ones: messages you send us through a support ticket (`/support`), and a ban-appeal reply, which we store so staff can respond (see **Support tickets & appeals** above); and a **private in-game message on a Minecraft server running our bridge that matches that server's AutoMod filter**, which is reported to that server's staff (see *Private in-game messages* below). A private in-game message that matches **nothing creates no record**: it passes through the queue we check it from, is deleted from it within about a day, is read by no person at any point, and is never written into the moderation log, a decision record, or anything else we keep
@@ -211,8 +442,11 @@ That is all of it. A vote carries no free text, and someone who does not vote le
 ---
 
 ## What each feature reads
+{: #what-each-feature-reads}
 
 You control all of this via the `/privacy` panel. AutoMod and anti-raid are required for moderation and always on; everything else is opt-in.
+
+<div class="lp-tablewrap" markdown="1">
 
 | Feature | What it reads | Default |
 |---|---|---|
@@ -230,7 +464,10 @@ You control all of this via the `/privacy` panel. AutoMod and anti-raid are requ
 | **Bot Health Insurance** | The bot's own action counts | On |
 | **SAi** | Your settings + recent event summary + pending staff decisions (which can include ban-appeal text) + your typed question | On-demand |
 
+</div>
+
 ### SAi answering from channels you nominate (not live today)
+{: #sai-answering-from-channels-you-nominate-not-live-today}
 
 We are building a capability that lets your staff nominate a small set of channels — typically rules, FAQ, or announcements — for **SAi** to answer from, so that when someone asks "what are the rules on X", SAi answers from what your server actually says rather than guessing. **It is not live today**, and no channel is read this way at present. We are setting it out here before it ships, because it would change what is **sent** to an AI provider. When it does arrive:
 
@@ -249,14 +486,17 @@ Be clear about what this would and would not change. It **expands what is sent**
 ---
 
 ## Cross-Server Threat Network (ThreatNet)
+{: #cross-server-threat-network-threatnet}
 
 Server Assistant operates a **Cross-Server Threat Network**, branded **ThreatNet**, a shared safety signal that helps every protected server recognise users who have a serious, corroborated history of abuse (scams, raids, ban-evasion) on *other* protected servers, ideally **before** they cause harm on yours. This is a **core, defining feature** of Server Assistant, not an add-on, and it is described here in full. ("ThreatNet" and "the Threat Network" refer to the same thing throughout.)
 
 ### What this means for our role
+{: #what-this-means-for-our-role}
 
 For ordinary moderation records, the server owner is the controller and we act as a processor on their instructions (see *Who is responsible* above). The Threat Network is different. Because we **pool minimized signals from many servers** to build a shared, cross-server picture of a user's risk, **Wandering Webmaster is the data controller** of that cross-server safety dataset. We take on the controller's obligations for it, including the legal basis, retention limits, and data-subject rights described below.
 
 ### What data is shared across servers
+{: #what-data-is-shared-across-servers}
 
 Every protected server **contributes** minimized abuse signals to the network and is, in turn, **protected by** it. The network is **severity-only**: only a small, **minimized aggregate plus a single severity level** ever crosses the boundary between servers. Specifically, the network may hold, per Discord user:
 
@@ -289,6 +529,7 @@ A server's local moderation record keeps its full detail for that server's own s
 Crucially, a scam-image fingerprint is **not linked to any Discord user**, it describes the *image*, not the person who posted it. The image itself, any text inside it, and any thumbnail or copy **never** leave the originating server; only the irreversible fingerprint is shared. When the bot removes a known scam image and actions whoever posted it, that enforcement produces an **ordinary severity signal** about the poster on exactly the same terms as any other moderation action (above), but the shared *fingerprint* carries no user identity, and is matched against the *image*, not the person.
 
 ### What we do NOT collect, keep, or share in the network
+{: #what-we-do-not-collect-keep-or-share-in-the-network}
 
 To be unambiguous, here is what the Cross-Server Threat Network **never** does. The network does **not**:
 
@@ -301,6 +542,7 @@ To be unambiguous, here is what the Cross-Server Threat Network **never** does. 
 - **Sell your data, or use it for advertising or profiling for ads**: the network exists for safety only; we never sell data or share it with advertising or analytics networks.
 
 ### Why we do this (legal basis)
+{: #why-we-do-this-legal-basis}
 
 We operate the Threat Network for one purpose: **platform and community safety**, preventing fraud, scams, raids, and ban-evasion across the servers we protect. How that purpose is justified depends on which law applies to you.
 
@@ -320,6 +562,7 @@ The safeguards in this section, strict severity-only minimization, the qualified
 **On sensitive information.** We have deliberately designed the network so that the cross-server data is **not** a "criminal record" or other **sensitive information** under the Australian Privacy Act, and is **very unlikely** to be **criminal-offence data** under GDPR Article 10. The reason is structural, not just careful wording: the **offence type or category never crosses servers** (only a generic severity level does), and **AI-generated and human-written offence summaries are local-only**. What travels is a pseudonymous user ID, counts, recency, a severity level, and an account-age modifier, none of which describes *what* a person allegedly did. For EU/UK users we keep a brief, honest residual note: the boundary between a generic severity signal and criminal-offence data is one a regulator could still test, so we keep the design under review and minimise further if needed.
 
 ### Opt-out: servers vs individuals
+{: #opt-out-servers-vs-individuals}
 
 There are two different questions here, and they have different answers.
 
@@ -333,6 +576,7 @@ There are two different questions here, and they have different answers.
 This balance maps onto the law: under the **GDPR** it is the **Article 21(1)** right to object to legitimate-interest processing, which we honour **unless we can demonstrate compelling legitimate grounds** (the safety/fraud need above); under the **Australian Privacy Act** we offer this opt-out as a voluntary measure above the statutory floor, alongside your **correction** right (APP 13) and our duty to **destroy data once it is no longer needed** (APP 11.2).
 
 ### Advisory by default, and optional Premium automated action
+{: #advisory-by-default-and-optional-premium-automated-action}
 
 For every server, the network score is **advisory**; it does not ban, kick, or sanction anyone on its own. It surfaces a risk picture to a server's human staff, who decide what (if anything) to do. The score is **explainable** (it shows what drove it, e.g. "flagged in 6 networked servers, 2 bans, last 9 days ago") and **appealable** (see your rights below). Bands are tuned conservatively to favour false-negatives over false-positives.
 
@@ -349,14 +593,17 @@ Before v6.112.0 this policy said an alt-guard automatic ban did contribute a sig
 Because either of those bans can be a **decision based solely on automated processing that significantly affects you**, we apply **GDPR Article 22** safeguards to both (and equivalent care for all users). We disclose the existence and general logic of this automated decision-making **here, in this Privacy Policy**. For a ThreatNet auto-protect ban that is the only disclosure there is, because the Bot does not message people it bans on the network's account; an **alt-guard** auto-ban instead goes out through the ordinary ban-reason DM, where the server has left that switched on, and the single appeal reply it invites reaches that server's staff. Either way we provide a standing route to **obtain human review, contest the decision, and request correction or erasure**, through the [web portal](https://serverassistant.wandweb.co) or `/support`. Anyone may use that route whether or not they were individually notified, and **a human reviews such requests**. We honour opt-out and erasure here on the same terms as elsewhere in this policy, subject only to the published compelling-grounds safety exception.
 
 ### Data minimization
+{: #data-minimization}
 
 Minimization is engineered into the network, not bolted on: only counts, recency, and a **severity level** ever leave a server. **No offence type or category**, no free-text, **no AI-generated summaries**, no message content, no originating-server identity, and no Discord account identifiers beyond the **pseudonymous user ID** needed to match signals to the right person. We share the **minimum necessary personal information**, that pseudonymous user ID plus aggregate counts and a severity level; never names, messages, or content. This protects both the individual and the operational confidentiality of the server that originally acted. The scam-image blocklist follows the same principle: only an **irreversible perceptual fingerprint** of a flagged scam image is shared, never the image, a thumbnail, a copy, or any text read from it, and the fingerprint is **not linked to any Discord user**.
 
 ### Retention
+{: #retention}
 
 Network signals are retained on a **rolling 12-month window measured from the last signal** for that user. When 12 months pass with no new contributing signal, the user's network record is **hard-deleted**. A new signal restarts the window.
 
 ### Your rights in the Threat Network
+{: #your-rights-in-the-threat-network}
 
 If you are an individual whose data is in the network, you can exercise the rights below **directly** with us; you do not have to go through a server owner. **To opt out of profiling, use the self-service Threat Network opt-out toggle in the [web portal](https://serverassistant.wandweb.co)** (see *How to opt out* above). For access, correction, deletion, or any question, contact us via the [`/support`]({{ site.url }}{{ site.baseurl }}/support/) slash command or [wandweb.co](https://wandweb.co).
 
@@ -375,6 +622,7 @@ If you are an individual whose data is in the network, you can exercise the righ
 **If you are in the EU or UK**, this same route services your GDPR **right to object** to legitimate-interest processing (Article 21) and your **right to erasure** (Article 17): we stop, opt you out, or erase **unless we can demonstrate compelling legitimate grounds** under **Article 21(1)** (the corroborated safety/fraud need above).
 
 ### Contribution vs visibility
+{: #contribution-vs-visibility}
 
 To be clear about what each server *sees* versus what it *contributes*:
 
@@ -386,10 +634,12 @@ Participation in the network itself does not depend on plan tier; only the depth
 ---
 
 ## XP, leveling & the public leaderboard
+{: #xp-leveling--the-public-leaderboard}
 
 Server Assistant includes an **XP and leveling** system. Members earn **XP** ("experience points") simply by taking part; every message adds a small amount, and members climb through **levels** as it accumulates. This is an **always-on, mainline feature**: it is part of every plan, runs automatically for every server, and there is **no opt-in or opt-out** for XP tracking itself. (The only related control is a staff toggle for whether *level-up announcements* are posted in the channel; it does not change whether XP is counted.)
 
 ### What we collect and derive
+{: #what-we-collect-and-derive}
 
 For each member, to run XP and leveling we process:
 
@@ -401,6 +651,7 @@ For each member, to run XP and leveling we process:
 - The member's **Discord user ID** and **username** (the username is cached so it can be shown on the leaderboard and rank card).
 
 ### What is exposed publicly
+{: #what-is-exposed-publicly}
 
 XP and leveling make a member's **identity and standing visible to others**:
 
@@ -411,12 +662,16 @@ XP and leveling make a member's **identity and standing visible to others**:
 In short: by participating in a server with the Bot installed, a member's username and their activity standing (rank, level, XP) can be **shown publicly to other members of that server**, and their XP balance is available to them in the portal.
 
 ### Why we process it, and how long we keep it
+{: #why-we-process-it-and-how-long-we-keep-it}
 
 We process XP and leveling data to provide the leveling feature itself, ranking, the leaderboard, level-up progress, and to power the Crestbound game economy in the portal. Under the Australian Privacy Act, this collection is reasonably necessary for the feature a server has enabled (APP 3) and is used only for that purpose (APP 6). For members in the EU and UK, we rely on our **legitimate interests** (Article 6(1)(f) GDPR) in providing the community-engagement feature the server chose to install.
 
 **Retention.** XP, level, message counts, reputation and the account-wide XP wallet are retained for as long as the member's account-wide wallet is in use, that is, until the data is deleted on request. There is no automatic expiry for XP data. You may contact us via [`/support`]({{ site.url }}{{ site.baseurl }}/support/) to request access to, or deletion of, the XP data we hold about you.
 
+---
+
 ## Minecraft account linking (opt-in)
+{: #minecraft-account-linking-opt-in}
 
 If you play on a Minecraft server running our Minecraft ↔ Discord bridge, you can **optionally link your Discord and Minecraft accounts**. This is **strictly opt-in**: nothing links automatically. You start it yourself, by running `/link` in Discord and then typing `!link <code>` in Minecraft chat, and only then do we connect your two accounts.
 
@@ -433,7 +688,10 @@ If you play on a Minecraft server running our Minecraft ↔ Discord bridge, you 
 
 **You stay in control.** Run `/unlink` at any time to delete the connection. We also automatically remove a link that has gone **unused for about 12 months** (data minimisation).
 
+---
+
 ## Minecraft chat and other in-game text
+{: #minecraft-chat-and-other-in-game-text}
 
 This section is about **what players write in the game**, which is a separate matter from account linking above. Linking is opt-in and rests on your consent; this is not, so we set it out on its own.
 
@@ -459,6 +717,7 @@ There is a **ninth** place a player can type, and it works differently, so we se
 The Bot does not itself punish the player for a filter match; it flags it for humans, unless the operator has separately enabled in-game enforcement. **None of this feeds the Cross-Server Threat Network** — an in-game flag creates no network signal, on any surface.
 
 ### Private in-game messages (`/msg`, `/tell`, `/w`)
+{: #private-in-game-messages-msg-tell-w}
 
 This is the most intrusive processing described anywhere in this policy, and we would rather say so plainly than dress it up. A private message between two players is exactly what it sounds like: something the sender chose **not** to say in public. Checking it against a filter is a real intrusion on that, and no amount of good intention makes it not one.
 
@@ -494,6 +753,9 @@ We are not going to claim that settles it. A player who thinks a private message
 
 **On notice.** Every player joining a server where this filtering is running is told, in game, that **private messages are checked for abuse**. That notice is **mandatory**: the server's operator cannot switch it off, reword it, or remove the clause. It is the one disclosure on this page that does not depend on somebody else's configuration, and we made it that way deliberately — see *The one place notice is not weak* further down.
 
+### In-game AI features: `@sai`, translation, and AI review
+{: #in-game-ai-features-sai-translation-and-ai-review}
+
 **In-game `@sai`** (Premium, off by default) sends the question a player types after `@sai` to an AI provider, together with the **server-information text the operator has written** for it (a block of up to 2,000 characters covering that server's rules, ranks, shops, or events). An operator can also nominate **one** web page — usually their own server's site — whose extracted text is sent along with it; we read only that address, re-read it about once a day, honour `robots.txt`, and keep only the extracted text. No player name, Minecraft UUID, or account identifier is sent with it.
 
 **Chat translation** (off by default, switched on by the operator setting a target language in `/mcdc`) passes bridged chat through an AI translation model in both directions. No account identifiers are sent.
@@ -501,6 +763,7 @@ We are not going to claim that settles it. A player who thinks a private message
 **AI review of flagged in-game chat is not live today.** Our AutoMod AI second-opinion currently applies to Discord messages only. If we extend it to bridged chat, it will send the **single flagged message and the name of the filter it matched** to an AI provider for a confidence score — and **never** the player name, the Minecraft UUID, or any account identifier. It would stay **Premium, opt-in, and off by default**, on the same `/automod → AI Review` switch. Because that would process the message content of people who may have no relationship with us at all, we have written the assessment below **before** enabling it.
 
 ### Why we would allow AI review of in-game chat (legitimate interest)
+{: #why-we-would-allow-ai-review-of-in-game-chat-legitimate-interest}
 
 Our lawful basis for this processing is **legitimate interest** (GDPR Article 6(1)(f)). Under the Australian Privacy Act it is collection **reasonably necessary** for the moderation function the server operator has enabled (**APP 3**), used only for that purpose (**APP 6**). It is **not consent**: the person who switches AI review on is the **server operator**, not the player whose message is checked, and an operator cannot give consent on a player's behalf. As with the Threat Network, this legitimate-interest basis is **our own**, assessed and documented by us.
 
@@ -534,7 +797,10 @@ The separate **bridge** notice — "chat here goes to Discord" — remains the o
 
 **Your right to object.** Because this rests on legitimate interest, you may **object** to it under **GDPR Article 21**, and ask what we hold, have it corrected, or have it deleted, through [`/support`]({{ site.url }}{{ site.baseurl }}/support/) or [wandweb.co](https://wandweb.co) — you can come to us directly, without going through the server operator.
 
+---
+
 ## Crest artwork & attribution
+{: #crest-artwork--attribution}
 
 **Crestbound** Crest artwork is **crowdsourced and shared**. The first member to reveal a particular Crest's art triggers its one-time generation by a third-party image generator (**Pollinations**, [pollinations.ai](https://pollinations.ai)); the resulting image is then **stored by us and shown to every player, permanently**. The image prompt is generated automatically from the Crest's name and type, **no personal data is sent** to the image generator.
 
@@ -545,6 +811,7 @@ The member who first reveals a Crest's art is **credited publicly by their Disco
 ---
 
 ## Third-party AI providers
+{: #third-party-ai-providers}
 
 AI features transmit data to third-party providers **only when explicitly invoked by staff or when an enabled, opt-in feature fires** (e.g., right-click Message Report, `/imagine`, Self-trained AutoMod, SAi, or, if you've turned it on, AutoMod AI second-opinion or Minecraft bridge translation). The default shared-key providers are:
 
@@ -571,14 +838,18 @@ Each AI provider has their own privacy policy governing how they handle data. We
 ---
 
 ## Where your data is stored
+{: #where-your-data-is-stored}
 
 Server Assistant runs on dedicated infrastructure hosted by **Hetzner Online GmbH** in the **United States (Oregon)**. All data described above is stored there.
 
 Because Discord and our users are global, using the Bot from outside the United States involves an **international transfer** (in Australian terms, a **cross-border disclosure** under **APP 8**) of the limited data described in this policy to the US, and the Threat Network discloses minimized signals to protected servers in many countries. Where required, we rely on appropriate safeguards (such as Standard Contractual Clauses and data-processing agreements) for those transfers. Under APP 8 we **remain accountable** for how our overseas hosting providers and sub-processors handle Australian personal information. Our sub-processors may handle data in other regions under their own policies.
 
 ### Sub-processors
+{: #sub-processors}
 
 We rely on a small set of vetted third parties to run the service:
+
+<div class="lp-tablewrap" markdown="1">
 
 | Sub-processor | Purpose | Privacy policy |
 |---|---|---|
@@ -592,6 +863,8 @@ We rely on a small set of vetted third parties to run the service:
 | **Stripe** | Payment processing for Premium subscriptions | [stripe.com/privacy](https://stripe.com/privacy) |
 | **Browser push services** (Google / Mozilla / Apple, depending on the staff member's browser) | Delivering web-portal push notifications to staff who opt in | per-vendor |
 
+</div>
+
 Staff sign in to the web portal with **Discord OAuth**; Discord's own [Privacy Policy](https://discord.com/privacy) governs the identity data they provide to us during sign-in.
 
 We do **not** sell your data or share it with advertising or analytics networks.
@@ -599,6 +872,9 @@ We do **not** sell your data or share it with advertising or analytics networks.
 ---
 
 ## Data retention
+{: #data-retention}
+
+<div class="lp-tablewrap" markdown="1">
 
 | Data | Retention |
 |---|---|
@@ -627,9 +903,12 @@ We do **not** sell your data or share it with advertising or analytics networks.
 | Channel text SAi reads to answer a question (the nominated-channel capability described above, not live today) | **Nothing retained.** Read at question time and held in memory only (a short-lived cache of about 90 seconds, lost on restart), then discarded; never written to our database or to disk |
 | Text extracted from the one web page an operator nominates for in-game `@sai` | Only the current extract is kept, overwritten on each re-read (about daily). Deleted immediately when the operator turns the feature off, changes the address, or removes the Bot. The page itself is never stored |
 
+</div>
+
 ---
 
 ## Your rights
+{: #your-rights}
 
 **Server owners** can:
 1. Remove the Bot from their server; this wipes encrypted credentials immediately
@@ -642,6 +921,7 @@ We do **not** sell your data or share it with advertising or analytics networks.
 **Cross-Server Threat Network:** because we are the controller (Australian: APP entity) of the cross-server safety dataset, not a per-server processor, an individual can come **directly** to us, without going through any server owner. **Opt out of profiling** via the self-service toggle in the [web portal](https://serverassistant.wandweb.co); **access** your network record (APP 12), **correct** it (APP 13), or **request deletion of** it via [`/support`]({{ site.url }}{{ site.baseurl }}/support/) or [wandweb.co](https://wandweb.co). We handle these requests individually and will honour them unless we have a **clear, corroborated safety or fraud-prevention need** (for EU/UK users, **compelling legitimate grounds** under GDPR **Article 21(1)**) to retain the **most serious** signals, in which case we explain our reasons. See **Cross-Server Threat Network → Opt-out: servers vs individuals** and **→ Your rights in the Threat Network** above for the full mechanism.
 
 ### Australian Privacy Act 1988 / Australian Privacy Principles (primary)
+{: #australian-privacy-act-1988--australian-privacy-principles-primary}
 
 We are based in Queensland, Australia and treat the **Privacy Act 1988 (Cth)** and the **13 Australian Privacy Principles (APPs)** as our primary framework. Under the APPs you can:
 
@@ -655,18 +935,21 @@ Australian privacy law does **not** include a general "right to erasure" or stan
 To exercise any of these, contact us via [`/support`]({{ site.url }}{{ site.baseurl }}/support/) or [wandweb.co](https://wandweb.co). If you are not satisfied with our response, you can complain to the **Office of the Australian Information Commissioner (OAIC)** at [oaic.gov.au](https://www.oaic.gov.au/), see *Complaints* below.
 
 ### GDPR (EEA / UK)
+{: #gdpr-eea--uk}
 
 If you're in the European Economic Area or the UK, the GDPR also applies to our processing of your personal data, and you have the right to **access, correct, delete, restrict, or object to** that processing, and the right to **data portability**. Our legal bases for processing are: **performance of the service** (running the features a server has enabled), our **legitimate interests** (security, anti-abuse, service integrity, and the **Cross-Server Threat Network** described above, platform and community safety, supported by a written Legitimate Interest Assessment), and **consent**, where **you personally give it** — for example opt-in **Minecraft account linking**, which you start yourself with `/link`.
 
 For the **opt-in AI features**, our basis is **legitimate interest** (and performance of the service), **not consent**. The distinction matters, so we state it plainly: the party who switches those features on is the **server owner or their staff**, not the member or player whose message is then processed. A server owner cannot give consent on someone else's behalf, and calling it consent would claim an agreement the data subject never gave. As with the Threat Network, this legitimate-interest basis is **our own**, assessed and documented by us — and, exactly as with the Threat Network, it carries your **right to object** under Article 21. Where we rely on legitimate interest, including for the Threat Network, you have the right to **object** under Article 21 and to seek **erasure** under Article 17; for the Threat Network specifically, you can **opt out of profiling** and exercise these rights via the route described in *Cross-Server Threat Network → Opt-out: servers vs individuals*. We honour an objection/opt-out unless we can demonstrate **compelling legitimate grounds** under **Article 21(1)** (a corroborated safety/fraud need) to retain the most serious signals. To exercise any of these rights, contact us via [`/support`]({{ site.url }}{{ site.baseurl }}/support/) or [wandweb.co](https://wandweb.co). You also have the right to lodge a complaint with your local data-protection **supervisory authority** (in the EU, your national Data Protection Authority; in the UK, the **Information Commissioner's Office (ICO)** at [ico.org.uk](https://ico.org.uk/)).
 
 ### CCPA (California)
+{: #ccpa-california}
 
 We **do not sell or share** personal information (as those terms are defined under the CCPA), and never have. California residents may request to know what personal information we hold and to have it deleted, using the same channels above. We will **not discriminate** against you for exercising these rights.
 
 ---
 
 ## Data security
+{: #data-security}
 
 - **All stored data is encrypted at rest** on an encrypted (LUKS/AES) volume
 - Credentials are additionally encrypted at the application layer (AES-128), with the encryption master key stored separately and restricted to file-owner access only
@@ -677,6 +960,7 @@ We **do not sell or share** personal information (as those terms are defined und
 ---
 
 ## Privileged Gateway Intents
+{: #privileged-gateway-intents}
 
 Discord gates three "privileged" gateway intents behind review. Server Assistant requests all three, each for a specific, minimal purpose, and requests no privileged data it does not use:
 
@@ -689,8 +973,11 @@ We request the Presence and Server Members data for no purpose beyond those abov
 ---
 
 ## Discord platform compliance
+{: #discord-platform-compliance}
 
 Server Assistant is a Discord application and operates under Discord's developer agreements. The table below maps the obligations in each Discord policy to where this Privacy Policy meets them.
+
+<div class="lp-tablewrap" markdown="1">
 
 | Discord policy | The obligation | How Server Assistant complies |
 |---|---|---|
@@ -704,23 +991,28 @@ Server Assistant is a Discord application and operates under Discord's developer
 | [Discord Privacy Policy](https://discord.com/privacy) | Governs the identity data Discord provides during OAuth sign-in | At web-portal sign-in we request only `identify`, `guilds`, and `guilds.members.read`, discard the access token, and keep only the derived access level (*Web portal sign-in*). |
 | Discord minimum-age requirement (13+) | Don't knowingly process data of users under Discord's minimum age | We don't knowingly collect data from anyone under 13 and delete it if found (*Children's privacy*). |
 
+</div>
+
 If you believe any part of the Bot's behaviour is inconsistent with these policies, please tell us via [`/support`]({{ site.url }}{{ site.baseurl }}/support/); we take platform compliance seriously and will correct it.
 
 ---
 
 ## Children's privacy
+{: #childrens-privacy}
 
 The Bot doesn't knowingly collect data from anyone under 13 (Discord's minimum age). If you become aware of a child's data in the system, contact us via `/support` and we'll delete it.
 
 ---
 
 ## Changes to this policy
+{: #changes-to-this-policy}
 
 Material changes will be announced via the Bot's release notes and posted in the staff-chat of each configured guild. The "Last updated" date above reflects the most recent revision.
 
 ---
 
 ## Complaints
+{: #complaints}
 
 If you have a privacy concern, please raise it with us first via [`/support`]({{ site.url }}{{ site.baseurl }}/support/) or [wandweb.co](https://wandweb.co); we take it seriously and will try to resolve it.
 
@@ -732,5 +1024,6 @@ If you are not satisfied with our response, you can complain to the relevant reg
 ---
 
 ## Contact
+{: #contact}
 
 [`/support`]({{ site.url }}{{ site.baseurl }}/support/) from any server with the Bot installed, or visit [wandweb.co](https://wandweb.co).

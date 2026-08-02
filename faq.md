@@ -8,7 +8,12 @@ description: Frequently asked questions about Server Assistant.
 # Server Assistant: Frequently Asked Questions
 
 <style>
-.faq-cat-heading { margin: 1.6rem 0 0.6rem; font-size: 1.15rem; font-weight: 700; color: var(--ink); }
+/* Category headings are real <h2>s so the page has a heading outline and each
+   category is linkable from the jump nav above. The `.page-content` prefix is
+   load-bearing: glass.css loads after this block and its `.page-content h2`
+   rule (margin-top 1.8rem, padding-top .4rem) would otherwise win and reopen
+   a gap between each heading and its questions. */
+.page-content .faq-cat-heading { margin: 1.6rem 0 0.6rem; padding-top: 0; font-size: 1.15rem; font-weight: 700; color: var(--ink); scroll-margin-top: 80px; }
 details.faq { background: rgba(255,255,255,0.04); border: 1px solid var(--glass-border); border-radius: 12px; margin: 0.45rem 0; transition: background .15s; }
 details.faq[open] { background: rgba(255,255,255,0.07); }
 details.faq > summary { cursor: pointer; padding: .8rem 1.1rem; font-weight: 600; font-size: .98rem; list-style: none; color: var(--ink); }
@@ -167,7 +172,20 @@ details.faq .faq-body table { margin: .5rem 0; }
 }
 </script>
 
-<div class="faq-cat-heading">Getting started</div>
+<nav class="page-toc" aria-label="FAQ categories" markdown="0">
+  <span class="page-toc-label">Jump to</span>
+  <a href="#faq-getting-started">Getting started</a>
+  <a href="#faq-moderation">Moderation</a>
+  <a href="#faq-automod">AutoMod</a>
+  <a href="#faq-verification">Verification Gate</a>
+  <a href="#faq-notifications">Notifications</a>
+  <a href="#faq-ai">AI features</a>
+  <a href="#faq-privacy">Data &amp; privacy</a>
+  <a href="#faq-troubleshooting">Troubleshooting</a>
+  <a href="#faq-community">Community</a>
+</nav>
+
+<h2 class="faq-cat-heading" id="faq-getting-started">Getting started</h2>
 
 <details class="faq"><summary>Is the bot free?</summary>
 <div class="faq-body">
@@ -194,7 +212,7 @@ About 60 seconds, and you may not even need to run <code>/setup</code>: when the
 </div>
 </details>
 
-<div class="faq-cat-heading">Moderation</div>
+<h2 class="faq-cat-heading" id="faq-moderation">Moderation</h2>
 
 <details class="faq"><summary>What happens to existing warnings if I re-run <code>/setup</code>?</summary>
 <div class="faq-body">
@@ -235,7 +253,7 @@ Yes, within 24 hours. Press the <strong>Undo</strong> button on the action's con
 </div>
 </details>
 
-<div class="faq-cat-heading">AutoMod</div>
+<h2 class="faq-cat-heading" id="faq-automod">AutoMod</h2>
 
 <details class="faq"><summary>Will AutoMod break legitimate conversation?</summary>
 <div class="faq-body">
@@ -267,7 +285,7 @@ Yes: DM explaining which rule fired and their warning count. If their DMs are cl
 </div>
 </details>
 
-<div class="faq-cat-heading">Verification Gate</div>
+<h2 class="faq-cat-heading" id="faq-verification">Verification Gate</h2>
 
 <details class="faq"><summary>How does verification work?</summary>
 <div class="faq-body">
@@ -288,7 +306,7 @@ Yes. On every plan you can word the greeting yourself. <strong>Premium</strong> 
 </div>
 </details>
 
-<div class="faq-cat-heading">Notifications</div>
+<h2 class="faq-cat-heading" id="faq-notifications">Notifications</h2>
 
 <details class="faq"><summary>How do I get pinged when AutoMod or anti-raid fires?</summary>
 <div class="faq-body">
@@ -315,7 +333,7 @@ Yes. On every plan you can word the greeting yourself. <strong>Premium</strong> 
 </div>
 </details>
 
-<div class="faq-cat-heading">AI features</div>
+<h2 class="faq-cat-heading" id="faq-ai">AI features</h2>
 
 <details class="faq"><summary>Does the bot use AI tokens just to <em>read</em> staff-chat messages?</summary>
 <div class="faq-body">
@@ -423,7 +441,7 @@ Yes: <code>/ai-config → Skip AI</code> disables all AI features for your serve
 </div>
 </details>
 
-<div class="faq-cat-heading">Data & privacy</div>
+<h2 class="faq-cat-heading" id="faq-privacy">Data & privacy</h2>
 
 <details class="faq"><summary>Where is data stored?</summary>
 <div class="faq-body">
@@ -449,7 +467,7 @@ One-shot export available on request via <code>/support</code>. A <code>/export-
 </div>
 </details>
 
-<div class="faq-cat-heading">Troubleshooting</div>
+<h2 class="faq-cat-heading" id="faq-troubleshooting">Troubleshooting</h2>
 
 <details class="faq"><summary>Slash commands don't appear</summary>
 <div class="faq-body">
@@ -479,7 +497,7 @@ Discord may be rate-limited. Wait 60 seconds and try again. If still unresponsiv
 </div>
 </details>
 
-<div class="faq-cat-heading">Community</div>
+<h2 class="faq-cat-heading" id="faq-community">Community</h2>
 
 <details class="faq"><summary>Where can I get help?</summary>
 <div class="faq-body">

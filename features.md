@@ -19,7 +19,13 @@ Each feature area pairs what you get **free** (the <span style="color:#54e08e;fo
 .col-head { font-size: 1.25rem; font-weight: 800; color: var(--ink); padding: .65rem .85rem .35rem; border-bottom: 2px solid var(--glass-border); margin-bottom: .15rem; }
 .col-head.free { border-bottom-color: rgba(84,224,142,0.5); }
 .col-head.prem { border-bottom-color: rgba(245,196,34,0.55); }
-.grp-h { grid-column: 1 / -1; display: flex; align-items: center; gap: .45rem; font-size: 1.02rem; font-weight: 800; color: var(--ink); margin: .7rem 0 0; padding: .45rem .35rem .3rem; border-bottom: 2px solid var(--glass-border); }
+/* Group headings are real <h2>s so the page has a heading outline and every
+   section is linkable from the jump nav. The `.page-content` prefix is
+   load-bearing: glass.css is loaded after this block and its `.page-content h2`
+   rule (margin-top 1.8rem, padding-top .4rem, font-weight 700) would otherwise
+   win on specificity and blow the grid rhythm apart. Two classes beat one
+   class + one element, so this stays ahead of it. */
+.page-content .grp-h { grid-column: 1 / -1; display: flex; align-items: center; gap: .45rem; font-size: 1.02rem; font-weight: 800; color: var(--ink); margin: .7rem 0 0; padding: .45rem .35rem .3rem; border-bottom: 2px solid var(--glass-border); scroll-margin-top: 80px; }
 .col { padding: .15rem .85rem .7rem; }
 .col.empty { min-height: 0; padding: 0; }
 
@@ -39,17 +45,34 @@ Each feature area pairs what you get **free** (the <span style="color:#54e08e;fo
 .xgrid details.x .b th, .xgrid details.x .b td { text-align: left; padding: .25rem .4rem; border-bottom: 1px solid var(--glass-border); vertical-align: top; }
 .xgrid .t { color: var(--ink-soft); font-weight: 400; }
 .xgrid .t code { color: inherit; font-size: .9em; }
-.tier-badge { display: inline-block; font-size: 0.58rem; font-weight: 800; letter-spacing: 0.04em; padding: 0.1rem 0.4rem; border-radius: 999px; vertical-align: middle; margin-left: 0.3rem; text-transform: uppercase; white-space: nowrap; }
+.tier-badge { display: inline-block; font-size: var(--fs-3xs); font-weight: 800; letter-spacing: 0.04em; padding: 0.1rem 0.4rem; border-radius: 999px; vertical-align: middle; margin-left: 0.3rem; text-transform: uppercase; white-space: nowrap; }
 .tier-trial { background: rgba(60,193,240,0.22); color: #1f6dbf; }
 @media (max-width: 760px) {
   .cmp { grid-template-columns: 1fr; }
   .cmp-bg, .col-head { display: none; }
-  .grp-h { grid-column: auto; margin-top: 1rem; }
+  .page-content .grp-h { grid-column: auto; margin-top: 1rem; }
   .col { border-radius: 10px; padding: .55rem .7rem .65rem; margin-bottom: .15rem; }
   .col.free { background: rgba(84,224,142,0.10); border: 1px solid rgba(84,224,142,0.30); }
   .col.prem { background: rgba(245,196,34,0.11); border: 1px solid rgba(245,196,34,0.34); }
+  /* The "Free" / "Trial & Premium" column headers are hidden here because the
+     two columns stack, which left the tint as the ONLY thing saying which tier
+     a stacked block belongs to: meaning by colour alone, and invisible to
+     anyone who cannot separate the green from the gold. Restate it as text on
+     each block. Generated content is announced by screen readers, so this
+     fixes the non-visual case too. */
+  .col::before {
+    display: block;
+    margin-bottom: .35rem;
+    font-size: var(--fs-3xs);
+    font-weight: 800;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+  }
+  .col.free::before { content: "Free"; color: var(--ok); }
+  .col.prem::before { content: "Trial & Premium"; color: var(--gold); }
   /* Empty tier cells would otherwise render their coloured border as a stray line. */
   .col.empty { display: none; }
+  .col.empty::before { content: none; }
 }
 
 /* Premium highlight hero — full-width, above the comparison grid. */
@@ -100,6 +123,24 @@ Each feature area pairs what you get **free** (the <span style="color:#54e08e;fo
 
 <p style="font-size:.82rem;color:var(--ink-soft);margin:.2rem 0 0;">Trial features use your AI tokens (free trial included); Premium needs a subscription.</p>
 
+<nav class="page-toc" aria-label="Feature areas" markdown="0">
+  <span class="page-toc-label">Jump to</span>
+  <a href="#sec-moderation">Moderation</a>
+  <a href="#sec-ban-appeals">Ban reasons &amp; appeals</a>
+  <a href="#sec-automod">AutoMod Engine</a>
+  <a href="#sec-server-health">Server health</a>
+  <a href="#sec-threatnet">ThreatNet</a>
+  <a href="#sec-ai-tools">AI tools</a>
+  <a href="#sec-raid-protection">Raid Protection</a>
+  <a href="#sec-onboarding">Onboarding</a>
+  <a href="#sec-audit-logging">Audit Logging</a>
+  <a href="#sec-customisation">Customisation</a>
+  <a href="#sec-web-portal">Web Portal</a>
+  <a href="#sec-ticket-panels">Ticket Panels</a>
+  <a href="#sec-branding">Branding toolkit</a>
+  <a href="#sec-privacy-security">Privacy &amp; security</a>
+</nav>
+
 <div class="cmp-wrap" markdown="0">
 <div class="cmp-bg free"></div>
 <div class="cmp-bg prem"></div>
@@ -108,7 +149,7 @@ Each feature area pairs what you get **free** (the <span style="color:#54e08e;fo
   <div class="col-head free">Free</div>
   <div class="col-head prem">Trial &amp; Premium</div>
 
-  <div class="grp-h">Moderation</div>
+  <h2 class="grp-h" id="sec-moderation">Moderation</h2>
   <div class="col free">
     <div class="xgrid">
       <details class="x"><summary><strong>Role-based tiers</strong> <span class="t">(customisable)</span></summary><div class="b">Defaults: <strong>Owner / Admin / Moderator</strong>. Each tier has its own capabilities + approval authority, fully customisable in <code>/settings → Role Tiers</code> (add Helper, Trial Mod, Senior Mod, anything).</div></details>
@@ -127,7 +168,7 @@ Each feature area pairs what you get **free** (the <span style="color:#54e08e;fo
 </div>
   <div class="col prem empty"></div>
 
-  <div class="grp-h">Ban reasons &amp; appeals</div>
+  <h2 class="grp-h" id="sec-ban-appeals">Ban reasons &amp; appeals</h2>
   <div class="col free">
     <div class="xgrid">
       <details class="x"><summary><strong>For the banned member</strong> <span class="t">(reason + one reply)</span></summary><div class="b">Every ban (manual, <code>/tempban</code>, AutoMod, or native) DMs the user the <strong>exact reason</strong> staff supplied, plus an invite to send <strong>one reply</strong> to appeal. Just one, no escalating threads, no DM noise. Soft-bans excluded, and so are <strong>ThreatNet auto-bans</strong>, which are silent and open no appeal ticket (that automated decision is contested via the web portal instead).</div></details>
@@ -141,7 +182,7 @@ Each feature area pairs what you get **free** (the <span style="color:#54e08e;fo
 </div>
 </div>
 
-  <div class="grp-h">AutoMod Engine</div>
+  <h2 class="grp-h" id="sec-automod">AutoMod Engine</h2>
   <div class="col free">
     <div class="xgrid">
       <details class="x"><summary><strong>Filter presets</strong> <span class="t">(Off → Strict)</span></summary><div class="b"><p>One-click packs in <code>/settings → Quick Presets → AutoMod</code>:</p><table><thead><tr><th>Preset</th><th>Catches</th></tr></thead><tbody><tr><td>Off</td><td>Nothing</td></tr><tr><td>Scams only</td><td>Free Nitro / Steam gift / Robux / IP-grabber links</td></tr><tr><td><strong>Scams + slurs</strong> (recommended)</td><td>Above + Level-1 hate speech. Allows casual profanity</td></tr><tr><td>Strict</td><td>Above + slurs L2, profanity L3 (child-friendly only)</td></tr></tbody></table></div></details>
@@ -160,7 +201,7 @@ Each feature area pairs what you get **free** (the <span style="color:#54e08e;fo
 </div>
 </div>
 
-  <div class="grp-h">Server health &amp; insight</div>
+  <h2 class="grp-h" id="sec-server-health">Server health &amp; insight</h2>
   <div class="col free empty"></div>
   <div class="col prem">
     <div class="xgrid">
@@ -171,7 +212,7 @@ Each feature area pairs what you get **free** (the <span style="color:#54e08e;fo
 </div>
 </div>
 
-  <div class="grp-h">Cross-server safety (ThreatNet)</div>
+  <h2 class="grp-h" id="sec-threatnet">Cross-server safety (ThreatNet)</h2>
   <div class="col free">
     <div class="xgrid">
       <details class="x"><summary><strong>ThreatNet</strong> <span class="t">(cross-server threat network)</span></summary><div class="b">Every protected server shares <strong>minimized, severity-only</strong> abuse signals, so a user with a serious, corroborated history of scams, raids or ban-evasion on <em>other</em> servers lights up on yours, ideally <strong>before</strong> they cause harm. Shared as aggregates and a generic severity level only, <strong>never</strong> the offence type, your staff's reasons, message content, or which server acted. A <strong>core, on-by-default</strong> safety feature for every server; individuals can opt out of profiling in the <a href="https://serverassistant.wandweb.co">web portal</a>, subject to a published safety exception. The advisory band is free for every server.</div></details>
@@ -185,7 +226,7 @@ Each feature area pairs what you get **free** (the <span style="color:#54e08e;fo
 </div>
 </div>
 
-  <div class="grp-h">AI tools</div>
+  <h2 class="grp-h" id="sec-ai-tools">AI tools</h2>
   <div class="col free empty"></div>
   <div class="col prem">
     <div class="xgrid">
@@ -194,7 +235,7 @@ Each feature area pairs what you get **free** (the <span style="color:#54e08e;fo
 </div>
 </div>
 
-  <div class="grp-h">Raid Protection</div>
+  <h2 class="grp-h" id="sec-raid-protection">Raid Protection</h2>
   <div class="col free">
     <div class="xgrid">
       <details class="x"><summary><strong>Anti-Raid Detection</strong> <span class="t">(join-rate alerts)</span></summary><div class="b"><p>Tracks join rate. When the threshold trips, the bot pings the Owner (and any roles in <code>/settings → Notifications</code>), suspends onboarding DMs, and logs the event.</p><table><thead><tr><th>Preset</th><th>Threshold</th></tr></thead><tbody><tr><td>Off</td><td>None</td></tr><tr><td>Normal</td><td>5 joins in 30s</td></tr><tr><td>Strict</td><td>3 joins in 15s</td></tr></tbody></table></div></details>
@@ -203,7 +244,7 @@ Each feature area pairs what you get **free** (the <span style="color:#54e08e;fo
 </div>
   <div class="col prem empty"></div>
 
-  <div class="grp-h">Onboarding &amp; canned</div>
+  <h2 class="grp-h" id="sec-onboarding">Onboarding &amp; canned</h2>
   <div class="col free">
     <div class="xgrid">
       <details class="x"><summary><strong>Auto-onboarding DMs</strong> <span class="t">(<code>/onboarding</code>)</span></summary><div class="b">Welcome DMs (<code>/onboarding</code>) with placeholders: <code>[servername]</code>, <code>[usermention]</code>, <code>[membercount]</code>, <code>[owner]</code>, <code>[usercreatedat]</code>. Templates: Friendly · Gaming · Professional · Minimal · Custom.</div></details>
@@ -215,7 +256,7 @@ Each feature area pairs what you get **free** (the <span style="color:#54e08e;fo
 </div>
   <div class="col prem empty"></div>
 
-  <div class="grp-h">Audit Logging</div>
+  <h2 class="grp-h" id="sec-audit-logging">Audit Logging</h2>
   <div class="col free">
     <div class="xgrid">
       <details class="x"><summary><strong>Colour-coded log</strong> <span class="t">(every action)</span></summary><div class="b"><p>Every action posts a colour-coded embed to your log channel:</p><table><thead><tr><th>Status</th><th>Colour</th></tr></thead><tbody><tr><td>EXECUTING / SUCCESS / APPROVED</td><td>Green</td></tr><tr><td>OWNER_BYPASS</td><td>Blue</td></tr><tr><td>PENDING_APPROVAL</td><td>Yellow</td></tr><tr><td>DENIED / FORBIDDEN</td><td>Red</td></tr><tr><td>PERMISSION_DENIED</td><td>Orange</td></tr></tbody></table><p>Verbosity: All / Dangerous-only / Errors-only (<code>/settings → Behavior</code>).</p></div></details>
@@ -226,7 +267,7 @@ Each feature area pairs what you get **free** (the <span style="color:#54e08e;fo
 </div>
   <div class="col prem empty"></div>
 
-  <div class="grp-h">Customisation (<code>/settings</code>)</div>
+  <h2 class="grp-h" id="sec-customisation">Customisation (<code>/settings</code>)</h2>
   <div class="col free">
     <div class="xgrid">
       <details class="x"><summary><strong>Branding</strong></summary><div class="b">Embed colour (12 presets + custom hex), bot nickname, default timezone.</div></details>
@@ -239,7 +280,7 @@ Each feature area pairs what you get **free** (the <span style="color:#54e08e;fo
 </div>
   <div class="col prem empty"></div>
 
-  <div class="grp-h">Web Portal</div>
+  <h2 class="grp-h" id="sec-web-portal">Web Portal</h2>
   <div class="col free">
     <div class="xgrid">
       <details class="x"><summary><strong>Insights</strong></summary><div class="b">Expandable KPIs (members · mod actions · AI usage) with trend charts, a member-growth chart, <strong>online / in-voice</strong> counts, a paginated activity log with real names, and your always-on Pulse health digest + weekly mod recap.</div></details>
@@ -254,7 +295,7 @@ Each feature area pairs what you get **free** (the <span style="color:#54e08e;fo
 </div>
   <div class="col prem empty"></div>
 
-  <div class="grp-h">Ticket Panels</div>
+  <h2 class="grp-h" id="sec-ticket-panels">Ticket Panels</h2>
   <div class="col free">
     <div class="xgrid">
       <details class="x"><summary><strong>Ticket panels</strong> <span class="t">(<code>/tickets</code>)</span></summary><div class="b">An admin runs <code>/tickets setup</code> (panel channel, category, support role, optional transcript channel). Members click <strong>Create Ticket</strong> to open a private <code>ticket-0001-username</code> channel visible only to them, the support role, and admins. On close, a <code>.txt</code> transcript is saved and the channel removed. Free tier: one intake question + editable panel.</div></details>
@@ -266,7 +307,7 @@ Each feature area pairs what you get **free** (the <span style="color:#54e08e;fo
 </div>
 </div>
 
-  <div class="grp-h">Self-service &amp; branding toolkit</div>
+  <h2 class="grp-h" id="sec-branding">Self-service &amp; branding toolkit</h2>
   <div class="col free empty"></div>
   <div class="col prem">
     <div class="xgrid">
@@ -280,7 +321,7 @@ Each feature area pairs what you get **free** (the <span style="color:#54e08e;fo
 </div>
 </div>
 
-  <div class="grp-h">Privacy &amp; security</div>
+  <h2 class="grp-h" id="sec-privacy-security">Privacy &amp; security</h2>
   <div class="col free">
     <div class="xgrid">
       <details class="x"><summary><strong>Privacy &amp; security</strong></summary><div class="b">AI keys and credentials are <strong>encrypted at rest</strong>, per-server data is isolated, and removing the bot wipes your encrypted secrets immediately. Retention rules are in the <a href="{{ site.url }}{{ site.baseurl }}/privacy/">Privacy Policy</a>.</div></details>

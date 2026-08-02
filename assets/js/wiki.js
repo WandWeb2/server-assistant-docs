@@ -3,8 +3,10 @@
      1. Search   — a tiny token-scored search over /wiki/search.json.
      2. Stepper  — turns [data-wiz] blocks into a clickable step-through so a
                    multi-screen wizard can be walked one state at a time.
-   Both are progressive enhancements: with JS off, search is simply absent and
-   every wizard state renders stacked and fully visible.
+     3. Contents : an on-page section index built from the page's own <h2>s.
+   All three are progressive enhancements: with JS off, search is simply
+   absent, every wizard state renders stacked and fully visible, and the page
+   reads exactly as it did before the contents row existed.
    ============================================================================ */
 (function () {
   "use strict";
@@ -155,6 +157,64 @@
       if (next) next.addEventListener("click", function () { go(idx + 1); });
       go(0);
     });
+  })();
+
+  /* ---- 3. On-page contents ------------------------------------------------
+     The sidebar gets you to a PAGE and then stops. Several wiki pages are long
+     reference documents (the Minecraft bridge alone has 21 sections, Settings
+     has 9), and inside one there was no way to see what it covered or to skip
+     ahead: the only tool was the scrollbar.
+
+     Built from the DOM rather than written into 22 markdown files, so it stays
+     correct on its own as pages are edited, and a new page gets one for free.
+     It reuses the site-wide .page-toc component from glass.css.
+
+     Deliberately h2-only and direct-children-only. Nesting h3s would turn the
+     chip row into a second sidebar, and headings inside cards or mock-ups are
+     labels for a component, not sections of the page. */
+  (function contents() {
+    var main = document.querySelector(".wiki-main");
+    if (!main) return;
+
+    var h1 = main.querySelector("h1");
+    if (!h1 || h1.parentNode !== main) return;   // unexpected shape: do nothing
+
+    var heads = Array.prototype.filter.call(main.children, function (el) {
+      if (el.tagName !== "H2" || !el.id) return false;
+      // "See also" is the page's own footer; it is not a destination.
+      return el.id !== "see-also";
+    });
+    if (heads.length < 4) return;          // short page: a contents row is noise
+
+    var nav = document.createElement("nav");
+    nav.className = "page-toc";
+    nav.setAttribute("aria-label", "On this page");
+
+    var lbl = document.createElement("span");
+    lbl.className = "page-toc-label";
+    lbl.textContent = "On this page";
+    nav.appendChild(lbl);
+
+    heads.forEach(function (h) {
+      var a = document.createElement("a");
+      a.href = "#" + h.id;
+      a.textContent = (h.textContent || "").trim();
+      nav.appendChild(a);
+      // The sticky top bar would otherwise cover a jumped-to heading. The
+      // site-wide anchor handler centres it, but this covers the no-JS-handler
+      // path (a pasted deep link that lands before that script runs).
+      h.style.scrollMarginTop = "80px";
+    });
+
+    /* Sit below the page's opening line rather than above it: the lead sentence
+       is what tells you whether you are on the right page at all. */
+    var anchor = h1;
+    var after = h1.nextElementSibling;
+    if (after && (after.tagName === "P" || after.classList.contains("wiki-lead") ||
+                  after.classList.contains("feat-lead"))) {
+      anchor = after;
+    }
+    anchor.parentNode.insertBefore(nav, anchor.nextSibling);
   })();
 
   // Sidebar accordion: keep exactly one category group open at a time. The
