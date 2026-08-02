@@ -5,27 +5,121 @@ permalink: /terms/
 description: Server Assistant terms of use, permitted use, moderation responsibility, AI features, billing, and no-warranty clause.
 ---
 # Server Assistant Terms of Service
+{: #server-assistant-terms-of-service}
 
-**Effective date:** May 9, 2026
-**Last updated:** August 1, 2026
+<style>
+/* ── Legal pages (Terms / Privacy): type hierarchy + on-page navigation ──────
+   Tokens and surfaces only, nothing new invented. Selectors are scoped to
+   `.page-content .wrapper` so they outrank glass.css, which loads after this
+   block (it is pulled in from _includes/footer.html). ─────────────────────── */
+.page-content .wrapper h1 { font-size: var(--fs-2xl); line-height: 1.15; margin-bottom: .55rem; }
+.page-content .wrapper h2 { font-size: 1.5rem; margin-top: 2.1rem; padding-top: 0; scroll-margin-top: 78px; }
+.page-content .wrapper h3 {
+  font-size: 1.08rem; margin-top: 2rem; margin-bottom: .5rem;
+  padding-left: .7rem; border-left: 3px solid var(--accent); scroll-margin-top: 78px;
+}
+
+/* Document meta: effective / last-updated / where changes are announced. */
+.lp-meta { display: flex; flex-wrap: wrap; gap: .45rem .5rem; margin: .1rem 0 1.5rem; }
+.lp-meta > span, .lp-meta > a {
+  font-size: var(--fs-sm); color: var(--fg-1);
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 999px; padding: .3rem .8rem;
+}
+.lp-meta strong { color: var(--fg-0); font-weight: 600; }
+.lp-meta > a { color: var(--accent); }
+
+/* Shared card shell for the navigation blocks. */
+.lp-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--r-md); padding: 1.15rem 1.3rem; margin: 1.6rem 0;
+}
+.page-content .wrapper .lp-card h2.lp-h {
+  font-size: var(--fs-sm); text-transform: uppercase; letter-spacing: .08em;
+  color: var(--fg-2); font-weight: 700; margin: 0 0 .9rem; padding: 0; border: 0;
+}
+
+/* Clause index. */
+.lp-toc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 1.1rem 1.6rem; }
+.lp-toc-cat { font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: .07em; color: var(--fg-2); margin: 0 0 .4rem; font-weight: 700; }
+.lp-toc-list { list-style: none; margin: 0; padding: 0; }
+.lp-toc-list li { margin: 0 0 .3rem; line-height: 1.35; }
+.lp-toc-list a { font-size: var(--fs-sm); display: inline-block; overflow-wrap: anywhere; }
+.lp-toc-list a b { color: var(--fg-2); font-weight: 600; font-variant-numeric: tabular-nums; }
+.lp-toc-list a:hover b { color: var(--accent); }
+.lp-toc-foot { font-size: var(--fs-sm); color: var(--fg-1); margin: 1.1rem 0 0; padding-top: .85rem; border-top: 1px solid var(--divider); }
+
+@media (max-width: 620px) {
+  .lp-card { padding: .95rem 1rem; }
+  .lp-toc-grid { grid-template-columns: 1fr; gap: .7rem; }
+}
+</style>
+
+<div class="lp-meta">
+  <span><strong>Effective date:</strong> May 9, 2026</span>
+  <span><strong>Last updated:</strong> August 1, 2026</span>
+  <a href="#11-changes-to-these-terms">How changes are announced</a>
+</div>
 
 Server Assistant is built and maintained by **Wandering Webmaster** ([wandweb.co](https://wandweb.co)) ("we", "us", "our"). These terms govern your use of the Server Assistant Discord bot ("the Bot"). By inviting the Bot to a server, the server owner agrees to these terms on behalf of that server.
+
+<nav class="lp-card lp-toc" id="clause-index" aria-labelledby="clause-index-h">
+  <h2 class="lp-h" id="clause-index-h">Clause index</h2>
+  <div class="lp-toc-grid">
+    <div>
+      <p class="lp-toc-cat">Using the Bot</p>
+      <ul class="lp-toc-list">
+        <li><a href="#1-acceptance"><b>1.</b> Acceptance</a></li>
+        <li><a href="#2-eligibility"><b>2.</b> Eligibility</a></li>
+        <li><a href="#3-permitted-use"><b>3.</b> Permitted use</a></li>
+        <li><a href="#4-server-owner-responsibility"><b>4.</b> Server-owner responsibility</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="lp-toc-cat">Features that need their own terms</p>
+      <ul class="lp-toc-list">
+        <li><a href="#5-ai-features"><b>5.</b> AI features</a></li>
+        <li><a href="#6-cross-server-threat-network-threatnet"><b>6.</b> Cross-Server Threat Network (ThreatNet)</a></li>
+      </ul>
+      <p class="lp-toc-cat" style="margin-top:.9rem">Paying for it</p>
+      <ul class="lp-toc-list">
+        <li><a href="#7-billing-and-subscriptions"><b>7.</b> Billing and subscriptions</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="lp-toc-cat">Risk, liability and the legal frame</p>
+      <ul class="lp-toc-list">
+        <li><a href="#8-no-warranty"><b>8.</b> No warranty</a></li>
+        <li><a href="#9-limitation-of-liability"><b>9.</b> Limitation of liability</a></li>
+        <li><a href="#10-termination"><b>10.</b> Termination</a></li>
+        <li><a href="#11-changes-to-these-terms"><b>11.</b> Changes to these terms</a></li>
+        <li><a href="#12-governing-law"><b>12.</b> Governing law</a></li>
+        <li><a href="#13-severability"><b>13.</b> Severability</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <p class="lp-toc-foot">Companion document: the <a href="{{ site.url }}{{ site.baseurl }}/privacy/">Privacy Policy</a>, which sets out what is collected, what is shared, how long it is kept, and how to opt out.</p>
+</nav>
 
 ---
 
 ## 1. Acceptance
+{: #1-acceptance}
 
 You accept these terms by inviting the Bot to a server you own or administer. Continued use constitutes ongoing acceptance.
 
 ---
 
 ## 2. Eligibility
+{: #2-eligibility}
 
 You must comply with [Discord's Terms of Service](https://discord.com/terms) and [Community Guidelines](https://discord.com/guidelines) at all times. The Bot is intended for users aged 13 and above (or the minimum age required by Discord in your jurisdiction).
 
 ---
 
 ## 3. Permitted use
+{: #3-permitted-use}
 
 The Bot is provided for legitimate moderation and community-management purposes. You agree not to:
 
@@ -39,6 +133,7 @@ The Bot is provided for legitimate moderation and community-management purposes.
 ---
 
 ## 4. Server-owner responsibility
+{: #4-server-owner-responsibility}
 
 You are solely responsible for:
 - All moderation decisions made through the Bot in your server
@@ -57,6 +152,7 @@ The Bot is a tool. Final accountability for any moderation action rests with the
 ---
 
 ## 5. AI features
+{: #5-ai-features}
 
 The Bot offers optional AI features (SAi, Message Report, Self-trained AutoMod, Pulse, `/imagine`, and — if you run our Minecraft bridge — chat translation and in-game `@sai`) powered by Anthropic, with other providers used for specific checks and as fallbacks, and, when you supply your own key (BYOK), by the provider whose key you bring (**Anthropic**, **xAI**, or **OpenAI**). The [Privacy Policy]({{ site.url }}{{ site.baseurl }}/privacy/) lists every provider and exactly what each receives.
 
@@ -71,26 +167,49 @@ The Bot offers optional AI features (SAi, Message Report, Self-trained AutoMod, 
 ---
 
 ## 6. Cross-Server Threat Network (ThreatNet)
+{: #6-cross-server-threat-network-threatnet}
 
 The Bot operates a **Cross-Server Threat Network**, branded **ThreatNet**, a shared safety signal that helps protected servers recognise users with a serious, corroborated history of abuse on other protected servers. It is a **core, defining feature** of the Bot. Full detail of what is shared and how individual rights are handled is in the [Privacy Policy]({{ site.url }}{{ site.baseurl }}/privacy/).
 
-- **Participation is core functionality, not optional.** By inviting the Bot, your server **contributes** minimized abuse signals to the network and is **protected by** it. **There is no server-level opt-out**; the network only works when every protected server participates, and contribution and protection are inseparable. The network is **severity-only**: only minimized aggregates (a pseudonymous user ID, counts, recency, and a generic **severity level**) are shared, **never the offence type or category**, never an alt-guard fingerprint or any indicator derived from one, never your staff's free-text reasons, never any AI-generated offence summary, never your members' message content, and never which server acted.
+### Participation is core functionality, not optional
+{: #participation-is-core-functionality-not-optional}
 
-- **Notice to members is ours, not yours.** Giving members notice of the network is **our** responsibility as the operator; we do **not** put it on you. We provide it through our published [Privacy Policy]({{ site.url }}{{ site.baseurl }}/privacy/), through an in-Discord notice the Bot delivers when it is installed, and (on our roadmap, not yet live) an on-demand command that surfaces the disclosure on request. You are **welcome and encouraged** to tell your members that the server takes part, it is good practice, but it is **not an obligation we place on you.** Member notice supports transparency; it is **not** the legal basis for the network. The lawful basis is ours: under Australian law the cross-server signals are non-sensitive personal information collected as reasonably necessary for a safety function (APP 3.2) under the notice in the Privacy Policy (APP 5), and for EU/UK members the basis is our own **legitimate interest** backed by a written assessment, **not** the server owner consenting on members' behalf.
+By inviting the Bot, your server **contributes** minimized abuse signals to the network and is **protected by** it. **There is no server-level opt-out**; the network only works when every protected server participates, and contribution and protection are inseparable. The network is **severity-only**: only minimized aggregates (a pseudonymous user ID, counts, recency, and a generic **severity level**) are shared, **never the offence type or category**, never an alt-guard fingerprint or any indicator derived from one, never your staff's free-text reasons, never any AI-generated offence summary, never your members' message content, and never which server acted.
 
-- **Advisory by default; optional Premium automated action.** For every server, the network score is **advisory**; it surfaces a risk picture to human staff, who decide what (if anything) to do. **Premium servers may additionally opt in to ThreatNet auto-protect**, which **automatically bans a user when they join** when that account meets a **cross-server risk threshold the server chooses**, from the **highest band** (serious *and* corroborated across **multiple independent** servers; the default, and the most conservative) to one broader band a server administrator may select, which also acts on a single **serious** signal. Below that we enforce a **floor**: the broadest setting is not available to any server, so a minor record on its own, a single kick or warning from a single server, can never trigger an automatic ban. Auto-protect is **off by default**, is switched on and configured per server by a server administrator, and **the server chooses and is responsible for the threshold it sets** (a lower threshold acts on weaker signals and carries a higher chance of error). Where it is enabled, the resulting ban is an **automated decision**: the bot does **not** message the affected user, but the automated nature of the decision and the route to **human review** and appeal are disclosed in this agreement, in our [Privacy Policy]({{ site.url }}{{ site.baseurl }}/privacy/) and through the [web portal](https://serverassistant.wandweb.co) (see *Individual opt-out and appeals*); individuals who have opted out of network profiling are **not** auto-actioned, save where the **compelling-legitimate-grounds safety exception** described in *Individual opt-out and appeals* below is engaged, in which case the most serious, corroborated signals concerning that individual remain available to the network and an auto-protect ban may still follow; and the decision to enable, configure and operate auto-protect, and final accountability for it, rests with the server (see *Server-owner responsibility*).
+### Notice to members is ours, not yours
+{: #notice-to-members-is-ours-not-yours}
 
-- **No warranty for automated action.** Where you enable auto-protect, you accept that the underlying network signal is **probabilistic and not guaranteed accurate** (see *No warranty of accuracy* below) and that automated bans may produce **false positives**. You are responsible for the decision to enable it, for reviewing its audit log, and for handling appeals you receive. We honour opt-out and erasure and provide the human-review route described in the [Privacy Policy]({{ site.url }}{{ site.baseurl }}/privacy/).
+Giving members notice of the network is **our** responsibility as the operator; we do **not** put it on you. We provide it through our published [Privacy Policy]({{ site.url }}{{ site.baseurl }}/privacy/), through an in-Discord notice the Bot delivers when it is installed, and (on our roadmap, not yet live) an on-demand command that surfaces the disclosure on request. You are **welcome and encouraged** to tell your members that the server takes part, it is good practice, but it is **not an obligation we place on you.** Member notice supports transparency; it is **not** the legal basis for the network. The lawful basis is ours: under Australian law the cross-server signals are non-sensitive personal information collected as reasonably necessary for a safety function (APP 3.2) under the notice in the Privacy Policy (APP 5), and for EU/UK members the basis is our own **legitimate interest** backed by a written assessment, **not** the server owner consenting on members' behalf.
 
-- **Anti-abuse and integrity.** You must not attempt to **poison, game, or manipulate** the network, for example by issuing bad-faith bans, kicks, or warnings to inflate another user's network signal, or by automating moderation actions to that end. We weight contributions by server standing, require corroboration across **independent** servers before a signal counts, and may **discount, suspend, or remove** a server's contributions (and the server's access) if we detect manipulation.
+### Advisory by default; optional Premium automated action
+{: #advisory-by-default-optional-premium-automated-action}
 
-- **Individual opt-out and appeals.** Although a *server* cannot opt out, an **individual may opt out of network profiling** using the **self-service toggle in the web portal** ([serverassistant.wandweb.co](https://serverassistant.wandweb.co)), or a server's admins may action an opt-out for one of their members on request. Individuals may also request review, correction, or erasure of their network record via [`/support`]({{ site.url }}{{ site.baseurl }}/support/). Because the score can affect how a user is treated by participating servers, the network is **explainable and appealable**. Opt-out and erasure are honoured **unless we have compelling legitimate grounds** (a verified raid/scam/ban-evasion need) to retain the most serious signals, so known bad actors cannot opt out to evade detection, handled individually as described in the [Privacy Policy]({{ site.url }}{{ site.baseurl }}/privacy/).
+For every server, the network score is **advisory**; it surfaces a risk picture to human staff, who decide what (if anything) to do. **Premium servers may additionally opt in to ThreatNet auto-protect**, which **automatically bans a user when they join** when that account meets a **cross-server risk threshold the server chooses**, from the **highest band** (serious *and* corroborated across **multiple independent** servers; the default, and the most conservative) to one broader band a server administrator may select, which also acts on a single **serious** signal. Below that we enforce a **floor**: the broadest setting is not available to any server, so a minor record on its own, a single kick or warning from a single server, can never trigger an automatic ban. Auto-protect is **off by default**, is switched on and configured per server by a server administrator, and **the server chooses and is responsible for the threshold it sets** (a lower threshold acts on weaker signals and carries a higher chance of error). Where it is enabled, the resulting ban is an **automated decision**: the bot does **not** message the affected user, but the automated nature of the decision and the route to **human review** and appeal are disclosed in this agreement, in our [Privacy Policy]({{ site.url }}{{ site.baseurl }}/privacy/) and through the [web portal](https://serverassistant.wandweb.co) (see *Individual opt-out and appeals*); individuals who have opted out of network profiling are **not** auto-actioned, save where the **compelling-legitimate-grounds safety exception** described in *Individual opt-out and appeals* below is engaged, in which case the most serious, corroborated signals concerning that individual remain available to the network and an auto-protect ban may still follow; and the decision to enable, configure and operate auto-protect, and final accountability for it, rests with the server (see *Server-owner responsibility*).
 
-- **No warranty of accuracy.** The network score is a **probabilistic, advisory signal** and is **not guaranteed to be accurate, complete, or infallible**. It may produce false positives or false negatives. You are responsible for reviewing it and applying your own judgement before relying on it for any moderation decision. Our liability for the network is subject to *No warranty* and *Limitation of liability* below.
+### No warranty for automated action
+{: #no-warranty-for-automated-action}
+
+Where you enable auto-protect, you accept that the underlying network signal is **probabilistic and not guaranteed accurate** (see *No warranty of accuracy* below) and that automated bans may produce **false positives**. You are responsible for the decision to enable it, for reviewing its audit log, and for handling appeals you receive. We honour opt-out and erasure and provide the human-review route described in the [Privacy Policy]({{ site.url }}{{ site.baseurl }}/privacy/).
+
+### Anti-abuse and integrity
+{: #anti-abuse-and-integrity}
+
+You must not attempt to **poison, game, or manipulate** the network, for example by issuing bad-faith bans, kicks, or warnings to inflate another user's network signal, or by automating moderation actions to that end. We weight contributions by server standing, require corroboration across **independent** servers before a signal counts, and may **discount, suspend, or remove** a server's contributions (and the server's access) if we detect manipulation.
+
+### Individual opt-out and appeals
+{: #individual-opt-out-and-appeals}
+
+Although a *server* cannot opt out, an **individual may opt out of network profiling** using the **self-service toggle in the web portal** ([serverassistant.wandweb.co](https://serverassistant.wandweb.co)), or a server's admins may action an opt-out for one of their members on request. Individuals may also request review, correction, or erasure of their network record via [`/support`]({{ site.url }}{{ site.baseurl }}/support/). Because the score can affect how a user is treated by participating servers, the network is **explainable and appealable**. Opt-out and erasure are honoured **unless we have compelling legitimate grounds** (a verified raid/scam/ban-evasion need) to retain the most serious signals, so known bad actors cannot opt out to evade detection, handled individually as described in the [Privacy Policy]({{ site.url }}{{ site.baseurl }}/privacy/).
+
+### No warranty of accuracy
+{: #no-warranty-of-accuracy}
+
+The network score is a **probabilistic, advisory signal** and is **not guaranteed to be accurate, complete, or infallible**. It may produce false positives or false negatives. You are responsible for reviewing it and applying your own judgement before relying on it for any moderation decision. Our liability for the network is subject to *No warranty* and *Limitation of liability* below.
 
 ---
 
 ## 7. Billing and subscriptions
+{: #7-billing-and-subscriptions}
 
 **Free tier:** The core moderation toolkit is free with no subscription required. AI features include a lifetime allowance of 150,000 tokens.
 
@@ -115,6 +234,7 @@ The Bot operates a **Cross-Server Threat Network**, branded **ThreatNet**, a sha
 ---
 
 ## 8. No warranty
+{: #8-no-warranty}
 
 The Bot is provided **"as-is"** without warranty of any kind. We make no representations that:
 - The Bot will be uninterrupted, secure, or error-free
@@ -127,6 +247,7 @@ You use the Bot at your own risk.
 ---
 
 ## 9. Limitation of liability
+{: #9-limitation-of-liability}
 
 To the maximum extent permitted by law, we won't be liable for any direct, indirect, incidental, special, consequential, or exemplary damages arising from your use of the Bot, including:
 
@@ -140,6 +261,7 @@ Our total liability won't exceed the greater of (a) the amount you paid for Prem
 ---
 
 ## 10. Termination
+{: #10-termination}
 
 You may stop using the Bot at any time by removing it from your server. We may terminate or suspend the Bot's access to your server at any time, with or without notice, for:
 - Violation of these terms
@@ -152,23 +274,27 @@ On removal, encrypted credentials for your server are wiped immediately. Other d
 ---
 
 ## 11. Changes to these terms
+{: #11-changes-to-these-terms}
 
 We may update these terms to reflect changes in the Bot's features, legal requirements, or industry practice. Material changes will be announced via the Bot's release notes (see [Changelog]({{ site.url }}{{ site.baseurl }}/changelog/)) and posted in the staff-chat of each configured guild. Continued use after changes take effect constitutes acceptance.
 
 ---
 
 ## 12. Governing law
+{: #12-governing-law}
 
 These terms are governed by the laws of Australia. Any disputes shall be resolved in Australian courts.
 
 ---
 
 ## 13. Severability
+{: #13-severability}
 
 If any provision of these terms is held invalid or unenforceable, the remaining provisions remain in full force.
 
 ---
 
 ## Contact
+{: #contact}
 
 [`/support`]({{ site.url }}{{ site.baseurl }}/support/) from any server with the Bot installed, or visit [wandweb.co](https://wandweb.co).

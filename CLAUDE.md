@@ -212,6 +212,23 @@ published page instead of trusting the brief.
 - **Raw HTML headings** (`<h3>` inside `.feat`, `.wiki-hub .card`, `.steprow`) get **no
   id from either parser**, because kramdown never touches them. They need a literal
   `id="..."` attribute. A `{#...}` IAL does nothing there.
+- **A LEADING NUMBER is kept by GFM and stripped by bare kramdown.** `terms.md`'s
+  `## 6. Cross-Server Threat Network (ThreatNet)` serves `#6-cross-server-threat-network-threatnet`
+  live. Bare kramdown drops the `6.` (its `generate_id` runs `gsub(/^[^a-zA-Z]+/, '')`),
+  which produces the plausible and wrong conclusion that **renumbering a clause is
+  free**. It is not: renumbering moves the anchor of every clause below it. That
+  mistake was made, from the same bad inventory, on 2026-08-02 and caught only by
+  checking the live page.
+- **The INLINE IAL silently fails for an id starting with a digit.**
+  `## 2. Eligibility {#2-eligibility}` renders the braces as literal text and yields
+  `id="2-eligibility-2-eligibility"`, because kramdown's `HEADER_ID` regex requires an
+  XML `NAME_START_CHAR` and digits are excluded. **Use the block form on the next
+  line**, which works for every id shape:
+
+  ```markdown
+  ## 2. Eligibility
+  {: #2-eligibility}
+  ```
 
 Pinning an id with `{#...}` is worth doing on any heading something links to: it
 decouples the anchor from both the copy and the parser, so neither a reword nor a
