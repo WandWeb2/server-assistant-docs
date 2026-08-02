@@ -51,7 +51,7 @@ same opt-out as the rest of ThreatNet.
   </div></div>
 </div>
 
-## Advisory by default <span class="cmd-tag free">FREE</span>
+## Advisory by default <span class="cmd-tag free">FREE</span> {#advisory-by-default-free}
 
 The network signal is **advisory**: it does **not** ban, kick or sanction
 anyone on its own. It surfaces a risk band (low · elevated · high) to your human
@@ -96,7 +96,7 @@ out**. Each server can soften that in settings:
   </div></div>
 </div>
 
-### Catching never-seen scams <span class="cmd-tag ai">AI</span>
+### Catching never-seen scams <span class="cmd-tag ai">AI</span> {#catching-never-seen-scams-ai}
 
 A blocklist only knows the scams it has already seen. On **AI-enabled plans**, an
 image from a **brand-new member** that *isn't* on the blocklist gets an extra
@@ -110,7 +110,7 @@ that slips past one server is on the blocklist by the time it reaches the next.
 > here too; the full data model is on the
 > [Privacy page]({{ '/privacy/' | relative_url }}).
 
-## Premium auto-protect: close the gate on join <span class="cmd-tag premium">PREMIUM</span>
+## Premium auto-protect: close the gate on join <span class="cmd-tag premium">PREMIUM</span> {#premium-auto-protect-close-the-gate-on-join-premium}
 
 Premium servers can turn on **auto-protect**: a user who joins meeting a
 **cross-server risk threshold you choose** is **banned automatically on join**.
@@ -173,7 +173,7 @@ Because it's an **automated** action, it ships with safeguards:
   </table>
 </div>
 
-## Opting out
+## Opting out {#opting-out}
 
 ThreatNet is a **core, on-by-default** safety feature for every server.
 **Individuals** can opt out of profiling from the
