@@ -482,10 +482,14 @@ automated paths.
    - **Audit and staff visibility.** Both paths write a mod-log record and post a
      staff notice (`bot.py:8635-8654`, `9911-9927`).
 
-   **What is not a safeguard, recorded so it is not mistaken for one:** there is no
-   floor under the auto-protect threshold, no human confirmation step on either
-   path, no notice at all to the person on the auto-protect path, and no mechanism
-   preventing an automated ban from becoming a cross-server signal.
+   **What is not a safeguard, recorded so it is not mistaken for one:** the floor
+   under the auto-protect threshold is back at `elevated` since 2026-08-02
+   (`bot.py:9871`) but the operating point above it is still the customer's to set,
+   there is no human confirmation step on either path, and no notice at all to the
+   person on the auto-protect path. An automated ban is no longer able to become a
+   cross-server signal (both paths suppress the emit since v6.112.0, residual 2
+   below), but that suppression is in-process state and does not survive a restart
+   between the mark and the ban event.
 5. Anti-poisoning: server-standing weighting, N≥2 corroboration, and the power to
    discount or suspend a manipulating server.
 6. No **server** opt-out, disclosed plainly as the cost of a core network-effect
@@ -527,23 +531,45 @@ and it should be recorded that way rather than as a settled pass.
    member very commonly has. The bar for the most consequential automated action
    the product takes is therefore, in the ordinary case, **an image match plus
    being new.** No human sees the case first.
-2. **Automated action can manufacture its own evidence.** An alt-guard auto-ban is
-   emitted to the network as a `serious` signal (`bot.py:9953`, `4097-4098`), and
-   two of them from independent servers produce the `high` band that triggers
-   auto-protect elsewhere (`relay.py:1463-1464`). The network cannot distinguish an
-   automated ban from a staff ban, because `altguard_match` is never set
-   (`bot.py:9953`). A person wrongly auto-banned twice on an avatar match acquires
-   a cross-server record that reads exactly like a corroborated serious offender's,
-   and it will be acted on automatically by servers that never saw the original
-   matches. This is the most serious residual and it is currently unmitigated.
-3. **The threshold floor is gone.** Owner directive, 2026-06-22. A server may set
-   auto-protect to `low`, at which a single minor signal from a single server, one
-   kick or one warning, bans on sight (`relay.py:1467`, `bot.py:9891`). At that
-   setting corroboration, which is the safeguard the rest of this assessment leans
-   on hardest, does no work at all. The command warns the administrator and places
-   responsibility on them (`bot.py:41242-41247`). That is a fair allocation between
-   operator and customer, but it is **not** a safeguard for the data subject, who
-   is not party to that allocation and cannot see what level a server has chosen.
+2. **Automated action could manufacture its own evidence. MITIGATED 2026-08-02,
+   shipped in v6.112.0.** As originally assessed, an alt-guard auto-ban was emitted
+   to the network as a `serious` signal, and two of them from independent servers
+   produced the `high` band that triggers auto-protect elsewhere
+   (`relay.py:1463-1464`). The network could not distinguish an automated ban from a
+   staff ban, because `altguard_match` is never set. A person wrongly auto-banned
+   twice on an avatar match therefore acquired a cross-server record reading exactly
+   like a corroborated serious offender's, and it would be acted on automatically by
+   servers that never saw the original matches. This was recorded here as the most
+   serious residual. **Both automated paths now suppress the emit**: a mark/consume
+   pair around the ban keeps an alt-guard automatic ban out of the network
+   (`_altguard_recent_autoban`, `bot.py:8639-8656`, marked at `8668` before the ban
+   because the gateway event can land mid-await, cleared at `8674` and `8678` if the
+   ban is refused), mirroring the equivalent pair that already covered the ThreatNet
+   auto-protect path (`bot.py:9890-9905`). Only the emit is suppressed: the staff
+   alert, the local offender record and the ban-appeal DM are unaffected, a **staff**
+   ban of the same user still emits exactly as before, and the mark is time-boxed to
+   120s so a stale one cannot silence a genuine staff decision later. **What remains:**
+   the suppression is in-process state, so it does not survive a restart between the
+   mark and the ban event, and it addresses the manufacture of NEW automated evidence
+   rather than any record created before v6.112.0. Register: R9 residual 4.
+3. **The threshold floor is back at `elevated`, and the customer still sets the
+   level above it.** Owner directive, 2026-06-22, removed the hard `high` floor,
+   which left `low` selectable: a server could set auto-protect to `low`, at which a
+   single minor signal from a single server, one kick or one warning, banned on
+   sight (`relay.py:1467`, `bot.py:9891`), and at that setting corroboration, which
+   is the safeguard the rest of this assessment leans on hardest, did no work at
+   all. Owner decision, 2026-08-02, put a floor back at `elevated` rather than the
+   original `high` (`bot.py:9871`, shipped in v6.112.0): `low` is no longer offered
+   (`bot.py:41276-41279`) and every read normalises a stored `low` up to `elevated`
+   (`bot.py:9874-9887`), so a server can no longer cause a ban on a single
+   uncorroborated record. That narrows this residual rather than closing it. The
+   operating point above the floor is still the server's choice, and `elevated`
+   still acts on a single serious signal, so the false-positive rate is set per
+   server rather than by the operator. The command warns the administrator and
+   places responsibility on them (`bot.py:41242-41247`). That is a fair allocation
+   between operator and customer, but it is **not** a safeguard for the data
+   subject, who is not party to that allocation and cannot see what level a server
+   has chosen.
 4. **The auto-protect path gives the affected person no notice.** They are banned
    silently. Art. 22(3) requires at minimum the ability to obtain human
    intervention, express a point of view, and contest the decision. That route
@@ -638,8 +664,13 @@ Measures **not** in place, recorded honestly:
 
 - No human confirmation before either action.
 - No individual notification at all on the auto-protect path.
-- No floor under the threshold a server may set.
-- No barrier between an automated ban and the cross-server record it creates.
+- No operator control of the threshold above the floor: there is a floor again since
+  2026-08-02, at `elevated` (`bot.py:9871`), but the level above it is the server's
+  to set.
+- No DURABLE barrier between an automated ban and the cross-server record it
+  creates: both paths suppress the emit since v6.112.0 (`bot.py:8639-8656`,
+  `9890-9905`), but the mark is in-process and does not survive a restart between
+  the mark and the ban event.
 
 The Art. 22(2) question (whether any of contract, Member State law, or explicit
 consent provides a gate) is not resolved by this assessment. Targeted legal advice
