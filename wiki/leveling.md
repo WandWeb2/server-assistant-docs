@@ -183,7 +183,7 @@ this only changes whether level-ups are announced.**
   </table>
 </div>
 
-<p style="color:var(--fg-1);font-size:.9rem;line-height:1.55;">With announcements on, the bot posts a short note when someone levels up, in your chosen level-up channel if you've set one, otherwise in the channel where it happened:</p>
+<p style="color:var(--fg-1);font-size:.9rem;line-height:1.55;">With announcements on, the bot posts a short note when someone levels up, in your chosen level-up channel if you've set one, otherwise in the channel where it happened. Set it in the <a href="https://serverassistant.wandweb.co">web portal</a> under <strong>Settings, Leveling, Level-up channel</strong>; leave it blank to keep level-ups where they happen:</p>
 
 <div class="dc">
   <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
