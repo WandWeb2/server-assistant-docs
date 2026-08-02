@@ -259,7 +259,8 @@ LIA nor this register acknowledged that any such decision existed.
   regardless of the switch (`bot.py:9947`, `9949`, `15608`, `39433`); only the
   acting on it is opt-in.
 
-**The two paths chain, and nothing stops them.** An alt-guard auto-ban is not marked
+**The two paths chained, and nothing stopped them (fixed in v6.112.0, see residual
+4).** As originally assessed: an alt-guard auto-ban is not marked
 the way a ThreatNet auto-ban is, so it falls through to `_emit_threat_signal`
 (`bot.py:9945-9953`), and every ban maps to the **top** severity band
 (`bot.py:4097-4098`). Two independent servers auto-banning the same account on an
@@ -311,16 +312,33 @@ alt-guard evidence bar is an image match.
    automated. Art. 22(3) rights they do not know they have are rights they will not
    use. The operator directive behind the silence (do not tip off a flagged actor,
    2026-06-22) is a genuine security rationale that trades directly against this.
-3. **No floor under the threshold.** At `low`, corroboration, the safeguard the rest
-   of the assessment leans on hardest, does no work. The `/threatnet` command warns
-   the administrator and assigns them responsibility (`bot.py:41242-41247`), which
-   allocates risk fairly between operator and customer but protects the data
-   subject not at all, since they are not party to it and cannot see the level a
-   server chose.
-4. **Automated bans become cross-server evidence.** Residual 2 of the LIA's B3.5.
-   Unmitigated. A change stopping the automated alt-guard ban from emitting, while
-   leaving staff-made bans emitting, was in flight as at 2026-08-02 and **had not
-   landed**; `privacy.md` therefore discloses the current behaviour.
+3. **The floor was restored at `elevated` in v6.112.0, and this residual is
+   narrowed rather than closed.** As originally assessed there was no floor at all:
+   at `low` a single uncorroborated record from one server banned on sight, so
+   corroboration, the safeguard the rest of the assessment leans on hardest, did no
+   work. Owner decision 2026-08-02 put a floor back at `elevated` rather than the
+   original `high`, so a server can still go broader than the default but cannot act
+   on a lone record. Enforced at both ends: `low` is gone from the `/threatnet
+   autoban` choices and the settings picker, and every read of
+   `threatnet_autoban_min_band` normalises through `_threatnet_autoban_band()`,
+   which raises a stored `low` to `elevated`. That read-side normalisation is the
+   migration for servers that had already chosen `low`. **What remains:** the
+   customer still chooses the operating point above that floor, so the
+   false-positive rate is still set per server rather than by the operator, and the
+   `/threatnet` warning that assigns the administrator responsibility
+   (`bot.py:41242-41247`) still protects the data subject not at all, since they are
+   not party to it and cannot see the level a server chose.
+4. ~~**Automated bans become cross-server evidence.**~~ **RESOLVED 2026-08-02.**
+   Residual 2 of the LIA's B3.5. Shipped in **v6.112.0** and confirmed running on
+   the live bot the same day: `_altguard_recent_autoban` plus a mark/consume pair
+   mirroring the ThreatNet one suppresses the emit for an alt-guard **automatic**
+   ban, marked before the ban because the gateway event can land mid-await, and
+   cleared if the ban is refused. Only the emit is suppressed, so the staff alert,
+   the local offender record and the ban-appeal DM all still happen. A **staff** ban
+   of the same user still emits exactly as before, and the mark is time-boxed to
+   120s so a stale one cannot silence a genuine staff decision later. `privacy.md`
+   was updated to the new behaviour on 2026-08-02, replacing the paragraph that had
+   correctly disclosed the old one.
 5. **Alt-guard notice can fail silently in both directions.** The DM depends on
    `ban_appeals_enabled` and on open DMs (`bot.py:8845`, `8886-8890`); the staff
    alert depends on a configured log or staff channel (`bot.py:8635-8637`). A server
@@ -385,9 +403,14 @@ unchanged, but R4/R5/R8 residuals are reduced.
    wording. Still HIGH, and the residual **rose** on 2026-08-02 because such an
    individual may now be banned automatically. See R9.
 3. **Solely-automated bans under GDPR Art. 22 (R9), HIGH, added 2026-08-02.** Two
-   paths ban a person with no human in the loop, they chain into one another, and
-   no Art. 22(2) gate fits cleanly. Targeted legal advice on the Art. 22(2)
-   question has been sought and is outstanding.
+   paths ban a person with no human in the loop, and no Art. 22(2) gate fits
+   cleanly. Targeted legal advice on the Art. 22(2) question has been sought and is
+   outstanding. **Two of the six residuals moved on 2026-08-02 with v6.112.0**: the
+   two paths no longer chain, because an automated alt-guard ban no longer emits a
+   cross-server signal (residual 4, resolved), and the threshold has a floor again
+   at `elevated` (residual 3, narrowed). The rating stays **HIGH**, because what
+   drives it is the unresolved Art. 22(2) gate and the absence of a human before
+   either ban, neither of which this release touched.
 4. **Operational follow-through** — DPAs/SCCs (R6), the `/support` rights + **opt-out
    handling** workflow with consistent compelling-grounds application (R8), shipping
    the bot-delivered install notice + roadmap portal opt-out toggle, and keeping the
