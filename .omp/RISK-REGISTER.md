@@ -245,10 +245,15 @@ LIA nor this register acknowledged that any such decision existed.
 - **ThreatNet auto-protect.** A full-Premium server may switch on automatic banning
   at a cross-server risk threshold **it** chooses (`bot.py:9863`, gate at `9873`,
   threshold at `9884`). The **hard "high" floor was removed by owner directive on
-  2026-06-22**, so a server may set the trigger as low as `low`, at which a single
-  minor signal from a single server, one kick or one warning, bans a joining account
-  on sight (`relay.py:1467`, `bot.py:9891`, `41196`). The ban is **silent toward the
-  affected person**: no DM, no notice (`bot.py:9894-9897`).
+  2026-06-22**, which left `low` selectable, at which a single minor signal from a
+  single server, one kick or one warning, banned a joining account on sight
+  (`relay.py:1467`, `bot.py:9891`, `41196`). **A floor was restored at `elevated` by
+  owner decision on 2026-08-02, shipped in v6.112.0** (`bot.py:9871`, normalised on
+  every read at `9874-9887`), so the two selectable bands are now `high` and
+  `elevated` (`bot.py:41276-41279`) and a server can no longer cause a ban on a
+  single uncorroborated record. The operating point above that floor is still the
+  server's to choose: see residual 3. The ban is **silent toward the affected
+  person**: no DM, no notice (`bot.py:9894-9897`).
 - **Alt-guard auto-ban.** A server that has run `/altguard on` automatically bans a
   joining account that scores 70 or more with a strong signal
   (`bot.py:8618`, `8621`). The arithmetic restricts the strong route in practice to
@@ -277,8 +282,9 @@ processing that produce legal effects or similarly significant effects. None of 
 three Art. 22(2) gates fits cleanly: there is no contract with the data subject, no
 Union or Member State authorisation, and no explicit consent. The operator's
 position rests on the safeguards, the opt-out, and after-the-fact human review
-rather than on an exemption. Alongside that, the removed threshold floor means the
-false-positive rate is set by each customer rather than by the operator, and the
+rather than on an exemption. Alongside that, the threshold floor restored at
+`elevated` on 2026-08-02 still leaves the operating point above it to each customer,
+so the false-positive rate is set per server rather than by the operator, and the
 alt-guard evidence bar is an image match.
 
 **What has been done to mitigate.**
@@ -357,13 +363,17 @@ alt-guard evidence bar is an image match.
   question the 2026-08-02 sign-off did not answer, and it is the one most likely to
   change the product rather than the wording. The owner published the Art. 22
   disclosure on 2026-08-02 **without lawyer review**, knowingly (see the decision
-  log). Removing the threshold floor raises the value of that outstanding review
-  rather than lowering it. **Targeted advice on the Art. 22(2) question has since
-  been sought and is outstanding** (decision log, 2026-08-02).
-- **Owner:** whether the removed floor stays removed; whether alt-guard's auto-ban
-  should require staff confirmation; whether an alt-guard auto-ban should be barred
-  from emitting a network signal; and whether the `privacy.md` opt-out absolute is
-  additionally corrected **in code** now that it has been corrected in wording.
+  log). The threshold floor has since been restored at `elevated` (2026-08-02,
+  v6.112.0), which narrows but does not remove the customer-set exposure, so that
+  outstanding review keeps its value rather than losing it. **Targeted advice on the
+  Art. 22(2) question has since been sought and is outstanding** (decision log,
+  2026-08-02).
+- **Owner:** the floor question is **answered**, by the 2026-08-02 decision to
+  restore it at `elevated` rather than the original `high` (residual 3). Still open:
+  whether alt-guard's auto-ban should require staff confirmation; whether an
+  alt-guard auto-ban should be barred from emitting a network signal; and whether
+  the `privacy.md` opt-out absolute is additionally corrected **in code** now that
+  it has been corrected in wording.
 
 ---
 
@@ -453,15 +463,21 @@ Related, still open (not changed by this sign-off):
 - **R3 (DPIA/PIA sign-off, HIGH)** is unchanged and now carries this decision
   too. Publishing on owner sign-off is not the professional review R3 asks for.
 - **Owner directive 2026-06-22** removed the hard "high" threshold floor, so a
-  server may set auto-protect as low as "low". False-positive and Article 22
-  exposure is correspondingly higher, and the server owns the level it sets.
+  server could set auto-protect as low as "low". False-positive and Article 22
+  exposure was correspondingly higher, and the server owns the level it sets.
   That raises, not lowers, the value of the outstanding lawyer review.
+  **Superseded in part on 2026-08-02**, when a floor was restored at "elevated":
+  see the entry at the end of this log. The server still owns the level it sets
+  above that floor.
 - **`.omp/threat-network-PIA-LIA.md` is now STALE on this point.** Its LIA
   balancing safeguard #4 still reads "Advisory-only, explainable, appealable, no
   Art. 22 automated decision with legal/similarly-significant effect in v1",
   which the shipped auto-ban contradicts. The LIA balance has not been re-run
   against automated action. Re-running it is a core-pillar assessment change and
   needs the owner directly; it was deliberately **not** rewritten here.
+  **RESOLVED later the same day:** the balance WAS re-run against automated action
+  (B3.3 to B3.6), and safeguard #4 no longer makes the advisory-only claim. This
+  bullet is kept as the record of the position at the moment of sign-off.
 - **`terms.md` still carries its own unreleased markers**, including one on the
   auto-protect clause reading "Confirm with the owner AND a lawyer before
   publishing". Tonight's sign-off was scoped to `privacy.md`, so those were left
@@ -493,3 +509,26 @@ not been received, and nothing in this register or in
 - **On receipt:** re-run the LIA balance (B3.5, B3.6), re-rate **R9**, and revisit
   the published `privacy.md` and `terms.md` Article 22 wording if the advice moves
   the position.
+
+**2026-08-02 (owner decision) - the auto-protect threshold floor was RESTORED, at
+"elevated".** The hard "high" floor removed on 2026-06-22 (see the first entry in
+this log) is back, one band lower than the original: `_THREATNET_AUTOBAN_FLOOR_BAND
+= "elevated"` (`bot.py:9871`), shipped in **v6.112.0**. `low` is no longer offered by
+the `/threatnet autoban` picker (`bot.py:41276-41279`), and every read of a stored
+threshold normalises through `_threatnet_autoban_band()` (`bot.py:9874-9887`), which
+raises a stored `low` to `elevated` from the next join onward. That read-side
+normalisation is the migration for servers that had already chosen `low`: no
+backfill, and no window in which stored data still bans on a single record. The two
+selectable bands are therefore `high` and `elevated`, and a server can no longer
+cause a ban on a single uncorroborated record.
+
+What this does and does not move here:
+
+- **R9 residual 3 is narrowed, not closed**, and the **R9 rating stays HIGH.** What
+  drives the rating is the unresolved Art. 22(2) gate and the absence of a human
+  before either ban, neither of which this decision touches.
+- **The customer still chooses the operating point above the floor**, and `elevated`
+  still acts on a single serious signal, so the false-positive rate is still set per
+  server rather than by the operator.
+- **`.omp/threat-network-PIA-LIA.md` B3.4 #4, B3.5 residual 3 and B3.6 were updated
+  to this fact.** The balance conclusion itself was not re-run on the strength of it.
