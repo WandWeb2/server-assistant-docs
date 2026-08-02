@@ -611,3 +611,29 @@ What this does and does not move here:
   server rather than by the operator.
 - **`.omp/threat-network-PIA-LIA.md` B3.4 #4, B3.5 residual 3 and B3.6 were updated
   to this fact.** The balance conclusion itself was not re-run on the strength of it.
+
+**2026-08-02 (owner sign-off) - all copy shipped this day is APPROVED.** The owner
+approved the customer-facing and document copy written across the 23 merges of
+2026-08-02, after the corrections had shipped. Recorded here because a core-pillar
+approval given in conversation is worthless if it is not written down.
+
+**What this discharges.** The OWNER half of the outstanding marker on the terms
+auto-protect clause, which reads "Confirm with the owner AND a lawyer before
+publishing" (`.omp/legal-review-notes.md`, note 5). It also covers the corrected
+wording in `privacy.md`, `terms.md`, `pricing.md` and the wiki: the AI second-opinion
+claim, the auto-protect plan gate, the decision-record retention description, the XP
+activity-log disclosure, and the opt-out qualification wherever it appears.
+
+**What this does NOT discharge, and must not be read as discharging:**
+
+- **The LAWYER half of that same marker.** It is a conjunction, not a choice. The
+  targeted Article 22(2) advice recorded in the entry above is still sought and
+  still outstanding, and the marker stays until it arrives.
+- **R9's rating.** Still HIGH. What drives it is the unresolved Art. 22(2) gate and
+  the absence of a human before either automated ban. Approving copy does not move
+  either.
+- **The four assessment passages that v6.114.0 superseded** (flagged by the citation
+  pass, listed in the PIA). Rewriting an assessment conclusion is not a copy change,
+  so it needs its own decision rather than inheriting this one.
+- **R3.** Publishing on owner sign-off is still not the professional review R3 asks
+  for. That has been true of every sign-off in this log and remains true of this one.
