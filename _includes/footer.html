@@ -2,6 +2,11 @@
   Custom footer overriding the Minima theme default. Shows the Server Assistant
   logo, description, and quick-links instead of Minima's three-column author/
   social/excerpt block (which rendered the `author:` YAML hash as raw Ruby).
+
+  LINK SOURCE: `_data/nav.yml`, shared with `_includes/header.html`. The groups
+  and their order, the link order inside each group, and the labels all live
+  there. Do not hardcode an <a> into this block: the header would not see it,
+  and neither would the relay-drift test that reads the same data file.
 {%- endcomment -%}
 
 <link rel="stylesheet" href="{{ '/assets/css/tokens.css' | relative_url }}?v={{ site.time | date: '%s' }}">
@@ -28,28 +33,16 @@
       <p style="margin: 0 0 .5rem; color: #9aa1a9; font-size: .9rem;">
         {{ site.tagline | default: site.description | escape }}
       </p>
-      <p style="margin: 0 0 .4rem; font-size: .85rem;">
-        <strong style="color:#c8bdbd; margin-right:.4rem;">Product:</strong>
-        <a href="{{ '/wiki/setup/'  | relative_url }}">Setup</a> ·
-        <a href="{{ '/features/'   | relative_url }}">Features</a> ·
-        <a href="{{ '/pricing/'    | relative_url }}">Pricing</a> ·
-        <a href="{{ '/compare/'    | relative_url }}">Compare</a> ·
-        <a href="{{ '/roadmap/'    | relative_url }}">Roadmap</a> ·
-        <a href="{{ '/partnerships/' | relative_url }}">Partners</a>
+      {%- for grp in site.data.nav.groups -%}
+      {%- assign grp_links = site.data.nav.items | where: "group", grp.id -%}
+      {%- if forloop.last -%}{%- assign grp_margin = "margin: 0;" -%}{%- else -%}{%- assign grp_margin = "margin: 0 0 .4rem;" -%}{%- endif %}
+      <p style="{{ grp_margin }} font-size: .85rem;">
+        <strong style="color:#c8bdbd; margin-right:.4rem;">{{ grp.label }}:</strong>
+        {%- for l in grp_links %}
+        <a href="{{ l.url | relative_url }}">{{ l.label }}</a>{% unless forloop.last %} ·{% endunless %}
+        {%- endfor %}
       </p>
-      <p style="margin: 0 0 .4rem; font-size: .85rem;">
-        <strong style="color:#c8bdbd; margin-right:.4rem;">Help:</strong>
-        <a href="{{ '/wiki/'          | relative_url }}">Wiki</a> ·
-        <a href="{{ '/wiki/commands/' | relative_url }}">Commands</a> ·
-        <a href="{{ '/faq/'           | relative_url }}">FAQ</a> ·
-        <a href="{{ '/support/'       | relative_url }}">Support</a> ·
-        <a href="{{ '/changelog/'     | relative_url }}">Changelog</a>
-      </p>
-      <p style="margin: 0; font-size: .85rem;">
-        <strong style="color:#c8bdbd; margin-right:.4rem;">Legal:</strong>
-        <a href="{{ '/privacy/'    | relative_url }}">Privacy</a> ·
-        <a href="{{ '/terms/'      | relative_url }}">Terms</a>
-      </p>
+      {%- endfor %}
     </div>
 
     <div class="footer-credit" style="font-size: .8rem; color: #9aa1a9; min-width: 180px;">

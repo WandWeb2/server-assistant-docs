@@ -2739,6 +2739,12 @@ Everything stays **local to your server**: nothing is shared anywhere. It's **on
 <p class="cl-intro">What's changed in the <strong>Server Assistant portal</strong>: the web dashboard you sign into with your Discord account.</p>
 
 <details class="doc-sec" markdown="1" open data-kind="fix">
+<summary>v1.4: The level-up channel is editable at last</summary>
+- **"Level-up channel" was greyed out, and should not have been.** The field sat in Settings, Leveling with a tooltip describing what it does, and no way to type anything into it. Every other greyed field on that page is greyed because a channel picker is still to come; this one had simply been swept up with them by mistake, and stayed that way for a long time.
+- **It works now.** Choose where level-up messages post, or leave it blank to keep them in whichever channel the member levelled up in. Nothing else about leveling changed, and if you never wanted a separate channel there is nothing to do.
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v1.3: A simpler leveling toggle</summary>
 - **One "Level-up messages" switch.** The portal's leveling section now has a single **Level-up messages** on/off toggle in place of the old, confusing pair. Turn it off and the celebratory level-up messages stop; members still earn XP exactly as before, they just do it quietly.
 </details>

@@ -440,9 +440,34 @@ image: /assets/banner.jpeg
 </div>
 
 <script>
-/* Pull the latest shipped features straight from the roadmap's Shipped band,
-   so this strip never needs separate updating. Same-origin fetch; degrades to
-   the evergreen fallback text if JS is off or the fetch fails. */
+/* ══════════════════════════════════════════════════════════════════════════
+   CONSUMER of roadmap.md's Shipped band. See the matching warning next to
+   `<details class="band-shipped" id="band-shipped">` in roadmap.md.
+
+   This strip scrapes the LIVE /roadmap/ page at runtime, so it is coupled to
+   that page's DOM across a repo-wide distance with nothing checking the join.
+   The contract it depends on, and only this much:
+
+     .band-shipped            the Shipped band, anywhere on the page
+       .shipped-scroll        its scroll container, at any depth inside
+         details.card         each shipped entry, at any depth inside that,
+                              but NOT nested inside another details.card
+           > summary          the entry's title
+             .shipped-pill    the "Shipped vX.Y" chip, stripped from the label
+
+   RENAME OR REMOVE ANY OF THOSE FOUR CLASS NAMES AND THIS SILENTLY REVERTS
+   to the evergreen fallback text in #recently-shipped. There is no error, the
+   fetch still succeeds, the home page just quietly stops showing what shipped.
+   If you change roadmap.md's Shipped markup, change this selector in the same
+   commit and load the home page to confirm the strip still populates.
+
+   Structural tolerance: the descendant walk below is deliberate. The previous
+   version used `.shipped-scroll > details.card`, a DIRECT-child combinator, so
+   wrapping the cards in one <div> for layout would have broken it. Now any
+   depth works, with an explicit guard so nested cards are not counted as
+   top-level entries (which is what the direct-child version bought us).
+
+   Same-origin fetch; degrades to the fallback text if JS is off or it fails. */
 (function () {
   var box = document.getElementById("recently-shipped");
   if (!box) return;
@@ -451,9 +476,15 @@ image: /assets/banner.jpeg
     .then(function (html) {
       if (!html) return;
       var doc = new DOMParser().parseFromString(html, "text/html");
-      var cards = doc.querySelectorAll(".band-shipped .shipped-scroll > details.card > summary");
+      var scroll = doc.querySelector(".band-shipped .shipped-scroll");
+      if (!scroll) return;                       // contract broken, keep fallback
+      var cards = scroll.querySelectorAll("details.card > summary");
       var names = [];
       for (var i = 0; i < cards.length && names.length < 5; i++) {
+        var card = cards[i].parentNode;
+        // Only top-level entries. A card nested inside another card is detail,
+        // not a release, and the old direct-child selector excluded it too.
+        if (card.parentElement && card.parentElement.closest("details.card")) continue;
         var s = cards[i].cloneNode(true);
         var pill = s.querySelector(".shipped-pill");
         if (pill) pill.parentNode.removeChild(pill);

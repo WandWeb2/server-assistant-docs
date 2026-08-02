@@ -47,14 +47,13 @@ logo: /assets/logo.png
 # Top-nav: trimmed to the marketing funnel (Setup → Features → Pricing →
 # Compare → Roadmap). Deeper pages (Commands, FAQ, Support, Changelog) stay
 # fully reachable via the footer — they just don't clutter the header.
-header_pages:
-  - wiki/setup.md
-  - features.md
-  - pricing.md
-  - compare.md
-  - roadmap.md
-  - wiki/index.md
-  - portal.md
+#
+# The list itself has MOVED to `_data/nav.yml`, which is now the single source
+# for both the header nav and the footer link groups. `header_pages` was a
+# second hand-maintained copy of the same links, invisible to the footer, so a
+# rename fixed one and rotted the other. Do not reintroduce it here: nothing
+# reads it any more (`_includes/header.html` reads `site.data.nav`), so an entry
+# added back would be silently ignored.
 
 # Pretty URLs: /privacy/ instead of /privacy.html
 permalink: /:title/
