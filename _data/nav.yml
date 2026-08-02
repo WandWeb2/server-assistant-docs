@@ -1,0 +1,145 @@
+# ============================================================================
+# Site navigation. SINGLE SOURCE OF TRUTH for the header nav and the footer
+# link groups.
+#
+# WHY THIS FILE EXISTS. The same link set used to be hand-maintained in two
+# places that could not see each other: `header_pages` in `_config.yml` and a
+# hardcoded block of <a> tags in `_includes/footer.html`. Renaming a page fixed
+# one and silently rotted the other, and the header rotted in a particularly
+# quiet way: it resolves each entry by SOURCE PATH against `site.pages`, so a
+# moved or renamed file empties that nav slot with no build error at all, and a
+# page with no `title` front matter is skipped just as silently.
+#
+# Both includes now read this list. There is a third copy of the same links in
+# `sa-relay/relay.py` (`PUBLIC_FOOTER_HTML`, served on the public ticket view).
+# It lives in another repo and CANNOT be derived from here, so instead
+# `sa-relay/tests/test_public_footer_nav_drift.py` compares the two whenever the
+# repos are checked out side by side. If you add, remove or re-point a link
+# here, expect that test to tell you the relay copy needs the same edit.
+#
+# SHAPE
+#
+#   groups:              footer link groups, rendered in this order
+#     - id:    matches an item's `group`
+#       label: the bold prefix shown before the links ("Product:")
+#
+#   items:               ONE ordered list, filtered by both includes
+#     - path:   source file, e.g. `wiki/setup.md`. The HEADER resolves this
+#               against `site.pages` and takes the page's `title` front matter
+#               as the link text (with the "Server Assistant " brand prefix
+#               stripped, so the nav reads "Setup" while <title> stays long).
+#               Required for header items; optional for footer-only ones.
+#       url:    the page's permalink. Used by the footer, and by the header as
+#               a fallback if `path` no longer resolves.
+#       label:  footer link text. Deliberately independent of the derived
+#               header label: the footer says "Privacy" and "Commands" where
+#               the page titles are "Privacy Policy" and "All commands".
+#       header: true to appear in the top nav. Omit for footer-only links.
+#       group:  which footer group it belongs to. Omit for header-only links.
+#
+# ORDER IS LOAD-BEARING. This one list produces both renderings: the header
+# takes `header: true` in list order, and each footer group takes its members in
+# list order. That is why `partnerships` sits after `roadmap` (footer Product
+# group) even though it is not in the header, and why `portal` is last.
+#
+# The escape hatch: a page may set `nav_external_url` in its own front matter to
+# make the HEADER link point somewhere else and open in a new tab. `portal.md`
+# uses it so the menu goes straight to the portal app instead of via the
+# redirect page. That is page-level, not set here.
+#
+# Only list pages that exist. `scripts/check-nav-integrity.py` verifies every
+# `path` resolves, every `url` matches that page's permalink, and every header
+# item has a title to derive a label from.
+# ============================================================================
+
+groups:
+  - id: product
+    label: "Product"
+  - id: help
+    label: "Help"
+  - id: legal
+    label: "Legal"
+
+items:
+  # ── Product ───────────────────────────────────────────────────────────────
+  - path: wiki/setup.md
+    url: /wiki/setup/
+    label: "Setup"
+    header: true
+    group: product
+
+  - path: features.md
+    url: /features/
+    label: "Features"
+    header: true
+    group: product
+
+  - path: pricing.md
+    url: /pricing/
+    label: "Pricing"
+    header: true
+    group: product
+
+  - path: compare.md
+    url: /compare/
+    label: "Compare"
+    header: true
+    group: product
+
+  - path: roadmap.md
+    url: /roadmap/
+    label: "Roadmap"
+    header: true
+    group: product
+
+  # Footer only, on purpose: partners stay out of the top nav (MAINTAINING.md).
+  - path: partnerships.md
+    url: /partnerships/
+    label: "Partners"
+    group: product
+
+  # ── Help ──────────────────────────────────────────────────────────────────
+  - path: wiki/index.md
+    url: /wiki/
+    label: "Wiki"
+    header: true
+    group: help
+
+  - path: wiki/commands.md
+    url: /wiki/commands/
+    label: "Commands"
+    group: help
+
+  - path: faq.md
+    url: /faq/
+    label: "FAQ"
+    group: help
+
+  - path: support.md
+    url: /support/
+    label: "Support"
+    group: help
+
+  - path: changelog.md
+    url: /changelog/
+    label: "Changelog"
+    group: help
+
+  # ── Legal ─────────────────────────────────────────────────────────────────
+  - path: privacy.md
+    url: /privacy/
+    label: "Privacy"
+    group: legal
+
+  - path: terms.md
+    url: /terms/
+    label: "Terms"
+    group: legal
+
+  # ── Header only ───────────────────────────────────────────────────────────
+  # Last in the nav. `portal.md` carries `nav_external_url`, so the header link
+  # goes straight to the portal app in a new tab and skips the redirect page.
+  - path: portal.md
+    url: /portal/
+    label: "Portal"
+    header: true

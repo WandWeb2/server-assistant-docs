@@ -791,6 +791,29 @@ Where Server Assistant is heading. Priorities are decided by the people who run 
 
 </div>
 
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       PUBLISHED DOM CONTRACT. index.md's "Recently shipped" strip FETCHES THIS
+       PAGE at runtime and parses the block below with DOMParser. See the
+       matching warning in the <script> under `.shipped-strip` in index.md.
+
+       It reads, and depends on, exactly these four class names:
+
+         .band-shipped   →  .shipped-scroll  →  details.card  →  > summary
+                                                                   .shipped-pill
+
+       The pill is stripped out so the strip shows just the feature name; the
+       first five top-level cards, in document order, become the home page's
+       "Recently shipped" list. So the ORDER here is published too: newest
+       first, which is the same rule the shipped-latest script relies on.
+
+       IF YOU RENAME OR DROP ANY OF THOSE CLASSES, the home page strip silently
+       falls back to its evergreen placeholder. Nothing errors, nothing logs,
+       and the roadmap itself still looks perfect. Change index.md's selector in
+       the same commit and load the home page to confirm the strip repopulates.
+
+       Adding a wrapper element between them is now safe (index.md walks
+       descendants, not direct children), but renaming is not.
+       ══════════════════════════════════════════════════════════════════════ -->
   <details class="band-shipped" id="band-shipped" open>
     <summary>Shipped, the full history</summary>
     <div class="shipped-scroll">
@@ -798,7 +821,8 @@ Where Server Assistant is heading. Priorities are decided by the people who run 
     <!-- LATEST FIRST. The newest release is auto-expanded on page load (and the
          rest auto-collapsed) by the shipped-latest script at the foot of this
          file, so adding a new card at the TOP is all that's needed; no `open`
-         attribute to move. The `open` below is a no-JS fallback only. -->
+         attribute to move. The `open` below is a no-JS fallback only.
+         This order is also what index.md publishes as "Recently shipped". -->
     <details class="card" open>
       <summary>Voice time earns XP <span class="shipped-pill">Shipped v6.7.0</span></summary>
       <span class="desc">Hanging out in voice now counts toward your level. While you're <strong>actively</strong> in a voice channel you earn XP into the same balance as chatting, and the busier the channel the more it's worth per minute. It rewards being <em>present</em>, sitting muted to listen on a movie or study night still counts, but <strong>not</strong> idling: you earn nothing while parked in the AFK channel, deafened, or alone in a channel, so levels can't be farmed overnight. <strong>Double-XP events and buffs apply</strong> in voice too, and like all XP it's <strong>free for every server</strong>. <a href="{{ site.url }}{{ site.baseurl }}/wiki/leveling/">Full guide →</a></span>

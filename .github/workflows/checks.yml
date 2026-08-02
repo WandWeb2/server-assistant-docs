@@ -1,0 +1,39 @@
+name: Docs checks
+
+# The GitHub Pages build is not a gate. It renders whatever it is given and goes
+# green, which is why both problems these scripts catch were able to exist:
+# a nav entry pointing at a file that had moved renders as an absent link, and
+# sai-knowledge.md growing past 16,000 characters drops its own tail out of every
+# SAi system prompt. Neither shows up as a build failure, so they need a job.
+#
+# Runs on PRs and on pushes to main, because content changes here are frequently
+# pushed straight to main with no PR.
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install PyYAML
+        run: pip install --quiet pyyaml
+
+      # _data/nav.yml drives BOTH the header nav and the footer link groups.
+      # The header resolves entries by source path and fails silently when a
+      # page moves, so this is the only thing that notices.
+      - name: Nav integrity
+        run: python3 scripts/check-nav-integrity.py
+
+      # sai-knowledge.md is truncated to 16,000 chars by bot.py and relay.py
+      # with no error. Fails at 90% so there is room to trim.
+      - name: SAi knowledge fits under the truncation cap
+        run: python3 scripts/check-sai-knowledge-size.py

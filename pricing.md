@@ -44,7 +44,23 @@ description: "Server Assistant pricing: generous free tier, $7/mo USD Premium wi
 .free-cols ul { margin: .2rem 0; padding-left: 1.1rem; }
 .free-cols li { break-inside: avoid; margin-bottom: .4rem; font-size: .88rem; line-height: 1.4; }
 @media (max-width: 760px) { .plans { grid-template-columns: 1fr; } .free-cols { columns: 1; } }
+.checkout-ack { display: none; border-radius: 12px; border: 1px solid rgba(84,224,142,0.42); background: rgba(84,224,142,0.10); padding: .95rem 1.1rem; margin: 1.2rem 0 1.4rem; font-size: .92rem; line-height: 1.5; color: var(--ink); }
+.checkout-ack strong { display: block; font-size: 1.02rem; margin-bottom: .2rem; }
+.checkout-ack p { margin: 0; color: var(--ink-soft); }
+.checkout-ack code { font-size: .86em; }
 </style>
+
+<!-- Stripe Checkout lands here on success. relay.py's STRIPE_SUCCESS_URL is
+     `/pricing/?subscribed=1`, with `&guild=<id>` always appended and `&topup=<n>`
+     for a token pack. Without this block the customer paid and arrived at a page
+     that says nothing about it, which reads as a failed checkout.
+     Hidden by default in CSS and revealed only by the script at the foot of this
+     page, so with JS off it is not in the layout at all. If you change the
+     param names here, change STRIPE_SUCCESS_URL in sa-relay/relay.py too. -->
+<div class="checkout-ack" id="checkout-ack" role="status" markdown="0">
+  <strong id="checkout-ack-title">Thanks, your payment went through.</strong>
+  <p id="checkout-ack-body">Premium switches on for your server as soon as Stripe confirms it, usually within a few seconds. Head back to Discord and run <code>/premium</code> to see your allowance, billing details and cancellation.</p>
+</div>
 
 <div class="plans" markdown="0">
   <div class="plan free">
@@ -68,7 +84,7 @@ description: "Server Assistant pricing: generous free tier, $7/mo USD Premium wi
     <ul>
       <li>Everything in Free</li>
       <li>SAi chat, FAQ Q&amp;A, translation, mediator</li>
-      <li>AutoMod AI second-opinion + active Threat Score</li>
+      <li>AutoMod AI second-opinion</li>
       <li>Decision explainer &amp; guided appeals</li>
       <li>Reaction roles · unlimited <code>/imagine</code></li>
       <li>You supply the key (Anthropic / xAI / OpenAI)</li>
@@ -83,6 +99,7 @@ description: "Server Assistant pricing: generous free tier, $7/mo USD Premium wi
     <div class="plan-pitch">The complete toolkit + 750K tokens a month, and billing only starts when your trial runs out.</div>
     <ul>
       <li>Everything in BYOK, plus:</li>
+      <li>Threat Score &amp; ThreatNet auto-protect</li>
       <li>Custom slash commands</li>
       <li>Server backup &amp; restore</li>
       <li>White-label branding: <strong>completely rebrand the bot as your own</strong></li>
@@ -265,3 +282,31 @@ No: applicable VAT, GST, or sales tax is added at checkout based on your billing
 - **[Setup]({{ site.url }}{{ site.baseurl }}/setup/)**: invite the bot, done in 60 seconds
 - **[Features]({{ site.url }}{{ site.baseurl }}/features/)**: every feature, free vs premium
 - **[FAQ]({{ site.url }}{{ site.baseurl }}/faq/)**: common questions
+
+<script>
+/* Acknowledge a completed Stripe Checkout.
+   The relay sends the customer back to `/pricing/?subscribed=1&guild=<id>`, plus
+   `&topup=<pack>` when they bought a token pack rather than a subscription
+   (sa-relay/relay.py, STRIPE_SUCCESS_URL and the three checkout sessions that
+   append to it). This page is static, so the params are the only signal there is.
+
+   Progressive enhancement on purpose: #checkout-ack is `display:none` in the CSS
+   above and is only ever shown from here, so with JS off nothing renders and the
+   page is exactly what it was before. No framework, no fetch, no state. */
+(function () {
+  var box = document.getElementById("checkout-ack");
+  if (!box) return;
+  var q = new URLSearchParams(window.location.search);
+  if (q.get("subscribed") !== "1") return;
+
+  if (q.get("topup")) {
+    document.getElementById("checkout-ack-title").textContent =
+      "Thanks, your top-up is on its way.";
+    document.getElementById("checkout-ack-body").innerHTML =
+      "Tokens are added to your server's allowance as soon as Stripe confirms the " +
+      "payment, usually within a few seconds. Run <code>/premium</code> in your " +
+      "server to see the new balance.";
+  }
+  box.style.display = "block";
+})();
+</script>

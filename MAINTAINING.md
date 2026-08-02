@@ -54,7 +54,7 @@ templates live separately in **`.omp/partnerships-playbook.md`** (internal).
 |---|---|
 | The page itself (cards, intro, CTA) + its `<style>` | `partnerships.md` |
 | Homepage "Trusted by" band | `index.md` (the `.partners-band` block) |
-| Footer "Partners" link | `_includes/footer.html` (Product row) |
+| Footer "Partners" link | `_data/nav.yml` (the `partnerships.md` item, `group: product`) |
 | Partner logos | `assets/partners/` (`<name>.svg` wordmark + `<name>-icon.svg` square) |
 
 **Pending vs live.** A partnership that isn't confirmed yet is shown but visibly
@@ -83,8 +83,9 @@ the `pending` class and the `.partner-cover` div.
 `.partner-cover` to its card, and keep its homepage logo commented out behind the
 `.partner-placeholder`.
 
-> Keep the top header nav (`header_pages`) out of this — partners stay in the footer
-> + homepage band until there are enough (3+) to justify a nav slot.
+> Keep the top header nav out of this: partners stay in the footer + homepage band
+> until there are enough (3+) to justify a nav slot. Concretely: the `partnerships.md`
+> entry in `_data/nav.yml` carries `group: product` and no `header: true`.
 
 ## Conventions that must hold
 
