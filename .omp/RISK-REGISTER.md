@@ -266,3 +266,43 @@ This pass makes the documentation **honest, consistent, and APP-correct**, refle
 the severity-only design throughout, and **does not overclaim**: it still notes the
 residual EU/UK Art. 10 review point and flags R2–R4 plainly. It remains a
 **best-effort, non-lawyer** review, not certified compliance.
+
+---
+
+## Decision log
+
+**2026-08-02 (owner sign-off, no lawyer review) - the Article 22 position for
+automated bans went live.** The Privacy Policy text covering **GDPR Article 22**
+for both **alt-guard auto-ban** and **ThreatNet auto-protect** was published on
+the owner's sign-off **alone**. **No lawyer reviewed it.** The draft carried an
+internal `<!-- LEGAL REVIEW ... -->` marker reading "Confirm with owner + lawyer
+before publishing"; the owner discharged that marker knowingly, accepting the
+outstanding lawyer review as a known and explicitly accepted exposure, and the
+marker was removed from `privacy.md` at the same time. This was the owner's
+explicit decision, made in full knowledge that the lawyer half of the gate was
+not satisfied.
+
+Scope of what went live: both bans are disclosed as solely-automated decisions
+with a significant effect; disclosure is via the Privacy Policy (plus the
+ordinary ban-reason DM for alt-guard, where a server leaves it on); the standing
+route to human review, contest, correction and erasure is the web portal or
+`/support`, open to anyone whether or not they were individually notified.
+
+Related, still open (not changed by this sign-off):
+
+- **R3 (DPIA/PIA sign-off, HIGH)** is unchanged and now carries this decision
+  too. Publishing on owner sign-off is not the professional review R3 asks for.
+- **Owner directive 2026-06-22** removed the hard "high" threshold floor, so a
+  server may set auto-protect as low as "low". False-positive and Article 22
+  exposure is correspondingly higher, and the server owns the level it sets.
+  That raises, not lowers, the value of the outstanding lawyer review.
+- **`.omp/threat-network-PIA-LIA.md` is now STALE on this point.** Its LIA
+  balancing safeguard #4 still reads "Advisory-only, explainable, appealable, no
+  Art. 22 automated decision with legal/similarly-significant effect in v1",
+  which the shipped auto-ban contradicts. The LIA balance has not been re-run
+  against automated action. Re-running it is a core-pillar assessment change and
+  needs the owner directly; it was deliberately **not** rewritten here.
+- **`terms.md` still carries its own unreleased markers**, including one on the
+  auto-protect clause reading "Confirm with the owner AND a lawyer before
+  publishing". Tonight's sign-off was scoped to `privacy.md`, so those were left
+  in place and remain outstanding.
