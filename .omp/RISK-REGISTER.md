@@ -904,3 +904,55 @@ The note is closed on that basis in `.omp/legal-review-notes.md`.
 wrongly-banned individual, a supervisory-authority enquiry, EU/UK volume growing
 materially, or the automated-ban design widening again. The third ban path recorded
 in R9 today is exactly the kind of change that would warrant re-opening this.
+
+**2026-08-02 (owner decisions) - three questions raised by the v6.114.0 assessment
+update, answered.**
+
+**1. The AutoMod ladder ban is ACCEPTED as intended AutoMod behaviour, and R9 stays
+HIGH.** The update found a third automated ban path: the ladder ban fires on an
+auto-warning counter, is not behind a switch, is not plan-gated, and AutoMod runs on
+effectively every server, so none of the bounds this register lists as R9 mitigations
+(off by default, opt-in per server, Premium gating) reach it. That was put to the
+owner with the option of gating it behind an off-by-default switch, or re-rating R9
+to CRITICAL. The owner chose neither: the ladder ban is an intended AutoMod
+escalation, not a ThreatNet feature that escaped its safeguards.
+
+Recorded so the next reader knows this was **considered and accepted, not missed**,
+because the path's absence from the earlier assessments looks exactly like an
+oversight and will be re-reported as one otherwise.
+
+What that acceptance does not change, and what a future reader should weigh:
+- The path is still **solely automated with no human before the ban**, so it counts
+  toward the Art. 22 analysis exactly as the other two do. R9 stays HIGH on that
+  basis, not on the basis that this path is fine.
+- It is **the widest-reaching of the three by a distance**. The other two require a
+  server to switch something on; this one is on wherever AutoMod is.
+- It **no longer feeds the network** since v6.114.0, which is what makes acceptance
+  reasonable: an accepted automated ban that cannot manufacture cross-server evidence
+  is a materially different thing from one that can.
+- If the ladder ban is ever given the ability to emit again, or AutoMod's thresholds
+  are loosened, this acceptance should be revisited rather than inherited.
+
+**2. `privacy.md` will NOT be widened to describe the full suppression scope.** The
+published text describes the alt-guard half; since v6.114.0 the suppression covers
+four more paths. The owner chose to leave it. The published claim is **narrower than
+reality, not false**, and under-describing a protection is the safe direction.
+
+Recorded because it will otherwise be re-reported as the same not-swept defect this
+log is full of. It is not: it is a deliberate decision to leave a true-but-narrow
+statement alone. Anyone tempted to "finish the sweep" should read this entry first.
+
+**3. The mandatory in-game privacy notice is CONFIRMED SENT, by owner observation.**
+`privacy.md` leans on a notice delivered by the MCDC plugin, whose source is not in
+any repository available to these sessions, so it could not be verified from code.
+The owner confirmed on 2026-08-02 that the notice **is being sent**, observed
+directly by joining the test server.
+
+Scope of that confirmation, stated precisely because it is now the evidence for a
+published claim: it establishes the notice **is delivered on join**. It is a live
+observation, not a source review, so the separate property that it **cannot be
+switched off** rests on two other legs: the relay exposes only `join_notice` and
+`join_notice_text` as operator-configurable, with no control over the privacy notice,
+and the plugin is the only component that could expose one. Consistent, and not the
+same as having read the jar. If the plugin source becomes available, confirm the
+non-removability directly and replace this note.
