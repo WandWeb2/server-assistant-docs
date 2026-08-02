@@ -92,6 +92,44 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
 <details class="doc-sec" markdown="1" open data-kind="fix">
+<summary>v6.114.0: only a person's decision reaches the threat network now, plus an install notice and a tighter safety exception</summary>
+
+**Three things the Privacy Policy already promised, now true in the product.** A review
+compared what the policy says against what the code does and found three gaps. All three
+are closed by changing the product rather than by softening the wording.
+
+**Automatic actions no longer report to the cross-server network.** The policy has always
+said the line is *who made the decision*, not which feature a ban came from. In practice
+only automatic bans at the moment someone joined were held back. AutoMod's own automatic
+warnings, its kick and ban escalations, and automatic scam-image removals were all still
+reported across servers with nobody having decided anything. Two servers whose AutoMod
+independently warned the same account were, between them, building the corroborated record
+a third server's auto-protect would then act on. That is now closed: **only an action a
+human took is shared.**
+
+**Expect your Threat Score views to look quieter, and that is the point.** The automatic
+warning fired per message rather than per moderator decision, so it was the large majority
+of everything the network carried. Records will be sparser and skew less severe, and
+auto-protect will trigger less often as a result. What remains is human judgement, which
+is what makes corroboration across servers mean anything. Nothing else changes: your staff
+alerts, your own server's records, mod-log entries, deletions, timeouts and ban appeals all
+behave exactly as before.
+
+**A new server now gets a notice when the Bot is added.** The policy said we deliver one in
+Discord on install. We did not; an older release removed the introduction posts as clutter
+and the disclosure went with them. There is now a single short message covering the
+cross-server network, that servers take part as core functionality, that individuals can
+opt out for themselves in the web portal, and where to read the full policy. One message,
+not a return of the old multi-post intro.
+
+**The safety exception is now the operator's alone.** This is the narrow rule that keeps
+the most serious corroborated records visible even when someone has opted out. The policy
+describes it as ours to apply and to document. In fact any server administrator could set
+it on any user. Only the operator can now, and asking the Bot for it is not a route to it.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v6.113.0: auto-protect now describes its opt-out rule accurately</summary>
 
 **What the bot used to tell you.** Two places said that anyone who had opted out of the
