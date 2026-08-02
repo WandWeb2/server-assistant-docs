@@ -113,9 +113,15 @@ no free-text, no originating-server identity) supports "reasonably necessary."
 offence X," which **plausibly engaged the "criminal record" limb.** The locked
 **severity-only design (2026-06-21) removes that signal from the boundary
 entirely**: what now crosses servers is a pseudonymous user ID, counts, recency,
-a **generic severity level** (e.g. minor / serious), a fingerprint-match boolean,
-and an account-age modifier — **no offence type or category, and no free-text or
-AI-generated summary** (summaries are local-only). A generic severity level does
+a **generic severity level** (e.g. minor / serious), and an account-age modifier
+— **no offence type or category, and no free-text or AI-generated summary**
+(summaries are local-only). **A fingerprint-match boolean (`altguard_match`) was
+listed here and no longer crosses the boundary at all**: v6.112.0 removed the key
+from the signal payload (`bot.py:4180-4195`) and the dossier line that read it
+(`bot.py:37451`). The relay still carries the column at `DEFAULT 0`
+(`relay.py:706`) and defaults the field to `False` when it is absent
+(`relay.py:27757`), so nothing on that side depends on it being sent. Narrower
+than assessed, not wider. A generic severity level does
 not describe *what* a person allegedly did; on this design the cross-server data
 is **assessed as NON-sensitive** — it is not a "criminal record" within s6(1).
 
@@ -243,9 +249,14 @@ downstream one. **Met in design;** the case-by-case `/support` route is where AP
 
 **Updated 2026-06-21 — the owner locked a QUALIFIED INDIVIDUAL OPT-OUT** (servers
 still cannot opt out — that is core, mandatory functionality — but the *individual*
-being scored may opt out of network profiling). The opt-out is available **via
-`/support` now**, with a **self-service portal toggle forward-referenced to the
-roadmap** (NOT claimed live). It is **qualified by a safety exception**: where there
+being scored may opt out of network profiling). **Corrected 2026-08-02: the
+self-service portal toggle is LIVE, not roadmap.** It shipped in v5.8.0 and is the
+only opt-out route: `GET`/`POST /api/portal/threat-optout`, always scoped to the
+authenticated caller's own Discord id (`relay.py:16372-16410`), behind the portal's
+ThreatNet card (`relay.py:20015-20025`). `/support` is **not** an opt-out route
+(`bot.py:41177-41180`); it remains the route for **access, correction and erasure**,
+which is what the rest of this section and A8 assess. It is **qualified by a safety
+exception**: where there
 are **compelling legitimate grounds** (a verified raid/scam/ban-evasion need), the
 most serious corroborated signals may still be retained/shared despite the opt-out,
 so a known bad actor cannot opt out to evade detection. This **supersedes the earlier
@@ -253,8 +264,9 @@ so a known bad actor cannot opt out to evade detection. This **supersedes the ea
 the data subject now has an affirmative, advertised way to stop profiling, not merely
 a discretionary erasure request.
 
-The product promises an individual can **opt out of profiling**, and request
-**erasure of, or object to**, their network record via `/support`. **Australian law
+The product promises an individual can **opt out of profiling** (self-service in the
+web portal, live since v5.8.0), and request **erasure of, or object to**, their
+network record via `/support`. **Australian law
 gives no standalone right to erasure or right to object.** That promise maps onto
 Australian law as:
 - **APP 13 correction** (fix/remove an inaccurate or misleading signal), plus
@@ -287,7 +299,10 @@ it:
   cross the boundary, so no free-text describing alleged wrongdoing is pooled.
 
 On that design the cross-server dataset (pseudonymous user ID + counts + recency +
-severity level + fingerprint-match boolean + account-age modifier) is **assessed
+severity level + account-age modifier; the **fingerprint-match boolean was listed
+here and has not crossed the boundary since v6.112.0**, which stopped sending the key
+at all, `bot.py:4180-4195`, `bot.py:37451`, relay column held at `DEFAULT 0`
+`relay.py:706` and defaulted to `False` when absent `relay.py:27757`) is **assessed
 NON-sensitive** under s6(1): it is not a "criminal record." **APP 3.3 is therefore
 not engaged and no consent is required**; collection rests on **APP 3.2**
 (reasonably necessary for the safety function) + **APP 5** notice + **APP 6** limits.
@@ -697,12 +712,16 @@ document is the first draft of both.
       finding down (A-RISK / R1). Enforce in implementation: only a generic
       severity level crosses; no offence label may leak in.
 - [x] **Qualified individual opt-out lock (2026-06-21)** — servers cannot opt out;
-      the *individual* can opt out of profiling (via `/support` now; self-service
-      portal toggle on the roadmap, NOT yet live), subject to a compelling-grounds
+      the *individual* can opt out of profiling, subject to a compelling-grounds
       safety exception (Art. 21(1) + APP framing). Supersedes the old "no opt-out
       UI / case-by-case erasure only" stance and strengthens the objection analysis
-      (A9 / B3.4 #2 / B3.5). Build the portal toggle per the roadmap; until then,
-      service opt-outs via `/support`.
+      (A9 / B3.4 #2 / B3.5). **Portal toggle: DONE, shipped v5.8.0** (corrected
+      2026-08-02; this item previously read "on the roadmap, NOT yet live" and
+      "service opt-outs via `/support`" as the interim). Self-service opt-out is
+      now the **only** opt-out route: `GET`/`POST /api/portal/threat-optout`,
+      session-scoped to the caller's own Discord id (`relay.py:16372-16410`), UI at
+      `relay.py:20015-20025`. `/support` is **not** an opt-out route
+      (`bot.py:41177-41180`); it stays the route for access, correction and erasure.
 - [x] **Notice reframe (2026-06-21)** — providing member notice is the OPERATOR's
       responsibility (Privacy Policy + bot-delivered notice on install + on-demand
       command forthcoming/roadmap), NOT a server-owner obligation. Removed the

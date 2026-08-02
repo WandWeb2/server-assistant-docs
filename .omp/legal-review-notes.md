@@ -36,6 +36,16 @@ each file.
 - **Clause annotated:** The section's opening paragraph, which begins "Server Assistant operates a **Cross-Server Threat Network**, branded **ThreatNet**, a shared safety signal that helps every protected server recognise users ...". The note sat on its own line immediately after that paragraph, annotating the ThreatNet section as a whole.
 - **Declared status:** SEVERITY-ONLY DESIGN / RESIDUAL LOW-MEDIUM
 
+> **Editorial note, added 2026-08-02, not part of the original note.** The body below
+> lists "a fingerprint-match boolean" among the data pooled across servers. That was
+> true when the note was written and is not true now: v6.112.0 stopped sending
+> `altguard_match` at all (`bot.py:4180-4195`) and removed the dossier line that read
+> it (`bot.py:37451`). The relay keeps the column at `DEFAULT 0` (`relay.py:706`) and
+> defaults the field to `False` when absent (`relay.py:27757`). The boundary is
+> narrower than the note describes, not wider, so the note's LOW/MEDIUM residual is
+> unaffected. The body is left exactly as written, because these are assessment
+> records rather than prose to be maintained.
+
 Note body, verbatim:
 
 ```text
