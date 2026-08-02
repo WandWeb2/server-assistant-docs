@@ -97,6 +97,11 @@ LEGAL REVIEW (SEVERITY-ONLY DESIGN — RESIDUAL LOW/MEDIUM): A server owner acce
 - **Section:** `## 6. Cross-Server Threat Network (ThreatNet)`
 - **Clause annotated:** The auto-protect bullet, which begins "**Advisory by default; optional Premium automated action.** For every server, the network score is **advisory** ...". The note sat at the end of that bullet.
 - **Declared status:** NEW (AUTOMATED ACTION, needs sign-off)
+- **Sign-off progress, 2026-08-02:** the OWNER half is given (all copy approved,
+  recorded in the `RISK-REGISTER.md` decision log). The note's own condition is
+  "Confirm with the owner AND a lawyer before publishing", so the LAWYER half is
+  still outstanding and this note stays open until the targeted Article 22(2)
+  advice arrives.
 
 Note body, verbatim:
 
