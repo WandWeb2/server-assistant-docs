@@ -1,10 +1,33 @@
 /* ============================================================================
-   Server Assistant — canonical design tokens (single source of truth).
-   Shared verbatim between the operator console (sa-relay/pwa) and the public
-   docs site (server-assistant-docs/assets/css). Edit here; both consume it.
-   Console names are canonical. Locked reconciliations from the Tempered audit
-   are baked in (card radius 18px, deeper panel shadow, --glass-sheen rename,
-   docs-derived status/band/brand tokens, extended type scale).
+   Server Assistant design tokens, DOCS SITE COPY.
+
+   THIS FILE IS NOT SHARED. It has a twin at sa-relay/pwa/tokens.css that uses
+   the same variable NAMES and different VALUES. Editing this file changes the
+   docs site only; it does not touch the operator console.
+
+   This header used to claim the two were "shared verbatim" and a "single source
+   of truth". They were not: a diff on 2026-08-02 found 107 differing lines,
+   including --bg-0 (#0d0a0a here, #141010 there), --glass-panel, and --bg-nav,
+   which exists only on the console side. The claim was corrected rather than the
+   files converged, because the two surfaces have genuinely different grounds:
+   the console renders on a near-opaque forge canvas, the docs site on a frosted
+   panel over a warm gradient. The same value does not serve both.
+
+   What that costs, recorded so nobody "fixes" it back into a lie: the shared
+   variable NAMES are still a contract, so renaming one here without renaming it
+   there breaks nothing loudly and drifts the two apart silently. If the two are
+   ever genuinely converged, add a check that fails when they differ, because a
+   comment asserting sameness is exactly what failed here.
+
+   Known consequence of the split, not yet fixed: --fg-2 and --fg-3 are
+   calibrated for contrast against a bare --bg-0, which only the console uses.
+   Measured against this site's frosted panel they land near or below WCAG AA,
+   so avoid them for body-adjacent text here.
+
+   Console names remain canonical for NAMING. Locked reconciliations from the
+   Tempered audit are baked in (card radius 18px, deeper panel shadow,
+   --glass-sheen rename, docs-derived status/band/brand tokens, extended type
+   scale).
    ============================================================================ */
 
 :root {

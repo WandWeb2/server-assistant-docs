@@ -97,11 +97,14 @@ LEGAL REVIEW (SEVERITY-ONLY DESIGN — RESIDUAL LOW/MEDIUM): A server owner acce
 - **Section:** `## 6. Cross-Server Threat Network (ThreatNet)`
 - **Clause annotated:** The auto-protect bullet, which begins "**Advisory by default; optional Premium automated action.** For every server, the network score is **advisory** ...". The note sat at the end of that bullet.
 - **Declared status:** NEW (AUTOMATED ACTION, needs sign-off)
-- **Sign-off progress, 2026-08-02:** the OWNER half is given (all copy approved,
-  recorded in the `RISK-REGISTER.md` decision log). The note's own condition is
-  "Confirm with the owner AND a lawyer before publishing", so the LAWYER half is
-  still outstanding and this note stays open until the targeted Article 22(2)
-  advice arrives.
+- **CLOSED 2026-08-02.** The note's condition was "Confirm with the owner AND a
+  lawyer before publishing". The OWNER half was given with the copy approval. The
+  LAWYER half was then **waived**: the owner decided the targeted Article 22(2)
+  advice would not be obtained and accepted the published position on their own
+  sign-off (`RISK-REGISTER.md` decision log, 2026-08-02). The condition is
+  discharged on that basis, by decision rather than by review. The note's substance
+  is NOT resolved: R9 remains HIGH, R3 remains open, and the residual it names, a
+  wrongly-banned end user who never accepted these Terms, is unchanged and untested.
 
 Note body, verbatim:
 
