@@ -40,7 +40,7 @@ description: A tour of Server Assistant's headline features, what each one does,
 
 <div class="feat">
   <h3 id="feat-automod-ai-review">AutoMod that asks before it over-reacts <span class="feat-tag free">Free</span> <span class="feat-tag premium">Premium AI review</span></h3>
-  <p>Clear violations are actioned instantly on every plan. On Premium, borderline messages get an AI confidence check first (the classic "I love visiting Scunthorpe" problem) and are left up for staff with one-tap <b>Delete &amp; warn</b> or <b>Allow</b>, so a blunt keyword filter never punishes the innocent.</p>
+  <p>On Premium, every word-filter and spam hit gets an AI confidence check first (the classic "I love visiting Scunthorpe" problem). What the AI makes of it decides what happens: a clear violation is actioned, anything doubtful is left up for staff with one-tap <b>Delete &amp; warn</b> or <b>Allow</b>, so a blunt keyword filter never punishes the innocent. Without AI Review, on any plan, a filter hit is actioned on the keyword alone.</p>
   <p class="how"><b>How to use:</b> <code>/automod</code> → <b>AI review</b>. The setup wizard seeds sensible defaults from your community type.</p>
   <a class="more" href="{{ '/wiki/automod/' | relative_url }}">AutoMod guide →</a>
 </div>
