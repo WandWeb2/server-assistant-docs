@@ -17,6 +17,18 @@ compliance pass — **NOT a lawyer.**
 > **Primary law:** Privacy Act 1988 (Cth) + the 13 APPs. **Secondary:** EU/UK GDPR
 > (extraterritorial, Art. 3(2)). Full analysis: `.omp/threat-network-PIA-LIA.md`.
 
+> **Citing code: name the SYMBOL, and treat the line number as a hint.**
+> The line references below have now drifted **twice**: they were first written
+> against v6.111.0/v6.113.0 of `bot.py` and not re-verified, and v6.114.0 then moved
+> the file again by roughly 130 to 310 lines depending on the region. The drift is
+> **not uniform**, so no single offset repairs it, and several stale references
+> landed on unrelated code that read plausibly, which is worse than landing on
+> nothing. Re-verified in full on 2026-08-02 against `BOT_VERSION` **6.114.0** and
+> `RELAY_VERSION` **1.11.88**. **When you add or repair a reference, lead with the
+> function, constant or setting key**; a symbol survives a refactor and is one grep
+> away, a line number is neither. Re-derive a number by searching for the symbol,
+> never by adjusting the old number.
+
 Severity scale: **CRITICAL** (could block launch / unlawful as designed) ·
 **HIGH** · **MEDIUM** · **LOW**.
 
@@ -63,9 +75,11 @@ the data that crosses the boundary changed, not just the description of it.**
 
 **Corrected 2026-08-02:** that dataset list also carried a **fingerprint-match
 boolean** (`altguard_match`). It has not crossed the boundary since **v6.112.0**,
-which stopped sending the key at all (`bot.py:4180-4195`) and removed the dossier
-line that read it (`bot.py:37451`). The relay keeps the column at `DEFAULT 0`
-(`relay.py:706`) and defaults the field to `False` when it is absent
+which stopped sending the key at all (the `_emit_threat_signal` payload,
+`bot.py:4189-4204`) and removed the dossier line that read it
+(`_render_network_threat_value`, `bot.py:37639-37640`). The relay keeps the column at
+`DEFAULT 0` (the `threat_signals` schema, `relay.py:706`) and `threat_record_signal`
+defaults the field to `False` when it is absent
 (`relay.py:27757`). The boundary is narrower than this rating was set against, so
 the rating stands unchanged.
 
@@ -235,8 +249,10 @@ opt-out is a promise on paper only.
 
 **Corrected 2026-08-02.** The opt-out half of that workload is no longer a `/support`
 queue: the **self-service portal toggle shipped in v5.8.0** and is now the only
-opt-out route (`relay.py:16372-16410`, UI at `relay.py:20015-20025`), with `/support`
-explicitly **not** an opt-out route (`bot.py:41177-41180`). What remains manual, and
+opt-out route (`portal_threat_optout_get` / `portal_threat_optout_set`,
+`relay.py:16372-16410`; UI in `renderThreatPref`, `relay.py:20013-20025`), with
+`/support` explicitly **not** an opt-out route (the `threatnet` command group's
+standing note, `bot.py:41365-41368`). What remains manual, and
 what this risk is really about, is **access (APP 12), correction (APP 13), erasure /
 objection, and the operator-set safety exception**, which a customer can never set
 themselves. The rating is left unchanged.
@@ -260,42 +276,55 @@ person from a community with no human involved, and until 2026-08-02 neither the
 LIA nor this register acknowledged that any such decision existed.
 
 - **ThreatNet auto-protect.** A full-Premium server may switch on automatic banning
-  at a cross-server risk threshold **it** chooses (`bot.py:9863`, gate at `9873`,
-  threshold at `9884`). The **hard "high" floor was removed by owner directive on
+  at a cross-server risk threshold **it** chooses (`_threatnet_autoban_check`,
+  `bot.py:10071`; the `threatnet_autoban_enabled` gate at `10081`; the threshold read
+  at `10093`). The **hard "high" floor was removed by owner directive on
   2026-06-22**, which left `low` selectable, at which a single minor signal from a
-  single server, one kick or one warning, banned a joining account on sight
-  (`relay.py:1467`, `bot.py:9891`, `41196`). **A floor was restored at `elevated` by
-  owner decision on 2026-08-02, shipped in v6.112.0** (`bot.py:9871`, normalised on
-  every read at `9874-9887`), so the two selectable bands are now `high` and
-  `elevated` (`bot.py:41276-41279`) and a server can no longer cause a ban on a
+  single server, one kick or one warning, banned a joining account on sight (the
+  `low` fall-through in `_threat_band`, `relay.py:1470`, acted on by the band
+  comparison in `_threatnet_autoban_check`, `bot.py:10101`; the `low` choice itself
+  was removed from the `/threatnet autoban` picker in v6.112.0 and no longer exists
+  in `bot.py`). **A floor was restored at `elevated` by
+  owner decision on 2026-08-02, shipped in v6.112.0** (`_THREATNET_AUTOBAN_FLOOR_BAND`,
+  `bot.py:9999`, normalised on every read by `_threatnet_autoban_band`,
+  `bot.py:10002-10015`), so the two selectable bands are now `high` and
+  `elevated` (the `level` choices on `threatnet_autoban`, `bot.py:41501-41503`) and a
+  server can no longer cause a ban on a
   single uncorroborated record. The operating point above that floor is still the
   server's to choose: see residual 3. The ban is **silent toward the affected
-  person**: no DM, no notice (`bot.py:9894-9897`).
+  person**: no DM, no notice (`bot.py:10104-10107`).
 - **Alt-guard auto-ban.** A server that has run `/altguard on` automatically bans a
-  joining account that scores 70 or more with a strong signal
-  (`bot.py:8618`, `8621`). The arithmetic restricts the strong route in practice to
+  joining account that scores 70 or more with a strong signal (`_altguard_handle`:
+  the `auto` test at `bot.py:8793`, the `guild.ban` call at `8798`). The arithmetic
+  restricts the strong route in practice to
   a **shared profile picture** plus one supporting signal such as a new account
-  (`bot.py:8587-8605`). A picture is not a person. **A person who has never been
+  (the scoring in `_altguard_match`, `bot.py:8729-8750`). A picture is not a person.
+  **A person who has never been
   banned anywhere can be banned on arrival because of their avatar, with no human
   in the loop.** Fingerprint recording is unconditional and happens on every server
-  regardless of the switch (`bot.py:9947`, `9949`, `15608`, `39433`); only the
+  regardless of the switch (`_record_offender` calls in `on_member_ban`,
+  `bot.py:10157` and `10159`; the AutoMod ladder kick at `15883`; `/kick` at
+  `39713`); only the
   acting on it is opt-in.
 
 **The two paths chained, and nothing stopped them (fixed in v6.112.0, see residual
 4).** As originally assessed, and stated here in the past tense because v6.112.0
 changed it: an alt-guard auto-ban **was** not marked the way a ThreatNet auto-ban is,
 so it fell through to `_emit_threat_signal`, and every ban maps to the **top**
-severity band (`bot.py:4097-4098`). Two independent servers auto-banning the same
-account on an avatar match therefore produced the `high` cross-server band
-(`relay.py:1463-1464`) that is the **default** trigger for auto-protect elsewhere
-(`bot.py:9809`). Automated action manufactured the exact input for further automated
+severity band (`_threat_severity_band`, `bot.py:4116-4117`). Two independent servers
+auto-banning the same account on an avatar match therefore produced the `high`
+cross-server band (`_threat_band`, `relay.py:1466-1467`) that is the **default**
+trigger for auto-protect elsewhere (`_THREATNET_AUTOBAN_DEFAULT_BAND`,
+`bot.py:9991`). Automated action manufactured the exact input for further automated
 action, with no human anywhere in the chain. The relay could not tell the two apart
 either. **Corrected 2026-08-02:** the reason given for that was "the `altguard_match`
 flag is never set by any call site", which understates the current position. Since
 v6.112.0 the field is **not sent at all**: the key was removed from the signal
-payload (`bot.py:4180-4195`) and from the dossier line that read it
-(`bot.py:37451`); the relay holds the column at `DEFAULT 0` (`relay.py:706`) and
-defaults the field to `False` when it is absent (`relay.py:27757`). The existing
+payload (`_emit_threat_signal`, `bot.py:4189-4204`) and from the dossier line that
+read it (`_render_network_threat_value`, `bot.py:37639-37640`); the relay holds the
+column at `DEFAULT 0` (the `threat_signals` schema, `relay.py:706`) and
+`threat_record_signal` defaults the field to `False` when it is absent
+(`relay.py:27757`). The existing
 circular-amplification guard was written for ThreatNet's own bans and did not cover
 this.
 
@@ -311,25 +340,35 @@ alt-guard evidence bar is an image match.
 
 **What has been done to mitigate.**
 
-- Both paths are **off by default** and opt-in per server (`bot.py:696`, `712`).
+- Both paths are **off by default** and opt-in per server: the
+  `threatnet_autoban_enabled` and `altguard_enabled` settings both default `False`
+  (`bot.py:698`, `714`).
 - Auto-protect is **full Premium only, re-checked at action time**, so a lapsed plan
-  stops acting immediately (`bot.py:9875`), and both paths need Manage Server or
-  above (`bot.py:39704`, `41204`).
+  stops acting immediately (the `is_premium_full` test inside
+  `_threatnet_autoban_check`, `bot.py:10083`), and both paths need Manage Server or
+  above (`slash_altguard`, `bot.py:39984`; `threatnet_autoban` via
+  `_can_manage_server`, `bot.py:41511`).
 - **Fail-safe on uncertainty**: no record, relay outage, suppressed dossier, or
-  missing permissions all resolve to no ban (`bot.py:9887-9892`).
+  missing permissions all resolve to no ban (`_threatnet_autoban_check`,
+  `bot.py:10096-10102`, and the `discord.Forbidden` branch at `10113-10116`).
 - **Conservative default threshold** of `high`, serious and corroborated across two
-  or more independent servers (`bot.py:9809`).
-- **Opt-out is honoured and stops collection, not merely disclosure**
-  (`relay.py:1505-1511`, `1738-1766`).
+  or more independent servers (`_THREATNET_AUTOBAN_DEFAULT_BAND`, `bot.py:9991`).
+- **Opt-out is honoured and stops collection, not merely disclosure** (the write
+  guard in `_threat_record_signal`, `relay.py:1559-1561`; the read suppression in
+  `_threat_dossier`, `relay.py:1741-1769`).
 - **Disclosed in the Privacy Policy**, which applies Art. 22 safeguards to both
   paths and offers human review, contest, correction and erasure via the portal or
   `/support`, open to anyone whether or not they were notified. Published
   2026-08-02 on the owner's sign-off.
 - On the alt-guard path only, the affected person gets the ban-reason DM and a
-  single reply that reaches that server's staff (`bot.py:8845`, `9962`).
-- Audit trail and staff notice on both paths (`bot.py:8635-8654`, `9911-9927`),
-  **subject to a log or staff channel actually being configured**
-  (`bot.py:8635-8637`).
+  single reply that reaches that server's staff (`_send_ban_appeal`, gated on
+  `ban_appeals_enabled` at `bot.py:9024` and invoked from `on_member_ban` at
+  `10190`; the reply is captured by `_try_capture_appeal` at `9255` and posted to
+  staff by `_post_appeal_ticket` at `9767`).
+- Audit trail and staff notice on both paths (`_altguard_handle`,
+  `bot.py:8814-8833`; `_threatnet_autoban_check`, `bot.py:10121-10137`),
+  **subject to a log or staff channel actually being configured** (the `dest_id`
+  lookup in `_altguard_handle`, `bot.py:8814-8816`).
 
 **Residual, stated without softening.**
 
@@ -353,8 +392,9 @@ alt-guard evidence bar is an image match.
    migration for servers that had already chosen `low`. **What remains:** the
    customer still chooses the operating point above that floor, so the
    false-positive rate is still set per server rather than by the operator, and the
-   `/threatnet` warning that assigns the administrator responsibility
-   (`bot.py:41242-41247`) still protects the data subject not at all, since they are
+   `/threatnet` warning that assigns the administrator responsibility (the `warn`
+   string in `threatnet_autoban`, `bot.py:41550-41556`) still protects the data
+   subject not at all, since they are
    not party to it and cannot see the level a server chose.
 4. ~~**Automated bans become cross-server evidence.**~~ **RESOLVED 2026-08-02.**
    Residual 2 of the LIA's B3.5. Shipped in **v6.112.0** and confirmed running on
@@ -368,13 +408,17 @@ alt-guard evidence bar is an image match.
    was updated to the new behaviour on 2026-08-02, replacing the paragraph that had
    correctly disclosed the old one.
 5. **Alt-guard notice can fail silently in both directions.** The DM depends on
-   `ban_appeals_enabled` and on open DMs (`bot.py:8845`, `8886-8890`); the staff
-   alert depends on a configured log or staff channel (`bot.py:8635-8637`). A server
+   `ban_appeals_enabled` and on open DMs (`_send_ban_appeal`: the toggle gate at
+   `bot.py:9024`, the `discord.Forbidden` / `HTTPException` fall-through to
+   `dm_failed` at `9065-9069`); the staff
+   alert depends on a configured log or staff channel (the `dest_id` lookup in
+   `_altguard_handle`, `bot.py:8814-8816`). A server
    with neither, and appeals off, auto-bans a joining member with nobody told.
 6. **`privacy.md` previously overstated the opt-out** as absolute ("never acts on
    anyone who has opted out"), while the safety-exception path can return an
-   unsuppressed dossier (`relay.py:1740-1757`) that `_threatnet_autoban_check` acts
-   on without inspecting the exception flag (`bot.py:9888`). **Corrected in wording
+   unsuppressed dossier (the `suppressed: False` branch of `_threat_dossier`,
+   `relay.py:1743-1760`) that `_threatnet_autoban_check` acts
+   on without inspecting the exception flag (`bot.py:10098`). **Corrected in wording
    on 2026-08-02**, not in code: the policy now carries the qualification in both
    places. The code still does not consult the exception flag.
 
@@ -512,7 +556,8 @@ Related, still open (not changed by this sign-off):
   They were HTML comments, which Jekyll serves to customers in view-source, so they
   were moved out of both published pages into `.omp/legal-review-notes.md`;
   `grep -c "<!--"` is now **0** for `terms.md` and `privacy.md` alike, and the
-  quoted sentence now lives at `.omp/legal-review-notes.md:94`. **The underlying
+  quoted sentence now lives at `.omp/legal-review-notes.md:104`, in the verbatim body
+  of note 5 (`terms.md`, the auto-protect bullet). **The underlying
   item is NOT discharged:** owner and lawyer confirmation on the auto-protect
   clause remains outstanding. Only its location changed.
 
@@ -546,9 +591,10 @@ not been received, and nothing in this register or in
 **2026-08-02 (owner decision) - the auto-protect threshold floor was RESTORED, at
 "elevated".** The hard "high" floor removed on 2026-06-22 (see the first entry in
 this log) is back, one band lower than the original: `_THREATNET_AUTOBAN_FLOOR_BAND
-= "elevated"` (`bot.py:9871`), shipped in **v6.112.0**. `low` is no longer offered by
-the `/threatnet autoban` picker (`bot.py:41276-41279`), and every read of a stored
-threshold normalises through `_threatnet_autoban_band()` (`bot.py:9874-9887`), which
+= "elevated"` (`bot.py:9999`), shipped in **v6.112.0**. `low` is no longer offered by
+the `/threatnet autoban` picker (the `level` choices on `threatnet_autoban`,
+`bot.py:41501-41503`), and every read of a stored
+threshold normalises through `_threatnet_autoban_band()` (`bot.py:10002-10015`), which
 raises a stored `low` to `elevated` from the next join onward. That read-side
 normalisation is the migration for servers that had already chosen `low`: no
 backfill, and no window in which stored data still bans on a single record. The two
