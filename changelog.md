@@ -13,6 +13,11 @@ The current release line. Earlier releases are archived by version at the foot o
 What's new in Server Assistant. Internal-only updates (CI, dependency bumps, host-side tooling) aren't listed here. **Tap a release to expand it.**
 
 <style>
+/* This page is long-form prose in cards, not a grid: the 1280px default left
+   every expanded release with a readable text column on the left and a large
+   dead margin on the right. glass.css reads --panel-max with a fallback, so
+   declaring it here narrows the panel to fit the reading column. */
+:root { --panel-max: 55rem; }
 .doc-sec { border: 1px solid var(--glass-border); border-radius: 12px; margin: .5rem 0; background: rgba(255,255,255,0.04); }
 .doc-sec > summary { cursor: pointer; font-size: 1.02rem; font-weight: 700; padding: .65rem .85rem; list-style: none; color: var(--ink); }
 .doc-sec > summary::-webkit-details-marker { display: none; }
@@ -27,12 +32,12 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 .changelog-nav a { color: var(--ink-soft); text-decoration: none; border-bottom: 1px dotted var(--ink-soft); padding-bottom: 1px; transition: color 0.15s, border-color 0.15s; }
 .changelog-nav a:hover { color: var(--accent); border-bottom-color: var(--accent); text-decoration: none; }
 .changelog-nav a.current { color: var(--ink); border-bottom-style: solid; }
-.changelog-nav .latest-tag { font-size: 0.58rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; opacity: 0.7; margin-left: 0.25rem; }
+.changelog-nav .latest-tag { font-size: var(--fs-3xs); font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; opacity: 0.7; margin-left: 0.25rem; }
 /* "Tempered" — named quality release; tempered-glass styling, set apart from numbered cards */
 .doc-sec.tempered { background: linear-gradient(135deg, rgba(96,165,250,0.17), rgba(124,155,255,0.07) 55%, rgba(20,25,39,0.45)); border: 1px solid rgba(96,165,250,0.45); box-shadow: inset 0 0 0 1px rgba(158,197,255,0.10), 0 10px 34px rgba(20,40,90,0.40); }
 .doc-sec.tempered > summary { color: #cfe0ff; font-size: 1.08rem; }
 .doc-sec.tempered > summary::before { color: #60a5fa; }
-.doc-sec.tempered .tg-badge { display: inline-block; font-size: .6rem; font-weight: 800; letter-spacing: .09em; text-transform: uppercase; color: #0a1030; background: linear-gradient(135deg, #bcd6ff, #60a5fa); padding: .1rem .45rem; border-radius: 999px; margin-left: .55rem; vertical-align: middle; }
+.doc-sec.tempered .tg-badge { display: inline-block; font-size: var(--fs-3xs); font-weight: 800; letter-spacing: .09em; text-transform: uppercase; color: #0a1030; background: linear-gradient(135deg, #bcd6ff, #60a5fa); padding: .1rem .45rem; border-radius: 999px; margin-left: .55rem; vertical-align: middle; }
 /* ── Release-type colour coding — Fix / Feature / Update ──────────────────── */
 .doc-sec[data-kind] { border-left-width: 3px; border-left-style: solid; }
 .doc-sec[data-kind="fix"]     { border-left-color: #e0913a; }  /* amber */
@@ -42,7 +47,7 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 .doc-sec[data-kind] > summary { padding-right: 5.4rem; }
 .doc-sec[data-kind] > summary::after {
   position: absolute; right: .7rem; top: .6rem;
-  font-size: .58rem; font-weight: 800; letter-spacing: .07em; text-transform: uppercase;
+  font-size: var(--fs-3xs); font-weight: 800; letter-spacing: .07em; text-transform: uppercase;
   padding: .14rem .5rem; border-radius: 999px; color: #fff; line-height: 1.5;
 }
 .doc-sec[data-kind="fix"]     > summary::after { content: "Fix";     background: #c9781a; }
@@ -68,12 +73,55 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 .cl-panel[hidden] { display: none; }
 .cl-panel > .cl-intro { color: var(--ink-soft); font-size: .92rem; margin: .1rem 0 1rem; }
 /* ── "Superseded by vX" pill — a release whose feature was later replaced ──── */
-.cl-super { display: inline-block; font-size: .58rem; font-weight: 800; letter-spacing: .05em; text-transform: uppercase; color: #cbd2e0; background: rgba(120,132,158,0.26); border: 1px solid rgba(160,172,196,0.34); padding: .1rem .5rem; border-radius: 999px; margin-left: .5rem; vertical-align: middle; text-decoration: none; white-space: nowrap; }
+.cl-super { display: inline-block; font-size: var(--fs-3xs); font-weight: 800; letter-spacing: .05em; text-transform: uppercase; color: #cbd2e0; background: rgba(120,132,158,0.26); border: 1px solid rgba(160,172,196,0.34); padding: .1rem .5rem; border-radius: 999px; margin-left: .5rem; vertical-align: middle; text-decoration: none; white-space: nowrap; }
 .cl-super:hover { background: rgba(150,162,186,0.42); color: #fff; text-decoration: none; }
 /* A superseded card shows the "Superseded by" pill inline instead of the type pill. */
 .doc-sec.superseded[data-kind] > summary { padding-right: .85rem; }
 .doc-sec.superseded[data-kind] > summary::after { content: none; }
 .doc-sec.superseded { opacity: .82; }
+/* ── Filter bar ────────────────────────────────────────────────────────────
+   The Bot panel alone holds 143 releases and MCDC another 76, in one flat,
+   newest-first list of identically-weighted cards. Collapsing them was never
+   the problem: FINDING one was, because the only tool was the scrollbar.
+   This bar filters the visible panel by free text and by release type, and
+   expands or collapses everything at once. It is additive, so with JS off the
+   bar hides itself and the page behaves exactly as it did before. */
+.cl-filter { display: none; flex-wrap: wrap; align-items: center; gap: .5rem; margin: 0 0 1.1rem; }
+.cl-filter.ready { display: flex; }
+.cl-filter-search {
+  flex: 1 1 15rem; min-width: 0; box-sizing: border-box;
+  padding: .45rem .7rem; border-radius: 10px;
+  background: var(--surface); border: 1px solid var(--border);
+  color: var(--fg-0); font: inherit; font-size: var(--fs-sm);
+}
+.cl-filter-search::placeholder { color: var(--fg-2); }
+.cl-filter-search:focus { border-color: var(--accent); background: var(--surface-2); }
+.cl-filter-search:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.cl-kinds { display: flex; flex-wrap: wrap; gap: .3rem; }
+.cl-kind {
+  appearance: none; cursor: pointer; font: inherit; font-size: var(--fs-xs); font-weight: 600;
+  display: inline-flex; align-items: center; gap: .35rem; min-height: 34px;
+  padding: .25rem .7rem; border-radius: 999px;
+  background: var(--surface-2); border: 1px solid var(--border); color: var(--fg-1);
+}
+.cl-kind:hover { background: var(--surface-hi); color: var(--fg-0); }
+.cl-kind[aria-pressed="true"] { background: var(--accent-soft); border-color: var(--accent); color: var(--fg-0); }
+.cl-kind::before { content: ""; width: .6rem; height: .6rem; border-radius: 3px; background: currentColor; }
+.cl-kind[data-kind="all"]::before { display: none; }
+.cl-kind[data-kind="fix"]::before     { background: #c9781a; }
+.cl-kind[data-kind="feature"]::before { background: #1e8f5e; }
+.cl-kind[data-kind="update"]::before  { background: #2f74b5; }
+.cl-toggle-all {
+  appearance: none; cursor: pointer; font: inherit; font-size: var(--fs-xs); font-weight: 600;
+  min-height: 34px; padding: .25rem .7rem; border-radius: 999px;
+  background: var(--surface-2); border: 1px solid var(--border); color: var(--fg-1);
+}
+.cl-toggle-all:hover:not(:disabled) { background: var(--surface-hi); color: var(--fg-0); }
+.cl-toggle-all:disabled { opacity: .45; cursor: default; }
+.cl-count { font-size: var(--fs-xs); color: var(--fg-2); margin-left: auto; font-variant-numeric: tabular-nums; }
+.doc-sec.cl-filtered-out { display: none; }
+.cl-empty { display: none; padding: 1.2rem .2rem; color: var(--fg-2); font-size: var(--fs-sm); }
+.cl-empty.on { display: block; }
 </style>
 
 <p class="cl-legend"><span class="lbl">Release type</span>
@@ -88,6 +136,22 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
   <button class="cl-tab" id="tab-crestbound" role="tab" aria-controls="cl-crestbound" aria-selected="false" data-cl="crestbound">Crestbound</button>
   <button class="cl-tab" id="tab-mcdc" role="tab" aria-controls="cl-mcdc" aria-selected="false" data-cl="mcdc">MCDC</button>
 </div>
+
+<div class="cl-filter" id="cl-filter">
+  <label class="visually-hidden" for="cl-filter-search">Search releases</label>
+  <input type="search" id="cl-filter-search" class="cl-filter-search" autocomplete="off"
+         placeholder="Search releases, for example &quot;appeal&quot; or &quot;v6.90&quot;">
+  <div class="cl-kinds" role="group" aria-label="Filter by release type">
+    <button type="button" class="cl-kind" data-kind="all" aria-pressed="true">All</button>
+    <button type="button" class="cl-kind" data-kind="feature" aria-pressed="false">Feature</button>
+    <button type="button" class="cl-kind" data-kind="fix" aria-pressed="false">Fix</button>
+    <button type="button" class="cl-kind" data-kind="update" aria-pressed="false">Update</button>
+  </div>
+  <button type="button" class="cl-toggle-all" id="cl-toggle-all">Expand all</button>
+  <span class="cl-count" id="cl-count" role="status" aria-live="polite"></span>
+</div>
+
+<p class="cl-empty" id="cl-empty">No releases match that search. Clear the box or pick a different type.</p>
 
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
@@ -4546,5 +4610,116 @@ become a single conversation.
     });
   });
   show((location.hash || '').replace('#', ''));
+})();
+</script>
+
+<script>
+/* ── Release filter + tablist keyboard navigation ──────────────────────────
+   Additive enhancement over the tab script above. Nothing here renames or
+   depends on the internals of that script: it reads the DOM (which panel is
+   not [hidden]) rather than its state, so the two cannot drift apart.
+   With JS off, .cl-filter stays display:none and the page is unchanged. */
+(function () {
+  var bar = document.getElementById('cl-filter');
+  var search = document.getElementById('cl-filter-search');
+  var count = document.getElementById('cl-count');
+  var empty = document.getElementById('cl-empty');
+  var toggleAll = document.getElementById('cl-toggle-all');
+  var kindBtns = [].slice.call(document.querySelectorAll('.cl-kind'));
+  if (!bar || !search || !toggleAll) return;
+
+  var kind = 'all';
+  var textCache = new WeakMap();
+
+  function activePanel() { return document.querySelector('.cl-panel:not([hidden])'); }
+
+  function haystack(el) {
+    var t = textCache.get(el);
+    if (t === undefined) { t = (el.textContent || '').toLowerCase(); textCache.set(el, t); }
+    return t;
+  }
+
+  function apply() {
+    var panel = activePanel();
+    if (!panel) return;
+    var q = search.value.trim().toLowerCase();
+    var all = [].slice.call(panel.querySelectorAll('details.doc-sec'));
+    var shown = 0;
+    all.forEach(function (d) {
+      var okKind = (kind === 'all') || (d.getAttribute('data-kind') === kind);
+      var okText = !q || haystack(d).indexOf(q) > -1;
+      var hide = !(okKind && okText);
+      d.classList.toggle('cl-filtered-out', hide);
+      if (!hide) shown++;
+    });
+    var filtering = q || kind !== 'all';
+    count.textContent = filtering
+      ? shown + ' of ' + all.length + ' releases'
+      : all.length + ' releases';
+    if (empty) empty.classList.toggle('on', shown === 0 && all.length > 0);
+  }
+
+  function setToggleLabel() {
+    var panel = activePanel();
+    if (!panel) return;
+    var vis = [].slice.call(panel.querySelectorAll('details.doc-sec:not(.cl-filtered-out)'));
+    /* An empty list has nothing closed, so a bare `.some(closed)` would flip the
+       button to "Collapse all" the moment a search matched nothing. */
+    var anyClosed = vis.length === 0 || vis.some(function (d) { return !d.open; });
+    toggleAll.disabled = vis.length === 0;
+    toggleAll.textContent = anyClosed ? 'Expand all' : 'Collapse all';
+    toggleAll.setAttribute('aria-label', (anyClosed ? 'Expand' : 'Collapse') + ' all visible releases');
+  }
+
+  search.addEventListener('input', function () { apply(); setToggleLabel(); });
+
+  kindBtns.forEach(function (b) {
+    b.addEventListener('click', function () {
+      kind = b.getAttribute('data-kind');
+      kindBtns.forEach(function (o) {
+        o.setAttribute('aria-pressed', o === b ? 'true' : 'false');
+      });
+      apply();
+      setToggleLabel();
+    });
+  });
+
+  toggleAll.addEventListener('click', function () {
+    var panel = activePanel();
+    if (!panel) return;
+    var vis = [].slice.call(panel.querySelectorAll('details.doc-sec:not(.cl-filtered-out)'));
+    var open = vis.some(function (d) { return !d.open; });
+    vis.forEach(function (d) { d.open = open; });
+    setToggleLabel();
+  });
+
+  /* Re-count when the reader switches product tab. Deferred so it lands after
+     the tab script has flipped [hidden]. */
+  document.addEventListener('click', function (e) {
+    var t = e.target.closest ? e.target.closest('.cl-tab') : null;
+    if (!t) return;
+    window.setTimeout(function () { apply(); setToggleLabel(); }, 0);
+  });
+
+  /* role="tablist" promises arrow-key navigation; without it a keyboard user
+     has to Tab through every tab and the role is a lie. */
+  var tabs = [].slice.call(document.querySelectorAll('.cl-tab'));
+  tabs.forEach(function (t, i) {
+    t.addEventListener('keydown', function (e) {
+      var next = null;
+      if (e.key === 'ArrowRight') next = tabs[(i + 1) % tabs.length];
+      else if (e.key === 'ArrowLeft') next = tabs[(i - 1 + tabs.length) % tabs.length];
+      else if (e.key === 'Home') next = tabs[0];
+      else if (e.key === 'End') next = tabs[tabs.length - 1];
+      if (!next) return;
+      e.preventDefault();
+      next.focus();
+      next.click();
+    });
+  });
+
+  bar.classList.add('ready');
+  apply();
+  setToggleLabel();
 })();
 </script>

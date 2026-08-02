@@ -12,6 +12,11 @@ The v4.x line: Server Assistant's AI-Moderation milestone.
 **Tap a release to expand it.**
 
 <style>
+/* This page is long-form prose in cards, not a grid: the 1280px default left
+   every expanded release with a readable text column on the left and a large
+   dead margin on the right. glass.css reads --panel-max with a fallback, so
+   declaring it here narrows the panel to fit the reading column. */
+:root { --panel-max: 55rem; }
 /* Release cards - colour-coded, collapsible (matches the v6.x changelog) */
 .doc-sec { border: 1px solid var(--glass-border); border-radius: 12px; margin: .5rem 0; background: rgba(255,255,255,0.04); }
 .doc-sec > summary { cursor: pointer; font-size: 1.02rem; font-weight: 700; padding: .65rem .85rem; list-style: none; color: var(--ink); }
@@ -36,7 +41,7 @@ The v4.x line: Server Assistant's AI-Moderation milestone.
 .doc-sec[data-kind] > summary { padding-right: 5.4rem; }
 .doc-sec[data-kind] > summary::after {
   position: absolute; right: .7rem; top: .6rem;
-  font-size: .58rem; font-weight: 800; letter-spacing: .07em; text-transform: uppercase;
+  font-size: var(--fs-3xs); font-weight: 800; letter-spacing: .07em; text-transform: uppercase;
   padding: .14rem .5rem; border-radius: 999px; color: #fff; line-height: 1.5;
 }
 .doc-sec[data-kind="fix"]     > summary::after { content: "Fix";     background: #c9781a; }
@@ -55,7 +60,7 @@ The v4.x line: Server Assistant's AI-Moderation milestone.
 .cl-key.feature::before { background: #1e8f5e; }
 .cl-key.update::before  { background: #2f74b5; }
 /* "Superseded by vX" pill - a release whose feature was later replaced */
-.cl-super { display: inline-block; font-size: .58rem; font-weight: 800; letter-spacing: .05em; text-transform: uppercase; color: #cbd2e0; background: rgba(120,132,158,0.26); border: 1px solid rgba(160,172,196,0.34); padding: .1rem .5rem; border-radius: 999px; margin-left: .5rem; vertical-align: middle; text-decoration: none; white-space: nowrap; }
+.cl-super { display: inline-block; font-size: var(--fs-3xs); font-weight: 800; letter-spacing: .05em; text-transform: uppercase; color: #cbd2e0; background: rgba(120,132,158,0.26); border: 1px solid rgba(160,172,196,0.34); padding: .1rem .5rem; border-radius: 999px; margin-left: .5rem; vertical-align: middle; text-decoration: none; white-space: nowrap; }
 .cl-super:hover { background: rgba(150,162,186,0.42); color: #fff; text-decoration: none; }
 /* A superseded card shows the "Superseded by" pill inline instead of the type pill. */
 .doc-sec.superseded[data-kind] > summary { padding-right: .85rem; }
@@ -67,7 +72,7 @@ The v4.x line: Server Assistant's AI-Moderation milestone.
 .changelog-nav a { color: var(--ink-soft); text-decoration: none; border-bottom: 1px dotted var(--ink-soft); padding-bottom: 1px; transition: color 0.15s, border-color 0.15s; }
 .changelog-nav a:hover { color: var(--accent); border-bottom-color: var(--accent); text-decoration: none; }
 .changelog-nav a.current { color: var(--ink); border-bottom-style: solid; }
-.changelog-nav .latest-tag { font-size: 0.58rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; opacity: 0.7; margin-left: 0.25rem; }
+.changelog-nav .latest-tag { font-size: var(--fs-3xs); font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; opacity: 0.7; margin-left: 0.25rem; }
 </style>
 
 <p class="cl-legend"><span class="lbl">Release type</span><span class="cl-key fix">Fix</span><span class="cl-key feature">Feature</span><span class="cl-key update">Update</span></p>

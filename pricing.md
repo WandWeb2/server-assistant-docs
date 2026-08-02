@@ -24,7 +24,7 @@ description: "Server Assistant pricing: generous free tier, $7/mo USD Premium wi
 .plan li::before { content: "✓"; position: absolute; left: 0; color: #2ecc71; font-weight: 800; }
 .plan li.no { color: var(--ink-soft); opacity: .6; }
 .plan li.no::before { content: "✕"; color: var(--ink-soft); }
-.plan-badge { position: absolute; top: -.55rem; left: 50%; transform: translateX(-50%); background: var(--gold); color: #3a2e00; font-size: .58rem; font-weight: 800; letter-spacing: .05em; padding: .18rem .6rem; border-radius: 999px; text-transform: uppercase; white-space: nowrap; }
+.plan-badge { position: absolute; top: -.55rem; left: 50%; transform: translateX(-50%); background: var(--gold); color: #3a2e00; font-size: var(--fs-3xs); font-weight: 800; letter-spacing: .05em; padding: .18rem .6rem; border-radius: 999px; text-transform: uppercase; white-space: nowrap; }
 .pcta { display: block; text-align: center; margin-top: .9rem; padding: .5rem; border-radius: 999px; font-weight: 700; font-size: .86rem; text-decoration: none !important; background: rgba(255,255,255,0.1); color: var(--ink) !important; border: 1px solid var(--glass-border); }
 .pcta:hover { filter: brightness(1.15); background: rgba(255,255,255,0.16); }
 .add-cta { display: inline-flex; align-items: center; justify-content: center; gap: .6rem; box-sizing: border-box; text-align: center; padding: .85rem 1.7rem; border-radius: 8px; font-weight: 600; font-size: 1.05rem; text-decoration: none !important; background: #5865F2; color: #fff !important; box-shadow: 0 8px 22px rgba(88,101,242,.4); }

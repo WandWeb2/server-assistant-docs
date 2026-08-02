@@ -23,6 +23,20 @@ html { scroll-behavior: smooth; scroll-padding-top: 72px; }
 /* Accessibility: visible keyboard-focus ring on every interactive element. */
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
+/* Screen-reader-only text: a label that has to exist for assistive technology
+   but would be visual clutter (a search field whose placeholder already reads
+   as its name, for instance). Never use `display: none` for this: that
+   removes it from the accessibility tree as well, which defeats the point. */
+.visually-hidden {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0; border: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
 body {
   background-color: var(--bg-0);
   /* Ember molten sunburst — warm 5-stop backdrop over --bg-0, fixed/static. */
@@ -114,7 +128,15 @@ body {
   background: transparent;
 }
 .page-content .wrapper {
-  max-width: 1280px;          /* match the roadmap page width across the whole site */
+  /* 1280px is the roadmap's swimlane width, adopted site-wide. It suits pages
+     built out of grids and lanes and is far too wide for pages that are just
+     text in cards. Read it from --panel-max so a page can opt into a narrower
+     panel from its own <style> block. glass.css deliberately never DECLARES
+     --panel-max, only reads it with a fallback: a page's `:root` declaration
+     therefore wins outright, instead of losing to this file on source order
+     the way a plain `.page-content .wrapper { max-width: … }` override does
+     (which is why roadmap.md's own copy of this rule has no effect today). */
+  max-width: var(--panel-max, 1280px);
   background: var(--glass-panel);
   -webkit-backdrop-filter: blur(16px) saturate(150%);
   backdrop-filter: blur(16px) saturate(150%);
@@ -134,6 +156,63 @@ a { color: var(--accent); text-decoration: none; }
    hover lightens for affordance. */
 a:visited { color: var(--accent); }
 a:hover { color: #62cef4; text-decoration: underline; }
+
+/* ── Reading measure ────────────────────────────────────────────────────────
+   The frosted panel is 1280px wide so the roadmap swimlanes and the Features
+   two-column grid can breathe. Running body copy at that width is roughly 140
+   characters a line, about double the comfortable range, so the prose-heavy
+   pages (Privacy with 160 top-level paragraphs, Terms, the FAQ answers, every
+   changelog entry) were an unbroken full-bleed wall.
+
+   Cap the FLOW elements only. Cards, grids, tables and the Discord mock-ups
+   keep the full panel width, because those are laid out and scanned rather
+   than read line by line. --measure is docs-only: the shared tokens.css owns
+   no measure token, and adding one there would change the operator PWA too.
+
+   COST, recorded so it does not get "simplified" away: any centred paragraph
+   that does not also carry `margin: auto` becomes a left-aligned block with
+   centred text inside it, which reads as broken. Those are exempted below by
+   name, and new ones should use .full-measure rather than a new exemption. */
+:root { --measure: 42rem; }   /* ~80 characters at Minima's 16px base */
+
+.page-content .wrapper > p,
+.page-content .wrapper > ul,
+.page-content .wrapper > ol,
+.page-content .wrapper > dl,
+.page-content .wrapper > blockquote,
+.wiki-main > p,
+.wiki-main > ul,
+.wiki-main > ol,
+.wiki-main > blockquote,
+.doc-sec > p,
+.doc-sec > ul,
+.doc-sec > ol,
+.doc-sec > blockquote,
+.cl-panel > .cl-intro,
+.faq-body > p,
+.faq-body > ul,
+.faq-body > ol { max-width: var(--measure); }
+
+/* Longer lines need more leading, and light text on a dark ground needs more
+   again. Minima ships 1.5 for everything. */
+.page-content .wrapper > p,
+.page-content .wrapper > li,
+.page-content .wrapper > ul > li,
+.page-content .wrapper > ol > li,
+.wiki-main > p,
+.doc-sec > p,
+.doc-sec > ul > li,
+.doc-sec > ol > li,
+.faq-body > p,
+.faq-body > ul > li { line-height: 1.65; }
+
+/* Opt-out: full-panel-width flow content (centred copy, flex rows, banners). */
+.full-measure,
+.page-content .wrapper > p.free-line,
+.page-content .wrapper > p.fleet-stats,
+.page-content .wrapper > p.cl-legend,
+.page-content .wrapper > p[style*="text-align: center"],
+.page-content .wrapper > p[style*="text-align:center"] { max-width: none; }
 
 /* ── Code & pre ────────────────────────────────────────────────────────────── */
 code {
@@ -186,6 +265,21 @@ table th {
 table td { border: none; border-top: 1px solid rgba(255, 255, 255, 0.08); background: transparent; color: var(--fg-0); }
 table tr:nth-child(even) { background: transparent; }   /* neutralise Minima's light #f7f7f7 even-row */
 table tr:nth-child(even) td { background: rgba(255, 255, 255, 0.05); }
+/* Narrow screens: a table with an unbreakable cell (a slash command, a URL)
+   pushes the BODY sideways, which breaks the whole page rather than one
+   element. Let the table scroll inside itself instead. Desktop is untouched,
+   so the normal table layout and the rounded clip stay exactly as they were.
+   `overflow: hidden` above sets both axes, hence the explicit y. */
+@media screen and (max-width: 700px) {
+  .page-content table {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+}
 
 /* ── Blockquotes / callouts ────────────────────────────────────────────────── */
 blockquote {
@@ -204,6 +298,62 @@ blockquote {
   max-width: 100%;
 }
 .page-content img[alt="Server Assistant logo"] { box-shadow: none; border-radius: 0; }
+
+/* ── Page section nav: jump chips (shared component) ──────────────────────
+   Long single-scroll pages had no internal navigation of any kind: Features
+   holds 14 groups and the FAQ 9 categories, and the only way to reach the last
+   one was to scroll past every one before it. The section headings on those
+   pages were also plain <div>s, so browser/screen-reader heading navigation
+   was empty too and nothing was linkable.
+
+   This is the shared chip row; each page supplies its own links, pointing at
+   ids on the (now real) headings. Deliberately a plain wrapped flex row rather
+   than a sticky rail: it has to survive inside the reveal-on-scroll observer
+   and the 1280px panel without a second layout system. */
+.page-toc {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--gap-xs);
+  margin: var(--gap-lg) 0;
+  padding: var(--gap-sm) var(--gap-md);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+}
+.page-toc-label {
+  font-size: var(--fs-2xs);
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--fg-1);
+  margin-right: var(--gap-xs);
+}
+.page-toc a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  color: var(--fg-0);
+  font-size: var(--fs-sm);
+  line-height: 1.3;
+  text-decoration: none;
+  transition: background .15s ease, border-color .15s ease;
+}
+.page-toc a:hover,
+.page-toc a:focus-visible {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+  color: var(--fg-0);
+  text-decoration: none;
+}
+@media (max-width: 600px) {
+  .page-toc { padding: var(--gap-sm); gap: 0.35rem; }
+  .page-toc a { font-size: var(--fs-xs); padding: 0.25rem 0.6rem; }
+}
 
 /* ── Horizontal rules become soft spacers ──────────────────────────────────── */
 .page-content hr {

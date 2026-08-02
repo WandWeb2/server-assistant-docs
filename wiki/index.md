@@ -16,7 +16,7 @@ description: The complete Server Assistant reference, every command, wizard and 
 .wiki-hub .card h3 { margin: 0 0 .3rem; font-size: 1.04rem; color: var(--fg-0); display: flex; align-items: center; gap: .5rem; }
 .wiki-hub .card p { margin: 0; color: var(--fg-1); font-size: .88rem; line-height: 1.5; }
 .wiki-hub .card.soon { opacity: .62; }
-.wiki-hub .card.soon h3::after { content: "Coming soon"; margin-left: auto; font-size: .58rem; font-weight: 800; letter-spacing: .05em; text-transform: uppercase; color: var(--fg-2); background: var(--surface-2); padding: .12rem .4rem; border-radius: 5px; }
+.wiki-hub .card.soon h3::after { content: "Coming soon"; margin-left: auto; font-size: var(--fs-3xs); font-weight: 800; letter-spacing: .05em; text-transform: uppercase; color: var(--fg-2); background: var(--surface-2); padding: .12rem .4rem; border-radius: 5px; }
 .wiki-lead { color: var(--fg-1); font-size: 1.02rem; line-height: 1.6; max-width: 62ch; }
 </style>
 

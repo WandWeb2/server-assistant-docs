@@ -27,6 +27,19 @@ description: Server Assistant's product roadmap, what's in development, what's n
 .band-h { font-weight: 700; padding: .5rem .85rem; border-radius: 6px; color: #fff; margin: 1.2rem 0 .65rem; font-size: .95rem; }
 .build-queue > .band-h:first-child { margin-top: 0; }
 .band-h .sub { display: block; font-size: .74rem; font-weight: 500; opacity: .93; margin-top: .1rem; }
+/* The band titles are real <h2>s so the build queue appears in the page's
+   heading outline: before this the whole queue, the bulk of the page, was
+   invisible to heading navigation, which left a screen-reader user scrolling
+   the entire roadmap linearly. The title alone is the heading; the `.sub`
+   stays a sibling inside the coloured band so the announced heading is one
+   short phrase rather than a paragraph, and so `.band-h .sub` above still
+   matches. The `.page-content` prefix keeps this ahead of glass.css's
+   `.page-content h2` (loaded later, margin-top 1.8rem), which would otherwise
+   push each title off its own coloured band. */
+.page-content .band-h .band-h-title {
+  font: inherit; color: inherit; letter-spacing: inherit;
+  margin: 0; padding: 0; border: 0;
+}
 .band-h.band-gold   { background: linear-gradient(90deg, #b7950b, #d4ac0d); }
 .band-h.band-purple { background: #7d3c98; }
 .band-h.band-blue   { background: #2471a3; }
@@ -557,7 +570,7 @@ Where Server Assistant is heading. Priorities are decided by the people who run 
 
 <div class="build-queue">
 
-  <div class="band-h band-gold">v6.0, confirmed by our community, now fully shipped <span class="sub">All three community-voted features have landed: Anti-nuke (v6.0.0), Verification (v6.1), and Leveling &amp; XP (v6.2.3). The next round is open for votes, the winners will appear here.</span></div>
+  <div class="band-h band-gold"><h2 class="band-h-title" id="queue-voted">v6.0, confirmed by our community, now fully shipped</h2><span class="sub">All three community-voted features have landed: Anti-nuke (v6.0.0), Verification (v6.1), and Leveling &amp; XP (v6.2.3). The next round is open for votes, the winners will appear here.</span></div>
   <div class="band" id="band-gold">
 
   <div class="band-empty">The v6.0 community-voted set has shipped in full. The next round's winners appear here once the current vote closes, cast yours when the poll lands in your staff chat.</div>
@@ -565,7 +578,7 @@ Where Server Assistant is heading. Priorities are decided by the people who run 
 </div>
 
 
-  <div class="band-h band-blue">Committed<span class="sub">Building regardless of votes</span></div>
+  <div class="band-h band-blue"><h2 class="band-h-title" id="queue-committed">Committed</h2><span class="sub">Building regardless of votes</span></div>
   <div class="band" id="band-blue">
 
     <details class="card" id="card-deeper-community-type-presets"><summary>Deeper community-type presets</summary><span class="desc">Today, picking a community type in <code>/setup</code> tunes your <strong>AutoMod pack, punishment ladder and anti-raid</strong> sensitivity. Next: presets that configure <strong>more of the server out of the box</strong>, sensible per-community feature defaults (e.g. age-gate verification for NSFW, scam-strict link rules for crypto, gentler enforcement for education), with the wizard <strong>automatically appending any setup a chosen feature needs</strong> (a verified role, gated channels) so everything a preset turns on is genuinely <strong>ready to use</strong>, never enabled-but-unconfigured. Still opt-in and confirmed in the wizard: a preset never silently switches on a feature you didn't see.</span></details>
@@ -575,7 +588,7 @@ Where Server Assistant is heading. Priorities are decided by the people who run 
 
 </div>
 
-  <div class="band-h band-purple">In the running, next vote (coming soon)<span class="sub">The next community vote picks a whole <strong>feature group</strong> to build next, every themed group below is in the running. Voting isn't open yet; the poll lands in your staff chat soon.</span></div>
+  <div class="band-h band-purple"><h2 class="band-h-title" id="queue-running">In the running, next vote (coming soon)</h2><span class="sub">The next community vote picks a whole <strong>feature group</strong> to build next, every themed group below is in the running. Voting isn't open yet; the poll lands in your staff chat soon.</span></div>
   <div class="band" id="band-pool">
 
 <!-- Feature packs, collapsible themed bundles (details.pack, collapsed by
