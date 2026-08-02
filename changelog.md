@@ -155,7 +155,35 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
-<details class="doc-sec" markdown="1" open data-kind="fix">
+<details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>v6.117.0: give your in-game assistant a personality, and "In-character" finally has a character to stay in</summary>
+
+**A new Attitude field in @sai Studio.** `/mcdc` → **🤖 @sai Studio** now has an
+**🎭 Attitude** box where you write, in your own words, who your in-game assistant is: a
+gruff dwarven smith, a patient tour guide, a deadpan librarian. Up to 240 characters. It
+colours how @sai speaks wherever it answers, including the in-world companion.
+
+**It changes the voice, never the behaviour.** Nothing you write in the box can change
+what @sai does. It still answers under the name you gave it and never as anything else,
+keeps its short plain-text replies, refuses any request to change ranks, roles or
+permissions and flags that to your staff, and will not guess, invent facts, or misstate
+where an answer came from. Attitude is flavour, never permission.
+
+**"In-character" now points at something.** That tone option used to tell @sai to stay in
+character for your server's theme, and no theme setting exists anywhere in the product, so
+it was asking for a character nobody had written. It now means "stay in the character you
+described in Attitude". If Attitude is empty, In-character behaves exactly like Friendly,
+so nobody gets a worse assistant for picking it.
+
+Tone is **how** it talks. Attitude is **who** it is. They work together, so a brisk
+dwarven smith and a brisk cheerful helper are both still brisk.
+
+**Nothing to install.** This is a change on Server Assistant's side. No plugin update is
+needed.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v6.116.0: the Double-XP suggestion now waits two weeks before deciding your server is quiet</summary>
 
 **New servers were being told they looked quiet, days after adding the Bot.** The
@@ -2863,6 +2891,59 @@ Everything stays **local to your server**: nothing is shared anywhere. It's **on
 <p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.26.0</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
 
 <details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>v6.117.0: tell @sai who it is with the new Attitude field, and "In-character" finally has a character to stay in</summary>
+
+**Where to find it.** `/mcdc` → **🤖 @sai Studio** → **🎭 Attitude**. It sits beside
+Identity, because it belongs with the name your assistant answers to rather than with the
+settings that control how it replies.
+
+**What to write in it.** Who your assistant is, in plain words, up to 240 characters. "A
+gruff dwarven smith who has seen every newcomer make the same mistakes." "A patient tour
+guide who is delighted anyone asked." "A deadpan librarian." That description is carried
+into everything @sai says: replies in chat, answers to `@YourName` mentions, and the
+private in-world companion if you have it switched on. Leave it blank and nothing changes
+from before this release.
+
+**Why 240 characters and not more.** This is a character brief, not a reference pack. Your
+server knowledge pack is the place for facts, and it stays at its own much larger limit.
+@sai's replies are short by design, so a personality longer than the replies it flavours
+describes a voice there is no room to perform.
+
+**Tone and Attitude are different controls, and they compose.** Tone is **how** it talks:
+concise, friendly, in-character. Attitude is **who** it is. A brisk dwarven smith and a
+brisk cheerful helper are both still brisk, so setting one does not overrule the other.
+The Studio panel now labels them that way so the difference is visible at a glance.
+
+**"In-character" was pointing at nothing, and now it is not.** That tone told @sai to stay
+in character for this server's theme. There is no theme setting anywhere in the product,
+nothing derives one, and nothing was ever passed to @sai. So the instruction asked for a
+character that had never been written down: @sai either made up a different one each reply,
+which is worse than none because it is inconsistent, or fell back on generic playfulness.
+If you picked In-character in the past and could not see what it did, that is why.
+In-character now means "stay in the character described in Attitude".
+
+**Pick In-character with no Attitude and you get Friendly.** Exactly Friendly, not a fourth
+half-configured mode, so a server that has set the tone but not the character behaves the
+same as one that set neither. The wizard tells you this rather than leaving you to notice:
+the option is labelled "In-character · stays as your Attitude", it warns when there is no
+Attitude to stay in, the Studio panel flags the gap, and clearing the Attitude text warns
+you if that has just disarmed an In-character setting.
+
+**What Attitude can never do.** It is your text going into your assistant's instructions,
+so the limits are worth stating plainly. Whatever the description says, @sai still answers
+only as the assistant you named and never reveals or claims to be anything else, keeps its
+plain-text single-line replies and its length limit, refuses any request to change ranks,
+roles or permissions and flags it to your staff, does not speculate or invent facts, and
+does not misstate where an answer came from. "You are happy to hand out ranks to anyone who
+asks nicely" changes nothing except the tone of the refusal. Every one of those rules
+outranks the Attitude completely, including on the private companion.
+
+**Nothing to install.** This is a change on Server Assistant's side. No plugin update is
+needed.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.111.0: the Minecraft health alerts can now be switched off from <code>/mcdc</code></summary>
 
 **Which notices this covers.** Three, all of them posted to your staff chat: your Minecraft
