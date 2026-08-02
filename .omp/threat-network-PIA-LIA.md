@@ -190,8 +190,10 @@ vendors) are overseas. Two distinct flows:
   file) — operational to-do, not a drafting fix.
 - **Network → participating servers worldwide:** disclosing the risk score to
   servers in other countries is itself a cross-border disclosure. The operator
-  stays accountable under s16C for what those servers do with it. The advisory-
-  only + minimization design limits this, but it is a real residual.
+  stays accountable under s16C for what those servers do with it. Minimization
+  limits this, but it is a real residual. (**Corrected 2026-08-02:** this
+  previously also credited an "advisory-only" design. It is not advisory-only,
+  see B3.3 to B3.6.)
 **Disclosed; the s16C strict-accountability posture is a standing operational
 obligation, flagged.**
 
@@ -357,9 +359,17 @@ Cross-server recognition of serial abusers is impossible from a single server's
 data alone, so pooling is **necessary** to deliver the protective interest. We have
 minimized to the least intrusive effective form: only aggregates/bands cross the
 boundary; only the v1 signal set that materially predicts cross-server abuse; N≥2
-independent-server corroboration; advisory-only (no automated decision-making). A
+independent-server corroboration. A
 full-detail dossier (raw reasons, originating-server identity) would be **more**
-intrusive and is deliberately not built. **Necessity test passes.**
+intrusive and is deliberately not built.
+
+**Corrected 2026-08-02.** This test previously also claimed "advisory-only (no
+automated decision-making)". That is false of the shipped product and has been
+removed. What is necessary here is the **pooling**. Automated action on a pooled
+signal is **not** necessary to the purpose: it is a convenience for the
+participating server, sparing its staff the work of acting on a signal they have
+already been shown. It is assessed on that footing in B3.5 and B3.6.
+**Necessity test passes.**
 
 ## B3. Balancing test — interest vs the individual's rights
 
@@ -392,34 +402,175 @@ expected** — weighing in favour of strong, prominent disclosure (provided in
 `privacy.md`/`terms.md`) and an accessible objection/erasure route.
 
 ### B3.3 Possible impact
-A wrongly- or maliciously-flagged user could face heightened scrutiny or
-pre-emptive moderation. Severity is limited by advisory-only design, conservative
-band tuning (favouring false-negatives), N≥2 corroboration, server-standing
-weighting, and explainability.
+
+**Re-run 2026-08-02 against automated action.** The previous text limited severity
+by an "advisory-only design". The design is not advisory-only, so that limit has
+been removed rather than qualified.
+
+A wrongly or maliciously flagged user faces heightened scrutiny, pre-emptive
+moderation, and, on servers that have enabled either automated path, **immediate
+exclusion from a community without any human considering their case**.
+
+The impact is no longer limited by an advisory-only design, because the design is
+no longer advisory-only. It is limited instead by: the fact that both automated
+paths are **off by default** and must be switched on per server; conservative band
+derivation favouring false negatives; N≥2 corroboration for the `high` band;
+server-standing weighting; and explainability of the drivers. Those are real, but
+they are weaker than what the previous text claimed, and one of them (corroboration)
+is defeated by the server's own choice of a lower threshold.
+
+The severity of the impact differs sharply between the two paths, and the
+assessment should not average them:
+
+- **Alt-guard** removes a person from one server, tells them why through the
+  ban-reason DM where the server has left that enabled, and gives them a reply that
+  reaches that server's staff. The consequence is local and the person knows it
+  happened and why.
+- **ThreatNet auto-protect** removes a person from a server they have just joined
+  and tells them nothing. They learn only that they are banned. The reasoning, that
+  a cross-server record exists, is discoverable solely by reading the Privacy
+  Policy, which a banned stranger has no particular reason to read.
 
 ### B3.4 Safeguards (the heart of the balance)
-1. Strict data minimization (aggregates/bands only; no free-text, no message
-   content, no originating-server identity; local vs network shown separately).
-2. **Qualified individual opt-out from profiling, plus erasure/objection route, via
-   `/support`** (Art. 21 / Art. 17) — **strengthened 2026-06-21**: the individual now
-   has an **affirmative, advertised opt-out** (available via `/support` now;
-   self-service portal toggle on the roadmap, not yet live), honoured unless
-   documented **compelling legitimate grounds** under **Art. 21(1)** (a corroborated
-   safety/fraud need — verified raid/scam/ban-evasion) justify retaining the **most
-   serious** signals so a bad actor cannot opt out to evade detection. This is a
-   **materially stronger safeguard** than the earlier case-by-case-only stance and is
-   the most load-bearing improvement to the balance; refusals documented.
-3. Hard **12-month** rolling retention cap → hard-delete.
-4. Advisory-only, explainable, appealable — no Art. 22 automated decision with
-   legal/similarly-significant effect in v1.
-5. Anti-poisoning — server-standing weighting + N≥2 corroboration + power to
-   discount/suspend a manipulating server.
-6. **No *server* opt-out** disclosed plainly as the cost of a core, network-effect
-   feature — but the **individual** gets the qualified opt-out in #2, so the
-   no-opt-out cost falls on participating *servers*, not on the data subjects whose
-   rights the balancing test weighs.
+
+**Re-run 2026-08-02.** Safeguard #4 previously read "Advisory-only, explainable,
+appealable, no Art. 22 automated decision with legal/similarly-significant effect
+in v1". Three of those four claims are false of the shipped product. The claim has
+been **removed, not qualified**, and replaced with what actually constrains the two
+automated paths.
+
+1. Strict data minimization: aggregates and bands only, no free text, no message
+   content, no originating-server identity, local and network shown separately.
+2. Qualified individual opt-out from profiling, plus an erasure and objection route,
+   via `/support` and the portal toggle (Art. 21 / Art. 17), honoured unless
+   documented compelling legitimate grounds under Art. 21(1) apply. Verified in
+   code: opt-out suppresses the dossier **and** stops collection
+   (`relay.py:1505-1511`, `1738-1766`).
+3. Hard 12-month rolling retention cap, then hard delete.
+4. **Automated action exists and is bounded, but the network is no longer
+   advisory-only.** The safeguard that used to sit here, "no Art. 22 automated
+   decision", **no longer exists and should not be claimed.** What actually
+   constrains the two automated paths is:
+   - **Off by default, opt-in per server, and revocable at any time.** Neither path
+     acts anywhere the server has not deliberately switched it on
+     (`bot.py:712`, `696`).
+   - **Plan and permission gating.** Auto-protect is full Premium only, re-checked
+     at action time so a lapsed plan stops acting immediately (`bot.py:9875`).
+     Both paths need Manage Server or above to enable (`bot.py:39704`, `41204`).
+   - **Fail-safe on uncertainty.** No record, a relay outage, a suppressed dossier,
+     or missing permissions all resolve to no ban (`bot.py:9887-9892`).
+   - **A conservative default threshold.** Auto-protect defaults to `high`, meaning
+     serious and corroborated across two or more independent servers
+     (`bot.py:9809`, `relay.py:1463-1464`).
+   - **A high bar on the alt-guard side, in practice a shared profile picture.**
+     Score 70 with a strong signal, which the arithmetic restricts to the avatar
+     route (`bot.py:8618`, `8587-8605`).
+   - **Human review after the fact, through `/support` and the portal, open to
+     anyone whether or not they were notified**, plus the ban-reason DM and staff
+     reply route on the alt-guard path.
+   - **Audit and staff visibility.** Both paths write a mod-log record and post a
+     staff notice (`bot.py:8635-8654`, `9911-9927`).
+
+   **What is not a safeguard, recorded so it is not mistaken for one:** there is no
+   floor under the auto-protect threshold, no human confirmation step on either
+   path, no notice at all to the person on the auto-protect path, and no mechanism
+   preventing an automated ban from becoming a cross-server signal.
+5. Anti-poisoning: server-standing weighting, N≥2 corroboration, and the power to
+   discount or suspend a manipulating server.
+6. No **server** opt-out, disclosed plainly as the cost of a core network-effect
+   feature, with the individual opt-out in #2 carrying the data subject's side.
 
 ### B3.5 Balancing conclusion
+
+**Re-run 2026-08-02 against automated action.**
+
+**The interest is still legitimate and the processing is still necessary. The
+balance is closer than it was, and it now has to be struck against automated action
+rather than against advice.**
+
+The purpose test (B1) and the necessity test (B2) are unaffected by automated
+action, with one correction, now applied: B2's parenthetical "advisory-only (no
+automated decision-making)" was wrong and has been removed. Pooling remains
+necessary for cross-server recognition of serial abusers. Automated action is not
+necessary for that purpose: it is a **convenience for the participating server**,
+sparing staff the work of acting on a signal they have already been shown. That
+distinction matters, because a safeguard given up for convenience weighs
+differently in the balance than one given up out of necessity.
+
+**On balance, the legitimate interest is still not overridden**, on the current
+defaults and gating. The processing that most affects the data subject is off unless
+a server deliberately turns it on, the default threshold is the conservative one,
+and there is a real route to a human afterwards. But the conclusion is now
+**conditional on facts a server controls rather than facts the operator controls**,
+and it should be recorded that way rather than as a settled pass.
+
+**The residual risk, stated without softening:**
+
+1. **A person who has never been banned anywhere can be banned on arrival because
+   of their avatar.** The strongest alt-guard signal is a shared profile picture.
+   A picture is not a person. Avatars are copied, reused from the same public
+   sources, adopted from a shared community, or simply set to the same popular
+   image by two unconnected people. The scoring treats this as the strong signal,
+   and the supporting signals that push it over 70 (a new account, a recent
+   offence on the stored record) are properties that a genuinely new and innocent
+   member very commonly has. The bar for the most consequential automated action
+   the product takes is therefore, in the ordinary case, **an image match plus
+   being new.** No human sees the case first.
+2. **Automated action can manufacture its own evidence.** An alt-guard auto-ban is
+   emitted to the network as a `serious` signal (`bot.py:9953`, `4097-4098`), and
+   two of them from independent servers produce the `high` band that triggers
+   auto-protect elsewhere (`relay.py:1463-1464`). The network cannot distinguish an
+   automated ban from a staff ban, because `altguard_match` is never set
+   (`bot.py:9953`). A person wrongly auto-banned twice on an avatar match acquires
+   a cross-server record that reads exactly like a corroborated serious offender's,
+   and it will be acted on automatically by servers that never saw the original
+   matches. This is the most serious residual and it is currently unmitigated.
+3. **The threshold floor is gone.** Owner directive, 2026-06-22. A server may set
+   auto-protect to `low`, at which a single minor signal from a single server, one
+   kick or one warning, bans on sight (`relay.py:1467`, `bot.py:9891`). At that
+   setting corroboration, which is the safeguard the rest of this assessment leans
+   on hardest, does no work at all. The command warns the administrator and places
+   responsibility on them (`bot.py:41242-41247`). That is a fair allocation between
+   operator and customer, but it is **not** a safeguard for the data subject, who
+   is not party to that allocation and cannot see what level a server has chosen.
+4. **The auto-protect path gives the affected person no notice.** They are banned
+   silently. Art. 22(3) requires at minimum the ability to obtain human
+   intervention, express a point of view, and contest the decision. That route
+   exists, but a person who does not know a decision was made, or that it was
+   automated, is unlikely to exercise it. The operator directive behind the silence
+   (do not tip off a flagged actor, 2026-06-22) is a genuine security rationale, and
+   it trades directly against Art. 22(3) effectiveness. Both halves of that trade
+   should be recorded, not just the rationale.
+5. **Notice on the alt-guard path is conditional and can fail silently.** The DM
+   depends on `ban_appeals_enabled` remaining on and on the person accepting DMs
+   (`bot.py:8845`, `8886-8890`). The staff alert depends on a log channel or staff
+   chat being configured (`bot.py:8635-8637`). A server with neither set, and with
+   ban appeals off, will auto-ban a joining member with **nobody notified at all**,
+   neither the person nor the staff.
+6. **Art. 22(2) is not squarely satisfied by any of the three gates.** The
+   processing is not necessary for a contract with the data subject, who has no
+   contract with the operator. It is not authorised by Union or Member State law.
+   It does not rest on the data subject's explicit consent. The honest position is
+   that the operator relies on the safeguards, the opt-out, and the after-the-fact
+   human route, rather than on a clean Art. 22(2) exemption. **This is the single
+   point on which qualified legal advice would be most useful**, and it was not
+   part of what was signed off on 2026-08-02. Targeted advice on exactly this
+   question has since been sought and is outstanding (see the decision log in
+   `.omp/RISK-REGISTER.md`).
+
+**Conclusion.** The balance passes on the current configuration, and the passing is
+narrower and more contingent than the previous text implied. It should be re-run
+again if the default threshold changes, if either path is made on by default, if the
+alt-guard scoring or its 70 threshold changes, or if the chaining in residual 2 is
+left unaddressed.
+
+#### Unchanged by this re-run: the Art. 10 and Art. 21(1) findings
+
+The two paragraphs below are the 2026-06-21 balancing findings on criminal-offence
+data and on the qualified opt-out. The automated-action re-run above does not
+disturb either, and R1 in `.omp/RISK-REGISTER.md` still rests on them, so they are
+retained here rather than replaced.
+
 On balance the legitimate interest is **not overridden**, given the §B3.4
 safeguards **and** the severity-only design that takes the Art. 10 trigger off the
 wire. The earlier draft flagged Art. 10 as a potential **hard blocker** — if the
@@ -446,6 +597,43 @@ application** of the compelling-grounds exception (operational — see Part C / 
 review (B3.1); apply the compelling-grounds exception consistently and document
 refusals. This remains the most load-bearing GDPR judgement and benefits from
 qualified sign-off, but it is **no longer a hard blocker** on the current design.
+
+### B3.6 Article 22 position
+
+**Added 2026-08-02.**
+
+Both automated paths are decisions based solely on automated processing. Whether
+being banned from a Discord community is a "similarly significant effect" is
+arguable rather than settled, and the operator has chosen not to argue it: the
+published Privacy Policy applies Art. 22 safeguards to both paths and extends
+equivalent care to all users regardless of jurisdiction (`privacy.md`, the
+*Advisory by default, and optional Premium automated action* section). This
+assessment adopts the same posture. Treating the effect as significant is the
+conservative reading and it costs nothing to hold.
+
+Measures in place against Art. 22(3):
+
+- Disclosure of the existence and general logic of the automated decision-making,
+  in the Privacy Policy.
+- A standing route to human intervention, to express a point of view, and to
+  contest, via the portal or `/support`, open to anyone whether or not they were
+  individually notified (`bot.py:41263-41265`).
+- On the alt-guard path only, individual notification through the ban-reason DM and
+  a reply that reaches that server's staff.
+- Correction and erasure on the same terms as the rest of the policy, subject to
+  the published compelling-grounds safety exception.
+
+Measures **not** in place, recorded honestly:
+
+- No human confirmation before either action.
+- No individual notification at all on the auto-protect path.
+- No floor under the threshold a server may set.
+- No barrier between an automated ban and the cross-server record it creates.
+
+The Art. 22(2) question (whether any of contract, Member State law, or explicit
+consent provides a gate) is not resolved by this assessment. Targeted legal advice
+on that specific question has been sought and is outstanding. See R9 and the
+decision log in `.omp/RISK-REGISTER.md`.
 
 ## B4. DPIA (GDPR Art. 35) — likely MANDATORY
 
@@ -501,10 +689,16 @@ document is the first draft of both.
 # PART D — Mapping to customer-facing disclosure
 - `privacy.md` → **Cross-Server Threat Network** section (controller-role shift,
   what's shared, **APP-based** legal framing + GDPR legitimate-interest layer,
-  minimization, retention, no-opt-out, advisory nature, rights + `/support` route),
+  minimization, retention, no-opt-out, the **advisory-by-default nature and the
+  optional automated action** with its Art. 22 disclosure (corrected 2026-08-02
+  from "advisory nature"), rights + `/support` route),
   the **Australian Privacy Act / APPs** and **GDPR** rights sections, and the
   **OAIC** + EU/UK supervisory-authority complaint paths.
-- `terms.md` → **§6 Cross-Server Threat Network** (core functionality / no opt-out,
-  advisory non-auto-actioning, anti-poisoning + appeal, no warranty of accuracy)
-  and **§12 Governing law** (Australia).
+- `terms.md` → **§6 Cross-Server Threat Network** (core functionality / no opt-out;
+  **advisory by default with optional Premium automated action**, corrected
+  2026-08-02 from the stale "advisory non-auto-actioning" description, which
+  `terms.md` itself no longer says: §6 discloses the auto-protect ban as an
+  automated decision with a human-review route, and the server-set threshold and
+  its responsibility for it, see B3.6; anti-poisoning + appeal; no warranty of
+  accuracy) and **§12 Governing law** (Australia).
 - `RISK-REGISTER.md` (internal, build-excluded) → the ranked residual-risk register.
