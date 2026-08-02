@@ -91,7 +91,43 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
-<details class="doc-sec" markdown="1" open data-kind="feature">
+<details class="doc-sec" markdown="1" open data-kind="fix">
+<summary>v6.112.0: two automatic ban systems stopped feeding each other, and auto-protect has a floor again</summary>
+
+**Two automatic bans, and one was quietly building the case for the other.** ThreatNet
+auto-protect bans a joining account when its cross-server risk record reaches a level your
+server chooses. Alt-guard bans a joining account when it looks like someone your own server
+already banned. Separate features, separate evidence. But an alt-guard automatic ban used to
+be reported to the cross-server network in exactly the same way as a ban one of your staff
+had decided on.
+
+**That closed a loop nobody intended.** Two servers auto-banning the same account off one
+shared profile picture could, between them, manufacture the corroborated record that a third
+server's auto-protect then acts on. Automated action was producing the evidence for further
+automated action, and nothing further down the line could tell any of it apart from human
+judgement.
+
+**Alt-guard automatic bans are now withheld from the network.** Only the report to the
+network is withheld. The staff alert still fires, your server's own repeat-offender record
+still notes the ban, and the ban-appeal DM still goes out. A ban your staff decide on is
+reported exactly as it always was. The feedback loop was the defect, not the ban.
+
+**Auto-protect's threshold has a floor again, and it is Elevated.** A server could previously
+set the threshold as low as *Low*, where a single record from a single server is enough to
+ban an account on sight. At that setting corroboration, the thing that is meant to make a
+cross-server record worth acting on at all, did no work. *Low* is gone. *Elevated* is now as
+low as the threshold goes: still broader than the default *High*, but it will not act on one
+server's record alone.
+
+**If your server was set to Low, it is now Elevated, and that narrows what your server was
+doing.** We would rather say that plainly than let an admin find it by accident. Auto-protect
+stays on and keeps banning; it now wants more than a lone record before it does. There is
+nothing you need to change, but if you chose *Low* deliberately, this is a change to how your
+server behaves. *High* remains the default and the safest setting.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.111.0: the Minecraft health alerts now have an off switch in <code>/mcdc</code></summary>
 
 **Three notices, one switch.** "Minecraft server offline", "server recovered" and "TPS below
