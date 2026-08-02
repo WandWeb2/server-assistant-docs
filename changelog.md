@@ -92,6 +92,33 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
 <details class="doc-sec" markdown="1" open data-kind="fix">
+<summary>v6.113.0: auto-protect now describes its opt-out rule accurately</summary>
+
+**What the bot used to tell you.** Two places said that anyone who had opted out of the
+cross-server network would never be automatically actioned: the `/threatnet autoban`
+status reply, and the footer of the ThreatNet settings panel. Both appear exactly where
+an admin decides whether to switch auto-protect on, which is the worst place to be
+imprecise.
+
+**Why it was wrong.** Opting out does normally hide someone's record from auto-protect.
+But there is a narrow and deliberate exception: where a safety exception covers the most
+serious, corroborated cases, that record stays visible to the network and an auto-protect
+ban can still follow. That exception has always been set out in the Privacy Policy and the
+Terms. The bot's own wording simply did not mention it, so it read as an absolute promise
+that the product was never in a position to keep.
+
+**Worth knowing alongside it.** Alt-guard, the separate system that bans a joining account
+matching someone your server already banned, is its own feature with its own evidence. It
+does not consult the cross-server opt-out at all, so an opt-out has no bearing on whether
+it acts.
+
+**What changed.** Only the wording. It now states the real rule: opting out hides a record
+from auto-protect, apart from the most serious corroborated cases covered by a safety
+exception. How auto-protect actually behaves is unchanged by this release.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v6.112.0: two automatic ban systems stopped feeding each other, and auto-protect has a floor again</summary>
 
 **Two automatic bans, and one was quietly building the case for the other.** ThreatNet
