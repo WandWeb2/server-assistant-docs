@@ -43,6 +43,13 @@ customer-facing disclosure is in `privacy.md` and `terms.md`.
 > the symbol survives a refactor and can be re-found with one grep. Keep the line
 > number only where it genuinely aids navigation, and re-derive it by searching for
 > the symbol rather than by adjusting the old number.
+>
+> **Mixed provenance, 2026-08-02.** The passages rewritten in the v6.114.0
+> assessment update (A3, B3.4 #4, B3.5 residual 2, B3.6) carry line numbers verified
+> against `BOT_VERSION` **6.115.0**. Every other reference in this document is still
+> the 6.114.0 verification and has drifted by roughly 2 to 5 lines in most regions.
+> Do not read a mismatch between two nearby citations as one of them being wrong;
+> re-derive from the symbol, which is why the symbol leads.
 
 > **Why two assessments in one doc.** Australian law has **no GDPR-style
 > "legitimate interest" lawful basis** and **no standalone "right to erasure."**
@@ -171,8 +178,21 @@ constrained. Mitigations now reflected in the docs (NOTICE REFRAME, 2026-06-21 �
   yet live)**. `terms.md` and `privacy.md` now state plainly that giving notice is
   **ours**, and that server owners are **encouraged but not obliged** to inform
   members. This replaces the earlier "owner must notify members" framing.
-**Partially met; residual gap flagged** (subjects collected-about indirectly; the
-operator-delivered notices are the reasonable-steps improvement).
+  **Verified 2026-08-02: the install notice SHIPPED in v6.114.0** and, until it did,
+  both documents committed to a notice the code did not send
+  (`_threatnet_install_notice_text` builds it, `bot.py:8130`;
+  `_deliver_threatnet_install_notice` delivers it, `bot.py:8153`, from
+  `on_guild_join` at `8455` and from the missed-joins reconciliation at `8280`).
+  It covers participation, the absence of a server-level opt-out, the individual
+  self-service portal opt-out, and a link to the policy. Delivery order is inviter,
+  then owner, then a sendable channel, and it **never raises**, so a server with
+  closed DMs and no writable channel is recorded `undelivered` and gets the published
+  policy as its only notice.
+**Partially met; residual gap flagged.** The improvement is real but bounded, and the
+bound is the point: this notice reaches the **server**, not the individuals it is
+about. The flagged user is still collected-about indirectly and may never see any
+notice. The reasonable-steps position is stronger than it was; the underlying gap is
+narrowed, not closed (R5).
 
 ## A4. APP 6 — Use or disclosure (THE CRUX)
 
@@ -455,18 +475,30 @@ by an "advisory-only design". The design is not advisory-only, so that limit has
 been removed rather than qualified.
 
 A wrongly or maliciously flagged user faces heightened scrutiny, pre-emptive
-moderation, and, on servers that have enabled either automated path, **immediate
+moderation, and, on servers that have enabled either join-time automated path or
+configured a ban rung on the AutoMod ladder, **immediate
 exclusion from a community without any human considering their case**.
 
 The impact is no longer limited by an advisory-only design, because the design is
-no longer advisory-only. It is limited instead by: the fact that both automated
+no longer advisory-only. It is limited instead by: the fact that both **join-time**
+automated
 paths are **off by default** and must be switched on per server; conservative band
 derivation favouring false negatives; N≥2 corroboration for the `high` band;
 server-standing weighting; and explainability of the drivers. Those are real, but
 they are weaker than what the previous text claimed, and one of them (corroboration)
 is defeated by the server's own choice of a lower threshold.
 
-The severity of the impact differs sharply between the two paths, and the
+**Corrected 2026-08-02: the "off by default" limit does not reach the third path.**
+This section, like the rest of the re-run, was written against the two join-time
+bans. The **AutoMod ladder ban** is a third, it is a rung on a ladder rather than a
+switch, and AutoMod runs on every server on every plan, so the widest-reaching
+automated ban in the product is the one none of the limits in this paragraph
+constrain (B3.4 #4 carries the detail and the symbol). The impact assessment above
+is therefore an **under**-statement of reach, not an over-statement. The **balance
+conclusion at B3.5 is not re-run on the strength of this**, per the scope recorded in
+the 2026-08-02 decision log in `.omp/RISK-REGISTER.md`.
+
+The severity of the impact differs sharply between the two join-time paths, and the
 assessment should not average them:
 
 - **Alt-guard** removes a person from one server, tells them why through the
@@ -498,7 +530,7 @@ automated paths.
 4. **Automated action exists and is bounded, but the network is no longer
    advisory-only.** The safeguard that used to sit here, "no Art. 22 automated
    decision", **no longer exists and should not be claimed.** What actually
-   constrains the two automated paths is:
+   constrains the two **join-time** automated paths is:
    - **Off by default, opt-in per server, and revocable at any time.** Neither path
      acts anywhere the server has not deliberately switched it on: the
      `altguard_enabled` and `threatnet_autoban_enabled` settings both default
@@ -513,11 +545,11 @@ automated paths.
      `bot.py:10096-10102`, and the `discord.Forbidden` branch at `10113-10116`).
    - **A conservative default threshold.** Auto-protect defaults to `high`, meaning
      serious and corroborated across two or more independent servers
-     (`_THREATNET_AUTOBAN_DEFAULT_BAND`, `bot.py:9991`; `_threat_band`,
+     (`_THREATNET_AUTOBAN_DEFAULT_BAND`, `bot.py:9996`; `_threat_band`,
      `relay.py:1466-1467`).
    - **A high bar on the alt-guard side, in practice a shared profile picture.**
      Score 70 with a strong signal, which the arithmetic restricts to the avatar
-     route (`_altguard_handle`, `bot.py:8793`; the scoring in `_altguard_match`,
+     route (`_altguard_handle`, `bot.py:8798`; the scoring in `_altguard_match`,
      `bot.py:8729-8750`).
    - **Human review after the fact, through `/support` and the portal, open to
      anyone whether or not they were notified**, plus the ban-reason DM and staff
@@ -526,15 +558,55 @@ automated paths.
      staff notice (`_altguard_handle`, `bot.py:8814-8833`;
      `_threatnet_autoban_check`, `bot.py:10121-10137`).
 
+   **A THIRD automated ban path exists, and none of the bullets above constrain it.**
+   Corrected 2026-08-02: the list above, and R9 when it was written, counted the two
+   join-time bans, because those are the ones behind a per-server switch. The
+   **AutoMod ladder ban** (the `act == "ban"` branch of `_automod_apply`,
+   `bot.py:15871-15885`) bans a member when their auto-warning counter crosses a rung
+   on the server's punishment ladder. It is not off by default, not opt-in, and not
+   plan-gated: AutoMod runs on every server on every plan, so this is the automated
+   ban path with the **widest reach by far**. What bounds it is the server having
+   configured a ban rung at all, which is a customer-side bound rather than an
+   operator-side one. It is also the path where the **inputs** to the decision are
+   themselves automated, since the counter tallies warnings a filter issued. Adding
+   it does not change the shape of the Art. 22 analysis at B3.6, because the same
+   three Art. 22(2) gates fail for the same reasons and there is no human before any
+   of the three, but it widens the exposed population considerably and the balancing
+   conclusion at B3.5 should be read with that in mind. **The conclusion itself is
+   not re-run here**, and the R9 rating is untouched: see the 2026-08-02 decision-log
+   entry in `.omp/RISK-REGISTER.md` for the scope this update was authorised under.
+
    **What is not a safeguard, recorded so it is not mistaken for one:** the floor
    under the auto-protect threshold is back at `elevated` since 2026-08-02
-   (`_THREATNET_AUTOBAN_FLOOR_BAND`, `bot.py:9999`) but the operating point above it
+   (`_THREATNET_AUTOBAN_FLOOR_BAND`, `bot.py:10004`) but the operating point above it
    is still the customer's to set,
-   there is no human confirmation step on either path, and no notice at all to the
-   person on the auto-protect path. An automated ban is no longer able to become a
-   cross-server signal (both paths suppress the emit since v6.112.0, residual 2
-   below), but that suppression is in-process state and does not survive a restart
-   between the mark and the ban event.
+   there is no human confirmation step on any of the three ban paths, and no notice
+   at all to the person on the auto-protect path.
+
+   **No automated action reaches the network at all since v6.114.0**, which is
+   broader than the two join-time bans this paragraph described when it was written.
+   Until v6.114.0 the suppression covered only the two auto-bans on join. It now also
+   covers the **AutoMod auto-warn** (the no-emit note in `_automod_apply`,
+   `bot.py:15852-15858`), the **AutoMod ladder kick** (`bot.py:15889-15893`), the
+   **AutoMod ladder ban** (`_automod_recent_autoban` with `_automod_autoban_mark` /
+   `_automod_autoban_consume`, `bot.py:15795-15814`, marked before the ban at
+   `bot.py:15876` and cleared at `15883` if the ban is refused), and **automated
+   scam-image enforcement** (the no-emit note in `_enforce_image_scam`,
+   `bot.py:17454-17458`). The ladder ban and the auto-warn were the larger holes by
+   volume: AutoMod runs on every server on every plan, whereas both join-time paths
+   are opt-in and one is Premium-gated. What a **human** decides still emits,
+   unchanged: `/warn` (`bot.py:37840`), the prefix warn (`bot.py:27396`), `/kick`
+   (`bot.py:39719`) and a staff ban (the emit in `on_member_ban`, `bot.py:10186`).
+   The line the code now draws is **who made the decision**, not which feature acted.
+
+   **Two limits on that, stated rather than glossed.** First, the ban suppressions
+   are **in-process state** (three dicts keyed on guild and user, time-boxed to 120
+   seconds), so a restart landing between the mark and the `on_member_ban` event lets
+   the emit through; the auto-warn, ladder-kick and scam-image suppressions are not
+   exposed to that, because those paths simply no longer call `_emit_threat_signal`
+   at all. Second, none of this **unwinds** records created before v6.112.0 and
+   v6.114.0. It stops new automated evidence being manufactured; it does not remove
+   the evidence already manufactured.
 5. Anti-poisoning: server-standing weighting, N≥2 corroboration, and the power to
    discount or suspend a manipulating server.
 6. No **server** opt-out, disclosed plainly as the cost of a core network-effect
@@ -576,30 +648,69 @@ and it should be recorded that way rather than as a settled pass.
    member very commonly has. The bar for the most consequential automated action
    the product takes is therefore, in the ordinary case, **an image match plus
    being new.** No human sees the case first.
-2. **Automated action could manufacture its own evidence. MITIGATED 2026-08-02,
-   shipped in v6.112.0.** As originally assessed, an alt-guard auto-ban was emitted
+2. **Automated action could manufacture its own evidence. MITIGATED across every
+   automated path: v6.112.0 for the two join-time bans, v6.114.0 for the rest.**
+   As originally assessed, an alt-guard auto-ban was emitted
    to the network as a `serious` signal, and two of them from independent servers
    produced the `high` band that triggers auto-protect elsewhere (`_threat_band`,
    `relay.py:1466-1467`). The network could not distinguish an automated ban from a
-   staff ban, because `altguard_match` is never set. A person wrongly auto-banned
+   staff ban. A person wrongly auto-banned
    twice on an avatar match therefore acquired a cross-server record reading exactly
    like a corroborated serious offender's, and it would be acted on automatically by
    servers that never saw the original matches. This was recorded here as the most
-   serious residual. **Both automated paths now suppress the emit**: a mark/consume
-   pair around the ban keeps an alt-guard automatic ban out of the network
+   serious residual.
+
+   **v6.112.0 closed the two join-time bans.** A mark/consume pair around the ban
+   keeps an alt-guard automatic ban out of the network
    (`_altguard_recent_autoban` with `_altguard_autoban_mark` / `_altguard_autoban_consume`,
-   `bot.py:8767-8785`; marked at `8796` inside `_altguard_handle` before the ban
-   because the gateway event can land mid-await, cleared at `8802` and `8806` if the
-   ban is refused; consumed in `on_member_ban` at `10178`), mirroring the equivalent
+   `bot.py:8772-8790`; marked at `8801` inside `_altguard_handle` before the ban
+   because the gateway event can land mid-await, cleared at `8807` and `8811` if the
+   ban is refused; consumed in `on_member_ban` at `10183`), mirroring the equivalent
    pair that already covered the ThreatNet auto-protect path
    (`_threatnet_recent_autoban` with `_threatnet_autoban_mark` /
-   `_threatnet_autoban_consume`, `bot.py:10018-10034`). Only the emit is suppressed: the staff
-   alert, the local offender record and the ban-appeal DM are unaffected, a **staff**
-   ban of the same user still emits exactly as before, and the mark is time-boxed to
-   120s so a stale one cannot silence a genuine staff decision later. **What remains:**
-   the suppression is in-process state, so it does not survive a restart between the
-   mark and the ban event, and it addresses the manufacture of NEW automated evidence
-   rather than any record created before v6.112.0. Register: R9 residual 4.
+   `_threatnet_autoban_consume`, `bot.py:10023-10039`).
+
+   **v6.114.0 closed the rest, and the rest was the bigger part.** The paragraph
+   above framed this residual as a two-path problem because those were the two paths
+   that banned. They were not the two paths that **emitted**. Four further automated
+   actions were feeding the network with no human in them, and the **AutoMod ladder
+   ban** was the larger hole than either join-time path: AutoMod is on for every
+   server on every plan, so a warning counter crossing a threshold produced a
+   top-band ban signal, at fleet volume, that the relay read as staff judgement.
+   Suppressed since v6.114.0:
+   - **AutoMod ladder ban**, by the same mark/consume shape
+     (`_automod_recent_autoban` with `_automod_autoban_mark` /
+     `_automod_autoban_consume`, `bot.py:15795-15814`; marked at `15876` before the
+     ban, cleared at `15883` if it is refused; consumed in `on_member_ban` at
+     `bot.py:10184`, alongside the alt-guard consume at `10183`. Both marks are
+     consumed into locals **before** the test at `10185`, never inline in it, because
+     `or` short-circuits: `if not (a() or b())` would skip `b()` whenever `a()` was
+     true and leave b's mark sitting in its dict to silence a later staff ban).
+   - **AutoMod auto-warn**, which simply no longer calls `_emit_threat_signal`
+     (the no-emit note in `_automod_apply`, `bot.py:15852-15858`). This was the
+     highest-volume emitter in the product.
+   - **AutoMod ladder kick**, same (`bot.py:15889-15893`). The local offender record
+     is deliberately kept; only the crossing stops.
+   - **Automated scam-image enforcement**, same (`_enforce_image_scam`, the no-emit
+     note at `bot.py:17454-17458`). A perceptual-hash match is not a decision anyone
+     made.
+
+   Only the crossing is suppressed in every case: the staff alert, the local offender
+   or warning record, the mod-log row and the ban-appeal DM are all unaffected. What
+   a human types still emits exactly as before, and that is the whole point of the
+   line the code now draws: `/warn` (`bot.py:37840`), the prefix warn
+   (`bot.py:27396`), `/kick` (`bot.py:39719`), and a staff ban (`bot.py:10186`). The
+   three ban marks are time-boxed to 120s so a stale one cannot silence a genuine
+   staff decision later.
+
+   **What remains, unchanged in kind by the wider fix:** the three ban suppressions
+   are in-process state, so none survives a restart between the mark and the
+   `on_member_ban` event (the three non-ban paths are not exposed to this, having no
+   emit call at all); and all of it addresses the manufacture of **new** automated
+   evidence rather than any record created before v6.112.0 and v6.114.0. Automated
+   action can no longer feed itself going forward. It has already fed itself, and
+   those records are still on the network until the 12-month retention cap reaches
+   them. Register: R9 residual 4.
 3. **The threshold floor is back at `elevated`, and the customer still sets the
    level above it.** Owner directive, 2026-06-22, removed the hard `high` floor,
    which left `low` selectable: a server could set auto-protect to `low`, at which a
@@ -609,10 +720,10 @@ and it should be recorded that way rather than as a settled pass.
    setting corroboration, which
    is the safeguard the rest of this assessment leans on hardest, did no work at
    all. Owner decision, 2026-08-02, put a floor back at `elevated` rather than the
-   original `high` (`_THREATNET_AUTOBAN_FLOOR_BAND`, `bot.py:9999`, shipped in
+   original `high` (`_THREATNET_AUTOBAN_FLOOR_BAND`, `bot.py:10004`, shipped in
    v6.112.0): `low` is no longer offered by the `/threatnet autoban` level picker
-   (`bot.py:41501-41503`) and every read normalises a stored `low` up to `elevated`
-   (`_threatnet_autoban_band`, `bot.py:10002-10015`), so a server can no longer cause
+   (`bot.py:41506-41509`) and every read normalises a stored `low` up to `elevated`
+   (`_threatnet_autoban_band`, `bot.py:10007-10020`), so a server can no longer cause
    a ban on a single
    uncorroborated record. That narrows this residual rather than closing it. The
    operating point above the floor is still the server's choice, and `elevated`
@@ -692,12 +803,18 @@ qualified sign-off, but it is **no longer a hard blocker** on the current design
 
 ### B3.6 Article 22 position
 
-**Added 2026-08-02.**
-
-Both automated paths are decisions based solely on automated processing. Whether
+**Added 2026-08-02 against two automated paths; corrected the same day to three.**
+The two join-time bans (ThreatNet auto-protect and alt-guard) and the **AutoMod
+ladder ban** are all decisions based solely on automated processing. The third was
+missed when this section was written because it is a rung on a punishment ladder
+rather than a switch a server turns on, which made it invisible to an assessment
+organised around opt-in features. It is the one that reaches every server on every
+plan. Nothing below changes shape for it: the same three Art. 22(2) gates fail for
+the same reasons, and there is no human before any of the three. Whether
 being banned from a Discord community is a "similarly significant effect" is
 arguable rather than settled, and the operator has chosen not to argue it: the
-published Privacy Policy applies Art. 22 safeguards to both paths and extends
+published Privacy Policy applies Art. 22 safeguards to the two paths it discloses
+and extends
 equivalent care to all users regardless of jurisdiction (`privacy.md`, the
 *Advisory by default, and optional Premium automated action* section). This
 assessment adopts the same posture. Treating the effect as significant is the
@@ -715,20 +832,51 @@ Measures in place against Art. 22(3):
 - On the alt-guard path only, individual notification through the ban-reason DM and
   a reply that reaches that server's staff.
 - Correction and erasure on the same terms as the rest of the policy, subject to
-  the published compelling-grounds safety exception.
+  the published compelling-grounds safety exception. **That exception is the
+  operator's alone since v6.114.0** (`_is_sa_operator`, `bot.py:8204`, enforced on
+  the `safety_exception` argument of `threatnet_admin` at `bot.py:41438`), and it
+  **fails closed**: if the operator's home guild is not in cache, nobody matches and
+  the command refuses rather than opening up. Until v6.114.0 any actor passing
+  `_can_manage_server` could set it, on a free-text reason they typed themselves,
+  with nobody reviewing it. That mattered here and not only operationally: an
+  exception returns an **unsuppressed** dossier for an opted-out user, which
+  `_threatnet_autoban_check` then acts on without inspecting the exception flag, so
+  a server's own admin could previously undo another server's member's opt-out far
+  enough to expose them to an automated ban. Reading the flag, and the rest of that
+  command, stays open to server staff.
+- **An in-Discord install notice, delivered by the Bot, since v6.114.0**
+  (`_threatnet_install_notice_text` / `_deliver_threatnet_install_notice`,
+  `bot.py:8130` and `8153`; sent from `on_guild_join` at `8455`, and from the
+  missed-joins reconciliation at `8280` so servers that installed while the bot was
+  offline are not skipped). It states that the server takes part, that there is **no
+  server-level opt-out**, that an **individual** can opt out self-service in the
+  portal, and links the policy. It is a **server-facing** notice: it reaches whoever
+  installed the bot, the owner, or failing both a channel, not the members who are
+  the data subjects. So it improves the APP 5 / Art. 14 reasonable-steps position
+  (A3, R5) without being individual notification, and it does **not** move the next
+  bullet.
 
 Measures **not** in place, recorded honestly:
 
-- No human confirmation before either action.
-- No individual notification at all on the auto-protect path.
+- No human confirmation before any automated action.
+- No individual notification at all on the auto-protect path. The install notice
+  above goes to the server, not to the person a decision is made about.
 - No operator control of the threshold above the floor: there is a floor again since
-  2026-08-02, at `elevated` (`_THREATNET_AUTOBAN_FLOOR_BAND`, `bot.py:9999`), but the
+  2026-08-02, at `elevated` (`_THREATNET_AUTOBAN_FLOOR_BAND`, `bot.py:10004`), but the
   level above it is the server's to set.
-- No DURABLE barrier between an automated ban and the cross-server record it
-  creates: both paths suppress the emit since v6.112.0 (`_altguard_recent_autoban`,
-  `bot.py:8767-8785`; `_threatnet_recent_autoban`, `bot.py:10018-10034`), but the
-  mark is in-process and does not survive a restart between
-  the mark and the ban event.
+- No DURABLE barrier between an automated **ban** and the cross-server record it
+  creates. The coverage is now much wider than when this bullet was written: since
+  v6.114.0 **no** automated action emits, including the AutoMod auto-warn, the
+  AutoMod ladder kick, the AutoMod ladder ban and automated scam-image enforcement
+  (B3.4 #4 and B3.5 residual 2 carry the symbols). But the mechanism for the three
+  **ban** paths is still a mark held in process (`_altguard_recent_autoban`,
+  `bot.py:8772-8790`; `_threatnet_recent_autoban`, `bot.py:10023-10039`;
+  `_automod_recent_autoban`, `bot.py:15795-15814`), so a restart between the mark
+  and the `on_member_ban` event still lets that emit through. The three non-ban
+  paths have no such gap, having no emit call at all.
+- No unwinding of automated evidence already on the network. The suppressions are
+  forward-looking; records manufactured before v6.112.0 and v6.114.0 persist until
+  the 12-month retention cap reaches them.
 
 The Art. 22(2) question (whether any of contract, Member State law, or explicit
 consent provides a gate) is not resolved by this assessment. Targeted legal advice
