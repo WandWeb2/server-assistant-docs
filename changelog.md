@@ -156,6 +156,22 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
 <details class="doc-sec" markdown="1" open data-kind="fix">
+<summary>v6.120.0: the Greeting box in @sai Studio now says what it is</summary>
+
+**Greeting** sat unlabelled between **Tone · how it talks** and **Attitude · who it is**, and
+the word is ambiguous on a product that also has a Discord welcome and a Minecraft join
+notice. It is neither of those. It now reads **Greeting · its opening line**: the line @sai
+opens with on its first reply in a conversation, up to 200 characters.
+
+**It now points at where to set it, too.** Greeting is the only field on that panel with no
+button of its own, so the value carries **✏️ Identity**, the button whose box holds it, next
+to the assistant's name.
+
+Wording only. The greeting itself is unchanged, and there is nothing to re-save or install.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v6.119.0: the Attitude you gave @sai now actually changes how it talks</summary>
 
 **What was wrong.** v6.117.0 added the **🎭 Attitude** box to @sai Studio. If you filled it
@@ -2958,6 +2974,22 @@ Everything stays **local to your server**: nothing is shared anywhere. It's **on
 <p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.26.0</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
 
 <details class="doc-sec" markdown="1" open data-kind="fix">
+<summary>v6.120.0: the Greeting box in <code>/mcdc</code> → @sai Studio now says what it is</summary>
+
+Asked what **Greeting** did, the panel had no answer. It sat unlabelled between **Tone · how
+it talks** and **Attitude · who it is**, and the word reads like something sent when a player
+joins, which it is not. It now reads **Greeting · its opening line**: the line @sai opens
+with on its first reply in a conversation, up to 200 characters.
+
+**And where to change it.** Greeting is the only field on that panel with no button of its
+own, so it now carries **✏️ Identity**, the button whose box holds it, next to the
+assistant's name.
+
+Panel wording only. The greeting behaves exactly as before, and no plugin update is needed.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v6.119.0: the Attitude you wrote for @sai now actually changes how it talks in game</summary>
 
 **What was wrong.** v6.117.0 added the **🎭 Attitude** box to `/mcdc` → **🤖 @sai Studio**.
