@@ -155,7 +155,38 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
-<details class="doc-sec" markdown="1" open data-kind="fix">
+<details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>v6.122.0: @sai's limit is now per person rather than per server</summary>
+
+**What was wrong.** Running out of @sai questions was a shared experience. One busy member
+could use up the allowance and everyone else on the server found the assistant unavailable,
+through no fault of their own. The limit was attached to the server, not to the person
+asking.
+
+**What changed.** On the **free plan**, each person now gets **6 questions per hour**, and
+running out affects only them. The hour is a **rolling** one: your oldest question ages out
+sixty minutes after you asked it, rather than everyone's allowance resetting together on the
+clock. Ask again once you are out and @sai tells you when your next question is available,
+privately.
+
+**Premium is unlimited**, and so is bring-your-own-key. If you supply your own AI key you are
+paying your provider directly per question, so a queue on top of that would only be charging
+you to wait.
+
+**What is not affected.** Staff moderation is never throttled. Asking @sai a question and
+asking Server Assistant to take a moderation action are different paths, and only the first
+one counts against the allowance, so a moderator mid-incident is never told to wait. The
+safety response to a message suggesting self-harm is also never limited and never counts
+against your hour.
+
+**A note on Minecraft.** @sai in game is a premium feature, and premium is unlimited, so
+this allowance does not change anything in Minecraft today. It applies to @sai in Discord.
+If your account is linked, the two surfaces share one allowance, so the limit stays per
+person if @sai ever opens to free servers in game.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v6.121.0: your security settings, and your Minecraft bridge credentials, are now on the record</summary>
 
 **What was missing.** v6.118.0 started posting a **Setting changed** entry to your log
