@@ -155,7 +155,31 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
-<details class="doc-sec" markdown="1" open data-kind="feature">
+<details class="doc-sec" markdown="1" open data-kind="fix">
+<summary>v6.123.0: reacting to one of @sai's messages no longer gets a reply</summary>
+
+**What was wrong.** Replying to something @sai posted with just an emoji, a sticker or a
+screenshot, and no words, got you a full answer back. Worse, the answer could be about
+something you had never said: with no question to work from, @sai fell back on the recent
+conversation in that channel and answered that instead.
+
+One server saw it at its worst. A staff member reacted to a wellbeing check-in card with
+a single heart, and got a cheerful reply about picking a personality for their bot. It was
+not about the card, but it appeared directly underneath it, which is not what anyone wants
+to see under a message about a player's welfare.
+
+**What changed.** A message with no words in it no longer reaches @sai at all. Reacting to
+one of its cards now produces nothing: no answer, and no "thinking" reaction either. A
+reaction is not a question, so there is nothing to reply to.
+
+**Real questions are untouched.** A screenshot posted *with* a question still gets an
+answer. Short follow-ups like "why?" or "in mc" still work, because @sai remembers the
+thread they belong to. And @sai still answers a plain mention of it, since pinging it by
+name is asking for its attention in a way that reacting is not.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.122.0: @sai's limit is now per person rather than per server</summary>
 
 **What was wrong.** Running out of @sai questions was a shared experience. One busy member
