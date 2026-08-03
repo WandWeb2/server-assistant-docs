@@ -155,7 +155,74 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
-<details class="doc-sec" markdown="1" open data-kind="feature">
+<details class="doc-sec" markdown="1" open data-kind="fix">
+<summary>v6.119.0: the Attitude you gave @sai now actually changes how it talks</summary>
+
+**What was wrong.** v6.117.0 added the **🎭 Attitude** box to @sai Studio. If you filled it
+in, it saved correctly and the panel showed it back to you, but the replies in game sounded
+exactly as they had before. A gruff dwarven smith and an empty box produced the same flat
+assistant voice.
+
+**Why.** Your description was reaching @sai intact every time. The instructions around it
+simply never asked it to *speak* that way, they only set out what the description was not
+allowed to do. On top of that, @sai is told to keep its replies short and leave out
+anything inessential, and nothing marked the voice as exempt from that. Under a short reply
+budget a personality reads like an optional extra, so it was the first thing dropped.
+
+**What changed.** @sai is now told plainly to adopt the voice in every reply, including
+one-liners, refusals and "I don't know" answers. Being brief is no longer a reason to drop
+it: the voice is how it spends the words it has, not extra words on top of them. Wording
+only, and nothing about the Attitude box itself has changed. If you already set one, it
+starts working with this release and there is nothing to re-save.
+
+**Every safety rule still outranks your description completely, exactly as before.** @sai
+still refuses any request to change ranks, roles or permissions and flags it to your staff,
+still answers only as the assistant you named and never claims to be anything else, still
+will not speculate or invent facts, and still keeps its short plain-text replies and its
+length limit. Nothing about what @sai is allowed to do has moved. The only thing that
+changed is whether the voice you wrote actually comes through.
+
+**Nothing to install.** This is a change on Server Assistant's side. No plugin update is
+needed.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
+<summary>v6.118.0: settings changes now show up in your log channel</summary>
+
+**What was wrong.** When someone changed an @sai Studio setting (access, tone, attitude,
+identity, knowledge pack, website, the Companion switches) or one of the Discord-side AI
+settings, the change was recorded, but nowhere you could read it. Nothing was posted to your
+server's Discord log channel, which is where server managers actually look.
+
+**What changed.** Each of those changes now posts a **Setting changed** entry to your log
+channel: who made it, which setting, and what it changed to. A change that changes nothing
+posts nothing, so re-saving a panel you did not touch stays quiet.
+
+**Your own writing is never republished.** For the free-text boxes (attitude, knowledge
+pack, greeting, website) the entry shows only the *shape* of the change, for example
+"attitude set (63 characters)". The text itself is never posted. Those boxes can hold notes
+you wrote for your own server, and a log channel is a wider audience than the person who
+wrote them.
+
+**A set of bridge controls is now recorded too, and several of them were not recorded
+anywhere before.** In-game enforcement (the toggle that puts Kick and Ban buttons on
+Minecraft alerts for your staff), the rank-sync master switch, role-to-rank mappings added
+and removed, the server-event and reaction relays, the online-count channel topic, health
+alerts, and the in-game join notice and its text. Role-to-rank mapping is the list that
+decides which Discord role grants which in-game rank, so a record of who changed it is worth
+having.
+
+**How this sits with log verbosity.** On **errors only**, these entries are hidden. On
+**dangerous only**, they are shown: changing what your assistant is told, or which role
+grants which in-game rank, is exactly what that setting is watching for.
+
+**Nothing to install.** This is a change on Server Assistant's side. No plugin update is
+needed.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.117.0: give your in-game assistant a personality, and "In-character" finally has a character to stay in</summary>
 
 **A new Attitude field in @sai Studio.** `/mcdc` → **🤖 @sai Studio** now has an
@@ -2890,7 +2957,87 @@ Everything stays **local to your server**: nothing is shared anywhere. It's **on
 
 <p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.26.0</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
 
-<details class="doc-sec" markdown="1" open data-kind="feature">
+<details class="doc-sec" markdown="1" open data-kind="fix">
+<summary>v6.119.0: the Attitude you wrote for @sai now actually changes how it talks in game</summary>
+
+**What was wrong.** v6.117.0 added the **🎭 Attitude** box to `/mcdc` → **🤖 @sai Studio**.
+Servers that filled it in saw it save correctly, saw it in the Studio panel, and then heard
+no difference in game at all. "A sassy, ill-tempered god who has seen every newcomer make
+the same mistakes for three thousand years" answered in exactly the same flat assistant
+voice as an empty box.
+
+**Why, because it was not what it looked like.** It was not a cache, it was not a stale
+setting waiting on a config push, and there was no second answer path that skipped your
+description. Your text was reaching @sai intact, every single time. The problem was the
+instructions wrapped around it: they described the personality as a fact about @sai and
+then spent far more words on what it was *not* allowed to change than on asking @sai to
+speak that way at all.
+
+**The brevity rules finished the job.** @sai is told to keep replies short, leave out the
+extras, and stop once the question is answered. Nothing anywhere said the voice was exempt.
+Under a tight reply budget a personality reads exactly like an extra, so it was the first
+thing cut.
+
+**What changed.** @sai is now told plainly to adopt the voice in every reply, and the
+reply kinds are named so none of them can be treated as an exception: one-liners, refusals,
+and "I don't know" answers all come back in character. Being brief is no longer a reason to
+drop it, because the voice is *how* @sai spends the words it has, not extra words on top.
+The **In-character** tone got the same treatment, so it now reads as an instruction rather
+than as one more restriction.
+
+**Nothing about containment changed.** Every limit stated when Attitude shipped still holds,
+and still outranks whatever you wrote: @sai refuses any request to change ranks, roles or
+permissions and flags it to your staff, answers only as the assistant you named and never
+claims to be anything else, will not speculate or invent facts or misstate where an answer
+came from, and keeps its short plain-text single-line replies and its length limit. An
+Attitude asking for any of that still gets you nothing but a refusal in a different voice.
+The only thing this release changes is whether your voice comes through.
+
+**Nothing to re-save, nothing to install.** If you already set an Attitude it starts working
+with this release. This is a change on Server Assistant's side and needs no plugin update.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
+<summary>v6.118.0: <code>/mcdc</code> settings changes are now recorded in your log channel</summary>
+
+**What was wrong.** Changing a setting in `/mcdc` left nothing in your server's Discord log
+channel. For the @sai Studio settings the change was recorded, just not anywhere a server
+manager could see it. For a good part of the rest of the panel it was not recorded at all.
+
+**Bridge controls that now leave a record, and did not before.** In-game enforcement (the
+toggle that puts Kick and Ban buttons on Minecraft alerts for your staff), the rank-sync
+master switch, **role-to-rank mappings added and removed**, the server-event relay, the
+reaction relay, the online-count channel topic, health alerts, and the in-game join notice
+along with its text. Role-to-rank mapping deserves calling out: it is the list that decides
+which Discord role grants which in-game rank, and until now nothing anywhere recorded who
+edited it.
+
+**What an entry looks like.** A **Setting changed** post in your log channel saying who
+changed it, which setting, and what it changed to. A change that changes nothing posts
+nothing.
+
+**Your own writing stays out of it.** The free-text boxes (attitude, knowledge pack,
+greeting, website, and the join notice text) record only the *shape* of the change, for
+example "join notice set (48 characters)". The wording you typed is never reposted into the
+channel.
+
+**@sai Studio and the Discord-side AI settings are covered by the same change.** Access,
+tone, attitude, identity, knowledge pack, website and the Companion switches now post to the
+log channel as well.
+
+**How this sits with log verbosity.** On **errors only**, these entries are hidden. On
+**dangerous only**, they are shown, because changing what your assistant is told, or which
+Discord role grants which in-game rank, is precisely what that setting exists to catch. If
+your bridge settings change often you will see more lines than before; **errors only**
+silences them.
+
+**Nothing to install.** This is a change on Server Assistant's side. No plugin update is
+needed.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.117.0: tell @sai who it is with the new Attitude field, and "In-character" finally has a character to stay in</summary>
 
 **Where to find it.** `/mcdc` → **🤖 @sai Studio** → **🎭 Attitude**. It sits beside
