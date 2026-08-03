@@ -156,6 +156,70 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
 <details class="doc-sec" markdown="1" open data-kind="fix">
+<summary>v6.121.0: your security settings, and your Minecraft bridge credentials, are now on the record</summary>
+
+**What was missing.** v6.118.0 started posting a **Setting changed** entry to your log
+channel when someone changed an @sai Studio setting or one of the bridge controls. It left
+two gaps open, and this release closes both of them.
+
+**The security-relevant `/settings` controls are now recorded.** Changing ThreatNet
+auto-protect or its threshold, any of the anti-nuke switches, the scam-image controls, the
+channel allowlist, AutoMod's AI review and its threshold, alt detection, the anti-raid
+thresholds, any Privacy panel toggle, the auto-role new members get on join, or any part of
+the verification gate (the verified role, the mode, self-serve, and the risk thresholds) now
+posts a line naming who changed it and what it changed to. **How much detail your log
+channel shows is itself one of those settings**, so turning the record down is now recorded
+too.
+
+**Linking a Minecraft server, unlinking it, and regenerating its bridge token were
+previously recorded nowhere at all.** Not in your log channel, not in the audit trail, not
+anywhere else. Those are the three highest-value actions on the whole bridge: connecting a
+server, cutting it off, and minting a new credential for it. All three now leave an entry
+naming who did it.
+
+**A credential is handled more carefully than anything else, and is never republished.**
+Free-text boxes such as Attitude have been logged by shape since v6.118.0, for example
+"attitude set (63 characters)". A token does not get even that much: the entry says only
+that a token was **issued**, **replaced** or **revoked**, because a character count of a
+fixed-shape credential tells a reader something about the credential and nothing useful
+about the change.
+
+**Regenerating a token writes two entries, not one.** The old token stops working the moment
+it is revoked, whether or not the new one is minted successfully, so the revocation is
+recorded in its own right rather than only as part of a rotation that went to plan.
+
+**How this sits with log verbosity.** On **errors only**, these entries are hidden. On
+**dangerous only**, they are shown: who changed your verified role, your auto-role, an
+anti-nuke switch or your bridge credentials is exactly what a dangerous-only watcher is
+watching for.
+
+**Not everything is covered yet.** Cosmetic and notification preferences (branding and the
+white-label wizard, emotes, notification toggles, the welcome emoji, the default timezone,
+the Reception banner, the knowledge channel list and the leveling announcement) still post
+nothing. They are on the list.
+
+**Nothing to install.** This is a change on Server Assistant's side, and no plugin update is
+needed.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
+<summary>v6.120.0: the Greeting box in @sai Studio now says what it is</summary>
+
+**Greeting** sat unlabelled between **Tone · how it talks** and **Attitude · who it is**, and
+the word is ambiguous on a product that also has a Discord welcome and a Minecraft join
+notice. It is neither of those. It now reads **Greeting · its opening line**: the line @sai
+opens with on its first reply in a conversation, up to 200 characters.
+
+**It now points at where to set it, too.** Greeting is the only field on that panel with no
+button of its own, so the value carries **✏️ Identity**, the button whose box holds it, next
+to the assistant's name.
+
+Wording only. The greeting itself is unchanged, and there is nothing to re-save or install.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v6.119.0: the Attitude you gave @sai now actually changes how it talks</summary>
 
 **What was wrong.** v6.117.0 added the **🎭 Attitude** box to @sai Studio. If you filled it
@@ -2958,6 +3022,63 @@ Everything stays **local to your server**: nothing is shared anywhere. It's **on
 <p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.26.0</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
 
 <details class="doc-sec" markdown="1" open data-kind="fix">
+<summary>v6.121.0: linking, unlinking and regenerating your bridge token are now on the record</summary>
+
+**What was wrong.** Linking a Minecraft server to a Discord channel, unlinking it, and
+regenerating its bridge token were recorded **nowhere at all**. Not in your server's Discord
+log channel, not in the audit trail, not anywhere you could go back and read later. Those
+three are the highest-value actions on the whole bridge: connecting a server, cutting it
+off, and minting a new credential for it. Nothing said who had done any of them, or when.
+
+**What changed.** Each of the three now posts an entry naming the staff member who did it
+and which linked channel it applied to, alongside the bridge settings v6.118.0 already
+covered.
+
+**Your bridge token is never republished, and neither is a setup code.** Free-text boxes such
+as the @sai Attitude have been logged by shape since v6.118.0, for example "attitude set (63
+characters)". A credential does not get even that much: the entry says only that a token was
+**issued**, **replaced** or **revoked**. A character count of a fixed-shape credential tells
+a reader something about the credential itself and nothing useful about the change, so it is
+left out. The plugin has refused to echo a setup code back into in-game chat since v0.24.0,
+and this holds the same line on the Discord side.
+
+**Regenerating writes two entries, not one.** Your old token stops working the moment it is
+revoked, whether or not the new one is minted successfully. Recording only rotations that
+went to plan would leave the revocation of a live bridge token unrecorded, which is the case
+you would most want to look up.
+
+**The security-relevant `/settings` controls came along too.** ThreatNet auto-protect and its
+threshold, the anti-nuke switches, the scam-image controls, the channel allowlist, AutoMod's
+AI review, alt detection, the anti-raid thresholds, the Privacy toggles, the auto-role on
+join and the verification gate all now post a line as well. This release also picked up the
+bridge's chat translation target, which the v6.118.0 sweep of that panel missed.
+
+**How this sits with log verbosity.** On **errors only**, these entries are hidden. On
+**dangerous only**, they are shown, because who linked or unlinked your server and who
+replaced its token is exactly what a dangerous-only watcher is watching for.
+
+**Nothing to install.** This is a change on Server Assistant's side and needs no plugin
+update.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
+<summary>v6.120.0: the Greeting box in <code>/mcdc</code> → @sai Studio now says what it is</summary>
+
+Asked what **Greeting** did, the panel had no answer. It sat unlabelled between **Tone · how
+it talks** and **Attitude · who it is**, and the word reads like something sent when a player
+joins, which it is not. It now reads **Greeting · its opening line**: the line @sai opens
+with on its first reply in a conversation, up to 200 characters.
+
+**And where to change it.** Greeting is the only field on that panel with no button of its
+own, so it now carries **✏️ Identity**, the button whose box holds it, next to the
+assistant's name.
+
+Panel wording only. The greeting behaves exactly as before, and no plugin update is needed.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v6.119.0: the Attitude you wrote for @sai now actually changes how it talks in game</summary>
 
 **What was wrong.** v6.117.0 added the **🎭 Attitude** box to `/mcdc` → **🤖 @sai Studio**.
