@@ -3019,9 +3019,48 @@ Everything stays **local to your server**: nothing is shared anywhere. It's **on
 
 <div class="cl-panel" id="cl-mcdc" role="tabpanel" aria-labelledby="tab-mcdc" markdown="1" hidden>
 
-<p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.26.0</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
+<p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.27.0</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
 
 <details class="doc-sec" markdown="1" open data-kind="fix">
+<summary>Plugin v0.27.0: typing a question no longer brings up a list of player names over the chat</summary>
+
+**What was wrong.** Asking the assistant something in game popped up a box of online player
+names over **every word you typed**. Type `/ody how do i build a farm` and the suggestion box
+appeared on `how`, then `do`, then `i`, and so on, sitting over the chat area and putting a
+player name under Tab and Enter while you were still mid-sentence.
+
+**Why it happened.** A command that offers no suggestions of its own does not end up
+suggesting nothing: Minecraft falls back to matching whatever you last typed against the
+list of players currently online, and it does that at every word. The ask command takes one
+long free-text question, so it got the player list on all of it.
+
+**What changed.** The plugin now answers for its own commands:
+
+- `/askody` (and `/ody`, `/asksai`) suggests **nothing**, anywhere in the question. Its
+  argument is a sentence, so there is nothing a suggestion could usefully offer.
+- `/saportal` suggests nothing; it takes no arguments.
+- `/sai` now offers `companion`, then `on` and `off`.
+- `/mcdc` now offers `link`, `reload`, `status`, `update` and `version`, plus `cancel` after
+  `update`, and only to staff who can already run it.
+
+Those last two are a small bonus rather than part of the fix: the real subcommands had been
+buried under the player list too, so nobody had ever been shown them.
+
+**`/mcdc link` deliberately suggests nothing after the word itself.** What follows it is your
+setup code and relay URL, and a popup is exactly where a secret gets read over a shoulder or
+picked up in a recording. The plugin has refused that command in in-game chat since v0.24.0
+for the same reason.
+
+**Nothing about who may use the assistant changed**, and @sai's appearance in the `/msg`
+suggestion list is untouched: that is a separate mechanism on a vanilla command and it
+behaves exactly as before.
+
+**Nothing to do.** Auto-update will pick this up, or run `/mcdc update` from your server
+console.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v6.121.0: linking, unlinking and regenerating your bridge token are now on the record</summary>
 
 **What was wrong.** Linking a Minecraft server to a Discord channel, unlinking it, and
