@@ -155,7 +155,42 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
-<details class="doc-sec" markdown="1" open data-kind="feature">
+<details class="doc-sec" markdown="1" open data-kind="fix">
+<summary>v6.127.0: the "out of AI tokens" notice now tells you how big your allowance was, and asks once instead of twice</summary>
+
+The messages that tell you your server's AI allowance is running low or has been used up
+have been rewritten. Nothing about how much AI you get has changed, only what these
+notices say.
+
+**"100% used" now has a number attached.** The old wording gave you a percentage of
+something it never named, so there was no way to tell whether you had spent a little or a
+lot. Each notice now states the actual size of the allowance it is talking about, read
+from your server's own plan. A server on the free trial sees the size of that one-time
+trial. A server on Premium sees its monthly figure and what arrives at the next refresh.
+On the rare occasion the figure genuinely cannot be read, the notice leaves it out rather
+than quoting one that might be wrong for your plan.
+
+**The reassurance comes first now.** "Core moderation keeps running as normal", covering
+AutoMod, anti-raid, warnings, your audit log and your slash commands, used to sit at the
+bottom underneath the purchase information. It has moved up, above anything about buying,
+because it is the line that actually answers the worry. The notices are shorter overall.
+
+**One offer, not the same one twice.** Since v6.124.0 these notices had been making the
+same purchase suggestion twice within a few lines, and naming `/premium` twice with it.
+That doubling reached seven different notices, not only the one that was reported, so all
+seven were fixed together. Each now tells you where to buy once.
+
+**The free trial is described as one-time.** Two places implied the free allowance
+refreshes on a date. It does not, and they no longer say it does.
+
+**Servers using their own AI key get none of these notices.** A server on its own key has
+no allowance from us to run out, so a notice about one was wrong in every respect,
+including the size it quoted and the claim that more would arrive later. Those servers are
+no longer sent it.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.126.0: welcome every new member in a channel you pick, and tell your staff each time someone arrives</summary>
 
 Two new things you can switch on, both off until you do, and both set up in one place:
