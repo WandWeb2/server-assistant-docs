@@ -156,6 +156,30 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
 <details class="doc-sec" markdown="1" open data-kind="fix">
+<summary>v6.128.0: the AI notices now tell a purchased token pack apart from your monthly allowance</summary>
+
+If your server has bought an AI token pack, the notices about your AI allowance now keep
+the two figures straight. Nothing about how much AI you get has changed, only what these
+notices show. Where a notice says how much you had in total, it counts your allowance and
+any packs together. Where it says what arrives on your renewal date, it names your monthly
+allowance on its own, because that is what arrives then. A server holding a pack used to
+be quoted the wrong figure for its renewal.
+
+**Your pack balance gets its own line.** When there is a pack balance, the notice says how
+much of the total came from packs, on a line of its own rather than tucked into the
+sentence about your renewal date.
+
+**Also fixed: `/premium` could show a Premium server another plan's wording.** Once a pack
+pushed a server's total past a certain size, its usage bar could read "unlimited (BYOK)",
+which describes a different plan entirely. It now shows your real usage against your real
+total.
+
+**If you have never bought a pack, nothing changes.** Every one of these messages reads
+exactly as it did before.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v6.127.0: the "out of AI tokens" notice now tells you how big your allowance was, and asks once instead of twice</summary>
 
 The messages that tell you your server's AI allowance is running low or has been used up
