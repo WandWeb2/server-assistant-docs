@@ -155,7 +155,44 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
-<details class="doc-sec" markdown="1" open data-kind="fix">
+<details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>v6.129.0: welcome a player in Minecraft chat the first time Server Assistant sees them join</summary>
+
+**A newcomer can now be greeted in game.** When someone joins your Minecraft server for the
+first time, Server Assistant can post a welcome into the server's chat. It goes to
+**everyone playing**, not privately to the person who just arrived, because the point is
+that the regulars notice a new face and get the chance to say hello back.
+
+**You write the wording.** `/mcdc` has a new **First join** page with three things on it: a
+switch, the message itself, and an optional link. Write `[player]` where you want the name
+of the person who just joined, and `[server]` where you want your server's name. Leave the
+message box empty and a friendly built-in line is used instead, so flicking the switch on
+its own is enough to get something sensible.
+
+**The link is optional and travels with the message.** Add one and it arrives alongside the
+welcome, which makes it a good spot for your rules page, your map, or wherever else you
+would rather a newcomer looked first.
+
+**Off until you switch it on.** Nothing appears on any server until staff turn it on
+deliberately, so no welcome shows up by surprise.
+
+**It greets the first join Server Assistant has seen, not a player's first join ever.**
+Worth knowing before you flick the switch, because it is the one part that surprises
+people. Server Assistant only knows about joins from the point this feature reaches you, so
+on the day you turn it on it has not seen any of your regulars yet. Each of them gets one
+welcome, on their next login, and then never again. After the first few days it is greeting
+genuine newcomers only. That is expected behaviour rather than a fault, and if you would
+rather your regulars did not get one, it is worth switching on at a quiet hour.
+
+**A player who changes their name is not welcomed a second time.** Renaming is not treated
+as a new arrival.
+
+**Nothing to install.** This is a change on Server Assistant's side and needs no plugin
+update.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v6.128.0: the AI notices now tell a purchased token pack apart from your monthly allowance</summary>
 
 If your server has bought an AI token pack, the notices about your AI allowance now keep
@@ -3245,7 +3282,49 @@ Everything stays **local to your server**: nothing is shared anywhere. It's **on
 
 <p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.27.0</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
 
-<details class="doc-sec" markdown="1" open data-kind="fix">
+<details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>v6.129.0: your bridge can welcome a player in Minecraft chat the first time it sees them join</summary>
+
+**A new arrival can now be greeted in game, not just noted in Discord.** The bridge has
+always been able to mirror a "joined the game" line into your Discord channel, but nothing
+ever happened on the Minecraft side, so nobody already playing had any signal that the
+person who just spawned in had never been there before. Now the bridge can post a welcome
+into the server's chat.
+
+**It is a broadcast to the whole server.** Everyone playing sees it, rather than it being a
+quiet note to the person who just arrived. That is the point of it: the people already on
+the server get the chance to say hello back.
+
+**Staff write the wording.** `/mcdc` has a new **First join** page holding three things: a
+switch, the message itself, and an optional link. Write `[player]` where you want the name
+of the person who just joined, and `[server]` where you want your server's name. Leave the
+message box empty and a friendly built-in line is used instead, so turning the switch on is
+by itself enough to get something sensible into chat.
+
+**The optional link arrives with the message.** Add one and it is delivered alongside the
+welcome, so a newcomer's very first line can also point at your rules, your map, or
+whatever you would rather they read first.
+
+**Off until you switch it on.** No linked server starts welcoming anyone until its staff
+turn this on deliberately.
+
+**It greets the first join Server Assistant has seen, not a player's first join ever.**
+This is the part worth reading before you flick the switch. The bridge only knows about
+joins from the point this update reaches you, so on the day you turn it on it has not yet
+seen any of your regulars. Each of them gets one welcome, on their next login, and then
+never again. Within a few days it is greeting genuine newcomers only. That is expected
+behaviour rather than a fault, and if you would rather your regulars did not each get one,
+switch it on at a quiet hour.
+
+**A rename is not a new arrival.** A player who changes their name is not welcomed a second
+time.
+
+**Nothing to install.** This is a change on Server Assistant's side and needs no plugin
+update.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>Plugin v0.27.0: typing a question no longer brings up a list of player names over the chat</summary>
 
 **What was wrong.** Asking the assistant something in game popped up a box of online player
