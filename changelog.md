@@ -156,6 +156,37 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
 <details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>v6.125.0: your weekly Pulse now always shows what ThreatNet did across the whole network, not only what your server caught</summary>
+
+**The network figures now appear on every Pulse.** The ThreatNet section of your weekly
+Pulse starts with your own server, as it always has, and the fleet-wide totals now sit
+underneath it every week without exception. They used to be hidden whenever those totals
+were zero, which meant a server that caught nothing saw no sign the protection was
+working at all. A quiet week on your server is not a quiet network, and the digest now
+says so.
+
+**Every figure states the period it covers**, because they genuinely differ. Messages
+scanned is the last 7 days. Flagged actors and blocked scam images are all-time totals
+across the network. The shared blocklist size is where it stands right now. The label
+goes on each line rather than on the section, so an all-time number is never read as a
+weekly one.
+
+**The "messages scanned" line only appears once there is a full week behind it.** It is
+counted from the moment this update lands, and a partial week is never shown under a
+7-day label, so expect that one line to turn up seven days after the update reaches you.
+Nothing is missing in the meantime.
+
+**When the figures cannot be read, it says so.** If the totals are genuinely unavailable
+the section tells you that instead of printing zeros, since a row of zeros would look
+like an idle network rather than a missing reading.
+
+**On the blocklist figure.** ThreatNet never stores scam images. It keeps a perceptual
+fingerprint of each one, which is enough to recognise the same image turning up
+elsewhere and nothing more, so that line counts fingerprints on the shared blocklist.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.124.0: buy an AI token pack from your portal, and every "out of tokens" notice now says where to get more</summary>
 
 **Token packs are now on the web portal too.** You can buy an AI token pack from your
