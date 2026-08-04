@@ -156,6 +156,52 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
 <details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>v6.126.0: welcome every new member in a channel you pick, and tell your staff each time someone arrives</summary>
+
+Two new things you can switch on, both off until you do, and both set up in one place:
+`/settings` → **Members** → **New Members** → **Welcome & celebration**.
+
+**A public welcome, in your own words.** Pick the channel it lands in, write the message
+once, and every new member gets it there. `[usermention]`, `[username]`, `[servername]`
+and `[membercount]` fill themselves in for each person, exactly as they do in your
+onboarding DM, so one piece of writing covers everyone.
+
+**If you have not picked a channel, nothing is posted.** There is no guessed fallback,
+and that is deliberate: a message you wrote for the public, landing in a channel we chose
+for you, could put it in front of the wrong people. The settings page warns you when the
+welcome is switched on but has nowhere to go.
+
+**A celebration for your staff, for every arrival.** A short line as each person joins,
+so nobody has to watch the member list to notice a new face worth greeting. It goes to
+your staff chat unless you point it somewhere else, and you can keep the built-in wording
+or write your own.
+
+**Neither message fires for an arrival still under review.** No welcome and no
+celebration during a raid, for anyone verification is holding at the door, or for an
+account the alt detector flagged for a closer look. Publicly celebrating an account your
+server has just quarantined tells that account it got in, and tells your staff the
+opposite of the alert sitting right next to it.
+
+**A rush of joins cannot bury your staff chat.** After five celebrations in a minute the
+individual lines stop, and the rest of the burst is reported moments later as a single
+"N more members joined" line. The per-member wording is lost for those joins, but the
+count never is, so you always see how many people actually arrived.
+
+**Premium: let SAi say it in its own voice.** Switch on the SAi variation and your
+welcome is retold in your assistant's persona, so each new member gets a slightly
+different greeting instead of the same line every time. Your own wording is always the
+fallback: if the AI is unavailable, out of allowance, or comes back with nothing usable,
+the message you wrote is posted exactly as you wrote it. A new member never sees a blank
+or half-finished welcome. The switch saves on any plan and takes effect on Premium.
+
+**Nothing changes until you turn it on.** Both features start off, so no existing server
+begins posting anything on its own. Every change here is recorded in your log channel
+like any other setting, and your existing `/onboarding` welcome DM is untouched and keeps
+working alongside all of this.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.125.0: your weekly Pulse now always shows what ThreatNet did across the whole network, not only what your server caught</summary>
 
 **The network figures now appear on every Pulse.** The ThreatNet section of your weekly
