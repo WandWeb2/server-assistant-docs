@@ -156,6 +156,30 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
 <details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>v6.130.0: hand every player who joins your Minecraft server a clickable Discord invite</summary>
+
+**Your Discord invite, in front of the people who are not in it yet.** `/mcdc` has a new
+**🔗 Discord link** button next to **Join notice**. Put your invite in it, and every player
+who joins your Minecraft server gets it as a link they can click, sent just to them, a
+moment after the join notice.
+
+**It goes out on every join, not only the first one.** That is deliberate, and it is the
+difference between this and the **First join** welcome added in the previous release. The
+regular who has played for months and still is not in your Discord is exactly the person
+this is for, and they have not been a new arrival for a long time.
+
+**It belongs to the join notice.** Switch **Join notice** off and the link stops going out
+with it, because there is nothing left for it to sit alongside. If you save a link while
+the notice is off, Server Assistant tells you so there and then rather than leaving you to
+work it out from a quiet server.
+
+**Nothing changes until you add an address.** The button is there on every linked server,
+but no player sees anything until staff put an invite in it, and the change is recorded in
+your log channel like any other setting.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.129.0: welcome a player in Minecraft chat the first time Server Assistant sees them join</summary>
 
 **A newcomer can now be greeted in game.** When someone joins your Minecraft server for the
@@ -3283,6 +3307,34 @@ Everything stays **local to your server**: nothing is shared anywhere. It's **on
 <p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.27.0</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
 
 <details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>v6.130.0: the in-game join notice can carry your Discord invite as a clickable link</summary>
+
+**A link players can click, rather than an address they have to retype.** The join notice
+your bridge shows arriving players is drawn by the plugin as plain text, so an invite typed
+into the notice itself reaches them as characters to copy out of chat by hand. `/mcdc` now
+has a **🔗 Discord link** button beside **Join notice**: put your invite there and the
+bridge sends it to each arriving player as a proper clickable link, privately, just after
+the notice.
+
+**Every join, not just a player's first.** The **First join** welcome from the previous
+release fires once per player, ever. This one goes out each time someone joins, because the
+regular who is still not in your Discord stopped being a new arrival long ago.
+
+**It is part of the join notice, and follows it.** Turn **Join notice** off and the link
+goes quiet with it. Save a link while the notice is off and the bridge says so at the time,
+rather than letting you find out by watching players arrive to silence.
+
+**No plugin update needed.** This works with the plugin you already have. The link arrives a
+moment behind the notice rather than as part of it, which is the one visible sign that the
+two are sent separately, and a player who joins and quits within a second or two may not see
+it.
+
+**Nothing is sent until staff add an address**, and the change is recorded in your log
+channel like any other setting.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.129.0: your bridge can welcome a player in Minecraft chat the first time it sees them join</summary>
 
 **A new arrival can now be greeted in game, not just noted in Discord.** The bridge has
