@@ -155,7 +155,40 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
-<details class="doc-sec" markdown="1" open data-kind="fix">
+<details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>v6.124.0: buy an AI token pack from your portal, and every "out of tokens" notice now says where to get more</summary>
+
+**Token packs are now on the web portal too.** You can buy an AI token pack from your
+portal as well as from `/premium` in Discord. Both routes work, so use whichever suits
+you. Nothing about the Discord buttons has changed, the portal is simply a second way in.
+
+**Any member can buy one, not just staff.** The tokens land on your **server's** shared
+balance rather than on the account of whoever paid, so if the server runs dry in the
+middle of a conversation, the person who noticed can top it back up instead of hunting
+down an admin first. **A pack never expires**, so anything you do not use this month is
+still there next month.
+
+**Every "you are out of AI tokens" message now answers both questions at once**: when
+your allowance comes back, and where to get more in the meantime. There are several
+places you can meet that message, in a reply from @sai, in a heads-up to your staff
+channel as the allowance runs low, or when `/imagine` has nothing left to draw with, and
+which half of the answer you got used to depend on which one you happened to hit. They
+all say both now.
+
+**The free 150K trial is one-time, and the notices now say so.** It is a lifetime trial
+rather than a monthly allowance, and the messages that went quiet on the subject used to
+leave you waiting for a refresh date that was never coming. They now tell you plainly
+that the trial does not refresh, and point you at a pack if you want to keep going.
+Plans that genuinely do refresh each month still name the date they always did, worded
+exactly as before.
+
+**Nothing changes if you bring your own AI key.** You pay your own provider directly, so
+there is no allowance from us to run out of and nothing for us to sell you a top-up for.
+You are never shown a token pack.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v6.123.0: reacting to one of @sai's messages no longer gets a reply</summary>
 
 **What was wrong.** Replying to something @sai posted with just an emoji, a sticker or a
