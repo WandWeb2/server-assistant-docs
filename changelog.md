@@ -155,7 +155,28 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
-<details class="doc-sec" markdown="1" open data-kind="feature">
+<details class="doc-sec" markdown="1" open data-kind="fix">
+<summary>v6.131.0: "out of AI tokens" is one line in Minecraft, and its link works</summary>
+
+**A four-paragraph notice was being printed into Minecraft chat.** When a server's AI
+allowance ran out, the full Discord notice went in game too: the figures, the refresh
+date, the upgrade pitch and the purchase routes, all over the top of whatever players
+were talking about. In game it now says one line, in the assistant's own voice: "My
+battery is flat rn but I'll be back on [date], or charge me up now [here]".
+
+**[here] opens your portal**, so any member can top the server up on the spot. On plugin
+v0.28.0 or newer it is a clickable link in chat.
+
+**Discord is unchanged.** The full notice, with your figures, your refresh date and both
+purchase routes, still arrives in Discord exactly as before. Only the Minecraft line got
+shorter.
+
+**No date is invented.** A free trial is one-time, and the free-model ceiling has no
+billing date, so on those the line simply leaves out the "back on" part.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.130.0: hand every player who joins your Minecraft server a clickable Discord invite</summary>
 
 **Your Discord invite, in front of the people who are not in it yet.** `/mcdc` has a new
@@ -3304,9 +3325,35 @@ Everything stays **local to your server**: nothing is shared anywhere. It's **on
 
 <div class="cl-panel" id="cl-mcdc" role="tabpanel" aria-labelledby="tab-mcdc" markdown="1" hidden>
 
-<p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.27.0</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
+<p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.28.0</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
 
-<details class="doc-sec" markdown="1" open data-kind="feature">
+<details class="doc-sec" markdown="1" open data-kind="fix">
+<summary>Plugin v0.28.0 + v6.131.0: links the bot sends are clickable again, and the out-of-tokens line is one line</summary>
+
+**Links attached to a bot message were being dropped.** The plugin could make a `[wiki]`
+citation clickable, and that turned out to be all it could make clickable: a message
+carrying a link but no `[wiki]` marker had its address quietly discarded and arrived as a
+sentence with nothing after it. Two recent features were affected, the **first join**
+welcome's optional link and the **join notice's Discord invite**, both of which were
+described here as clickable when they were not.
+
+**Plugin v0.28.0 fixes it for both.** Any bot message carrying a link now gets a short
+clickable chip at the end of the line. A `[wiki]` citation looks and behaves exactly as it
+did, and nothing changes for ordinary bridged chat. **Servers on auto-update get this
+without touching anything**, and both features start working on the existing bot.
+
+**The out-of-tokens notice is now one line in game.** It used to print the entire Discord
+notice into Minecraft chat. It now reads "My battery is flat rn but I'll be back on
+[date], or charge me up now [here]", with [here] opening your portal.
+
+**Why the link is a chip and not the address.** A full URL ate a third of a chat line, so
+the chip is short and the address is on hover, where it stays readable and copyable. On a
+plugin older than v0.28.0 the marker prints as plain text, so nothing is lost, it just
+cannot be clicked.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.130.0: the in-game join notice can carry your Discord invite as a clickable link</summary>
 
 **A link players can click, rather than an address they have to retype.** The join notice
