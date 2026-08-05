@@ -156,6 +156,28 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
 <details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>v6.135.0: one click links a player's Discord and Minecraft accounts</summary>
+
+**Linking used to mean typing a code in game**, which almost nobody did. Most players
+therefore had no linked account, so anything SA recorded about them in Minecraft had
+nowhere to go on the Discord side.
+
+**Now the Discord link in your join notice does both jobs.** A player clicks it once,
+approves on Discord's own screen, and lands in your Discord with their accounts connected.
+No code, no second step.
+
+**What that gets you.** Warnings and punishments from Minecraft land on that member's
+record automatically, so `/warnings` shows one history instead of two halves.
+
+**The player chooses.** Nothing is linked until they approve it on Discord, and the chat
+line tells them what the click does before they click it.
+
+**Nothing to set up** beyond the Discord link you already added in `/mcdc`. If anything
+goes wrong the link simply opens your Discord, exactly as it did before.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.134.0: bans and kicks made on the server itself no longer go unnoticed</summary>
 
 **Server Assistant only knew about punishments it carried out.** If a player was banned or
@@ -3402,6 +3424,27 @@ Everything stays **local to your server**: nothing is shared anywhere. It's **on
 <p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.29.0</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
 
 <details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>v6.135.0: the join notice's Discord link now connects the player's account too</summary>
+
+**No plugin update needed.** This is a Server Assistant change.
+
+**One click instead of a typed code.** The Discord link a player receives when they join
+now opens a page that asks Discord for their permission, connects their Minecraft account
+to their Discord account, and then takes them to your invite. Previously they had to type a
+linking code in game, which in practice meant most players never linked at all.
+
+**Why it is worth having.** A linked player's in-game warnings and punishments go onto their
+Discord record, so staff see one history rather than two disconnected halves.
+
+**Consent stays with the player.** Nothing is connected until they approve it on Discord's
+own screen, and the in-game line says what the click will do.
+
+**If anything fails**, the link still just opens your Discord, so the player never loses the
+thing they clicked for.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>Plugin v0.29.0 + v6.134.0: a ban or kick made on the server is reported to Discord</summary>
 
 **Punishments that did not come from SA were invisible.** An operator's `/ban` in game, a
