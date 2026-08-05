@@ -155,7 +155,28 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
-<details class="doc-sec" markdown="1" open data-kind="feature">
+<details class="doc-sec" markdown="1" open data-kind="fix">
+<summary>v6.137.0: your welcome and celebration messages have one length limit, not two</summary>
+
+**The two places you can write them disagreed on how long they could be.** In Discord you
+could write up to 1,500 characters; the portal has always stopped at 1,000. Anything
+between the two could be written in Discord and then never saved from the portal: the save
+simply failed, without saying which message was too long or why.
+
+**Both now stop at 1,000 characters**, so a message you can write in one place is a message
+you can save in the other.
+
+**If one of yours is already longer than 1,000 characters**, opening it in Discord now shows
+it shortened to fit, and saving it that way keeps the shortened version. SA tells you the
+moment that happens, with the length it was and the limit it now has, so you can decide what
+to cut rather than discover the change later.
+
+**A message already under 1,000 characters is unaffected.** It opens, saves and posts exactly
+as it did before, and there is no extra notice to read.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.136.0: a banned player can now find their appeal</summary>
 
 **The appeal link is on the "you are banned" screen.** Whenever a banned player tries to
@@ -3347,6 +3368,12 @@ Everything stays **local to your server**: nothing is shared anywhere. It's **on
 <p class="cl-intro">What's changed in the <strong>Server Assistant portal</strong>: the web dashboard you sign into with your Discord account.</p>
 
 <details class="doc-sec" markdown="1" open data-kind="fix">
+<summary>v1.5: Long messages get a box you can write in</summary>
+- **A one-line field is no place for a thousand characters.** Editing your welcome message or your join-celebration message meant typing into a single-line box and scrolling sideways through the lot, which made writing a greeting that runs over several lines genuinely awkward.
+- **Any setting with a large character allowance now opens as a resizable text area**, with its label above it and the box using the full width of the row. The Premium settings tab works the same way.
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v1.4: The level-up channel is editable at last</summary>
 - **"Level-up channel" was greyed out, and should not have been.** The field sat in Settings, Leveling with a tooltip describing what it does, and no way to type anything into it. Every other greyed field on that page is greyed because a channel picker is still to come; this one had simply been swept up with them by mistake, and stayed that way for a long time.
 - **It works now.** Choose where level-up messages post, or leave it blank to keep them in whichever channel the member levelled up in. Nothing else about leveling changed, and if you never wanted a separate channel there is nothing to do.
