@@ -240,8 +240,7 @@ Need extra headroom without changing plans? Top-ups never expire and stack on an
 **Founding servers:** servers that joined during the beta are grandfathered with **12 months of free Premium**, applied automatically. This window has closed for new servers, but the free tier and 150K trial are open to everyone.
 
 **Payment**
-- **Stripe**: credit/debit card, available now.
-- **Discord App Subscriptions**: pay through Discord *(available when Server Assistant reaches 75 server installs)*.
+- **Stripe**: credit/debit card. All subscriptions and top-up packs go through Stripe Checkout.
 
 Premium is per-server. Cancel anytime, no charge if you cancel before your 150K trial runs out.
 
@@ -272,7 +271,7 @@ You drop to the free tier. If your 150K lifetime trial was already used, AI feat
 </details>
 
 <details class="doc-sec"><summary>Do prices include tax?</summary>
-No: applicable VAT, GST, or sales tax is added at checkout based on your billing region. Stripe and Discord calculate and collect it automatically.
+No: applicable VAT, GST, or sales tax is added at checkout based on your billing region. Stripe calculates and collects it automatically.
 </details>
 
 ---

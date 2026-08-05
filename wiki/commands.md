@@ -45,6 +45,7 @@ them with autocomplete, or open **`/help`** for a role-aware view of what you ca
 | **`/purge`** | Bulk-delete recent messages, or Smart AI cleanup |
 | **`/info`** | Show profile info for a user |
 | **`/altguard`** | Repeat-offender detection, flag/auto-ban likely ban-evading alts on join |
+| **`/threatnet`** | ThreatNet: check your own status (`status`), or configure Premium auto-protect (`autoban`) |
 | **`/role`** | Add or remove a role from a member |
 | **`/nick`** | Change a user's nickname (blank to reset) |
 
@@ -61,6 +62,7 @@ them with autocomplete, or open **`/help`** for a role-aware view of what you ca
 | Command | What it does |
 |---|---|
 | **`/roll`** | Start a group loot roll, Need / Greed / Pass ([guide]({{ '/wiki/roll/' | relative_url }})) |
+| **`/tickets`** | In-server private support tickets: `setup` the panel, `questions` (Premium), `add` a user mid-ticket (Premium) ([guide]({{ '/wiki/tickets/' | relative_url }})) |
 | **`/emote`** · **`/e`** · **`/cry`** · **`/hug`** · **`/dance`** | Post a themed GIF emote ([guide]({{ '/wiki/emotes/' | relative_url }})) |
 | **`/emotestyle`** | Set your personal default GIF theme |
 | **`/meme`** | Post a meme matching your search |
@@ -86,6 +88,7 @@ them with autocomplete, or open **`/help`** for a role-aware view of what you ca
 | Command | What it does |
 |---|---|
 | **`/mcdc`** | Set up & customize the Minecraft ↔ Discord bridge: channel, plugin token, events, translation, @sai Studio, rank sync (owner / Manage Server) |
+| **`/mcban`** · **`/mckick`** | Ban or kick a player on the linked Minecraft server **by name**, even if they were never flagged (staff, with the Enforcement toggle on) |
 | **`/online`** | See who's currently on the linked Minecraft server. Anyone can run it, **in the bridged channel** |
 | **`/link`** | Get a one-time code to link your Minecraft account to Discord (opt-in, anyone) |
 | **`/unlink`** | Disconnect your linked Minecraft account (anyone, on themselves) |
@@ -114,7 +117,7 @@ Right-click a user or message → **Apps ▸**:
 |---|---|---|
 | **View Info** | User | Profile, roles, joined date, warning + note counts |
 | **View Warnings** | User | Full warning history |
-| **Message Report** | Message | Report a message to staff |
+| **Message Report** | Message | Private AI context summary of the message, with one-tap follow-up actions |
 | **Translate** | Message | Translate the message |
 
 ## See also

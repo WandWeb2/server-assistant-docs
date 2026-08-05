@@ -43,7 +43,7 @@ Give us enough to help on the first reply:
 1. **What you tried**: the exact command (e.g. `/warn @user reason: …`)
 2. **What you expected**, and **what actually happened**
 3. **Any error message** the bot showed
-4. **The bot version**: run `/info` in your server
+4. **The bot version**: run `/whatsnew` in your server (the footer shows it)
 
 Redact tokens, API keys, or sensitive user IDs before posting.
 

@@ -71,7 +71,7 @@ the private channel where you help them, and the close with its saved transcript
         </div>
       </div></div>
     </div>
-    <p class="wiz-caption"><strong>The intake form.</strong> Clicking the button opens this short pop-up. The free tier asks one question (<em>"How can we help you?"</em>); Premium servers can ask up to <strong>four</strong>. The first is always required. One open ticket per member: click again while one's open and the bot points you to it.</p>
+    <p class="wiz-caption"><strong>The intake form.</strong> Clicking the button opens this short pop-up. The free tier asks one question (<em>"How can we help you?"</em>); Premium servers can ask up to <strong>four</strong>. The first is always required. A member can hold more than one open ticket (two unrelated problems get two tickets); if you'd rather cap that, set <strong>Max open tickets per member</strong> in <code>/tickets</code> → Edit panel.</p>
   </div>
 
   <div class="wiz-step" data-step="3 · The private ticket channel opens">

@@ -738,6 +738,6 @@ configurable per server.</p>
 ## See also
 
 - [The `/setup` wizard]({{ '/wiki/setup/' | relative_url }}): configure channels, staff roles and anti-raid in about a minute
-- [Settings &amp; dashboards]({{ '/wiki/' | relative_url }}): AutoMod, the punishment ladder and per-feature panels *(coming soon)*
-- [AI &amp; intelligence]({{ '/wiki/' | relative_url }}): how AI features like Smart purge are tiered and metered *(coming soon)*
+- [Settings]({{ '/wiki/settings/' | relative_url }}): AutoMod, the punishment ladder and per-feature panels
+- [SAi &amp; AI features]({{ '/wiki/ai/' | relative_url }}): how AI features like Smart purge are tiered and metered
 - [Back to the Wiki hub]({{ '/wiki/' | relative_url }})

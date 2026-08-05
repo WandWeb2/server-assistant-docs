@@ -131,24 +131,41 @@ and the assistant.
 ## Moderate from Discord {#moderate-from-discord}
 
 <span class="cmd-tag free">FREE</span> &nbsp;When the filter flags a Minecraft
-player — in chat or on any of the other surfaces in
-[Keeping in-game text clean & safe](#safety) — staff see **Kick** and **Ban in-game**
-buttons on the flag alert and can
-action the player **right on your Minecraft server** — no console needed. It's
+player (in chat or on any of the other surfaces in
+[Keeping in-game text clean & safe](#safety)), staff see **Kick &amp; Warn** and
+**Ban in-game** buttons on the flag alert and can
+action the player **right on your Minecraft server**, no console needed. It's
 **off by default**: turn it on with the **Enforcement** toggle in the `/mcdc`
-panel. Each button is **permission-gated** — only staff who already have the
+panel. Each button is **permission-gated**: only staff who already have the
 matching kick/ban permission can click it. Carrying the action out in-game needs
 the companion plugin **v0.5.0** or newer (it updates itself if auto-update is on).
 
-Every MCDC moderation action — a **Kick** or **Ban** taken from an alert, and the
-flag alerts themselves — is recorded in your server's **log channel** and **audit
-trail**, exactly like native Server Assistant moderation, so there's a full record of
-what happened and who acted.
+**You can also act on a player who was never flagged.** **`/mcban <player> <reason>`**
+and **`/mckick <player> <reason>`** kick or ban **by player name**, for the griefer
+who never tripped a filter and isn't in your Discord. Same opt-in, same permission
+gates, and the action goes on the same record as the buttons.
 
-**Players can appeal.** When someone is banned or kicked, the disconnect message
-they see includes a **one-time link** to a web appeal form. If they submit it,
-their appeal reaches your staff to review — no Discord account required. The link
-is single-use and expires.
+**Punishments announce in game.** When Server Assistant kicks or bans someone
+in-game, one line is broadcast to game chat, for example `Griefer was banned by
+Staff.` It names the **player and the action only**: never the reason (which often
+quotes the offending text) and never the individual moderator (who is already on your
+audit trail). Only punishments Server Assistant itself issues are announced; a ban
+from your console or another plugin is left to that tool's own messaging.
+
+Every MCDC moderation action (a **Kick &amp; Warn** or **Ban** taken from an alert,
+the `/mcban` and `/mckick` commands, and the flag alerts themselves) is recorded in
+your server's **log channel** and **audit trail**, exactly like native Server
+Assistant moderation, so there's a full record of what happened and who acted. A kick
+also puts a **warning on the player's record**, so repeat behaviour is visible. And a
+ban or kick Server Assistant **didn't** issue (from your console or another plugin) is
+captured and surfaced to staff too, so it's never invisible.
+
+**Players can appeal a ban.** A banned player sees a **link to a web appeal form** on
+the disconnect screen, and again on the ban screen **every time they try to
+rejoin**, so closing the game doesn't lose it. That includes bans Server Assistant
+didn't issue. If they submit it, their appeal reaches your staff to review, no
+Discord account required. Staff can approve, approve **with a warning** on the
+record, or deny.
 
 ## In your weekly Pulse
 
@@ -170,11 +187,16 @@ sides: your in-game time **earns XP** (see [Earn XP for playtime](#playtime-xp))
 your server turns it on, your **Discord roles keep your in-game rank in step** (see
 [Roles and ranks in step](#rank-sync)).
 
-To link:
+**The one-click way.** If your server shows a **Discord invite on its join notice**,
+clicking it does both jobs at once: you sign in with Discord (Discord's own consent
+screen is what authorises it), your accounts are linked, and you land in the server's
+Discord. No code to type.
+
+**Or link with a code:**
 
 1. In Discord, run **`/link`** to get a one-time code.
 2. In Minecraft chat, type `!link <code>` within **15 minutes**.
-3. The plugin confirms the link **in-game** — you're connected.
+3. The plugin confirms the link **in-game**: you're connected.
 
 Run **`/unlink`** at any time to disconnect. Only the connection between your
 **Discord account and your Minecraft UUID** is stored, never your Minecraft
@@ -189,8 +211,11 @@ There's no separate Minecraft score and nothing to switch on.
 
 - **The rate matches voice.** Each minute in-game is worth the same base XP as a minute in
   a voice channel.
-- **It counts connected time.** XP accrues while you're connected to the server. There's no
-  idle check in-game, so time spent AFK still earns, up to the hourly cap below.
+- **It counts active time, not AFK time.** XP accrues while you're connected and doing
+  something. After about **five minutes with no activity** (an AFK pool, an auto-fishing
+  rig), XP pauses until you're active again. Nothing is kicked or interrupted, only the
+  earning stops, and coming back resumes it instantly. Your server's operator can adjust
+  the idle window in the plugin config (`afk-minutes`).
 - **Double XP counts.** A server-wide **Double-XP event** or your own **personal Double-XP
   buff** doubles your in-game earnings exactly as it doubles chat and voice XP — and, as
   everywhere else, the boost is **capped at 2×** even if both are running.
@@ -258,8 +283,8 @@ Needs the companion plugin **v0.15.0** or newer and **LuckPerms** on your Minecr
 ## Setup {#setup}
 
 Setup runs once, by the server owner (**Manage Server** permission is needed for the setup
-command). You can link the bridge **entirely in-game** — no config file to edit and no
-restart:
+command). You can link the bridge with **one console command**: no config file to edit and
+no restart.
 
 1. **Add the plugin.** [Download the MCDC plugin `.jar`]({{ '/downloads/mcdc-plugin.jar' | relative_url }}),
    drop it into your Minecraft server's **`plugins/`** folder, and **start the server**.
@@ -268,8 +293,9 @@ restart:
    me** and let Server Assistant make one. On linking, the panel shows a **ready-to-run
    line** — your `/mcdc link` command with the **token** and **relay URL** already filled
    in — plus the plugin download link.
-3. **In Minecraft, run the link command.** As a server **operator** (or from the **server
-   console**), run the line the panel gave you:
+3. **At your server console, run the link command.** From the **server console** (not
+   typed in game chat: a command typed in chat is readable by other plugins and written
+   to your server log), run the line the panel gave you:
 
    ```
    /mcdc link <token> <relay-url>
@@ -303,7 +329,7 @@ Download the plugin here — drop the `.jar` into your server's `plugins/` folde
 
 ## Plugin settings (`config.yml`) {#config}
 
-You don't need to edit the config file to link the bridge — the in-game
+You don't need to edit the config file to link the bridge — the console
 **`/mcdc link <token> <relay-url>`** command (see [Setup](#setup)) does that for you. The file is still
 there if you'd rather set the **relay URL** and **token** by hand, and it holds the rest of
 the plugin's knobs. The plugin generates `plugins/MCDC/config.yml` on first start:
@@ -338,6 +364,10 @@ want. After editing the file, restart the server (or re-run the bridge) to pick 
   private to you — but it's **scoped to your bridged channel**. Run it somewhere else and
   it doesn't answer, it points you at the right channel instead
   (*"Try `/online` in #minecraft — that's this server's Minecraft chat channel."*).
+- **`/mcban <player> <reason>`** · **`/mckick <player> <reason>`**: ban or kick a player
+  on your Minecraft server **by name**, even if they were never flagged. Staff only
+  (the usual ban/kick permission gates), and only when the **Enforcement** toggle is on.
+  See [Moderate from Discord](#moderate-from-discord).
 - **`/link`** · **`/unlink`**: connect or disconnect your own Minecraft account. Anyone can
   run them, on themselves only. See [Link your account](#link-your-account).
 

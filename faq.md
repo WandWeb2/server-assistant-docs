@@ -37,7 +37,7 @@ details.faq .faq-body table { margin: .5rem 0; }
       "name": "Is the bot free?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The full moderation toolkit is free forever, no card, no catch. Core moderation, AutoMod, anti-raid, DM verification, audit logs, warnings, the Customisation Hub, and zero-touch /autopilot setup never cost a thing. The AI features (SAi, Message Report, Self-trained AutoMod, Pulse) include a 150,000-token free trial; after that, Premium is $7 USD/month, but you're only charged once your trial tokens run out, so light-use servers may never pay. Premium BYOK (bring your own AI key) is $3 USD/month."
+        "text": "The full moderation toolkit is free forever, no card, no catch. Core moderation, AutoMod, anti-raid, Reception verification, audit logs, warnings, the Customisation Hub, and /autopilot setup never cost a thing. The AI features (SAi, Message Report, Self-trained AutoMod, Pulse) include a 150,000-token free trial; after that, Premium is $7 USD/month, but you're only charged once your trial tokens run out, so light-use servers may never pay. Premium BYOK (bring your own AI key) is $3 USD/month."
       }
     },
     {
@@ -61,7 +61,7 @@ details.faq .faq-body table { margin: .5rem 0; }
       "name": "How long does setup take?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "About 60 seconds, and you may not even need to run /setup: when the bot joins it DMs the owner the setup wizard, pre-filled, ready to finish in DMs. The bot auto-detects your channels and roles so you mostly just confirm channels, roles, then a server-type + AI step. /autopilot opens the very same wizard with every step already pre-filled, and /settings opens optional panels to fine-tune anything afterwards."
+        "text": "About 60 seconds, and you may not even need to run /setup: when the bot joins it DMs whoever added it the setup wizard, pre-filled, ready to finish in DMs. The bot auto-detects your channels and roles so you mostly just confirm channels, roles, then a server-type + AI step. /autopilot opens the very same wizard with every step already pre-filled, and /settings opens optional panels to fine-tune anything afterwards."
       }
     },
     {
@@ -133,7 +133,7 @@ details.faq .faq-body table { margin: .5rem 0; }
       "name": "What AI model powers the bot?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The default shared key uses Anthropic Claude (Sonnet) for all AI features: SAi, Message Report, Self-trained AutoMod proposals, and Bot Health Insurance checks. Supply your own key via /ai-config to choose Anthropic, xAI Grok, or OpenAI. Image generation (/imagine) runs on the shared service, with the free trial covering about 30 images and unlimited on Premium."
+        "text": "The included trial and Premium run on Anthropic Claude (Sonnet) for all AI features: SAi, Message Report, Self-trained AutoMod proposals, and Bot Health Insurance checks. Once a free-tier server has used up its trial, its AI features run on a free open model served by Groq instead. Supply your own key via /ai-config to choose Anthropic, xAI Grok, or OpenAI. Image generation (/imagine) runs on the shared service, with the free trial covering about 30 images and unlimited on Premium."
       }
     },
     {
@@ -208,7 +208,7 @@ The <strong>server owner</strong> or <strong>any admin with the Manage&nbsp;Serv
 
 <details class="faq"><summary>How long does setup take?</summary>
 <div class="faq-body">
-About 60 seconds, and you may not even need to run <code>/setup</code>: when the bot joins it <strong>DMs the owner the setup wizard</strong>, pre-filled, ready to finish in DMs. However you start it, the bot auto-detects your channels and roles so you mostly just confirm: <strong>channels</strong>, <strong>roles</strong>, then a <strong>server-type + AI</strong> step. The server-type picker tunes AutoMod, the punishment ladder, and anti-raid to your kind of community (Gaming, Creator, Crypto, Education, NSFW, General…). In a hurry, <code>/autopilot</code> does it all in one command. Then <code>/settings</code> opens nine optional panels to fine-tune anything from embed colour to the AutoMod ladder.
+About 60 seconds, and you may not even need to run <code>/setup</code>: when the bot joins it <strong>DMs whoever added it the setup wizard</strong>, pre-filled, ready to finish in DMs. However you start it, the bot auto-detects your channels and roles so you mostly just confirm: <strong>channels</strong>, <strong>roles</strong>, then a <strong>server-type + AI</strong> step. The server-type picker tunes AutoMod, the punishment ladder, and anti-raid to your kind of community (Gaming, Creator, Crypto, Education, NSFW, General…). In a hurry, <code>/autopilot</code> opens the same wizard with every step already pre-filled. Then <code>/settings</code> opens four sections of optional panels (Settings, Members, Notifications, Security) to fine-tune anything from embed colour to the AutoMod ladder.
 </div>
 </details>
 
@@ -430,7 +430,7 @@ Only what's needed for the request. <strong>Message Report</strong> sends ~20 me
 
 <details class="faq"><summary>What AI model powers the bot?</summary>
 <div class="faq-body">
-<p>The default shared key uses <strong>Anthropic Claude</strong> (Sonnet) for all AI features: SAi, Message Report, Self-trained AutoMod proposals, and Bot Health Insurance checks.</p>
+<p>The included trial and Premium run on <strong>Anthropic Claude</strong> (Sonnet) for all AI features: SAi, Message Report, Self-trained AutoMod proposals, and Bot Health Insurance checks. Once a free-tier server has used up its trial, its AI features run on a <strong>free open model served by Groq</strong> instead, so they keep working at no cost.</p>
 <p>Supply your own key via <code>/ai-config</code> to choose Anthropic, xAI Grok, or OpenAI. Image generation (<code>/imagine</code>) runs on the shared service (the free trial covers ~30 images, unlimited on Premium) or add your own DALL·E 3 / Stable Diffusion key via <code>/ai-config</code> for unmetered generation.</p>
 </div>
 </details>
@@ -463,7 +463,7 @@ Not yet. A premium-tier read-only API for your own server's data is on the <a hr
 
 <details class="faq"><summary>Can I export my server's data?</summary>
 <div class="faq-body">
-One-shot export available on request via <code>/support</code>. A <code>/export-server-data</code> slash command is on the roadmap.
+One-shot export available on request via <code>/support</code>.
 </div>
 </details>
 
