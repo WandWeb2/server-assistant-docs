@@ -155,7 +155,28 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
-<details class="doc-sec" markdown="1" open data-kind="update">
+<details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>v6.139.0: accept a Minecraft ban appeal with a warning</summary>
+
+**An appeal had only two answers.** Approve wiped the slate clean, Deny kept the player out,
+and there was nothing in between. Every appeal you were willing to accept had to be treated
+as though the ban had never happened.
+
+**Warn and unban is the middle answer.** The player comes back, and a warning goes on their
+record at the same time, so the next incident starts from what actually happened rather than
+from nothing. You type the warning yourself when you press it, the same way Kick and Warn
+works, and what you type is what lands on their record.
+
+**It works from your portal too**, and does exactly the same thing there. The portal has no
+box to type in, so the record notes that the appeal was accepted with a warning and that it
+was resolved from the portal, rather than reading as though somebody left the reason empty.
+
+**It needs the same permission as Approve**, because it also unbans. A moderator who cannot
+lift a ban cannot reach it under the gentler name.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="update">
 <summary>v6.138.0: the "out of AI tokens" notice now says what used the most</summary>
 
 **Being told the allowance was gone did not tell you where it went.** The notice said your
@@ -3500,6 +3521,22 @@ Everything stays **local to your server**: nothing is shared anywhere. It's **on
 <p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.30.0</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
 
 <details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>v6.139.0: a ban appeal can be accepted with a warning</summary>
+
+**Approve or Deny, and nothing in between.** Accepting an appeal meant wiping the ban away
+entirely, so the fact that a player had been banned once and let back in on terms was simply
+lost.
+
+**Warn and unban keeps it.** The player is unbanned exactly as Approve would, and a warning
+goes on their record in the same moment. You type that warning when you press the button, so
+it says why the appeal was accepted rather than repeating what they were banned for.
+
+**Nothing is shared beyond your server.** In-game moderation stays on your own records, the
+same as kicks and bans already do.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>Plugin v0.30.0 + v6.136.0: the appeal link now appears on the banned-login screen</summary>
 
 **A banned player had no reliable way to find their appeal.** The link was only ever shown
