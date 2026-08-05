@@ -55,7 +55,7 @@ to your next vote instead.
 <p style="margin:.8rem 0 1rem;"><a class="cmd-btn-link" href="https://discordforge.org/bot/1278486617375510570" target="_blank" rel="noopener" style="display:inline-block;padding:.6rem 1.1rem;border-radius:8px;background:var(--accent);color:#fff;text-decoration:none;font-weight:700;">Vote on DiscordForge →</a></p>
 
 <div class="dc">
-  <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+  <div class="dc-row"><img class="dc-av" src="{{ '/assets/SAllay-64.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
     <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">Direct Message</span></div>
     <div class="dc-desc" style="color:#dbdee1;line-height:1.5;"><strong>Thanks for voting for Server Assistant!</strong> You earned <strong>150 XP</strong>.<br><br>You can vote again in 8 hours, I'll give you a nudge.</div>
   </div></div>
@@ -109,7 +109,7 @@ theirs. The reply is private to you.
       <div class="dc-head"><span class="dc-name">You</span><span class="dc-time">today</span></div>
       <div class="dc-slash"><span class="cmd">/rank</span></div>
     </div></div>
-    <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+    <div class="dc-row"><img class="dc-av" src="{{ '/assets/SAllay-64.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
       <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">Only you can see this</span></div>
       <div class="dc-embed blue">
         <div class="dc-title">You</div>
@@ -148,7 +148,7 @@ for everyone to see.
       <div class="dc-head"><span class="dc-name">You</span><span class="dc-time">today</span></div>
       <div class="dc-slash"><span class="cmd">/leaderboard</span></div>
     </div></div>
-    <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+    <div class="dc-row"><img class="dc-av" src="{{ '/assets/SAllay-64.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
       <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">today</span></div>
       <div class="dc-embed blue">
         <div class="dc-title">The Hangout, leaderboard</div>
@@ -186,7 +186,7 @@ this only changes whether level-ups are announced.**
 <p style="color:var(--fg-1);font-size:.9rem;line-height:1.55;">With announcements on, the bot posts a short note when someone levels up, in your chosen level-up channel if you've set one, otherwise in the channel where it happened. Set it in the <a href="https://serverassistant.wandweb.co">web portal</a> under <strong>Settings, Leveling, Level-up channel</strong>; leave it blank to keep level-ups where they happen:</p>
 
 <div class="dc">
-  <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+  <div class="dc-row"><img class="dc-av" src="{{ '/assets/SAllay-64.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
     <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">today</span></div>
     <div class="dc-desc" style="color:#dbdee1;line-height:1.5;">@Member reached <strong>level 8</strong>!</div>
   </div></div>

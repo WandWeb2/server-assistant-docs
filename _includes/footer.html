@@ -18,26 +18,24 @@
   <div class="wrapper" style="display: flex; flex-wrap: wrap; align-items: center; gap: 2rem;">
 
     <a href="{{ "/" | relative_url }}" style="flex-shrink: 0;">
-      <picture>
-        <source srcset="{{ '/assets/logo.webp' | relative_url }}" type="image/webp">
-        <img src="{{ '/assets/logo.png' | relative_url }}"
-             alt="Server Assistant logo"
-             width="80"
-             height="77"
-             style="display: block;">
-      </picture>
+      <img src="{{ '/assets/SAllay-192.png' | relative_url }}"
+           alt="Server Assistant logo"
+           width="76"
+           height="76"
+           loading="lazy"
+           style="display: block;">
     </a>
 
     <div style="flex: 1; min-width: 240px;">
       <h2 class="footer-heading" style="margin: 0 0 .25rem;">{{ site.title | escape }}</h2>
-      <p style="margin: 0 0 .5rem; color: #9aa1a9; font-size: .9rem;">
+      <p style="margin: 0 0 .5rem; color: var(--fg-1); font-size: .9rem;">
         {{ site.tagline | default: site.description | escape }}
       </p>
       {%- for grp in site.data.nav.groups -%}
       {%- assign grp_links = site.data.nav.items | where: "group", grp.id -%}
       {%- if forloop.last -%}{%- assign grp_margin = "margin: 0;" -%}{%- else -%}{%- assign grp_margin = "margin: 0 0 .4rem;" -%}{%- endif %}
       <p style="{{ grp_margin }} font-size: .85rem;">
-        <strong style="color:#c8bdbd; margin-right:.4rem;">{{ grp.label }}:</strong>
+        <strong style="color:var(--fg-2); margin-right:.4rem;">{{ grp.label }}:</strong>
         {%- for l in grp_links %}
         <a href="{{ l.url | relative_url }}">{{ l.label }}</a>{% unless forloop.last %} ·{% endunless %}
         {%- endfor %}
@@ -45,11 +43,11 @@
       {%- endfor %}
     </div>
 
-    <div class="footer-credit" style="font-size: .8rem; color: #9aa1a9; min-width: 180px;">
+    <div class="footer-credit" style="font-size: .8rem; color: var(--fg-1); min-width: 180px;">
       Built &amp; maintained by<br>
-      <a href="https://wandweb.co" style="color: #9aa1a9; font-weight: 600;">Wandering Webmaster</a><br>
+      <a href="https://wandweb.co" style="color: var(--fg-1); font-weight: 600;">Wandering Webmaster</a><br>
       <a href="https://github.com/{{ site.minima.social_links.github }}"
-         style="color: #9aa1a9;">GitHub</a> ·
+         style="color: var(--fg-1);">GitHub</a> ·
       © {{ "now" | date: "%Y" }}
     </div>
 

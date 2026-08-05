@@ -37,7 +37,7 @@ Crypto, Education, NSFW or General community. This page is where you fine-tune i
     <tr><td colspan="3" style="color:var(--fg-2)">No arguments, the dashboard is fully interactive.</td></tr>
   </table>
   <div class="dc">
-    <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+    <div class="dc-row"><img class="dc-av" src="{{ '/assets/SAllay-64.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
       <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">only you can see this</span></div>
       <div class="dc-embed blue">
         <div class="dc-title">AutoMod Configuration</div>
@@ -85,7 +85,7 @@ Use **Next ›** and **‹ Back** to walk each AutoMod panel and the forms they 
 
   <div class="wiz-step on" data-step="Filter Packs">
     <div class="dc">
-      <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+      <div class="dc-row"><img class="dc-av" src="{{ '/assets/SAllay-64.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
         <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">only you can see this</span></div>
         <div class="dc-embed blue">
           <div class="dc-title">AutoMod Filter Packs</div>
@@ -104,7 +104,7 @@ Use **Next ›** and **‹ Back** to walk each AutoMod panel and the forms they 
 
   <div class="wiz-step" data-step="AI Review">
     <div class="dc">
-      <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+      <div class="dc-row"><img class="dc-av" src="{{ '/assets/SAllay-64.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
         <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">only you can see this</span></div>
         <div class="dc-embed amber">
           <div class="dc-title">AutoMod AI second-opinion</div>
@@ -125,7 +125,7 @@ Use **Next ›** and **‹ Back** to walk each AutoMod panel and the forms they 
 
   <div class="wiz-step" data-step="Set threshold (modal)">
     <div class="dc">
-      <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+      <div class="dc-row"><img class="dc-av" src="{{ '/assets/SAllay-64.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
         <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">only you can see this</span></div>
         <div class="dc-modal">
           <div class="dc-modal-title">AI auto-action threshold</div>
@@ -141,7 +141,7 @@ Use **Next ›** and **‹ Back** to walk each AutoMod panel and the forms they 
 
   <div class="wiz-step" data-step="Self-training">
     <div class="dc">
-      <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+      <div class="dc-row"><img class="dc-av" src="{{ '/assets/SAllay-64.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
         <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">only you can see this</span></div>
         <div class="dc-embed blue">
           <div class="dc-title">Self-trained AutoMod</div>
@@ -165,7 +165,7 @@ Use **Next ›** and **‹ Back** to walk each AutoMod panel and the forms they 
 
   <div class="wiz-step" data-step="Reviewing a proposal">
     <div class="dc">
-      <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+      <div class="dc-row"><img class="dc-av" src="{{ '/assets/SAllay-64.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
         <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">only you can see this</span></div>
         <div class="dc-embed blue">
           <div class="dc-title">Proposed rule 1 of 3</div>
@@ -187,7 +187,7 @@ Use **Next ›** and **‹ Back** to walk each AutoMod panel and the forms they 
 
   <div class="wiz-step" data-step="Custom Filters">
     <div class="dc">
-      <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+      <div class="dc-row"><img class="dc-av" src="{{ '/assets/SAllay-64.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
         <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">only you can see this</span></div>
         <div class="dc-embed blue">
           <div class="dc-title">Custom Filters</div>
@@ -208,7 +208,7 @@ Use **Next ›** and **‹ Back** to walk each AutoMod panel and the forms they 
 
   <div class="wiz-step" data-step="Add filter (modal)">
     <div class="dc">
-      <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+      <div class="dc-row"><img class="dc-av" src="{{ '/assets/SAllay-64.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
         <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">only you can see this</span></div>
         <div class="dc-modal">
           <div class="dc-modal-title">Add custom regex filter</div>
@@ -224,7 +224,7 @@ Use **Next ›** and **‹ Back** to walk each AutoMod panel and the forms they 
 
   <div class="wiz-step" data-step="Link Blocks">
     <div class="dc">
-      <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+      <div class="dc-row"><img class="dc-av" src="{{ '/assets/SAllay-64.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
         <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">only you can see this</span></div>
         <div class="dc-embed blue">
           <div class="dc-title">Custom Link Blocks</div>
@@ -244,7 +244,7 @@ Use **Next ›** and **‹ Back** to walk each AutoMod panel and the forms they 
 
   <div class="wiz-step" data-step="Punishment Ladder (modal)">
     <div class="dc">
-      <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+      <div class="dc-row"><img class="dc-av" src="{{ '/assets/SAllay-64.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
         <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">only you can see this</span></div>
         <div class="dc-modal">
           <div class="dc-modal-title">Punishment ladder</div>
@@ -262,7 +262,7 @@ Use **Next ›** and **‹ Back** to walk each AutoMod panel and the forms they 
 
   <div class="wiz-step" data-step="Spam Settings (modal)">
     <div class="dc">
-      <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+      <div class="dc-row"><img class="dc-av" src="{{ '/assets/SAllay-64.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
         <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">only you can see this</span></div>
         <div class="dc-modal">
           <div class="dc-modal-title">Spam thresholds</div>

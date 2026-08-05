@@ -3,7 +3,7 @@ layout: default
 title: Server Assistant Partners
 permalink: /partnerships/
 description: "The people and projects we partner with: tools and communities that share Server Assistant's bar for quality, privacy, and looking after Discord moderators."
-image: /assets/banner.jpeg
+image: /assets/SAllay-512.png
 ---
 
 <div align="center">

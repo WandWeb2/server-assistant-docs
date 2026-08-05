@@ -1,11 +1,12 @@
 /* ============================================================================
-   Server Assistant docs — glassmorphism theme
+   Server Assistant docs: glassmorphism theme (MODERN LIGHT, 2026-08-05)
    Layered on top of the Minima base theme (loaded via _includes/footer.html).
-   Light, frosted-glass panels over a soft gradient. Purely visual; no layout
-   dependence on Minima internals beyond its standard class names.
+   Airy white-to-sky ground derived from the SAllay logo, frosted white glass
+   cards, sky-blue primary, gold accent. Purely visual; no layout dependence on
+   Minima internals beyond its standard class names.
    ============================================================================ */
 
-/* ── Background: dark fixed mesh gradient ──────────────────────────────────── */
+/* ── Ground: light airy sky gradient ──────────────────────────────────────── */
 /* scroll-padding-top keeps #anchor jumps clear of the sticky top bar (≈56px)
    instead of hiding the target underneath it. */
 html { scroll-behavior: smooth; scroll-padding-top: 72px; }
@@ -14,8 +15,8 @@ html { scroll-behavior: smooth; scroll-padding-top: 72px; }
    targets (mirrors the roadmap's card flash, generalised site-wide). Driven by
    the global handler in _includes/footer.html. */
 @keyframes saFlash {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(60, 193, 240, 0); }
-  50%      { box-shadow: 0 0 0 4px rgba(60, 193, 240, 0.65); }
+  0%, 100% { box-shadow: 0 0 0 0 rgba(24, 120, 192, 0); }
+  50%      { box-shadow: 0 0 0 4px rgba(24, 120, 192, 0.55); }
 }
 .sa-flash { animation: saFlash 1s ease-in-out 4; border-radius: 10px; scroll-margin-top: 72px; }
 @media (prefers-reduced-motion: reduce) { .sa-flash { animation: none; } }
@@ -39,22 +40,22 @@ html { scroll-behavior: smooth; scroll-padding-top: 72px; }
 
 body {
   background-color: var(--bg-0);
-  /* Ember molten sunburst — warm 5-stop backdrop over --bg-0, fixed/static. */
+  /* SAllay sky: pale airy ground with soft sky-blue and gold auras, fixed. */
   background-image:
-    radial-gradient(120% 72% at 50% -12%, rgba(245,196,34,.22) 0%, rgba(243,144,30,.24) 18%, rgba(240,66,31,.26) 38%, transparent 62%),
-    radial-gradient(80% 55% at 10% -4%, rgba(238,91,162,.18) 0%, transparent 55%),
-    radial-gradient(85% 58% at 92% 0%, rgba(255,96,56,.20) 0%, transparent 52%),
-    radial-gradient(120% 90% at 6% 108%, rgba(197,57,127,.18) 0%, transparent 55%),
-    radial-gradient(120% 90% at 100% 114%, rgba(193,40,24,.14) 0%, transparent 55%);
+    radial-gradient(110% 64% at 50% -10%, rgba(120, 216, 240, 0.34) 0%, rgba(56, 182, 232, 0.16) 42%, transparent 68%),
+    radial-gradient(70% 48% at 8% 6%, rgba(56, 182, 232, 0.18) 0%, transparent 55%),
+    radial-gradient(72% 50% at 96% 2%, rgba(245, 197, 24, 0.14) 0%, transparent 52%),
+    radial-gradient(110% 80% at 10% 110%, rgba(120, 216, 240, 0.20) 0%, transparent 55%),
+    radial-gradient(110% 80% at 96% 112%, rgba(245, 197, 24, 0.10) 0%, transparent 55%);
   background-attachment: fixed;
   color: var(--fg-0);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
 
-/* ── Header: clear top bar (matches the OP Console topbar) ─────────────────────
+/* ── Header: clear top bar over the sky ────────────────────────────────────
    100% transparent at the top of the page; the frosted glass (backdrop blur +
-   hairline divider) fades in only once scrolled — the console's .topbar.elevated
+   hairline divider) fades in only once scrolled: the console's .topbar.elevated
    pattern. The .elevated class is toggled on scroll by custom-head.html. */
 .site-header {
   position: sticky;
@@ -65,20 +66,22 @@ body {
   border-bottom: 1px solid transparent;
   box-shadow: none;
   min-height: 56px;
-  transition: border-color 0.2s, background 0.2s, -webkit-backdrop-filter 0.2s, backdrop-filter 0.2s;
+  transition: border-color 0.2s, background 0.2s, box-shadow 0.2s, -webkit-backdrop-filter 0.2s, backdrop-filter 0.2s;
 }
 .site-header.elevated {
+  background: rgba(255, 255, 255, 0.58);
   -webkit-backdrop-filter: blur(16px) saturate(160%);
   backdrop-filter: blur(16px) saturate(160%);
   border-bottom-color: var(--border);
+  box-shadow: 0 6px 24px rgba(18, 68, 102, 0.08);
 }
 /* Brand: 32px rounded logo + wordmark, same proportions as the console topbar. */
 .site-title, .site-title:visited { color: var(--fg-0) !important; font-weight: 700; letter-spacing: -0.01em; }
 .site-title { display: inline-flex; align-items: center; gap: 0.5rem; }
-.site-logo { width: 32px; height: 32px; border-radius: 9px; object-fit: cover; flex: none; }
+.site-logo { width: 32px; height: 32px; border-radius: 9px; object-fit: contain; flex: none; }
 /* Diamond-gem gradient on "Assistant" in the top-bar wordmark (top bar only) */
-.site-title .wm-gem { background: linear-gradient(95deg, #62cef4 0%, #3cc1f0 52%, #1786ba 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; }
-.site-nav .page-link { color: #c4cbdb !important; font-weight: 400; }
+.site-title .wm-gem { background: linear-gradient(95deg, #38b6e8 0%, #1793cc 52%, #1263a8 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; }
+.site-nav .page-link { color: var(--fg-1) !important; font-weight: 500; }
 .site-nav .page-link:hover { color: var(--accent) !important; }
 
 /* Full-bleed header bar: brand hugs the left gutter, menu hugs the right gutter.
@@ -121,7 +124,7 @@ body {
   .site-nav .trigger { justify-content: flex-end; }
 }
 
-/* ── Main content: frosted card ────────────────────────────────────────────── */
+/* ── Main content: frosted white card ──────────────────────────────────────── */
 .page-content {
   padding-top: 2rem;
   padding-bottom: 3rem;
@@ -138,9 +141,9 @@ body {
      (which is why roadmap.md's own copy of this rule has no effect today). */
   max-width: var(--panel-max, 1280px);
   background: var(--glass-panel);
-  -webkit-backdrop-filter: blur(16px) saturate(150%);
-  backdrop-filter: blur(16px) saturate(150%);
-  border: 1px solid var(--border);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  backdrop-filter: blur(18px) saturate(140%);
+  border: 1px solid rgba(255, 255, 255, 0.75);
   border-radius: var(--r-md);
   box-shadow: var(--shadow);
   padding: 2.25rem 2.5rem;
@@ -151,11 +154,10 @@ body {
 .page-content h4 { color: var(--fg-0); font-weight: 700; letter-spacing: -0.01em; }
 .page-content h2 { margin-top: 1.8rem; padding-top: 0.4rem; }
 a { color: var(--accent); text-decoration: none; }
-/* Minima's defaults darken links on :hover/:visited (built for light themes),
-   which goes dark-on-dark and unreadable here. Keep them in the bright accent;
-   hover lightens for affordance. */
+/* Minima's :visited darkens links; keep the accessible accent on both states,
+   hover deepens for affordance. */
 a:visited { color: var(--accent); }
-a:hover { color: #62cef4; text-decoration: underline; }
+a:hover { color: var(--sky-deep); text-decoration: underline; }
 
 /* ── Reading measure ────────────────────────────────────────────────────────
    The frosted panel is 1280px wide so the roadmap swimlanes and the Features
@@ -193,8 +195,7 @@ a:hover { color: #62cef4; text-decoration: underline; }
 .faq-body > ul,
 .faq-body > ol { max-width: var(--measure); }
 
-/* Longer lines need more leading, and light text on a dark ground needs more
-   again. Minima ships 1.5 for everything. */
+/* Longer lines need more leading. Minima ships 1.5 for everything. */
 .page-content .wrapper > p,
 .page-content .wrapper > li,
 .page-content .wrapper > ul > li,
@@ -217,33 +218,33 @@ a:hover { color: #62cef4; text-decoration: underline; }
 /* ── Code & pre ────────────────────────────────────────────────────────────── */
 code {
   background: var(--accent-soft);
-  border: 1px solid rgba(60, 193, 240, 0.22);
+  border: 1px solid rgba(24, 120, 192, 0.18);
   border-radius: 7px;
   padding: 0.1em 0.4em;
-  color: #aee4fa;
+  color: #0b5f8c;
   font-size: 0.88em;
 }
+/* Code BLOCKS stay deep slate on the light site: a deliberate contrast island
+   that reads as "terminal", and it sidesteps every Rouge light-scheme clash. */
 pre {
-  background: rgba(0, 0, 0, 0.32) !important;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: #132b3a !important;
+  border: 1px solid rgba(23, 76, 110, 0.35);
   border-radius: 14px;
-  box-shadow: var(--shadow);
+  box-shadow: var(--shadow-sm);
   padding: 1rem 1.2rem;
 }
-pre code { background: transparent; border: none; color: var(--fg-0); padding: 0; }
+pre code { background: transparent; border: none; color: #e8f4fb; padding: 0; }
 /* Fenced code blocks (```) are wrapped by Rouge in .highlighter-rouge/.highlight,
-   which Minima's main.css paints a LIGHT background (#fff / #eef). On this dark
-   theme the code text is near-white (--fg-0), so that collision renders
-   light-on-light — illegible (e.g. the `/mcdc link <token> <relay-url>` block).
-   Force the Rouge wrappers to the same dark surface as a bare <pre>. */
+   which Minima's main.css paints its own background. Force the Rouge wrappers to
+   the same deep slate as a bare <pre> so the two render identically. */
 .highlight,
 .highlighter-rouge .highlight {
-  background: rgba(0, 0, 0, 0.32) !important;
+  background: #132b3a !important;
   border-radius: 14px;
 }
-.highlight pre { background: transparent !important; box-shadow: none; }
+.highlight pre { background: transparent !important; box-shadow: none; border: none; }
 .highlight pre code,
-.highlighter-rouge code { color: var(--fg-0); }
+.highlighter-rouge .highlight code { color: #e8f4fb; }
 
 /* ── Tables ────────────────────────────────────────────────────────────────── */
 table {
@@ -252,19 +253,19 @@ table {
   border: 1px solid var(--border);
   border-radius: 14px;
   overflow: hidden;
-  box-shadow: var(--shadow);
-  background: rgba(255, 255, 255, 0.03);
+  box-shadow: var(--shadow-sm);
+  background: rgba(255, 255, 255, 0.62);
   color: var(--fg-0);
 }
 table th {
-  background: rgba(60, 193, 240, 0.16);
+  background: rgba(56, 182, 232, 0.16);
   color: var(--fg-0);
   border: none;
   font-weight: 600;
 }
-table td { border: none; border-top: 1px solid rgba(255, 255, 255, 0.08); background: transparent; color: var(--fg-0); }
-table tr:nth-child(even) { background: transparent; }   /* neutralise Minima's light #f7f7f7 even-row */
-table tr:nth-child(even) td { background: rgba(255, 255, 255, 0.05); }
+table td { border: none; border-top: 1px solid var(--divider); background: transparent; color: var(--fg-0); }
+table tr:nth-child(even) { background: transparent; }   /* neutralise Minima's even-row default */
+table tr:nth-child(even) td { background: rgba(56, 182, 232, 0.05); }
 /* Narrow screens: a table with an unbreakable cell (a slash command, a URL)
    pushes the BODY sideways, which breaks the whole page rather than one
    element. Let the table scroll inside itself instead. Desktop is untouched,
@@ -284,7 +285,7 @@ table tr:nth-child(even) td { background: rgba(255, 255, 255, 0.05); }
 /* ── Blockquotes / callouts ────────────────────────────────────────────────── */
 blockquote {
   background: var(--accent-soft);
-  border-left: 4px solid var(--accent);
+  border-left: 4px solid var(--sky);
   border-radius: 12px;
   padding: 0.8rem 1.1rem;
   color: var(--fg-0);
@@ -294,7 +295,7 @@ blockquote {
 /* ── Images / screenshots ──────────────────────────────────────────────────── */
 .page-content img {
   border-radius: 14px;
-  box-shadow: var(--shadow);
+  box-shadow: var(--shadow-sm);
   max-width: 100%;
 }
 .page-content img[alt="Server Assistant logo"] { box-shadow: none; border-radius: 0; }
@@ -346,7 +347,7 @@ blockquote {
 .page-toc a:hover,
 .page-toc a:focus-visible {
   background: var(--accent-soft);
-  border-color: var(--accent);
+  border-color: var(--sky);
   color: var(--fg-0);
   text-decoration: none;
 }
@@ -359,11 +360,11 @@ blockquote {
 .page-content hr {
   border: none;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.14), transparent);
+  background: linear-gradient(90deg, transparent, rgba(23, 76, 110, 0.22), transparent);
   margin: 2rem 0;
 }
 
-/* ── Footer: full-bleed clean band (matches the header — no glass panel) ─────────
+/* ── Footer: full-bleed clean band (matches the header: no glass panel) ─────────
    Same design language as the top bar: edge-to-edge, transparent over the body
    gradient, separated by a single hairline divider instead of a frosted card. */
 .site-footer {
@@ -371,6 +372,7 @@ blockquote {
   max-width: none;
   background: transparent;
   border: none;
+  border-top: 1px solid var(--divider);
   border-radius: 0;
   box-shadow: none;
   color: var(--fg-1);
@@ -385,7 +387,7 @@ blockquote {
    Applied site-wide by the small script in _includes/footer.html, which tags
    the top-level content blocks of every page EXCEPT the roadmap (it detects
    .build-queue and bails, leaving that page's bespoke animations untouched).
-   No-JS and prefers-reduced-motion users never get the hidden state — content
+   No-JS and prefers-reduced-motion users never get the hidden state: content
    is always visible by default; the script only opts in when motion is safe. */
 .reveal-ready .reveal {
   opacity: 0;
@@ -398,9 +400,9 @@ blockquote {
 /* ── Micro-interactions: subtle, consistent, low-noise ─────────────────────── */
 a { transition: color .15s ease; }
 table tr td { transition: background .15s ease; }
-table tbody tr:hover td { background: rgba(60, 193, 240, 0.08); }
+table tbody tr:hover td { background: rgba(56, 182, 232, 0.10); }
 
-/* Reusable media frame for screenshots — a clean inset that animates on hover */
+/* Reusable media frame for screenshots: a clean inset that animates on hover */
 .media-frame {
   display: block;
   margin: 1.5rem auto;
@@ -411,21 +413,25 @@ table tbody tr:hover td { background: rgba(60, 193, 240, 0.08); }
   border: 1px solid var(--border);
   transition: transform .25s ease, box-shadow .25s ease;
 }
-.media-frame:hover { transform: translateY(-3px); box-shadow: 0 14px 40px rgba(0, 0, 0, 0.40); }
+.media-frame:hover { transform: translateY(-3px); box-shadow: 0 16px 44px rgba(18, 68, 102, 0.18); }
 .media-frame img { display: block; width: 100%; border-radius: 0; box-shadow: none; }
 .media-frame figcaption {
   font-size: .82rem; color: var(--fg-1); text-align: center;
-  padding: .6rem .8rem; background: rgba(255, 255, 255, 0.05);
+  padding: .6rem .8rem; background: rgba(255, 255, 255, 0.55);
 }
 
 /* ── Discord embed mockups (shared site-wide) ──────────────────────────────
-   Hand-built to-scale mocks of real Server Assistant messages — used in place
+   Hand-built to-scale mocks of real Server Assistant messages: used in place
    of screenshots so every page can show bespoke, on-brand examples that never
-   go stale. Build them per page; don't repeat the same mock across pages. */
-.dc { background:#313338; border-radius:10px; padding:.7rem .8rem; font-family:"gg sans","Segoe UI",system-ui,sans-serif; color:#dbdee1; font-size:.84rem; line-height:1.4; box-shadow:0 8px 30px rgba(0,0,0,.40); }
+   go stale. Build them per page; don't repeat the same mock across pages.
+   DELIBERATELY DARK on the light site: they depict Discord's own dark chrome,
+   which is what makes them read as authentic screenshots. */
+.dc { background:#313338; border-radius:10px; padding:.7rem .8rem; font-family:"gg sans","Segoe UI",system-ui,sans-serif; color:#dbdee1; font-size:.84rem; line-height:1.4; box-shadow:0 10px 30px rgba(18,68,102,.22); border:1px solid rgba(0,0,0,.18); }
 .dc + .dc { margin-top:.5rem; }
 .dc-row { display:flex; gap:.6rem; align-items:flex-start; }
-.dc-av { width:38px; height:38px; border-radius:50%; flex:0 0 38px; object-fit:cover; background:transparent; }
+/* Square avatar art (the SAllay logo has a transparent ground) sits on a soft
+   dark disc so the circular crop always reads as an avatar. */
+.dc-av { width:38px; height:38px; border-radius:50%; flex:0 0 38px; object-fit:cover; background:#1e1f22; }
 .mock-pair { display:flex; gap:.8rem; flex-wrap:wrap; justify-content:center; }
 .mock-pair > .dc { flex:1 1 320px; }
 .dc-body { flex:1; min-width:0; }
@@ -452,13 +458,15 @@ table tbody tr:hover td { background: rgba(60, 193, 240, 0.08); }
 .shot { background:transparent; border:none; box-shadow:none; margin:1.2rem 0; }
 
 /* ════════════════════════════════════════════════════════════════════════
-   DARK-MODE COMPONENT OVERRIDES
-   The per-page inline <style> blocks were authored light (white cards, dark
-   text). These selectors are prefixed with `.page-content` so they outrank the
-   bare-class page rules regardless of load order, flipping every component to
-   the dark palette. The .dc Discord mockups are already dark — left untouched.
+   LIGHT-GLASS COMPONENT OVERRIDES
+   The per-page inline <style> blocks predate the theme moves; these selectors
+   are prefixed with `.page-content` so they outrank the bare-class page rules
+   regardless of load order, giving every shared component the same frosted
+   white card treatment. The .dc Discord mockups are deliberately dark: left
+   untouched. (This section previously flipped the light-authored pages DARK;
+   it now normalises everything LIGHT after the 2026-08-05 redesign.)
    ════════════════════════════════════════════════════════════════════════ */
-/* Cards & panels → dark frosted */
+/* Cards & panels → frosted white */
 .page-content .feat-card,
 .page-content .way,
 .page-content .ai-card,
@@ -471,21 +479,22 @@ table tbody tr:hover td { background: rgba(60, 193, 240, 0.08); }
 .page-content details.faq,
 .page-content details.tshoot,
 .page-content .changelog-nav a,
-.page-content .cta-secondary {
-  background: rgba(255, 255, 255, 0.045);
-  border-color: rgba(255, 255, 255, 0.10);
+.page-content .cta-secondary,
+.page-content .xgrid details.x {
+  background: rgba(255, 255, 255, 0.62);
+  border-color: var(--border);
 }
-.page-content .compare-block { background: rgba(255, 255, 255, 0.025); border-color: rgba(255, 255, 255, 0.08); }
+.page-content .compare-block { background: rgba(255, 255, 255, 0.40); border-color: var(--divider); }
 .page-content details.faq[open],
-.page-content details.tshoot[open] { background: rgba(255, 255, 255, 0.07); }
-.page-content .compare-hero-grid .hero-card { background: rgba(60, 193, 240, 0.10); }
-.page-content .cta-secondary:hover { background: rgba(255, 255, 255, 0.12); }
+.page-content details.tshoot[open] { background: rgba(255, 255, 255, 0.82); }
+.page-content .compare-hero-grid .hero-card { background: rgba(56, 182, 232, 0.12); }
+.page-content .cta-secondary:hover { background: rgba(255, 255, 255, 0.9); }
 
-/* Tinted callout strips → restated on dark (tints derived from --ok / --warn) */
-.page-content .free-callout { background: rgba(95, 208, 160, 0.12); }
-.page-content .pick-row { background: var(--gold-soft); border-color: rgba(245, 196, 34, 0.30); }
+/* Tinted callout strips → restated on light (tints derived from --ok / --gold) */
+.page-content .free-callout { background: rgba(20, 128, 74, 0.10); }
+.page-content .pick-row { background: var(--gold-soft); border-color: rgba(160, 121, 8, 0.35); }
 
-/* Body text inside cards → light (prefixed = outranks bare-class page rules) */
+/* Body text inside cards → ink (prefixed = outranks bare-class page rules) */
 .page-content .feat-card ul,
 .page-content .ai-card p,
 .page-content .f-card p, .page-content .f-card ul,
@@ -504,7 +513,7 @@ table tbody tr:hover td { background: rgba(60, 193, 240, 0.08); }
 .page-content .changelog-nav a { color: var(--fg-0); }
 .page-content .ai-card .ai-where { color: var(--fg-1); }
 
-/* Accent text → unified to the console status tokens (reads on dark). */
+/* Accent text → unified to the status tokens (calibrated for the light ground). */
 .page-content .shipped-strip strong.lbl,
 .page-content .tier-free,
 .page-content .ai-card .ai-tag { color: var(--ok); }
@@ -513,10 +522,10 @@ table tbody tr:hover td { background: rgba(60, 193, 240, 0.08); }
 .page-content .tier-premium,
 .page-content .pick-row strong,
 .page-content .ai-card .ai-tag.premium { color: var(--gold); }
-.page-content .compare-col h3 .pill-us { background: rgba(95, 208, 160, 0.18); color: var(--ok); }
-.page-content .compare-col h3 .pill-them { background: rgba(255, 107, 107, 0.18); color: var(--critical); }
+.page-content .compare-col h3 .pill-us { background: rgba(20, 128, 74, 0.14); color: var(--ok); }
+.page-content .compare-col h3 .pill-them { background: rgba(204, 51, 64, 0.14); color: var(--critical); }
 
-/* The roadmap is dark-themed within its own <style> block (roadmap.md). */
+/* The roadmap ships its own light card styling within roadmap.md. */
 
 /* ── Mobile: relax padding so cards don't crowd small screens ──────────────── */
 @media (max-width: 600px) {
@@ -524,19 +533,19 @@ table tbody tr:hover td { background: rgba(60, 193, 240, 0.08); }
   .site-footer { margin: 0; }
   /* Centre the credit block on its own full-width line on small screens. */
   .site-footer .footer-credit { text-align: center; flex-basis: 100%; }
-  /* Minima's mobile nav dropdown is white by default — dark it so the (light)
-     links are visible instead of white-on-white. Solid colour + broad
-     selectors so it can't be undercut by Minima's nested elements. */
+  /* Minima's mobile nav dropdown: frosted white with ink links, matching the
+     elevated header. Solid-ish colour + broad selectors so it can't be
+     undercut by Minima's nested elements. */
   .site-header .site-nav,
   .site-header .site-nav .trigger,
   .site-header .site-nav label {
-    background: #15100f !important;
-    background-color: #15100f !important;
+    background: rgba(255, 255, 255, 0.94) !important;
+    background-color: rgba(255, 255, 255, 0.94) !important;
     border-color: var(--border) !important;
   }
-  .site-header .site-nav .page-link { color: #c4cbdb !important; }
-  .site-header .site-nav .menu-icon > svg { fill: #c4cbdb !important; }
-  .site-header .site-nav .menu-icon > svg path { fill: #c4cbdb !important; }
+  .site-header .site-nav .page-link { color: var(--fg-0) !important; }
+  .site-header .site-nav .menu-icon > svg { fill: #43596b !important; }
+  .site-header .site-nav .menu-icon > svg path { fill: #43596b !important; }
 }
 
 @media (prefers-reduced-motion: reduce) {

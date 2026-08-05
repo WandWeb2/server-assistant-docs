@@ -46,7 +46,7 @@ This page covers the **Settings hub** and the standalone commands alongside it:
     <tr><td colspan="3" style="color:var(--fg-2)">No arguments, the hub is fully interactive.</td></tr>
   </table>
   <div class="dc">
-    <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+    <div class="dc-row"><img class="dc-av" src="{{ '/assets/SAllay-64.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
       <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">only you can see this</span></div>
       <div class="dc-embed blue">
         <div class="dc-title">Settings</div>
@@ -84,7 +84,7 @@ Use **Next ›** and **‹ Back** to walk each tab, including the modal forms so
 
   <div class="wiz-step on" data-step="Branding">
     <div class="dc">
-      <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+      <div class="dc-row"><img class="dc-av" src="{{ '/assets/SAllay-64.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
         <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">only you can see this</span></div>
         <div class="dc-embed blue">
           <div class="dc-title">Branding</div>
@@ -107,7 +107,7 @@ Use **Next ›** and **‹ Back** to walk each tab, including the modal forms so
 
   <div class="wiz-step" data-step="Custom hex colour (modal)">
     <div class="dc">
-      <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+      <div class="dc-row"><img class="dc-av" src="{{ '/assets/SAllay-64.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
         <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">only you can see this</span></div>
         <div class="dc-modal">
           <div class="dc-modal-title">Custom hex colour</div>
@@ -123,7 +123,7 @@ Use **Next ›** and **‹ Back** to walk each tab, including the modal forms so
 
   <div class="wiz-step" data-step="Quick Presets">
     <div class="dc">
-      <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+      <div class="dc-row"><img class="dc-av" src="{{ '/assets/SAllay-64.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
         <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">only you can see this</span></div>
         <div class="dc-embed blue">
           <div class="dc-title">Quick Presets</div>
@@ -145,7 +145,7 @@ Use **Next ›** and **‹ Back** to walk each tab, including the modal forms so
 
   <div class="wiz-step" data-step="Behavior">
     <div class="dc">
-      <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+      <div class="dc-row"><img class="dc-av" src="{{ '/assets/SAllay-64.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
         <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">only you can see this</span></div>
         <div class="dc-embed blue">
           <div class="dc-title">Behavior</div>
@@ -176,7 +176,7 @@ Use **Next ›** and **‹ Back** to walk each tab, including the modal forms so
 
   <div class="wiz-step" data-step="New Members">
     <div class="dc">
-      <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+      <div class="dc-row"><img class="dc-av" src="{{ '/assets/SAllay-64.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
         <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">only you can see this</span></div>
         <div class="dc-embed blue">
           <div class="dc-title">New Members</div>
@@ -199,7 +199,7 @@ Use **Next ›** and **‹ Back** to walk each tab, including the modal forms so
 
   <div class="wiz-step" data-step="Verification · Reception">
     <div class="dc">
-      <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+      <div class="dc-row"><img class="dc-av" src="{{ '/assets/SAllay-64.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
         <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">only you can see this</span></div>
         <div class="dc-embed blue">
           <div class="dc-title">Verification · Reception</div>
@@ -220,7 +220,7 @@ Use **Next ›** and **‹ Back** to walk each tab, including the modal forms so
 
   <div class="wiz-step" data-step="Channel Allowlist">
     <div class="dc">
-      <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+      <div class="dc-row"><img class="dc-av" src="{{ '/assets/SAllay-64.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
         <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">only you can see this</span></div>
         <div class="dc-embed blue">
           <div class="dc-title">Channel Allowlist</div>
@@ -238,7 +238,7 @@ Use **Next ›** and **‹ Back** to walk each tab, including the modal forms so
 
   <div class="wiz-step" data-step="Role Tiers">
     <div class="dc">
-      <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+      <div class="dc-row"><img class="dc-av" src="{{ '/assets/SAllay-64.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
         <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">only you can see this</span></div>
         <div class="dc-embed blue">
           <div class="dc-title">Role Tiers</div>
@@ -259,7 +259,7 @@ Use **Next ›** and **‹ Back** to walk each tab, including the modal forms so
 
   <div class="wiz-step" data-step="Notifications">
     <div class="dc">
-      <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+      <div class="dc-row"><img class="dc-av" src="{{ '/assets/SAllay-64.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
         <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">only you can see this</span></div>
         <div class="dc-embed blue">
           <div class="dc-title">Notifications</div>
@@ -280,7 +280,7 @@ Use **Next ›** and **‹ Back** to walk each tab, including the modal forms so
 
   <div class="wiz-step" data-step="Instant alerts">
     <div class="dc">
-      <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+      <div class="dc-row"><img class="dc-av" src="{{ '/assets/SAllay-64.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
         <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">only you can see this</span></div>
         <div class="dc-embed amber">
           <div class="dc-title">Instant alerts</div>
@@ -319,7 +319,7 @@ Use **Next ›** and **‹ Back** to walk each tab, including the modal forms so
     <tr><td colspan="3" style="color:var(--fg-2)">No arguments, the pre-filled wizard opens; nothing saves until you finish.</td></tr>
   </table>
   <div class="dc">
-    <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+    <div class="dc-row"><img class="dc-av" src="{{ '/assets/SAllay-64.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
       <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">only you can see this</span></div>
       <div class="dc-embed blue">
         <div class="dc-title">Setup, I've filled everything in</div>
@@ -357,7 +357,7 @@ step is editable and nothing saves until you finish, so `/autopilot` and
     <tr><td colspan="3" style="color:var(--fg-2)">No arguments, toggle each feature on or off.</td></tr>
   </table>
   <div class="dc">
-    <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+    <div class="dc-row"><img class="dc-av" src="{{ '/assets/SAllay-64.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
       <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">only you can see this</span></div>
       <div class="dc-embed blue">
         <div class="dc-title">Privacy, what the bot can read</div>
@@ -396,7 +396,7 @@ Turn off anything, any time.
     <tr><td colspan="3" style="color:var(--fg-2)">No arguments, manage from the panel.</td></tr>
   </table>
   <div class="dc">
-    <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+    <div class="dc-row"><img class="dc-av" src="{{ '/assets/SAllay-64.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
       <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">only you can see this</span></div>
       <div class="dc-embed blue">
         <div class="dc-title">Onboarding, welcome DM</div>
@@ -430,7 +430,7 @@ sends a live preview to you.
     <tr><td colspan="3" style="color:var(--fg-2)">No arguments, manage from the panel.</td></tr>
   </table>
   <div class="dc">
-    <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+    <div class="dc-row"><img class="dc-av" src="{{ '/assets/SAllay-64.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
       <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">only you can see this</span></div>
       <div class="dc-embed blue">
         <div class="dc-title">Snippets, canned responses</div>
@@ -459,7 +459,7 @@ as onboarding). The dropdown removes any you no longer need.
     <tr><td colspan="3" style="color:var(--fg-2)">No arguments, pick from the list or enter a custom name.</td></tr>
   </table>
   <div class="dc">
-    <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+    <div class="dc-row"><img class="dc-av" src="{{ '/assets/SAllay-64.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
       <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">only you can see this</span></div>
       <div class="dc-embed blue">
         <div class="dc-title">Your timezone</div>
@@ -489,7 +489,7 @@ hit **Custom (type IANA name)** to enter any IANA timezone such as
     <tr><td colspan="3" style="color:var(--fg-2)">No arguments, create from the panel.</td></tr>
   </table>
   <div class="dc">
-    <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+    <div class="dc-row"><img class="dc-av" src="{{ '/assets/SAllay-64.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
       <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">only you can see this</span></div>
       <div class="dc-embed blue">
         <div class="dc-title">Scheduled tasks</div>

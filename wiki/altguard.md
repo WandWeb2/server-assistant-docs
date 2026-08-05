@@ -81,7 +81,7 @@ One command, three modes, turn detection on, off, or check where it stands.
       <div class="dc-head"><span class="dc-name">You</span><span class="dc-time">today</span></div>
       <div class="dc-slash"><span class="cmd">/altguard</span> <span class="arg">mode:</span> on</div>
     </div></div>
-    <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+    <div class="dc-row"><img class="dc-av" src="{{ '/assets/SAllay-64.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
       <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">today</span></div>
       <div class="dc-embed green">
         <div class="dc-title">Altguard on</div>
@@ -102,7 +102,7 @@ offenders your server has on file.
     <div class="dc-head"><span class="dc-name">You</span><span class="dc-time">today</span></div>
     <div class="dc-slash"><span class="cmd">/altguard</span> <span class="arg">mode:</span> status</div>
   </div></div>
-  <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+  <div class="dc-row"><img class="dc-av" src="{{ '/assets/SAllay-64.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
     <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">Only you can see this</span></div>
     <div class="dc-embed blue">
       <div class="dc-title">Repeat-offender detection is ON</div>
@@ -124,7 +124,7 @@ it matches, the signals that fired, and the outcome, **red** for an auto-ban,
 ### A confident match, auto-banned
 
 <div class="dc">
-  <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+  <div class="dc-row"><img class="dc-av" src="{{ '/assets/SAllay-64.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
     <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">just now</span></div>
     <div class="dc-embed red">
       <div class="dc-title">Repeat-offender detected</div>
@@ -141,7 +141,7 @@ it matches, the signals that fired, and the outcome, **red** for an auto-ban,
 ### A weaker match, flagged for review
 
 <div class="dc">
-  <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+  <div class="dc-row"><img class="dc-av" src="{{ '/assets/SAllay-64.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
     <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">just now</span></div>
     <div class="dc-embed amber">
       <div class="dc-title">Repeat-offender detected</div>

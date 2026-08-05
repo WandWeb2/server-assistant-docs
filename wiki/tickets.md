@@ -45,7 +45,7 @@ the private channel where you help them, and the close with its saved transcript
 
   <div class="wiz-step on" data-step="1 · You post the panel">
     <div class="dc">
-      <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+      <div class="dc-row"><img class="dc-av" src="{{ '/assets/SAllay-64.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
         <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">today</span></div>
         <div class="dc-embed blue">
           <div class="dc-title">Need help? Open a ticket</div>
@@ -61,7 +61,7 @@ the private channel where you help them, and the close with its saved transcript
 
   <div class="wiz-step" data-step="2 · A member clicks &amp; fills the form">
     <div class="dc">
-      <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+      <div class="dc-row"><img class="dc-av" src="{{ '/assets/SAllay-64.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
         <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">Only you can see this</span></div>
         <div class="dc-modal">
           <div class="dc-modal-title">Open a ticket</div>
@@ -76,7 +76,7 @@ the private channel where you help them, and the close with its saved transcript
 
   <div class="wiz-step" data-step="3 · The private ticket channel opens">
     <div class="dc">
-      <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+      <div class="dc-row"><img class="dc-av" src="{{ '/assets/SAllay-64.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
         <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">today</span></div>
         <div class="dc-embed blue">
           <div class="dc-title">Ticket #0007</div>
@@ -95,7 +95,7 @@ the private channel where you help them, and the close with its saved transcript
 
   <div class="wiz-step" data-step="4 · Close &amp; save a transcript">
     <div class="dc">
-      <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+      <div class="dc-row"><img class="dc-av" src="{{ '/assets/SAllay-64.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
         <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">today</span></div>
         <div class="dc-embed">
           <div class="dc-title">Ticket #0007 closed</div>
@@ -132,7 +132,7 @@ the private channel where you help them, and the close with its saved transcript
       <div class="dc-head"><span class="dc-name">You</span><span class="dc-time">today</span></div>
       <div class="dc-slash"><span class="cmd">/tickets setup</span> <span class="arg">support_role:</span> @Support <span class="arg">create_channel:</span> get-help</div>
     </div></div>
-    <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+    <div class="dc-row"><img class="dc-av" src="{{ '/assets/SAllay-64.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
       <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">Only you can see this</span></div>
       <div class="dc-embed green">
         <div class="dc-title">Ticket panel posted</div>
@@ -158,7 +158,7 @@ the private channel where you help them, and the close with its saved transcript
       <div class="dc-head"><span class="dc-name">You</span><span class="dc-time">today</span></div>
       <div class="dc-slash"><span class="cmd">/tickets close</span> <span class="arg">reason:</span> Resolved, role re-applied</div>
     </div></div>
-    <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+    <div class="dc-row"><img class="dc-av" src="{{ '/assets/SAllay-64.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
       <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">Only you can see this</span></div>
       <div class="dc-embed blue">
         <div class="dc-title">Closing this ticket…</div>
@@ -176,7 +176,7 @@ the private channel where you help them, and the close with its saved transcript
   </div>
   <p class="cmd-desc">Edit the panel's title and description from a quick form, and on Premium, set custom in-ticket <strong>welcome</strong> and <strong>close</strong> messages too. If the live panel message still exists, the bot updates it in place.</p>
   <div class="dc" style="margin-top:1rem;">
-    <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+    <div class="dc-row"><img class="dc-av" src="{{ '/assets/SAllay-64.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
       <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">Only you can see this</span></div>
       <div class="dc-modal">
         <div class="dc-modal-title">Edit ticket panel</div>
@@ -200,7 +200,7 @@ the private channel where you help them, and the close with its saved transcript
   </div>
   <p class="cmd-desc">Set up to <strong>four</strong> custom intake questions that members answer when they open a ticket. The free tier always includes the single default question; this lets Premium servers gather exactly the detail they need up front.</p>
   <div class="dc" style="margin-top:1rem;">
-    <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+    <div class="dc-row"><img class="dc-av" src="{{ '/assets/SAllay-64.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
       <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">Only you can see this</span></div>
       <div class="dc-modal">
         <div class="dc-modal-title">Ticket intake questions</div>
@@ -231,7 +231,7 @@ the private channel where you help them, and the close with its saved transcript
       <div class="dc-head"><span class="dc-name">You</span><span class="dc-time">today</span></div>
       <div class="dc-slash"><span class="cmd">/tickets add</span> <span class="arg">user:</span> @Specialist</div>
     </div></div>
-    <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+    <div class="dc-row"><img class="dc-av" src="{{ '/assets/SAllay-64.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
       <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">today</span></div>
       <div class="dc-embed green">
         <div class="dc-title">Added to ticket</div>
@@ -262,11 +262,11 @@ staff to open a one-screen builder.
     <tr><td><code>question</code> <span class="opt">optional</span></td><td>text</td><td>The member's question. Leave it blank (as staff) to manage the FAQ.</td></tr>
   </table>
   <div class="dc" style="margin-top:1rem;">
-    <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+    <div class="dc-row"><img class="dc-av" src="{{ '/assets/SAllay-64.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
       <div class="dc-head"><span class="dc-name">Member</span><span class="dc-time">today</span></div>
       <div class="dc-slash"><span class="cmd">/faq</span> <span class="arg">question:</span> how do I get roles</div>
     </div></div>
-    <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+    <div class="dc-row"><img class="dc-av" src="{{ '/assets/SAllay-64.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
       <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">today</span></div>
       <div class="dc-embed blue">
         <div class="dc-desc">Head to <strong>#roles</strong> and react to the message there, each emoji grants a self-assign role. Staff can hand out special roles on request.</div>
@@ -282,7 +282,7 @@ numbered list of entries, dropdowns to **edit** and **delete**, and an **Add ent
 button. Changes save instantly and the list refreshes in place.
 
 <div class="dc">
-  <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+  <div class="dc-row"><img class="dc-av" src="{{ '/assets/SAllay-64.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
     <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">Only you can see this</span></div>
     <div class="dc-embed blue">
       <div class="dc-title">FAQ builder</div>
@@ -307,7 +307,7 @@ Message Report**. The bot reads the message plus the surrounding conversation, w
 short objective summary, and gives you action buttons, all privately.
 
 <div class="dc">
-  <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+  <div class="dc-row"><img class="dc-av" src="{{ '/assets/SAllay-64.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
     <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">Only you can see this</span></div>
     <div class="dc-embed amber">
       <div class="dc-title">Message Report</div>
