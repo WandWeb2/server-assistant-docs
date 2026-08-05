@@ -155,7 +155,33 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
-<details class="doc-sec" markdown="1" open data-kind="fix">
+<details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>v6.133.0: Kick in Minecraft is now Kick and Warn</summary>
+
+**Your reason reaches the player.** Kicking someone from a flagged-chat card used to boot
+them with nothing to learn from. The reason you type is now shown to them on the kick
+screen as a warning: *"Warning: &lt;your reason&gt; (this has been added to your record)"*.
+
+**And it goes on their record.** The warning appears in `/warnings` next to that member's
+Discord warnings, as one list, tagged **⛏️ Minecraft** so you can see where each one came
+from. Somebody warned twice in chat and once in game has been warned three times.
+
+**Players who have not linked an account still build a history.** The warning is held
+against their Minecraft account, and joins their record automatically the first time you
+open `/warnings` after they link. Nothing is lost in the meantime, and you do not have to
+do anything to make the merge happen.
+
+**Linked players are told in Discord as well**, the same way a `/warn` tells them, so the
+warning does not disappear when they close the game.
+
+**Ban is unchanged.** A ban is not a warning, and it still carries its appeal link.
+
+**No plugin update needed**, and nothing new is shared with other servers: in-game
+moderation stays on your server.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v6.132.0: Minecraft moderation cards can be handled from your portal</summary>
 
 **The buttons were there and they did not work.** A flagged in-game message and a
@@ -3352,7 +3378,27 @@ Everything stays **local to your server**: nothing is shared anywhere. It's **on
 
 <p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.28.0</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
 
-<details class="doc-sec" markdown="1" open data-kind="fix">
+<details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>v6.133.0: Kick becomes Kick and Warn, with the reason on the kick screen</summary>
+
+**No plugin update needed.** This is a Server Assistant change.
+
+**A kick now teaches something.** When you kick a player from a flagged-chat card, the
+reason you type is shown to them on the kick screen as a warning, rather than disappearing:
+*"Warning: &lt;your reason&gt; (this has been added to your record)"*.
+
+**The warning is kept.** It shows in `/warnings` for that member, tagged **⛏️ Minecraft**,
+in the same list as their Discord warnings. If the player has not linked a Discord account
+the warning is held against their Minecraft account and folded into their record
+automatically once they link, so a regular offender who never links still builds a history.
+
+**Ban is unchanged**, including its appeal link. A ban is not a warning.
+
+**Nothing leaves your server.** In-game moderation is not shared with other servers.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v6.132.0: handle a flagged message or a ban appeal from your portal</summary>
 
 **No plugin update needed.** This is a Server Assistant change.
