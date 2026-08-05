@@ -156,6 +156,33 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
 <details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>v6.140.0: ban a Minecraft player from Discord, even one you have never seen</summary>
+
+**You could only act on players SA had already caught.** Kicking or banning someone on your
+Minecraft server from Discord meant waiting for SA to flag them, or for them to appeal. A
+griefer who had never tripped the filter, and who was not in your Discord, could only be
+dealt with from the server console.
+
+**`/mcban` and `/mckick` take a player's name.** They do not need that player to be in your
+Discord, and `/mcban` does not need them to be online. The reason you give is shown to the
+player and kept with your records.
+
+**When they are online you get everything**, because SA can tell which account the name
+belongs to: the ban, an entry on their record, and an appeal link waiting on the screen the
+next time they try to join.
+
+**When they are not, the ban still happens, and SA tells you what it could not do.** A name
+on its own is not enough to attach a record entry or an appeal link, so the reply says so
+plainly rather than letting you assume otherwise. If they happen to be online, it will say
+that banning them now would get you both.
+
+**A kick only reaches someone who is currently on the server.** If they are not, SA says
+nothing was sent rather than reporting a kick that never landed, and points you at `/mcban`,
+which works either way.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.139.0: accept a Minecraft ban appeal with a warning</summary>
 
 **An appeal had only two answers.** Approve wiped the slate clean, Deny kept the player out,
@@ -3521,6 +3548,30 @@ Everything stays **local to your server**: nothing is shared anywhere. It's **on
 <p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.30.0</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
 
 <details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>v6.140.0: ban or kick a player from Discord by name</summary>
+
+**Staff could only act on players SA had already flagged.** Moderating your Minecraft server
+from Discord meant waiting for SA to catch someone, or for them to appeal. Anyone else had
+to be handled from the server console.
+
+**`/mcban` and `/mckick` take a Minecraft name**, with no need for that player to be in your
+Discord. `/mcban` works whether or not they are online. Your reason is shown to the player
+and kept with your records, and both run through the same permissions, records and logging
+as the buttons on a flagged message.
+
+**How much SA can do depends on whether it knows the account.** While a player is online SA
+can match the name to their Minecraft account, so a ban also gets a record entry and an
+appeal link on the banned screen. Ban a name SA has never seen and the ban still applies, but
+there is no record entry and no appeal link. The reply always says which of those happened.
+
+**A kick needs them online to land**, so if they are not, SA says nothing was sent instead of
+reporting a kick that went nowhere.
+
+**Nothing is shared beyond your server**, the same as every other in-game action.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.139.0: a ban appeal can be accepted with a warning</summary>
 
 **Approve or Deny, and nothing in between.** Accepting an appeal meant wiping the ban away
