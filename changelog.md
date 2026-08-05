@@ -156,6 +156,29 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
 <details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>v6.134.0: bans and kicks made on the server itself no longer go unnoticed</summary>
+
+**Server Assistant only knew about punishments it carried out.** If a player was banned or
+kicked from your Minecraft server directly, by an operator in game, from the console, or by
+another plugin, none of it reached Discord. No staff-chat notice, and nothing recorded
+against the player.
+
+**Those now show up.** SA posts them to your staff chat with who did it and why, and adds
+them to the player's `/warnings` history, so your record of someone is complete no matter
+which tool did the punishing. Kicks are included as well as bans.
+
+**Your own SA actions are not reported twice.** SA identifies its own bans from the ban
+record itself, so nothing is announced or filed a second time.
+
+**Needs plugin v0.29.0**, which servers on auto-update get without doing anything.
+
+**One thing still to come:** a player banned this way does not yet get an appeal link,
+because the ban screen has already been shown by the time SA hears about it. That is being
+added to the "you are banned" screen a player sees when they try to rejoin.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.133.0: Kick in Minecraft is now Kick and Warn</summary>
 
 **Your reason reaches the player.** Kicking someone from a flagged-chat card used to boot
@@ -3376,9 +3399,30 @@ Everything stays **local to your server**: nothing is shared anywhere. It's **on
 
 <div class="cl-panel" id="cl-mcdc" role="tabpanel" aria-labelledby="tab-mcdc" markdown="1" hidden>
 
-<p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.28.0</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
+<p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.29.0</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
 
 <details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>Plugin v0.29.0 + v6.134.0: a ban or kick made on the server is reported to Discord</summary>
+
+**Punishments that did not come from SA were invisible.** An operator's `/ban` in game, a
+console ban, or another plugin's ban produced nothing on the Discord side: no staff-chat
+notice, no entry on the player's record.
+
+**Plugin v0.29.0 reports them.** SA posts the ban or kick to your staff chat with who issued
+it and the reason, and files it on the player's record alongside their other warnings. A ban
+issued from the console is shown as coming from the server console rather than from a player.
+
+**SA's own bans are not double-reported.** The plugin recognises them from the ban record
+itself, so an SA ban is announced once, as before.
+
+**Servers on auto-update get this without touching anything.**
+
+**Still to come:** the appeal link for a player banned this way, which will appear on the
+"you are banned" screen when they next try to join.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.133.0: Kick becomes Kick and Warn, with the reason on the kick screen</summary>
 
 **No plugin update needed.** This is a Server Assistant change.
