@@ -155,7 +155,28 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
-<details class="doc-sec" markdown="1" open data-kind="fix">
+<details class="doc-sec" markdown="1" open data-kind="update">
+<summary>v6.138.0: the "out of AI tokens" notice now says what used the most</summary>
+
+**Being told the allowance was gone did not tell you where it went.** The notice said your
+server's AI allowance had been used up and stopped there, so there was nothing to act on
+beyond buying more.
+
+**It now adds one sentence naming the biggest use**, for example *"The biggest share of that
+went on image generation"*. The categories it can name are the ones you already think in:
+the assistant, image generation, moderation, translation and the like.
+
+**Biggest, not most.** The line tells you which category came top. It does not claim that
+category accounted for most of your allowance, and it is not a full breakdown. Your portal
+dashboard is still the place for the figures side by side.
+
+**It appears on the notices that say the allowance is used up**, not on the earlier heads-up
+that you are getting close to your limit. Some servers will not see the line at all, because
+this usage is not recorded category by category on every tier.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v6.137.0: your welcome and celebration messages have one length limit, not two</summary>
 
 **The two places you can write them disagreed on how long they could be.** In Discord you
@@ -3368,6 +3389,13 @@ Everything stays **local to your server**: nothing is shared anywhere. It's **on
 <p class="cl-intro">What's changed in the <strong>Server Assistant portal</strong>: the web dashboard you sign into with your Discord account.</p>
 
 <details class="doc-sec" markdown="1" open data-kind="fix">
+<summary>v1.6: Your AI usage breakdown reads in plain English</summary>
+- **The dashboard was showing you our names for things.** The breakdown of what your server's AI allowance went on has been on your dashboard for a while, but it labelled each line with an internal short code, `nl_extract` and `mcdc_ai` and the like, which meant nothing to anyone outside our own code.
+- **Every line now has a plain English name**, and closely related ones are gathered together rather than listed apart, so the assistant appears once instead of five times over. The figures themselves are unchanged: only the labels and the grouping are.
+- **Ask SAi and you get the same names.** Asking it what has been using your tokens now comes back in the same plain wording as the dashboard, instead of the internal codes.
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v1.5: Long messages get a box you can write in</summary>
 - **A one-line field is no place for a thousand characters.** Editing your welcome message or your join-celebration message meant typing into a single-line box and scrolling sideways through the lot, which made writing a greeting that runs over several lines genuinely awkward.
 - **Any setting with a large character allowance now opens as a resizable text area**, with its label above it and the box using the full width of the row. The Premium settings tab works the same way.
