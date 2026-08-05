@@ -156,6 +156,42 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
 <details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>v6.142.0: players now see when someone is banned or kicked</summary>
+
+**A player would just vanish, with nothing said.** When staff banned or kicked someone
+through Server Assistant, nothing appeared in Minecraft chat. The people playing saw someone
+disappear and had no idea why, or whether anyone was watching at all.
+
+**One line now goes to everyone in game**, for example *"Griefer was banned by Staff."* It
+names the player and what happened, and nothing else.
+
+**Deliberately not the reason.** A ban reason often quotes exactly what somebody said, so
+repeating it to the whole server can be worse than the thing being punished. The reason
+stays with your staff records where it belongs. The moderator is not named either, so no
+individual becomes the target of whoever was just removed.
+
+**Nothing changes for bans made outside Server Assistant**, from your console or another
+plugin. Those already announce themselves however your server is set up, so SA stays quiet
+rather than saying it twice.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
+<summary>v6.141.0: /premium now tells you what Premium actually includes</summary>
+
+**The plan list caught up with the product.** `/premium` still described white-label
+branding, custom slash commands and leveling as "coming", long after they shipped. The
+panel now lists what each plan really includes today: the SAi suite, unlimited `/imagine`,
+AutoMod AI second-opinion, the Reception concierge, @sai in Minecraft, live translation,
+ThreatNet auto-protect and Threat Score, backups, role panels, custom commands and
+white-label branding.
+
+**Setting up from the web portal no longer risks a false failure.** A logging slip at the
+very end of portal setup could make a fully successful setup report back as failed. Fixed.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.140.0: ban a Minecraft player from Discord, even one you have never seen</summary>
 
 **You could only act on players SA had already caught.** Kicking or banning someone on your
@@ -3548,6 +3584,27 @@ Everything stays **local to your server**: nothing is shared anywhere. It's **on
 <p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.30.0</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
 
 <details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>v6.142.0: bans and kicks are announced in game</summary>
+
+**Players just saw someone vanish.** A ban or kick made through Server Assistant said nothing
+in Minecraft chat, so the people playing had no idea what had happened, or that anyone was
+watching at all.
+
+**One line now goes to the whole server**, for example *"Griefer was banned by Staff."* The
+player and what happened, and nothing more.
+
+**The reason is deliberately left out.** It often quotes exactly what somebody said, so
+putting it in front of everyone can be worse than the thing being punished. It stays with
+your staff records. The moderator is not named either, so nobody becomes a target for the
+player who was just removed.
+
+**Bans made outside Server Assistant are left alone.** A console ban or another plugin's ban
+already announces itself however your server is configured, so SA does not say it a second
+time.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.140.0: ban or kick a player from Discord by name</summary>
 
 **Staff could only act on players SA had already flagged.** Moderating your Minecraft server
