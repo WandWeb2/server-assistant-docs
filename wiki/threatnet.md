@@ -169,7 +169,7 @@ Because it's an **automated** action, it ships with safeguards:
   <table class="cmd-args">
     <tr><th>Argument</th><th>Type</th><th>Notes</th></tr>
     <tr><td><code>action</code> <span class="req">required</span></td><td>choice</td><td><code>on</code>, <code>off</code> or <code>status</code>.</td></tr>
-    <tr><td><code>level</code> <span class="opt">optional</span></td><td>choice</td><td>Minimum band that triggers a ban: <code>high</code> (safest, serious + corroborated), <code>elevated</code> (broader), or <code>low</code> (widest; higher false-positive risk). Defaults to <code>high</code>.</td></tr>
+    <tr><td><code>level</code> <span class="opt">optional</span></td><td>choice</td><td>Minimum band that triggers a ban: <code>high</code> (safest, serious + corroborated) or <code>elevated</code> (broader; the lowest level available). Defaults to <code>high</code>.</td></tr>
   </table>
 </div>
 

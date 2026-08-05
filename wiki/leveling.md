@@ -39,8 +39,9 @@ sessions fair.
 [Minecraft ↔ Discord bridge]({{ '/wiki/minecraft/' | relative_url }}) and you've **linked
 your Minecraft and Discord accounts**, the time you spend **connected to the server** earns
 XP into the same balance, at the **same base rate as voice**, with its own gentle hourly
-limit. Unlike voice, there's no idle check in-game, so AFK time still earns, up to that
-limit. It's free and automatic once you've linked, with nothing else to switch on. One
+limit. Like voice, idling doesn't pay: after about five minutes without activity, XP
+pauses until you do something, and resumes instantly when you're back. It's free and
+automatic once you've linked, with nothing else to switch on. One
 difference: because you're in-game rather than in a channel, a level-up earned in
 Minecraft **isn't announced** — the XP still lands.
 

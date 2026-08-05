@@ -4,9 +4,9 @@ title: "Crestbound"
 permalink: /wiki/crestbound/
 wiki: true
 wiki_category: "Features"
-summary: Crestbound is the Crest-collecting game in the Server Assistant portal. Spend the XP you earn in Discord on booster packs, collect the Crests of the first Chapter, Embers of the First War, across four rarities, discover brand-new Crests and bring their art to light, complete your collection, and burn spare Crests back into XP. A full player guide to My Collection, booster packs, discovering Crests and burning.
+summary: Crestbound is the Crest-collecting game powered by Server Assistant XP, now its own app at crestbound.wandweb.co with its own Discord bot. Spend the XP you earn in Discord on booster packs, collect the Crests of the first Chapter, Embers of the First War, across four rarities, discover brand-new Crests and bring their art to light, complete your collection, and burn spare Crests back into XP. A full player guide to My Collection, booster packs, discovering Crests and burning.
 wiki_keywords: [crestbound, crests, crest, chapter, wardeck, wardecks, battle mode, five crests, faction, factions, warsworn, undertow, bonereave, ragefire, grimwild, card game, tcg, collection, booster, booster pack, pack, burn, rarity, common, uncommon, rare, mythic, embers of the first war, xp games, portal, discover, discovery, kindle, illuminate, grand reveal, unveil, first light, achievement, crest art, artwork, discovered by, credit, share, cinders, ember vault, card backs, cosmetics, shop, quests, daily quests, main menu, fullscreen, sort, filter]
-description: A player guide to Crestbound, the XP-powered Crest-collecting game in the Server Assistant portal. Earn XP in Discord, open booster packs, discover brand-new Crests and bring their artwork to light, collect the Crests of the first Chapter, Embers of the First War, burn spare Crests back into XP, and gear up the Shop's card backs and Ember Vault.
+description: A player guide to Crestbound, the XP-powered Crest-collecting game at crestbound.wandweb.co. Earn XP in Discord, open booster packs, discover brand-new Crests and bring their artwork to light, collect the Crests of the first Chapter, Embers of the First War, burn spare Crests back into XP, and gear up the Shop's card backs and Ember Vault.
 ---
 
 # Crestbound
@@ -86,9 +86,9 @@ That hand is yours. The first Chapter, **Chapter I: Embers of the First War**, h
 
 ## Where to find it {#where}
 
-Crestbound lives in the **customer portal**. Sign in with Discord and find
-**Crestbound** under the portal's **XP Games** section; open it to jump straight into
-your collection.
+Crestbound lives at **[crestbound.wandweb.co](https://crestbound.wandweb.co)**. Sign
+in with Discord and you land straight in your collection. Links to the game from the
+Server Assistant portal carry you there too.
 
 <div class="dc">
   <div class="dc-row"><div class="dc-body" style="padding:0;">
@@ -308,7 +308,7 @@ your DMs**.
 
 ### Removing your credit {#art-optout}
 
-Your discovery credits are tied to your account and you control them. The portal has a
+Your discovery credits are tied to your account and you control them. The game has a
 **one-time** option to **remove your name from every Crest you've discovered**. It's
 permanent and can't be undone: your credits are scrubbed, and those Crests re-open to be
 discovered afresh by the next player to find them. How your discovery credit and the

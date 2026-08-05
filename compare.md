@@ -60,9 +60,9 @@ description: "Honest feature comparisons: Server Assistant vs the bots you might
       <h4>Where Server Assistant wins</h4>
       <ul>
         <li><strong>The whole moderation suite, not just chat-AI.</strong> Anti-raid, Threat Score, Self-trained AutoMod, Bot Health Insurance, Ticket Panels, baseline admin (<code>/role</code> / <code>/lockdown</code> / <code>/tempban</code> / <code>/altguard</code>).</li>
-        <li><strong>Risk-graded enforcement.</strong> Threat Score adjusts actions to the actual threat instead of fixed punishment ladders, with extensive safeguards against false positives.</li>
+        <li><strong>Risk-graded context for staff.</strong> Threat Score gives staff an advisory per-user risk read from your server's own history (it never acts on its own), with extensive safeguards against false positives.</li>
         <li><strong>Ban reasons + one-reply appeals.</strong> Every ban DMs the user the reason and opens a structured appeal channel to staff. Civora doesn't do post-action recovery flows.</li>
-        <li><strong>One-tap setup on install.</strong> The bot DMs the owner a one-button Apply proposal when it joins.</li>
+        <li><strong>Guided setup on install.</strong> The bot DMs whoever added it and opens the setup wizard right in the DM, done in about a minute.</li>
         <li><strong>Better usage economics.</strong> Premium $7/mo includes ~750,000 AI tokens; Civora Pro $14/mo includes 8,000 messages. Roughly an order of magnitude more usage for half the price.</li>
         <li><strong>Image generation.</strong> <code>/imagine</code>: ~30 free-trial images, unlimited on Premium, or bring your own image key.</li>
       </ul>
@@ -93,7 +93,7 @@ description: "Honest feature comparisons: Server Assistant vs the bots you might
       <ul>
         <li><strong>AI-context moderation</strong> instead of keyword regex. Catches sarcasm, slang, and intent that MEE6's filters miss entirely.</li>
         <li><strong>Self-trained AutoMod</strong> learns from your staff's manual decisions and proposes server-specific rules for approval.</li>
-        <li><strong>Threat Score</strong>: risk-based actions instead of one-size-fits-all punishment ladders.</li>
+        <li><strong>Threat Score</strong>: an advisory per-user risk read in profiles, so staff can match the response to the actual threat instead of a one-size-fits-all punishment ladder.</li>
         <li><strong>ThreatNet (cross-server threat network)</strong>: recognises scammers and raiders with a serious, corroborated history on <em>other</em> protected servers, before they reach yours. No major competitor shares a cross-server safety signal.</li>
         <li><strong>Ban reasons + one-reply appeals</strong> built in. MEE6's ban flow is silent.</li>
         <li><strong>Bot Health Insurance</strong>: the bot watches its own noisiness and suggests tuning before staff get fed up and mute it.</li>
@@ -158,12 +158,12 @@ description: "Honest feature comparisons: Server Assistant vs the bots you might
       <h4>Where Server Assistant wins</h4>
       <ul>
         <li><strong>AI-context moderation</strong>: Carl-bot's automod is keyword-based and inherits the same blind-spots as every regex filter.</li>
-        <li><strong>Risk-based enforcement</strong> via Threat Score with safeguards.</li>
+        <li><strong>Advisory risk context</strong> via Threat Score with safeguards.</li>
         <li><strong>Self-trained AutoMod</strong> from staff decisions.</li>
         <li><strong>Real appeals</strong> + one-reply ban DMs.</li>
         <li><strong>Anti-raid auto-actions</strong> with sub-raid detection.</li>
-        <li><strong>One-tap setup on install</strong> and right-click context menus.</li>
-        <li><strong>Reaction roles + custom slash commands now ship as Premium features</strong> (<code>/rolepanel</code> · <code>/customcmd</code>, shipped v5.6.27); a full embed builder is on the roadmap. These are Premium, not free-tier.</li>
+        <li><strong>Guided setup on install</strong> (the wizard opens in a DM the moment the bot joins) and right-click context menus.</li>
+        <li><strong>Reaction roles + custom slash commands ship as Premium features</strong> (<code>/rolepanel</code> · <code>/customcmd</code>); a full embed builder is on the roadmap. These are Premium, not free-tier.</li>
       </ul>
     </div>
   </div>

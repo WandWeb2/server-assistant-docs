@@ -29,7 +29,7 @@ There's no scheduled Discord channel post.
 
 ## What Pulse reports {#what-pulse-reports}
 
-Each digest rolls up the last period into four sections:
+Each digest rolls up the last period into five sections:
 
 - **Server activity** (counts only; no message content is ever stored): messages,
   joins &amp; leaves, head-count, AutoMod blocks and warnings, each with a
@@ -37,13 +37,19 @@ Each digest rolls up the last period into four sections:
 - **Mod-team recap**: **cases handled**, a **by-action breakdown** (warns / timeouts /
   kicks / bans), your **most-active staff**, and an **itemised list** of recent actions.
 - **Reception**: how many members **arrived**, **verified**, and were **caught**.
+- **ThreatNet**: what the protection did, your own server's figures first, then the
+  **fleet-wide network totals**, shown **every week without exception** so a quiet week
+  on your server never looks like an idle network. Each line states the period it
+  covers (messages scanned is the last 7 days; flagged actors and blocked scam images
+  are all-time; the shared blocklist size is as of right now), and if a figure can't be
+  read the digest says so rather than printing zeros.
 - **Notable patterns** *(Premium, opt-in)*: a short **AI narrative** flagging what's
   worth a glance, such as an AutoMod spike or a run of joins above baseline but below
   your raid threshold. Added only to a digest that's actually delivered; if nothing
   stands out, it says so.
 
 Servers running the [Minecraft ↔ Discord bridge]({{ '/wiki/minecraft/' | relative_url }})
-get a fifth:
+get one more:
 
 - **Your Minecraft server, last 7 days**: a rollup of in-game **messages**, **joins**,
   **deaths** and **advancements**. It's **free on every plan** and **automatic** — the

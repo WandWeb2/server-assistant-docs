@@ -17,8 +17,9 @@ About a minute, start to finish.
 
 Three ways to reach it:
 
-- **Automatically**: when the bot joins, it DMs the owner a **Welcome** message
-  that opens the wizard.
+- **Automatically**: when the bot joins, it DMs **whoever added it** (often a
+  Manage Server admin rather than the owner) a **Welcome** message that opens the
+  wizard.
 - **`/setup`**: run it any time to re-open the wizard (it pre-fills your
   *current* configuration, not a blank slate).
 - **Web portal**: the wizard offers a *“finish setup on the web”* link to
