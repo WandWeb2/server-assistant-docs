@@ -403,58 +403,6 @@ details.safeguards li { margin-bottom: 0.2rem; }
   color: #fff;
 }
 
-/* ════════════════════════════════════════════════════════════════════════
-   DARK THEME — overrides the light rules above (same selectors, later wins).
-   Structure, bands, and animations are unchanged; only colours + bar size.
-   ════════════════════════════════════════════════════════════════════════ */
-.roadmap-hero { background: rgba(46, 204, 113, 0.10); border-left-color: #2ecc71; color: #e6e9f0; }
-.lp-q { color: #e6e9f0; }
-.lp-label a,
-.lp-label a:link,
-.lp-label a:visited,
-.lp-label a:hover,
-.lp-label a:focus,
-.lp-label a:active { color: #fff; }
-.lp-track { background: rgba(255, 255, 255, 0.12); height: 16px; }
-.lp-fill { background: linear-gradient(90deg, #6c3483, #a569bd); }
-.lp-fill.gold { background: linear-gradient(90deg, #b7950b, #f1c40f); }
-.lp-pct { color: #cdd4e3; }
-.lp-meta { color: #aab2c5; }
-.lp-refresh { color: #8b93a7; }
-.lp-row { font-size: .92rem; margin: .4rem 0; }
-
-.build-queue { background: rgba(255, 255, 255, 0.025); border-color: rgba(255, 255, 255, 0.10); }
-.band-empty { color: #9aa3b6; }
-.gold-cta-text strong { color: #f1c40f; }
-.gold-cta-sub { color: #9aa3b6; }
-
-details.card { background: rgba(255, 255, 255, 0.045); border-color: rgba(255, 255, 255, 0.10); box-shadow: none; }
-details.card[open] { background: rgba(255, 255, 255, 0.07); }
-details.card > summary { color: #e6e9f0; }
-details.card > summary:hover { color: #3cc1f0; }
-details.card .desc { color: #c4cbdb; border-top-color: rgba(255, 255, 255, 0.10); }
-
-details.band-shipped > summary { background: rgba(255, 255, 255, 0.06); color: #d4dae6; border-color: rgba(255, 255, 255, 0.14); }
-details.band-shipped > .shipped-scroll { border-color: rgba(255, 255, 255, 0.12); }
-
-.flagship-card { background: rgba(22, 160, 133, 0.12); border-color: rgba(22, 160, 133, 0.35); }
-.flagship-card h4 { color: #5fd0b6; }
-
-.lane { background: rgba(255, 255, 255, 0.04); }
-.lane h3 { color: #e6e9f0; }
-.lane h3 small { color: #9aa3b6; }
-details.pack { background: rgba(255, 255, 255, 0.045); border-color: rgba(255, 255, 255, 0.10); border-left-color: #2ecc71; box-shadow: none; }
-details.pack[open] { background: rgba(255, 255, 255, 0.07); box-shadow: none; }
-details.pack > summary.pack-h { color: #e6e9f0; }
-details.pack > summary.pack-h:hover { color: #3cc1f0; }
-details.pack[open] > summary.pack-h { border-bottom-color: rgba(255, 255, 255, 0.10); }
-summary.pack-h .pack-count { color: #5fd0b6; background: rgba(46, 204, 113, 0.12); border-color: rgba(46, 204, 113, 0.35); }
-.pack-desc { color: #aab2c5; }
-.new-pill { background: rgba(69, 179, 157, 0.18); border-color: rgba(69, 179, 157, 0.5); color: #76d7c4; }
-.upgrade-pill { background: rgba(229, 152, 102, 0.18); border-color: rgba(229, 152, 102, 0.5); color: #e8a87c; }
-.premium-tier-col { background: rgba(241, 196, 15, 0.07); }
-.premium-tier-col h4 { color: #e9c84b; border-bottom-color: rgba(233, 200, 75, 0.35); }
-.expand-all-bar button { background: rgba(255, 255, 255, 0.06); border-color: rgba(255, 255, 255, 0.18); color: #c4cbdb; }
 </style>
 
 <!-- ════════════════════════════════════════════════════════════════════════════
@@ -840,7 +788,7 @@ Where Server Assistant is heading. Priorities are decided by the people who run 
 
     <details class="card">
       <summary>ThreatNet, cross-server threat network <span class="shipped-pill">Shipped v6.4.0</span></summary>
-      <span class="desc">Opt-in cross-server protection against users with a serious, corroborated history of scams, raids or ban-evasion on <em>other</em> protected servers. Every protected server shares <strong>minimized, severity-only</strong> signals, never the offence type, your staff's reasons, message content, or which server acted, so a risky joiner lights up as a free advisory <strong>Threat Network</strong> flag on their profile (advisory band is free for every server; it never auto-acts). <strong>Scam-image defense</strong> fingerprints posted images and removes ones matching a cross-server scam-image blocklist. <strong>Premium auto-protect</strong> (opt-in, off by default) can ban a user automatically on join when they meet a cross-server risk threshold you choose. A core, on-by-default safety feature; individuals can opt out of profiling in the web portal, subject to a published safety exception. <em>Go-live v5.8; scam-image defense v6.3.0; Premium auto-protect v6.4.0.</em> <a href="{{ site.url }}{{ site.baseurl }}/wiki/threatnet/">Full guide →</a></span>
+      <span class="desc">Cross-server protection against users with a serious, corroborated history of scams, raids or ban-evasion on <em>other</em> protected servers. Every protected server shares <strong>minimized, severity-only</strong> signals, never the offence type, your staff's reasons, message content, or which server acted, so a risky joiner lights up as a free advisory <strong>Threat Network</strong> flag on their profile (advisory band is free for every server; it never auto-acts). <strong>Scam-image defense</strong> fingerprints posted images and removes ones matching a cross-server scam-image blocklist. <strong>Premium auto-protect</strong> (opt-in, off by default) can ban a user automatically on join when they meet a cross-server risk threshold you choose. A core, on-by-default safety feature; individuals can opt out of profiling in the web portal, subject to a published safety exception. <em>Go-live v5.8; scam-image defense v6.3.0; Premium auto-protect v6.4.0.</em> <a href="{{ site.url }}{{ site.baseurl }}/wiki/threatnet/">Full guide →</a></span>
 </details>
 
     <details class="card">
@@ -850,12 +798,12 @@ Where Server Assistant is heading. Priorities are decided by the people who run 
 
     <details class="card">
       <summary>Leveling &amp; XP <span class="shipped-pill">Shipped v6.2.3</span></summary>
-      <span class="desc">Server XP earned from real participation, with level-up announcements you control (<code>/leveling</code>), <strong>Double-XP events</strong>, anti-spam and per-user opt-out. XP doubles as a trust signal and is spent in <strong>Crestbound</strong>, the Crest-collecting game in the web portal. The third of the community-voted v6.0 features. <a href="{{ site.url }}{{ site.baseurl }}/wiki/leveling/">Full guide →</a></span>
+      <span class="desc">Server XP earned from real participation, with level-up announcements you control (<code>/leveling</code>), <strong>Double-XP events</strong>, anti-spam and per-user opt-out. XP doubles as a trust signal and is spent in <strong>Crestbound</strong>, the Crest-collecting companion game (now its own app at crestbound.wandweb.co). The third of the community-voted v6.0 features. <a href="{{ site.url }}{{ site.baseurl }}/wiki/leveling/">Full guide →</a></span>
 </details>
 
     <details class="card">
       <summary>Crestbound, the XP collecting game <span class="shipped-pill">Shipped v6.2.3</span></summary>
-      <span class="desc">The XP your members earn in Discord becomes a <strong>spendable currency</strong> in <strong>Crestbound</strong>, the Crest-collecting game in the web portal (under XP Games). Spend XP on <strong>booster packs</strong> to collect the Crests of the first Chapter, <em>Embers of the First War</em>, across four rarities; the <strong>first player anywhere</strong> to pull a brand-new Crest illuminates its artwork for everyone and keeps a permanent discovery credit (the <strong>First Light</strong> achievement). Burn spare duplicates back into XP. No purchase and no Premium, if you've earned XP, you can play. A <strong>Wardeck</strong> battle mode is on the way. <a href="{{ site.url }}{{ site.baseurl }}/wiki/crestbound/">Full guide →</a></span>
+      <span class="desc">The XP your members earn in Discord becomes a <strong>spendable currency</strong> in <strong>Crestbound</strong>, the Crest-collecting game, now its own app at crestbound.wandweb.co with its own Discord bot. Spend XP on <strong>booster packs</strong> to collect the Crests of the first Chapter, <em>Embers of the First War</em>, across four rarities; the <strong>first player anywhere</strong> to pull a brand-new Crest illuminates its artwork for everyone and keeps a permanent discovery credit (the <strong>First Light</strong> achievement). Burn spare duplicates back into XP. No purchase and no Premium, if you've earned XP, you can play. A <strong>Wardeck</strong> battle mode is on the way. <a href="{{ site.url }}{{ site.baseurl }}/wiki/crestbound/">Full guide →</a></span>
 </details>
 
     <details class="card">
@@ -1030,7 +978,7 @@ Where Server Assistant is heading. Priorities are decided by the people who run 
 
     <details class="card">
       <summary>Threat Score <span class="shipped-pill">v1 (advisory) shipped v3.8</span></summary>
-      <span class="desc">Risk-based moderation that replaces fixed punishment ladders. Actions fit the actual threat, context-aware, opt-in, with extensive safeguards against punishing legitimate users. <strong>v1 (advisory) shipped 2026-05-29, free for every server</strong>, each user gets an explainable, time-decayed risk score shown to staff in their profile. <strong>It never auto-actions</strong>; it's pure visibility. The <strong>active</strong>, score-driven phase (<strong>Premium</strong>, with the safeguards below) comes only after the advisory version proves accurate in real servers.</span>
+      <span class="desc">An explainable, time-decayed per-user risk score shown to staff in profiles, so responses can fit the actual threat instead of a fixed ladder. <strong>v1 (advisory) shipped 2026-05-29</strong>. <strong>It never auto-actions</strong>; it's pure visibility, opt-in per server. Today it's part of the <strong>full Premium</strong> plan. A future <strong>active</strong>, score-driven phase (with the safeguards below) would come only after the advisory version proves accurate in real servers.</span>
       <details class="safeguards">
         <summary>Safeguards against false positives</summary>
         <ul>
