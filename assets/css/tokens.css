@@ -5,73 +5,73 @@
    the same variable NAMES and different VALUES. Editing this file changes the
    docs site only; it does not touch the operator console.
 
-   This header used to claim the two were "shared verbatim" and a "single source
-   of truth". They were not: a diff on 2026-08-02 found 107 differing lines,
-   including --bg-0 (#0d0a0a here, #141010 there), --glass-panel, and --bg-nav,
-   which exists only on the console side. The claim was corrected rather than the
-   files converged, because the two surfaces have genuinely different grounds:
-   the console renders on a near-opaque forge canvas, the docs site on a frosted
-   panel over a warm gradient. The same value does not serve both.
-
-   What that costs, recorded so nobody "fixes" it back into a lie: the shared
-   variable NAMES are still a contract, so renaming one here without renaming it
-   there breaks nothing loudly and drifts the two apart silently. If the two are
-   ever genuinely converged, add a check that fails when they differ, because a
-   comment asserting sameness is exactly what failed here.
-
-   Known consequence of the split, not yet fixed: --fg-2 and --fg-3 are
-   calibrated for contrast against a bare --bg-0, which only the console uses.
-   Measured against this site's frosted panel they land near or below WCAG AA,
-   so avoid them for body-adjacent text here.
+   2026-08-05: the docs site moved to the MODERN LIGHT theme derived from the
+   SAllay logo (assets/SAllay.png): airy white-to-sky ground, sky-blue primary
+   (#78d8f0 / #30a8d8 / #1878c0 sampled from the artwork), gold accent, slate
+   neutrals, glassy white cards. The variable NAMES are unchanged, so every
+   page's inline <style> block keeps working; only the VALUES flipped from the
+   old dark ember palette. The console twin remains dark; the two surfaces are
+   deliberately different grounds (see the 2026-08-02 audit note in git
+   history), and the shared NAMES are still the contract: renaming one here
+   without renaming it there drifts the two apart silently.
 
    Console names remain canonical for NAMING. Locked reconciliations from the
-   Tempered audit are baked in (card radius 18px, deeper panel shadow,
-   --glass-sheen rename, docs-derived status/band/brand tokens, extended type
-   scale).
+   Tempered audit are baked in (card radius 18px, --glass-sheen rename,
+   docs-derived status/band/brand tokens, extended type scale).
    ============================================================================ */
 
 :root {
-  /* ── Palette ──────────────────────────────────────────────────────────── */
-  --bg-0:        #0d0a0a;
-  --bg-1:        rgba(22, 17, 17, 0.72);
-  --surface:     rgba(255, 255, 255, 0.045);
-  --surface-2:   rgba(255, 255, 255, 0.085);
-  --surface-hi:  rgba(255, 255, 255, 0.13);
-  --glass-sheen:  rgba(255, 255, 255, 0.05);   /* was console --glass */
-  --glass-panel:  rgba(28, 22, 22, 0.58);      /* docs --glass-bg */
-  --glass-strong: rgba(22, 17, 17, 0.84);
+  /* ── Palette: modern light, from the SAllay artwork ───────────────────── */
+  --bg-0:        #f2f9fd;
+  --bg-1:        rgba(255, 255, 255, 0.72);
+  --surface:     rgba(255, 255, 255, 0.55);
+  --surface-2:   rgba(255, 255, 255, 0.78);
+  --surface-hi:  rgba(255, 255, 255, 0.92);
+  --glass-sheen:  rgba(255, 255, 255, 0.45);
+  --glass-panel:  rgba(255, 255, 255, 0.66);   /* frosted white page panel */
+  --glass-strong: rgba(255, 255, 255, 0.88);
 
-  --fg-0: #e9ecf7;
-  --fg-1: #aeb4cf;
-  --fg-2: #7e84a6;
-  --fg-3: #767ea8;   /* lifted from #565c80 to clear WCAG AA (≈4.8:1 on --bg-0) */
+  --fg-0: #17303f;   /* slate ink, from the helmet shadows */
+  --fg-1: #43596b;
+  --fg-2: #5d7385;
+  --fg-3: #6b8093;
 
-  /* Back-compat aliases — docs .md <style> blocks still reference the old names */
+  /* Back-compat aliases: docs .md <style> blocks still reference the old names */
   --ink:          var(--fg-0);
   --ink-soft:     var(--fg-1);
   --glass-border: var(--border);
 
-  --accent:           #3cc1f0;
-  --accent-soft:      rgba(60, 193, 240, 0.15);
-  --accent-container: rgba(60, 193, 240, 0.18);
-  --on-accent:        #04121b;
+  /* Primary sky blue. --accent is calibrated dark enough for AA text on the
+     light ground; use --sky / --sky-soft for decorative fills and gradients. */
+  --accent:           #0e7fb8;
+  --accent-soft:      rgba(56, 182, 232, 0.14);
+  --accent-container: rgba(56, 182, 232, 0.22);
+  --on-accent:        #ffffff;
 
-  /* Premium ONLY — billing / subscription / revenue / upgrade */
-  --gold:      #f5c422;
-  --gold-soft: rgba(245, 196, 34, 0.16);
+  /* New SAllay-derived decorative stops (additive; nothing old renamed) */
+  --sky:        #38b6e8;
+  --sky-bright: #78d8f0;
+  --sky-deep:   #1878c0;
+  --sky-soft:   rgba(120, 216, 240, 0.28);
 
-  /* SAi / AI identity ONLY — ambient glass / soft accent */
-  --pink:      #ee5ba2;
-  --pink-soft: rgba(238, 91, 162, 0.16);
+  /* Premium ONLY: billing / subscription / revenue / upgrade.
+     --gold is text-safe on light; --gold-bright is the plume gold for fills. */
+  --gold:        #a07908;
+  --gold-bright: #f5c518;
+  --gold-soft:   rgba(245, 197, 24, 0.18);
 
-  /* Neutral / decorative */
-  --steel:    #9aa1a9;
-  --steel-2:  #646b74;
+  /* SAi / AI identity ONLY: ambient glass / soft accent */
+  --pink:      #c73f84;
+  --pink-soft: rgba(238, 91, 162, 0.14);
 
-  --warn:     #e0a13a;
-  --high:     #ff9466;
-  --critical: #ff6b6b;
-  --ok:       #54e08e;
+  /* Neutral / decorative: the helmet silvers */
+  --steel:    #64748b;
+  --steel-2:  #94a3b3;
+
+  --warn:     #a36207;
+  --high:     #c2410c;
+  --critical: #cc3340;
+  --ok:       #14804a;
 
   /* Deep stops for status gradients + docs-derived status/brand colours */
   --ok-deep:   #1e8449;
@@ -86,17 +86,17 @@
   --brand-discord: #5865f2;
   --brand-blue:    #3498db;
 
-  --border:  rgba(255, 255, 255, 0.10);
-  --divider: rgba(255, 255, 255, 0.07);
-  --shadow:  0 8px 32px rgba(0, 0, 0, 0.45);   /* deeper docs recipe (locked) */
-  --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.22);
+  --border:  rgba(23, 76, 110, 0.14);
+  --divider: rgba(23, 76, 110, 0.09);
+  --shadow:  0 10px 34px rgba(18, 68, 102, 0.12);
+  --shadow-sm: 0 2px 10px rgba(18, 68, 102, 0.08);
 
   --sat: env(safe-area-inset-top, 0px);
   --sab: env(safe-area-inset-bottom, 0px);
   --sal: env(safe-area-inset-left, 0px);
   --sar: env(safe-area-inset-right, 0px);
 
-  /* ── Type scale — refined dashboard sizing, extended downward ─────────── */
+  /* ── Type scale: refined dashboard sizing, extended downward ─────────── */
   --fs-3xs:  0.625rem;   /* ~10px floor for the tiniest labels */
   --fs-2xs:  0.7rem;     /* ~11px */
   --fs-xs:   0.78rem;

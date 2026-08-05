@@ -120,7 +120,7 @@ description: "Server Assistant pricing: generous free tier, $7/mo USD Premium wi
 
 <div class="dc" style="max-width:560px;margin:1rem 0 1.3rem;">
   <div class="dc-row">
-    <img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy">
+    <img class="dc-av" src="{{ '/assets/SAllay-64.png' | relative_url }}" alt="Server Assistant" loading="lazy">
     <div class="dc-body">
       <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">Direct Message</span></div>
       <div class="dc-embed green">

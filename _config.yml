@@ -18,7 +18,7 @@ lang: en-GB
 mcdc_plugin_version: v0.30.0
 
 # Hero / social-share image (used by Open Graph and Twitter Cards)
-image: /assets/banner.jpeg
+image: /assets/SAllay-512.png
 
 # Author — string form so Minima's footer renders it as plain text, not as
 # the YAML hash literal. jekyll-seo-tag still picks this up for og:author.
@@ -42,7 +42,7 @@ plugins:
   - jekyll-feed
 
 # Header logo for the theme
-logo: /assets/logo.png
+logo: /assets/SAllay-192.png
 
 # Top-nav: trimmed to the marketing funnel (Setup → Features → Pricing →
 # Compare → Roadmap). Deeper pages (Commands, FAQ, Support, Changelog) stay
@@ -70,7 +70,7 @@ defaults:
       type: pages
     values:
       layout: default
-      image: /assets/banner.jpeg
+      image: /assets/SAllay-512.png
 
 # Don't include drafts or other Jekyll noise in the build
 exclude:

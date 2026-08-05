@@ -72,7 +72,7 @@ The guard's reaction scales with its confidence that it's seeing an attack:
 ### What a high-confidence incident looks like
 
 <div class="dc">
-  <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+  <div class="dc-row"><img class="dc-av" src="{{ '/assets/SAllay-64.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
     <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">just now</span></div>
     <div class="dc-embed red">
       <div class="dc-title">Anti-nuke: actor quarantined</div>
@@ -139,7 +139,7 @@ can clear the whole list in one tap.
   </div>
   <p class="cmd-desc">The anti-nuke control panel: switch the guard on or off, choose whether high-confidence incidents auto-quarantine (or just alert), turn the two-person rule and channel auto-restore on or off, see your community-tuned sensitivity, and manage the trusted-actor whitelist. Take a fresh restore snapshot any time.</p>
   <div class="dc" style="margin-top:1rem;">
-    <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+    <div class="dc-row"><img class="dc-av" src="{{ '/assets/SAllay-64.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
       <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">Only you can see this</span></div>
       <div class="dc-embed blue">
         <div class="dc-title">Anti-nuke / rogue-admin guard</div>

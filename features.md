@@ -7,7 +7,47 @@ description: A tour of Server Assistant's features, AutoMod that learns your tea
 
 # Server Assistant Features
 
-Each feature area pairs what you get **free** (the <span style="color:#54e08e;font-weight:700;">green</span> cards) with what **Trial &amp; Premium** add (the <span style="color:#f5c422;font-weight:700;">gold</span> cards). Tap any card to expand the detail. See also **[Commands]({{ site.url }}{{ site.baseurl }}/commands/)** and **[Pricing]({{ site.url }}{{ site.baseurl }}/pricing/)**.
+Each feature area pairs what you get **free** (the <span style="color:var(--ok);font-weight:700;">green</span> cards) with what **Trial &amp; Premium** add (the <span style="color:var(--gold);font-weight:700;">gold</span> cards). Tap any card to expand the detail. See also **[Commands]({{ site.url }}{{ site.baseurl }}/commands/)** and **[Pricing]({{ site.url }}{{ site.baseurl }}/pricing/)**.
+
+<style>
+/* Minecraft bridge showcase: sky glass banner, top of the page. */
+.mcdc-hero { margin: 1.2rem 0 1rem; border-radius: 16px; padding: 1.1rem 1.3rem 1.2rem; background: linear-gradient(135deg, rgba(120,216,240,.30), rgba(255,255,255,.6) 60%); border: 1px solid rgba(24,120,192,.28); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); box-shadow: var(--shadow-sm); scroll-margin-top: 80px; }
+.page-content .mcdc-hero h2 { margin: 0 0 .25rem; padding: 0; font-size: 1.4rem; border: 0; }
+.mcdc-hero .mh-lead { margin: 0 0 .7rem; color: var(--ink-soft); font-size: .95rem; max-width: 52rem; }
+.mcdc-hero .mh-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .15rem 1.6rem; margin: 0 0 .7rem; padding: 0; list-style: none; }
+.mcdc-hero .mh-grid li { position: relative; padding-left: 1.2rem; color: var(--ink-soft); font-size: .9rem; line-height: 1.55; }
+.mcdc-hero .mh-grid li::before { content: "✦"; position: absolute; left: 0; top: .2em; color: var(--sky-deep); font-size: .8em; }
+.mcdc-hero .mh-prem { margin: 0 0 .8rem; font-size: .88rem; color: var(--ink-soft); background: var(--gold-soft); border: 1px solid rgba(160,121,8,.3); border-radius: 10px; padding: .55rem .8rem; }
+.mcdc-hero .mh-prem strong.lbl { color: var(--gold); text-transform: uppercase; font-size: .72rem; letter-spacing: .05em; margin-right: .35rem; }
+.mcdc-hero .mh-ctas { display: flex; flex-wrap: wrap; gap: .55rem; align-items: center; }
+.mcdc-hero .mh-cta { display: inline-flex; align-items: center; gap: .4rem; padding: .5rem 1.05rem; border-radius: 999px; font-weight: 700; font-size: .88rem; text-decoration: none !important; background: linear-gradient(120deg, var(--sky), var(--sky-deep)); color: #fff !important; box-shadow: 0 8px 20px rgba(24,120,192,.28); transition: transform .15s ease, box-shadow .15s ease; }
+.mcdc-hero .mh-cta:hover { transform: translateY(-1px); box-shadow: 0 12px 26px rgba(24,120,192,.38); }
+.mcdc-hero .mh-cta.ghost { background: rgba(255,255,255,.7); color: var(--ink) !important; border: 1px solid var(--glass-border); box-shadow: none; }
+.mcdc-hero .mh-sec { font-size: .8rem; color: var(--ink-soft); margin: .6rem 0 0; }
+@media (max-width: 760px) { .mcdc-hero .mh-grid { grid-template-columns: 1fr; } }
+@media (prefers-reduced-motion: reduce) { .mcdc-hero .mh-cta { transition: none; } }
+</style>
+
+<div class="mcdc-hero" id="sec-minecraft" markdown="0">
+  <h2>⛏️ Minecraft + Discord, one community <span class="tier-badge" style="background:rgba(20,128,74,.14); color:var(--ok);">Free on every plan</span></h2>
+  <p class="mh-lead"><strong>MCDC</strong> bridges your Minecraft server (Paper/Spigot 1.21.x, Java 21) and your Discord into one community, with one moderation standard across both. Set it up with the single <code>/mcdc</code> wizard in Discord, or fully in game with <code>/mcdc link</code>.</p>
+  <ul class="mh-grid">
+    <li><strong>Two-way chat</strong>: players post as themselves, real name and skin avatar, and Discord reactions show up in game.</li>
+    <li><strong>Server events in Discord</strong>: join, leave, death, advancement, start and stop, each one toggleable.</li>
+    <li><strong>Live health</strong>: TPS, RAM and uptime in Discord, a live player count and health dot in the channel topic, <code>/online</code>, plus optional offline and low-TPS alerts.</li>
+    <li><strong>Playtime XP</strong> into the same shared balance as Discord activity (AFK time excluded).</li>
+    <li><strong>Moderation on every surface players write on</strong>: chat, signs, books, name tags, anvil renames, <code>/me</code>, private messages, and usernames on join, via the same AutoMod switch as Discord. <code>/mcban</code> and <code>/mckick</code> work by player name.</li>
+    <li><strong>Web ban appeals, even for bans Server Assistant didn't issue</strong>: console or other-plugin bans are captured and get an appeal link, shown on the ban screen and again if the banned player tries to rejoin.</li>
+    <li><strong>One-click account linking</strong> between a Discord member and their Minecraft player.</li>
+    <li><strong>Discord roles mirror to Minecraft ranks</strong> (one-way, via LuckPerms), and the plugin <strong>self-updates</strong> with sha256 verification.</li>
+  </ul>
+  <p class="mh-prem"><strong class="lbl">Premium extras</strong> <strong>@sai in game</strong>, grounded in the real Minecraft wiki with clickable citations · a <strong>personal Allay companion</strong> that answers privately · a <strong>per-server persona</strong> (name, tone, attitude) · <strong>live two-way chat translation</strong>.</p>
+  <div class="mh-ctas">
+    <a class="mh-cta" href="{{ '/downloads/mcdc-plugin.jar' | relative_url }}" download>⬇ Download the plugin ({{ site.mcdc_plugin_version }})</a>
+    <a class="mh-cta ghost" href="{{ '/wiki/minecraft/' | relative_url }}">Read the full bridge guide →</a>
+  </div>
+  <p class="mh-sec"><strong>Locked down by design:</strong> outbound HTTPS only, no inbound ports, no RCON, and the token is scoped to exactly one guild and channel.</p>
+</div>
 
 <style>
 /* Continuous coloured-glass columns behind an aligned per-group grid. */
@@ -125,6 +165,7 @@ Each feature area pairs what you get **free** (the <span style="color:#54e08e;fo
 
 <nav class="page-toc" aria-label="Feature areas" markdown="0">
   <span class="page-toc-label">Jump to</span>
+  <a href="#sec-minecraft">Minecraft bridge</a>
   <a href="#sec-moderation">Moderation</a>
   <a href="#sec-ban-appeals">Ban reasons &amp; appeals</a>
   <a href="#sec-automod">AutoMod Engine</a>

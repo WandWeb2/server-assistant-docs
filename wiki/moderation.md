@@ -50,7 +50,7 @@ or remove individual entries later.
       <div class="dc-head"><span class="dc-name">You</span><span class="dc-time">today</span></div>
       <div class="dc-slash"><span class="cmd">/warn</span> <span class="arg">user:</span> @Troublemaker <span class="arg">reason:</span> Spamming in #general</div>
     </div></div>
-    <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+    <div class="dc-row"><img class="dc-av" src="{{ '/assets/SAllay-64.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
       <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">today</span></div>
       <div class="dc-embed amber">
         <div class="dc-title">Warning issued</div>
@@ -79,7 +79,7 @@ or remove individual entries later.
       <div class="dc-head"><span class="dc-name">You</span><span class="dc-time">today</span></div>
       <div class="dc-slash"><span class="cmd">/warnings</span> <span class="arg">user:</span> @Troublemaker</div>
     </div></div>
-    <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+    <div class="dc-row"><img class="dc-av" src="{{ '/assets/SAllay-64.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
       <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">Only you can see this</span></div>
       <div class="dc-embed amber">
         <div class="dc-title">Warnings for Troublemaker</div>
@@ -109,7 +109,7 @@ or remove individual entries later.
       <div class="dc-head"><span class="dc-name">You</span><span class="dc-time">today</span></div>
       <div class="dc-slash"><span class="cmd">/note</span> <span class="arg">user:</span> @NewMember <span class="arg">text:</span> Joined from the partner server, vouched by @friend</div>
     </div></div>
-    <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+    <div class="dc-row"><img class="dc-av" src="{{ '/assets/SAllay-64.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
       <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">Only you can see this</span></div>
       <div class="dc-embed blue">
         <div class="dc-title">Note added</div>
@@ -136,7 +136,7 @@ or remove individual entries later.
       <div class="dc-head"><span class="dc-name">You</span><span class="dc-time">today</span></div>
       <div class="dc-slash"><span class="cmd">/notes</span> <span class="arg">user:</span> @NewMember</div>
     </div></div>
-    <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+    <div class="dc-row"><img class="dc-av" src="{{ '/assets/SAllay-64.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
       <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">Only you can see this</span></div>
       <div class="dc-embed blue">
         <div class="dc-title">Notes for NewMember</div>
@@ -189,7 +189,7 @@ notes). Tick the ones to remove and the list updates in place.
 
   <div class="wiz-step on" data-step="The panel opens">
     <div class="dc">
-      <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+      <div class="dc-row"><img class="dc-av" src="{{ '/assets/SAllay-64.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
         <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">Only you can see this</span></div>
         <div class="dc-embed amber">
           <div class="dc-title">Warnings for Troublemaker</div>
@@ -206,7 +206,7 @@ notes). Tick the ones to remove and the list updates in place.
 
   <div class="wiz-step" data-step="After removal">
     <div class="dc">
-      <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+      <div class="dc-row"><img class="dc-av" src="{{ '/assets/SAllay-64.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
         <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">Only you can see this</span></div>
         <div class="dc-embed amber">
           <div class="dc-title">Warnings for Troublemaker</div>
@@ -246,7 +246,7 @@ out a role. None of these remove anyone.
       <div class="dc-head"><span class="dc-name">You</span><span class="dc-time">today</span></div>
       <div class="dc-slash"><span class="cmd">/mute</span> <span class="arg">user:</span> @Troublemaker <span class="arg">minutes:</span> 30 <span class="arg">reason:</span> Needs to cool off</div>
     </div></div>
-    <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+    <div class="dc-row"><img class="dc-av" src="{{ '/assets/SAllay-64.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
       <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">today</span></div>
       <div class="dc-embed amber">
         <div class="dc-title">Member muted</div>
@@ -274,7 +274,7 @@ out a role. None of these remove anyone.
       <div class="dc-head"><span class="dc-name">You</span><span class="dc-time">today</span></div>
       <div class="dc-slash"><span class="cmd">/unmute</span> <span class="arg">user:</span> @Troublemaker</div>
     </div></div>
-    <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+    <div class="dc-row"><img class="dc-av" src="{{ '/assets/SAllay-64.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
       <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">today</span></div>
       <div class="dc-embed green">
         <div class="dc-title">Timeout removed</div>
@@ -302,7 +302,7 @@ out a role. None of these remove anyone.
       <div class="dc-head"><span class="dc-name">You</span><span class="dc-time">today</span></div>
       <div class="dc-slash"><span class="cmd">/slowmode</span> <span class="arg">seconds:</span> 10</div>
     </div></div>
-    <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+    <div class="dc-row"><img class="dc-av" src="{{ '/assets/SAllay-64.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
       <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">today</span></div>
       <div class="dc-embed blue">
         <div class="dc-title">Slowmode set</div>
@@ -329,7 +329,7 @@ out a role. None of these remove anyone.
       <div class="dc-head"><span class="dc-name">You</span><span class="dc-time">today</span></div>
       <div class="dc-slash"><span class="cmd">/lock</span></div>
     </div></div>
-    <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+    <div class="dc-row"><img class="dc-av" src="{{ '/assets/SAllay-64.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
       <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">today</span></div>
       <div class="dc-embed red">
         <div class="dc-title">Channel locked</div>
@@ -357,7 +357,7 @@ out a role. None of these remove anyone.
       <div class="dc-head"><span class="dc-name">You</span><span class="dc-time">today</span></div>
       <div class="dc-slash"><span class="cmd">/nick</span> <span class="arg">user:</span> @Member <span class="arg">nickname:</span> Hex</div>
     </div></div>
-    <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+    <div class="dc-row"><img class="dc-av" src="{{ '/assets/SAllay-64.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
       <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">today</span></div>
       <div class="dc-embed blue">
         <div class="dc-title">Nickname updated</div>
@@ -385,7 +385,7 @@ out a role. None of these remove anyone.
       <div class="dc-head"><span class="dc-name">You</span><span class="dc-time">today</span></div>
       <div class="dc-slash"><span class="cmd">/role</span> <span class="arg">action:</span> add <span class="arg">user:</span> @Member <span class="arg">role:</span> @Verified</div>
     </div></div>
-    <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+    <div class="dc-row"><img class="dc-av" src="{{ '/assets/SAllay-64.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
       <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">today</span></div>
       <div class="dc-embed green">
         <div class="dc-title">Role added</div>
@@ -420,7 +420,7 @@ with a one-tap **reversal** where it makes sense.
       <div class="dc-head"><span class="dc-name">You</span><span class="dc-time">today</span></div>
       <div class="dc-slash"><span class="cmd">/kick</span> <span class="arg">user:</span> @Troublemaker <span class="arg">reason:</span> Ignoring staff warnings</div>
     </div></div>
-    <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+    <div class="dc-row"><img class="dc-av" src="{{ '/assets/SAllay-64.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
       <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">today</span></div>
       <div class="dc-embed amber">
         <div class="dc-title">Member kicked</div>
@@ -450,7 +450,7 @@ with a one-tap **reversal** where it makes sense.
       <div class="dc-head"><span class="dc-name">You</span><span class="dc-time">today</span></div>
       <div class="dc-slash"><span class="cmd">/ban</span> <span class="arg">user:</span> @Raider <span class="arg">reason:</span> Posting scam links <span class="arg">delete_days:</span> 1</div>
     </div></div>
-    <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+    <div class="dc-row"><img class="dc-av" src="{{ '/assets/SAllay-64.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
       <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">today</span></div>
       <div class="dc-embed red">
         <div class="dc-title">Member banned</div>
@@ -480,7 +480,7 @@ with a one-tap **reversal** where it makes sense.
       <div class="dc-head"><span class="dc-name">You</span><span class="dc-time">today</span></div>
       <div class="dc-slash"><span class="cmd">/unban</span> <span class="arg">user_id:</span> 123456789012345678</div>
     </div></div>
-    <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+    <div class="dc-row"><img class="dc-av" src="{{ '/assets/SAllay-64.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
       <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">today</span></div>
       <div class="dc-embed green">
         <div class="dc-title">Ban lifted</div>
@@ -508,7 +508,7 @@ with a one-tap **reversal** where it makes sense.
       <div class="dc-head"><span class="dc-name">You</span><span class="dc-time">today</span></div>
       <div class="dc-slash"><span class="cmd">/softban</span> <span class="arg">user:</span> @Spammer <span class="arg">reason:</span> Flood of links</div>
     </div></div>
-    <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+    <div class="dc-row"><img class="dc-av" src="{{ '/assets/SAllay-64.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
       <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">today</span></div>
       <div class="dc-embed amber">
         <div class="dc-title">Member soft-banned</div>
@@ -539,7 +539,7 @@ with a one-tap **reversal** where it makes sense.
       <div class="dc-head"><span class="dc-name">You</span><span class="dc-time">today</span></div>
       <div class="dc-slash"><span class="cmd">/tempban</span> <span class="arg">user:</span> @Troublemaker <span class="arg">duration:</span> 7d <span class="arg">reason:</span> Cooling-off period</div>
     </div></div>
-    <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+    <div class="dc-row"><img class="dc-av" src="{{ '/assets/SAllay-64.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
       <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">today</span></div>
       <div class="dc-embed red">
         <div class="dc-title">Temporary ban set</div>
@@ -578,7 +578,7 @@ it spots a raid.
       <div class="dc-head"><span class="dc-name">You</span><span class="dc-time">today</span></div>
       <div class="dc-slash"><span class="cmd">/purge</span> <span class="arg">count:</span> 50</div>
     </div></div>
-    <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+    <div class="dc-row"><img class="dc-av" src="{{ '/assets/SAllay-64.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
       <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">Only you can see this</span></div>
       <div class="dc-embed green">
         <div class="dc-title">Messages purged</div>
@@ -616,7 +616,7 @@ channel for review.
 
   <div class="wiz-step" data-step="The preview">
     <div class="dc">
-      <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+      <div class="dc-row"><img class="dc-av" src="{{ '/assets/SAllay-64.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
         <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">Only you can see this</span></div>
         <div class="dc-embed amber">
           <div class="dc-title">Smart purge, preview</div>
@@ -636,7 +636,7 @@ channel for review.
 
   <div class="wiz-step" data-step="Confirmed">
     <div class="dc">
-      <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+      <div class="dc-row"><img class="dc-av" src="{{ '/assets/SAllay-64.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
         <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">Only you can see this</span></div>
         <div class="dc-embed green">
           <div class="dc-title">Smart purge complete</div>
@@ -666,7 +666,7 @@ channel for review.
       <div class="dc-head"><span class="dc-name">You</span><span class="dc-time">today</span></div>
       <div class="dc-slash"><span class="cmd">/lockdown</span> <span class="arg">action:</span> start <span class="arg">reason:</span> Raid in progress</div>
     </div></div>
-    <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+    <div class="dc-row"><img class="dc-av" src="{{ '/assets/SAllay-64.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
       <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">today</span></div>
       <div class="dc-embed red">
         <div class="dc-title">Server locked down</div>
@@ -694,7 +694,7 @@ channel for review.
       <div class="dc-head"><span class="dc-name">You</span><span class="dc-time">today</span></div>
       <div class="dc-slash"><span class="cmd">/altguard</span> <span class="arg">mode:</span> on</div>
     </div></div>
-    <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+    <div class="dc-row"><img class="dc-av" src="{{ '/assets/SAllay-64.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
       <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">today</span></div>
       <div class="dc-embed green">
         <div class="dc-title">Altguard on</div>
@@ -712,7 +712,7 @@ alert** in your log channel, pings the owner, and hands you two buttons: lock
 everything down on the spot, or dismiss it as a false alarm.
 
 <div class="dc">
-  <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+  <div class="dc-row"><img class="dc-av" src="{{ '/assets/SAllay-64.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
     <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">just now</span></div>
     <div class="dc-embed red">
       <div class="dc-title">Possible Raid Detected</div>

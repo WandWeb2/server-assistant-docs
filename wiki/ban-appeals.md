@@ -48,7 +48,7 @@ outcome.
 
   <div class="wiz-step on" data-step="1 · The ban DM">
     <div class="dc">
-      <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+      <div class="dc-row"><img class="dc-av" src="{{ '/assets/SAllay-64.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
         <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">Direct Message</span></div>
         <div class="dc-embed red">
           <div class="dc-title">You've been banned from The Hangout</div>
@@ -66,7 +66,7 @@ outcome.
         <div class="dc-head"><span class="dc-name">Banned member</span><span class="dc-time">Direct Message</span></div>
         <div class="dc-desc" style="color:#dbdee1;line-height:1.5;">That wasn't me posting links, my account was compromised and I've changed my password since. Really sorry for the trouble, I'd love to come back.</div>
       </div></div>
-      <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+      <div class="dc-row"><img class="dc-av" src="{{ '/assets/SAllay-64.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
         <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">Direct Message</span></div>
         <div class="dc-desc" style="color:#dbdee1;line-height:1.5;">Thanks, your appeal has been sent to the staff team for review.</div>
       </div></div>
@@ -76,7 +76,7 @@ outcome.
 
   <div class="wiz-step" data-step="3 · Staff get an appeal ticket">
     <div class="dc">
-      <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+      <div class="dc-row"><img class="dc-av" src="{{ '/assets/SAllay-64.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
         <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">today</span></div>
         <div class="dc-embed blue">
           <div class="dc-title">Ban appeal</div>
@@ -102,7 +102,7 @@ outcome.
 
   <div class="wiz-step" data-step="4 · Research, on demand">
     <div class="dc">
-      <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+      <div class="dc-row"><img class="dc-av" src="{{ '/assets/SAllay-64.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
         <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">Only you can see this</span></div>
         <div class="dc-embed amber">
           <div class="dc-title">Research, @FormerMember</div>
@@ -116,7 +116,7 @@ outcome.
 
   <div class="wiz-step" data-step="5 · Ask for more info (Premium)">
     <div class="dc">
-      <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+      <div class="dc-row"><img class="dc-av" src="{{ '/assets/SAllay-64.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
         <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">Direct Message</span></div>
         <div class="dc-modal">
           <div class="dc-modal-title">Ask the member for more info</div>
@@ -135,7 +135,7 @@ outcome.
         <div class="dc-head"><span class="dc-name">Banned member</span><span class="dc-time">Direct Message</span></div>
         <div class="dc-desc" style="color:#dbdee1;line-height:1.5;">It wasn't me, my account was hacked.</div>
       </div></div>
-      <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+      <div class="dc-row"><img class="dc-av" src="{{ '/assets/SAllay-64.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
         <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">Direct Message</span></div>
         <div class="dc-desc" style="color:#dbdee1;line-height:1.5;">Thanks for letting us know. When do you think your account was compromised, and have you since secured it?</div>
       </div></div>
@@ -145,7 +145,7 @@ outcome.
 
   <div class="wiz-step" data-step="7 · The member hears back">
     <div class="dc">
-      <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+      <div class="dc-row"><img class="dc-av" src="{{ '/assets/SAllay-64.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
         <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">Direct Message</span></div>
         <div class="dc-desc" style="color:#dbdee1;line-height:1.5;">Good news, your ban appeal for <strong>The Hangout</strong> was <strong>approved</strong> and you've been unbanned. Please review the rules before rejoining.</div>
       </div></div>

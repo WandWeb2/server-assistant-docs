@@ -40,7 +40,7 @@ short string of numbers it can't be turned back into. The picture itself is
 same opt-out as the rest of ThreatNet.
 
 <div class="dc" style="margin-top:1rem;">
-  <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+  <div class="dc-row"><img class="dc-av" src="{{ '/assets/SAllay-64.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
     <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">Info → Threat Network</span></div>
     <div class="dc-embed amber">
       <div class="dc-title">Threat Network, @driftwood</div>
@@ -85,7 +85,7 @@ out**. Each server can soften that in settings:
   human decides.
 
 <div class="dc" style="margin-top:1rem;">
-  <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+  <div class="dc-row"><img class="dc-av" src="{{ '/assets/SAllay-64.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
     <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">today</span></div>
     <div class="dc-embed amber">
       <div class="dc-title">Scam image removed</div>
@@ -148,7 +148,7 @@ Because it's an **automated** action, it ships with safeguards:
       <div class="dc-head"><span class="dc-name">You</span><span class="dc-time">today</span></div>
       <div class="dc-slash"><span class="cmd">/threatnet status</span></div>
     </div></div>
-    <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+    <div class="dc-row"><img class="dc-av" src="{{ '/assets/SAllay-64.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
       <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">Only you can see this</span></div>
       <div class="dc-embed blue">
         <div class="dc-title">Your ThreatNet status</div>

@@ -86,7 +86,7 @@ When a command like `/ban` runs, the action lands in your log channel as a full
 embed, the same one the command author sees, mirrored to the team:
 
 <div class="dc">
-  <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+  <div class="dc-row"><img class="dc-av" src="{{ '/assets/SAllay-64.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
     <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">today</span></div>
     <div class="dc-embed red">
       <div class="dc-title">Member banned</div>
@@ -105,7 +105,7 @@ mirrors the action into the log channel, marked so you can tell it apart, with a
 nudge to use the bot next time (which keeps the one-tap undo):
 
 <div class="dc">
-  <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+  <div class="dc-row"><img class="dc-av" src="{{ '/assets/SAllay-64.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
     <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">just now</span></div>
     <div class="dc-embed amber">
       <div class="dc-title">Ban, done directly in Discord</div>
@@ -126,7 +126,7 @@ what, and where. Commands that already produce a detailed entry (like the ban
 above) are skipped, so you never see the same thing twice:
 
 <div class="dc">
-  <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+  <div class="dc-row"><img class="dc-av" src="{{ '/assets/SAllay-64.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
     <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">today</span></div>
     <div class="dc-embed">
       <div class="dc-desc">⌘ @you ran <code>/warnings</code> in #staff-chat</div>
@@ -192,7 +192,7 @@ so the record **can't be quietly wiped**:
   naming who did it:
 
 <div class="dc">
-  <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+  <div class="dc-row"><img class="dc-av" src="{{ '/assets/SAllay-64.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
     <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">just now</span></div>
     <div class="dc-embed red">
       <div class="dc-title">Audit-log tampering detected</div>
@@ -214,7 +214,7 @@ can pick another from the dropdown, have it **Create for me** a fresh locked-dow
 one, or choose **Portal only** to skip the Discord channel entirely.
 
 <div class="dc">
-  <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+  <div class="dc-row"><img class="dc-av" src="{{ '/assets/SAllay-64.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
     <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">Direct Message</span></div>
     <div class="dc-embed blue">
       <div class="dc-title">Welcome, let's get you set up</div>

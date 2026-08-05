@@ -1,20 +1,25 @@
 ---
 layout: default
 title: "Server Assistant: Discord Moderation & AutoMod Bot"
-description: "Free Discord moderation bot: AutoMod, anti-raid, audit logs, ban appeals, and AI that watches your server's health and learns your team's judgment. Privacy-first."
-image: /assets/banner.jpeg
+description: "Free Discord moderation bot: AutoMod, anti-raid, audit logs, ban appeals, a Minecraft to Discord bridge, and AI that watches your server's health and learns your team's judgment. Privacy-first."
+image: /assets/SAllay-512.png
 ---
 
-<div align="center">
-  <picture>
-    <source srcset="{{ '/assets/logo.webp' | relative_url }}" type="image/webp">
-    <img src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant logo" width="200" height="193" fetchpriority="high">
-  </picture>
+<link rel="stylesheet" href="{{ '/assets/css/landing.css' | relative_url }}?v={{ site.time | date: '%s' }}">
+<div class="sa-progress" aria-hidden="true"></div>
+
+<div class="hero">
+  <div class="hero-orbs" aria-hidden="true">
+    <span class="hero-orb o1"></span><span class="hero-orb o2"></span><span class="hero-orb o3"></span><span class="hero-orb o4"></span>
+  </div>
+  <span class="hero-art">
+    <img src="{{ '/assets/SAllay-512.png' | relative_url }}" alt="Server Assistant logo, an Allay wearing a knight's helmet" width="220" height="220" fetchpriority="high">
+  </span>
 
   <h1>Server Assistant</h1>
 
-  <p style="font-size:1.15rem; font-weight:700;">Most Discord mod bots just react to messages.<br>This one understands your whole server.</p>
-  <p style="font-size:.95rem; color:var(--ink-soft); margin-top:-.25rem;">Whole-server health insight · AutoMod that learns your team · fair ban appeals · a tamper-proof audit trail.</p>
+  <p class="hero-pitch">Most Discord mod bots just react to messages.<br>This one understands your whole community.</p>
+  <p class="hero-sub">Discord and Minecraft, moderated as one place · AutoMod that learns your team · fair ban appeals · a tamper-proof audit trail.</p>
 </div>
 
 <script type="application/ld+json">
@@ -24,81 +29,13 @@ image: /assets/banner.jpeg
   "name": "Server Assistant",
   "applicationCategory": "Discord Bot",
   "operatingSystem": "Discord",
-  "description": "A Discord moderation bot that watches server health (Pulse health digests), learns your staff's moderation decisions (self-trained AutoMod), reduces false positives with an AI second-opinion, gives banned members a structured appeal, catches ban-evading alts, and keeps an encrypted tamper-proof audit trail. Free AutoMod, anti-raid, verification, ticket panels and image generation, plus a Premium toolkit: reaction roles, custom slash commands, AI Q&A from your FAQ, translation, AI mediation, server backup & restore, and white-label branding.",
+  "description": "A Discord moderation bot with a free two-way Minecraft bridge (MCDC): players chat across both worlds as themselves, live server health lands in Discord, and the same AutoMod covers chat, signs, books and private messages in game. ThreatNet, the cross-server threat network, flags raiders and scammers with corroborated history elsewhere, advisory by default. Reception gives new joiners a branded verification front desk with a free auto-generated banner. SAi, the AI assistant, answers across Discord and Minecraft with cited sources. Plus whole-server health digests, self-trained AutoMod, fair ban appeals, alt detection, anti-nuke, an encrypted tamper-proof audit trail, and honest plain-English AI budgeting with top-up packs.",
   "offers": { "@type": "AggregateOffer", "lowPrice": "0", "highPrice": "7", "priceCurrency": "USD", "offerCount": "3" },
   "url": "https://wandweb2.github.io/server-assistant-docs/",
-  "image": "https://wandweb2.github.io/server-assistant-docs/assets/banner.jpeg",
+  "image": "https://wandweb2.github.io/server-assistant-docs/assets/SAllay-512.png",
   "author": { "@type": "Organization", "name": "WandWeb2" }
 }
 </script>
-
-<style>
-.cta-row { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; margin: 1.4rem 0 .5rem; }
-.cta { display: inline-block; padding: .6rem 1.3rem; border-radius: 999px; font-weight: 700; text-decoration: none !important; transition: transform .15s, box-shadow .15s; }
-.cta-primary { display: inline-flex; align-items: center; gap: .6rem; background: #5865F2; color: #fff !important; border-radius: 8px; padding: .82rem 1.45rem; font-weight: 600; box-shadow: 0 8px 22px rgba(88,101,242,.4); }
-.cta-primary:hover { background: #4752c4; transform: translateY(-1px); box-shadow: 0 12px 30px rgba(88,101,242,.5); }
-.cta-primary .dlogo { width: 22px; height: 22px; flex: none; }
-.cta-secondary { border-radius: 8px; padding: .82rem 1.45rem; font-weight: 600; background: rgba(255,255,255,0.08); color: var(--ink) !important; border: 1px solid var(--glass-border); box-shadow: 0 8px 22px rgba(0,0,0,.28); }
-.cta-secondary:hover { background: rgba(255,255,255,0.14); transform: translateY(-1px); box-shadow: 0 12px 30px rgba(0,0,0,.38); }
-/* Secondary row of smaller pill buttons (MCDC download · Crestbound) under the main two. */
-.subcta-row { display: flex; gap: .6rem; justify-content: center; flex-wrap: wrap; margin: .55rem 0 .1rem; }
-.subcta { display: inline-flex; align-items: center; gap: .45rem; padding: .46rem 1rem; border-radius: 999px; font-weight: 600; font-size: .85rem; text-decoration: none !important; background: rgba(255,255,255,0.05); color: var(--ink) !important; border: 1px solid var(--glass-border); transition: background .15s, transform .15s; }
-.subcta:hover { background: rgba(255,255,255,0.11); transform: translateY(-1px); }
-.subcta .si { font-size: 1.05em; line-height: 1; }
-.free-line { text-align: center; font-size: .85rem; color: var(--ink-soft); margin: 0 0 1.5rem; }
-.fleet-stats { text-align: center; font-size: .92rem; font-weight: 600; color: var(--ink-soft); margin: .1rem 0 .2rem; min-height: 1.2em; }
-.fleet-stats[hidden] { display: none; }
-.fleet-stats strong { color: var(--ink); }
-.threatnet-stat { min-height: 0; }
-/* Plain-text styling: the → arrow is the only affordance, no underline/colour. */
-.threatnet-stat a, .threatnet-stat a:visited, .threatnet-stat a:hover { color: inherit; text-decoration: none; }
-.section-lead { text-align: center; font-size: 1rem; color: var(--ink-soft); max-width: 720px; margin: .6rem auto 1.3rem; line-height: 1.55; }
-
-/* Full-width coloured-glass feature rows: text (brief + expand) on one side, screenshot on the other. */
-.frow { display: grid; grid-template-columns: 1fr 1fr; gap: 1.6rem; align-items: center; margin: 1rem 0; padding: 1.4rem 1.6rem; border-radius: 16px; border: 1px solid var(--glass-border); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
-.frow.c-green  { background: rgba(46,204,113,0.07);  border-color: rgba(46,204,113,0.22); }
-.frow.c-blue   { background: rgba(52,130,225,0.08);  border-color: rgba(52,130,225,0.24); }
-.frow.c-amber  { background: rgba(241,196,15,0.07);  border-color: rgba(241,196,15,0.24); }
-.frow.c-purple { background: rgba(155,89,182,0.08);  border-color: rgba(155,89,182,0.26); }
-.frow.c-red    { background: rgba(231,76,60,0.07);   border-color: rgba(231,76,60,0.22); }
-.frow .ftext { min-width: 0; }
-.frow .ftext h3 { margin: 0 0 .5rem; font-size: 1.25rem; line-height: 1.25; }
-.frow .ftext > p { margin: 0 0 .55rem; color: var(--ink-soft); font-size: .96rem; line-height: 1.55; }
-.frow .fmore > summary { cursor: pointer; color: var(--accent); font-weight: 600; font-size: .9rem; list-style: none; }
-.frow .fmore > summary::-webkit-details-marker { display: none; }
-.frow .fmore > summary::before { content: "▸ "; }
-.frow .fmore[open] > summary::before { content: "▾ "; }
-.frow .fmore .fbody { margin-top: .45rem; color: var(--ink-soft); font-size: .9rem; line-height: 1.55; }
-.frow .fmore .fbody code { color: var(--accent); }
-.frow .fshot { min-width: 0; }
-.frow .fshot .dc { max-width: 100%; margin: 0; }
-.frow.flip .ftext { order: 2; }
-.frow.flip .fshot { order: 1; }
-@media (max-width: 760px) { .frow { grid-template-columns: 1fr; } .frow.flip .ftext, .frow.flip .fshot { order: 0; } }
-
-.xgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 0.5rem; align-items: start; margin: 1rem 0 1.4rem; }
-.xgrid details.x { border: 1px solid var(--glass-border); border-radius: 10px; background: rgba(255,255,255,0.04); }
-.xgrid details.x > summary { cursor: pointer; padding: 0.6rem 0.85rem; list-style: none; color: var(--ink); font-size: 0.96rem; font-weight: 700; }
-.xgrid details.x > summary::-webkit-details-marker { display: none; }
-.xgrid details.x > summary::before { content: "▸"; color: var(--ink-soft); margin-right: .4rem; font-size: .75em; }
-.xgrid details.x[open] > summary::before { content: "▾"; }
-.xgrid details.x[open] > summary { border-bottom: 1px solid var(--glass-border); }
-.xgrid details.x .b { padding: 0.6rem 0.85rem 0.7rem; color: var(--ink-soft); font-size: 0.88rem; line-height: 1.5; }
-.xgrid details.x .b code { color: var(--accent); font-size: 0.85em; }
-
-.shipped-strip { background: rgba(46,204,113,.10); border-left: 4px solid #2ecc71; border-radius: 10px; padding: .85rem 1.1rem; margin: 1.5rem 0; font-size: .9rem; line-height: 1.55; }
-.shipped-strip strong.lbl { color: #56d08a; }
-.shipped-strip code { font-size: .82em; }
-.upcoming-strip { background: rgba(60,193,240,.10); border-left: 4px solid var(--accent); border-radius: 10px; padding: .85rem 1.1rem; margin: 1.5rem 0; font-size: .9rem; line-height: 1.55; }
-.upcoming-strip strong.lbl { color: #3cc1f0; }
-
-.ways-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin: 1rem 0; }
-.way { background: rgba(255,255,255,0.04); border: 1px solid var(--glass-border); border-radius: 14px; padding: 1rem 1.15rem; }
-.way h3 { margin: 0 0 .35rem; font-size: .98rem; color: var(--ink); }
-.way p { margin: 0; font-size: .88rem; line-height: 1.45; color: var(--ink-soft); }
-.way code { font-size: .82em; color: var(--accent); }
-@media (max-width: 700px) { .ways-grid { grid-template-columns: 1fr; } }
-</style>
 
 <div class="cta-row">
   <a class="cta cta-primary" href="https://discord.com/api/oauth2/authorize?client_id=1278486617375510570&permissions=8&scope=bot+applications.commands"><svg class="dlogo" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.27 5.33C17.94 4.71 16.5 4.26 15 4a.09.09 0 0 0-.07.03c-.18.33-.39.76-.53 1.09a16.09 16.09 0 0 0-4.8 0C9.46 4.79 9.25 4.36 9.06 4.03A.07.07 0 0 0 9 4c-1.5.26-2.93.71-4.27 1.33a.06.06 0 0 0-.03.02C1.98 9.42 1.23 13.38 1.6 17.3a.1.1 0 0 0 .03.05c1.8 1.32 3.53 2.12 5.24 2.65a.07.07 0 0 0 .07-.02c.4-.55.76-1.13 1.07-1.74a.07.07 0 0 0-.04-.09 12.9 12.9 0 0 1-1.64-.78.07.07 0 0 1-.01-.11l.33-.25a.07.07 0 0 1 .07-.01c3.44 1.57 7.15 1.57 10.55 0a.07.07 0 0 1 .07.01l.33.26c.04.03.04.09-.01.11-.52.31-1.07.56-1.64.78a.07.07 0 0 0-.04.09c.32.61.68 1.19 1.07 1.74a.07.07 0 0 0 .08.03c1.72-.53 3.45-1.33 5.25-2.65a.07.07 0 0 0 .03-.05c.44-4.53-.73-8.46-3.1-11.95a.05.05 0 0 0-.03-.02ZM8.52 14.91c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.91.96 1.89 2.12 0 1.17-.84 2.12-1.89 2.12Zm6.97 0c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.91.96 1.89 2.12 0 1.17-.83 2.12-1.89 2.12Z"/></svg>Add to Discord</a>
@@ -114,10 +51,10 @@ image: /assets/banner.jpeg
 <p class="fleet-stats threatnet-stat" id="threatnet-stat" hidden></p>
 
 <script>
-/* Live fleet numbers — fetches the relay's PUBLIC, aggregate-only endpoint and
+/* Live fleet numbers: fetches the relay's PUBLIC, aggregate-only endpoint and
    shows "Protecting N servers and M members" plus a "captured in ThreatNet"
-   figure that links to the ThreatNet section. Both stay hidden (render nothing)
-   if JS is off, the fetch fails, or the data is empty/zero — purely additive,
+   figure that links to the ThreatNet card. Both stay hidden (render nothing)
+   if JS is off, the fetch fails, or the data is empty/zero: purely additive,
    never a broken or zero line. Aggregate totals only; no per-server detail. */
 (function () {
   var box = document.getElementById("fleet-stats");
@@ -156,7 +93,7 @@ image: /assets/banner.jpeg
 <div class="partners-band">
   <h2 class="partners-band-title">Trusted by</h2>
   <div class="partners-logos">
-    {% comment %} Partnership pending approval — restore this DiscordForge logo once confirmed:
+    {% comment %} Partnership pending approval: restore this DiscordForge logo once confirmed:
     <a class="partner-logo-link" href="{{ site.url }}{{ site.baseurl }}/partnerships/" aria-label="Discord Forge" data-name="Discord Forge">
       <img src="{{ '/assets/partners/discordforge-icon.svg' | relative_url }}" alt="Discord Forge" width="84" height="84" loading="lazy">
     </a>
@@ -166,200 +103,90 @@ image: /assets/banner.jpeg
   </div>
 </div>
 
-<style>
-/* 3-column grid: label pinned left, logos in the centre column flanked by
-   equal 1fr gutters so they centre against the full content width (= page
-   centre), not just the space left over after the label. */
-.partners-band { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; column-gap: 1.8rem; margin: 1.4rem 0; }
-.partners-band .partners-band-title { margin: 0; padding: 0; line-height: 1.2; font-size: .8rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-soft); white-space: nowrap; }
-.partners-logos { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 1.4rem 2.4rem; }
-@media (max-width: 600px) {
-  .partners-band { grid-template-columns: 1fr; row-gap: .9rem; justify-items: center; }
-}
-/* Placeholder while no partner is confirmed — grey glass square with a + */
-.partner-placeholder { display: inline-flex; align-items: center; justify-content: center; width: 72px; height: 72px; border-radius: 18px; background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); color: var(--fg-2); font-size: 2.1rem; font-weight: 300; line-height: 1; text-decoration: none !important; transition: background .15s ease, color .15s ease, transform .15s ease; }
-.partner-placeholder:hover { background: rgba(255,255,255,0.09); color: var(--fg-0); transform: translateY(-3px); }
-.partner-logo-link { position: relative; display: inline-flex; align-items: center; justify-content: center; transition: transform .15s ease; }
-.partner-logo-link img { height: 72px; width: auto; box-shadow: none; border-radius: 18px; opacity: .9; transition: opacity .15s ease; }
-.partner-logo-link:hover { transform: translateY(-3px); }
-.partner-logo-link:hover img { opacity: 1; }
-/* Name on hover — centred over the logo */
-.partner-logo-link::after {
-  content: attr(data-name);
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(.96);
-  background: var(--glass-strong);
-  border: 1px solid var(--glass-border);
-  color: var(--ink);
-  font-size: .78rem; font-weight: 600; white-space: nowrap;
-  padding: .3rem .6rem; border-radius: 8px;
-  opacity: 0; pointer-events: none;
-  transition: opacity .15s ease, transform .15s ease;
-}
-.partner-logo-link:hover::after { opacity: 1; transform: translate(-50%, -50%) scale(1); }
-@media (prefers-reduced-motion: reduce) {
-  .partner-logo-link, .partner-logo-link::after { transition: none; }
-}
-</style>
-
 ---
 
 ## What makes Server Assistant different
 
-<p class="section-lead">Most bots are rule-runners: a message breaks a filter, the bot reacts. Server Assistant adds an intelligence layer on top. Here's how.</p>
+<p class="section-lead">Most bots are rule-runners: a message breaks a filter, the bot reacts. Server Assistant runs your whole community, Discord and Minecraft together, with an intelligence layer on top.</p>
 
-<div class="frow c-green">
-  <div class="ftext">
-    <h3>Whole-server health insight</h3>
-    <p>Every other bot waits for a rule to break. <strong>Pulse</strong> is a whole-server health digest that flags the slow-burn patterns humans miss, always on in your web portal, and DM'd to each staff member on their own schedule.</p>
-    <details class="fmore"><summary>How it works</summary><div class="fbody">Activity counts, a mod-team recap and a reception summary, each with a week-over-week trend, like a trickle of joins sitting just under your raid threshold. Always on the portal card for every server; opt in to a personal DM (Weekly or Monthly) in your portal settings. Read-only: it never acts on its own, it just gives your team x-ray vision.</div></details>
-  </div>
-  <div class="fshot">
-    <div class="dc">
-      <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
-        <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">Direct Message</span></div>
-        <div class="dc-embed green">
-          <div class="dc-title">Pulse: this week</div>
-          <div class="dc-desc">Your server looks healthy. One thing worth a glance.</div>
-          <div class="dc-fname">Messages</div><div class="dc-fval">31,540 · 6% vs avg</div>
-          <div class="dc-fname">New members</div><div class="dc-fval">142 joins · above baseline, below raid threshold</div>
-          <div class="dc-foot">Read-only insight · never auto-actions</div>
+<div class="sf-grid" data-stagger markdown="0">
+
+  <div class="sf-card wide mcdc">
+    <div class="mcdc-cols">
+      <div>
+        <div class="sf-ico">⛏️</div>
+        <h3>Minecraft + Discord, one community <span class="sf-tag free">Free on every plan</span></h3>
+        <p><strong>MCDC</strong> bridges your Minecraft server and Discord into a single place: players chat across both worlds <strong>as themselves</strong>, with their real name and skin avatar, and your moderation follows them everywhere.</p>
+        <ul class="sf-bullets">
+          <li><strong>Two-way chat</strong>, plus live server health in Discord: TPS, RAM, uptime, and who's online.</li>
+          <li><strong>Playtime earns XP</strong> into the same balance as Discord activity.</li>
+          <li><strong>Moderation on every surface players write on</strong>: chat, signs, books, anvils, name tags, private messages.</li>
+          <li><strong>Web ban appeals</strong>, even for bans Server Assistant didn't issue.</li>
+          <li><strong>One-click account linking</strong> and a self-updating plugin.</li>
+        </ul>
+        <p style="font-size:.84rem; margin-bottom:0;"><strong>Locked down by design:</strong> outbound HTTPS only, no RCON, no open ports, and no admin credentials ever leave your server.</p>
+        <div class="sf-cta-row">
+          <a class="sf-cta solid" href="{{ '/downloads/mcdc-plugin.jar' | relative_url }}" download>⬇ Download the plugin ({{ site.mcdc_plugin_version }})</a>
+          <a class="sf-cta ghost" href="{{ '/wiki/minecraft/' | relative_url }}">Read the bridge guide →</a>
         </div>
-      </div></div>
+      </div>
+      <div>
+        <div class="dc">
+          <div class="dc-row"><div class="dc-av" style="background:linear-gradient(180deg,#7a5a3f 0 42%,#2ea44f 42% 100%); image-rendering:pixelated;" aria-hidden="true"></div><div class="dc-body">
+            <div class="dc-head"><span class="dc-name">FernGully</span><span class="dc-time">#minecraft · from the server</span></div>
+            <div class="dc-desc">anyone up for the nether run tonight?</div>
+          </div></div>
+        </div>
+        <div class="dc">
+          <div class="dc-row"><img class="dc-av" src="{{ '/assets/SAllay-64.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+            <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">#minecraft</span></div>
+            <div class="dc-embed green">
+              <div class="dc-title">🟢 Server health</div>
+              <div class="dc-fname">Online</div><div class="dc-fval">7 players · FernGully, Pixel_Petra, +5</div>
+              <div class="dc-fname">Performance</div><div class="dc-fval">20.0 TPS · RAM 48% · up 6d 4h</div>
+              <div class="dc-foot">Two-way bridge · shared XP · every surface moderated</div>
+            </div>
+          </div></div>
+        </div>
+      </div>
     </div>
   </div>
-</div>
 
-<div class="frow flip c-blue">
-  <div class="ftext">
-    <h3>Fair ban appeals</h3>
-    <p>A ban shouldn't be a silent door-slam. The member is DM'd <strong>exactly why</strong>, and one reply opens a staff appeal ticket, so you decide with context, not vibes.</p>
-    <details class="fmore"><summary>How it works</summary><div class="fbody">The appeal ticket has one-tap <strong>Unban</strong>, <strong>Deny</strong>, and <strong>Research</strong>, which runs an AI report on the member's last message. No DM noise, no per-incident tickets, no AI token spent unless you press Research. (A <strong>ThreatNet auto-ban</strong> is the exception: it's silent and opens no appeal ticket; that automated decision is contested via the web portal.)</div></details>
+  <div class="sf-card" id="threatnet">
+    <div class="sf-ico">🛡️</div>
+    <h3>ThreatNet <span class="sf-tag free">Free tier on by default</span></h3>
+    <p>Our <strong>cross-server threat network</strong>: a raider or scammer with a serious, corroborated history on other protected servers lights up on yours <strong>before</strong> they strike. Advisory by default, and severity-only: never the offence, the reasons, or which server acted.</p>
+    <details class="sf-more"><summary>How it works</summary><div class="sf-body">Servers contribute minimized, pseudonymous signals: counts, recency, and a generic severity level. The advisory band is free for every server; Premium adds the richer cross-server view and opt-in auto-protect at a threshold you choose. Individuals can opt out of profiling in the web portal, subject to a published safety exception; a Premium auto-protect ban is silent and stays contestable via the portal.</div></details>
   </div>
-  <div class="fshot">
-    <div class="dc">
-      <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
-        <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">#staff-log</span></div>
-        <div class="dc-embed blue">
-          <div class="dc-title">Ban appeal</div>
-          <div class="dc-desc">"I was out of line and I'm sorry, I've read the rules properly now and won't do it again."</div>
-          <div class="dc-fname">Ban reason</div><div class="dc-fval">Repeated harassment after two warnings</div>
-          <div class="dc-btns"><span class="dc-btn green">Unban</span><span class="dc-btn red">Deny</span><span class="dc-btn grey">Research</span></div>
-        </div>
-      </div></div>
-    </div>
-  </div>
-</div>
 
-<div class="frow c-amber">
-  <div class="ftext">
-    <h3>AutoMod that asks before it over-reacts</h3>
-    <p>Keyword filters punish the innocent, the classic "I love visiting Scunthorpe" problem. Word-filter and spam hits get an AI confidence check first.</p>
-    <details class="fmore"><summary>How it works</summary><div class="fbody">Every word-filter and spam hit gets the check, and what the AI makes of it decides what happens next: a clear violation acts instantly, anything doubtful is <strong>left up</strong> and handed to staff with one-tap <strong>Delete &amp; warn</strong> or <strong>Allow</strong>. Less collateral damage, less mod drama. Word-filter checks run on a dedicated free moderation endpoint, so they cost you nothing; spam checks use your AI allowance.</div></details>
+  <div class="sf-card">
+    <div class="sf-ico">🛎️</div>
+    <h3>Reception <span class="sf-tag free">Free</span></h3>
+    <p>A <strong>branded verification front desk</strong> for new joiners, with a free auto-generated banner in your server's colours, a quick are-you-human check, and a <strong>self-healing honeypot</strong> that catches bots which post instead of verifying.</p>
+    <details class="sf-more"><summary>How it works</summary><div class="sf-body">New members land at the Reception desk and tap <strong>Verify me</strong>; passing grants the verified role, and most automated raid bots never make it past the door. Premium adds an <strong>AI concierge</strong> that greets and helps newcomers at the desk.</div></details>
   </div>
-  <div class="fshot">
-    <div class="dc">
-      <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
-        <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">#staff-log</span></div>
-        <div class="dc-embed amber">
-          <div class="dc-title">AutoMod: needs review</div>
-          <div class="dc-desc">Flagged by <code>word_filter</code> · <strong>32/100</strong> confidence, below your threshold, left up for you.</div>
-          <div class="dc-fname">AI note</div><div class="dc-fval">Likely false positive: UK place name, not a slur</div>
-          <div class="dc-code">honestly I love visiting Scunthorpe in the summer</div>
-          <div class="dc-btns"><span class="dc-btn red">Delete &amp; warn</span><span class="dc-btn grey">Allow</span></div>
-        </div>
-      </div></div>
-    </div>
-  </div>
-</div>
 
-<div class="frow flip c-blue">
-  <div class="ftext">
-    <h3>AutoMod that learns your team</h3>
-    <p>Off-the-shelf filters are one-size-fits-all. Self-trained AutoMod studies the calls your staff actually make and proposes rules tailored to <em>your</em> community.</p>
-    <details class="fmore"><summary>How it works</summary><div class="fbody">It clusters what your team deletes and reports, then suggests a server-specific rule for your approval. Nothing is ever auto-enforced; every rule is a suggestion until you accept it.</div></details>
+  <div class="sf-card">
+    <div class="sf-ico">✨</div>
+    <h3>SAi, your AI assistant <span class="sf-tag premium">In-game: Premium</span></h3>
+    <p>The same assistant across <strong>Discord and Minecraft</strong>. In game, <strong>@sai</strong> answers grounded in the real Minecraft wiki, with clickable citations, and a <strong>personal Allay companion</strong> answers privately at your side.</p>
+    <details class="sf-more"><summary>How it works</summary><div class="sf-body">In the web portal, SAi reads your server's setup and applies improvements in one tap. In game (Premium), answers cite their minecraft.wiki sources so players can check them, and each server can give SAi its own persona: name, tone, attitude.</div></details>
   </div>
-  <div class="fshot">
-    <div class="dc">
-      <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
-        <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">#staff-log</span></div>
-        <div class="dc-embed blue">
-          <div class="dc-title">Suggested AutoMod rule</div>
-          <div class="dc-desc">Your team removed <strong>11 messages</strong> matching this pattern in two weeks. Want me to start catching it?</div>
-          <div class="dc-fname">Proposed filter</div>
-          <div class="dc-code">crypto pump · "guaranteed 10x" · DM-for-signals spam</div>
-          <div class="dc-foot">Learned from your staff · never auto-enforced</div>
-          <div class="dc-btns"><span class="dc-btn green">Add rule</span><span class="dc-btn grey">Skip</span></div>
-        </div>
-      </div></div>
-    </div>
-  </div>
-</div>
 
-<div class="frow c-purple">
-  <div class="ftext">
-    <h3>A tamper-proof audit trail</h3>
-    <p>Every action is recorded (even bans done by hand in Discord) in an <strong>encrypted log staff can't edit or erase</strong>, and the owner is pinged if anyone tries to delete an entry.</p>
-    <details class="fmore"><summary>How it works</summary><div class="fbody">Native right-click bans/kicks/timeouts are captured like bot commands; the record is encrypted with the same key protecting your credentials; deleting a log-channel entry alerts the owner while the encrypted copy survives. No other moderation bot ties native-capture, encryption, and tamper alerts together.</div></details>
+  <div class="sf-card">
+    <div class="sf-ico">🔏</div>
+    <h3>A mod toolkit that can't be tampered with <span class="sf-tag free">Free</span></h3>
+    <p>Every action, even hand-made bans, lands in an <strong>encrypted audit log staff can't edit or erase</strong>, with the owner alerted if anyone tries. <strong>Anti-nuke</strong> guards the server itself, and the full moderation toolkit is free forever.</p>
+    <details class="sf-more"><summary>What's in the box</summary><div class="sf-body">Warn / mute / kick / ban / tempban with tiered approval and 24-hour undo, AutoMod with an AI second-opinion that <strong>learns your team's judgment</strong>, anti-raid and lockdown, fair ban appeals with one-tap staff decisions, alt detection, and whole-server health digests. See <a href="{{ site.url }}{{ site.baseurl }}/features/">every feature</a>.</div></details>
   </div>
-  <div class="fshot">
-    <div class="dc">
-      <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
-        <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">to the owner</span></div>
-        <div class="dc-embed red">
-          <div class="dc-title">Tamper alert: log entry deleted</div>
-          <div class="dc-desc">Someone removed an entry from <strong>#server-assistant-log</strong>. The encrypted record is intact. Here's what they tried to hide.</div>
-          <div class="dc-fname">Deleted by</div><div class="dc-fval">@rogue-mod</div>
-          <div class="dc-fname">Hidden action</div><div class="dc-fval">ban @user: "spam" (done by hand in Discord)</div>
-          <div class="dc-foot">Owner notified · original preserved, encrypted</div>
-        </div>
-      </div></div>
-    </div>
-  </div>
-</div>
 
-<div class="frow flip c-red">
-  <div class="ftext">
-    <h3>Catches ban-evading alts</h3>
-    <p><strong>Repeat-offender detection</strong> fingerprints the people you ban and auto-stops their alt accounts at the door, and <strong>Threat Score</strong> turns raw behaviour into an explainable risk level.</p>
-    <details class="fmore"><summary>How it works</summary><div class="fbody">A fresh account reusing a banned user's avatar or near-identical name is auto-banned and reported (weaker matches flagged). Threat Score is time-decayed, shown to staff in profiles: visibility first, with extensive safeguards before any action.</div></details>
+  <div class="sf-card">
+    <div class="sf-ico">🧾</div>
+    <h3>Honest AI budgeting <span class="sf-tag free">No surprises</span></h3>
+    <p>A <strong>clear AI allowance</strong>, a <strong>plain-English usage breakdown</strong> of where every token went, and simple <strong>top-up packs</strong> when you want more. No meters you can't read, no invisible burn.</p>
+    <details class="sf-more"><summary>How it works</summary><div class="sf-body">Check your balance any time, see usage split by feature in plain words, and top up only if you choose to. Word-filter AI checks run on a free moderation endpoint and never touch your allowance. Details on <a href="{{ site.url }}{{ site.baseurl }}/pricing/">Pricing</a>.</div></details>
   </div>
-  <div class="fshot">
-    <div class="dc">
-      <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
-        <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">Info → Threat Score</span></div>
-        <div class="dc-embed amber">
-          <div class="dc-title">Threat Score: @driftwood</div>
-          <div class="dc-desc"><strong>Elevated</strong> · 58/100, an explainable read of infraction history, weighted by severity and decaying over time.</div>
-          <div class="dc-fname">Recent history</div><div class="dc-fval">3 warnings · 1 timeout · 0 bans</div>
-          <div class="dc-foot">Advisory view · free for every server</div>
-        </div>
-      </div></div>
-    </div>
-  </div>
-</div>
 
-<div class="frow c-blue" id="threatnet">
-  <div class="ftext">
-    <h3>Knows the raiders before they arrive: ThreatNet</h3>
-    <p><strong>ThreatNet</strong>, our <strong>Cross-Server Threat Network</strong>, shares <strong>severity-only</strong> abuse signals across every protected server, so a scammer or raider with a serious, corroborated history elsewhere lights up on yours <strong>before</strong> they strike. A core, on-by-default safety net.</p>
-    <details class="fmore"><summary>How it works</summary><div class="fbody">Servers contribute minimized, pseudonymous signals (counts, recency and a generic severity level) <strong>never</strong> the offence type, your staff's reasons, message content, or which server acted. The advisory band is free for every server; Premium adds the richer cross-server view. Individuals can opt out of profiling in the web portal, subject to a published safety exception. Premium auto-protect can ban a qualifying account on join; that ban is <strong>silent</strong> and opens <strong>no appeal ticket</strong>, it's disclosed in our Privacy Policy and stays contestable via the web portal.</div></details>
-  </div>
-  <div class="fshot">
-    <div class="dc">
-      <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
-        <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">Info → Threat Network</span></div>
-        <div class="dc-embed amber">
-          <div class="dc-title">Threat Network: @driftwood</div>
-          <div class="dc-desc"><strong>Elevated</strong> · corroborated across <strong>3 servers</strong>, advisory cross-server safety signal.</div>
-          <div class="dc-fname">Most recent</div><div class="dc-fval">serious · 6 days ago</div>
-          <div class="dc-foot">Severity-only · never which server acted</div>
-        </div>
-      </div></div>
-    </div>
-  </div>
 </div>
 
 ---
@@ -376,7 +203,7 @@ image: /assets/banner.jpeg
   </div>
   <div class="fshot">
     <div class="dc">
-      <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+      <div class="dc-row"><img class="dc-av" src="{{ '/assets/SAllay-64.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
         <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">right-click → Message Report</span></div>
         <div class="dc-embed amber">
           <div class="dc-title">Message Report</div>
@@ -397,7 +224,7 @@ image: /assets/banner.jpeg
   </div>
   <div class="fshot">
     <div class="dc">
-      <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+      <div class="dc-row"><img class="dc-av" src="{{ '/assets/SAllay-64.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
         <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">#staff-log</span></div>
         <div class="dc-embed red">
           <div class="dc-title">AutoMod · scam_link</div>
@@ -419,7 +246,7 @@ image: /assets/banner.jpeg
   </div>
   <div class="fshot">
     <div class="dc">
-      <div class="dc-row"><img class="dc-av" src="{{ '/assets/logo.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
+      <div class="dc-row"><img class="dc-av" src="{{ '/assets/SAllay-64.png' | relative_url }}" alt="Server Assistant" loading="lazy"><div class="dc-body">
         <div class="dc-head"><span class="dc-name">Server Assistant</span><span class="dc-bot">App</span><span class="dc-time">#staff-log</span></div>
         <div class="dc-embed">
           <div class="dc-title">Approval needed: /purge 200</div>
@@ -503,7 +330,7 @@ image: /assets/banner.jpeg
 
 <p class="section-lead">Everything below is in the box. The free tier is a <em>complete</em> moderation suite; Premium adds your server's own power tools.</p>
 
-<div class="xgrid" markdown="0">
+<div class="xgrid" data-stagger markdown="0">
   <details class="x"><summary>Full mod toolkit</summary><div class="b">warn · mute · kick · ban · softban · <code>/tempban</code> (timed, auto-unban) · one-command <code>/role</code> · <strong>tiered approval</strong> (dangerous actions route up the chain) · <strong>24-hour undo</strong>.</div></details>
   <details class="x"><summary>AutoMod engine</summary><div class="b">Filter packs (scams / slurs), <strong>custom regex</strong> with a safety check, link blocklist, anti-spam, and an auto-escalating punishment ladder. Staff are completely exempt.</div></details>
   <details class="x"><summary>Anti-raid &amp; lockdown</summary><div class="b">Always-on mass-join detection with staff alerts. <code>/lockdown</code> locks every channel in one command and restores the <strong>exact prior permissions</strong> when lifted.</div></details>
@@ -518,7 +345,7 @@ image: /assets/banner.jpeg
 
 ## Three ways to use it
 
-<div class="ways-grid">
+<div class="ways-grid" data-stagger>
   <div class="way">
     <h3>Slash commands, anywhere</h3>
     <p>Every action works as a <code>/</code> command in any channel: <code>/warn</code>, <code>/mute</code>, <code>/ban</code>, <code>/tempban</code>, <code>/lockdown</code>, <code>/purge</code>…</p>
@@ -547,3 +374,5 @@ image: /assets/banner.jpeg
 <p style="text-align: center; color: var(--ink-soft); font-size: .88rem; margin-top: 1.5rem;">
   Server Assistant · <a href="{{ site.url }}{{ site.baseurl }}/features/">Features</a> · <a href="{{ site.url }}{{ site.baseurl }}/crestbound-vision.html">Crestbound&nbsp;Vision</a> · <a href="{{ site.url }}{{ site.baseurl }}/compare/">Compare</a> · <a href="{{ site.url }}{{ site.baseurl }}/pricing/">Pricing</a> · <a href="{{ site.url }}{{ site.baseurl }}/roadmap/">Roadmap</a> · <a href="{{ site.url }}{{ site.baseurl }}/support/">Support</a>
 </p>
+
+<script src="{{ '/assets/js/landing.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>
