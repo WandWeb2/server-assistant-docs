@@ -180,6 +180,20 @@ A change lands in the panel for its audience — and a **Minecraft ↔ Discord b
 - Match the existing entry format exactly: `<details class="doc-sec" markdown="1"
   [open] data-kind="feature|fix">` + `<summary>…</summary>` + body + `</details>`,
   newest-first, only the top entry carrying `open`.
+- **The PORTAL panel carries its own `vN.N` sequence, and it is EDITORIAL.** Entries
+  in `#cl-portal` are numbered v1.0, v1.1, v1.2 and so on, and a new one takes the
+  next number. Confirmed by the owner, 2026-08-05, when v1.5 was added.
+
+  The trap is that this number **has no source of truth in code**. It is not
+  `RELAY_VERSION` (which was 1.15.1 when the portal panel was on v1.5) and it is not
+  in `_config.yml` or anywhere else. So do not go looking for a version to read, and
+  do not "correct" it to match the relay: read the panel's newest entry and add one.
+  Portal work usually ships relay-side, which makes `RELAY_VERSION` the tempting and
+  wrong answer.
+
+  A portal change belongs in this panel even when the code landed in `sa-relay`.
+  Where the work shipped is an implementation detail; the customer only ever meets it
+  in the web dashboard, and the panel is chosen by AUDIENCE.
 
 Origin: operator flagged the MCDC panel had gone stale — recent bridge work was
 being added to the Bot panel only and the MCDC panel was missed (2026-07-23).
