@@ -156,6 +156,27 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
 <details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>v6.136.0: a banned player can now find their appeal</summary>
+
+**The appeal link is on the "you are banned" screen.** Whenever a banned player tries to
+rejoin your server, they now see why they were banned and a clickable link to appeal.
+
+**Previously that link only appeared once**, on the screen shown at the exact moment of the
+ban, so anyone who closed the game never saw it again.
+
+**Bans made on the server itself get an appeal too.** A ban typed in game or from the
+console had none at all until now, because the link used to be created only when Server
+Assistant carried the ban out.
+
+**It works for older bans**, not only new ones, because the screen is shown every time they
+try to come back.
+
+**Needs plugin v0.30.0**, which servers on auto-update get without doing anything. A kick
+still has no appeal, as before: a kick is temporary and the player can simply reconnect.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.135.0: one click links a player's Discord and Minecraft accounts</summary>
 
 **Linking used to mean typing a code in game**, which almost nobody did. Most players
@@ -3421,9 +3442,29 @@ Everything stays **local to your server**: nothing is shared anywhere. It's **on
 
 <div class="cl-panel" id="cl-mcdc" role="tabpanel" aria-labelledby="tab-mcdc" markdown="1" hidden>
 
-<p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.29.0</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
+<p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.30.0</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
 
 <details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>Plugin v0.30.0 + v6.136.0: the appeal link now appears on the banned-login screen</summary>
+
+**A banned player had no reliable way to find their appeal.** The link was only ever shown
+on the screen drawn at the moment of the ban, which is gone the instant they close the game,
+and which the server has already drawn by itself when a ban is issued outside SA.
+
+**Now it is on the screen they actually reach.** Every time a banned player tries to rejoin,
+the "you are banned" screen shows the reason and a clickable appeal link, in the same layout
+as before so there is nothing new to recognise.
+
+**Bans issued on the server itself now have an appeal at all**, which they did not before.
+
+**Older bans are covered too**, since the screen appears on every attempt to come back.
+
+**Servers on auto-update get this without touching anything.** A kick still carries no
+appeal.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.135.0: the join notice's Discord link now connects the player's account too</summary>
 
 **No plugin update needed.** This is a Server Assistant change.
