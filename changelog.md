@@ -156,6 +156,31 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
 <details class="doc-sec" markdown="1" open data-kind="fix">
+<summary>v6.132.0: Minecraft moderation cards can be handled from your portal</summary>
+
+**The buttons were there and they did not work.** A flagged in-game message and a
+Minecraft ban appeal both appear in your portal's **Needs input** strip, each with its
+buttons. Pressing one did nothing: the action was never wired up on the portal side, so it
+failed quietly and the card stayed put. Kick, Ban, Dismiss, Approve and Deny now all do
+the same thing from the portal as they do from Discord.
+
+**If you approved a Minecraft ban appeal from the portal, it did not go through.** That is
+the one worth acting on. The card would clear and the player stayed banned. Approve it
+again and the unban is queued in game.
+
+**Each button now checks its own permission.** A moderator who can kick but not ban could
+previously press **Ban** on a portal card, because the card carried a single permission
+level for all of its buttons. Each action is now checked on its own, matching how the
+Discord buttons have always behaved.
+
+**Portal actions are recorded like Discord ones**, in your log channel and your audit
+trail, named to the staff member who took them.
+
+**Your Discord cards were never affected** and worked throughout.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v6.131.0: "out of AI tokens" is one line in Minecraft, and its link works</summary>
 
 **A four-paragraph notice was being printed into Minecraft chat.** When a server's AI
@@ -3328,6 +3353,29 @@ Everything stays **local to your server**: nothing is shared anywhere. It's **on
 <p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.28.0</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
 
 <details class="doc-sec" markdown="1" open data-kind="fix">
+<summary>v6.132.0: handle a flagged message or a ban appeal from your portal</summary>
+
+**No plugin update needed.** This is a Server Assistant change.
+
+**Two Minecraft cards had portal buttons that did nothing.** When SA flags an in-game
+message, or a banned player submits an appeal, the card appears both in your Discord staff
+chat and in your portal's **Needs input** strip. Only the Discord buttons were wired up.
+Pressing **Kick**, **Ban** or **Dismiss** on a flagged message from the portal, or
+**Approve** or **Deny** on an appeal, failed quietly and left the card where it was.
+
+**Approving an appeal from the portal is the one to re-check.** The player stayed banned.
+Approve it again and the unban is queued on your server.
+
+**A kick-only moderator can no longer press Ban from the portal.** Each button is now
+permission-checked on its own, the way the Discord buttons always were.
+
+**What SA sends your server is unchanged.** The reason a player sees on the disconnect
+screen names the rule that was broken, and portal actions are recorded in your log channel
+and audit trail exactly like Discord ones.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>Plugin v0.28.0 + v6.131.0: links the bot sends are clickable again, and the out-of-tokens line is one line</summary>
 
 **Links attached to a bot message were being dropped.** The plugin could make a `[wiki]`
