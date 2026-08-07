@@ -156,6 +156,19 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
 <details class="doc-sec" markdown="1" open data-kind="fix">
+<summary>v6.143.1: /premium no longer fails when things are busy</summary>
+
+**Opening `/premium` could error out.** The panel gathers your plan and token usage from
+our billing service before it appears, and when that lookup ran slow, Discord gave up
+waiting and showed an error instead of the panel.
+
+**Now the panel acknowledges you immediately** (you'll see a brief thinking state), takes
+the time it needs, and then appears. Same panel, it just no longer dies when a lookup is
+slow.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v6.143.0: a calmer, smarter /premium panel</summary>
 
 **The emoji clutter is gone.** Nearly every line of `/premium` opened with an emoji and
