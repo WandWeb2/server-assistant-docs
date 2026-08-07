@@ -155,7 +155,26 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
-<details class="doc-sec" markdown="1" open data-kind="feature">
+<details class="doc-sec" markdown="1" open data-kind="fix">
+<summary>v6.143.0: a calmer, smarter /premium panel</summary>
+
+**The emoji clutter is gone.** Nearly every line of `/premium` opened with an emoji and
+the panel was hard to read. The panel body is now plain text; the buttons keep one icon
+each.
+
+**Premium servers are no longer sold Premium.** If your server already has a plan, the
+panel shows your plan, your token usage and billing management. The feature pitch and
+upgrade pricing only appear on servers that could actually upgrade.
+
+**The usage bar can no longer read over 100%.** Usage is counted after each AI reply
+finishes, so the very last reply can land a few tokens past your cap (say 754K of 750K).
+That is expected, and nothing extra is ever charged for it. The panel now caps the
+percentage at 100, still shows the honest totals, and explains the overshoot in one line
+right where you would notice it.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.142.0: players now see when someone is banned or kicked</summary>
 
 **A player would just vanish, with nothing said.** When staff banned or kicked someone
