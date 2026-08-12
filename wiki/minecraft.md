@@ -4,7 +4,7 @@ title: "Minecraft ↔ Discord bridge (MCDC)"
 permalink: /wiki/minecraft/
 wiki: true
 wiki_category: "Features"
-summary: Link one Discord channel to your Minecraft (Paper/Spigot) server with a small free plugin for two-way chat, real player identity, relayed server events, an /online list with a live topic count, XP for in-game playtime, an optional one-way Discord-role to Minecraft-rank mirror, a configurable in-game @sai assistant with an in-world companion, and optional live AI translation both ways, all with no passwords or remote-console access leaving your machine.
+summary: Link one Discord channel to your Minecraft (Paper/Spigot) server with a small free plugin for two-way chat with real player identity, relayed server events, and an /online list with a live topic count. Players earn XP for in-game playtime, and an optional one-way mirror keeps Discord roles and Minecraft ranks in step. Add a configurable in-game @sai assistant with an in-world companion and optional live AI translation both ways, with no passwords or remote-console access leaving your machine.
 wiki_keywords: [minecraft, mcdc, discord, bridge, chat bridge, paper, spigot, plugin, /mcdc, wizard, /settings, /online, /link, /unlink, /saportal, translate, translation, server events, join, leave, death, advancement, skin, avatar, config.yml, java 21, 1.21, playtime xp, minecraft xp, rank sync, luckperms, roles and ranks, sai studio, companion, npc, in-game ai]
 description: How Server Assistant's Minecraft to Discord chat bridge (MCDC) works, link a Discord channel to your Paper/Spigot server with a free plugin for two-way chat with real player identity, relayed events, an /online count, and optional live AI translation, with chat relayed in transit and not stored.
 ---
@@ -20,6 +20,15 @@ nothing for your players to install.
 
 Works with **Paper** or **Spigot** servers on a recent Minecraft version. The plugin
 targets modern **1.21.x**, which needs **Java 21**.
+
+> **Set it up in 3 steps**
+>
+> 1. **[Download the plugin ({{ site.mcdc_plugin_version }})]({{ '/downloads/mcdc-plugin.jar' | relative_url }})**,
+>    drop the `.jar` into your server's `plugins/` folder, and start the server once.
+> 2. In Discord, run **`/mcdc`** and **pick a channel** to bridge: the panel shows your
+>    one-time **setup code**.
+> 3. Paste the code in via **`config.yml`** (the route the panel recommends) or the
+>    **server console** command. Details in [Setup](#setup).
 
 ## What it does
 
@@ -57,7 +66,8 @@ appear under the connection line in the `/mcdc` panel and as a **Server health**
 **Optional health alerts** post a short notice to your **log/staff channel** when the server
 **goes offline or comes back**, or when **TPS drops into the red**. They're **on by default**
 and you can toggle them from the `/mcdc` panel. Health reporting is **free** on every plan and
-needs the companion plugin **v0.4.0** or newer (it updates itself if auto-update is on).
+needs the companion plugin **v0.4.0** or newer (the plugin updates itself by default; see
+[`auto-update`](#config)).
 
 ## Ask SAi in-game {#ask-sai-in-game}
 
@@ -126,7 +136,7 @@ and the assistant.
   *Linked members only* server doesn't get a companion loophole.
 - It shares the **same 15 questions per 6 hours** budget as asking in chat.
 - Summoning happens **in game**, and the companion is served by the plugin, so keep the
-  plugin **up to date** (it updates itself if auto-update is on).
+  plugin **up to date** (it updates itself by default; see [`auto-update`](#config)).
 
 ## Moderate from Discord {#moderate-from-discord}
 
@@ -138,7 +148,8 @@ action the player **right on your Minecraft server**, no console needed. It's
 **off by default**: turn it on with the **Enforcement** toggle in the `/mcdc`
 panel. Each button is **permission-gated**: only staff who already have the
 matching kick/ban permission can click it. Carrying the action out in-game needs
-the companion plugin **v0.5.0** or newer (it updates itself if auto-update is on).
+the companion plugin **v0.5.0** or newer (the plugin updates itself by default; see
+[`auto-update`](#config)).
 
 **You can also act on a player who was never flagged.** **`/mcban <player> <reason>`**
 and **`/mckick <player> <reason>`** kick or ban **by player name**, for the griefer
@@ -283,30 +294,36 @@ Needs the companion plugin **v0.15.0** or newer and **LuckPerms** on your Minecr
 ## Setup {#setup}
 
 Setup runs once, by the server owner (**Manage Server** permission is needed for the setup
-command). You can link the bridge with **one console command**: no config file to edit and
-no restart.
+command). Pairing uses a **one-time setup code**: it works **once** and **expires after 30
+minutes**. The plugin exchanges it for a long-lived credential that it stores itself, so
+you never see or re-enter that credential. If the code expires before you use it, run
+`/mcdc` again and press **🔄 Regenerate token** for a fresh one.
 
 1. **Add the plugin.** [Download the MCDC plugin `.jar`]({{ '/downloads/mcdc-plugin.jar' | relative_url }}),
-   drop it into your Minecraft server's **`plugins/`** folder, and **start the server**.
+   drop it into your Minecraft server's **`plugins/`** folder, and **start the server**
+   once so the plugin writes its config file.
 2. **In Discord, run `/mcdc`** (or open **`/settings → Minecraft`**) to open the wizard,
    then **pick the channel to bridge** from the dropdown, or press **Create a channel for
-   me** and let Server Assistant make one. On linking, the panel shows a **ready-to-run
-   line** — your `/mcdc link` command with the **token** and **relay URL** already filled
-   in — plus the plugin download link.
-3. **At your server console, run the link command.** From the **server console** (not
-   typed in game chat: a command typed in chat is readable by other plugins and written
-   to your server log), run the line the panel gave you:
+   me** and let Server Assistant make one. On linking, the panel shows your **setup code**
+   (once): first a ready-to-paste **`config.yml` block** with the relay URL and code
+   filled in, then the equivalent console command.
+3. **Paste the config block (the route the panel recommends).** Open
+   **`plugins/MCDC/config.yml`**, paste in the `relay-url` and `token` lines exactly as
+   the panel shows them, and **restart the server**. This route is preferred because the
+   code never goes through a command, so no other plugin can read it and it never lands
+   in your server log (`latest.log`).
 
-   ```
-   /mcdc link <token> <relay-url>
-   ```
+**The no-restart alternative: the console command.** Run the line the panel gave you **at
+your Minecraft server console**, not in Discord chat and not in game chat:
 
-   The bridge links **instantly** — the plugin validates the token, confirms which Discord
-   channel it linked to, and the linked channel goes live. **No restart needed.**
+```
+/mcdc link <setup-code> <relay-url>
+```
 
-**Alternative — link via the config file.** Prefer to edit the file? Paste the **relay URL**
-and **token** from the wizard into **`plugins/MCDC/config.yml`** (the plugin generates it on
-first start) and **restart the server**. This is the same link, just the manual route.
+The bridge links **instantly**: the plugin validates the code, confirms which Discord
+channel it linked to, and the linked channel goes live, with no file editing and no
+restart. Since plugin **v0.24.0** this command is **refused in game chat**, where other
+players and plugins could see the code and it would be written to the server log.
 
 **A setup summary posts to your staff chat.** As soon as the bridge is linked, Server
 Assistant posts a short **hierarchy self-report** to your staff channel: which **roles** it
@@ -329,15 +346,18 @@ Download the plugin here — drop the `.jar` into your server's `plugins/` folde
 
 ## Plugin settings (`config.yml`) {#config}
 
-You don't need to edit the config file to link the bridge — the console
-**`/mcdc link <token> <relay-url>`** command (see [Setup](#setup)) does that for you. The file is still
-there if you'd rather set the **relay URL** and **token** by hand, and it holds the rest of
-the plugin's knobs. The plugin generates `plugins/MCDC/config.yml` on first start:
+Pairing the bridge means setting exactly two keys, `relay-url` and `token`, and the
+`/mcdc` panel hands you both as a ready-to-paste block (see [Setup](#setup)); if you'd
+rather not touch the file, the console **`/mcdc link <setup-code> <relay-url>`** command
+sets them for you. The rest of the file holds the plugin's knobs. The plugin generates
+`plugins/MCDC/config.yml` on first start:
 
 | Setting | What it does |
 |---|---|
 | `relay-url` | The relay address from the `/mcdc` wizard. Until it's set to a real value, the plugin stays idle and makes no network calls. |
-| `token` | Your link token from the `/mcdc` wizard. Keep it secret — treat it like a password. |
+| `token` | The **one-time setup code** from the `/mcdc` wizard. It is valid for **30 minutes** and is **consumed on the first successful connect**: the plugin exchanges it for its own stored credential, after which this value is ignored and can be cleared. Keep it secret while it's live. |
+| `auto-update` | Keeps the plugin current. On startup it checks for a newer build, verifies its checksum, and stages it for your next restart. **On by default**; set `auto-update: false` to pin your current version. |
+| `update-auto-restart` | Whether the on-demand **`/mcdc update`** console command restarts the server (after a short in-game countdown) to apply the build it just staged. On by default; set it to `false` to keep "download now, restart later". The automatic startup check never restarts the server either way. |
 | `join-notice` | Shows each player the **bridge** notice on join (*"Chat here is bridged to Discord"*). Yours to reword via `join-notice-text` or switch off. **Please keep it on.** Note this key does **not** control the mandatory **privacy** notice about private-message filtering, which always sends and has no setting; see [Privacy](#privacy). |
 | `join-notice-text` | The wording of that notice. Supports `&` colour codes. |
 | `discord-to-mc-format` | How Discord messages look in-game. Placeholders `{author}` and `{text}`, with `&` colour codes — default `&9[Discord] &b{author}&7: &f{text}`. |
@@ -358,7 +378,7 @@ want. After editing the file, restart the server (or re-run the bridge) to pick 
 
 - **`/mcdc`**: opens the setup & customization wizard (pick/create a channel, get your
   plugin config, and toggle events, the topic count, reactions and translation, open
-  **@sai Studio** and **Rank sync**, rotate the token, or unlink). Owner / **Manage
+  **@sai Studio** and **Rank sync**, regenerate the setup code, or unlink). Owner / **Manage
   Server** only. Also in `/settings → Minecraft`.
 - **`/online`**: list who's currently in-game. **Anyone can run it**, and the reply is
   private to you — but it's **scoped to your bridged channel**. Run it somewhere else and
@@ -378,7 +398,7 @@ knowing which are commands and which are just chat:
 
 | In-game | What it does | Who |
 |---|---|---|
-| **`/mcdc link <token> <relay-url>`** | Links the bridge to your Discord channel, instantly and with no restart. You only run this **once**, during [Setup](#setup) — the `/mcdc` wizard hands you the whole line pre-filled. **From plugin v0.24.0 this must be run at the server console, not typed in game.** A command typed in chat is readable by every other plugin on your server and is written to your server log, so a token pasted there should be treated as exposed. If you would rather not use the console, paste the `relay-url` and `token` block from the `/mcdc` wizard straight into `config.yml` instead — that never puts the token through a command at all. | The server **console** only |
+| **`/mcdc link <setup-code> <relay-url>`** | Links the bridge to your Discord channel, instantly and with no restart. You only run this **once**, during [Setup](#setup), and the `/mcdc` wizard hands you the whole line pre-filled. **From plugin v0.24.0 it must be run at the server console, not typed in game**: a command typed in chat is readable by every other plugin on your server and is written to your server log, so a setup code pasted there should be treated as exposed (regenerate it). The route the panel recommends is pasting the `relay-url` and `token` block straight into `config.yml`, which never puts the code through a command at all. | The server **console** only |
 | **`/saportal`** | Prints your **customer portal** address into chat as a clickable link, so a player can reach their account without hunting for the URL. The address is served by Server Assistant, so it stays correct without a plugin update. | Players |
 | **`!link <code>`** | Not a command — a **chat message**. Redeems the one-time code `/link` gave you in Discord, within **15 minutes**. See [Link your account](#link-your-account). | Any player |
 | **`@sai …`** · **`!sai …`** · **`!ai …`** | Also chat, not commands. Ask the assistant a question in-game. Subject to your **access** setting. See [Ask SAi in-game](#ask-sai-in-game). | Depends on access |
@@ -387,10 +407,13 @@ knowing which are commands and which are just chat:
 > the chat prefixes above, and `/link` is a **Discord** command that mints the code you
 > redeem in-game with `!link`.
 
-**The plugin keeps itself up to date.** It checks with Server Assistant for a newer build,
-and only installs one whose **checksum matches** what we published — a mismatch blocks the
-update rather than installing anything, and the new build is staged for your next restart.
-When it does update, the bot posts a short note to your log channel
+**The plugin keeps itself up to date, by default.** On startup it checks with Server
+Assistant for a newer build, and only installs one whose **checksum matches** what we
+published: a mismatch blocks the update rather than installing anything, and the new build
+is staged for your next restart (the startup check never restarts the server by itself).
+It's on unless you turn it off: set `auto-update: false` in `config.yml` to pin your
+current version, or run **`/mcdc update`** at the server console to check and apply one on
+demand. When it does update, the bot posts a short note to your log channel
 (*"⛏️ Your Minecraft bridge plugin updated to **vX.Y.Z**."*).
 
 ## Translation {#translation}
@@ -497,10 +520,15 @@ The bridge is built to keep your server's secrets on your server:
 
 ## Troubleshooting {#troubleshooting}
 
-- **The bridge won't connect.** Double-check the **relay URL** and **token** were pasted
-  in exactly as the `/mcdc` wizard gave them, make sure your Minecraft server can reach the
-  internet (the plugin needs **outbound HTTPS**), then check the `/mcdc` wizard (it shows
-  the connection state). The bridge also reconnects on its own if the link drops.
+- **The bridge won't connect.** Double-check the **relay URL** and **setup code** were
+  pasted in exactly as the `/mcdc` wizard gave them, and remember the code is **one-time
+  and expires after 30 minutes**, so a code that sat around needs regenerating (next
+  bullet). Make sure your Minecraft server can reach the internet (the plugin needs
+  **outbound HTTPS**), then check the `/mcdc` wizard (it shows the connection state). The
+  bridge also reconnects on its own if the link drops.
+- **Setup code expired or already used.** Run **`/mcdc`** in Discord and press
+  **🔄 Regenerate token**, then pair again with the fresh code. Regenerating also kills
+  the old code, so it doubles as "I pasted that somewhere public".
 - **The plugin won't load.** MCDC needs **Java 21** and a **Paper** or **Spigot** server on
   **1.21.x**. An older Java or server version will stop the plugin loading.
 - **Chat shows as a plain bot message, not the player.** In-game chat is posted through a
@@ -511,8 +539,8 @@ The bridge is built to keep your server's secrets on your server:
   once a minute and is rate-limited, so a change can take a few minutes to appear. The bot
   also needs the **Manage Channel** permission to edit the topic.
 - **`/online` says nothing's linked.** The plugin isn't running or hasn't connected yet.
-  Start your Minecraft server and check the `/mcdc` wizard (it shows the connection state)
-  to confirm the bridge is live.
+  Start your Minecraft server and check the `/mcdc` wizard: its connection line reads
+  "🟢 connected" once the bridge is live, and "⚪ waiting for the plugin" until then.
 
 ## Coming soon
 
