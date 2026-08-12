@@ -144,6 +144,45 @@ Where this and the older "the Claude session implements directly" note conflict,
 reserved for trivial edits or changes too delicate to hand off (the law itself, or a
 live single-file production hot-path).
 
+## Frugal delegation: minimum capable model (standing rule)
+
+Companion to the Director model above: delegation stays the default, and every
+delegated task is contracted to the CHEAPEST model tier that can complete it to
+the required quality. The premium main-session model is for judgment
+(decompose, architect, coordinate, integrate, review, sign off), not for scans,
+boilerplate, or log-reading. Route per task; the floor rises with stakes,
+irreversibility, and ambiguity:
+
+- **Haiku**: scans, grep/inventory sweeps, log and test-output reduction, doc
+  summaries. Low-stakes signal gathering only.
+- **Sonnet**: bounded, well-specified patches gated on passing tests; read-only
+  audits and research; targeted verification runs.
+- **Opus**: production hot-path or structural changes, security- and
+  correctness-critical patches, and anything Sonnet visibly fumbles.
+- **Main session (premium tier)**: decomposition, architecture, cross-front
+  coordination, integration, final diff review and sign-off. Never delegated.
+
+Rules that keep the savings real without costing quality:
+
+- **When unsure, go UP a tier.** A redo on a too-weak model costs more than
+  starting on the right one.
+- **Context firewall.** Delegated agents write full findings, diffs, and logs
+  to scratch files and return only the path plus a short summary; the main
+  session reads files on demand. Subagent output streamed into the main
+  context is the main token drain, not the subagent itself.
+- **Quality floor is non-negotiable.** A cheap tier never owns
+  quality-critical construction, and no tier skips the gate: the director
+  reads every delegated diff and runs the repo's verify gates before
+  accepting, regardless of which model produced it.
+- **Watch the count, not just the tier.** Many cheap agents are not cheap;
+  prefer one bounded agent per front, serialized on shared files.
+
+Full doctrine, including workflow templates and budget caps: the
+`frugal-fable` skill (`server-assistant-docs/.claude/skills/frugal-fable/`).
+
+Origin: owner directive, 2026-08-12 ("contract subagents on the minimum model
+capable of completing the assigned task"), made standing law the same day.
+
 ## Background agents — hygiene (standing rule)
 
 Subagents and background tasks are easy to leak. A prior session left **13 research agents running for 10–22h**, quietly burning tokens, because they were spawned and never reaped. To prevent recurrence:
