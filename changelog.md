@@ -155,7 +155,43 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
-<details class="doc-sec" markdown="1" open data-kind="fix">
+<details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>v6.144.0: setup, `/mcdc` and every panel, the big ease-of-use pass</summary>
+
+**Setup is shorter, and nothing happens until you press Finish.** The setup wizard's
+message now lands last in your DMs, so the buttons you need are not buried under
+earlier ones. A one person server no longer needs to create a Moderator role just to
+get started. Nothing is saved or created, the Welcome desk included, until you press
+Finish, and a first time setup now posts the staff welcome message on its own.
+
+**Pairing Minecraft finally talks back.** The moment your server first connects, staff
+chat gets a note that the Minecraft bridge is connected, with the plugin version and
+player count included. The `/mcdc` panel now tells you to install the plugin before it
+hands you the 30 minute setup code, and a focused setup view stands in for the full
+control panel until you are connected. Regenerating the token on a bridge that is
+already live now asks you to confirm first.
+
+**`/help` works for everyone now.** Members get a "For everyone" category. Staff who
+can remove warnings or notes get the management view straight from `/warnings` and
+`/notes`, with no extra step.
+
+**Less text everywhere.** `/support`, `/link` and `/premium` get to the point. Panels
+stop repeating a toggle's state twice. Error messages now say what to do next, not just
+what went wrong.
+
+**Settings panels expire politely.** A panel that has gone stale now says "Run
+`/settings` to reopen" instead of failing silently. Destructive buttons, like deleting
+a backup or clearing the anti-nuke trusted list, ask you to confirm first. The
+anti-nuke panel now shows exactly who is trusted.
+
+**In Minecraft chat.** Long Discord posts no longer flood the screen, mirrored
+messages are capped. Notices lost the emoji that show up as boxes in the vanilla
+client. Players who already linked their accounts stop being asked to link again on
+every join.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v6.143.1: /premium no longer fails when things are busy</summary>
 
 **Opening `/premium` could error out.** The panel gathers your plan and token usage from
@@ -3504,7 +3540,18 @@ Everything stays **local to your server**: nothing is shared anywhere. It's **on
 
 <p class="cl-intro">What's changed in the <strong>Server Assistant portal</strong>: the web dashboard you sign into with your Discord account.</p>
 
-<details class="doc-sec" markdown="1" open data-kind="fix">
+<details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>v1.7: the portal joins the ease-of-use pass</summary>
+- **Add Server Assistant when you have none yet.** If none of your servers has Server Assistant installed, the portal now shows an Add Server Assistant button right on your dashboard instead of leaving it empty.
+- **A Minecraft bridge status card.** A new read-only card shows whether your Minecraft bridge is connected, with a link to the wiki for the full setup guide.
+- **Plan names spelled out.** Plan names now read in full, for example "bring your own key," instead of a short code.
+- **The Threat Score line explains itself.** A plain explanation now sits alongside the number, so you know what it means without leaving the page.
+- **Retry when something fails to load.** If your billing details or tickets fail to load, a Retry button appears instead of a dead end.
+- **Clearer guidance without moderation permissions.** If your account lacks the Discord permissions Server Assistant needs, the portal now says so plainly and points you to what to do about it.
+- **Resolving a Minecraft ban appeal with a warning.** Doing this from the portal now records a standard reason; the same action in Discord still lets you type your own.
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v1.6: Your AI usage breakdown reads in plain English</summary>
 - **The dashboard was showing you our names for things.** The breakdown of what your server's AI allowance went on has been on your dashboard for a while, but it labelled each line with an internal short code, `nl_extract` and `mcdc_ai` and the like, which meant nothing to anyone outside our own code.
 - **Every line now has a plain English name**, and closely related ones are gathered together rather than listed apart, so the assistant appears once instead of five times over. The figures themselves are unchanged: only the labels and the grouping are.
@@ -3616,6 +3663,34 @@ Everything stays **local to your server**: nothing is shared anywhere. It's **on
 <p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.30.0</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
 
 <details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>Bridge setup that talks back (bot v6.144.0)</summary>
+
+**Pairing tells you when it's done.** The moment your server first connects, staff
+chat gets a note that the Minecraft bridge is connected, with the plugin version and
+player count included.
+
+**Install comes before the code.** The `/mcdc` panel now tells you to install the
+plugin first, and only then hands you the 30 minute setup code, in that order. A
+reminder sits alongside the code too: it goes into your server console, not into
+Discord.
+
+**A focused setup view stands in for the full panel** until your server is connected,
+so you are not looking at options that do not apply yet.
+
+**Regenerating a token asks first**, if a bridge is already connected and live, so you
+cannot break a working pairing by mistake.
+
+**In Minecraft chat.** Long Discord posts no longer flood the screen, mirrored
+messages are capped. Notices lost the emoji that show up as boxes in the vanilla
+client. Players who already linked their accounts stop being asked to link again on
+every join.
+
+**The wiki's Setup page has been rewritten** around the 30 minute setup code, so it
+matches what you will actually see when you pair your server.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.142.0: bans and kicks are announced in game</summary>
 
 **Players just saw someone vanish.** A ban or kick made through Server Assistant said nothing
