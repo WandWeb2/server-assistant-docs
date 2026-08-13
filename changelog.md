@@ -155,7 +155,27 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
-<details class="doc-sec" markdown="1" open data-kind="feature">
+<details class="doc-sec" markdown="1" open data-kind="fix">
+<summary>v6.145.0: you can take `#general` off the newcomer list</summary>
+
+**One channel could not be unselected.** Setting up the reception gate preselected your
+server's system channel, usually `#general`, and the picker would not let it go. Whatever
+you did, it stayed on the list. It can now be deselected like anything else.
+
+**"Kept visible" now means visible, not wide open.** Channels you chose to keep visible to
+unverified members were left completely untouched, so newcomers could still post in them.
+They are now genuinely read only: people can read while they verify, and can post once they
+have.
+
+**The verification channel is the one exception**, because it is the only way back in. It
+stays visible and postable, and the setup panel now explains why it cannot be removed.
+
+**Undo puts the kept channels back too**, so reversing the setup returns every channel to
+how you had it.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.144.0: setup, `/mcdc` and every panel, the big ease-of-use pass</summary>
 
 **Setup is shorter, and nothing happens until you press Finish.** The setup wizard's
