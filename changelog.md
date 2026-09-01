@@ -156,6 +156,27 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
 <details class="doc-sec" markdown="1" open data-kind="fix">
+<summary>v6.145.1: back online, with some protection features paused</summary>
+
+**Server Assistant is back after an outage.** Discord requires apps above a certain size to
+have their access to message content, the member list, and presence reviewed. Our access was
+paused while that review is pending, and because the bot could not start without it, SA went
+offline entirely rather than losing only the features that depend on it. It now starts and
+keeps running whatever does not need that access.
+
+**What is paused for now:** AutoMod content filtering and scam detection, anti-raid and
+AltGuard checks on people joining, the AI assistant, and the Discord to Minecraft chat relay.
+
+**What still works normally:** every slash command, staff moderation tools, tickets and
+appeals, the web portal, and Minecraft to Discord chat.
+
+**When the review completes**, all of the paused features switch back on and your staff chat
+gets a notice confirming it. Your settings, warnings, tickets, XP and Minecraft links were
+never affected.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v6.145.0: you can take `#general` off the newcomer list</summary>
 
 **One channel could not be unselected.** Setting up the reception gate preselected your
