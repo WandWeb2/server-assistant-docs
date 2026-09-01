@@ -156,6 +156,21 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
 <details class="doc-sec" markdown="1" open data-kind="fix">
+<summary>v6.145.2: we will tell you the moment protection comes back</summary>
+
+**You will get a follow-up notice, not silence.** When we told your staff chat which
+features were paused, we promised to post again the moment Discord restores our access.
+That follow-up now actually happens: the servers that received the pause notice will get a
+short "Protection features are back on" message as soon as everything is running again,
+with nothing for you to reconfigure. Servers that never saw the pause notice will not be
+messaged.
+
+**`/privacy` now links the policy.** The privacy panel lets you control what Server
+Assistant is allowed to read, but it never linked the policy itself. It does now.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v6.145.1: back online, with some protection features paused</summary>
 
 **Server Assistant is back after an outage.** Discord requires apps above a certain size to
