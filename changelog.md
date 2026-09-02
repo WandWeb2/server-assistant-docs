@@ -155,7 +155,19 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
-<details class="doc-sec" markdown="1" open data-kind="feature">
+<details class="doc-sec" markdown="1" open data-kind="fix">
+<summary>v6.147.0: your server's "Online" count is accurate again</summary>
+
+**The number was wrong, now it is not.** The "Online" count shown by `/stats` and on the
+dashboard has been reading far too low since the end of August. It is now read directly from
+Discord itself, so it is accurate again and no longer depends on anything else being restored.
+
+**No wrong number, ever.** If the count cannot be determined for some reason, the field is
+now hidden rather than shown with a wrong figure.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>v6.146.0: your staff chat gets told if Server Assistant ever goes down</summary>
 
 **An independent watchman.** Until now, every alert Server Assistant could raise travelled
