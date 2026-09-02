@@ -155,7 +155,27 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
-<details class="doc-sec" markdown="1" open data-kind="fix">
+<details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>v6.146.0: your staff chat gets told if Server Assistant ever goes down</summary>
+
+**An independent watchman.** Until now, every alert Server Assistant could raise travelled
+through Server Assistant. If it went down, it could not tell you it had gone down, which is
+exactly what happened during our recent outage. There is now a monitor running completely
+outside our own systems, on separate infrastructure, that checks every minute and can post
+to your staff chat even when the bot itself is offline.
+
+**You will not be spammed.** A brief blip tells nobody. Your staff chat only hears about a
+genuine, sustained outage, once, and then hears again when service is restored.
+
+**You can turn it off.** It is on by default. `/settings` then Notifications has an
+**Outage notices** toggle if you would rather not receive them.
+
+Nothing to set up, and it needs no new permissions beyond the ability to create a webhook in
+your staff channel. If Server Assistant cannot do that in your server, it simply skips it.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v6.145.2: we will tell you the moment protection comes back</summary>
 
 **You will get a follow-up notice, not silence.** When we told your staff chat which
