@@ -156,6 +156,17 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
 <details class="doc-sec" markdown="1" open data-kind="fix">
+<summary>v6.148.0: XP and levels are earning again</summary>
+
+**Chat XP is earning again.** Since late August, messages sent in Discord were not earning XP at all, so levels and leaderboards were frozen for everyone. That is fixed now, and messages earn XP again at the normal base rate.
+
+**The length bonus is still on hold.** Until Discord restores our full access, longer messages do not earn extra XP: every message earns the same base amount for now. This applies equally to everyone, and nobody's existing XP or level was affected while earning was paused.
+
+**Correcting the paused features list.** The list of paused features we posted to staff chats during the outage was incomplete. Scam image detection and the Premium join time ThreatNet check are also paused, and Pulse digests will show zero joins and leaves for now. These were already true, we simply had not written them down until today.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v6.147.0: your server's "Online" count is accurate again</summary>
 
 **The number was wrong, now it is not.** The "Online" count shown by `/stats` and on the
