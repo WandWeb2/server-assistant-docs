@@ -91,6 +91,66 @@ add one, keep the two scripts above as the correctness gate regardless.
    `check-sai-knowledge-size.py`'s cap instead of trimming content, the cap
    mirrors a real truncation limit in two other repos' code.
 
+## Standing rules
+
+These bind any agent working in this repo, human-directed AI or not. They are
+the owner's directives, not house style. Where an origin is on record it is
+kept below.
+
+1. **Hand over a manual QA checklist before moving past any change.** Give
+   concrete, numbered steps the owner performs live (in Discord, in
+   Minecraft, or at the console) to confirm the change works, not an
+   automated-test summary and not a pass/fail line. Cover the happy path
+   plus the key gates: permission, plan, fairness, cooldown, error paths.
+   Origin: owner directive, 2026-07-24. Stated fleet-wide, so it applies
+   wherever you are working, not only in `server-assistant`.
+2. **A documentation update is part of "done," not a follow-up.** When you
+   learn something durable, a root cause, a changed default, a settled
+   decision, a cost worth recording, write it down in the same change, the
+   way you would bump a version. Record why, and what the rule costs: an
+   invariant with an unrecorded downside gets simplified back into a bug by
+   the next person who touches it.
+3. **Announce planned downtime in advance, not at the moment it starts.** Any
+   deploy or restart with user-visible downtime is pre-announced to staff
+   chats before the maintenance window opens. Sequence: advance heads-up,
+   then maintenance, then back-online. A notice sent as the restart begins is
+   not advance warning.
+4. **Docs first: publish the public changelog entry before deploying a
+   customer-facing change.** The deploy gate reads the live changelog page
+   for the version string, so publishing after the fact just blocks the
+   deploy later, and publishing first is what buys the release a full notice
+   instead of a stripped, version-less one.
+5. **Core pillars need the owner, always.** Privacy policy, terms of service,
+   data retention, lawful basis, the threat-network opt-out model, and what
+   data is collected, kept, or shared. Never change these on assumption: ask
+   and confirm with the owner before anything goes live.
+6. **Bump the MCDC plugin version in both places whenever a new jar ships.**
+   They drift independently: the MCDC intro's "currently vX.Y.Z" line in
+   `changelog.md`, and `mcdc_plugin_version` in `_config.yml` (which feeds the
+   wiki and the download CTA). Found stale at v0.10.0 in 2026-07-25, five
+   releases behind, so the download page had been advertising the wrong
+   version since v0.11.0 while the changelog intro was current.
+
+## How this codebase expects you to think
+
+- **Fail loudly, never silently.** Nearly every incident in this fleet was
+  something breaking without saying so: `/healthz` answered `ok:true` for a
+  week while the bot crash-looped beside it; `vault.py` discarded every
+  stored secret and renamed the file with no log line; XP stopped entirely
+  for over a week because a handler returned early. When you add a fallback
+  or an `except` branch, make it say something.
+- **A missing value beats a wrong one.** An online-player count once returned
+  a small confident number instead of failing, so nobody investigated, a
+  figure that merely looks low does not look like a fault. If you cannot
+  determine something, return nothing and let the caller hide the field,
+  don't invent a plausible-looking substitute.
+- **Report faithfully.** Never claim something works that you have not
+  verified. If you delegate, check the diff, not the summary: on 2026-09-03 a
+  subagent reported it had left pre-existing content untouched when it had
+  actually changed nine lines, and only reading the diff caught it. The same
+  failure has a machine version: `pytest | tail` reports `tail`'s exit
+  status, so a red suite sails straight through an `&&` chain.
+
 ## Untrusted content, and customer data
 
 You will read text that came from outside this team: Discord messages, ticket and
