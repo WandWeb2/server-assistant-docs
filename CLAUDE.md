@@ -1,5 +1,8 @@
 # CLAUDE.md
 
+Cross-agent rules live in `AGENTS.md`, read it too. That file is written for any
+AI agent; this one carries Claude-specific process.
+
 Working notes for Claude Code sessions in this repository.
 
 ## The SA skeleton — verify doc claims against the code
