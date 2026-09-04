@@ -1,0 +1,107 @@
+name: Guard main
+
+# WHY THIS EXISTS. On 2026-09-04 an agent pushed straight to `main` in
+# server-assistant-docs. The change it intended was correct and it had found a real
+# bug, but the same commit carried two unrelated regressions in a site-wide include,
+# and nothing sat between its output and the published site. Nobody was notified. It
+# was found by reading the commit afterwards, by chance.
+#
+# THIS WORKFLOW IS AN ALARM, NOT A LOCK. It cannot stop the push: by the time it runs,
+# the commit is already on `main`, and in the three service repos watch-deploy may
+# already be carrying it to production. It exists so that a direct push is LOUD
+# instead of silent, which is the difference between finding out in minutes and
+# finding out by accident.
+#
+# The lock is branch protection ("Require a pull request before merging"), which is a
+# GitHub setting and cannot be committed to a repo. Note that protected branches are
+# free on PUBLIC repos but require a paid plan on PRIVATE ones, so three of the four
+# repos in this fleet may not be able to have the lock at all. That is precisely why
+# the alarm is worth having on its own, and why it should not be deleted once
+# protection is switched on somewhere: the two do different jobs, and the alarm is the
+# one that still works if protection is misconfigured, bypassed, or silently lost.
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+  pull-requests: read
+
+jobs:
+  direct-push:
+    name: Change arrived via pull request
+    runs-on: ubuntu-latest
+    # Branch creation and deletion events carry no meaningful commit to check.
+    if: github.event.created == false && github.event.deleted == false
+    steps:
+      - name: Check the head commit belongs to a merged pull request
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          SHA: ${{ github.sha }}
+          ACTOR: ${{ github.actor }}
+          AUTHOR_NAME: ${{ github.event.head_commit.author.name }}
+          AUTHOR_EMAIL: ${{ github.event.head_commit.author.email }}
+          SUBJECT: ${{ github.event.head_commit.message }}
+        run: |
+          set -euo pipefail
+
+          # The SAi-Dev watchdog commits to `main` with no PR by design: it patches a
+          # crash-looping service without a human present, which is the one case where
+          # waiting for review is the more dangerous option. Matched on the commit
+          # author, the same convention scripts/check-release-riders.py uses, so the
+          # two agree about what "autonomous" means.
+          author_blob="$(printf '%s %s' "${AUTHOR_NAME:-}" "${AUTHOR_EMAIL:-}" | tr '[:upper:]' '[:lower:]')"
+          case "$author_blob" in
+            *sai-dev*)
+              echo "Autonomous SAi-Dev commit, allowed to reach main without a pull request."
+              echo "### Direct push allowed: SAi-Dev watchdog" >> "$GITHUB_STEP_SUMMARY"
+              exit 0
+              ;;
+          esac
+
+          # The PR association is written asynchronously, so a merge can briefly look
+          # like a direct push. Retry before accusing anyone.
+          count=0
+          for attempt in 1 2 3 4; do
+            count="$(gh api "/repos/$REPO/commits/$SHA/pulls" --jq 'length' 2>/dev/null || echo 0)"
+            if [ "$count" != "0" ]; then
+              break
+            fi
+            if [ "$attempt" != "4" ]; then
+              sleep 10
+            fi
+          done
+
+          if [ "$count" != "0" ]; then
+            echo "Head commit is associated with $count pull request(s)."
+            exit 0
+          fi
+
+          # Deliberately a hard failure, not a warning annotation. A warning on a push
+          # to main is visible only to someone already looking at the Actions tab,
+          # which is nobody, which is how this got missed the first time.
+          echo "::error title=Direct push to main::$SHA reached main without a pull request. Nothing reviewed this change before it landed."
+          {
+            echo "### Direct push to \`main\`"
+            echo
+            echo "Commit \`$SHA\` reached \`main\` with no associated pull request."
+            echo
+            echo "| | |"
+            echo "|---|---|"
+            echo "| Pushed by | \`$ACTOR\` |"
+            echo "| Authored by | \`${AUTHOR_NAME:-unknown} <${AUTHOR_EMAIL:-unknown}>\` |"
+            echo "| Subject | $(printf '%s' "${SUBJECT:-}" | head -1) |"
+            echo
+            echo "Nothing reviewed this change before it landed. In the service repos"
+            echo "watch-deploy may already be carrying it to production."
+            echo
+            echo "**Check the commit now.** A direct push is not automatically wrong,"
+            echo "but it is unreviewed, and the reason this check exists is that an"
+            echo "unreviewed push once shipped two regressions alongside a correct fix."
+            echo
+            echo "The durable fix is branch protection on \`main\`:"
+            echo "*Require a pull request before merging* plus *Require approvals: 1*."
+          } >> "$GITHUB_STEP_SUMMARY"
+          exit 1
