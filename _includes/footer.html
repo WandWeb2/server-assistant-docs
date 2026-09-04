@@ -13,11 +13,11 @@
 <link rel="stylesheet" href="{{ '/assets/css/glass.css' | relative_url }}?v={{ site.time | date: '%s' }}">
 
 <footer class="site-footer h-card">
-  <data class="u-url" href="{{ "/" | relative_url }}"></data>
+  <data class="u-url" href="{{ \"/\" | relative_url }}"></data>
 
   <div class="wrapper" style="display: flex; flex-wrap: wrap; align-items: center; gap: 2rem;">
 
-    <a href="{{ "/" | relative_url }}" style="flex-shrink: 0;">
+    <a href="{{ \"/\" | relative_url }}" style="flex-shrink: 0;">
       <img src="{{ '/assets/SAllay-192.png' | relative_url }}"
            alt="Server Assistant logo"
            width="76"
@@ -44,7 +44,7 @@
     </div>
 
     <div class="footer-credit" style="font-size: .8rem; color: var(--fg-1); min-width: 180px;">
-      Built &amp; maintained by<br>
+      Built & maintained by<br>
       <a href="https://wandweb.co" style="color: var(--fg-1); font-weight: 600;">Wandering Webmaster</a><br>
       <a href="https://github.com/{{ site.minima.social_links.github }}"
          style="color: var(--fg-1);">GitHub</a> ·
@@ -56,10 +56,13 @@
 
 <script>
 /* Gentle scroll-reveal for every page except the roadmap (which has its own
-   bespoke motion). No-JS and reduced-motion users keep content fully visible —
+   bespoke motion) and the changelog (long dense list of release cards; the
+   observer's bottom rootMargin was keeping the first cards hidden until the
+   user scrolled). No-JS and reduced-motion users keep content fully visible —
    the hidden state only switches on once we've confirmed motion is wanted. */
 (function () {
   if (document.querySelector(".build-queue")) return;            // leave roadmap alone
+  if (document.querySelector(".cl-tabs")) return;                // leave changelog alone
   if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
   if (!("IntersectionObserver" in window)) return;
   var wrap = document.querySelector(".page-content .wrapper");
