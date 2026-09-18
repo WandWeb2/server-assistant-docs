@@ -9,11 +9,17 @@ description: Screenshot evidence supporting Server Assistant's Discord privilege
 # Privileged-Intent Review: Evidence
 
 This page collects the screenshot evidence for **Server Assistant's** Discord
-privileged-gateway-intent application (Server Members, Presence, Message
-Content). It is unlisted (not linked from the site navigation, search, or
-sitemap) and exists so the reviewer can view each screenshot in context.
+privileged-gateway-intent application (Server Members and Message Content). It
+is unlisted (not linked from the site navigation, search, or sitemap) and exists
+so the reviewer can view each screenshot in context.
 
 Each screenshot demonstrates a specific declared use of the intent.
+
+**On the Presence intent, which is no longer requested.** An earlier application
+asked for it, to show an aggregate count of members online and in voice. That
+count now reads `approximate_presence_count` from
+`GET /guilds/{guild.id}?with_counts=true`, which requires no privileged intent,
+so the feature works without it and the request has been withdrawn.
 
 ---
 
@@ -30,22 +36,6 @@ server's Discord roles into Moderator / Admin / Owner tiers, so the bot and
 portal enforce staff access correctly. This requires the member/role list.
 
 ![Staff role to tier selection]({{ '/assets/intent-evidence/STAFF%20ROLE%20TIER%20SELECTION.png' | relative_url }})
-
----
-
-## Presence intent
-
-**Aggregate live counts in Discord (`/stats`):** presence is read live only to
-display a **running total** of members online and in voice. No per-member
-presence is stored or profiled; only the aggregate count is shown.
-
-![/stats showing Online and In voice counts]({{ '/assets/intent-evidence/PRESENCE%20STATS%20IN%20DISCORD.png' | relative_url }})
-
-**Aggregate live counts in the web dashboard:** the same aggregate "Online now
-/ In voice" figures on the staff portal (note the on-page disclaimer that these
-are a periodic snapshot, not per-member tracking).
-
-![Portal Insights online and in-voice counts]({{ '/assets/intent-evidence/PRESENCE%20STATS%20IN%20PORTAL.png' | relative_url }})
 
 ---
 
