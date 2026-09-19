@@ -156,6 +156,17 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
 <details class="doc-sec" markdown="1" open data-kind="fix">
+<summary>v6.149.0: groundwork for switching protection back on</summary>
+
+**Server Assistant no longer asks Discord for a permission it has not been granted.** It used to request all three permissions together, so the moment one was missing it could not connect at all, and every server lost the bot completely rather than losing a single feature. It now asks only for what it actually uses.
+
+**The presence permission is gone for good, and nothing depends on it.** The "Online" count on your dashboard has read straight from Discord since the last release, so dropping it costs you nothing and removes the weakest part of our access request.
+
+**Paused features are still paused until Discord answers.** This release does not switch anything back on by itself. It is the part that lets the paused features return the moment access is granted, without a repeat of the outage that took the bot offline for seven days.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v6.148.0: XP and levels are earning again</summary>
 
 **Chat XP is earning again.** Since late August, messages sent in Discord were not earning XP at all, so levels and leaderboards were frozen for everyone. That is fixed now, and messages earn XP again at the normal base rate.
