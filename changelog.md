@@ -156,6 +156,30 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
 <details class="doc-sec" markdown="1" open data-kind="fix">
+<summary>v6.151.0: SAi stops inventing menus and commands in Discord</summary>
+
+**Mentioning Server Assistant in Discord was the one place SAi answered with no product knowledge in front of it.** In-game and at the reception desk it already worked from the real documentation, so it stayed accurate. A plain mention in Discord got a confident, sometimes invented, description of menus and commands that do not exist.
+
+**It now answers from the same knowledge everywhere.** Ask it about a feature, a setting, or a command in Discord and it draws on the same product knowledge the in-game assistant and the reception desk already use.
+
+**It can send you the portal link again.** It had started claiming it could not send links, which was never true.
+
+**When it genuinely does not know something, it says so.** Instead of inventing a path, it points you at `/settings` or the portal rather than describing a menu that is not there.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
+<summary>v6.150.0: @ mention someone in Minecraft chat and ping them in Discord</summary>
+
+**Typing `@` in Minecraft chat now offers a list of Discord names to pick from.** Choosing one sends a real Discord mention, so the person you pick gets pinged in Discord the same as if you had @ mentioned them there yourself.
+
+**The list is built from linked accounts and staff.** It covers members who have linked their Discord and Minecraft accounts, plus that server's staff, and `@SAi` is on the list too. Being online in Minecraft is not enough on its own, a player has to be linked, or staff, to show up.
+
+**A shared Discord display name resolves to one person by a fixed rule.** That is deliberate: a mention has to land on somebody, so two Discord members with the same display name can occasionally see it reach the other one instead of the one you meant.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v6.149.0: groundwork for switching protection back on</summary>
 
 **Server Assistant no longer asks Discord for a permission it has not been granted.** It used to request all three permissions together, so the moment one was missing it could not connect at all, and every server lost the bot completely rather than losing a single feature. It now asks only for what it actually uses.
@@ -3770,9 +3794,24 @@ Everything stays **local to your server**: nothing is shared anywhere. It's **on
 
 <div class="cl-panel" id="cl-mcdc" role="tabpanel" aria-labelledby="tab-mcdc" markdown="1" hidden>
 
-<p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.30.0</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
+<p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.31.0</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
 
 <details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>Plugin v0.31.0 + v6.150.0: @ mention players in Minecraft chat and ping them for real in Discord</summary>
+
+**Typing `@` in Minecraft chat now offers a list of Discord names to pick from.** Choosing one sends an actual Discord mention, pinging that person in Discord the same as if you had @ mentioned them there yourself.
+
+**Plugin v0.31.0 carries the names.** The chat completions popup you get when you type `@` now lists them, on top of the linking it already handled.
+
+**The list covers linked accounts and staff, not everyone online.** A player has to have linked their Discord and Minecraft accounts, or be staff, to appear, and `@SAi` is on the list too.
+
+**A shared Discord display name resolves to one person by a fixed rule.** That is deliberate: a mention has to land on somebody, so two members with the same display name can occasionally see it reach the other one.
+
+**Servers on auto-update get this without touching anything.**
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>Bridge setup that talks back (bot v6.144.0)</summary>
 
 **Pairing tells you when it's done.** The moment your server first connects, staff
