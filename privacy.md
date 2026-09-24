@@ -82,7 +82,7 @@ description: How Server Assistant handles your Discord server's data, encrypted 
 
 <div class="lp-meta">
   <span><strong>Effective date:</strong> May 9, 2026</span>
-  <span><strong>Last updated:</strong> August 2, 2026</span>
+  <span><strong>Last updated:</strong> September 24, 2026</span>
   <a href="#changes-to-this-policy">How changes are announced</a>
 </div>
 
@@ -698,7 +698,7 @@ If you play on a Minecraft server running our Minecraft ↔ Discord bridge, you 
 
 This section is about **what players write in the game**, which is a separate matter from account linking above. Linking is opt-in and rests on your consent; this is not, so we set it out on its own.
 
-If your Minecraft server runs our Minecraft ↔ Discord bridge, in-game **chat** is relayed into a Discord channel (and Discord chat back into the game) so the two sides read as one conversation. **Relayed chat is passed through to deliver the message and is not stored as chat.** Your player name is carried across so staff can see who said what.
+If your Minecraft server runs our Minecraft ↔ Discord bridge, in-game **chat** is relayed into a Discord channel (and Discord chat back into the game) so the two sides read as one conversation. **Relayed chat is passed through to deliver the message and is not stored as chat.** Your player name is carried across so staff can see who said what. Your Discord display name travels the other way: it appears in the game beside anything you post in a bridged channel, and if your operator switches on in-game mentions we also send that server the display names players can type to mention someone, covering members who have linked their account to that server and that server's staff. We never send a game server your Discord user ID or your account link.
 
 **Chat is not the only place a player writes, so it is not the only place we check.** Someone who wants their words in front of other players without passing a chat filter can put them on a **sign**, in a **book**, on a **mob name tag**, in an **item name** (an anvil rename), or in a **`/me` emote**; they can aim them at one person with **`/msg`**; or they can simply **join under a name** that says it for them. Your AutoMod filter covers all eight of those, on the same single switch.
 
