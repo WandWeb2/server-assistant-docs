@@ -156,6 +156,19 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
 <details class="doc-sec" markdown="1" open data-kind="fix">
+<summary>v6.152.0: ask @SAi anywhere in a sentence, not just at the start</summary>
+
+**You no longer have to put `@SAi` first.** Ask it part-way through a line and it answers: "hey @sai how do I craft a piston" works, and so does finishing on the name, like "can anyone help, @SAi?". Both used to be met with silence, with nothing to tell you why.
+
+**This was a gap the new mention list opened.** Typing `@` now suggests names mid-sentence, so that is where people naturally put `@SAi`, but the assistant was only listening at the very start of a line.
+
+**Whatever else you wrote is the question.** The name is lifted out and the rest of your sentence is what gets asked, so a mention at the end still carries your question with it.
+
+**Words that merely begin with the name are still ignored.** `@sailboat` and `!aircraft` summon nothing, and `@SAi` on its own, with nothing asked, still does nothing.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v6.151.0: SAi stops inventing menus and commands in Discord</summary>
 
 **Mentioning Server Assistant in Discord was the one place SAi answered with no product knowledge in front of it.** In-game and at the reception desk it already worked from the real documentation, so it stayed accurate. A plain mention in Discord got a confident, sometimes invented, description of menus and commands that do not exist.
@@ -3796,7 +3809,18 @@ Everything stays **local to your server**: nothing is shared anywhere. It's **on
 
 <p class="cl-intro">What's new in the <strong>Minecraft ↔ Discord bridge (MCDC)</strong>: the bot side that links a Discord channel to your Minecraft server, and the free companion plugin that runs on the server. The <strong>plugin</strong> has its own version (currently <strong>v0.31.0</strong>); most bridge improvements are made on Server Assistant's side and need <strong>no plugin update</strong>.</p>
 
-<details class="doc-sec" markdown="1" open data-kind="feature">
+<details class="doc-sec" markdown="1" open data-kind="fix">
+<summary>v6.152.0: ask @SAi anywhere in a sentence, not just at the start</summary>
+
+**The mention list and the assistant now agree on where `@SAi` can go.** Typing `@` suggests names wherever you are in a line, but SAi was only listening at the very start of one, so "can anyone help, @SAi?" got silence.
+
+**Ask it mid-sentence or at the end and it answers.** The name is lifted out and the rest of what you wrote is the question, so "hey @sai how do I craft a piston" and "@sai, what is redstone?" both work now.
+
+**Nothing else changed about who it answers.** It is still Premium, still opt-in per server, and `@sailboat` still summons nothing.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="feature">
 <summary>Plugin v0.31.0 + v6.150.0: @ mention players in Minecraft chat and ping them for real in Discord</summary>
 
 **Typing `@` in Minecraft chat now offers a list of Discord names to pick from.** Choosing one sends an actual Discord mention, pinging that person in Discord the same as if you had @ mentioned them there yourself.
