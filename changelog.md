@@ -156,6 +156,17 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
 <details class="doc-sec" markdown="1" open data-kind="fix">
+<summary>v6.153.0: /purge tells you the truth when it is interrupted</summary>
+
+**An interrupted purge no longer reports that it deleted nothing.** If someone else deletes a message while `/purge` is working, the purge stops part-way through. It used to tell you "Deleted 0 message(s)" and record a clean success in your moderation log, when in fact an unknown number of messages had already gone. Your audit log is the one record of what your staff did to a channel, so it now says plainly that the purge was interrupted, logs it as partial, and tells you the count is unknown.
+
+**A timed-out purge result is no longer posted in the channel.** `/purge` replies privately to whoever ran it. If the command took long enough that Discord dropped the private reply, the result was being posted publicly instead, announcing to everyone in the room, including the person whose messages were removed, exactly how many had gone. It now arrives as a direct message to the moderator who ran it.
+
+**Nothing changes on a normal purge.** A purge that completes reports the same count and logs the same success it always did.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v6.152.0: ask @SAi anywhere in a sentence, not just at the start</summary>
 
 **You no longer have to put `@SAi` first.** Ask it part-way through a line and it answers: "hey @sai how do I craft a piston" works, and so does finishing on the name, like "can anyone help, @SAi?". Both used to be met with silence, with nothing to tell you why.
