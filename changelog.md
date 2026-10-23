@@ -155,7 +155,29 @@ What's new in Server Assistant. Internal-only updates (CI, dependency bumps, hos
 
 <div class="cl-panel" id="cl-bot" role="tabpanel" aria-labelledby="tab-bot" markdown="1">
 
-<details class="doc-sec" markdown="1" open data-kind="fix">
+<details class="doc-sec" markdown="1" open data-kind="feature">
+<summary>Protection features are back on: Discord approved our access request</summary>
+
+**Everything that was paused is running again.** Discord has approved Server Assistant's request for the Server Members and Message Content permissions, and on 23 October 2026 we switched the full feature set back on. The pause began on 1 September 2026.
+
+**What came back:**
+
+- AutoMod content filtering
+- Anti-raid and AltGuard join checks
+- Scam-image detection
+- ThreatNet auto-protect when someone joins
+- The AI assistant
+- The Discord-to-Minecraft chat relay
+
+**Servers that were told about the pause have already been told it is over.** The servers that received the original pause notice have now received a "Protection features are back on" notice in their staff chat. You do not need to do anything, and no settings were changed or reset.
+
+**What we have and have not checked.** The bot reconnected cleanly with the new permissions in place and is running normally. We have not yet run a feature-by-feature test of each protection since the switch-on, so if anything looks off in your server, please tell us in our support server.
+
+**Presence is not part of this.** We do not request Discord's Presence permission. The online count in your server is read a different way that does not need it.
+
+</details>
+
+<details class="doc-sec" markdown="1" data-kind="fix">
 <summary>v6.153.0: /purge tells you the truth when it is interrupted</summary>
 
 **An interrupted purge no longer reports that it deleted nothing.** If someone else deletes a message while `/purge` is working, the purge stops part-way through. It used to tell you "Deleted 0 message(s)" and record a clean success in your moderation log, when in fact an unknown number of messages had already gone. Your audit log is the one record of what your staff did to a channel, so it now says plainly that the purge was interrupted, logs it as partial, and tells you the count is unknown.

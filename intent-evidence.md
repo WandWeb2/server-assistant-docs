@@ -15,6 +15,11 @@ so the reviewer can view each screenshot in context.
 
 Each screenshot demonstrates a specific declared use of the intent.
 
+**Status update, 23 October 2026: APPROVED.** Discord approved the application
+for the **Server Members** and **Message Content** privileged intents. This page
+is kept rather than deleted because Discord can re-review an application, and
+rebuilding this evidence from scratch would be costly.
+
 **On the Presence intent, which is no longer requested.** An earlier application
 asked for it, to show an aggregate count of members online and in voice. That
 count now reads `approximate_presence_count` from
